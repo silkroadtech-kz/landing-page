@@ -101,14 +101,27 @@
 			.mobile-menu {
 				transform: translateX(100%);
 				transition: transform 0.3s ease;
+				width: 100vw;
+				height: 100vh;
+				height: 100dvh;
+				top: 0;
+				left: 0;
+				overflow-y: auto;
 			}
 
 			.mobile-menu.open {
 				transform: translateX(0);
 			}
+			body.menu-open {
+				overflow: hidden;
+			}
 
 			@media (max-width: 1200px) {
 				.px-20 {
+					padding-left: 2rem !important;
+					padding-right: 2rem !important;
+				}
+				.about-shell {
 					padding-left: 2rem !important;
 					padding-right: 2rem !important;
 				}
@@ -121,6 +134,10 @@
 					flex-direction: column !important;
 					gap: 2rem !important;
 				}
+				.about-hero > div:first-child {
+					width: 100% !important;
+					height: 380px !important;
+				}
 				#team-row {
 					overflow-x: auto;
 					padding-bottom: 1rem;
@@ -131,32 +148,155 @@
 				nav {
 					padding-left: 1.25rem !important;
 					padding-right: 1.25rem !important;
+					padding-top: 0.75rem !important;
+					padding-bottom: 0.75rem !important;
 				}
 				.about-shell,
 				.team-shell,
-				.board-shell,
+				.board-shell {
+					padding-left: 1.25rem !important;
+					padding-right: 1.25rem !important;
+				}
 				.footer-shell {
 					padding-left: 1.25rem !important;
 					padding-right: 1.25rem !important;
 				}
 				.about-hero {
-					gap: 2rem !important;
+					gap: 1.5rem !important;
 				}
-				.about-hero > div:first-child,
-				.about-copy,
-				.board-row > div {
+				.about-hero > div:first-child {
 					width: 100% !important;
 					max-width: none !important;
+					height: 280px !important;
+				}
+				.about-copy {
+					width: 100% !important;
+					max-width: none !important;
+					padding-bottom: 0 !important;
+				}
+				.about-copy h2 {
+					font-size: 1.25rem !important;
+					line-height: 1.4 !important;
 				}
 				.stats-row {
 					flex-direction: column !important;
 					gap: 2rem !important;
 					align-items: flex-start !important;
 				}
-				h1,
+				h1 {
+					font-size: 2rem !important;
+					line-height: 1.15 !important;
+				}
 				h2 {
-					font-size: 2.25rem !important;
-					line-height: 1.1 !important;
+					font-size: 2rem !important;
+					line-height: 1.15 !important;
+				}
+				/* Team cards - vertical stack on mobile */
+				#team-row {
+					flex-direction: column !important;
+					gap: 1rem !important;
+					min-height: auto !important;
+				}
+				.team-card {
+					width: 100% !important;
+					height: auto !important;
+					min-height: 320px;
+				}
+				.team-card .card-dark {
+					height: 280px !important;
+				}
+				.team-card {
+					background: #212121 !important;
+					display: flex !important;
+					flex-direction: column !important;
+				}
+				.team-card .card-dark {
+					display: none !important;
+				}
+				.team-card .card-info {
+					opacity: 1 !important;
+					transform: none !important;
+					pointer-events: auto !important;
+					position: relative !important;
+					left: auto !important;
+					top: auto !important;
+					padding: 1.5rem !important;
+					z-index: 10;
+				}
+				.team-card .card-photo {
+					position: relative !important;
+					left: auto !important;
+					top: auto !important;
+					width: 100% !important;
+					height: 250px !important;
+					order: -1;
+				}
+				.team-card .card-photo img {
+					mix-blend-mode: normal !important;
+					border-radius: 8px !important;
+				}
+				.team-card .card-toggle {
+					display: none !important;
+				}
+				.team-card .card-watermark {
+					display: none !important;
+				}
+				/* Advisory board */
+				.board-row {
+					flex-direction: column !important;
+					gap: 1.5rem !important;
+				}
+				.board-row > div {
+					width: 100% !important;
+					max-width: none !important;
+				}
+				.board-row .bg-\[\#212121\] {
+					height: auto !important;
+				}
+				.board-row .h-\[329px\],
+				.board-row .h-\[325px\] {
+					height: 250px !important;
+				}
+				/* Footer */
+				.footer-layout {
+					padding-left: 1.25rem !important;
+					padding-right: 1.25rem !important;
+				}
+				.footer-layout > .flex {
+					flex-direction: column !important;
+					gap: 2rem !important;
+				}
+				.footer-meta {
+					flex-direction: column !important;
+					gap: 0.75rem !important;
+					align-items: flex-start !important;
+					padding-left: 1.25rem !important;
+					padding-right: 1.25rem !important;
+				}
+				/* Nav CTA button */
+				header .w-\[174px\] {
+					width: auto !important;
+					padding-left: 0.75rem !important;
+					padding-right: 0.75rem !important;
+					font-size: 14px !important;
+				}
+			}
+
+			@media (max-width: 480px) {
+				h1 {
+					font-size: 1.6rem !important;
+				}
+				h2 {
+					font-size: 1.6rem !important;
+				}
+				.about-hero > div:first-child {
+					height: 220px !important;
+				}
+				.about-copy h2 {
+					font-size: 1.1rem !important;
+				}
+				.team-heading p {
+					font-size: 1rem !important;
 				}
 			}
 		</style>
@@ -727,15 +867,34 @@
 				const cards = document.querySelectorAll(".team-card");
 				let openIdx = 0;
 
-				requestAnimationFrame(() => applyState(0));
+				requestAnimationFrame(() => {
+					if (!isMobile()) applyState(0);
+				});
+
+				function isMobile() {
+					return window.innerWidth <= 768;
+				}
 
 				window.teamAccordion = function (idx) {
+					if (isMobile()) return;
 					if (idx === openIdx) return;
 					openIdx = idx;
 					applyState(idx);
 				};
 
+				window.addEventListener('resize', function() {
+					if (isMobile()) {
+						cards.forEach(function(card) {
+							card.style.width = '';
+							card.style.height = '';
+						});
+					} else {
+						applyState(openIdx);
+					}
+				});
+
 				function applyState(activeIdx) {
+					if (isMobile()) return;
 					cards.forEach((card, i) => {
 						const c = CFG[i];
 						const isActive = i === activeIdx;
@@ -1113,10 +1272,12 @@
 			const mobileMenu = document.getElementById("mobileMenu");
 			const closeMenu = document.getElementById("closeMenu");
 			if (hamburger && mobileMenu && closeMenu) {
-				hamburger.addEventListener("click", () => mobileMenu.classList.add("open"));
-				closeMenu.addEventListener("click", () => mobileMenu.classList.remove("open"));
+				const openMenu = () => { mobileMenu.classList.add("open"); document.body.classList.add("menu-open"); };
+				const hideMenu = () => { mobileMenu.classList.remove("open"); document.body.classList.remove("menu-open"); };
+				hamburger.addEventListener("click", openMenu);
+				closeMenu.addEventListener("click", hideMenu);
 				mobileMenu.querySelectorAll(".mobile-link").forEach((link) => {
-					link.addEventListener("click", () => mobileMenu.classList.remove("open"));
+					link.addEventListener("click", hideMenu);
 				});
 			}
 

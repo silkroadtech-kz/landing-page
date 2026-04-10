@@ -367,9 +367,18 @@
 			.mobile-menu {
 				transform: translateX(100%);
 				transition: transform 0.3s ease;
+				width: 100vw;
+				height: 100vh;
+				height: 100dvh;
+				top: 0;
+				left: 0;
+				overflow-y: auto;
 			}
 			.mobile-menu.open {
 				transform: translateX(0);
+			}
+			body.menu-open {
+				overflow: hidden;
 			}
 
 			@media (max-width: 1200px) {
@@ -378,10 +387,14 @@
 					padding-left: 2rem !important;
 					padding-right: 2rem !important;
 				}
+				#contacts {
+					padding-left: 2rem !important;
+					padding-right: 2rem !important;
+				}
 				.hero-layout {
 					height: auto;
 					min-height: 0;
-					padding: 3rem 0 2rem;
+					padding: 3rem 2rem 2rem;
 					display: grid;
 					gap: 1.5rem;
 				}
@@ -397,8 +410,13 @@
 				}
 				.hero-copy {
 					gap: 1.5rem !important;
+					padding: 0 !important;
 				}
-				.hero-copy h1,
+				.hero-copy h1 {
+					width: auto !important;
+					max-width: none !important;
+					font-size: 3rem !important;
+				}
 				.hero-copy p {
 					width: auto !important;
 					max-width: none !important;
@@ -413,6 +431,8 @@
 					left: auto !important;
 					top: auto !important;
 					width: 100% !important;
+					height: auto !important;
+					min-height: 200px;
 				}
 				.hero-badge {
 					display: none;
@@ -456,47 +476,161 @@
 
 			@media (max-width: 768px) {
 				header nav {
-					padding-top: 1rem !important;
-					padding-bottom: 1rem !important;
+					padding-top: 0.75rem !important;
+					padding-bottom: 0.75rem !important;
+					padding-left: 1.25rem !important;
+					padding-right: 1.25rem !important;
+				}
+				.hero-layout {
+					padding: 2rem 0 1.5rem !important;
+				}
+				.hero-copy {
+					padding: 0 1.25rem !important;
 				}
 				.hero-copy h1 {
-					font-size: 2.6rem !important;
-					line-height: 1.05 !important;
+					font-size: 2.2rem !important;
+					line-height: 1.08 !important;
+					letter-spacing: -1px !important;
 				}
 				.hero-copy p {
-					font-size: 1rem !important;
+					font-size: 0.95rem !important;
 					line-height: 1.7 !important;
 				}
 				.hero-btns {
 					flex-direction: column;
-					align-items: flex-start !important;
-					gap: 1rem !important;
+					align-items: stretch !important;
+					gap: 0.75rem !important;
+				}
+				.hero-btns button {
+					width: 100%;
+					justify-content: center;
 				}
 				.hero-media {
 					grid-template-columns: 1fr;
+					padding: 0 1.25rem;
 				}
-				.contact-grid,
-				.services-row,
-				.footer-layout,
+				.hero-media > div {
+					height: auto !important;
+					min-height: 180px;
+				}
+				/* Services */
+				.services-row {
+					display: flex !important;
+					flex-direction: column !important;
+					gap: 0.75rem !important;
+					align-items: flex-start !important;
+				}
+				.services-row h3 {
+					font-size: 1.5rem !important;
+				}
+				.services-row p {
+					font-size: 1rem !important;
+					text-align: left !important;
+				}
+				#services .px-20 {
+					padding-left: 1.25rem !important;
+					padding-right: 1.25rem !important;
+				}
+				/* Process */
+				#process .px-8 {
+					padding-left: 1.25rem !important;
+					padding-right: 1.25rem !important;
+				}
+				#process h2 {
+					font-size: 1.35rem !important;
+					line-height: 1.4 !important;
+					margin-bottom: 2rem !important;
+				}
+				.process-step {
+					min-height: 200px !important;
+					padding: 1.5rem !important;
+				}
+				/* FAQ */
 				.faq-layout {
 					display: flex !important;
 					flex-direction: column !important;
+					padding: 2rem 1.25rem !important;
+					gap: 2rem !important;
+				}
+				.faq-layout h2 {
+					font-size: 2rem !important;
+					margin-bottom: 0.5rem !important;
+				}
+				.faq-layout summary span {
+					font-size: 1.1rem !important;
+				}
+				.faq-layout .flex-1 {
+					max-width: 100% !important;
+				}
+				/* Contact */
+				.contact-grid,
+				.footer-layout {
+					display: flex !important;
+					flex-direction: column !important;
+				}
+				#contacts {
+					padding-left: 1rem !important;
+					padding-right: 1rem !important;
+				}
+				.contact-shell {
+					padding: 1.5rem !important;
+					border-radius: 1rem !important;
+				}
+				.contact-shell h2 {
+					font-size: 1.6rem !important;
+					line-height: 1.25 !important;
+				}
+				.contact-grid {
+					display: grid !important;
+					grid-template-columns: 1fr !important;
+				}
+				/* Footer */
+				.footer-layout {
+					padding-left: 1.25rem !important;
+					padding-right: 1.25rem !important;
+				}
+				.footer-layout > .flex {
+					flex-direction: column !important;
+					gap: 2rem !important;
+				}
+				.footer-layout > div:first-child .flex.items-center {
+					flex-wrap: wrap;
+					gap: 1rem !important;
 				}
 				.footer-meta {
 					flex-direction: column;
 					gap: 0.75rem;
 					align-items: flex-start !important;
+					padding-left: 1.25rem !important;
+					padding-right: 1.25rem !important;
 				}
-				.services-row {
-					gap: 1rem !important;
-					align-items: flex-start !important;
+				/* Nav CTA button */
+				header .w-\[174px\] {
+					width: auto !important;
+					padding-left: 0.75rem !important;
+					padding-right: 0.75rem !important;
+					font-size: 14px !important;
 				}
-				.contact-shell {
-					padding: 2rem !important;
+			}
+
+			@media (max-width: 480px) {
+				.hero-copy h1 {
+					font-size: 1.75rem !important;
 				}
-				.contact-grid {
-					display: grid !important;
-					grid-template-columns: 1fr !important;
+				.hero-media > div:nth-child(2) {
+					display: none;
+				}
+				.services-row h3 {
+					font-size: 1.25rem !important;
+				}
+				#process h2 {
+					font-size: 1.15rem !important;
+				}
+				.faq-layout summary span {
+					font-size: 1rem !important;
+				}
+				.contact-shell h2 {
+					font-size: 1.35rem !important;
 				}
 			}
 		</style>
@@ -1023,6 +1157,8 @@
 					<div class="flex items-center gap-12">
 						<button
 							class="font-manrope font-bold border border-[#010205] rounded-full px-4 py-4 w-[176px] text-[16px] tracking-tight hover:bg-[#010205] hover:text-white transition"
+							type="button"
+							onclick="document.getElementById('contacts').scrollIntoView({behavior:'smooth'})"
 						>
 							Задать вопрос
 						</button>
@@ -1725,16 +1861,18 @@
 				const mobileMenu = document.getElementById("mobileMenu");
 				const closeMenu = document.getElementById("closeMenu");
 				if (hamburger && mobileMenu) {
-					hamburger.addEventListener("click", () =>
-						mobileMenu.classList.add("open"),
-					);
-					closeMenu.addEventListener("click", () =>
-						mobileMenu.classList.remove("open"),
-					);
+					const openMenu = () => {
+						mobileMenu.classList.add("open");
+						document.body.classList.add("menu-open");
+					};
+					const hideMenu = () => {
+						mobileMenu.classList.remove("open");
+						document.body.classList.remove("menu-open");
+					};
+					hamburger.addEventListener("click", openMenu);
+					closeMenu.addEventListener("click", hideMenu);
 					mobileMenu.querySelectorAll(".mobile-link").forEach((link) => {
-						link.addEventListener("click", () =>
-							mobileMenu.classList.remove("open"),
-						);
+						link.addEventListener("click", hideMenu);
 					});
 				}
 
