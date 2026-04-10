@@ -1,0 +1,929 @@
+<!doctype html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Кейсы — Silk Road Tech</title>
+		<meta
+			name="description"
+			content="Кейсы Silk Road Tech: внедрение кастомных ERP-решений и интеллектуальных систем управления для локальных и международных компаний."
+		/>
+		<meta name="robots" content="index,follow" />
+		<link
+			rel="icon"
+			href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23010205'/%3E%3Ctext x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial,sans-serif' font-size='28' font-weight='700' fill='%239ac763'%3ESRT%3C/text%3E%3C/svg%3E"
+		/>
+		<script src="https://cdn.tailwindcss.com"></script>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Manrope:wght@500;700;800&family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,700&family=Jost:wght@400;700&family=Space+Grotesk:wght@400;500&family=Roboto:wght@400;500;600;700&display=swap"
+			rel="stylesheet"
+		/>
+		<style>
+			:root {
+				--green: #9ac763;
+				--green-2: #99cf63;
+				--dark: #010205;
+				--muted: #878c91;
+			}
+			html {
+				scroll-behavior: smooth;
+			}
+			html,
+			body {
+				font-family: "Plus Jakarta Sans", system-ui, sans-serif;
+				color: #010205;
+				background: #fafafa;
+			}
+			.font-jakarta {
+				font-family: "Plus Jakarta Sans", sans-serif;
+			}
+			.font-manrope {
+				font-family: "Manrope", sans-serif;
+			}
+			.font-inter {
+				font-family: "Inter", sans-serif;
+			}
+			.font-jost {
+				font-family: "Jost", sans-serif;
+			}
+			.font-space {
+				font-family: "Space Grotesk", sans-serif;
+			}
+			.font-roboto {
+				font-family: "Roboto", sans-serif;
+			}
+			.noise {
+				background-image: url("https://www.figma.com/api/mcp/asset/47e80f04-1886-4063-9e87-2745611a62dd");
+				background-size: 600px;
+				opacity: 0.06;
+				pointer-events: none;
+			}
+
+			/* Card styles */
+			.case-card {
+				background: #fff;
+				border-radius: 38px;
+				padding: 34px 29px;
+				width: 100%;
+				max-width: 608px;
+				min-height: 278px;
+				overflow: hidden;
+				display: flex;
+				flex-direction: column;
+				gap: 15px;
+				transition:
+					transform 0.3s ease,
+					box-shadow 0.3s ease;
+			}
+			.case-card:hover {
+				transform: translateY(-4px);
+			}
+			.case-card--black {
+				border: 0.84px solid #000;
+				box-shadow: 0 4px 0 0 #000;
+			}
+			.case-card--green {
+				border: 0.84px solid #9ac763;
+				box-shadow: 0 4px 0 0 #9ac763;
+			}
+
+			.bullet {
+				width: 6px;
+				height: 6px;
+				border-radius: 3px;
+				background: #9ac763;
+				flex-shrink: 0;
+			}
+
+			/* Scroll reveal */
+			.reveal {
+				opacity: 0;
+				transform: translateY(40px);
+				transition:
+					opacity 0.7s ease,
+					transform 0.7s ease;
+			}
+			.reveal.active {
+				opacity: 1;
+				transform: translateY(0);
+			}
+			.delay-1 {
+				transition-delay: 0.1s;
+			}
+			.delay-2 {
+				transition-delay: 0.2s;
+			}
+			.delay-3 {
+				transition-delay: 0.3s;
+			}
+			.delay-4 {
+				transition-delay: 0.4s;
+			}
+
+			/* Navbar */
+			header {
+				transition:
+					padding 0.3s ease,
+					box-shadow 0.3s ease;
+			}
+			header.scrolled {
+				box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+			}
+
+			/* Mobile menu */
+			.mobile-menu {
+				transform: translateX(100%);
+				transition: transform 0.3s ease;
+			}
+			.mobile-menu.open {
+				transform: translateX(0);
+			}
+
+			/* External link icon */
+			.ext-link {
+				opacity: 0.4;
+				transition: opacity 0.2s;
+			}
+			.case-card:hover .ext-link {
+				opacity: 1;
+			}
+
+			@media (max-width: 1200px) {
+				.cases-grid {
+					gap: 24px !important;
+				}
+				.case-card {
+					max-width: 100%;
+				}
+				header nav {
+					padding-left: 2rem !important;
+					padding-right: 2rem !important;
+				}
+				.footer-layout {
+					flex-direction: column !important;
+				}
+			}
+			@media (max-width: 768px) {
+				.cases-row {
+					flex-direction: column !important;
+				}
+				.case-card {
+					max-width: 100% !important;
+				}
+				.cases-header {
+					flex-direction: column !important;
+					gap: 1.5rem !important;
+				}
+				.cases-header h2 {
+					font-size: 32px !important;
+				}
+				.cases-header p {
+					font-size: 16px !important;
+					width: auto !important;
+				}
+				.footer-layout {
+					flex-direction: column !important;
+				}
+				.footer-cols {
+					flex-direction: column !important;
+					gap: 2rem !important;
+				}
+				.footer-meta {
+					flex-direction: column;
+					gap: 0.75rem;
+					align-items: flex-start !important;
+				}
+				header nav {
+					padding-left: 1.5rem !important;
+					padding-right: 1.5rem !important;
+				}
+			}
+		</style>
+	</head>
+	<body class="bg-[#fafafa] text-[#010205]">
+		<!-- ============ NAVBAR ============ -->
+		<header
+			class="sticky top-0 z-50 bg-[rgba(239,239,239,0.95)] backdrop-blur-md"
+		>
+			<nav
+				class="max-w-[1440px] mx-auto flex items-center justify-between px-20 py-5"
+			>
+				<div class="flex items-center gap-[74px]">
+					<a href="index.html" class="text-2xl font-extrabold tracking-tight">
+						<span class="text-[#010205]">SRT</span
+						><span class="text-[#9ac763]">.</span>
+					</a>
+					<ul
+						class="hidden lg:flex items-center gap-10 text-[17px] font-semibold text-[#020407]"
+					>
+						<li>
+							<a href="index.html#services" class="hover:text-[#9ac763]"
+								>Услуги</a
+							>
+						</li>
+						<li>
+							<a href="index.html#process" class="hover:text-[#9ac763]"
+								>Процессы</a
+							>
+						</li>
+						<li class="flex items-center gap-1">
+							<a href="cases.html" class="text-[#9ac763]">Кейсы</a>
+							<svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+								<path
+									d="M6 9l6 6 6-6"
+									stroke="#9ac763"
+									stroke-width="2"
+									stroke-linecap="round"
+								/>
+							</svg>
+						</li>
+						<li class="flex items-center gap-1">
+							<a href="about.html" class="hover:text-[#9ac763]">О нас</a>
+							<svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+								<path
+									d="M6 9l6 6 6-6"
+									stroke="currentColor"
+									stroke-width="2"
+									stroke-linecap="round"
+								/>
+							</svg>
+						</li>
+						<li>
+							<a href="index.html#faq" class="hover:text-[#9ac763]">FAQ</a>
+						</li>
+						<li>
+							<a href="index.html#contacts" class="hover:text-[#9ac763]"
+								>Контакты</a
+							>
+						</li>
+					</ul>
+				</div>
+				<div class="flex items-center gap-2">
+					<button
+						class="font-manrope font-bold bg-[#99cf63] border border-[#99cf63] rounded-full px-4 py-3 w-[174px] text-[16px] tracking-tight hover:brightness-95 transition"
+						onclick="location.href='index.html#contacts'"
+					>
+						Обсудить проект
+					</button>
+					<button
+						class="lg:hidden w-10 h-10 flex flex-col items-center justify-center gap-1.5"
+						id="hamburger"
+					>
+						<span class="block w-6 h-0.5 bg-[#010205] transition-all"></span>
+						<span class="block w-6 h-0.5 bg-[#010205] transition-all"></span>
+						<span class="block w-6 h-0.5 bg-[#010205] transition-all"></span>
+					</button>
+				</div>
+			</nav>
+			<div
+				class="mobile-menu fixed inset-0 top-0 bg-white z-[100] p-8 pt-20 lg:hidden"
+				id="mobileMenu"
+			>
+				<button class="absolute top-6 right-6 text-3xl" id="closeMenu">
+					&times;
+				</button>
+				<ul class="flex flex-col gap-6 text-[20px] font-semibold">
+					<li><a href="index.html#services" class="mobile-link">Услуги</a></li>
+					<li><a href="index.html#process" class="mobile-link">Процессы</a></li>
+					<li>
+						<a href="cases.html" class="mobile-link text-[#9ac763]">Кейсы</a>
+					</li>
+					<li><a href="index.html#faq" class="mobile-link">FAQ</a></li>
+					<li>
+						<a href="index.html#contacts" class="mobile-link">Контакты</a>
+					</li>
+					<li><a href="about.html" class="mobile-link">О нас</a></li>
+				</ul>
+			</div>
+		</header>
+
+		<!-- ============ CASES SECTION ============ -->
+		<section class="bg-white relative overflow-hidden">
+			<div class="absolute inset-0 noise"></div>
+
+			<div class="relative max-w-[1440px] mx-auto px-20 pt-[73px] pb-[80px]">
+				<!-- Header -->
+				<div class="cases-header flex items-center gap-[198px] mb-[80px]">
+					<h2
+						class="font-inter font-bold text-[48px] leading-[1.2] tracking-[-0.96px] text-[#212121] shrink-0"
+					>
+						Кейсы
+					</h2>
+					<p
+						class="font-inter text-[24px] leading-[1.4] tracking-[-0.72px] text-[#212121] text-justify max-w-[938px]"
+					>
+						Мы помогли локальным и международным компаниям решить их самые
+						сложные технологические вызовы через внедрение кастомных ERP-решений
+						и интеллектуальных систем управления.
+					</p>
+				</div>
+
+				<!-- Cards grid -->
+				<div class="cases-grid flex flex-col gap-[34px]">
+					<!-- Row 1 -->
+					<div class="cases-row flex gap-[34px] justify-center">
+						<!-- Card 1: Orkenlink -->
+						<div class="case-card case-card--black reveal">
+							<div class="flex items-start justify-between">
+								<div class="flex gap-[29px] items-start">
+									<div class="flex flex-col gap-[7px] items-start">
+										<div
+											class="w-[80px] h-[80px] rounded-[10px] bg-[#0f1f38] flex items-center justify-center overflow-hidden"
+										>
+											<img
+												src="https://www.figma.com/api/mcp/asset/006aae01-7e68-4771-8bd6-26ae435f3655"
+												alt="Orkenlink"
+												class="w-[50px] h-[64px] object-contain"
+											/>
+										</div>
+										<a
+											href="https://orkenlink.kz/"
+											target="_blank"
+											class="font-jost font-bold text-[16px] text-black underline"
+											>Orkenlink</a
+										>
+									</div>
+									<div class="flex flex-col gap-[11px] justify-center">
+										<p
+											class="font-space font-medium text-[17px] leading-normal text-black max-w-[401px]"
+										>
+											LinkedIn для студентов — платформа карьерных возможностей
+										</p>
+										<p
+											class="font-space text-[13px] leading-normal text-black max-w-[401px]"
+										>
+											Система управления внешним кадровым резервом.
+											Масштабируемая платформа для трекинга и мэтчинга ресурсов.
+										</p>
+									</div>
+								</div>
+								<a
+									href="https://orkenlink.kz/"
+									target="_blank"
+									class="ext-link shrink-0"
+								>
+									<svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+										<path
+											d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"
+											stroke="#9ac763"
+											stroke-width="1.5"
+											stroke-linecap="round"
+											stroke-linejoin="round"
+										/>
+									</svg>
+								</a>
+							</div>
+							<hr class="border-t border-black/10" />
+							<div class="flex items-center gap-[7px]">
+								<span class="bullet"></span>
+								<span class="font-jost text-[16px] leading-[25.6px] text-black"
+									>Поиск карьерных возможностей</span
+								>
+							</div>
+							<div class="flex items-center gap-[7px]">
+								<span class="bullet"></span>
+								<span class="font-jost text-[16px] leading-[25.6px] text-black"
+									>Мэтчинг студентов и работодателей</span
+								>
+							</div>
+						</div>
+
+						<!-- Card 2: AIVA -->
+						<div class="case-card case-card--green reveal delay-1">
+							<div class="flex items-start justify-between">
+								<div class="flex gap-[29px] items-start">
+									<div class="flex flex-col gap-[7px] items-start">
+										<div
+											class="w-[80px] h-[80px] rounded-[10px] bg-[#0f1f38] flex items-center justify-center overflow-hidden"
+										>
+											<img
+												src="https://www.figma.com/api/mcp/asset/d18801e0-71e5-47d5-be7c-e944e12f77c8"
+												alt="AIVA"
+												class="w-[64px] h-[64px] object-contain"
+											/>
+										</div>
+										<span
+											class="font-jost font-bold text-[16px] text-black underline"
+											>AIVA</span
+										>
+									</div>
+									<div class="flex flex-col gap-[11px] justify-center">
+										<p
+											class="font-space font-medium text-[17px] leading-normal text-black max-w-[401px]"
+										>
+											ИИзация отдела продаж строительной компании
+										</p>
+										<p
+											class="font-space text-[13px] leading-normal text-black max-w-[437px]"
+										>
+											Внедрили ботов на все уровни воронки, улучшили конверсию в
+											приход на 30% и сократили траты на колл-центр. Проверка и
+											отчетность работы операторов с помощью ИИ.
+										</p>
+									</div>
+								</div>
+								<a href="#" class="ext-link shrink-0">
+									<svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+										<path
+											d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"
+											stroke="#9ac763"
+											stroke-width="1.5"
+											stroke-linecap="round"
+											stroke-linejoin="round"
+										/>
+									</svg>
+								</a>
+							</div>
+							<hr class="border-t border-black/10" />
+							<div class="flex items-center gap-[7px]">
+								<span class="bullet"></span>
+								<span class="font-jost text-[16px] leading-[25.6px] text-black"
+									>Рост конверсии в приход на 30%</span
+								>
+							</div>
+							<div class="flex items-center gap-[7px] flex-wrap">
+								<span class="bullet"></span>
+								<span class="font-jost text-[16px] leading-[25.6px] text-black"
+									>Совместно с партнером AIVA</span
+								>
+								<span class="bullet ml-3"></span>
+								<span class="font-jost text-[16px] leading-[25.6px] text-black"
+									>Сокращение ФОТ колл-центра</span
+								>
+							</div>
+						</div>
+					</div>
+
+					<!-- Row 2 -->
+					<div class="cases-row flex gap-[34px] justify-center">
+						<!-- Card 3: PetroMindAI -->
+						<div class="case-card case-card--green reveal delay-1">
+							<div class="flex items-start justify-between">
+								<div class="flex gap-[29px] items-start">
+									<div class="flex flex-col gap-[7px] items-start">
+										<div
+											class="w-[80px] h-[80px] rounded-[10px] bg-[#0f1f38] flex items-center justify-center overflow-hidden"
+										>
+											<img
+												src="https://www.figma.com/api/mcp/asset/1a07c454-b968-47a1-b5da-13e90be90135"
+												alt="PetroMindAI"
+												class="w-[64px] h-[64px] object-contain"
+											/>
+										</div>
+										<span
+											class="font-jost font-bold text-[16px] text-black underline"
+											>PetroMindAI</span
+										>
+									</div>
+									<div class="flex flex-col gap-[11px] justify-center">
+										<p
+											class="font-space font-medium text-[17px] leading-normal text-black max-w-[401px]"
+										>
+											ERP-модуль интеллектуального управления кадровым капиталом
+										</p>
+										<p
+											class="font-space text-[13px] leading-normal text-black max-w-[401px]"
+										>
+											ИИ эксперт для нефтегазового сектора, который внедряется в
+											каждый отдел компании.
+										</p>
+									</div>
+								</div>
+								<a href="#" class="ext-link shrink-0">
+									<svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+										<path
+											d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"
+											stroke="#9ac763"
+											stroke-width="1.5"
+											stroke-linecap="round"
+											stroke-linejoin="round"
+										/>
+									</svg>
+								</a>
+							</div>
+							<hr class="border-t border-black/10" />
+							<div class="flex items-center gap-[7px]">
+								<span class="bullet"></span>
+								<span class="font-jost text-[16px] leading-[25.6px] text-black"
+									>Автоматизация Onboarding новых сотрудников</span
+								>
+							</div>
+							<div class="flex items-center gap-[7px]">
+								<span class="bullet"></span>
+								<span class="font-jost text-[16px] leading-[25.6px] text-black"
+									>BI-аналитика отчетности для C-level</span
+								>
+							</div>
+						</div>
+
+						<!-- Card 4: SmartLab -->
+						<div class="case-card case-card--black reveal delay-2">
+							<div class="flex items-start justify-between">
+								<div class="flex gap-[29px] items-start">
+									<div class="flex flex-col gap-[7px] items-start">
+										<div
+											class="w-[80px] h-[80px] rounded-[10px] bg-[#0f1f38] flex items-center justify-center overflow-hidden"
+										>
+											<img
+												src="https://www.figma.com/api/mcp/asset/8c3a801c-3a6a-4c59-9a18-fc9328203062"
+												alt="SmartLab"
+												class="w-[64px] h-[60px] object-contain"
+											/>
+										</div>
+										<span
+											class="font-jost font-bold text-[16px] text-black underline"
+											>СЭД SmartLab</span
+										>
+									</div>
+									<div class="flex flex-col gap-[11px] justify-center">
+										<p
+											class="font-space font-medium text-[17px] leading-normal text-black max-w-[401px]"
+										>
+											Централизованное ядро документооборота
+										</p>
+										<p
+											class="font-space text-[13px] leading-normal text-black max-w-[401px]"
+										>
+											Система электронного документооборота подстроенная под
+											бизнес-процессы больших компаний.
+										</p>
+									</div>
+								</div>
+								<a href="#" class="ext-link shrink-0">
+									<svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+										<path
+											d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"
+											stroke="#9ac763"
+											stroke-width="1.5"
+											stroke-linecap="round"
+											stroke-linejoin="round"
+										/>
+									</svg>
+								</a>
+							</div>
+							<hr class="border-t border-black/10" />
+							<div class="flex items-center gap-[7px]">
+								<span class="bullet"></span>
+								<span class="font-jost text-[16px] leading-[25.6px] text-black"
+									>Интеграция Enterprise-стандартов</span
+								>
+							</div>
+							<div class="flex items-center gap-[7px]">
+								<span class="bullet"></span>
+								<span class="font-jost text-[16px] leading-[25.6px] text-black"
+									>Бизнес-процессы крупных холдингов</span
+								>
+							</div>
+						</div>
+					</div>
+
+					<!-- Row 3 -->
+					<div class="cases-row flex gap-[34px] justify-center">
+						<!-- Card 5: ContentFlow -->
+						<div class="case-card case-card--black reveal delay-2">
+							<div class="flex items-start justify-between">
+								<div class="flex gap-[29px] items-start">
+									<div class="flex flex-col gap-[7px] items-start">
+										<div
+											class="w-[80px] h-[80px] rounded-[10px] bg-[#0f1f38] flex items-center justify-center overflow-hidden"
+										>
+											<span
+												class="font-manrope font-bold text-[13px] text-white text-center leading-tight"
+												>Content<br />Flow</span
+											>
+										</div>
+										<a
+											href="https://kainulla-contentflow.gitlabapp.alem.ai/"
+											target="_blank"
+											class="font-jost font-bold text-[16px] text-black underline"
+											>ContentFlow</a
+										>
+									</div>
+									<div class="flex flex-col gap-[11px] justify-center">
+										<p
+											class="font-space font-medium text-[17px] leading-normal text-black max-w-[401px]"
+										>
+											AI-платформа генерации контента для соцсетей
+										</p>
+										<p
+											class="font-space text-[13px] leading-normal text-black max-w-[401px]"
+										>
+											Генерация постов для Telegram, Instagram, LinkedIn и
+											TikTok из текста или голоса. Обучение стилю бренда,
+											авто-публикация и аналитика конкурентов.
+										</p>
+									</div>
+								</div>
+								<a
+									href="https://kainulla-contentflow.gitlabapp.alem.ai/"
+									target="_blank"
+									class="ext-link shrink-0"
+								>
+									<svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+										<path
+											d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"
+											stroke="#9ac763"
+											stroke-width="1.5"
+											stroke-linecap="round"
+											stroke-linejoin="round"
+										/>
+									</svg>
+								</a>
+							</div>
+							<hr class="border-t border-black/10" />
+							<div class="flex items-center gap-[7px]">
+								<span class="bullet"></span>
+								<span class="font-jost text-[16px] leading-[25.6px] text-black"
+									>AI-генерация постов под каждую платформу</span
+								>
+							</div>
+							<div class="flex items-center gap-[7px]">
+								<span class="bullet"></span>
+								<span class="font-jost text-[16px] leading-[25.6px] text-black"
+									>Авто-публикация и MCP-интеграция</span
+								>
+							</div>
+						</div>
+
+						<!-- Card 7: KZ-Provider -->
+						<div class="case-card case-card--black reveal delay-1">
+							<div class="flex items-start justify-between">
+								<div class="flex gap-[29px] items-start">
+									<div class="flex flex-col gap-[7px] items-start">
+										<div
+											class="w-[80px] h-[80px] rounded-[10px] bg-[#0f1f38] flex items-center justify-center overflow-hidden"
+										>
+											<span
+												class="font-manrope font-bold text-[14px] text-white text-center leading-tight"
+												>KZ<br />Provider</span
+											>
+										</div>
+										<a
+											href="https://www.kzprovider.com/"
+											target="_blank"
+											class="font-jost font-bold text-[16px] text-black underline"
+											>KZ-Provider</a
+										>
+									</div>
+									<div class="flex flex-col gap-[11px] justify-center">
+										<p
+											class="font-space font-medium text-[17px] leading-normal text-black max-w-[401px]"
+										>
+											Корпоративный сайт промышленного поставщика гидравлических
+											компонентов
+										</p>
+										<p
+											class="font-space text-[13px] leading-normal text-black max-w-[401px]"
+										>
+											Разработка веб-платформы для ТОО «KZ-PROVIDER» —
+											поставщика гидравлических и пневматических компонентов для
+											горнодобывающего и промышленного секторов Казахстана.
+										</p>
+									</div>
+								</div>
+								<a
+									href="https://www.kzprovider.com/"
+									target="_blank"
+									class="ext-link shrink-0"
+								>
+									<svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+										<path
+											d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"
+											stroke="#9ac763"
+											stroke-width="1.5"
+											stroke-linecap="round"
+											stroke-linejoin="round"
+										/>
+									</svg>
+								</a>
+							</div>
+							<hr class="border-t border-black/10" />
+							<div class="flex items-center gap-[7px]">
+								<span class="bullet"></span>
+								<span class="font-jost text-[16px] leading-[25.6px] text-black"
+									>Каталог продукции с международными стандартами</span
+								>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- ============ FOOTER ============ -->
+		<footer class="bg-[#fafafa] relative overflow-hidden py-16">
+			<div class="absolute inset-0 noise"></div>
+			<div
+				class="footer-layout relative max-w-[1440px] mx-auto px-20 flex gap-14"
+			>
+				<div class="max-w-[534px]">
+					<div class="text-3xl font-extrabold mb-8">
+						SRT<span class="text-[#9ac763]">.</span>
+					</div>
+					<p class="font-roboto text-[14px] leading-6 text-[#9b9b9c] mb-8">
+						Мы предлагаем комплексный пакет услуг по IT-аутсорсингу, который
+						охватывает все аспекты вашего цифрового развития. От проектирования
+						архитектуры и разработки ПО до облачных решений и информационной
+						безопасности — наша команда обладает экспертизой и ресурсами для
+						реализации задач любой сложности.
+					</p>
+					<div class="flex items-center gap-8">
+						<div class="flex gap-3">
+							<a
+								href="https://wa.me/77026479903"
+								target="_blank"
+								rel="noreferrer"
+								aria-label="WhatsApp"
+								class="w-9 h-9 rounded-full bg-[#9ac763] flex items-center justify-center text-white"
+							>
+								<svg width="14" height="14" viewBox="0 0 24 24" fill="white">
+									<path
+										d="M20.52 3.48A11.8 11.8 0 0 0 12.07 0C5.58 0 .3 5.28.3 11.77c0 2.07.54 4.1 1.56 5.88L0 24l6.55-1.82a11.73 11.73 0 0 0 5.52 1.4h.01c6.49 0 11.77-5.28 11.77-11.77 0-3.15-1.23-6.11-3.33-8.33ZM12.08 21.5h-.01a9.64 9.64 0 0 1-4.91-1.34l-.35-.21-3.89 1.08 1.04-3.79-.23-.39a9.68 9.68 0 0 1-1.48-5.08c0-5.35 4.35-9.7 9.71-9.7 2.59 0 5.02 1.01 6.84 2.84a9.6 9.6 0 0 1 2.84 6.86c0 5.35-4.35 9.7-9.71 9.7Zm5.32-7.26c-.29-.14-1.73-.85-2-.95-.27-.1-.47-.14-.66.15-.19.29-.76.95-.93 1.14-.17.19-.35.22-.64.08-.29-.14-1.24-.46-2.35-1.47-.87-.78-1.46-1.74-1.63-2.03-.17-.29-.02-.45.13-.6.13-.13.29-.35.43-.52.14-.17.19-.29.29-.48.1-.19.05-.36-.02-.5-.07-.14-.66-1.59-.91-2.18-.24-.58-.48-.5-.66-.5h-.56c-.19 0-.5.07-.76.36-.26.29-1 1-.98 2.44.02 1.44 1.03 2.83 1.18 3.03.14.19 2.03 3.1 5.02 4.23.71.31 1.27.49 1.71.63.72.23 1.38.2 1.9.12.58-.09 1.73-.71 1.97-1.39.24-.68.24-1.27.17-1.39-.07-.12-.27-.19-.56-.33Z"
+									/>
+								</svg>
+							</a>
+							<a
+								href="https://t.me/silkroadtech"
+								target="_blank"
+								rel="noreferrer"
+								aria-label="Telegram"
+								class="w-9 h-9 rounded-full bg-[#9ac763] flex items-center justify-center"
+							>
+								<svg width="14" height="14" viewBox="0 0 24 24" fill="white">
+									<path
+										d="M9.78 18.65c-.39 0-.32-.15-.46-.52l-1.16-3.81 8.9-5.28c.42-.24.73-.11.41.17l-7.2 6.5-.28 3.78c.4 0 .57-.18.8-.39l1.92-1.87 3.99 2.95c.73.4 1.26.19 1.44-.68l2.6-12.25c.26-1.06-.4-1.54-1.1-1.22L2.84 12.5c-1.04.41-1.03.99-.19 1.25l4.28 1.34 9.92-6.25c.47-.28.9-.12.55.18"
+									/>
+								</svg>
+							</a>
+							<a
+								href="https://linkedin.com/company/silkroadtech"
+								target="_blank"
+								rel="noreferrer"
+								aria-label="LinkedIn"
+								class="w-9 h-9 rounded-full bg-[#9ac763] flex items-center justify-center"
+							>
+								<svg width="14" height="14" viewBox="0 0 24 24" fill="white">
+									<path
+										d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
+									/>
+								</svg>
+							</a>
+							<a
+								href="https://instagram.com/silkroadtech"
+								target="_blank"
+								rel="noreferrer"
+								aria-label="Instagram"
+								class="w-9 h-9 rounded-full bg-[#9ac763] flex items-center justify-center"
+							>
+								<svg width="14" height="14" viewBox="0 0 24 24" fill="white">
+									<path
+										d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+									/>
+								</svg>
+							</a>
+						</div>
+						<button
+							class="bg-[#010205] text-white font-jakarta font-bold text-[16px] rounded-full px-8 py-4 inline-flex items-center gap-3 hover:scale-[1.02] transition"
+							onclick="location.href='index.html#contacts'"
+						>
+							Обсудить проект
+							<svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+								<path
+									d="M5 12h14M13 6l6 6-6 6"
+									stroke="white"
+									stroke-width="2"
+									stroke-linecap="round"
+									stroke-linejoin="round"
+								/>
+							</svg>
+						</button>
+					</div>
+				</div>
+
+				<div class="footer-cols flex justify-between gap-12 flex-1">
+					<div>
+						<h4
+							class="font-roboto font-semibold text-[18px] text-[#192031] mb-12"
+						>
+							Навигация
+						</h4>
+						<ul class="font-roboto text-[14px] text-[#9b9b9c] space-y-6">
+							<li><a href="index.html#services">Услуги</a></li>
+							<li><a href="index.html#process">Процессы</a></li>
+							<li><a href="cases.html">Кейсы</a></li>
+							<li><a href="about.html">О нас</a></li>
+							<li><a href="index.html#partners">Партнеры</a></li>
+							<li><a href="index.html#contacts">Контакты</a></li>
+							<li class="font-bold"><a href="index.html#faq">FAQ</a></li>
+						</ul>
+					</div>
+					<div>
+						<h4
+							class="font-roboto font-semibold text-[18px] text-[#192031] mb-12"
+						>
+							Лицензия
+						</h4>
+						<ul class="font-roboto text-[14px] text-[#9b9b9c] space-y-6">
+							<li><a href="privacy.html">Политика конфиденциальности</a></li>
+							<li><a href="copyright.html">Авторские права</a></li>
+							<li><a href="mailto:sayat@silkroadtech.kz">Почта</a></li>
+						</ul>
+					</div>
+					<div>
+						<h4
+							class="font-roboto font-semibold text-[18px] text-[#192031] mb-12"
+						>
+							Контакты
+						</h4>
+						<ul class="font-roboto text-[14px] text-[#9b9b9c] space-y-6">
+							<li class="flex items-center gap-3">
+								<svg width="18" height="18" viewBox="0 0 24 24" fill="#9b9b9c">
+									<path
+										d="M20 15.5c-1.25 0-2.45-.2-3.57-.57-.35-.11-.74-.03-1.02.24l-2.2 2.2a15.045 15.045 0 0 1-6.59-6.59l2.2-2.21c.28-.26.36-.65.25-1C8.7 6.45 8.5 5.25 8.5 4c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1 0 9.39 7.61 17 17 17 .55 0 1-.45 1-1v-3.5c0-.55-.45-1-1-1z"
+									/>
+								</svg>
+								<a
+									href="https://wa.me/77026479903"
+									target="_blank"
+									rel="noreferrer"
+									class="underline"
+									>+7 702 647 99 03</a
+								>
+							</li>
+							<li class="flex items-center gap-3">
+								<svg width="18" height="18" viewBox="0 0 24 24" fill="#9b9b9c">
+									<path
+										d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"
+									/>
+								</svg>
+								<a href="mailto:sayat@silkroadtech.kz" class="underline"
+									>sayat@silkroadtech.kz</a
+								>
+							</li>
+							<li class="flex items-start gap-3">
+								<svg width="18" height="18" viewBox="0 0 24 24" fill="#9b9b9c">
+									<path
+										d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"
+									/>
+								</svg>
+								Астана, пр. Мангилик Ел 36
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div
+				class="footer-meta relative max-w-[1440px] mx-auto px-20 mt-12 pt-8 border-t border-black/10 flex justify-between text-[12px] text-[#9b9b9c]"
+			>
+				<span>&copy; 2026 Silk Road Tech. Все права защищены.</span>
+				<span>Made with care in Astana</span>
+			</div>
+		</footer>
+
+		<script>
+			document.addEventListener("DOMContentLoaded", () => {
+				// Scroll reveal
+				const observer = new IntersectionObserver(
+					(entries) => {
+						entries.forEach((entry) => {
+							if (entry.isIntersecting) {
+								entry.target.classList.add("active");
+							}
+						});
+					},
+					{ threshold: 0.1 },
+				);
+
+				document
+					.querySelectorAll(".reveal")
+					.forEach((el) => observer.observe(el));
+
+				// Navbar scroll effect
+				const header = document.querySelector("header");
+				window.addEventListener("scroll", () => {
+					header.classList.toggle("scrolled", window.scrollY > 20);
+				});
+
+				// Mobile menu
+				const hamburger = document.getElementById("hamburger");
+				const mobileMenu = document.getElementById("mobileMenu");
+				const closeMenu = document.getElementById("closeMenu");
+				if (hamburger && mobileMenu && closeMenu) {
+					hamburger.addEventListener("click", () =>
+						mobileMenu.classList.add("open"),
+					);
+					closeMenu.addEventListener("click", () =>
+						mobileMenu.classList.remove("open"),
+					);
+					mobileMenu.querySelectorAll("a").forEach((link) => {
+						link.addEventListener("click", () =>
+							mobileMenu.classList.remove("open"),
+						);
+					});
+				}
+			});
+		</script>
+	</body>
+</html>
