@@ -162,7 +162,7 @@
       en: 'Andrey'
     },
     'review.role': {
-      ru: 'Генеральный директор',
+      ru: 'CEO',
       en: 'CEO'
     },
 
@@ -308,7 +308,7 @@
       en: '© 2026 Silk Road Tech. All rights reserved.'
     },
     'footer.made': {
-      ru: 'Сделано с заботой в Астане',
+      ru: 'Made with care in Astana',
       en: 'Made with care in Astana'
     },
 
@@ -355,13 +355,13 @@
     },
 
     /* ── Team cards ── */
-    'team.sayat.role': { ru: 'Генеральный директор', en: 'Chief Executive Officer' },
+    'team.sayat.role': { ru: 'Chief Executive Officer', en: 'Chief Executive Officer' },
     'team.sayat.bio':  { ru: '5+ лет в продуктовом менеджменте и аналитике данных. Выстраивает продуктовые метрики и стратегии.', en: '5+ years in product management and data analytics. Building product metrics and strategies.' },
-    'team.alnur.role': { ru: 'Инженер по продукту', en: 'Prod. Engineer' },
+    'team.alnur.role': { ru: 'Prod. Engineer', en: 'Prod. Engineer' },
     'team.alnur.bio':  { ru: 'Разработка продукта и технологическая интеграция. Фокус на качестве и результате.', en: 'Product development and technology integration. Focus on quality and results.' },
-    'team.bakhtiyar.role': { ru: 'Технический лид', en: 'Tech Lead' },
+    'team.bakhtiyar.role': { ru: 'Tech Lead', en: 'Tech Lead' },
     'team.bakhtiyar.bio':  { ru: '6+ лет в full-stack разработке, микросервисной архитектуре и DevOps-практиках.', en: '6+ years in full-stack development, microservices architecture, and DevOps practices.' },
-    'team.bekarys.role': { ru: 'Инженер по продукту', en: 'Prod. Engineer' },
+    'team.bekarys.role': { ru: 'Prod. Engineer', en: 'Prod. Engineer' },
     'team.bekarys.bio':  { ru: '4+ года в продуктовой инженерии. Техническая реализация продуктовых решений.', en: '4+ years in product engineering. Technical delivery of product solutions.' },
 
     /* ── Cases page ── */
