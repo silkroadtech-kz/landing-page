@@ -350,9 +350,19 @@
       en: 'Our team brings extensive experience in software engineering, data analytics, AI integration, and digital product development.'
     },
     'about.board.title': {
-      ru: 'Экспертный совет',
+      ru: 'Advisory Board',
       en: 'Advisory Board'
     },
+
+    /* ── Team cards ── */
+    'team.sayat.role': { ru: 'Генеральный директор', en: 'Chief Executive Officer' },
+    'team.sayat.bio':  { ru: '5+ лет в продуктовом менеджменте и аналитике данных. Выстраивает продуктовые метрики и стратегии.', en: '5+ years in product management and data analytics. Building product metrics and strategies.' },
+    'team.alnur.role': { ru: 'Инженер по продукту', en: 'Prod. Engineer' },
+    'team.alnur.bio':  { ru: 'Разработка продукта и технологическая интеграция. Фокус на качестве и результате.', en: 'Product development and technology integration. Focus on quality and results.' },
+    'team.bakhtiyar.role': { ru: 'Технический лид', en: 'Tech Lead' },
+    'team.bakhtiyar.bio':  { ru: '6+ лет в full-stack разработке, микросервисной архитектуре и DevOps-практиках.', en: '6+ years in full-stack development, microservices architecture, and DevOps practices.' },
+    'team.bekarys.role': { ru: 'Инженер по продукту', en: 'Prod. Engineer' },
+    'team.bekarys.bio':  { ru: '4+ года в продуктовой инженерии. Техническая реализация продуктовых решений.', en: '4+ years in product engineering. Technical delivery of product solutions.' },
 
     /* ── Cases page ── */
     'cases.hero.title': {
@@ -362,6 +372,66 @@
     'cases.hero.desc': {
       ru: 'Мы помогли локальным и международным компаниям решить их сложнейшие технологические задачи — через кастомные ERP-внедрения и интеллектуальные системы управления.',
       en: 'We have helped local and international companies solve their most complex technological challenges through custom ERP implementations and intelligent management systems.'
+    },
+
+    /* ── Cases — Orkenlink ── */
+    'cases.orkenlink.title': {
+      ru: 'LinkedIn для студентов — платформа поиска карьерных возможностей',
+      en: 'LinkedIn for students — a career opportunities platform'
+    },
+    'cases.orkenlink.desc': {
+      ru: 'Система управления внешним кадровым пулом. Масштабируемая платформа для отслеживания ресурсов и подбора кандидатов.',
+      en: 'External talent pool management system. Scalable platform for resource tracking and matching.'
+    },
+
+    /* ── Cases — AIVA ── */
+    'cases.aiva.title': {
+      ru: 'ИИ-автоматизация продаж для строительной компании',
+      en: 'AI-powered sales automation for a construction company'
+    },
+    'cases.aiva.desc': {
+      ru: 'Развернули ботов на всех этапах воронки, повысили конверсию посещаемости на 30% и снизили затраты на колл-центр. ИИ-мониторинг эффективности операторов и отчётность.',
+      en: 'Deployed bots across all funnel stages, improved attendance conversion by 30%, and reduced call center costs. AI-based operator performance monitoring and reporting.'
+    },
+
+    /* ── Cases — PetroMindAI ── */
+    'cases.petromind.title': {
+      ru: 'ERP-модуль интеллектуального управления человеческим капиталом',
+      en: 'ERP module for intelligent human capital management'
+    },
+    'cases.petromind.desc': {
+      ru: 'ИИ-экспертная система для нефтегазового сектора, внедрённая во все подразделения компании.',
+      en: 'AI expert system for the oil and gas sector, deployed across every department of the company.'
+    },
+
+    /* ── Cases — SmartLab ── */
+    'cases.smartlab.title': {
+      ru: 'Централизованное ядро управления документами',
+      en: 'Centralized document management core'
+    },
+    'cases.smartlab.desc': {
+      ru: 'Система электронного документооборота, адаптированная под бизнес-процессы крупных предприятий.',
+      en: 'Electronic document management system tailored to the business processes of large enterprises.'
+    },
+
+    /* ── Cases — ContentFlow ── */
+    'cases.contentflow.title': {
+      ru: 'ИИ-платформа генерации контента для социальных сетей',
+      en: 'AI content generation platform for social media'
+    },
+    'cases.contentflow.desc': {
+      ru: 'Генерирует посты для Telegram, Instagram, LinkedIn и TikTok из текста или голоса. Обучение фирменному стилю, автопубликация и аналитика конкурентов.',
+      en: 'Generates posts for Telegram, Instagram, LinkedIn, and TikTok from text or voice. Brand style training, auto-publishing, and competitor analytics.'
+    },
+
+    /* ── Cases — KZ-Provider ── */
+    'cases.kzprovider.title': {
+      ru: 'Корпоративный сайт поставщика промышленных гидравлических компонентов',
+      en: 'Corporate website for an industrial hydraulic components supplier'
+    },
+    'cases.kzprovider.desc': {
+      ru: 'Разработка веб-платформы для ТОО «KZ-PROVIDER» — поставщика гидравлических и пневматических компонентов для горнодобывающего и промышленного секторов Казахстана.',
+      en: 'Web platform development for KZ-PROVIDER LLC — a supplier of hydraulic and pneumatic components for the mining and industrial sectors of Kazakhstan.'
     },
 
     /* ── Privacy page ── */

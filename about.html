@@ -151,23 +151,38 @@
 					padding-top: 0.75rem !important;
 					padding-bottom: 0.75rem !important;
 				}
+				/* Hide desktop CTA button on mobile */
+				header .w-\[174px\] {
+					display: none !important;
+				}
+				/* LangToggle visible on mobile */
+				#langToggle {
+					display: flex !important;
+					width: 40px !important;
+					height: 40px !important;
+					font-size: 13px !important;
+				}
 				.about-shell,
 				.team-shell,
 				.board-shell {
 					padding-left: 1.25rem !important;
 					padding-right: 1.25rem !important;
+					padding-top: 2rem !important;
+					padding-bottom: 2rem !important;
 				}
 				.footer-shell {
 					padding-left: 1.25rem !important;
 					padding-right: 1.25rem !important;
 				}
+				/* About hero: stack vertically */
 				.about-hero {
+					flex-direction: column !important;
 					gap: 1.5rem !important;
 				}
 				.about-hero > div:first-child {
 					width: 100% !important;
 					max-width: none !important;
-					height: 280px !important;
+					height: 240px !important;
 				}
 				.about-copy {
 					width: 100% !important;
@@ -175,94 +190,152 @@
 					padding-bottom: 0 !important;
 				}
 				.about-copy h2 {
-					font-size: 1.25rem !important;
-					line-height: 1.4 !important;
+					font-size: 1.15rem !important;
+					line-height: 1.5 !important;
 				}
-				.stats-row {
-					flex-direction: column !important;
-					gap: 2rem !important;
-					align-items: flex-start !important;
+				.about-copy p {
+					font-size: 1rem !important;
 				}
+				/* Page headings */
 				h1 {
 					font-size: 2rem !important;
 					line-height: 1.15 !important;
+					margin-bottom: 1.5rem !important;
 				}
-				h2 {
+				/* Team heading row */
+				.team-heading {
+					flex-direction: column !important;
+					gap: 0.75rem !important;
+					margin-bottom: 1.5rem !important;
+				}
+				.team-heading h2 {
 					font-size: 2rem !important;
-					line-height: 1.15 !important;
+					line-height: 1.2 !important;
 				}
-				/* Team cards - vertical stack on mobile */
+				.team-heading p {
+					font-size: 1rem !important;
+					max-width: 100% !important;
+				}
+				/* Team cards - horizontal layout on mobile */
 				#team-row {
 					flex-direction: column !important;
-					gap: 1rem !important;
+					gap: 0.75rem !important;
 					min-height: auto !important;
+					overflow: visible !important;
 				}
 				.team-card {
 					width: 100% !important;
 					height: auto !important;
-					min-height: 320px;
-				}
-				.team-card .card-dark {
-					height: 280px !important;
-				}
-				.team-card {
+					min-height: auto !important;
 					background: #212121 !important;
 					display: flex !important;
-					flex-direction: column !important;
+					flex-direction: row !important;
+					align-items: stretch !important;
+					border-radius: 16px !important;
+					overflow: hidden !important;
 				}
+				/* Photo column: fixed 110px wide */
 				.team-card .card-dark {
-					display: none !important;
+					position: relative !important;
+					flex-shrink: 0 !important;
+					width: 110px !important;
+					height: auto !important;
+					min-height: 140px !important;
+					border-radius: 0 !important;
+					inset: auto !important;
 				}
+				.team-card .card-photo {
+					position: absolute !important;
+					left: 0 !important; top: 0 !important;
+					width: 100% !important; height: 100% !important;
+				}
+				.team-card .card-photo img {
+					mix-blend-mode: normal !important;
+					object-fit: cover !important;
+					object-position: top center !important;
+					width: 100% !important; height: 100% !important;
+				}
+				/* Info column: takes remaining space */
 				.team-card .card-info {
 					opacity: 1 !important;
 					transform: none !important;
 					pointer-events: auto !important;
 					position: relative !important;
-					left: auto !important;
-					top: auto !important;
-					padding: 1.5rem !important;
+					left: auto !important; top: auto !important;
+					flex: 1 !important;
+					padding: 1rem 1.25rem !important;
+					display: flex !important;
+					flex-direction: column !important;
+					justify-content: center !important;
+					gap: 0.25rem !important;
 					z-index: 10;
 				}
-				.team-card .card-photo {
-					position: relative !important;
-					left: auto !important;
-					top: auto !important;
-					width: 100% !important;
-					height: 250px !important;
-					order: -1;
+				.team-card .card-info p:first-child {
+					font-size: 1.1rem !important;
+					line-height: 1.3 !important;
 				}
-				.team-card .card-photo img {
-					mix-blend-mode: normal !important;
-					border-radius: 8px !important;
+				.team-card .card-info p:nth-child(2) {
+					font-size: 0.8rem !important;
 				}
-				.team-card .card-toggle {
-					display: none !important;
+				.team-card .card-info p:nth-child(3) {
+					font-size: 0.8rem !important;
+					width: auto !important;
+					max-width: 100% !important;
+					margin-top: 0.25rem !important;
 				}
+				.team-card .card-toggle,
 				.team-card .card-watermark {
 					display: none !important;
 				}
-				/* Advisory board */
-				.board-row {
+				/* Board heading */
+				.board-shell .flex.items-center.justify-between {
 					flex-direction: column !important;
-					gap: 1.5rem !important;
+					align-items: flex-start !important;
+					gap: 1rem !important;
 				}
-				.board-row > div {
-					width: 100% !important;
-					max-width: none !important;
+				.board-shell h2 {
+					font-size: 2rem !important;
 				}
-				.board-row .bg-\[\#212121\] {
-					height: auto !important;
+				/* Advisory board: native horizontal scroll on mobile */
+				#adv-viewport {
+					overflow-x: auto !important;
+					overflow-y: visible !important;
+					-webkit-overflow-scrolling: touch !important;
+					scrollbar-width: none !important;
 				}
-				.board-row .h-\[329px\],
-				.board-row .h-\[325px\] {
-					height: 250px !important;
+				#adv-viewport::-webkit-scrollbar {
+					display: none !important;
+				}
+				#adv-track {
+					transform: none !important;
+					transition: none !important;
+					width: max-content !important;
+					padding: 0.5rem 1.25rem 1rem !important;
+					gap: 1rem !important;
+				}
+				#adv-track > div {
+					width: 240px !important;
+					flex-shrink: 0 !important;
+				}
+				/* Hide arrow buttons */
+				#adv-prev, #adv-next {
+					display: none !important;
 				}
 				/* Footer */
-				.footer-layout {
+				.footer-shell.footer-layout {
+					flex-direction: column !important;
+					gap: 2rem !important;
 					padding-left: 1.25rem !important;
 					padding-right: 1.25rem !important;
 				}
-				.footer-layout > .flex {
+				.footer-layout .max-w-\[534px\] {
+					max-width: 100% !important;
+				}
+				.footer-layout .max-w-\[534px\] .flex.items-center.gap-8 {
+					flex-wrap: wrap !important;
+					gap: 1rem !important;
+				}
+				.footer-layout .flex.justify-between.gap-12.flex-1 {
 					flex-direction: column !important;
 					gap: 2rem !important;
 				}
@@ -273,30 +346,23 @@
 					padding-left: 1.25rem !important;
 					padding-right: 1.25rem !important;
 				}
-				/* Nav CTA button */
-				header .w-\[174px\] {
-					width: auto !important;
-					padding-left: 0.75rem !important;
-					padding-right: 0.75rem !important;
-					font-size: 14px !important;
-				}
 			}
 
 			@media (max-width: 480px) {
 				h1 {
-					font-size: 1.6rem !important;
-				}
-				h2 {
-					font-size: 1.6rem !important;
+					font-size: 1.75rem !important;
 				}
 				.about-hero > div:first-child {
-					height: 220px !important;
+					height: 200px !important;
 				}
 				.about-copy h2 {
-					font-size: 1.1rem !important;
+					font-size: 1rem !important;
 				}
 				.team-heading p {
-					font-size: 1rem !important;
+					font-size: 0.95rem !important;
+				}
+				.board-shell h2 {
+					font-size: 1.75rem !important;
 				}
 			}
 		</style>
@@ -538,11 +604,13 @@
 							</p>
 							<p
 								class="font-inter text-[16px] tracking-[-0.48px] text-white mt-3"
+								data-i18n="team.sayat.role"
 							>
 								Chief Executive Officer
 							</p>
 							<p
 								class="font-inter text-[16px] leading-[1.4] tracking-[-0.48px] text-white/40 mt-3 w-[219px]"
+								data-i18n="team.sayat.bio"
 							>
 								5+ years in product management and data analytics. Building
 								product metrics and strategies.
@@ -649,11 +717,13 @@
 							</p>
 							<p
 								class="font-inter text-[16px] tracking-[-0.48px] text-white mt-3"
+								data-i18n="team.alnur.role"
 							>
 								Prod. Engineer
 							</p>
 							<p
 								class="font-inter text-[16px] leading-[1.4] tracking-[-0.48px] text-white/40 mt-3 w-[219px]"
+								data-i18n="team.alnur.bio"
 							>
 								Product development and technology integration. Focus on quality and results.
 							</p>
@@ -759,11 +829,13 @@
 							</p>
 							<p
 								class="font-inter text-[16px] tracking-[-0.48px] text-white mt-3"
+								data-i18n="team.bakhtiyar.role"
 							>
 								Tech Lead
 							</p>
 							<p
 								class="font-inter text-[16px] leading-[1.4] tracking-[-0.48px] text-white/40 mt-3 w-[219px]"
+								data-i18n="team.bakhtiyar.bio"
 							>
 								6+ years in full-stack development, microservices architecture,
 								and DevOps practices.
@@ -870,11 +942,13 @@
 							</p>
 							<p
 								class="font-inter text-[16px] tracking-[-0.48px] text-white mt-3"
+								data-i18n="team.bekarys.role"
 							>
 								Prod. Engineer
 							</p>
 							<p
 								class="font-inter text-[16px] leading-[1.4] tracking-[-0.48px] text-white/40 mt-3 w-[219px]"
+								data-i18n="team.bekarys.bio"
 							>
 								4+ years in product engineering. Technical delivery of product solutions.
 							</p>
@@ -1057,10 +1131,10 @@
 		<!-- ============ ADVISORY BOARD ============ -->
 		<section class="bg-white relative overflow-hidden">
 			<div class="absolute inset-0 noise"></div>
-			<div class="board-shell relative max-w-[1440px] mx-auto px-[75px] py-20">
+			<div class="board-shell relative max-w-[1440px] mx-auto px-[40px] py-20">
 				<div class="flex items-center justify-between mb-14">
 					<h2 class="font-inter font-bold text-[48px] leading-[1.2] tracking-[-0.96px] text-[#212121]" data-i18n="about.board.title">
-						Экспертный совет
+						Advisory Board
 					</h2>
 					<!-- carousel controls -->
 					<div class="flex gap-3">
@@ -1236,6 +1310,8 @@
 
 		<script>
 			(function () {
+				if (window.innerWidth <= 768) return; // native scroll on mobile
+
 				const track = document.getElementById('adv-track');
 				const viewport = document.getElementById('adv-viewport');
 				const prevBtn = document.getElementById('adv-prev');

@@ -6,20 +6,83 @@
 <title>Privacy Policy — Silk Road Tech</title>
 <meta name="description" content="Privacy Policy of Silk Road Tech." />
 <link rel="canonical" href="https://silk-road-tech-placeholder.vercel.app/privacy.html" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23010205'/%3E%3Ctext x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial,sans-serif' font-size='28' font-weight='700' fill='%239ac763'%3ESRT%3C/text%3E%3C/svg%3E" />
 <script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+  html, body {
+    font-family: "Plus Jakarta Sans", system-ui, sans-serif;
+    background: #fafafa;
+    color: #010205;
+  }
+  .doc-header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: rgba(250,250,250,0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(0,0,0,0.08);
+    padding: 0.875rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .doc-header a {
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: underline;
+    color: #010205;
+  }
+  #langToggle {
+    width: 44px;
+    height: 44px;
+    border-radius: 9999px;
+    background: #010205;
+    color: #fff;
+    border: none;
+    font-weight: 700;
+    font-size: 14px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: background 0.2s;
+  }
+  #langToggle:hover { background: #333; }
+  main {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 2.5rem 1.5rem 4rem;
+  }
+  @media (max-width: 480px) {
+    main {
+      padding: 2rem 1.25rem 3rem;
+    }
+    main h1 {
+      font-size: 1.75rem !important;
+    }
+  }
+</style>
 </head>
-<body class="bg-[#fafafa] text-[#010205] font-sans">
-  <button id="langToggle" style="position:fixed;top:1.25rem;right:1.5rem;z-index:100;width:52px;height:52px;border-radius:9999px;background:#010205;color:#fff;border:none;font-weight:700;font-size:15px;cursor:pointer;transition:opacity 0.2s;display:flex;align-items:center;justify-content:center;">En</button>
-  <main class="max-w-3xl mx-auto px-6 py-16">
-    <a href="index.html" class="text-sm underline" data-i18n="privacy.back">На главную</a>
-    <h1 class="text-4xl font-bold mt-6 mb-8" data-i18n="privacy.title">Политика конфиденциальности</h1>
-    <div class="space-y-6 text-[16px] leading-8 text-[#4b5563]">
+<body class="bg-[#fafafa] text-[#010205]">
+  <!-- Sticky header with back link + lang toggle -->
+  <header class="doc-header">
+    <a href="index.html" data-i18n="privacy.back">← На главную</a>
+    <button id="langToggle" aria-label="Switch language">En</button>
+  </header>
+  <main>
+    <h1 class="text-[2rem] font-bold mt-2 mb-8 leading-tight tracking-tight" data-i18n="privacy.title">Политика конфиденциальности</h1>
+    <div class="space-y-6 text-[16px] leading-[1.8] text-[#4b5563]">
       <p data-i18n="privacy.p1">Silk Road Tech уважает конфиденциальность посетителей сайта и обрабатывает только те данные, которые пользователь добровольно предоставляет через контактную форму или каналы связи компании.</p>
-      <p data-i18n="privacy.p2">Мы можем собирать ваше имя, фамилию, номер телефона, имя пользователя Telegram, адрес электронной почты и с��держание сообщения. Эти данные используются исключительно для ответа на ваш запрос, оценки проекта и дальнейшей деловой коммуникации.</p>
+      <p data-i18n="privacy.p2">Мы можем собирать ваше имя, фамилию, номер телефона, имя пользователя Telegram, адрес электронной почты и содержание сообщения. Эти данные используются исключительно для ответа на ваш запрос, оценки проекта и дальнейшей деловой коммуникации.</p>
       <p data-i18n="privacy.p3">Мы не продаём и не передаём персональные данные третьим лицам, за исключением сервисов, используемых для обработки запросов и обеспечения связи, — например, Formspree или корпоративная почта.</p>
-      <p><span data-i18n="privacy.p4">Если вы хотите просмотреть, обновить или удалить ранее отправленные дан��ые, напишите на</span> <a class="underline" href="mailto:sayat@silkroadtech.kz">sayat@silkroadtech.kz</a>.</p>
+      <p><span data-i18n="privacy.p4">Если вы хотите просмотреть, обновить или удалить ранее отправленные данные, напишите на</span> <a class="underline text-[#010205]" href="mailto:sayat@silkroadtech.kz">sayat@silkroadtech.kz</a>.</p>
       <p data-i18n="privacy.p5">Продолжая использовать сайт и отправляя форму, вы соглашаетесь с настоящей политикой конфиденциальности.</p>
-      <p class="text-sm text-[#6b7280]" data-i18n="privacy.updated">Последнее обновление: 10 апреля 2026 г.</p>
+      <p class="text-[14px] text-[#6b7280]" data-i18n="privacy.updated">Последнее обновление: 10 апреля 2026 г.</p>
     </div>
   </main>
   <script src="assets/i18n.js"></script>

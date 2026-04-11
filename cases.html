@@ -1,12 +1,12 @@
 <!doctype html>
-<html lang="en">
+<html lang="ru">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Case Studies — Silk Road Tech</title>
+		<title>Кейсы — Silk Road Tech</title>
 		<meta
 			name="description"
-			content="Silk Road Tech case studies: custom ERP implementations and intelligent management systems for local and international companies."
+			content="Кейсы Silk Road Tech: кастомные ERP-внедрения и интеллектуальные системы управления для локальных и международных компаний."
 		/>
 		<meta name="robots" content="index,follow" />
 		<link
@@ -184,74 +184,117 @@
 				}
 			}
 			@media (max-width: 768px) {
-				.cases-row {
-					flex-direction: column !important;
-				}
-				.case-card {
-					max-width: 100% !important;
-					padding: 1.25rem !important;
-					border-radius: 1.25rem !important;
-					min-height: auto !important;
-				}
-				.case-card .flex.gap-\[29px\] {
-					gap: 1rem !important;
-					flex-direction: column !important;
-				}
-				.cases-header {
-					flex-direction: column !important;
-					gap: 1rem !important;
-					margin-bottom: 2.5rem !important;
-				}
-				.cases-header h2 {
-					font-size: 2rem !important;
-				}
-				.cases-header p {
-					font-size: 1rem !important;
-					width: auto !important;
-					max-width: none !important;
-					text-align: left !important;
-				}
-				section > .relative {
-					padding-left: 1.25rem !important;
-					padding-right: 1.25rem !important;
-				}
-				.footer-layout {
-					flex-direction: column !important;
-					padding-left: 1.25rem !important;
-					padding-right: 1.25rem !important;
-				}
-				.footer-cols {
-					flex-direction: column !important;
-					gap: 2rem !important;
-				}
-				.footer-meta {
-					flex-direction: column;
-					gap: 0.75rem;
-					align-items: flex-start !important;
-					padding-left: 1.25rem !important;
-					padding-right: 1.25rem !important;
-				}
 				header nav {
 					padding-left: 1.25rem !important;
 					padding-right: 1.25rem !important;
 					padding-top: 0.75rem !important;
 					padding-bottom: 0.75rem !important;
 				}
-				/* Nav CTA button */
+				/* Hide desktop CTA on mobile */
 				header .w-\[174px\] {
+					display: none !important;
+				}
+				/* LangToggle visible on mobile */
+				#langToggle {
+					display: flex !important;
+					width: 40px !important;
+					height: 40px !important;
+					font-size: 13px !important;
+				}
+				/* Cases section padding */
+				section > .relative {
+					padding-left: 1.25rem !important;
+					padding-right: 1.25rem !important;
+					padding-top: 2rem !important;
+					padding-bottom: 2rem !important;
+				}
+				/* Cases header */
+				.cases-header {
+					flex-direction: column !important;
+					gap: 0.75rem !important;
+					margin-bottom: 2rem !important;
+				}
+				.cases-header h2 {
+					font-size: 2rem !important;
+					line-height: 1.2 !important;
+				}
+				.cases-header p {
+					font-size: 1rem !important;
+					line-height: 1.6 !important;
 					width: auto !important;
-					padding-left: 0.75rem !important;
-					padding-right: 0.75rem !important;
-					font-size: 14px !important;
+					max-width: none !important;
+					text-align: left !important;
+				}
+				/* Cases grid: single column */
+				.cases-grid {
+					gap: 1rem !important;
+				}
+				.cases-row {
+					flex-direction: column !important;
+					gap: 1rem !important;
+				}
+				.case-card {
+					max-width: 100% !important;
+					padding: 1.25rem !important;
+					border-radius: 1.25rem !important;
+					min-height: auto !important;
+					width: 100% !important;
+				}
+				/* Card inner layout: keep logo+text horizontal but ensure wrapping */
+				.case-card .flex.items-start.justify-between {
+					gap: 0.75rem !important;
+				}
+				.case-card .flex.gap-\[29px\] {
+					gap: 0.75rem !important;
+				}
+				.case-card .w-\[80px\] {
+					width: 60px !important;
+					height: 60px !important;
+					flex-shrink: 0 !important;
+				}
+				.case-card p.font-space.font-medium {
+					font-size: 15px !important;
+					max-width: none !important;
+				}
+				.case-card p.font-space.text-\[13px\] {
+					max-width: none !important;
+				}
+				/* Footer */
+				.footer-layout {
+					flex-direction: column !important;
+					padding-left: 1.25rem !important;
+					padding-right: 1.25rem !important;
+					gap: 2rem !important;
+				}
+				.footer-layout > .max-w-\[534px\] {
+					max-width: 100% !important;
+				}
+				.footer-layout > .max-w-\[534px\] .flex.items-center.gap-8 {
+					flex-wrap: wrap !important;
+					gap: 1rem !important;
+				}
+				.footer-cols {
+					flex-direction: column !important;
+					gap: 2rem !important;
+				}
+				.footer-meta {
+					flex-direction: column !important;
+					gap: 0.5rem !important;
+					align-items: flex-start !important;
+					padding-left: 1.25rem !important;
+					padding-right: 1.25rem !important;
 				}
 			}
 
 			@media (max-width: 480px) {
 				.cases-header h2 {
-					font-size: 1.6rem !important;
+					font-size: 1.75rem !important;
 				}
 				.case-card .font-space.font-medium {
-					font-size: 15px !important;
+					font-size: 14px !important;
+				}
+				.case-card .font-jost.text-\[16px\] {
+					font-size: 14px !important;
 				}
 			}
 		</style>
@@ -363,14 +406,16 @@
 									<div class="flex flex-col gap-[11px] justify-center">
 										<p
 											class="font-space font-medium text-[17px] leading-normal text-black max-w-[401px]"
+											data-i18n="cases.orkenlink.title"
 										>
-											LinkedIn for students — a career opportunities platform
+											LinkedIn для студентов — платформа поиска карьерных возможностей
 										</p>
 										<p
 											class="font-space text-[13px] leading-normal text-black max-w-[401px]"
+											data-i18n="cases.orkenlink.desc"
 										>
-											External talent pool management system.
-											Scalable platform for resource tracking and matching.
+											Система управления внешним кадровым пулом.
+											Масштабируемая платформа для отслеживания ресурсов и подбора кандидатов.
 										</p>
 									</div>
 								</div>
@@ -427,15 +472,17 @@
 									<div class="flex flex-col gap-[11px] justify-center">
 										<p
 											class="font-space font-medium text-[17px] leading-normal text-black max-w-[401px]"
+											data-i18n="cases.aiva.title"
 										>
-											AI-powered sales automation for a construction company
+											ИИ-автоматизация продаж для строительной компании
 										</p>
 										<p
 											class="font-space text-[13px] leading-normal text-black max-w-[437px]"
+											data-i18n="cases.aiva.desc"
 										>
-											Deployed bots across all funnel stages, improved
-											attendance conversion by 30%, and reduced call center costs.
-											AI-based operator performance monitoring and reporting.
+											Развернули ботов на всех этапах воронки, повысили конверсию
+											посещаемости на 30% и снизили затраты на колл-центр.
+											ИИ-мониторинг эффективности операторов и отчётность.
 										</p>
 									</div>
 								</div>
@@ -495,14 +542,16 @@
 									<div class="flex flex-col gap-[11px] justify-center">
 										<p
 											class="font-space font-medium text-[17px] leading-normal text-black max-w-[401px]"
+											data-i18n="cases.petromind.title"
 										>
-											ERP module for intelligent human capital management
+											ERP-модуль интеллектуального управления человеческим капиталом
 										</p>
 										<p
 											class="font-space text-[13px] leading-normal text-black max-w-[401px]"
+											data-i18n="cases.petromind.desc"
 										>
-											AI expert system for the oil and gas sector,
-											deployed across every department of the company.
+											ИИ-экспертная система для нефтегазового сектора,
+											внедрённая во все подразделения компании.
 										</p>
 									</div>
 								</div>
@@ -555,14 +604,16 @@
 									<div class="flex flex-col gap-[11px] justify-center">
 										<p
 											class="font-space font-medium text-[17px] leading-normal text-black max-w-[401px]"
+											data-i18n="cases.smartlab.title"
 										>
-											Centralized document management core
+											Централизованное ядро управления документами
 										</p>
 										<p
 											class="font-space text-[13px] leading-normal text-black max-w-[401px]"
+											data-i18n="cases.smartlab.desc"
 										>
-											Electronic document management system tailored to
-											the business processes of large enterprises.
+											Система электронного документооборота, адаптированная
+											под бизнес-процессы крупных предприятий.
 										</p>
 									</div>
 								</div>
@@ -619,15 +670,17 @@
 									<div class="flex flex-col gap-[11px] justify-center">
 										<p
 											class="font-space font-medium text-[17px] leading-normal text-black max-w-[401px]"
+											data-i18n="cases.contentflow.title"
 										>
-											AI content generation platform for social media
+											ИИ-платформа генерации контента для социальных сетей
 										</p>
 										<p
 											class="font-space text-[13px] leading-normal text-black max-w-[401px]"
+											data-i18n="cases.contentflow.desc"
 										>
-											Generates posts for Telegram, Instagram, LinkedIn, and
-											TikTok from text or voice. Brand style training,
-											auto-publishing, and competitor analytics.
+											Генерирует посты для Telegram, Instagram, LinkedIn и
+											TikTok из текста или голоса. Обучение фирменному стилю,
+											автопубликация и аналитика конкурентов.
 										</p>
 									</div>
 								</div>
@@ -685,15 +738,17 @@
 									<div class="flex flex-col gap-[11px] justify-center">
 										<p
 											class="font-space font-medium text-[17px] leading-normal text-black max-w-[401px]"
+											data-i18n="cases.kzprovider.title"
 										>
-											Corporate website for an industrial hydraulic components supplier
+											Корпоративный сайт поставщика промышленных гидравлических компонентов
 										</p>
 										<p
 											class="font-space text-[13px] leading-normal text-black max-w-[401px]"
+											data-i18n="cases.kzprovider.desc"
 										>
-											Web platform development for KZ-PROVIDER LLC —
-											a supplier of hydraulic and pneumatic components for
-											the mining and industrial sectors of Kazakhstan.
+											Разработка веб-платформы для ТОО «KZ-PROVIDER» —
+											поставщика гидравлических и пневматических компонентов
+											для горнодобывающего и промышленного секторов Казахстана.
 										</p>
 									</div>
 								</div>
