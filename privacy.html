@@ -1,25 +1,27 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Политика конфиденциальности — Silk Road Tech</title>
-<meta name="description" content="Политика конфиденциальности Silk Road Tech." />
+<title>Privacy Policy — Silk Road Tech</title>
+<meta name="description" content="Privacy Policy of Silk Road Tech." />
 <link rel="canonical" href="https://silk-road-tech-placeholder.vercel.app/privacy.html" />
 <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-[#fafafa] text-[#010205] font-sans">
+  <button id="langToggle" style="position:fixed;top:1.25rem;right:1.5rem;z-index:100;width:52px;height:52px;border-radius:9999px;background:#010205;color:#fff;border:none;font-weight:700;font-size:15px;cursor:pointer;transition:opacity 0.2s;display:flex;align-items:center;justify-content:center;">En</button>
   <main class="max-w-3xl mx-auto px-6 py-16">
-    <a href="index.html" class="text-sm underline">Вернуться на главную</a>
-    <h1 class="text-4xl font-bold mt-6 mb-8">Политика конфиденциальности</h1>
+    <a href="index.html" class="text-sm underline" data-i18n="privacy.back">На главную</a>
+    <h1 class="text-4xl font-bold mt-6 mb-8" data-i18n="privacy.title">Политика конфиденциальности</h1>
     <div class="space-y-6 text-[16px] leading-8 text-[#4b5563]">
-      <p>Silk Road Tech уважает конфиденциальность посетителей сайта и обрабатывает только те данные, которые пользователь добровольно отправляет через форму обратной связи или каналы связи компании.</p>
-      <p>Мы можем получать имя, фамилию, номер телефона, Telegram username, адрес электронной почты и содержание сообщения. Эти данные используются только для связи по вашему запросу, оценки проекта и дальнейшей деловой коммуникации.</p>
-      <p>Мы не продаем и не передаем персональные данные третьим лицам, кроме сервисов, которые используются для обработки заявок и операционного сопровождения коммуникации, например Formspree или корпоративной почты.</p>
-      <p>Если вы хотите уточнить, изменить или удалить ранее отправленные данные, напишите на <a class="underline" href="mailto:sayat@silkroadtech.kz">sayat@silkroadtech.kz</a>.</p>
-      <p>Продолжая использовать сайт и отправляя форму, вы соглашаетесь с этой политикой конфиденциальности.</p>
-      <p class="text-sm text-[#6b7280]">Последнее обновление: 10 апреля 2026</p>
+      <p data-i18n="privacy.p1">Silk Road Tech уважает конфиденциальность посетителей сайта и обрабатывает только те данные, которые пользователь добровольно предоставляет через контактную форму или каналы связи компании.</p>
+      <p data-i18n="privacy.p2">Мы можем собирать ваше имя, фамилию, номер телефона, имя пользователя Telegram, адрес электронной почты и с��держание сообщения. Эти данные используются исключительно для ответа на ваш запрос, оценки проекта и дальнейшей деловой коммуникации.</p>
+      <p data-i18n="privacy.p3">Мы не продаём и не передаём персональные данные третьим лицам, за исключением сервисов, используемых для обработки запросов и обеспечения связи, — например, Formspree или корпоративная почта.</p>
+      <p><span data-i18n="privacy.p4">Если вы хотите просмотреть, обновить или удалить ранее отправленные дан��ые, напишите на</span> <a class="underline" href="mailto:sayat@silkroadtech.kz">sayat@silkroadtech.kz</a>.</p>
+      <p data-i18n="privacy.p5">Продолжая использовать сайт и отправляя форму, вы соглашаетесь с настоящей политикой конфиденциальности.</p>
+      <p class="text-sm text-[#6b7280]" data-i18n="privacy.updated">Последнее обновление: 10 апреля 2026 г.</p>
     </div>
   </main>
+  <script src="assets/i18n.js"></script>
 </body>
 </html>

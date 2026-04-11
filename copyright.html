@@ -1,23 +1,25 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Авторские права — Silk Road Tech</title>
-<meta name="description" content="Информация об авторских правах Silk Road Tech." />
+<title>Copyright — Silk Road Tech</title>
+<meta name="description" content="Copyright information for Silk Road Tech." />
 <link rel="canonical" href="https://silk-road-tech-placeholder.vercel.app/copyright.html" />
 <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-[#fafafa] text-[#010205] font-sans">
+  <button id="langToggle" style="position:fixed;top:1.25rem;right:1.5rem;z-index:100;width:52px;height:52px;border-radius:9999px;background:#010205;color:#fff;border:none;font-weight:700;font-size:15px;cursor:pointer;transition:opacity 0.2s;display:flex;align-items:center;justify-content:center;">En</button>
   <main class="max-w-3xl mx-auto px-6 py-16">
-    <a href="index.html" class="text-sm underline">Вернуться на главную</a>
-    <h1 class="text-4xl font-bold mt-6 mb-8">Авторские права</h1>
+    <a href="index.html" class="text-sm underline" data-i18n="copyright.back">На главную</a>
+    <h1 class="text-4xl font-bold mt-6 mb-8" data-i18n="copyright.title">Авторские права</h1>
     <div class="space-y-6 text-[16px] leading-8 text-[#4b5563]">
-      <p>Все материалы на этом сайте, включая тексты, визуальные элементы, графику, структуру страниц и брендовые обозначения Silk Road Tech, защищены применимым законодательством об авторском праве и правах на интеллектуальную собственность.</p>
-      <p>Любое копирование, публикация, переработка или коммерческое использование материалов сайта без письменного разрешения Silk Road Tech запрещены, если иное прямо не указано отдельно.</p>
-      <p>Если вы считаете, что на сайте размещен материал, нарушающий ваши права, напишите на <a class="underline" href="mailto:sayat@silkroadtech.kz">sayat@silkroadtech.kz</a> с описанием претензии.</p>
-      <p class="text-sm text-[#6b7280]">Последнее обновление: 10 апреля 2026</p>
+      <p data-i18n="copyright.p1">Все материалы на этом са��те, включая тексты, визуальные элементы, графику, макеты страниц и торговые марки Silk Road Tech, защищены применимым законодательством об авторском праве и интеллектуальной собственности.</p>
+      <p data-i18n="copyright.p2">Любое копирование, публикация, адаптация или коммерческое использование материалов сайта без письменного разрешения Silk Road Tech запрещены, если явно не указано иное.</p>
+      <p><span data-i18n="copyright.p3">Если вы считаете, что материал на этом сайте нарушает ваши права, напишите на</span> <a class="underline" href="mailto:sayat@silkroadtech.kz">sayat@silkroadtech.kz</a> <span data-i18n="copyright.p3b">с описанием вашей претензии.</span></p>
+      <p class="text-sm text-[#6b7280]" data-i18n="copyright.updated">Последнее обновление: 10 апреля 2026 г.</p>
     </div>
   </main>
+  <script src="assets/i18n.js"></script>
 </body>
 </html>

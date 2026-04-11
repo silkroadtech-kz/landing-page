@@ -1,12 +1,12 @@
 <!doctype html>
-<html lang="ru">
+<html lang="en">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Кейсы — Silk Road Tech</title>
+		<title>Case Studies — Silk Road Tech</title>
 		<meta
 			name="description"
-			content="Кейсы Silk Road Tech: внедрение кастомных ERP-решений и интеллектуальных систем управления для локальных и международных компаний."
+			content="Silk Road Tech case studies: custom ERP implementations and intelligent management systems for local and international companies."
 		/>
 		<meta name="robots" content="index,follow" />
 		<link
@@ -259,99 +259,57 @@
 	<body class="bg-[#fafafa] text-[#010205]">
 		<!-- ============ NAVBAR ============ -->
 		<header
-			class="sticky top-0 z-50 bg-[rgba(239,239,239,0.95)] backdrop-blur-md"
+			class="sticky top-0 z-50 bg-[rgba(239,239,239,0.47)] backdrop-blur-[20px] backdrop-saturate-150 border-b border-white/20"
 		>
 			<nav
 				class="max-w-[1440px] mx-auto flex items-center justify-between px-20 py-5"
 			>
 				<div class="flex items-center gap-[74px]">
 					<a href="index.html" aria-label="Silk Road Tech home">
-						<img
-							src="assets/logo.svg"
-							alt="Silk Road Tech"
-							class="h-6 w-auto"
-						/>
+						<img src="assets/logo.svg" alt="Silk Road Tech" class="h-6 w-auto logo-img" />
 					</a>
-					<ul
-						class="hidden lg:flex items-center gap-10 text-[17px] font-semibold text-[#020407]"
-					>
-						<li>
-							<a href="index.html#services" class="hover:text-[#9ac763]"
-								>Услуги</a
-							>
+					<ul class="hidden lg:flex items-center gap-10 text-[17.1px] font-semibold text-[#020407]">
+						<li><a href="index.html#services" class="hover:text-[#9ac763]" data-i18n="nav.services">Услуги</a></li>
+						<li><a href="index.html#process" class="hover:text-[#9ac763]" data-i18n="nav.process">Процесс</a></li>
+						<li class="flex items-center gap-2">
+							<a href="cases.html" class="text-[#9ac763]" data-i18n="nav.cases">Кейсы</a>
+							<svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#9ac763" stroke-width="2" stroke-linecap="round"/></svg>
 						</li>
-						<li>
-							<a href="index.html#process" class="hover:text-[#9ac763]"
-								>Процессы</a
-							>
+						<li class="flex items-center gap-2">
+							<a href="about.html" class="hover:text-[#9ac763]" data-i18n="nav.about">О нас</a>
+							<svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
 						</li>
-						<li>
-							<a href="index.html#faq" class="hover:text-[#9ac763]">FAQ</a>
-						</li>
-						<li>
-							<a href="index.html#contacts" class="hover:text-[#9ac763]"
-								>Контакты</a
-							>
-						</li>
-						<li class="flex items-center gap-1">
-							<a href="about.html" class="hover:text-[#9ac763]">О нас</a>
-							<svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-								<path
-									d="M6 9l6 6 6-6"
-									stroke="currentColor"
-									stroke-width="2"
-									stroke-linecap="round"
-								/>
-							</svg>
-						</li>
-						<li class="flex items-center gap-1">
-							<a href="cases.html" class="text-[#9ac763]">Кейсы</a>
-							<svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-								<path
-									d="M6 9l6 6 6-6"
-									stroke="#9ac763"
-									stroke-width="2"
-									stroke-linecap="round"
-								/>
-							</svg>
-						</li>
+						<li><a href="index.html#partners" class="hover:text-[#9ac763]" data-i18n="nav.partners">Партнёры</a></li>
+						<li><a href="index.html#contacts" class="hover:text-[#9ac763]" data-i18n="nav.contacts">Контакты</a></li>
+						<li><a href="index.html#faq" class="hover:text-[#9ac763]" data-i18n="nav.faq">FAQ</a></li>
 					</ul>
 				</div>
 				<div class="flex items-center gap-2">
 					<button
 						class="font-manrope font-bold bg-[#99cf63] border border-[#99cf63] rounded-full px-4 py-3 w-[174px] text-[16px] tracking-tight hover:brightness-95 transition"
 						onclick="location.href='index.html#contacts'"
+						data-i18n="nav.cta"
 					>
 						Обсудить проект
 					</button>
-					<button
-						class="lg:hidden w-10 h-10 flex flex-col items-center justify-center gap-1.5"
-						id="hamburger"
-					>
+					<button id="langToggle" class="hidden lg:flex items-center justify-center w-[52px] h-[52px] rounded-full bg-[#010205] text-white text-[15px] font-semibold hover:bg-[#333] transition flex-shrink-0">En</button>
+					<button class="lg:hidden w-10 h-10 flex flex-col items-center justify-center gap-1.5" id="hamburger">
 						<span class="block w-6 h-0.5 bg-[#010205] transition-all"></span>
 						<span class="block w-6 h-0.5 bg-[#010205] transition-all"></span>
 						<span class="block w-6 h-0.5 bg-[#010205] transition-all"></span>
 					</button>
 				</div>
 			</nav>
-			<div
-				class="mobile-menu fixed inset-0 top-0 bg-white z-[100] p-8 pt-20 lg:hidden"
-				id="mobileMenu"
-			>
-				<button class="absolute top-6 right-6 text-3xl" id="closeMenu">
-					&times;
-				</button>
+			<div class="mobile-menu fixed inset-0 top-0 bg-white z-[100] p-8 pt-20 lg:hidden" id="mobileMenu">
+				<button class="absolute top-6 right-6 text-3xl" id="closeMenu">&times;</button>
 				<ul class="flex flex-col gap-6 text-[20px] font-semibold">
-					<li><a href="index.html#services" class="mobile-link">Услуги</a></li>
-					<li><a href="index.html#process" class="mobile-link">Процессы</a></li>
-					<li><a href="index.html#faq" class="mobile-link">FAQ</a></li>
-					<li>
-						<a href="index.html#contacts" class="mobile-link">Контакты</a>
-					</li>
-					<li><a href="about.html" class="mobile-link">О нас</a></li>
-					<li>
-						<a href="cases.html" class="mobile-link text-[#9ac763]">Кейсы</a>
-					</li>
+					<li><a href="index.html#services" class="mobile-link" data-i18n="nav.services">Услуги</a></li>
+					<li><a href="index.html#process" class="mobile-link" data-i18n="nav.process">Процесс</a></li>
+					<li><a href="cases.html" class="text-[#9ac763]" data-i18n="nav.cases">Кейсы</a></li>
+					<li><a href="about.html" class="mobile-link" data-i18n="nav.about">О нас</a></li>
+					<li><a href="index.html#partners" class="mobile-link" data-i18n="nav.partners">Партнёры</a></li>
+					<li><a href="index.html#contacts" class="mobile-link" data-i18n="nav.contacts">Контакты</a></li>
+					<li><a href="index.html#faq" class="mobile-link" data-i18n="nav.faq">FAQ</a></li>
 				</ul>
 			</div>
 		</header>
@@ -365,15 +323,15 @@
 				<div class="cases-header flex items-center gap-[198px] mb-[80px]">
 					<h2
 						class="font-inter font-bold text-[48px] leading-[1.2] tracking-[-0.96px] text-[#212121] shrink-0"
+						data-i18n="cases.hero.title"
 					>
 						Кейсы
 					</h2>
 					<p
 						class="font-inter text-[24px] leading-[1.4] tracking-[-0.72px] text-[#212121] text-justify max-w-[938px]"
+						data-i18n="cases.hero.desc"
 					>
-						Мы помогли локальным и международным компаниям решить их самые
-						сложные технологические вызовы через внедрение кастомных ERP-решений
-						и интеллектуальных систем управления.
+						Мы помогли локальным и международным комп��ниям решить их сложнейшие технологические задачи — через кастомные ERP-внедрения и интеллектуальные системы управления.
 					</p>
 				</div>
 
@@ -406,13 +364,13 @@
 										<p
 											class="font-space font-medium text-[17px] leading-normal text-black max-w-[401px]"
 										>
-											LinkedIn для студентов — платформа карьерных возможностей
+											LinkedIn for students — a career opportunities platform
 										</p>
 										<p
 											class="font-space text-[13px] leading-normal text-black max-w-[401px]"
 										>
-											Система управления внешним кадровым резервом.
-											Масштабируемая платформа для трекинга и мэтчинга ресурсов.
+											External talent pool management system.
+											Scalable platform for resource tracking and matching.
 										</p>
 									</div>
 								</div>
@@ -436,13 +394,13 @@
 							<div class="flex items-center gap-[7px]">
 								<span class="bullet"></span>
 								<span class="font-jost text-[16px] leading-[25.6px] text-black"
-									>Поиск карьерных возможностей</span
+									>Career opportunities search</span
 								>
 							</div>
 							<div class="flex items-center gap-[7px]">
 								<span class="bullet"></span>
 								<span class="font-jost text-[16px] leading-[25.6px] text-black"
-									>Мэтчинг студентов и работодателей</span
+									>Student-employer matching</span
 								>
 							</div>
 						</div>
@@ -470,14 +428,14 @@
 										<p
 											class="font-space font-medium text-[17px] leading-normal text-black max-w-[401px]"
 										>
-											ИИзация отдела продаж строительной компании
+											AI-powered sales automation for a construction company
 										</p>
 										<p
 											class="font-space text-[13px] leading-normal text-black max-w-[437px]"
 										>
-											Внедрили ботов на все уровни воронки, улучшили конверсию в
-											приход на 30% и сократили траты на колл-центр. Проверка и
-											отчетность работы операторов с помощью ИИ.
+											Deployed bots across all funnel stages, improved
+											attendance conversion by 30%, and reduced call center costs.
+											AI-based operator performance monitoring and reporting.
 										</p>
 									</div>
 								</div>
@@ -497,17 +455,17 @@
 							<div class="flex items-center gap-[7px]">
 								<span class="bullet"></span>
 								<span class="font-jost text-[16px] leading-[25.6px] text-black"
-									>Рост конверсии в приход на 30%</span
+									>30% improvement in attendance conversion</span
 								>
 							</div>
 							<div class="flex items-center gap-[7px] flex-wrap">
 								<span class="bullet"></span>
 								<span class="font-jost text-[16px] leading-[25.6px] text-black"
-									>Совместно с партнером AIVA</span
+									>In partnership with AIVA</span
 								>
 								<span class="bullet ml-3"></span>
 								<span class="font-jost text-[16px] leading-[25.6px] text-black"
-									>Сокращение ФОТ колл-центра</span
+									>Reduced call center headcount costs</span
 								>
 							</div>
 						</div>
@@ -538,13 +496,13 @@
 										<p
 											class="font-space font-medium text-[17px] leading-normal text-black max-w-[401px]"
 										>
-											ERP-модуль интеллектуального управления кадровым капиталом
+											ERP module for intelligent human capital management
 										</p>
 										<p
 											class="font-space text-[13px] leading-normal text-black max-w-[401px]"
 										>
-											ИИ эксперт для нефтегазового сектора, который внедряется в
-											каждый отдел компании.
+											AI expert system for the oil and gas sector,
+											deployed across every department of the company.
 										</p>
 									</div>
 								</div>
@@ -564,13 +522,13 @@
 							<div class="flex items-center gap-[7px]">
 								<span class="bullet"></span>
 								<span class="font-jost text-[16px] leading-[25.6px] text-black"
-									>Автоматизация Onboarding новых сотрудников</span
+									>Automated onboarding for new employees</span
 								>
 							</div>
 							<div class="flex items-center gap-[7px]">
 								<span class="bullet"></span>
 								<span class="font-jost text-[16px] leading-[25.6px] text-black"
-									>BI-аналитика отчетности для C-level</span
+									>BI analytics and reporting for C-level</span
 								>
 							</div>
 						</div>
@@ -591,20 +549,20 @@
 										</div>
 										<span
 											class="font-jost font-bold text-[16px] text-black underline"
-											>СЭД SmartLab</span
+											>DMS SmartLab</span
 										>
 									</div>
 									<div class="flex flex-col gap-[11px] justify-center">
 										<p
 											class="font-space font-medium text-[17px] leading-normal text-black max-w-[401px]"
 										>
-											Централизованное ядро документооборота
+											Centralized document management core
 										</p>
 										<p
 											class="font-space text-[13px] leading-normal text-black max-w-[401px]"
 										>
-											Система электронного документооборота подстроенная под
-											бизнес-процессы больших компаний.
+											Electronic document management system tailored to
+											the business processes of large enterprises.
 										</p>
 									</div>
 								</div>
@@ -624,13 +582,13 @@
 							<div class="flex items-center gap-[7px]">
 								<span class="bullet"></span>
 								<span class="font-jost text-[16px] leading-[25.6px] text-black"
-									>Интеграция Enterprise-стандартов</span
+									>Enterprise-standard integration</span
 								>
 							</div>
 							<div class="flex items-center gap-[7px]">
 								<span class="bullet"></span>
 								<span class="font-jost text-[16px] leading-[25.6px] text-black"
-									>Бизнес-процессы крупных холдингов</span
+									>Business processes for large holding companies</span
 								>
 							</div>
 						</div>
@@ -662,14 +620,14 @@
 										<p
 											class="font-space font-medium text-[17px] leading-normal text-black max-w-[401px]"
 										>
-											AI-платформа генерации контента для соцсетей
+											AI content generation platform for social media
 										</p>
 										<p
 											class="font-space text-[13px] leading-normal text-black max-w-[401px]"
 										>
-											Генерация постов для Telegram, Instagram, LinkedIn и
-											TikTok из текста или голоса. Обучение стилю бренда,
-											авто-публикация и аналитика конкурентов.
+											Generates posts for Telegram, Instagram, LinkedIn, and
+											TikTok from text or voice. Brand style training,
+											auto-publishing, and competitor analytics.
 										</p>
 									</div>
 								</div>
@@ -693,13 +651,13 @@
 							<div class="flex items-center gap-[7px]">
 								<span class="bullet"></span>
 								<span class="font-jost text-[16px] leading-[25.6px] text-black"
-									>AI-генерация постов под каждую платформу</span
+									>AI post generation tailored to each platform</span
 								>
 							</div>
 							<div class="flex items-center gap-[7px]">
 								<span class="bullet"></span>
 								<span class="font-jost text-[16px] leading-[25.6px] text-black"
-									>Авто-публикация и MCP-интеграция</span
+									>Auto-publishing and MCP integration</span
 								>
 							</div>
 						</div>
@@ -728,15 +686,14 @@
 										<p
 											class="font-space font-medium text-[17px] leading-normal text-black max-w-[401px]"
 										>
-											Корпоративный сайт промышленного поставщика гидравлических
-											компонентов
+											Corporate website for an industrial hydraulic components supplier
 										</p>
 										<p
 											class="font-space text-[13px] leading-normal text-black max-w-[401px]"
 										>
-											Разработка веб-платформы для ТОО «KZ-PROVIDER» —
-											поставщика гидравлических и пневматических компонентов для
-											горнодобывающего и промышленного секторов Казахстана.
+											Web platform development for KZ-PROVIDER LLC —
+											a supplier of hydraulic and pneumatic components for
+											the mining and industrial sectors of Kazakhstan.
 										</p>
 									</div>
 								</div>
@@ -760,7 +717,7 @@
 							<div class="flex items-center gap-[7px]">
 								<span class="bullet"></span>
 								<span class="font-jost text-[16px] leading-[25.6px] text-black"
-									>Каталог продукции с международными стандартами</span
+									>Product catalog meeting international standards</span
 								>
 							</div>
 						</div>
@@ -780,15 +737,11 @@
 						<img
 							src="assets/logo.svg"
 							alt="Silk Road Tech"
-							class="h-8 w-auto"
+							class="h-8 w-auto logo-img"
 						/>
 					</a>
-					<p class="font-roboto text-[14px] leading-6 text-[#9b9b9c] mb-8">
-						Мы предлагаем комплексный пакет услуг по IT-аутсорсингу, который
-						охватывает все аспекты вашего цифрового развития. От проектирования
-						архитектуры и разработки ПО до облачных решений и информационной
-						безопасности — наша команда обладает экспертизой и ресурсами для
-						реализации задач любой сложности.
+					<p class="font-roboto text-[14px] leading-6 text-[#9b9b9c] mb-8" data-i18n="footer.desc">
+						Мы предлагаем комплексный IT-аутсорсинг, охватывающий все аспекты вашей цифровой разработки. От проектирования архитектуры и разработки ПО до облачных решений и кибербезопасности — наша команда обладает экспертизой для реализации проектов любой сложности.
 					</p>
 					<div class="flex items-center gap-8">
 						<div class="flex gap-3">
@@ -848,6 +801,7 @@
 						<button
 							class="bg-[#010205] text-white font-jakarta font-bold text-[16px] rounded-full px-8 py-4 inline-flex items-center gap-3 hover:scale-[1.02] transition"
 							onclick="location.href='index.html#contacts'"
+							data-i18n="footer.discuss"
 						>
 							Обсудить проект
 							<svg width="20" height="20" viewBox="0 0 24 24" fill="none">
@@ -867,33 +821,36 @@
 					<div>
 						<h4
 							class="font-roboto font-semibold text-[18px] text-[#192031] mb-12"
+							data-i18n="footer.nav.title"
 						>
 							Навигация
 						</h4>
 						<ul class="font-roboto text-[14px] text-[#9b9b9c] space-y-6">
-							<li><a href="index.html#services">Услуги</a></li>
-							<li><a href="index.html#process">Процессы</a></li>
-							<li><a href="about.html">О нас</a></li>
-							<li><a href="cases.html">Кейсы</a></li>
-							<li><a href="index.html#contacts">Контакты</a></li>
-							<li class="font-bold"><a href="index.html#faq">FAQ</a></li>
+							<li><a href="index.html#services" data-i18n="nav.services">Услуги</a></li>
+							<li><a href="index.html#process" data-i18n="nav.process">Процесс</a></li>
+							<li><a href="about.html" data-i18n="nav.about">О нас</a></li>
+							<li><a href="cases.html" data-i18n="nav.cases">Кейсы</a></li>
+							<li><a href="index.html#contacts" data-i18n="nav.contacts">Контакты</a></li>
+							<li class="font-bold"><a href="index.html#faq" data-i18n="nav.faq">FAQ</a></li>
 						</ul>
 					</div>
 					<div>
 						<h4
 							class="font-roboto font-semibold text-[18px] text-[#192031] mb-12"
+							data-i18n="footer.lic.title"
 						>
-							Лицензия
+							Документы
 						</h4>
 						<ul class="font-roboto text-[14px] text-[#9b9b9c] space-y-6">
-							<li><a href="privacy.html">Политика конфиденциальности</a></li>
-							<li><a href="copyright.html">Авторские права</a></li>
-							<li><a href="mailto:sayat@silkroadtech.kz">Почта</a></li>
+							<li><a href="privacy.html" data-i18n="footer.privacy">Политика конфиденциальности</a></li>
+							<li><a href="copyright.html" data-i18n="footer.copyright">Авторские права</a></li>
+							<li><a href="mailto:sayat@silkroadtech.kz" data-i18n="footer.email.label">Email</a></li>
 						</ul>
 					</div>
 					<div>
 						<h4
 							class="font-roboto font-semibold text-[18px] text-[#192031] mb-12"
+							data-i18n="footer.contact.title"
 						>
 							Контакты
 						</h4>
@@ -928,7 +885,7 @@
 										d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"
 									/>
 								</svg>
-								Астана, пр. Мангилик Ел 36
+								Astana, Mangilik El Ave 36
 							</li>
 						</ul>
 					</div>
@@ -937,8 +894,8 @@
 			<div
 				class="footer-meta relative max-w-[1440px] mx-auto px-20 mt-12 pt-8 border-t border-black/10 flex justify-between text-[12px] text-[#9b9b9c]"
 			>
-				<span>&copy; 2026 Silk Road Tech. Все права защищены.</span>
-				<span>Made with care in Astana</span>
+				<span data-i18n="footer.copy">© 2026 Silk Road Tech. Все права защищены.</span>
+				<span data-i18n="footer.made">Сделано с заботой в Астане</span>
 			</div>
 		</footer>
 
@@ -981,5 +938,6 @@
 				}
 			});
 		</script>
+		<script src="assets/i18n.js"></script>
 	</body>
 </html>

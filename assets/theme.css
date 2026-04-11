@@ -1,0 +1,164 @@
+/* ============================================================
+   DARK THEME  –  applied when <html class="dark"> is set
+   ============================================================ */
+
+html.dark {
+  color-scheme: dark;
+}
+
+/* ── Body & generic backgrounds ── */
+html.dark body {
+  background-color: #111111 !important;
+  color: #efefef !important;
+}
+
+html.dark .bg-white,
+html.dark .bg-\[\#fafafa\],
+html.dark .bg-\[\#efefef\],
+html.dark section.bg-white {
+  background-color: #111111 !important;
+}
+
+html.dark .noise {
+  opacity: 0.04 !important;
+}
+
+/* ── Navbar ── */
+html.dark header {
+  background: rgba(10, 10, 10, 0.88) !important;
+  border-bottom-color: rgba(255,255,255,0.07) !important;
+}
+
+html.dark header nav a,
+html.dark header ul li a {
+  color: #d4d4d4 !important;
+}
+
+html.dark header ul li a:hover {
+  color: #9ac763 !important;
+}
+
+/* ── Headings & body text ── */
+html.dark .text-\[\#010205\],
+html.dark .text-\[\#020407\],
+html.dark .text-\[\#192031\],
+html.dark .text-\[\#212121\] {
+  color: #f0f0f0 !important;
+}
+
+html.dark .text-\[\#9b9b9c\],
+html.dark .text-\[\#7a7a7a\],
+html.dark .text-black {
+  color: #888888 !important;
+}
+
+html.dark .text-justify {
+  color: #c0c0c0 !important;
+}
+
+/* ── Cards & surfaces ── */
+html.dark .bg-\[\#efefef\],
+html.dark .bg-\[\#f5f5f5\] {
+  background-color: #1c1c1c !important;
+}
+
+/* dark cards stay as-is or slightly lighter */
+html.dark .bg-\[\#212121\] {
+  background-color: #1a1a1a !important;
+}
+
+html.dark .bg-\[\#0a1424\] {
+  background-color: #080e18 !important;
+}
+
+/* ── Borders ── */
+html.dark .border-black\/10,
+html.dark .border-\[\#e5e5e5\] {
+  border-color: rgba(255,255,255,0.08) !important;
+}
+
+/* ── Hero section ── */
+html.dark .hero-layout,
+html.dark .about-shell {
+  background-color: #111111 !important;
+}
+
+/* ── About hero image overlay ── */
+html.dark .about-shell .absolute.inset-0 {
+  background-color: rgba(0,0,0,0.45) !important;
+}
+
+/* ── Footer ── */
+html.dark footer {
+  background-color: #0d0d0d !important;
+}
+
+html.dark footer .text-\[\#9b9b9c\] {
+  color: #666666 !important;
+}
+
+html.dark footer .border-black\/10 {
+  border-color: rgba(255,255,255,0.07) !important;
+}
+
+html.dark footer h4.text-\[\#192031\] {
+  color: #e0e0e0 !important;
+}
+
+/* ── Mobile menu ── */
+html.dark .mobile-menu {
+  background-color: #111111 !important;
+  color: #f0f0f0 !important;
+}
+
+html.dark .mobile-menu a {
+  color: #d4d4d4 !important;
+}
+
+/* ── Cases page ── */
+html.dark .case-card,
+html.dark .bg-\[\#f8f8f8\] {
+  background-color: #1a1a1a !important;
+}
+
+html.dark .text-\[\#4b5563\],
+html.dark .text-gray-500,
+html.dark .text-gray-600,
+html.dark .text-gray-700 {
+  color: #888 !important;
+}
+
+/* ── FAQ / accordion ── */
+html.dark .bg-\[\#f5f5f5\],
+html.dark .faq-item {
+  background-color: #1c1c1c !important;
+}
+
+/* ── Scrolled header ── */
+html.dark header.scrolled,
+html.dark .scrolled header {
+  background: rgba(10,10,10,0.95) !important;
+}
+
+/* ── How-we-work cards ── */
+html.dark .bg-\[\#1c1c1c\] {
+  background-color: #181818 !important;
+}
+
+/* ── Partners section ── */
+html.dark .partner-logo {
+  filter: brightness(0.7) !important;
+}
+
+/* ── Privacy / copyright pages ── */
+html.dark .prose h2,
+html.dark .prose h3,
+html.dark .prose p,
+html.dark .prose li {
+  color: #d0d0d0 !important;
+}
+
+/* ── Logo: invert dark logo to white in dark mode ── */
+html.dark .logo-img {
+  filter: brightness(0) invert(1) !important;
+}

@@ -1,12 +1,12 @@
 <!doctype html>
-<html lang="ru">
+<html lang="en">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Silk Road Tech — Разработка ПО, аналитика и AI-интеграция</title>
+		<title>Silk Road Tech — Software Development, Analytics &amp; AI Integration</title>
 		<meta
 			name="description"
-			content="Silk Road Tech разрабатывает ПО, внедряет AI, строит аналитику и автоматизирует бизнес-процессы для команд, которым нужен измеримый результат."
+			content="Silk Road Tech builds software, integrates AI, delivers analytics, and automates business processes for teams that need measurable results."
 		/>
 		<meta name="robots" content="index,follow" />
 		<link
@@ -14,14 +14,14 @@
 			href="https://silk-road-tech-placeholder.vercel.app/"
 		/>
 		<meta property="og:type" content="website" />
-		<meta property="og:locale" content="ru_RU" />
+		<meta property="og:locale" content="en_US" />
 		<meta
 			property="og:title"
-			content="Silk Road Tech — Разработка ПО, аналитика и AI-интеграция"
+			content="Silk Road Tech — Software Development, Analytics &amp; AI Integration"
 		/>
 		<meta
 			property="og:description"
-			content="Разработка ПО, AI-интеграция, аналитика и автоматизация бизнес-процессов под задачи вашего бизнеса."
+			content="Software development, AI integration, analytics, and business process automation tailored to your business needs."
 		/>
 		<meta
 			property="og:url"
@@ -34,11 +34,11 @@
 		<meta name="twitter:card" content="summary_large_image" />
 		<meta
 			name="twitter:title"
-			content="Silk Road Tech — Разработка ПО, аналитика и AI-интеграция"
+			content="Silk Road Tech — Software Development, Analytics &amp; AI Integration"
 		/>
 		<meta
 			name="twitter:description"
-			content="Разработка ПО, AI-интеграция, аналитика и автоматизация бизнес-процессов под задачи вашего бизнеса."
+			content="Software development, AI integration, analytics, and business process automation tailored to your business needs."
 		/>
 		<meta
 			name="twitter:image"
@@ -69,7 +69,11 @@
 			body {
 				font-family: "Plus Jakarta Sans", system-ui, sans-serif;
 				color: #010205;
-				background: #fff;
+				background-color: #efefef;
+				background-image: url("assets/bg_noise.png");
+				background-repeat: repeat;
+				background-size: 1440px auto;
+				background-attachment: fixed;
 			}
 			.font-jakarta {
 				font-family: "Plus Jakarta Sans", sans-serif;
@@ -260,6 +264,12 @@
 				transition-delay: 0.5s;
 			}
 
+			/* Hero title: smaller font when English so it stays 3 lines */
+			html[lang="en"] .hero-title {
+				font-size: 62px !important;
+				letter-spacing: -1.86px !important;
+			}
+
 			/* Navbar shrink */
 			header {
 				transition:
@@ -438,10 +448,7 @@
 					display: none;
 				}
 				.hero-logos {
-					flex-wrap: wrap;
-					height: auto !important;
-					gap: 1rem !important;
-					padding-top: 1rem;
+					display: none !important;
 				}
 				.process-cards {
 					flex-direction: column;
@@ -654,7 +661,7 @@
 	<body class="bg-white text-[#010205]">
 		<!-- ============ NAVBAR ============ -->
 		<header
-			class="sticky top-0 z-50 bg-[rgba(239,239,239,0.85)] backdrop-blur-md"
+			class="sticky top-0 z-50 bg-[rgba(239,239,239,0.47)] backdrop-blur-[20px] backdrop-saturate-150 border-b border-white/20"
 		>
 			<nav
 				class="max-w-[1440px] mx-auto flex items-center justify-between px-20 py-5"
@@ -664,51 +671,36 @@
 						<img
 							src="assets/logo.svg"
 							alt="Silk Road Tech"
-							class="h-6 w-auto"
+							class="h-6 w-auto logo-img"
 						/>
 					</a>
 					<ul
-						class="hidden lg:flex items-center gap-10 text-[17px] font-semibold text-[#020407]"
+						class="hidden lg:flex items-center gap-10 text-[17.1px] font-semibold text-[#020407]"
 					>
-						<li><a href="#services" class="hover:text-[#9ac763]">Услуги</a></li>
-						<li>
-							<a href="#process" class="hover:text-[#9ac763]">Процессы</a>
+						<li><a href="#services" class="hover:text-[#9ac763]" data-i18n="nav.services">Услуги</a></li>
+						<li><a href="#process" class="hover:text-[#9ac763]" data-i18n="nav.process">Процесс</a></li>
+						<li class="flex items-center gap-2">
+							<a href="cases.html" class="hover:text-[#9ac763]" data-i18n="nav.cases">Кейсы</a>
+							<svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
 						</li>
-						<li><a href="#faq" class="hover:text-[#9ac763]">FAQ</a></li>
-						<li>
-							<a href="#contacts" class="hover:text-[#9ac763]">Контакты</a>
+						<li class="flex items-center gap-2">
+							<a href="about.html" class="hover:text-[#9ac763]" data-i18n="nav.about">О нас</a>
+							<svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
 						</li>
-						<li class="flex items-center gap-1">
-							<a href="about.html" class="hover:text-[#9ac763]">О нас</a
-							><svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-								<path
-									d="M6 9l6 6 6-6"
-									stroke="currentColor"
-									stroke-width="2"
-									stroke-linecap="round"
-								/>
-							</svg>
-						</li>
-						<li class="flex items-center gap-1">
-							<a href="cases.html" class="hover:text-[#9ac763]">Кейсы</a
-							><svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-								<path
-									d="M6 9l6 6 6-6"
-									stroke="currentColor"
-									stroke-width="2"
-									stroke-linecap="round"
-								/>
-							</svg>
-						</li>
+						<li><a href="#partners" class="hover:text-[#9ac763]" data-i18n="nav.partners">Партнёры</a></li>
+						<li><a href="#contacts" class="hover:text-[#9ac763]" data-i18n="nav.contacts">Контакты</a></li>
+						<li><a href="#faq" class="hover:text-[#9ac763]" data-i18n="nav.faq">FAQ</a></li>
 					</ul>
 				</div>
 				<div class="flex items-center gap-2">
 					<button
 						class="font-manrope font-bold bg-[#99cf63] border border-[#99cf63] rounded-full px-4 py-3 w-[174px] text-[16px] tracking-tight hover:brightness-95 transition"
 						onclick="document.getElementById('contacts').scrollIntoView({behavior:'smooth'})"
+						data-i18n="nav.cta"
 					>
 						Обсудить проект
 					</button>
+					<button id="langToggle" class="hidden lg:flex items-center justify-center w-[52px] h-[52px] rounded-full bg-[#010205] text-white text-[15px] font-semibold hover:bg-[#333] transition flex-shrink-0">En</button>
 					<!-- Mobile hamburger -->
 					<button
 						class="lg:hidden w-10 h-10 flex flex-col items-center justify-center gap-1.5"
@@ -729,18 +721,19 @@
 					&times;
 				</button>
 				<ul class="flex flex-col gap-6 text-[20px] font-semibold">
-					<li><a href="#services" class="mobile-link">Услуги</a></li>
-					<li><a href="#process" class="mobile-link">Процессы</a></li>
-					<li><a href="#faq" class="mobile-link">FAQ</a></li>
-					<li><a href="#contacts" class="mobile-link">Контакты</a></li>
-					<li><a href="about.html">О нас</a></li>
-					<li><a href="cases.html">Кейсы</a></li>
+					<li><a href="#services" class="mobile-link" data-i18n="nav.services">Услуги</a></li>
+					<li><a href="#process" class="mobile-link" data-i18n="nav.process">Процесс</a></li>
+					<li><a href="cases.html" data-i18n="nav.cases">Кейсы</a></li>
+					<li><a href="about.html" data-i18n="nav.about">О нас</a></li>
+					<li><a href="#partners" class="mobile-link" data-i18n="nav.partners">Партнёры</a></li>
+					<li><a href="#contacts" class="mobile-link" data-i18n="nav.contacts">Контакты</a></li>
+					<li><a href="#faq" class="mobile-link" data-i18n="nav.faq">FAQ</a></li>
 				</ul>
 			</div>
 		</header>
 
 		<!-- ============ HOOK / HERO ============ -->
-		<section class="relative overflow-hidden bg-white">
+		<section class="relative overflow-hidden bg-transparent">
 			<div class="absolute inset-0 noise"></div>
 			<!-- Hero frame: matches figma 1440x687 with absolute children -->
 			<div class="hero-layout relative mx-auto w-full max-w-[1440px] h-[687px]">
@@ -750,21 +743,23 @@
 				>
 					<h1
 						class="hero-title font-jakarta font-semibold text-[72px] leading-[1.1] tracking-[-2.16px] w-[700px]"
+						data-i18n-html="hero.title"
 					>
 						<span class="text-gradient-green">Разработка ПО</span>,<br />
-						аналитика<br />
-						и AI-интеграция
+						Аналитика<br />
+						&amp; Интеграция ИИ
 					</h1>
 					<p
 						class="hero-desc font-jakarta font-medium text-[16px] leading-[1.8] text-[#878c91] w-[557px]"
+						data-i18n="hero.desc"
 					>
-						Строим цифровые продукты и автоматизируем бизнес-процессы — от
-						ERP-систем до AI-ассистентов для команды.
+						Мы создаём цифровые продукты и автоматизируем бизнес-процессы — от ERP-систем до ИИ-ассистентов для вашей команды.
 					</p>
 					<div class="hero-btns flex items-center gap-14">
 						<button
 							class="bg-[#010205] text-white font-jakarta font-bold text-[16px] tracking-tight rounded-[70px] px-8 py-4 inline-flex items-center gap-3 hover:scale-[1.02] transition"
 							onclick="document.getElementById('contacts').scrollIntoView({behavior:'smooth'})"
+							data-i18n="hero.cta"
 						>
 							Обсудить проект
 							<svg width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -777,6 +772,13 @@
 								/>
 							</svg>
 						</button>
+						<a
+							href="cases.html"
+							class="font-jakarta font-semibold text-[16px] text-[#010205] underline decoration-solid leading-[1.8]"
+							data-i18n="hero.cases"
+						>
+							Смотреть кейсы
+						</a>
 					</div>
 				</div>
 
@@ -788,66 +790,41 @@
 						<img
 							src="assets/hero_image.png"
 							class="w-full h-full object-cover"
-							alt="Команда Silk Road Tech за работой"
+							alt="Silk Road Tech team at work"
 						/>
 						<div class="absolute inset-0 bg-black/20 backdrop-blur-[2px]"></div>
 					</div>
 
-					<!--<div class="hero-badge absolute left-[878.5px] top-[166px] w-[108px] h-[108px] rounded-full bg-[#010205] shadow-[0_30px_50px_-6px_rgba(0,0,0,0.44)] flex items-center justify-center z-20 float pulse-ring">
-      <svg width="48" height="48" viewBox="0 0 24 24" fill="none">
-        <path d="M3 17l6-6 4 4 8-8M17 7h4v4" stroke="#9ac763" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-    </div>-->
+					<!-- Trending badge – centred on the gap between photo (ends 1084px) and stat card (starts 1108px) -->
+					<div class="hero-badge absolute left-[920px] top-[80px] w-[108px] h-[108px] rounded-full bg-[#010205] shadow-[0px_30px_50px_-6.8px_rgba(0,0,0,0.44)] z-20 float pulse-ring">
+					</div>
+					<div class="hero-badge absolute left-[951px] top-[111px] w-[48px] h-[48px] z-30 float">
+						<svg width="48" height="48" viewBox="0 0 24 24" fill="none">
+							<path d="M3 17l6-6 4 4 8-8M17 7h4v4" stroke="#9ac763" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+						</svg>
+					</div>
 
+					<!-- Stat card: frosted glass light card (figma: left:1108 top:112, bg-[#f0f0f0] backdrop-blur) -->
 					<div
-						class="hero-card hero-card-stat absolute left-[1108px] top-[112px] w-[259px] h-[281px] p-7 rounded-[20px] flex flex-col justify-between relative overflow-hidden bg-[linear-gradient(180deg,#03050a_0%,#020407_100%)] shadow-[0_30px_80px_rgba(1,2,5,0.18)]"
+						class="hero-card hero-card-stat absolute left-[1108px] top-[112px] w-[259px] h-[281px] rounded-[20px] backdrop-blur-[42px] bg-[#f0f0f0] overflow-hidden"
 						style="animation-delay: 0.5s"
 					>
-						<div
-							class="absolute inset-0 bg-[radial-gradient(circle_at_52%_44%,rgba(255,255,255,0.08),transparent_12%),radial-gradient(circle_at_12%_68%,rgba(255,255,255,0.08),transparent_10%)]"
-						></div>
-						<div
-							class="absolute -right-10 -top-24 w-[250px] h-[250px] rounded-full bg-[radial-gradient(circle_at_28%_78%,rgba(243,244,246,0.95)_0%,rgba(96,103,118,0.34)_14%,rgba(12,15,22,0.96)_48%,rgba(2,4,7,0)_70%)]"
-						></div>
-						<div
-							class="absolute -left-20 bottom-[-86px] w-[180px] h-[180px] rounded-full bg-[radial-gradient(circle_at_70%_28%,rgba(243,244,246,0.92)_0%,rgba(94,102,118,0.32)_12%,rgba(10,12,18,0.96)_44%,rgba(2,4,7,0)_68%)]"
-						></div>
-						<div
-							class="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.02),transparent_22%,rgba(255,255,255,0.015)_100%)]"
-						></div>
-						<div class="relative z-10">
+						<div class="absolute inset-0 flex flex-col gap-[30px] items-start left-[25px] top-[38px] p-[10px]">
 							<p
-								class="font-jakarta font-bold text-[84px] leading-none tracking-[-2.52px] text-white"
+								class="font-jakarta font-bold text-[84px] leading-[1.5] tracking-[-2.52px] text-[#010205] w-full"
 							>
-								<span data-counter="10">0</span
-								><span class="text-[#99cf63]">+</span>
+								1
 							</p>
 							<p
-								class="font-jakarta font-medium text-[16px] leading-[1.4] text-[#a3a7b0] mt-4"
+								class="font-jakarta font-medium text-[16px] leading-[1.5] text-[#5c5d5f]"
+								data-i18n="hero.stat.label"
 							>
-								Реализованных проектов
+								Год на рынке
 							</p>
-						</div>
-						<div class="relative z-10 flex items-center gap-2">
-							<div
-								class="w-[44px] h-[44px] rounded-full bg-gradient-to-br from-[#f1eeeb] to-[#cfc9c4] border-[2px] border-white/15 shadow-[0_10px_30px_rgba(0,0,0,0.2)]"
-							></div>
-							<div
-								class="w-[44px] h-[44px] rounded-full bg-gradient-to-br from-[#d8d8da] to-[#b8bcc3] border-[2px] border-white/15 -ml-3 shadow-[0_10px_30px_rgba(0,0,0,0.2)]"
-							></div>
-							<div
-								class="w-[44px] h-[44px] rounded-full bg-gradient-to-br from-[#d8d8da] to-[#b8bcc3] border-[2px] border-white/15 -ml-3 shadow-[0_10px_30px_rgba(0,0,0,0.2)]"
-							></div>
-							<div
-								class="w-[44px] h-[44px] rounded-full bg-gradient-to-br from-[#d8d8da] to-[#b8bcc3] border-[2px] border-white/15 -ml-3 shadow-[0_10px_30px_rgba(0,0,0,0.2)]"
-							></div>
-							<span class="font-jakarta font-bold text-[46px] text-white ml-1"
-								>+</span
-							>
 						</div>
 					</div>
 
-					<!-- RIGHT BOTTOM: dark card "Ваш бизнес растёт" (figma left:781 top:411  588x216) -->
+					<!-- RIGHT BOTTOM: dark card "Your business grows" (figma left:781 top:411  588x216) -->
 					<div
 						class="hero-card hero-card-growth absolute left-[781px] top-[411px] w-[588px] h-[216px] rounded-[20px] bg-[#010205] overflow-hidden"
 						style="animation-delay: 0.7s"
@@ -864,7 +841,7 @@
 									height: 130%;
 									transform: rotate(115.48deg);
 								"
-								alt="Декоративный фон роста показателей"
+								alt="Decorative growth background"
 							/>
 						</div>
 
@@ -876,13 +853,15 @@
 								<span class="block h-[1px] w-[54px] bg-white"></span>
 								<span
 									class="font-jakarta font-semibold text-[14px] text-white tracking-[-0.42px] leading-[1.26]"
-									>Результаты говорят сами</span
+									data-i18n="hero.tagline"
+									>Результаты говорят сами за себя</span
 								>
 							</div>
 							<h3
-								class="font-jakarta font-semibold text-[32px] leading-[1.3] tracking-[-0.64px] text-white w-[328px]"
+								class="font-jakarta font-semibold text-[27px] leading-[1.3] tracking-[-0.64px] text-white w-[328px]"
+								data-i18n-html="hero.growth.title"
 							>
-								Ваш бизнес растёт -<br />
+								Ваш бизнес растёт —<br />
 								<span class="text-gradient-green-2">технологии не отстают</span>
 							</h3>
 						</div>
@@ -904,113 +883,196 @@
 						</div>
 					</div>
 
-					<!-- PARTNER LOGOS: bottom aligned with dark card bottom (627), figma left:71 top:581 -->
+					<!-- PARTNER LOGOS: figma left:71 top:581, h:45.8px marquee strip -->
+					<div class="hero-logos absolute left-[71px] top-[581px] w-[592px] h-[46px] overflow-hidden">
+						<div class="marquee flex items-center gap-[18px]">
+							<!-- Awara IT -->
+							<div class="relative shrink-0 overflow-hidden" style="width:42.124px;height:45.799px">
+								<img src="assets/partner_awara.png" alt="Awara IT" style="position:absolute;max-width:none;height:129.01%;width:114.79%;left:-8.74%;top:-19.14%">
+							</div>
+							<!-- AICA -->
+							<div class="relative shrink-0 overflow-hidden" style="width:87.573px;height:39.257px">
+								<img src="assets/partner_sprite.png" alt="AICA" style="position:absolute;max-width:none;height:487.18%;width:392.34%;left:-45.98%;top:-177.78%">
+							</div>
+							<!-- TIMDOS -->
+							<div class="relative shrink-0 overflow-hidden" style="width:113.337px;height:36.975px">
+								<img src="assets/partner_sprite.png" alt="TIMDOS" style="position:absolute;max-width:none;height:413.04%;width:242.08%;left:0;top:-257.25%">
+							</div>
+							<!-- SmartLab -->
+							<div class="relative shrink-0 overflow-hidden" style="width:78.852px;height:45.408px">
+								<img src="assets/partner_smartlab.png" alt="SmartLab" style="position:absolute;max-width:none;height:177.46%;width:127.93%;left:-8.28%;top:-22.86%">
+							</div>
+							<!-- abm -->
+							<div class="relative shrink-0 overflow-hidden" style="width:80.142px;height:37.624px">
+								<img src="assets/partner_sprite.png" alt="abm" style="position:absolute;max-width:none;height:463.41%;width:390.84%;left:-217.94%;top:-167.48%">
+							</div>
+							<!-- Division -->
+							<div class="relative shrink-0 overflow-hidden" style="width:99.134px;height:29.84px">
+								<img src="assets/partner_sprite.png" alt="Division" style="position:absolute;max-width:none;height:633.33%;width:342.47%;left:-183.95%;top:-420%">
+							</div>
+							<!-- Duplicate set for seamless infinite scroll -->
+							<div class="relative shrink-0 overflow-hidden" style="width:42.124px;height:45.799px">
+								<img src="assets/partner_awara.png" alt="Awara IT" style="position:absolute;max-width:none;height:129.01%;width:114.79%;left:-8.74%;top:-19.14%">
+							</div>
+							<div class="relative shrink-0 overflow-hidden" style="width:87.573px;height:39.257px">
+								<img src="assets/partner_sprite.png" alt="AICA" style="position:absolute;max-width:none;height:487.18%;width:392.34%;left:-45.98%;top:-177.78%">
+							</div>
+							<div class="relative shrink-0 overflow-hidden" style="width:113.337px;height:36.975px">
+								<img src="assets/partner_sprite.png" alt="TIMDOS" style="position:absolute;max-width:none;height:413.04%;width:242.08%;left:0;top:-257.25%">
+							</div>
+							<div class="relative shrink-0 overflow-hidden" style="width:78.852px;height:45.408px">
+								<img src="assets/partner_smartlab.png" alt="SmartLab" style="position:absolute;max-width:none;height:177.46%;width:127.93%;left:-8.28%;top:-22.86%">
+							</div>
+							<div class="relative shrink-0 overflow-hidden" style="width:80.142px;height:37.624px">
+								<img src="assets/partner_sprite.png" alt="abm" style="position:absolute;max-width:none;height:463.41%;width:390.84%;left:-217.94%;top:-167.48%">
+							</div>
+							<div class="relative shrink-0 overflow-hidden" style="width:99.134px;height:29.84px">
+								<img src="assets/partner_sprite.png" alt="Division" style="position:absolute;max-width:none;height:633.33%;width:342.47%;left:-183.95%;top:-420%">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- ============ HOW WE WORK (From task to result) ============ -->
+		<section id="how-we-work" class="relative bg-transparent overflow-hidden" style="height:662px">
+			<div class="absolute inset-0 noise"></div>
+			<div class="absolute inset-0 max-w-[1440px] mx-auto">
+				<!-- Header row -->
+				<div class="absolute left-[80px] top-[50px] w-[1280px] flex items-start justify-between h-[107px]">
+					<h2 class="font-jakarta font-semibold text-[48px] leading-[1.3] tracking-[-1.44px] text-black w-[568px] reveal-left" data-i18n="how.title">
+						От задачи к результату
+					</h2>
+					<p class="font-jakarta font-medium text-[16px] leading-[1.8] text-[#878c91] w-[654px] reveal-right" data-i18n="how.desc">
+						Мы реализуем полный цикл технологической трансформации бизнеса: от проектирования сложных программных систем и глубокой аналитики данных до бесшовной интеграции оборудования и умных ИИ-ассистентов для автоматизации процессов.
+					</p>
+				</div>
+
+				<!-- Cards row -->
+				<div class="absolute left-[80px] top-[209px] flex gap-[24px] items-start reveal">
+					<!-- Left dark card: 438x382, bg #010205, with 40+ counter -->
+					<div class="relative rounded-[30px] bg-[#010205] w-[438px] h-[382px] overflow-hidden shrink-0 flex flex-col justify-between" style="padding:40px">
+						<!-- Rotating texture -->
+						<div class="absolute inset-[-40%] pointer-events-none opacity-40 flex items-center justify-center">
+							<img src="assets/how_texture.png" alt="" style="width:128%;height:130%;transform:rotate(115.48deg);object-fit:cover;max-width:none" />
+						</div>
+						<!-- Counter -->
+						<div class="relative flex flex-col gap-2">
+							<p class="font-jakarta font-bold leading-none text-white" style="font-size:96.79px;letter-spacing:-2.9px">
+								<span>40</span><span class="text-[#99cf63]">+</span>
+							</p>
+							<p class="font-jakarta font-medium leading-[1.7] text-[#878c91]" style="font-size:21.9px" data-i18n="how.projects">
+								Завершённых проектов
+							</p>
+						</div>
+						<!-- Case logos -->
+						<div class="relative flex items-center">
+							<div class="w-[70px] h-[70px] rounded-full shrink-0 overflow-hidden flex items-center justify-center" style="background:#1c1c1c;border:2px solid rgba(255,255,255,0.15);padding:10px">
+								<img src="assets/cases/orkenlink_cover.png" alt="Örkenlink" style="width:100%;height:100%;object-fit:contain;max-width:none;filter:brightness(0) invert(1)" />
+							</div>
+							<div class="w-[70px] h-[70px] rounded-full shrink-0 overflow-hidden flex items-center justify-center -ml-4" style="background:#1c1c1c;border:2px solid rgba(255,255,255,0.15);padding:10px">
+								<img src="assets/cases/caepco.png" alt="CAEPCO" style="width:100%;height:100%;object-fit:contain;max-width:none;filter:brightness(0) invert(1)" />
+							</div>
+							<div class="w-[70px] h-[70px] rounded-full shrink-0 overflow-hidden flex items-center justify-center -ml-4" style="background:#1c1c1c;border:2px solid rgba(255,255,255,0.15);padding:10px">
+								<img src="assets/cases/teplotekhnik.svg" alt="Teplotekhnik" style="width:100%;height:100%;object-fit:contain;max-width:none;filter:brightness(0) invert(1)" />
+							</div>
+							<div class="w-[70px] h-[70px] rounded-full shrink-0 overflow-hidden flex items-center justify-center -ml-4" style="background:#1c1c1c;border:2px solid rgba(255,255,255,0.15);padding:12px">
+								<img src="assets/cases/ane.svg" alt="ANE" style="width:100%;height:100%;object-fit:contain;max-width:none;filter:brightness(3)" />
+							</div>
+							<a href="cases.html" class="font-jakarta font-bold text-white ml-2 flex items-center hover:text-[#9ac763] transition-colors" style="font-size:48px;line-height:70px;margin-bottom:12px">+</a>
+						</div>
+					</div>
+
+					<!-- Right image card: 818x382 with "Как мы работаем?" overlay (figma: rectangle23813) -->
+					<div class="relative rounded-[30px] w-[818px] h-[382px] overflow-hidden shrink-0">
+						<img src="assets/how_card_photo.png" alt="How we work" class="absolute w-full h-full object-cover" />
+						<div class="absolute inset-0 bg-black/20"></div>
+						<p class="absolute inset-0 flex items-center justify-center font-jakarta font-bold text-[48px] text-center tracking-[12.96px] leading-[1.4]" style="color:rgba(255,255,255,0.49)" data-i18n="how.question">
+							Как мы работаем?
+						</p>
+					</div>
+				</div>
+
+				<!-- Play button (figma: left:1217 top:499, size 163px, bg #9ac763, border 12px white) -->
+				<div class="absolute left-[1217px] top-[499px] w-[163px] h-[163px] rounded-full bg-[#9ac763] border-[12px] border-[#fafafa] flex items-center justify-center cursor-pointer hover:scale-105 transition">
+					<svg width="44" height="44" viewBox="0 0 24 24" fill="none">
+						<path d="M8 5.14v14l11-7-11-7z" fill="black"/>
+					</svg>
 				</div>
 			</div>
 		</section>
 
 		<!-- ============ SERVICES ============ -->
-		<section id="services" class="relative bg-white py-24 overflow-hidden">
+		<section id="services" class="relative bg-transparent py-24 overflow-hidden">
 			<div class="absolute inset-0 noise"></div>
 			<div class="relative max-w-[1440px] mx-auto px-20">
-				<p
-					class="font-jakarta font-medium text-[22px] leading-[1.35] text-[#878c91] max-w-[835px] mx-auto text-center mb-16"
-				>
-					<span class="font-bold text-[#9ac763]"
-						>Четыре ключевых направления</span
-					>
-					— гибкий подход: реализуем комплексную цифровую трансформацию или
-					решаем точечные задачи вашего бизнеса.
+				<!-- Lead -->
+				<p class="font-jakarta font-medium text-[22px] leading-[1.5] text-[#878c91] max-w-[700px] mb-16" data-i18n-html="services.lead">
+					<span class="font-bold text-[#9ac763]">Четыре ключевых направления</span>
+					— гибкий подход: выполняем комплексную цифровую трансформацию или решаем конкретные задачи вашего бизнеса.
 				</p>
 
-				<div class="space-y-12">
-					<!-- service 01 -->
-					<div class="reveal service-item delay-1">
-						<div class="h-[2px] w-full bg-[#212121] mb-6"></div>
-						<div class="services-row flex items-center justify-between gap-12">
-							<div class="flex items-start gap-8 max-w-[400px]">
-								<span
-									class="font-inter text-[16px] tracking-tight text-[#212121] mt-3"
-									>01</span
-								>
-								<h3 class="font-jakarta font-bold text-[32px] tracking-tight">
-									Разработка ПО
-								</h3>
+				<!-- Accordion — all closed by default -->
+				<div id="servicesAccordion">
+
+					<!-- row 01 -->
+					<div class="svc-row" data-open="false">
+						<img src="assets/divider.svg" alt="" style="width:100%;height:29px;display:block;max-width:none">
+						<div class="svc-header flex items-center gap-6 py-5 cursor-pointer select-none" onclick="toggleSvc(this)">
+							<span class="font-inter text-[13px] text-[#aaa] w-[24px] shrink-0">01</span>
+							<h3 class="svc-title font-jakarta font-bold text-[28px] tracking-[-0.5px] text-black w-[260px] shrink-0" data-i18n="s1.title">Разработка ПО</h3>
+							<p class="svc-desc font-jakarta text-[#878c91] flex-1 truncate" style="font-size:28px" data-i18n="s1.desc">Веб и мобильные приложения на заказ, ERP-системы, API-интеграции. С нуля или в существующую инфраструктуру.</p>
+							<div class="svc-toggle shrink-0 w-[32px] h-[32px] rounded-full border border-[#9ac763] flex items-center justify-center ml-4">
+								<span class="svc-minus font-inter text-[#9ac763] text-[20px] leading-none" style="display:none;margin-top:-2px">−</span>
+								<span class="svc-plus font-inter text-[#9ac763] text-[20px] leading-none" style="margin-top:-2px">+</span>
 							</div>
-							<p
-								class="font-jakarta text-[20px] leading-[1.4] text-[#888] tracking-tight max-w-[620px] w-full text-left lg:text-right"
-							>
-								Кастомные веб и мобильные приложения, ERP-системы,
-								API-интеграции. С нуля или в существующую инфраструктуру.
-							</p>
 						</div>
 					</div>
 
-					<!-- service 02 -->
-					<div class="reveal service-item delay-2">
-						<div class="h-[2px] w-full bg-[#212121] mb-6"></div>
-						<div class="services-row flex items-center justify-between gap-12">
-							<div class="flex items-start gap-8">
-								<span
-									class="font-inter text-[16px] tracking-tight text-[#212121] mt-3"
-									>02</span
-								>
-								<h3 class="font-jakarta font-bold text-[32px] tracking-tight">
-									AI-ассистенты
-								</h3>
+					<!-- row 02 -->
+					<div class="svc-row" data-open="false">
+						<img src="assets/divider.svg" alt="" style="width:100%;height:29px;display:block;max-width:none">
+						<div class="svc-header flex items-center gap-6 py-5 cursor-pointer select-none" onclick="toggleSvc(this)">
+							<span class="font-inter text-[13px] text-[#aaa] w-[24px] shrink-0">02</span>
+							<h3 class="svc-title font-jakarta font-bold text-[28px] tracking-[-0.5px] text-black w-[260px] shrink-0" data-i18n="s2.title">ИИ-ассистенты</h3>
+							<p class="svc-desc font-jakarta text-[#878c91] flex-1 truncate" style="font-size:28px" data-i18n="s2.desc">Внедряем LLM в реальные рабочие процессы: чат-боты, автоматизация документов, RAG-системы на внутренних данных.</p>
+							<div class="svc-toggle shrink-0 w-[32px] h-[32px] rounded-full border border-[#9ac763] flex items-center justify-center ml-4">
+								<span class="svc-minus font-inter text-[#9ac763] text-[20px] leading-none" style="display:none;margin-top:-2px">−</span>
+								<span class="svc-plus font-inter text-[#9ac763] text-[20px] leading-none" style="margin-top:-2px">+</span>
 							</div>
-							<p
-								class="font-jakarta text-[20px] leading-[1.4] text-[#888] tracking-tight max-w-[620px] w-full text-left lg:text-right"
-							>
-								Внедряем LLM в реальные процессы: чат-боты, автоматизация
-								документооборота, RAG-системы по внутренним данным.
-							</p>
 						</div>
 					</div>
 
-					<!-- service 03 -->
-					<div class="reveal service-item delay-3">
-						<div class="h-[2px] w-full bg-[#212121] mb-6"></div>
-						<div class="services-row flex items-center justify-between gap-12">
-							<div class="flex items-start gap-8">
-								<span
-									class="font-inter text-[16px] tracking-tight text-[#212121] mt-3"
-									>03</span
-								>
-								<h3 class="font-jakarta font-bold text-[32px] tracking-tight">
-									Аналитика и данные
-								</h3>
+					<!-- row 03 -->
+					<div class="svc-row" data-open="false">
+						<img src="assets/divider.svg" alt="" style="width:100%;height:29px;display:block;max-width:none">
+						<div class="svc-header flex items-center gap-6 py-5 cursor-pointer select-none" onclick="toggleSvc(this)">
+							<span class="font-inter text-[13px] text-[#aaa] w-[24px] shrink-0">03</span>
+							<h3 class="svc-title font-jakarta font-bold text-[28px] tracking-[-0.5px] text-black w-[260px] shrink-0" data-i18n="s3.title">Аналитика &amp; Данные</h3>
+							<p class="svc-desc font-jakarta text-[#878c91] flex-1 truncate" style="font-size:28px" data-i18n="s3.desc">BI-дашборды и обработка данных → в бизнес-решения.</p>
+							<div class="svc-toggle shrink-0 w-[32px] h-[32px] rounded-full border border-[#9ac763] flex items-center justify-center ml-4">
+								<span class="svc-minus font-inter text-[#9ac763] text-[20px] leading-none" style="display:none;margin-top:-2px">−</span>
+								<span class="svc-plus font-inter text-[#9ac763] text-[20px] leading-none" style="margin-top:-2px">+</span>
 							</div>
-							<p
-								class="font-jakarta text-[20px] leading-[1.4] text-[#888] tracking-tight max-w-[620px] w-full text-left lg:text-right"
-							>
-								BI-дашборды и обработка данных → в бизнес-решения.
-							</p>
 						</div>
 					</div>
 
-					<!-- service 04 -->
-					<div class="reveal service-item delay-4">
-						<div class="h-[2px] w-full bg-[#212121] mb-6"></div>
-						<div class="services-row flex items-center justify-between gap-12">
-							<div class="flex items-start gap-8">
-								<span
-									class="font-inter text-[16px] tracking-tight text-[#212121] mt-3"
-									>04</span
-								>
-								<h3 class="font-jakarta font-bold text-[32px] tracking-tight">
-									Hardware &amp; Software
-								</h3>
+					<!-- row 04 -->
+					<div class="svc-row" data-open="false">
+						<img src="assets/divider.svg" alt="" style="width:100%;height:29px;display:block;max-width:none">
+						<div class="svc-header flex items-center gap-6 py-5 cursor-pointer select-none" onclick="toggleSvc(this)">
+							<span class="font-inter text-[13px] text-[#aaa] w-[24px] shrink-0">04</span>
+							<h3 class="svc-title font-jakarta font-bold text-[28px] tracking-[-0.5px] text-black w-[260px] shrink-0" data-i18n="s4.title">Железо &amp; ПО</h3>
+							<p class="svc-desc font-jakarta text-[#878c91] flex-1 truncate" style="font-size:28px" data-i18n="s4.desc">Аппаратно-программная интеграция, IoT-платформы, мониторинг производства, умные склады.</p>
+							<div class="svc-toggle shrink-0 w-[32px] h-[32px] rounded-full border border-[#9ac763] flex items-center justify-center ml-4">
+								<span class="svc-minus font-inter text-[#9ac763] text-[20px] leading-none" style="display:none;margin-top:-2px">−</span>
+								<span class="svc-plus font-inter text-[#9ac763] text-[20px] leading-none" style="margin-top:-2px">+</span>
 							</div>
-							<p
-								class="font-jakarta text-[20px] leading-[1.4] text-[#888] tracking-tight max-w-[620px] w-full text-left lg:text-right"
-							>
-								Интеграция оборудования с ПО, IoT-платформы, мониторинг
-								производства, умные склады.
-							</p>
 						</div>
 					</div>
-					<div class="h-[2px] w-full bg-[#212121]"></div>
+
+					<img src="assets/divider.svg" alt="" style="width:100%;height:29px;display:block;max-width:none">
 				</div>
 			</div>
 		</section>
@@ -1026,14 +1088,16 @@
 				class="absolute -left-60 top-10 w-[700px] h-[700px] rounded-full opacity-40"
 				style="background: radial-gradient(circle, #3b82f6 0%, transparent 60%)"
 			></div>
+			<!-- decorative SVGs -->
+			<img src="vector97.svg" alt="" class="absolute pointer-events-none" style="left:110px;bottom:100px;width:122px;height:216px;opacity:0.9" />
+			<img src="burst.svg" alt="" class="absolute pointer-events-none" style="left:80px;bottom:60px;width:66px;height:59px;opacity:0.9" />
 
 			<div class="relative max-w-[1160px] mx-auto px-8">
 				<h2
 					class="font-jakarta font-semibold text-[31px] leading-[1.5] text-white max-w-[1100px] mb-20"
+					data-i18n="process.heading"
 				>
-					Прозрачный процесс на каждом шаге: путь к результату по принципу SLC
-					(Simple · Lovable · Complete) с быстрым запуском, итерациями и
-					измеримым результатом.
+					Прозрачный процесс на каждом шаге: путь к результату по принципу SLC (Simple · Lovable · Complete) с быстрым запуском, итерациями и измеримыми результатами.
 				</h2>
 
 				<div
@@ -1049,18 +1113,19 @@
 						<div class="step-expanded flex flex-col items-start">
 							<p class="font-inter italic font-bold text-white mb-6">
 								<span class="step-num-open text-[66px] tracking-tight">01</span
-								><span class="text-[26px]">шаг</span>
+								><span class="text-[26px]">step</span>
 							</p>
 							<h4
 								class="step-title font-inter font-bold text-[28px] text-white tracking-tight mb-4"
+								data-i18n="p1.title"
 							>
-								Технический Аудит
+								Технический аудит
 							</h4>
 							<p
 								class="step-desc font-inter text-[16px] leading-[1.75] text-white/70"
+								data-i18n="p1.desc"
 							>
-								Глубокое погружение в вашу ИТ-архитектуру. Подписываем NDA до
-								начала работ.
+								Глубокое погружение в вашу IT-архитектуру. Подписываем NDA до начала работ.
 							</p>
 						</div>
 						<div class="step-collapsed">
@@ -1070,8 +1135,9 @@
 							<div class="step-rotated rotate-90 origin-top-left">
 								<p
 									class="font-inter text-[20px] text-white/70 whitespace-nowrap"
+									data-i18n="p1.title"
 								>
-									Технический Аудит
+									Технический аудит
 								</p>
 							</div>
 						</div>
@@ -1086,18 +1152,19 @@
 						<div class="step-expanded flex flex-col items-start">
 							<p class="font-inter italic font-bold text-white mb-6">
 								<span class="step-num-open text-[66px] tracking-tight">02</span
-								><span class="text-[26px]">шаг</span>
+								><span class="text-[26px]">step</span>
 							</p>
 							<h4
 								class="step-title font-inter font-bold text-[28px] text-white tracking-tight mb-4"
+								data-i18n="p2.title"
 							>
 								MVP / Рабочее ядро
 							</h4>
 							<p
 								class="step-desc font-inter text-[16px] leading-[1.75] text-white/70"
+								data-i18n="p2.desc"
 							>
-								Быстро запускаем рабочую версию продукта. Итерации каждые 2
-								недели с демо и обратной связью.
+								Быстро запускаем рабочую версию продукта. Итерации каждые 2 недели с демо и обратной связью.
 							</p>
 						</div>
 						<div class="step-collapsed">
@@ -1107,6 +1174,7 @@
 							<div class="step-rotated rotate-90 origin-top-left">
 								<p
 									class="font-inter text-[20px] text-white/70 whitespace-nowrap"
+									data-i18n="p2.title"
 								>
 									MVP / Рабочее ядро
 								</p>
@@ -1123,18 +1191,19 @@
 						<div class="step-expanded flex flex-col items-start">
 							<p class="font-inter italic font-bold text-white mb-6">
 								<span class="step-num-open text-[66px] tracking-tight">03</span
-								><span class="text-[26px]">шаг</span>
+								><span class="text-[26px]">step</span>
 							</p>
 							<h4
 								class="step-title font-inter font-bold text-[28px] text-white tracking-tight mb-4"
+								data-i18n="p3.title"
 							>
 								Масштабирование
 							</h4>
 							<p
 								class="step-desc font-inter text-[16px] leading-[1.75] text-white/70"
+								data-i18n="p3.desc"
 							>
-								Оптимизируем производительность, добавляем новые модули и
-								масштабируем под рост бизнеса.
+								Оптимизируем производительность, добавляем новые модули и масштабируем решение под рост бизнеса.
 							</p>
 						</div>
 						<div class="step-collapsed">
@@ -1144,6 +1213,7 @@
 							<div class="step-rotated rotate-90 origin-top-left">
 								<p
 									class="font-inter text-[20px] text-white/70 whitespace-nowrap"
+									data-i18n="p3.title"
 								>
 									Масштабирование
 								</p>
@@ -1154,27 +1224,70 @@
 			</div>
 		</section>
 
+		<!-- ============ TESTIMONIALS ============ -->
+		<section id="reviews" class="relative bg-transparent overflow-hidden" style="min-height:543px">
+			<div class="absolute inset-0 noise"></div>
+			<div class="relative max-w-[1440px] mx-auto px-[80px] py-[115px]">
+				<div class="flex flex-col gap-[74px] items-start w-[1280px]">
+					<!-- Quote -->
+					<p class="font-jakarta font-semibold text-[36px] leading-[1.6] text-[#010205] tracking-[-1.08px] w-full reveal" data-i18n="review.quote">
+						«Они тщательно изучают нашу отрасль и целевую аудиторию, что позволяет создавать точечные кампании, эффективно достигающие клиентов. Их творческие идеи и современные методы помогли нам оставаться впереди конкурентов»
+					</p>
+					<!-- Bottom row -->
+					<div class="flex items-center justify-between w-full reveal">
+						<!-- Person -->
+						<div class="flex items-center gap-[24px]">
+							<div class="w-[70px] h-[70px] rounded-full bg-gradient-to-br from-[#d8d8da] to-[#b8bcc3] shrink-0"></div>
+							<div class="flex flex-col gap-[19px] leading-[1.8]">
+								<p class="font-jakarta font-bold text-[20px] text-[#010205]" data-i18n="review.name">Андрей</p>
+								<p class="font-jakarta font-medium text-[16px] text-[#878c91]" data-i18n="review.role">Генеральный директор</p>
+							</div>
+						</div>
+						<!-- Navigation -->
+						<div class="flex items-center gap-[38px]">
+							<button class="border border-[#010205] rounded-full px-8 py-4 flex items-center justify-center hover:bg-[#010205] hover:text-white transition" id="prevReview">
+								<svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+									<path d="M19 12H5M11 6l-6 6 6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+								</svg>
+							</button>
+							<p class="font-jakarta font-semibold text-[16px] text-[#010205]">
+								<span class="underline decoration-solid">01</span><span class="text-[rgba(1,2,5,0.4)]">/05</span>
+							</p>
+							<button class="bg-[#010205] rounded-full px-8 py-4 flex items-center justify-center hover:bg-[#333] transition" id="nextReview">
+								<svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+									<path d="M5 12h14M13 6l6 6-6 6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+								</svg>
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
 		<!-- ============ FAQ ============ -->
-		<section id="faq" class="bg-[#f3f3f3] p-4 py-16">
+		<section id="faq" class="bg-transparent p-4 py-16">
 			<div
 				class="faq-layout max-w-[1286px] mx-auto bg-white rounded-[28px] px-20 py-16 flex gap-14"
 			>
 				<div class="flex-1 max-w-[531px]">
 					<h2
 						class="font-jakarta font-semibold text-[48px] leading-[1.3] tracking-[-1.44px] text-[#010205] mb-12"
+						data-i18n="faq.title"
 					>
-						FAQs
+						Частые вопросы
 					</h2>
 					<p
 						class="font-jakarta font-medium text-[16px] leading-[1.8] text-[#878c91] mb-12"
+						data-i18n="faq.subtitle"
 					>
-						Отвечаем на вопросы, которые чаще всего задают до первого звонка
+						Ответы на вопросы, которые чаще всего задают перед первым звонком
 					</p>
 					<div class="flex items-center gap-12">
 						<button
 							class="font-manrope font-bold border border-[#010205] rounded-full px-4 py-4 w-[176px] text-[16px] tracking-tight hover:bg-[#010205] hover:text-white transition"
 							type="button"
 							onclick="document.getElementById('contacts').scrollIntoView({behavior:'smooth'})"
+							data-i18n="faq.ask"
 						>
 							Задать вопрос
 						</button>
@@ -1183,6 +1296,7 @@
 							target="_blank"
 							rel="noreferrer"
 							class="font-jakarta font-semibold text-[16px] underline"
+							data-i18n="faq.tg"
 							>Написать в Telegram</a
 						>
 					</div>
@@ -1194,7 +1308,8 @@
 						>
 							<span
 								class="font-jakarta font-semibold text-[24px] leading-[1.5] tracking-tight text-[#010205]"
-								>Как быстро начнёте работу?</span
+								data-i18n="faq.q1"
+								>Как быстро вы начнёте работу?</span
 							>
 							<svg
 								class="faq-icon-minus"
@@ -1227,9 +1342,10 @@
 						</summary>
 						<p
 							class="font-jakarta font-medium text-[16px] leading-[1.8] text-[#878c91] mt-8"
+							data-i18n="faq.a1"
 						>
-							После подписания договора — в течение 1 недели. Первое рабочее
-							демо показываем через 2 недели после старта.
+							After signing the contract — within 1 week. We show the first
+							working demo 2 weeks after kickoff.
 						</p>
 					</details>
 					<details class="border-b border-black px-6 py-6">
@@ -1238,6 +1354,7 @@
 						>
 							<span
 								class="font-jakarta font-semibold text-[24px] leading-[1.5] tracking-tight text-[#010205]"
+								data-i18n="faq.q2"
 								>Сколько стоит разработка?</span
 							>
 							<svg
@@ -1271,9 +1388,9 @@
 						</summary>
 						<p
 							class="font-jakarta font-medium text-[16px] leading-[1.8] text-[#878c91] mt-4"
+							data-i18n="faq.a2"
 						>
-							Стоимость зависит от объёма и сложности проекта. Базовые проекты —
-							от $5000.
+							Стоимость зависит от объёма и сложности. Базовые проекты — от $5 000.
 						</p>
 					</details>
 					<details class="border-b border-black px-6 py-6">
@@ -1282,7 +1399,8 @@
 						>
 							<span
 								class="font-jakarta font-semibold text-[24px] leading-[1.5] tracking-tight text-[#010205]"
-								>Работаете удалённо или только Астана?</span
+								data-i18n="faq.q3"
+								>Вы работаете удалённо или только в Астане?</span
 							>
 							<svg
 								class="faq-icon-minus"
@@ -1315,8 +1433,9 @@
 						</summary>
 						<p
 							class="font-jakarta font-medium text-[16px] leading-[1.8] text-[#878c91] mt-4"
+							data-i18n="faq.a3"
 						>
-							Работаем удалённо по всему миру и офлайн в Астане.
+							Работаем удалённо по всему миру и очно в Астане.
 						</p>
 					</details>
 					<details class="border-b border-black px-6 py-6">
@@ -1325,7 +1444,8 @@
 						>
 							<span
 								class="font-jakarta font-semibold text-[24px] leading-[1.5] tracking-tight text-[#010205]"
-								>Вы делаете поддержку после запуска?</span
+								data-i18n="faq.q4"
+								>Вы оказываете поддержку после запуска?</span
 							>
 							<svg
 								class="faq-icon-minus"
@@ -1358,8 +1478,9 @@
 						</summary>
 						<p
 							class="font-jakarta font-medium text-[16px] leading-[1.8] text-[#878c91] mt-4"
+							data-i18n="faq.a4"
 						>
-							Да, предлагаем SLA-поддержку и развитие продукта.
+							Да, предлагаем SLA-поддержку и дальнейшее развитие продукта.
 						</p>
 					</details>
 					<details class="border-b border-black px-6 py-6">
@@ -1368,7 +1489,8 @@
 						>
 							<span
 								class="font-jakarta font-semibold text-[24px] leading-[1.5] tracking-tight text-[#010205]"
-								>Берёте небольшие проекты?</span
+								data-i18n="faq.q5"
+								>Вы берёте небольшие проекты?</span
 							>
 							<svg
 								class="faq-icon-minus"
@@ -1401,6 +1523,7 @@
 						</summary>
 						<p
 							class="font-jakarta font-medium text-[16px] leading-[1.8] text-[#878c91] mt-4"
+							data-i18n="faq.a5"
 						>
 							Да, рассматриваем точечные задачи и MVP.
 						</p>
@@ -1431,11 +1554,13 @@
 				<div class="relative max-w-[709px]">
 					<h2
 						class="font-sora font-semibold text-[46px] leading-[60px] text-white mb-6"
+						data-i18n="contact.title"
 					>
-						Свяжитесь с нами и получите решение под ваш бизнес
+						Свяжитесь с нами и получите решение для вашего бизнеса
 					</h2>
 					<p
 						class="font-jakarta font-medium text-[16px] leading-[1.8] text-[#878c91] mb-8"
+						data-i18n-html="contact.subtitle"
 					>
 						Ответим в течение 1 рабочего дня.
 						<span class="font-bold text-[#9ac763]"
@@ -1452,7 +1577,7 @@
 						<input
 							type="hidden"
 							name="_subject"
-							value="Новая заявка с landing page Silk Road Tech"
+							value="New inquiry from Silk Road Tech landing page"
 						/>
 						<input type="hidden" name="_captcha" value="false" />
 						<div class="contact-grid grid grid-cols-2 gap-4">
@@ -1460,6 +1585,7 @@
 								<label
 									for="firstName"
 									class="block font-inter font-medium text-[14px] text-white mb-3"
+									data-i18n="contact.fname"
 									>Имя</label
 								>
 								<input
@@ -1467,7 +1593,8 @@
 									name="first_name"
 									type="text"
 									required
-									placeholder="Ваше имя"
+									placeholder="Your name"
+									data-i18n-placeholder="contact.fname.ph"
 									class="w-full bg-[#141922] border border-[#3d3d3d] rounded-xl px-4 py-3 text-white text-[14px] placeholder:text-[#5a5a5a] focus:outline-none focus:border-[#9ac763]"
 								/>
 							</div>
@@ -1475,6 +1602,7 @@
 								<label
 									for="lastName"
 									class="block font-inter font-medium text-[14px] text-white mb-3"
+									data-i18n="contact.lname"
 									>Фамилия</label
 								>
 								<input
@@ -1482,7 +1610,8 @@
 									name="last_name"
 									type="text"
 									required
-									placeholder="Фамилия"
+									placeholder="Ваша фамилия"
+									data-i18n-placeholder="contact.lname.ph"
 									class="w-full bg-[#141922] border border-[#3d3d3d] rounded-xl px-4 py-3 text-white text-[14px] placeholder:text-[#5a5a5a] focus:outline-none focus:border-[#9ac763]"
 								/>
 							</div>
@@ -1491,6 +1620,7 @@
 							<label
 								for="contactHandle"
 								class="block font-inter font-medium text-[14px] text-white mb-3"
+								data-i18n="contact.phone"
 								>Телефон или Telegram</label
 							>
 							<input
@@ -1498,7 +1628,7 @@
 								name="contact"
 								type="text"
 								required
-								placeholder="+7 700 888 88 88 или @xsayat"
+								placeholder="+7 700 888 88 88 or @xsayat"
 								class="w-full bg-[#141922] border border-[#3d3d3d] rounded-xl px-4 py-3 text-white text-[14px] placeholder:text-white/70 focus:outline-none focus:border-[#9ac763]"
 							/>
 						</div>
@@ -1507,7 +1637,8 @@
 								<label
 									for="contactMessage"
 									class="font-inter font-medium text-[14px] text-white"
-									>Вопросы</label
+									data-i18n="contact.msg"
+									>Сообщение</label
 								>
 								<span class="text-[12px] text-[#757575]" id="charCount"
 									>0/500</span
@@ -1519,6 +1650,7 @@
 								rows="4"
 								maxlength="500"
 								placeholder="Напишите комментарий"
+								data-i18n-placeholder="contact.msg.ph"
 								class="w-full bg-[#141922] border border-[#3d3d3d] rounded-xl px-4 py-3 text-white text-[14px] placeholder:text-[#5a5a5a] focus:outline-none focus:border-[#9ac763]"
 							></textarea>
 						</div>
@@ -1530,7 +1662,8 @@
 						>
 							<span
 								class="font-inter font-bold text-[16px] tracking-[1.28px] uppercase text-black"
-								>Отправить запрос</span
+								data-i18n="contact.submit"
+								>Отправить заявку</span
 							>
 							<svg width="24" height="24" viewBox="0 0 24 24" fill="none">
 								<path
@@ -1558,15 +1691,11 @@
 						<img
 							src="assets/logo.svg"
 							alt="Silk Road Tech"
-							class="h-8 w-auto"
+							class="h-8 w-auto logo-img"
 						/>
 					</a>
-					<p class="font-roboto text-[14px] leading-6 text-[#9b9b9c] mb-8">
-						Мы предлагаем комплексный пакет услуг по IT-аутсорсингу, который
-						охватывает все аспекты вашего цифрового развития. От проектирования
-						архитектуры и разработки ПО до облачных решений и информационной
-						безопасности — наша команда обладает экспертизой и ресурсами для
-						реализации задач любой сложности.
+					<p class="font-roboto text-[14px] leading-6 text-[#9b9b9c] mb-8" data-i18n="footer.desc">
+						Мы предлагаем комплексный IT-аутсорсинг, охватывающий все аспекты цифрового развития вашего бизнеса. От проектирования архитектуры и разработки ПО до облачных решений и кибербезопасности — наша команда готова к проектам любой сложности.
 					</p>
 					<div class="flex items-center gap-8">
 						<div class="flex gap-3">
@@ -1612,6 +1741,8 @@
 						</div>
 						<button
 							class="bg-[#010205] text-white font-jakarta font-bold text-[16px] rounded-full px-8 py-4 inline-flex items-center gap-3 hover:scale-[1.02] transition"
+							onclick="window.location.href='index.html#contacts'"
+							data-i18n="footer.discuss"
 						>
 							Обсудить проект
 							<svg width="20" height="20" viewBox="0 0 24 24" fill="none">
@@ -1625,39 +1756,47 @@
 							</svg>
 						</button>
 					</div>
+					<div class="flex items-center gap-3 mt-8">
+						<span class="font-roboto text-[12px] text-[#9b9b9c]" data-i18n="footer.resident">Резидент</span>
+						<img src="assets/astanahub.png.webp" alt="Astana Hub" class="h-16 w-auto astana-hub-img"/>
+					</div>
 				</div>
 
 				<div class="flex justify-between gap-12 flex-1">
 					<div>
 						<h4
 							class="font-roboto font-semibold text-[18px] text-[#192031] mb-12"
+							data-i18n="footer.nav.title"
 						>
 							Навигация
 						</h4>
 						<ul class="font-roboto text-[14px] text-[#9b9b9c] space-y-6">
-							<li><a href="#services">Услуги</a></li>
-							<li><a href="#process">Процессы</a></li>
-							<li class="font-bold"><a href="#faq">FAQ</a></li>
-							<li><a href="#contacts">Контакты</a></li>
-							<li><a href="about.html">О нас</a></li>
-							<li><a href="cases.html">Кейсы</a></li>
+							<li><a href="#services" data-i18n="nav.services">Услуги</a></li>
+							<li><a href="#process" data-i18n="nav.process">Процесс</a></li>
+							<li><a href="cases.html" data-i18n="nav.cases">Кейсы</a></li>
+							<li><a href="about.html" data-i18n="nav.about">О нас</a></li>
+							<li><a href="#partners" data-i18n="nav.partners">Партнёры</a></li>
+							<li><a href="#contacts" data-i18n="nav.contacts">Контакты</a></li>
+							<li class="font-bold"><a href="#faq" data-i18n="nav.faq">FAQ</a></li>
 						</ul>
 					</div>
 					<div>
 						<h4
 							class="font-roboto font-semibold text-[18px] text-[#192031] mb-12"
+							data-i18n="footer.lic.title"
 						>
-							Лицензия
+							Документы
 						</h4>
 						<ul class="font-roboto text-[14px] text-[#9b9b9c] space-y-6">
-							<li><a href="privacy.html">Политика конфиденциальности</a></li>
-							<li><a href="copyright.html">Авторские права</a></li>
-							<li><a href="mailto:sayat@silkroadtech.kz">Почта</a></li>
+							<li><a href="privacy.html" data-i18n="footer.privacy">Политика конфиденциальности</a></li>
+							<li><a href="copyright.html" data-i18n="footer.copyright">Авторские права</a></li>
+							<li><a href="mailto:sayat@silkroadtech.kz" data-i18n="footer.email.label">Email</a></li>
 						</ul>
 					</div>
 					<div>
 						<h4
 							class="font-roboto font-semibold text-[18px] text-[#192031] mb-12"
+							data-i18n="footer.contact.title"
 						>
 							Контакты
 						</h4>
@@ -1689,7 +1828,7 @@
 										d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"
 									/>
 								</svg>
-								Астана, пр. Мангилик Ел 36
+								Astana, Mangilik El Ave 36
 							</li>
 						</ul>
 					</div>
@@ -1698,8 +1837,8 @@
 			<div
 				class="footer-meta relative max-w-[1440px] mx-auto px-20 mt-12 pt-8 border-t border-black/10 flex justify-between text-[12px] text-[#9b9b9c]"
 			>
-				<span>© 2026 Silk Road Tech. Все права защищены.</span>
-				<span>Made with care in Astana</span>
+				<span data-i18n="footer.copy">© 2026 Silk Road Tech. Все права защищены.</span>
+				<span data-i18n="footer.made">Сделано с заботой в Астане</span>
 			</div>
 		</footer>
 
@@ -1788,6 +1927,27 @@
 					});
 				});
 
+				// ── Services accordion ──
+				function toggleSvc(header) {
+					const row = header.closest('.svc-row');
+					const isOpen = row.dataset.open === 'true';
+					// collapse all
+					document.querySelectorAll('.svc-row').forEach(r => {
+						r.dataset.open = 'false';
+						r.querySelector('.svc-desc').classList.add('truncate');
+						r.querySelector('.svc-minus').style.display = 'none';
+						r.querySelector('.svc-plus').style.display = '';
+					});
+					// open clicked if it was closed
+					if (!isOpen) {
+						row.dataset.open = 'true';
+						row.querySelector('.svc-desc').classList.remove('truncate');
+						row.querySelector('.svc-minus').style.display = '';
+						row.querySelector('.svc-plus').style.display = 'none';
+					}
+				}
+				window.toggleSvc = toggleSvc;
+
 				// ── Contact form: char counter ──
 				const msg = document.getElementById("contactMessage");
 				const charCount = document.getElementById("charCount");
@@ -1824,11 +1984,11 @@
 						if (!valid) return;
 
 						const defaultLabel =
-							'<span class="font-inter font-bold text-[16px] tracking-[1.28px] uppercase text-black">Отправить запрос</span><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M9 7h8v8" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+							'<span class="font-inter font-bold text-[16px] tracking-[1.28px] uppercase text-black">Send request</span><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M9 7h8v8" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
 						submitBtn.disabled = true;
 						submitBtn.style.background = "#b4d88b";
 						submitBtn.innerHTML =
-							'<span class="font-inter font-bold text-[16px] tracking-[1.28px] uppercase text-black">Отправляем...</span>';
+							'<span class="font-inter font-bold text-[16px] tracking-[1.28px] uppercase text-black">Sending...</span>';
 						if (formStatus) {
 							formStatus.classList.add("hidden");
 							formStatus.textContent = "";
@@ -1846,11 +2006,11 @@
 							if (!response.ok) throw new Error("submit_failed");
 
 							submitBtn.innerHTML =
-								'<span class="font-inter font-bold text-[16px] tracking-[1.28px] uppercase text-black">Отправлено ✓</span>';
+								'<span class="font-inter font-bold text-[16px] tracking-[1.28px] uppercase text-black">Sent ✓</span>';
 							submitBtn.style.background = "#77b248";
 							if (formStatus) {
 								formStatus.textContent =
-									"Спасибо! Мы свяжемся с вами в течение 1 рабочего дня.";
+									"Thank you! We will get back to you within 1 business day.";
 								formStatus.classList.remove("hidden");
 							}
 							form.reset();
@@ -1860,12 +2020,12 @@
 							submitBtn.style.background = "#9ac763";
 							if (formStatus) {
 								formStatus.textContent =
-									"Форма пока настроена на временный Formspree endpoint. Замените action на ваш код Formspree перед публикацией.";
+									"The form is currently configured on a temporary Formspree endpoint. Replace the action with your Formspree code before publishing.";
 								formStatus.classList.remove("hidden");
 							}
 						} finally {
 							submitBtn.disabled = false;
-							if (submitBtn.innerHTML.includes("Отправить запрос")) {
+							if (submitBtn.innerHTML.includes("Send request")) {
 								submitBtn.innerHTML = defaultLabel;
 							}
 						}
@@ -1930,5 +2090,6 @@
 				}
 			});
 		</script>
+		<script src="assets/i18n.js"></script>
 	</body>
 </html>
