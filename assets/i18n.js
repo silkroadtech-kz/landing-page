@@ -38,7 +38,7 @@
 
 		/* ── Hero ── */
 		"hero.title": {
-			ru: "Делаем продукты под ваши бизнес процессы",
+			ru: '<span class="text-[#9ac763]">Делаем продукты</span> под ваши бизнес процессы',
 			en: "We build products around your business processes",
 		},
 		"hero.desc": {
@@ -410,6 +410,14 @@
 			ru: "Система управления внешним кадровым пулом. Масштабируемая платформа для отслеживания ресурсов и подбора кандидатов.",
 			en: "External talent pool management system. Scalable platform for resource tracking and matching.",
 		},
+		"cases.orkenlink.b1": {
+			ru: "Поиск карьерных возможностей",
+			en: "Career opportunities search",
+		},
+		"cases.orkenlink.b2": {
+			ru: "Сопоставление студентов и работодателей",
+			en: "Student-employer matching",
+		},
 
 		/* ── Cases — AIVA ── */
 		"cases.aiva.title": {
@@ -419,6 +427,18 @@
 		"cases.aiva.desc": {
 			ru: "Развернули ботов на всех этапах воронки, повысили конверсию посещаемости на 30% и снизили затраты на колл-центр. ИИ-мониторинг эффективности операторов и отчётность.",
 			en: "Deployed bots across all funnel stages, improved attendance conversion by 30%, and reduced call center costs. AI-based operator performance monitoring and reporting.",
+		},
+		"cases.aiva.b1": {
+			ru: "Рост конверсии посещаемости на 30%",
+			en: "30% improvement in attendance conversion",
+		},
+		"cases.aiva.b2": {
+			ru: "В партнёрстве с AIVA",
+			en: "In partnership with AIVA",
+		},
+		"cases.aiva.b3": {
+			ru: "Снижение затрат на колл-центр",
+			en: "Reduced call center headcount costs",
 		},
 
 		/* ── Cases — PetroMindAI ── */
@@ -430,6 +450,14 @@
 			ru: "ИИ-экспертная система для нефтегазового сектора, внедрённая во все подразделения компании.",
 			en: "AI expert system for the oil and gas sector, deployed across every department of the company.",
 		},
+		"cases.petromind.b1": {
+			ru: "Автоматизированный онбординг новых сотрудников",
+			en: "Automated onboarding for new employees",
+		},
+		"cases.petromind.b2": {
+			ru: "BI-аналитика и отчётность для C-level",
+			en: "BI analytics and reporting for C-level",
+		},
 
 		/* ── Cases — SmartLab ── */
 		"cases.smartlab.title": {
@@ -439,6 +467,14 @@
 		"cases.smartlab.desc": {
 			ru: "Система электронного документооборота, адаптированная под бизнес-процессы крупных предприятий.",
 			en: "Electronic document management system tailored to the business processes of large enterprises.",
+		},
+		"cases.smartlab.b1": {
+			ru: "Интеграция уровня enterprise",
+			en: "Enterprise-standard integration",
+		},
+		"cases.smartlab.b2": {
+			ru: "Бизнес-процессы для крупных холдингов",
+			en: "Business processes for large holding companies",
 		},
 
 		/* ── Cases — ContentFlow ── */
@@ -450,6 +486,14 @@
 			ru: "Генерирует посты для Telegram, Instagram, LinkedIn и TikTok из текста или голоса. Обучение фирменному стилю, автопубликация и аналитика конкурентов.",
 			en: "Generates posts for Telegram, Instagram, LinkedIn, and TikTok from text or voice. Brand style training, auto-publishing, and competitor analytics.",
 		},
+		"cases.contentflow.b1": {
+			ru: "Генерация постов под каждую платформу",
+			en: "AI post generation tailored to each platform",
+		},
+		"cases.contentflow.b2": {
+			ru: "Автопубликация и MCP-интеграция",
+			en: "Auto-publishing and MCP integration",
+		},
 
 		/* ── Cases — KZ-Provider ── */
 		"cases.kzprovider.title": {
@@ -459,6 +503,10 @@
 		"cases.kzprovider.desc": {
 			ru: "Разработка веб-платформы для ТОО «KZ-PROVIDER» — поставщика гидравлических и пневматических компонентов для горнодобывающего и промышленного секторов Казахстана.",
 			en: "Web platform development for KZ-PROVIDER LLC — a supplier of hydraulic and pneumatic components for the mining and industrial sectors of Kazakhstan.",
+		},
+		"cases.kzprovider.b1": {
+			ru: "Каталог продукции по международным стандартам",
+			en: "Product catalog meeting international standards",
 		},
 
 		/* ── Privacy page ── */
