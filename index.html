@@ -810,7 +810,6 @@
 							<a href="/about" class="hover:text-[#9ac763]" data-i18n="nav.about">О нас</a>
 							<svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
 						</li>
-						<li><a href="#partners" class="hover:text-[#9ac763]" data-i18n="nav.partners">Партнёры</a></li>
 						<li><a href="#contacts" class="hover:text-[#9ac763]" data-i18n="nav.contacts">Контакты</a></li>
 						<li><a href="#faq" class="hover:text-[#9ac763]" data-i18n="nav.faq">FAQ</a></li>
 					</ul>
@@ -848,7 +847,6 @@
 					<li><a href="#process" class="mobile-link" data-i18n="nav.process">Процесс</a></li>
 					<li><a href="/cases" data-i18n="nav.cases">Кейсы</a></li>
 					<li><a href="/about" data-i18n="nav.about">О нас</a></li>
-					<li><a href="#partners" class="mobile-link" data-i18n="nav.partners">Партнёры</a></li>
 					<li><a href="#contacts" class="mobile-link" data-i18n="nav.contacts">Контакты</a></li>
 					<li><a href="#faq" class="mobile-link" data-i18n="nav.faq">FAQ</a></li>
 				</ul>
@@ -868,15 +866,13 @@
 						class="hero-title font-jakarta font-semibold text-[72px] leading-[1.1] tracking-[-2.16px] w-[700px]"
 						data-i18n-html="hero.title"
 					>
-						<span class="text-gradient-green">Разработка ПО</span>,<br />
-						Аналитика<br />
-						&amp; Интеграция ИИ
+						Мы делаем продукты именно под ваши бизнес процессы
 					</h1>
 					<p
 						class="hero-desc font-jakarta font-medium text-[16px] leading-[1.8] text-[#878c91] w-[557px]"
 						data-i18n="hero.desc"
 					>
-						Мы создаём цифровые продукты и автоматизируем бизнес-процессы — от ERP-систем до ИИ-ассистентов для вашей команды.
+						Быстро. Качественно. Недорого.
 					</p>
 					<div class="hero-btns flex items-center gap-14">
 						<button
@@ -932,17 +928,24 @@
 						class="hero-card hero-card-stat absolute left-[1108px] top-[112px] w-[259px] h-[281px] rounded-[20px] backdrop-blur-[42px] bg-[#f0f0f0] overflow-hidden"
 						style="animation-delay: 0.5s"
 					>
-						<div class="absolute inset-0 flex flex-col gap-[30px] items-start left-[25px] top-[38px] p-[10px]">
+						<div class="absolute inset-0 flex flex-col items-start left-[25px] top-[38px] p-[10px]">
 							<p
-								class="font-jakarta font-bold text-[84px] leading-[1.5] tracking-[-2.52px] text-[#010205] w-full"
+								class="font-jakarta font-bold text-[84px] leading-[1.1] tracking-[-2.52px] text-[#010205] w-full"
+								data-i18n="hero.stat.value"
 							>
-								1
+								15+
 							</p>
 							<p
-								class="font-jakarta font-medium text-[16px] leading-[1.5] text-[#5c5d5f]"
+								class="mt-4 font-jakarta font-medium text-[14px] leading-[1.45] text-[#5c5d5f] max-w-[205px]"
 								data-i18n="hero.stat.label"
 							>
-								Год на рынке
+								инженеров, продуктологов, дизайнеров с опытом в международных компаниях
+							</p>
+							<p
+								class="mt-3 font-jakarta font-semibold text-[13px] leading-[1.4] text-[#010205] max-w-[205px]"
+								data-i18n="hero.stat.meta"
+							>
+								Средний опыт - 6+ лет
 							</p>
 						</div>
 					</div>
@@ -1007,7 +1010,9 @@
 					</div>
 
 					<!-- PARTNER LOGOS: figma left:71 top:581, h:45.8px marquee strip -->
-					<div class="hero-logos absolute left-[71px] top-[581px] w-[592px] h-[46px] overflow-hidden">
+					<div class="absolute left-[71px] top-[581px] flex items-center gap-5 w-[592px]">
+						<p class="shrink-0 font-jakarta text-[11px] font-semibold uppercase tracking-[0.18em] text-[#5c5d5f]" data-i18n="hero.partners">Наши партнёры</p>
+						<div class="hero-logos flex-1 h-[46px] overflow-hidden">
 						<div class="marquee flex items-center gap-[18px]">
 							<!-- Awara IT -->
 							<div class="relative shrink-0 overflow-hidden" style="width:42.124px;height:45.799px">
@@ -1052,6 +1057,7 @@
 							<div class="relative shrink-0 overflow-hidden" style="width:99.134px;height:29.84px">
 								<img src="assets/partner_sprite.png" alt="Division" style="position:absolute;max-width:none;height:633.33%;width:342.47%;left:-183.95%;top:-420%">
 							</div>
+						</div>
 						</div>
 					</div>
 				</div>
@@ -1353,17 +1359,17 @@
 			<div class="relative max-w-[1440px] mx-auto px-[80px] py-[115px]">
 				<div class="flex flex-col gap-[74px] items-start w-[1280px]">
 					<!-- Quote -->
-					<p class="font-jakarta font-semibold text-[36px] leading-[1.6] text-[#010205] tracking-[-1.08px] w-full reveal" data-i18n="review.quote">
-						«Они тщательно изучают нашу отрасль и целевую аудиторию, что позволяет создавать точечные кампании, эффективно достигающие клиентов. Их творческие идеи и современные методы помогли нам оставаться впереди конкурентов»
+					<p class="font-jakarta font-semibold text-[36px] leading-[1.6] text-[#010205] tracking-[-1.08px] w-full reveal" id="reviewQuote">
+						Мне понравилось, что вы работаете быстро, и понравилась ваша скорость реакции на наши предложения.
 					</p>
 					<!-- Bottom row -->
 					<div class="flex items-center justify-between w-full reveal">
 						<!-- Person -->
 						<div class="flex items-center gap-[24px]">
-							<div class="w-[70px] h-[70px] rounded-full bg-gradient-to-br from-[#d8d8da] to-[#b8bcc3] shrink-0"></div>
+							<div class="w-[70px] h-[70px] rounded-full bg-gradient-to-br from-[#d8d8da] to-[#b8bcc3] shrink-0 flex items-center justify-center font-jakarta font-bold text-[22px] tracking-[-0.04em] text-[#010205]" id="reviewAvatar" aria-hidden="true">А</div>
 							<div class="flex flex-col gap-[19px] leading-[1.8]">
-								<p class="font-jakarta font-bold text-[20px] text-[#010205]" data-i18n="review.name">Андрей</p>
-								<p class="font-jakarta font-medium text-[16px] text-[#878c91]" data-i18n="review.role">Генеральный директор</p>
+								<p class="font-jakarta font-bold text-[20px] text-[#010205]" id="reviewName">Адильжан</p>
+								<p class="font-jakarta font-medium text-[16px] text-[#878c91]" id="reviewRole">ТОО ТеплоТехник</p>
 							</div>
 						</div>
 						<!-- Navigation -->
@@ -1374,7 +1380,7 @@
 								</svg>
 							</button>
 							<p class="font-jakarta font-semibold text-[16px] text-[#010205]">
-								<span class="underline decoration-solid">01</span><span class="text-[rgba(1,2,5,0.4)]">/05</span>
+								<span class="underline decoration-solid" id="reviewCurrent">01</span><span class="text-[rgba(1,2,5,0.4)]">/</span><span class="text-[rgba(1,2,5,0.4)]" id="reviewTotal">03</span>
 							</p>
 							<button class="bg-[#010205] rounded-full px-8 py-4 flex items-center justify-center hover:bg-[#333] transition" id="nextReview">
 								<svg width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -1898,7 +1904,6 @@
 							<li><a href="#process" data-i18n="nav.process">Процесс</a></li>
 							<li><a href="/cases" data-i18n="nav.cases">Кейсы</a></li>
 							<li><a href="/about" data-i18n="nav.about">О нас</a></li>
-							<li><a href="#partners" data-i18n="nav.partners">Партнёры</a></li>
 							<li><a href="#contacts" data-i18n="nav.contacts">Контакты</a></li>
 							<li class="font-bold"><a href="#faq" data-i18n="nav.faq">FAQ</a></li>
 						</ul>
@@ -2070,6 +2075,104 @@
 					}
 				}
 				window.toggleSvc = toggleSvc;
+
+				// ── Reviews slider ──
+				const reviews = {
+					ru: [
+						{
+							quote:
+								'Мне понравилось, что вы работаете быстро, и понравилась ваша скорость реакции на наши предложения.',
+							name: 'Адильжан',
+							role: 'ТОО ТеплоТехник',
+						},
+						{
+							quote:
+								'Спасибо за своевременную работу и за то, что пошли на уступки, мы с вами заключаем по счету уже 6-7 и нам нравится работать с вами в долгосрочной перспективе',
+							name: 'Айнагуль Ханым',
+							role: 'CEO @daryndybala.kz',
+						},
+						{
+							quote: 'Отличная работа, оперативно, четко',
+							name: 'Нурлан Жакупов',
+							role: '',
+						},
+					],
+					en: [
+						{
+							quote:
+								'I liked that you work fast, and I really appreciated how quickly you responded to our suggestions.',
+							name: 'Adilzhan',
+							role: 'TeploTekhnik LLP',
+						},
+						{
+							quote:
+								'Thank you for the timely work and for being flexible with us. We have already signed our 6th or 7th invoice with you, and we value working with you in the long term.',
+							name: 'Ainagul Khanym',
+							role: 'CEO @daryndybala.kz',
+						},
+						{
+							quote: 'Excellent work: fast, clear, and efficient.',
+							name: 'Nurlan Zhakupov',
+							role: '',
+						},
+					],
+				};
+				const reviewQuote = document.getElementById('reviewQuote');
+				const reviewAvatar = document.getElementById('reviewAvatar');
+				const reviewName = document.getElementById('reviewName');
+				const reviewRole = document.getElementById('reviewRole');
+				const reviewCurrent = document.getElementById('reviewCurrent');
+				const reviewTotal = document.getElementById('reviewTotal');
+				const prevReview = document.getElementById('prevReview');
+				const nextReview = document.getElementById('nextReview');
+				let activeReviewIndex = 0;
+
+				const getReviewLang = () => {
+					const saved = localStorage.getItem('srt_lang');
+					return saved === 'en' ? 'en' : 'ru';
+				};
+
+				const getInitials = (name) => {
+					if (!name) return '';
+					const parts = name
+						.trim()
+						.split(/\s+/)
+						.filter(Boolean);
+					return parts
+						.slice(0, 2)
+						.map((part) => part.charAt(0).toUpperCase())
+						.join('');
+				};
+
+				const renderReview = () => {
+					if (!reviewQuote || !reviewAvatar || !reviewName || !reviewRole || !reviewCurrent || !reviewTotal) return;
+					const lang = getReviewLang();
+					const items = reviews[lang] || reviews.ru;
+					const item = items[activeReviewIndex] || items[0];
+					reviewQuote.textContent = item.quote;
+					reviewAvatar.textContent = getInitials(item.name);
+					reviewName.textContent = item.name;
+					reviewRole.textContent = item.role;
+					reviewRole.style.display = item.role ? '' : 'none';
+					reviewCurrent.textContent = String(activeReviewIndex + 1).padStart(2, '0');
+					reviewTotal.textContent = String(items.length).padStart(2, '0');
+				};
+
+				if (prevReview && nextReview) {
+					prevReview.addEventListener('click', () => {
+						const items = reviews[getReviewLang()] || reviews.ru;
+						activeReviewIndex = (activeReviewIndex - 1 + items.length) % items.length;
+						renderReview();
+					});
+					nextReview.addEventListener('click', () => {
+						const items = reviews[getReviewLang()] || reviews.ru;
+						activeReviewIndex = (activeReviewIndex + 1) % items.length;
+						renderReview();
+					});
+				}
+
+				document.addEventListener('srt:language-changed', renderReview);
+				renderReview();
 
 				// ── Contact form: char counter ──
 				const msg = document.getElementById("contactMessage");
