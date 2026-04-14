@@ -1684,6 +1684,35 @@
 			#how-we-work   { height: calc(662px * 0.834) !important; }
 		}
 
+		/* ── Desktop reset: undo any tablet overrides above 1359px ── */
+		@media (min-width: 1360px) {
+			.hero-layout {
+				zoom: unset !important;
+				width: 100% !important;
+				max-width: 1440px !important;
+				height: 687px !important;
+				display: block !important;
+				padding: 0 !important;
+				margin: 0 auto !important;
+			}
+			.how-work-shell {
+				position: absolute !important;
+				inset: 0 !important;
+				top: 0 !important; left: 0 !important;
+				right: 0 !important; bottom: 0 !important;
+				width: auto !important;
+				height: auto !important;
+				transform: none !important;
+				transform-origin: unset !important;
+				max-width: 1440px !important;
+			}
+			#how-we-work {
+				height: 662px !important;
+				overflow: hidden !important;
+				padding: 0 !important;
+			}
+		}
+
 			@media (max-width: 480px) {
 				.site-preloader__mark {
 					width: 70px;
@@ -3363,7 +3392,8 @@
 				});
 				if (howSection && howShell) {
 					['height','overflow','padding'].forEach(function(p){ howSection.style.removeProperty(p); });
-					['position','top','left','right','bottom','width','height','transform','transform-origin'].forEach(function(p){ howShell.style.removeProperty(p); });
+					['position','top','left','right','bottom','width','height',
+					 'transform','transform-origin','max-width'].forEach(function(p){ howShell.style.removeProperty(p); });
 				}
 			}
 		}
