@@ -328,48 +328,133 @@
 			>
 				<div class="flex items-center gap-[74px]">
 					<a href="/" aria-label="Silk Road Tech home">
-						<img src="assets/logo.svg" alt="Silk Road Tech" class="h-6 w-auto logo-img" />
+						<img
+							src="assets/logo.svg"
+							alt="Silk Road Tech"
+							class="h-6 w-auto logo-img"
+						/>
 					</a>
-					<ul class="hidden lg:flex items-center gap-10 text-[17.1px] font-semibold text-[#020407]">
-						<li><a href="/#services" class="hover:text-[#9ac763]" data-i18n="nav.services">Услуги</a></li>
-						<li><a href="/#process" class="hover:text-[#9ac763]" data-i18n="nav.process">Процесс</a></li>
-						<li class="flex items-center gap-2">
-							<a href="/cases" class="text-[#9ac763]" data-i18n="nav.cases">Кейсы</a>
-							<svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#9ac763" stroke-width="2" stroke-linecap="round"/></svg>
+					<ul
+						class="hidden lg:flex items-center gap-10 text-[17.1px] font-semibold text-[#020407]"
+					>
+						<li>
+							<a
+								href="/#services"
+								class="hover:text-[#9ac763]"
+								data-i18n="nav.services"
+								>Услуги</a
+							>
+						</li>
+						<li>
+							<a
+								href="/#process"
+								class="hover:text-[#9ac763]"
+								data-i18n="nav.process"
+								>Процесс</a
+							>
 						</li>
 						<li class="flex items-center gap-2">
-							<a href="/about" class="hover:text-[#9ac763]" data-i18n="nav.about">О нас</a>
-							<svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+							<a href="/cases" class="text-[#9ac763]" data-i18n="nav.cases"
+								>Кейсы</a
+							>
+							<svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+								<path
+									d="M6 9l6 6 6-6"
+									stroke="#9ac763"
+									stroke-width="2"
+									stroke-linecap="round"
+								/>
+							</svg>
 						</li>
-						<li><a href="/#contacts" class="hover:text-[#9ac763]" data-i18n="nav.contacts">Контакты</a></li>
-						<li><a href="/#faq" class="hover:text-[#9ac763]" data-i18n="nav.faq">FAQ</a></li>
+						<li class="flex items-center gap-2">
+							<a
+								href="/about"
+								class="hover:text-[#9ac763]"
+								data-i18n="nav.about"
+								>О нас</a
+							>
+							<svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+								<path
+									d="M6 9l6 6 6-6"
+									stroke="currentColor"
+									stroke-width="2"
+									stroke-linecap="round"
+								/>
+							</svg>
+						</li>
+						<li>
+							<a
+								href="/#contacts"
+								class="hover:text-[#9ac763]"
+								data-i18n="nav.contacts"
+								>Контакты</a
+							>
+						</li>
+						<li>
+							<a href="/#faq" class="hover:text-[#9ac763]" data-i18n="nav.faq"
+								>FAQ</a
+							>
+						</li>
 					</ul>
 				</div>
 				<div class="flex items-center gap-2">
 					<button
 						class="font-manrope font-bold bg-[#99cf63] border border-[#99cf63] rounded-full px-4 py-3 w-[174px] text-[16px] tracking-tight hover:brightness-95 transition"
-						onclick="location.href='/#contacts'"
+						onclick="location.href = '/#contacts'"
 						data-i18n="nav.cta"
 					>
 						Обсудить проект
 					</button>
-					<button id="langToggle" class="hidden lg:flex items-center justify-center w-[52px] h-[52px] rounded-full bg-[#010205] text-white text-[15px] font-semibold hover:bg-[#333] transition flex-shrink-0">En</button>
-					<button class="lg:hidden w-10 h-10 flex flex-col items-center justify-center gap-1.5" id="hamburger">
+					<button
+						id="langToggle"
+						class="hidden lg:flex items-center justify-center w-[52px] h-[52px] rounded-full bg-[#010205] text-white text-[15px] font-semibold hover:bg-[#333] transition flex-shrink-0"
+					>
+						En
+					</button>
+					<button
+						class="lg:hidden w-10 h-10 flex flex-col items-center justify-center gap-1.5"
+						id="hamburger"
+					>
 						<span class="block w-6 h-0.5 bg-[#010205] transition-all"></span>
 						<span class="block w-6 h-0.5 bg-[#010205] transition-all"></span>
 						<span class="block w-6 h-0.5 bg-[#010205] transition-all"></span>
 					</button>
 				</div>
 			</nav>
-			<div class="mobile-menu fixed inset-0 top-0 bg-white z-[100] p-8 pt-20 lg:hidden" id="mobileMenu">
-				<button class="absolute top-6 right-6 text-3xl" id="closeMenu">&times;</button>
+			<div
+				class="mobile-menu fixed inset-0 top-0 bg-white z-[100] p-8 pt-20 lg:hidden"
+				id="mobileMenu"
+			>
+				<button class="absolute top-6 right-6 text-3xl" id="closeMenu">
+					&times;
+				</button>
 				<ul class="flex flex-col gap-6 text-[20px] font-semibold">
-					<li><a href="/#services" class="mobile-link" data-i18n="nav.services">Услуги</a></li>
-					<li><a href="/#process" class="mobile-link" data-i18n="nav.process">Процесс</a></li>
-					<li><a href="/cases" class="text-[#9ac763]" data-i18n="nav.cases">Кейсы</a></li>
-					<li><a href="/about" class="mobile-link" data-i18n="nav.about">О нас</a></li>
-					<li><a href="/#contacts" class="mobile-link" data-i18n="nav.contacts">Контакты</a></li>
-					<li><a href="/#faq" class="mobile-link" data-i18n="nav.faq">FAQ</a></li>
+					<li>
+						<a href="/#services" class="mobile-link" data-i18n="nav.services"
+							>Услуги</a
+						>
+					</li>
+					<li>
+						<a href="/#process" class="mobile-link" data-i18n="nav.process"
+							>Процесс</a
+						>
+					</li>
+					<li>
+						<a href="/cases" class="text-[#9ac763]" data-i18n="nav.cases"
+							>Кейсы</a
+						>
+					</li>
+					<li>
+						<a href="/about" class="mobile-link" data-i18n="nav.about">О нас</a>
+					</li>
+					<li>
+						<a href="/#contacts" class="mobile-link" data-i18n="nav.contacts"
+							>Контакты</a
+						>
+					</li>
+					<li>
+						<a href="/#faq" class="mobile-link" data-i18n="nav.faq">FAQ</a>
+					</li>
 				</ul>
 			</div>
 		</header>
@@ -391,7 +476,9 @@
 						class="font-inter text-[24px] leading-[1.4] tracking-[-0.72px] text-[#212121] text-justify max-w-[938px]"
 						data-i18n="cases.hero.desc"
 					>
-						Мы помогли локальным и международным комп��ниям решить их сложнейшие технологические задачи — через кастомные ERP-внедрения и интеллектуальные системы управления.
+						Мы помогли локальным и международным комп��ниям решить их сложнейшие
+						технологические задачи — через кастомные ERP-внедрения и
+						интеллектуальные системы управления.
 					</p>
 				</div>
 
@@ -404,9 +491,9 @@
 							<div class="flex items-start justify-between">
 								<div class="flex gap-[29px] items-start">
 									<div class="flex flex-col gap-[7px] items-start">
-									<div
-										class="w-[80px] h-[80px] rounded-[10px] bg-[#282727] flex items-center justify-center overflow-hidden"
-									>
+										<div
+											class="w-[80px] h-[80px] rounded-[10px] bg-[#282727] flex items-center justify-center overflow-hidden"
+										>
 											<img
 												src="https://www.figma.com/api/mcp/asset/006aae01-7e68-4771-8bd6-26ae435f3655"
 												alt="Orkenlink"
@@ -425,14 +512,15 @@
 											class="font-space font-medium text-[17px] leading-normal text-black max-w-[401px]"
 											data-i18n="cases.orkenlink.title"
 										>
-											LinkedIn для студентов — платформа поиска карьерных возможностей
+											LinkedIn для студентов — платформа поиска карьерных
+											возможностей
 										</p>
 										<p
 											class="font-space text-[13px] leading-normal text-black max-w-[401px]"
 											data-i18n="cases.orkenlink.desc"
 										>
-											Система управления внешним кадровым пулом.
-											Масштабируемая платформа для отслеживания ресурсов и подбора кандидатов.
+											Система управления внешним кадровым пулом. Масштабируемая
+											платформа для отслеживания ресурсов и подбора кандидатов.
 										</p>
 									</div>
 								</div>
@@ -455,13 +543,17 @@
 							<hr class="border-t border-black/10" />
 							<div class="flex items-center gap-[7px]">
 								<span class="bullet"></span>
-								<span class="font-jost text-[16px] leading-[25.6px] text-black" data-i18n="cases.orkenlink.b1"
+								<span
+									class="font-jost text-[16px] leading-[25.6px] text-black"
+									data-i18n="cases.orkenlink.b1"
 									>Career opportunities search</span
 								>
 							</div>
 							<div class="flex items-center gap-[7px]">
 								<span class="bullet"></span>
-								<span class="font-jost text-[16px] leading-[25.6px] text-black" data-i18n="cases.orkenlink.b2"
+								<span
+									class="font-jost text-[16px] leading-[25.6px] text-black"
+									data-i18n="cases.orkenlink.b2"
 									>Student-employer matching</span
 								>
 							</div>
@@ -472,11 +564,11 @@
 							<div class="flex items-start justify-between">
 								<div class="flex gap-[29px] items-start">
 									<div class="flex flex-col gap-[7px] items-start">
-									<div
-										class="w-[80px] h-[80px] rounded-[10px] bg-[#3C623B] flex items-center justify-center overflow-hidden"
-									>
-										<img
-											src="https://www.figma.com/api/mcp/asset/d18801e0-71e5-47d5-be7c-e944e12f77c8"
+										<div
+											class="w-[80px] h-[80px] rounded-[10px] bg-[#3C623B] flex items-center justify-center overflow-hidden"
+										>
+											<img
+												src="https://www.figma.com/api/mcp/asset/d18801e0-71e5-47d5-be7c-e944e12f77c8"
 												alt="AIVA"
 												class="w-[64px] h-[64px] object-contain"
 											/>
@@ -497,9 +589,10 @@
 											class="font-space text-[13px] leading-normal text-black max-w-[437px]"
 											data-i18n="cases.aiva.desc"
 										>
-											Развернули ботов на всех этапах воронки, повысили конверсию
-											посещаемости на 30% и снизили затраты на колл-центр.
-											ИИ-мониторинг эффективности операторов и отчётность.
+											Развернули ботов на всех этапах воронки, повысили
+											конверсию посещаемости на 30% и снизили затраты на
+											колл-центр. ИИ-мониторинг эффективности операторов и
+											отчётность.
 										</p>
 									</div>
 								</div>
@@ -507,17 +600,23 @@
 							<hr class="border-t border-black/10" />
 							<div class="flex items-center gap-[7px]">
 								<span class="bullet"></span>
-								<span class="font-jost text-[16px] leading-[25.6px] text-black" data-i18n="cases.aiva.b1"
+								<span
+									class="font-jost text-[16px] leading-[25.6px] text-black"
+									data-i18n="cases.aiva.b1"
 									>30% improvement in attendance conversion</span
 								>
 							</div>
 							<div class="flex items-center gap-[7px] flex-wrap">
 								<span class="bullet"></span>
-								<span class="font-jost text-[16px] leading-[25.6px] text-black" data-i18n="cases.aiva.b2"
+								<span
+									class="font-jost text-[16px] leading-[25.6px] text-black"
+									data-i18n="cases.aiva.b2"
 									>In partnership with AIVA</span
 								>
 								<span class="bullet ml-3"></span>
-								<span class="font-jost text-[16px] leading-[25.6px] text-black" data-i18n="cases.aiva.b3"
+								<span
+									class="font-jost text-[16px] leading-[25.6px] text-black"
+									data-i18n="cases.aiva.b3"
 									>Reduced call center headcount costs</span
 								>
 							</div>
@@ -531,11 +630,11 @@
 							<div class="flex items-start justify-between">
 								<div class="flex gap-[29px] items-start">
 									<div class="flex flex-col gap-[7px] items-start">
-									<div
-										class="w-[80px] h-[80px] rounded-[10px] bg-[#282727] flex items-center justify-center overflow-hidden"
-									>
-										<img
-											src="https://www.figma.com/api/mcp/asset/1a07c454-b968-47a1-b5da-13e90be90135"
+										<div
+											class="w-[80px] h-[80px] rounded-[10px] bg-[#282727] flex items-center justify-center overflow-hidden"
+										>
+											<img
+												src="https://www.figma.com/api/mcp/asset/1a07c454-b968-47a1-b5da-13e90be90135"
 												alt="PetroMindAI"
 												class="w-[64px] h-[64px] object-contain"
 											/>
@@ -550,7 +649,8 @@
 											class="font-space font-medium text-[17px] leading-normal text-black max-w-[401px]"
 											data-i18n="cases.petromind.title"
 										>
-											ERP-модуль интеллектуального управления человеческим капиталом
+											ERP-модуль интеллектуального управления человеческим
+											капиталом
 										</p>
 										<p
 											class="font-space text-[13px] leading-normal text-black max-w-[401px]"
@@ -565,13 +665,17 @@
 							<hr class="border-t border-black/10" />
 							<div class="flex items-center gap-[7px]">
 								<span class="bullet"></span>
-								<span class="font-jost text-[16px] leading-[25.6px] text-black" data-i18n="cases.petromind.b1"
+								<span
+									class="font-jost text-[16px] leading-[25.6px] text-black"
+									data-i18n="cases.petromind.b1"
 									>Automated onboarding for new employees</span
 								>
 							</div>
 							<div class="flex items-center gap-[7px]">
 								<span class="bullet"></span>
-								<span class="font-jost text-[16px] leading-[25.6px] text-black" data-i18n="cases.petromind.b2"
+								<span
+									class="font-jost text-[16px] leading-[25.6px] text-black"
+									data-i18n="cases.petromind.b2"
 									>BI analytics and reporting for C-level</span
 								>
 							</div>
@@ -607,8 +711,8 @@
 											class="font-space text-[13px] leading-normal text-black max-w-[401px]"
 											data-i18n="cases.smartlab.desc"
 										>
-											Система электронного документооборота, адаптированная
-											под бизнес-процессы крупных предприятий.
+											Система электронного документооборота, адаптированная под
+											бизнес-процессы крупных предприятий.
 										</p>
 									</div>
 								</div>
@@ -616,13 +720,17 @@
 							<hr class="border-t border-black/10" />
 							<div class="flex items-center gap-[7px]">
 								<span class="bullet"></span>
-								<span class="font-jost text-[16px] leading-[25.6px] text-black" data-i18n="cases.smartlab.b1"
+								<span
+									class="font-jost text-[16px] leading-[25.6px] text-black"
+									data-i18n="cases.smartlab.b1"
 									>Enterprise-standard integration</span
 								>
 							</div>
 							<div class="flex items-center gap-[7px]">
 								<span class="bullet"></span>
-								<span class="font-jost text-[16px] leading-[25.6px] text-black" data-i18n="cases.smartlab.b2"
+								<span
+									class="font-jost text-[16px] leading-[25.6px] text-black"
+									data-i18n="cases.smartlab.b2"
 									>Business processes for large holding companies</span
 								>
 							</div>
@@ -636,15 +744,15 @@
 							<div class="flex items-start justify-between">
 								<div class="flex gap-[29px] items-start">
 									<div class="flex flex-col gap-[7px] items-start">
-									<div
-										class="w-[80px] h-[80px] rounded-[10px] bg-[#0f1f38] flex items-center justify-center overflow-hidden"
-									>
-										<img
-											src="assets/contentflow-mark.svg"
-											alt="ContentFlow logo"
-											class="w-[52px] h-[42px] object-contain"
-										/>
-									</div>
+										<div
+											class="w-[80px] h-[80px] rounded-[10px] bg-[#0f1f38] flex items-center justify-center overflow-hidden"
+										>
+											<img
+												src="assets/contentflow-mark.svg"
+												alt="ContentFlow logo"
+												class="w-[52px] h-[42px] object-contain"
+											/>
+										</div>
 										<a
 											href="https://kainulla-contentflow.gitlabapp.alem.ai/"
 											target="_blank"
@@ -688,13 +796,17 @@
 							<hr class="border-t border-black/10" />
 							<div class="flex items-center gap-[7px]">
 								<span class="bullet"></span>
-								<span class="font-jost text-[16px] leading-[25.6px] text-black" data-i18n="cases.contentflow.b1"
+								<span
+									class="font-jost text-[16px] leading-[25.6px] text-black"
+									data-i18n="cases.contentflow.b1"
 									>AI post generation tailored to each platform</span
 								>
 							</div>
 							<div class="flex items-center gap-[7px]">
 								<span class="bullet"></span>
-								<span class="font-jost text-[16px] leading-[25.6px] text-black" data-i18n="cases.contentflow.b2"
+								<span
+									class="font-jost text-[16px] leading-[25.6px] text-black"
+									data-i18n="cases.contentflow.b2"
 									>Auto-publishing and MCP integration</span
 								>
 							</div>
@@ -705,15 +817,15 @@
 							<div class="flex items-start justify-between">
 								<div class="flex gap-[29px] items-start">
 									<div class="flex flex-col gap-[7px] items-start">
-									<div
-										class="w-[80px] h-[80px] rounded-[10px] bg-black flex items-center justify-center overflow-hidden p-2"
-									>
-										<img
-											src="assets/cases/kzprovider.png"
-											alt="KZ-Provider logo"
-											class="w-full h-full object-contain"
-										/>
-									</div>
+										<div
+											class="w-[80px] h-[80px] rounded-[10px] bg-black flex items-center justify-center overflow-hidden p-2"
+										>
+											<img
+												src="assets/cases/kzprovider.png"
+												alt="KZ-Provider logo"
+												class="w-full h-full object-contain"
+											/>
+										</div>
 										<a
 											href="https://www.kzprovider.com/"
 											target="_blank"
@@ -726,15 +838,16 @@
 											class="font-space font-medium text-[17px] leading-normal text-black max-w-[401px]"
 											data-i18n="cases.kzprovider.title"
 										>
-											Корпоративный сайт поставщика промышленных гидравлических компонентов
+											Корпоративный сайт поставщика промышленных гидравлических
+											компонентов
 										</p>
 										<p
 											class="font-space text-[13px] leading-normal text-black max-w-[401px]"
 											data-i18n="cases.kzprovider.desc"
 										>
 											Разработка веб-платформы для ТОО «KZ-PROVIDER» —
-											поставщика гидравлических и пневматических компонентов
-											для горнодобывающего и промышленного секторов Казахстана.
+											поставщика гидравлических и пневматических компонентов для
+											горнодобывающего и промышленного секторов Казахстана.
 										</p>
 									</div>
 								</div>
@@ -757,7 +870,9 @@
 							<hr class="border-t border-black/10" />
 							<div class="flex items-center gap-[7px]">
 								<span class="bullet"></span>
-								<span class="font-jost text-[16px] leading-[25.6px] text-black" data-i18n="cases.kzprovider.b1"
+								<span
+									class="font-jost text-[16px] leading-[25.6px] text-black"
+									data-i18n="cases.kzprovider.b1"
 									>Product catalog meeting international standards</span
 								>
 							</div>
@@ -774,15 +889,25 @@
 				class="footer-layout relative max-w-[1440px] mx-auto px-20 flex gap-14"
 			>
 				<div class="max-w-[534px]">
-					<a href="/" aria-label="Silk Road Tech home" class="inline-block mb-8">
+					<a
+						href="/"
+						aria-label="Silk Road Tech home"
+						class="inline-block mb-8"
+					>
 						<img
 							src="assets/logo.svg"
 							alt="Silk Road Tech"
 							class="h-8 w-auto logo-img"
 						/>
 					</a>
-					<p class="font-roboto text-[14px] leading-6 text-[#9b9b9c] mb-8" data-i18n="footer.desc">
-						Мы предлагаем комплексный IT-аутсорсинг, охватывающий все аспекты вашей цифровой разработки. От проектирования архитектуры и разработки ПО до облачных решений и кибербезопасности — наша команда обладает экспертизой для реализации проектов любой сложности.
+					<p
+						class="font-roboto text-[14px] leading-6 text-[#9b9b9c] mb-8"
+						data-i18n="footer.desc"
+					>
+						Мы предлагаем комплексный IT-аутсорсинг, охватывающий все аспекты
+						вашей цифровой разработки. От проектирования архитектуры и
+						разработки ПО до облачных решений и кибербезопасности — наша команда
+						обладает экспертизой для реализации проектов любой сложности.
 					</p>
 					<div class="flex items-center gap-8">
 						<div class="flex gap-3">
@@ -800,7 +925,7 @@
 								</svg>
 							</a>
 							<a
-								href="https://t.me/silkroadtech"
+								href="https://t.me/xsayat"
 								target="_blank"
 								rel="noreferrer"
 								aria-label="Telegram"
@@ -841,7 +966,7 @@
 						</div>
 						<button
 							class="bg-[#010205] text-white font-jakarta font-bold text-[16px] rounded-full px-8 py-4 inline-flex items-center gap-3 hover:scale-[1.02] transition"
-							onclick="location.href='/#contacts'"
+							onclick="location.href = '/#contacts'"
 							data-i18n="footer.discuss"
 						>
 							Обсудить проект
@@ -871,8 +996,12 @@
 							<li><a href="/#process" data-i18n="nav.process">Процесс</a></li>
 							<li><a href="/about" data-i18n="nav.about">О нас</a></li>
 							<li><a href="/cases" data-i18n="nav.cases">Кейсы</a></li>
-							<li><a href="/#contacts" data-i18n="nav.contacts">Контакты</a></li>
-							<li class="font-bold"><a href="/#faq" data-i18n="nav.faq">FAQ</a></li>
+							<li>
+								<a href="/#contacts" data-i18n="nav.contacts">Контакты</a>
+							</li>
+							<li class="font-bold">
+								<a href="/#faq" data-i18n="nav.faq">FAQ</a>
+							</li>
 						</ul>
 					</div>
 					<div>
@@ -883,9 +1012,23 @@
 							Документы
 						</h4>
 						<ul class="font-roboto text-[14px] text-[#9b9b9c] space-y-6">
-							<li><a href="/privacy" data-i18n="footer.privacy">Политика конфиденциальности</a></li>
-							<li><a href="/copyright" data-i18n="footer.copyright">Авторские права</a></li>
-							<li><a href="mailto:sayat@silkroadtech.kz" data-i18n="footer.email.label">Email</a></li>
+							<li>
+								<a href="/privacy" data-i18n="footer.privacy"
+									>Политика конфиденциальности</a
+								>
+							</li>
+							<li>
+								<a href="/copyright" data-i18n="footer.copyright"
+									>Авторские права</a
+								>
+							</li>
+							<li>
+								<a
+									href="mailto:sayat@silkroadtech.kz"
+									data-i18n="footer.email.label"
+									>Email</a
+								>
+							</li>
 						</ul>
 					</div>
 					<div>
@@ -935,7 +1078,9 @@
 			<div
 				class="footer-meta relative max-w-[1440px] mx-auto px-20 mt-12 pt-8 border-t border-black/10 flex justify-between text-[12px] text-[#9b9b9c]"
 			>
-				<span data-i18n="footer.copy">© 2026 Silk Road Tech. Все права защищены.</span>
+				<span data-i18n="footer.copy"
+					>© 2026 Silk Road Tech. Все права защищены.</span
+				>
 				<span data-i18n="footer.made">Сделано с заботой в Астане</span>
 			</div>
 		</footer>
@@ -969,8 +1114,14 @@
 				const mobileMenu = document.getElementById("mobileMenu");
 				const closeMenu = document.getElementById("closeMenu");
 				if (hamburger && mobileMenu && closeMenu) {
-					const openMenu = () => { mobileMenu.classList.add("open"); document.body.classList.add("menu-open"); };
-					const hideMenu = () => { mobileMenu.classList.remove("open"); document.body.classList.remove("menu-open"); };
+					const openMenu = () => {
+						mobileMenu.classList.add("open");
+						document.body.classList.add("menu-open");
+					};
+					const hideMenu = () => {
+						mobileMenu.classList.remove("open");
+						document.body.classList.remove("menu-open");
+					};
 					hamburger.addEventListener("click", openMenu);
 					closeMenu.addEventListener("click", hideMenu);
 					mobileMenu.querySelectorAll("a").forEach((link) => {
