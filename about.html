@@ -366,11 +366,80 @@
 				.team-heading p {
 					font-size: 0.95rem !important;
 				}
-				.board-shell h2 {
-					font-size: 1.75rem !important;
-				}
+			.board-shell h2 {
+				font-size: 1.75rem !important;
 			}
-		</style>
+		}
+
+		/* ── Tablet nav (769px–1359px): same rules as index.html ── */
+		@media (min-width: 1024px) and (max-width: 1180px) {
+			header nav {
+				padding-left: 1.5rem !important;
+				padding-right: 1.5rem !important;
+				gap: 1rem !important;
+			}
+			header nav > .flex.items-center.gap-\[74px\] {
+				gap: 1.5rem !important;
+				min-width: 0 !important;
+				flex: 1 1 auto !important;
+			}
+			header nav ul.hidden.lg\:flex {
+				gap: 1.5rem !important;
+				font-size: 1rem !important;
+				flex-wrap: nowrap !important;
+				min-width: 0 !important;
+			}
+			header nav ul.hidden.lg\:flex li,
+			header nav ul.hidden.lg\:flex a {
+				white-space: nowrap !important;
+			}
+			header nav ul.hidden.lg\:flex li.flex.items-center.gap-2 {
+				gap: 0.35rem !important;
+			}
+			header nav ul.hidden.lg\:flex svg {
+				width: 14px !important;
+				height: 14px !important;
+				flex-shrink: 0 !important;
+			}
+			header nav > .flex.items-center.gap-2 {
+				flex-shrink: 0 !important;
+			}
+			header .w-\[174px\] {
+				width: auto !important;
+				min-width: 0 !important;
+				padding: 0.85rem 1.15rem !important;
+				font-size: 0.95rem !important;
+				white-space: nowrap !important;
+			}
+			#langToggle {
+				width: 46px !important;
+				height: 46px !important;
+				font-size: 14px !important;
+			}
+		}
+		@media (min-width: 769px) and (max-width: 1023px) {
+			header nav {
+				padding-left: 1.5rem !important;
+				padding-right: 1.5rem !important;
+				gap: 0.5rem !important;
+			}
+			header nav > .flex.items-center.gap-\[74px\] {
+				gap: 1rem !important;
+				flex: 1 1 auto !important;
+				min-width: 0 !important;
+			}
+			header nav ul.hidden.lg\:flex {
+				gap: 1rem !important;
+				font-size: 0.95rem !important;
+			}
+			header .w-\[174px\] {
+				width: auto !important;
+				padding: 0.75rem 1rem !important;
+				font-size: 0.9rem !important;
+				white-space: nowrap !important;
+			}
+		}
+	</style>
 	</head>
 	<body class="bg-[#fafafa] text-[#010205]">
 		<!-- ============ NAVBAR ============ -->

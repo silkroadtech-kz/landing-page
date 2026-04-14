@@ -4,9 +4,7 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>
-			Silk Road Tech — Software Development, Analytics &amp; AI Integration
-		</title>
+		<title>Silk Road Tech — Software Development, Analytics &amp; AI Integration</title>
 		<meta
 			name="description"
 			content="Silk Road Tech builds software, integrates AI, delivers analytics, and automates business processes for teams that need measurable results."
@@ -111,42 +109,42 @@
 				opacity: 0.06;
 				pointer-events: none;
 			}
-			.marquee {
-				display: flex;
-				gap: 40px;
-				animation: scroll 30s linear infinite;
-			}
-			/* Partner strip — direct child of hero-layout */
+		.marquee {
+			display: flex;
+			gap: 40px;
+			animation: scroll 30s linear infinite;
+		}
+		/* Partner strip — direct child of hero-layout */
+		.hero-partner-strip {
+			display: flex;
+			flex-direction: column;
+			gap: 0.75rem;
+			/* Desktop: absolute, under the copy column only */
+			position: absolute;
+			left: 71px;
+			top: 520px;
+			width: 680px;
+		}
+		.partners-label {
+			display: block;
+			font-size: 11px;
+			letter-spacing: 0.18em;
+			text-align: left;
+		}
+		.partners-ticker {
+			overflow: hidden;
+			height: 50px;
+		}
+		/* Responsive: in flow, full width */
+		@media (max-width: 1200px) {
 			.hero-partner-strip {
-				display: flex;
-				flex-direction: column;
-				gap: 0.75rem;
-				/* Desktop: absolute, under the copy column only */
-				position: absolute;
-				left: 71px;
-				top: 520px;
-				width: 680px;
+				position: static !important;
+				left: auto !important;
+				right: auto !important;
+				top: auto !important;
+				width: 100% !important;
 			}
-			.partners-label {
-				display: block;
-				font-size: 11px;
-				letter-spacing: 0.18em;
-				text-align: left;
-			}
-			.partners-ticker {
-				overflow: hidden;
-				height: 50px;
-			}
-			/* Responsive: in flow, full width */
-			@media (max-width: 1200px) {
-				.hero-partner-strip {
-					position: static !important;
-					left: auto !important;
-					right: auto !important;
-					top: auto !important;
-					width: 100% !important;
-				}
-			}
+		}
 			@keyframes scroll {
 				0% {
 					transform: translateX(0);
@@ -484,11 +482,7 @@
 				justify-content: center;
 				padding: 2rem;
 				background:
-					radial-gradient(
-						circle at top,
-						rgba(154, 199, 99, 0.18),
-						transparent 42%
-					),
+					radial-gradient(circle at top, rgba(154, 199, 99, 0.18), transparent 42%),
 					rgba(239, 239, 239, 0.98);
 				backdrop-filter: blur(16px);
 				transition:
@@ -511,11 +505,7 @@
 				width: 82px;
 				height: 82px;
 				border-radius: 999px;
-				background: linear-gradient(
-					135deg,
-					rgba(1, 2, 5, 0.98),
-					rgba(32, 36, 42, 0.94)
-				);
+				background: linear-gradient(135deg, rgba(1, 2, 5, 0.98), rgba(32, 36, 42, 0.94));
 				box-shadow:
 					0 24px 50px rgba(1, 2, 5, 0.18),
 					inset 0 1px 0 rgba(255, 255, 255, 0.08);
@@ -735,52 +725,52 @@
 					max-width: 55% !important;
 					gap: 1.1rem !important;
 				}
-				.hero-card-growth h3 {
-					width: auto !important;
-					font-size: 2rem !important;
-					line-height: 1.15 !important;
-				}
-				.hero-card-growth .absolute.left-\[339px\] {
-					left: auto !important;
-					right: 1rem !important;
-					bottom: 1rem !important;
-				}
-				#heroBars > div {
-					width: 56px !important;
-				}
-				#heroBars .h-\[95px\] {
-					height: 74px !important;
-				}
-				#heroBars .h-\[136px\] {
-					height: 106px !important;
-				}
-				#heroBars .h-\[166px\] {
-					height: 128px !important;
-				}
-				/* Fix grid auto-placement: hero-copy col1, hero-media col2, partner strip below both */
-				.hero-copy {
-					grid-column: 1 !important;
-					grid-row: 1 !important;
-				}
-				.hero-media {
-					grid-column: 2 !important;
-					grid-row: 1 !important;
-				}
-				.hero-partner-strip {
-					grid-column: 1 / -1 !important;
-					grid-row: 2 !important;
-					position: static !important;
-					left: auto !important;
-					top: auto !important;
-					right: auto !important;
-					width: 100% !important;
-				}
-				.hero-badge {
-					display: none !important;
-				}
+			.hero-card-growth h3 {
+				width: auto !important;
+				font-size: 2rem !important;
+				line-height: 1.15 !important;
 			}
+			.hero-card-growth .absolute.left-\[339px\] {
+				left: auto !important;
+				right: 1rem !important;
+				bottom: 1rem !important;
+			}
+			#heroBars > div {
+				width: 56px !important;
+			}
+			#heroBars .h-\[95px\] {
+				height: 74px !important;
+			}
+			#heroBars .h-\[136px\] {
+				height: 106px !important;
+			}
+			#heroBars .h-\[166px\] {
+				height: 128px !important;
+			}
+			/* Fix grid auto-placement: hero-copy col1, hero-media col2, partner strip below both */
+			.hero-copy {
+				grid-column: 1 !important;
+				grid-row: 1 !important;
+			}
+			.hero-media {
+				grid-column: 2 !important;
+				grid-row: 1 !important;
+			}
+			.hero-partner-strip {
+				grid-column: 1 / -1 !important;
+				grid-row: 2 !important;
+				position: static !important;
+				left: auto !important;
+				top: auto !important;
+				right: auto !important;
+				width: 100% !important;
+			}
+		.hero-badge {
+			display: none !important;
+		}
+	}
 
-			@media (max-width: 1024px) {
+		@media (max-width: 1024px) {
 				header nav,
 				.px-20 {
 					padding-left: 1.5rem !important;
@@ -803,21 +793,21 @@
 					padding-top: 2.5rem !important;
 					padding-bottom: 2rem !important;
 				}
-				.hero-copy,
-				.hero-media {
-					position: relative !important;
-					left: auto !important;
-					top: auto !important;
-					bottom: auto !important;
-					right: auto !important;
-					width: 100% !important;
-				}
-				.hero-copy {
-					gap: 1.5rem !important;
-					padding: 0 !important;
-				}
-				.hero-copy h1 {
-					font-size: 3.4rem !important;
+			.hero-copy,
+			.hero-media {
+				position: relative !important;
+				left: auto !important;
+				top: auto !important;
+				bottom: auto !important;
+				right: auto !important;
+				width: 100% !important;
+			}
+			.hero-copy {
+				gap: 1.5rem !important;
+				padding: 0 !important;
+			}
+			.hero-copy h1 {
+				font-size: 3.4rem !important;
 					width: 100% !important;
 					max-width: 580px !important;
 				}
@@ -832,24 +822,24 @@
 					align-items: stretch;
 					transform: none !important;
 				}
-				.hero-media > div {
-					position: relative !important;
-					left: auto !important;
-					top: auto !important;
-					width: 100% !important;
-					height: auto !important;
-					min-height: 220px !important;
-				}
-				.hero-card-photo {
-					max-height: 320px !important;
-				}
-				.hero-media .hero-card-growth {
-					grid-column: span 2;
-				}
-				.hero-badge {
-					display: none !important;
-				}
-				#how-we-work {
+			.hero-media > div {
+				position: relative !important;
+				left: auto !important;
+				top: auto !important;
+				width: 100% !important;
+				height: auto !important;
+				min-height: 220px !important;
+			}
+			.hero-card-photo {
+				max-height: 320px !important;
+			}
+			.hero-media .hero-card-growth {
+				grid-column: span 2;
+			}
+		.hero-badge {
+			display: none !important;
+		}
+		#how-we-work {
 					height: auto !important;
 					padding: 4rem 0 5rem !important;
 				}
@@ -1056,19 +1046,19 @@
 					display: grid;
 					gap: 1.5rem;
 				}
-				.hero-copy,
-				.hero-media {
-					position: relative !important;
-					left: auto !important;
-					top: auto !important;
-					bottom: auto !important;
-					right: auto !important;
-					width: 100% !important;
-				}
-				.hero-copy {
-					gap: 1.5rem !important;
-					padding: 0 !important;
-				}
+			.hero-copy,
+			.hero-media {
+				position: relative !important;
+				left: auto !important;
+				top: auto !important;
+				bottom: auto !important;
+				right: auto !important;
+				width: 100% !important;
+			}
+			.hero-copy {
+				gap: 1.5rem !important;
+				padding: 0 !important;
+			}
 				.hero-copy h1 {
 					width: auto !important;
 					max-width: none !important;
@@ -1084,21 +1074,21 @@
 					gap: 1rem;
 				}
 				.hero-media > div {
-					position: relative !important;
-					left: auto !important;
-					top: auto !important;
-					width: 100% !important;
-					height: auto !important;
-					min-height: 200px;
-				}
-				.hero-card-photo {
-					max-height: 320px !important;
-				}
-				.hero-badge {
-					display: none !important;
-				}
-				.process-cards {
-					flex-direction: column;
+				position: relative !important;
+				left: auto !important;
+				top: auto !important;
+				width: 100% !important;
+				height: auto !important;
+				min-height: 200px;
+			}
+			.hero-card-photo {
+				max-height: 320px !important;
+			}
+		.hero-badge {
+			display: none !important;
+		}
+		.process-cards {
+				flex-direction: column;
 					align-items: stretch !important;
 				}
 				.process-step {
@@ -1128,16 +1118,16 @@
 				}
 			}
 
-			@media (max-width: 768px) {
-				.partners-label {
-					text-align: center !important;
-				}
-				header nav {
-					padding-top: 0.75rem !important;
-					padding-bottom: 0.75rem !important;
-					padding-left: 1.25rem !important;
-					padding-right: 1.25rem !important;
-				}
+		@media (max-width: 768px) {
+			.partners-label {
+				text-align: center !important;
+			}
+			header nav {
+				padding-top: 0.75rem !important;
+				padding-bottom: 0.75rem !important;
+				padding-left: 1.25rem !important;
+				padding-right: 1.25rem !important;
+			}
 				/* Hide desktop CTA button on mobile, show only hamburger */
 				header .w-\[174px\] {
 					display: none !important;
@@ -1229,15 +1219,9 @@
 				#heroBars > div {
 					width: 40px !important;
 				}
-				#heroBars .h-\[95px\] {
-					height: 60px !important;
-				}
-				#heroBars .h-\[136px\] {
-					height: 86px !important;
-				}
-				#heroBars .h-\[166px\] {
-					height: 105px !important;
-				}
+				#heroBars .h-\[95px\]  { height: 60px !important; }
+				#heroBars .h-\[136px\] { height: 86px !important; }
+				#heroBars .h-\[166px\] { height: 105px !important; }
 				/* How-we-work section: disable absolute positioning */
 				#how-we-work {
 					height: auto !important;
@@ -1446,132 +1430,288 @@
 				}
 			}
 
-			/* Small tablet (769–900px): scale desktop hero down proportionally */
-			@media (min-width: 769px) and (max-width: 900px) {
-				/* Nav: hide CTA to prevent overflow */
-				header .w-\[174px\] {
-					display: none !important;
-				}
-				header nav {
-					gap: 0.5rem !important;
-				}
+		/*
+		 * ═══════════════════════════════════════════════════════
+		 *  TABLET SCALING  769px – 1359px
+		 *  Strategy: zoom on hero-layout (1440px wide), scale() on how-work-shell.
+		 *  All rules use !important and come last → always win.
+		 * ═══════════════════════════════════════════════════════
+		 */
+		@media (min-width: 769px) and (max-width: 1359px) {
 
-				/* Scale the 1440px desktop layout to fit — zoom affects layout unlike transform */
-				.hero-layout {
-					zoom: 0.59 !important;
-					width: 1440px !important;
-					height: 687px !important;
-					display: block !important;
-					padding: 0 !important;
-				}
+			/* ── Nav ── */
+			header nav { gap: 0.5rem !important; }
 
-				/* Hero-copy: restore absolute desktop position
-				   Use .hero-layout .hero-copy (0,2,0) to beat the 1024px rule .hero-copy (0,1,0) */
-				.hero-layout .hero-copy {
-					position: absolute !important;
-					left: 71px !important;
-					top: 80px !important;
-					width: auto !important;
-					max-width: none !important;
-					padding: 0 !important;
-					gap: 3rem !important;
-				}
-				.hero-layout .hero-copy h1,
-				html[lang="en"] .hero-layout .hero-copy .hero-title {
-					font-size: 62px !important;
-					letter-spacing: -1.86px !important;
-					width: 700px !important;
-					max-width: none !important;
-					line-height: 1.1 !important;
-				}
-				.hero-layout .hero-copy p {
-					font-size: 16px !important;
-					width: 557px !important;
-					max-width: none !important;
-				}
-				.hero-layout .hero-btns {
-					flex-direction: row !important;
-					align-items: center !important;
-					gap: 3.5rem !important;
-				}
-				.hero-layout .hero-btns button,
-				.hero-layout .hero-btns a {
-					width: auto !important;
-					min-height: auto !important;
-				}
+			/* ── Hero wrapper ── clip but don't scroll */
+			.hero-section { overflow: hidden !important; }
 
-				/* Hero-media: restore grid-free block so cards use absolute positions */
-				.hero-layout .hero-media {
-					display: block !important;
-					grid-template-columns: unset !important;
-					gap: 0 !important;
-				}
-
-				/* Cards: use .hero-layout .hero-card (0,2,0) to beat
-				   .hero-media > div (0,1,1) from the 1024px block */
-				.hero-layout .hero-card {
-					position: absolute !important;
-					width: auto !important;
-					height: auto !important;
-					min-height: unset !important;
-				}
-				.hero-layout .hero-card-photo {
-					left: 781px !important;
-					top: 112px !important;
-					width: 303px !important;
-					height: 275px !important;
-					border-top-left-radius: 1000px !important;
-					border-top-right-radius: 20px !important;
-					border-bottom-left-radius: 20px !important;
-					border-bottom-right-radius: 20px !important;
-				}
-				.hero-layout .hero-card-stat {
-					left: 1108px !important;
-					top: 112px !important;
-					width: 259px !important;
-					height: 281px !important;
-				}
-				.hero-layout .hero-card-growth {
-					left: 781px !important;
-					top: 411px !important;
-					width: 588px !important;
-					height: 216px !important;
-					grid-column: unset !important;
-				}
-				.hero-layout .hero-card-growth .absolute.left-\[33px\] {
-					max-width: none !important;
-					gap: 2rem !important;
-				}
-				.hero-layout .hero-card-growth h3 {
-					font-size: 27px !important;
-					width: 328px !important;
-				}
-				.hero-layout .hero-card-growth .absolute.left-\[339px\] {
-					left: 339px !important;
-					right: auto !important;
-					bottom: 20px !important;
-				}
-				#heroBars > div {
-					width: 69px !important;
-				}
-				#heroBars .h-\[95px\] {
-					height: 95px !important;
-				}
-				#heroBars .h-\[136px\] {
-					height: 136px !important;
-				}
-				#heroBars .h-\[166px\] {
-					height: 166px !important;
-				}
-				/* Keep partner strip inside zoomed desktop layout, not in block flow */
-				.hero-layout .hero-partner-strip {
-					position: absolute !important;
-					left: 71px !important;
-					top: 520px !important;
-					width: 680px !important;
-					right: auto !important;
-				}
+			/* ── hero-layout: fix to 1440×687, transform scales it down ── */
+			.hero-layout {
+				width: 1440px !important;
+				height: 687px !important;
+				display: block !important;
+				padding: 0 !important;
+				margin: 0 !important;
+				transform-origin: top left !important;
+				/* zoom set per sub-range below */
 			}
+
+			/* Kill every reflow override from earlier media queries */
+			.hero-layout {
+				grid-template-columns: unset !important;
+				grid-template-rows: unset !important;
+				align-items: unset !important;
+				column-gap: unset !important;
+				row-gap: unset !important;
+				min-height: unset !important;
+			}
+
+			/* Restore hero-copy to desktop absolute position */
+			.hero-layout .hero-copy,
+			.hero-copy {
+				position: absolute !important;
+				left: 71px !important;
+				top: 80px !important;
+				width: auto !important;
+				max-width: none !important;
+				padding: 0 !important;
+				padding-top: 0 !important;
+				gap: 3rem !important;
+				grid-column: unset !important;
+				grid-row: unset !important;
+				min-width: unset !important;
+				flex: unset !important;
+			}
+			.hero-layout .hero-copy h1,
+			.hero-layout .hero-copy .hero-title,
+			html[lang="en"] .hero-layout .hero-copy .hero-title,
+			html[lang="en"] .hero-title {
+				font-size: 62px !important;
+				letter-spacing: -1.86px !important;
+				width: 700px !important;
+				max-width: none !important;
+				line-height: 1.1 !important;
+			}
+			.hero-layout .hero-copy p,
+			.hero-copy p {
+				font-size: 16px !important;
+				width: 557px !important;
+				max-width: none !important;
+			}
+			.hero-btns,
+			.hero-layout .hero-btns {
+				flex-direction: row !important;
+				align-items: center !important;
+				gap: 3.5rem !important;
+				flex-wrap: nowrap !important;
+			}
+			.hero-btns button,
+			.hero-btns a,
+			.hero-layout .hero-btns button,
+			.hero-layout .hero-btns a {
+				width: auto !important;
+				min-height: auto !important;
+				justify-content: flex-start !important;
+			}
+
+			/* Restore hero-media to desktop block (no grid) */
+			.hero-media,
+			.hero-layout .hero-media {
+				display: block !important;
+				position: absolute !important;
+				inset: 0 !important;
+				left: 0 !important;
+				top: 0 !important;
+				right: 0 !important;
+				bottom: 0 !important;
+				width: auto !important;
+				height: auto !important;
+				grid-template-columns: unset !important;
+				grid-template-rows: unset !important;
+				gap: 0 !important;
+				transform: none !important;
+				padding: 0 !important;
+				align-self: unset !important;
+			}
+
+			/* Restore every hero card to desktop absolute position */
+			.hero-card,
+			.hero-layout .hero-card {
+				position: absolute !important;
+				width: auto !important;
+				height: auto !important;
+				min-height: unset !important;
+				display: block !important;
+				grid-column: unset !important;
+				grid-row: unset !important;
+			}
+			.hero-card-photo,
+			.hero-layout .hero-card-photo {
+				left: 781px !important; top: 112px !important;
+				width: 303px !important; height: 275px !important;
+				max-height: none !important;
+				border-top-left-radius: 1000px !important;
+				border-top-right-radius: 20px !important;
+				border-bottom-left-radius: 20px !important;
+				border-bottom-right-radius: 20px !important;
+			}
+			.hero-card-stat,
+			.hero-layout .hero-card-stat {
+				left: 1108px !important; top: 112px !important;
+				width: 259px !important; height: 281px !important;
+			}
+			.hero-card-growth,
+			.hero-layout .hero-card-growth {
+				left: 781px !important; top: 411px !important;
+				width: 588px !important; height: 216px !important;
+				grid-column: unset !important;
+			}
+			.hero-card-growth .absolute.left-\[33px\],
+			.hero-layout .hero-card-growth .absolute.left-\[33px\] {
+				left: 33px !important;
+				max-width: none !important;
+				gap: 2rem !important;
+				top: auto !important;
+				transform: none !important;
+			}
+			.hero-card-growth h3,
+			.hero-layout .hero-card-growth h3 {
+				font-size: 27px !important;
+				width: 328px !important;
+				line-height: 1.4 !important;
+			}
+			.hero-card-growth .absolute.left-\[339px\],
+			.hero-layout .hero-card-growth .absolute.left-\[339px\] {
+				left: 339px !important; right: auto !important; bottom: 20px !important;
+			}
+			#heroBars > div { width: 69px !important; }
+			#heroBars .h-\[95px\]  { height: 95px !important; }
+			#heroBars .h-\[136px\] { height: 136px !important; }
+			#heroBars .h-\[166px\] { height: 166px !important; }
+
+			/* Hide badge — decorative only, clips awkwardly when scaled */
+			.hero-badge { display: none !important; }
+
+			/* Partner strip at desktop position */
+			.hero-partner-strip,
+			.hero-layout .hero-partner-strip {
+				position: absolute !important;
+				left: 71px !important; top: 520px !important;
+				width: 680px !important; right: auto !important;
+				grid-column: unset !important;
+				grid-row: unset !important;
+			}
+
+			/* ── How-we-work: restore desktop absolute layout ── */
+			#how-we-work {
+				overflow: hidden !important;
+				padding: 0 !important;
+				height: 662px !important;
+			}
+			.how-work-shell {
+				position: absolute !important;
+				top: 0 !important;
+				left: 0 !important;
+				right: auto !important;
+				bottom: auto !important;
+				width: 1440px !important;
+				height: 662px !important;
+				padding: 0 !important;
+				transform-origin: top left !important;
+			}
+			.how-work-header {
+				position: absolute !important;
+				left: 80px !important; top: 50px !important;
+				width: 1280px !important; height: 107px !important;
+				flex-direction: row !important;
+				align-items: flex-start !important;
+				gap: 0 !important; margin-bottom: 0 !important;
+			}
+			.how-work-header h2 { font-size: 48px !important; width: 568px !important; }
+			.how-work-header p  { width: 654px !important; }
+			.how-work-cards {
+				position: absolute !important;
+				left: 80px !important; top: 209px !important;
+				display: flex !important; flex-direction: row !important;
+				grid-template-columns: unset !important;
+				gap: 24px !important; width: auto !important;
+			}
+			.how-work-cards .relative.rounded-\[30px\].bg-\[\#010205\] {
+				width: 438px !important; height: 382px !important;
+				padding: 40px !important; min-height: unset !important;
+			}
+			.how-work-cards .relative.rounded-\[30px\].w-\[818px\] {
+				width: 818px !important; height: 382px !important;
+			}
+			.how-work-play {
+				display: flex !important; position: absolute !important;
+				left: 1217px !important; top: 499px !important;
+				width: 163px !important; height: 163px !important;
+				bottom: auto !important; right: auto !important;
+			}
+			[style*="96.79px"]          { font-size: 96.79px !important; letter-spacing: -2.9px !important; }
+			[style*="21.9px"]           { font-size: 21.9px !important; }
+			[data-i18n="how.question"]  { font-size: 48px !important; letter-spacing: 12.96px !important; line-height: 1.4 !important; }
+		}
+
+		/*
+		 * Scale values: s = viewport_min / 1440
+		 * Hero uses zoom (affects layout space); how-we-work shell uses transform+height.
+		 */
+		@media (min-width: 769px) and (max-width: 860px) {
+			.hero-layout { zoom: 0.534 !important; }
+			.how-work-shell { transform: scale(0.534) !important; }
+			#how-we-work   { height: calc(662px * 0.534) !important; }
+		}
+		@media (min-width: 861px) and (max-width: 960px) {
+			.hero-layout { zoom: 0.598 !important; }
+			.how-work-shell { transform: scale(0.598) !important; }
+			#how-we-work   { height: calc(662px * 0.598) !important; }
+		}
+		@media (min-width: 961px) and (max-width: 1060px) {
+			.hero-layout { zoom: 0.667 !important; }
+			.how-work-shell { transform: scale(0.667) !important; }
+			#how-we-work   { height: calc(662px * 0.667) !important; }
+		}
+		@media (min-width: 1061px) and (max-width: 1199px) {
+			.hero-layout { zoom: 0.769 !important; }
+			.how-work-shell { transform: scale(0.769) !important; }
+			#how-we-work   { height: calc(662px * 0.769) !important; }
+		}
+		@media (min-width: 1200px) and (max-width: 1359px) {
+			.hero-layout { zoom: 0.834 !important; }
+			.how-work-shell { transform: scale(0.834) !important; }
+			#how-we-work   { height: calc(662px * 0.834) !important; }
+		}
+
+		/* ── Desktop reset: undo any tablet overrides above 1359px ── */
+		@media (min-width: 1360px) {
+			.hero-layout {
+				zoom: unset !important;
+				width: 100% !important;
+				max-width: 1440px !important;
+				height: 687px !important;
+				display: block !important;
+				padding: 0 !important;
+				margin: 0 auto !important;
+			}
+			.how-work-shell {
+				position: absolute !important;
+				inset: 0 !important;
+				top: 0 !important; left: 0 !important;
+				right: 0 !important; bottom: 0 !important;
+				width: auto !important;
+				height: auto !important;
+				transform: none !important;
+				transform-origin: unset !important;
+				max-width: 1440px !important;
+			}
+			#how-we-work {
+				height: 662px !important;
+				overflow: hidden !important;
+				padding: 0 !important;
+			}
+		}
 
 			@media (max-width: 480px) {
 				.site-preloader__mark {
@@ -1619,9 +1759,7 @@
 					<span></span>
 					<span></span>
 				</div>
-				<p class="site-preloader__label">
-					Подготавливаем интерфейс и загружаем ключевые элементы страницы
-				</p>
+				<p class="site-preloader__label">Подготавливаем интерфейс и загружаем ключевые элементы страницы</p>
 			</div>
 		</div>
 		<!-- ============ NAVBAR ============ -->
@@ -1644,87 +1782,29 @@
 					<ul
 						class="hidden lg:flex items-center gap-10 text-[17.1px] font-semibold text-[#020407]"
 					>
-						<li>
-							<a
-								href="#services"
-								class="hover:text-[#9ac763]"
-								data-i18n="nav.services"
-								>Услуги</a
-							>
-						</li>
-						<li>
-							<a
-								href="#process"
-								class="hover:text-[#9ac763]"
-								data-i18n="nav.process"
-								>Процесс</a
-							>
+						<li><a href="#services" class="hover:text-[#9ac763]" data-i18n="nav.services">Услуги</a></li>
+						<li><a href="#process" class="hover:text-[#9ac763]" data-i18n="nav.process">Процесс</a></li>
+						<li class="flex items-center gap-2">
+							<a href="/cases" class="hover:text-[#9ac763]" data-i18n="nav.cases">Кейсы</a>
+							<svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
 						</li>
 						<li class="flex items-center gap-2">
-							<a
-								href="/cases"
-								class="hover:text-[#9ac763]"
-								data-i18n="nav.cases"
-								>Кейсы</a
-							>
-							<svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-								<path
-									d="M6 9l6 6 6-6"
-									stroke="currentColor"
-									stroke-width="2"
-									stroke-linecap="round"
-								/>
-							</svg>
+							<a href="/about" class="hover:text-[#9ac763]" data-i18n="nav.about">О нас</a>
+							<svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
 						</li>
-						<li class="flex items-center gap-2">
-							<a
-								href="/about"
-								class="hover:text-[#9ac763]"
-								data-i18n="nav.about"
-								>О нас</a
-							>
-							<svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-								<path
-									d="M6 9l6 6 6-6"
-									stroke="currentColor"
-									stroke-width="2"
-									stroke-linecap="round"
-								/>
-							</svg>
-						</li>
-						<li>
-							<a
-								href="#contacts"
-								class="hover:text-[#9ac763]"
-								data-i18n="nav.contacts"
-								>Контакты</a
-							>
-						</li>
-						<li>
-							<a href="#faq" class="hover:text-[#9ac763]" data-i18n="nav.faq"
-								>FAQ</a
-							>
-						</li>
+						<li><a href="#contacts" class="hover:text-[#9ac763]" data-i18n="nav.contacts">Контакты</a></li>
+						<li><a href="#faq" class="hover:text-[#9ac763]" data-i18n="nav.faq">FAQ</a></li>
 					</ul>
 				</div>
 				<div class="flex items-center gap-2">
 					<button
 						class="font-manrope font-bold bg-[#99cf63] border border-[#99cf63] rounded-full px-4 py-3 w-[174px] text-[16px] tracking-tight hover:brightness-95 transition"
-						onclick="
-							document
-								.getElementById('contacts')
-								.scrollIntoView({ behavior: 'smooth' })
-						"
+						onclick="document.getElementById('contacts').scrollIntoView({behavior:'smooth'})"
 						data-i18n="nav.cta"
 					>
 						Обсудить проект
 					</button>
-					<button
-						id="langToggle"
-						class="hidden lg:flex items-center justify-center w-[52px] h-[52px] rounded-full bg-[#010205] text-white text-[15px] font-semibold hover:bg-[#333] transition flex-shrink-0"
-					>
-						En
-					</button>
+					<button id="langToggle" class="hidden lg:flex items-center justify-center w-[52px] h-[52px] rounded-full bg-[#010205] text-white text-[15px] font-semibold hover:bg-[#333] transition flex-shrink-0">En</button>
 					<!-- Mobile hamburger -->
 					<button
 						class="lg:hidden w-10 h-10 flex flex-col items-center justify-center gap-1.5"
@@ -1745,32 +1825,18 @@
 					&times;
 				</button>
 				<ul class="flex flex-col gap-6 text-[20px] font-semibold">
-					<li>
-						<a href="#services" class="mobile-link" data-i18n="nav.services"
-							>Услуги</a
-						>
-					</li>
-					<li>
-						<a href="#process" class="mobile-link" data-i18n="nav.process"
-							>Процесс</a
-						>
-					</li>
+					<li><a href="#services" class="mobile-link" data-i18n="nav.services">Услуги</a></li>
+					<li><a href="#process" class="mobile-link" data-i18n="nav.process">Процесс</a></li>
 					<li><a href="/cases" data-i18n="nav.cases">Кейсы</a></li>
 					<li><a href="/about" data-i18n="nav.about">О нас</a></li>
-					<li>
-						<a href="#contacts" class="mobile-link" data-i18n="nav.contacts"
-							>Контакты</a
-						>
-					</li>
-					<li>
-						<a href="#faq" class="mobile-link" data-i18n="nav.faq">FAQ</a>
-					</li>
+					<li><a href="#contacts" class="mobile-link" data-i18n="nav.contacts">Контакты</a></li>
+					<li><a href="#faq" class="mobile-link" data-i18n="nav.faq">FAQ</a></li>
 				</ul>
 			</div>
 		</header>
 
-		<!-- ============ HOOK / HERO ============ -->
-		<section class="relative overflow-hidden bg-transparent">
+	<!-- ============ HOOK / HERO ============ -->
+	<section class="relative bg-transparent hero-section" style="overflow:hidden">
 			<div class="absolute inset-0 noise"></div>
 			<!-- Hero frame: matches figma 1440x687 with absolute children -->
 			<div class="hero-layout relative mx-auto w-full max-w-[1440px] h-[687px]">
@@ -1790,257 +1856,81 @@
 					>
 						Быстро. Качественно. Недорого.
 					</p>
-					<div class="hero-btns flex items-center gap-14">
-						<button
-							class="bg-[#010205] text-white font-jakarta font-bold text-[16px] tracking-tight rounded-[70px] px-8 py-4 inline-flex items-center gap-3 hover:scale-[1.02] transition"
-							onclick="
-								document
-									.getElementById('contacts')
-									.scrollIntoView({ behavior: 'smooth' })
-							"
-							data-i18n="hero.cta"
-						>
-							Обсудить проект
-							<svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-								<path
-									d="M5 12h14M13 6l6 6-6 6"
-									stroke="white"
-									stroke-width="2"
-									stroke-linecap="round"
-									stroke-linejoin="round"
-								/>
-							</svg>
-						</button>
-						<a
-							href="/cases"
-							class="font-jakarta font-semibold text-[16px] text-[#010205] underline decoration-solid leading-[1.8]"
-							data-i18n="hero.cases"
-						>
-							Смотреть кейсы
-						</a>
-					</div>
+				<div class="hero-btns flex items-center gap-14">
+					<button
+						class="bg-[#010205] text-white font-jakarta font-bold text-[16px] tracking-tight rounded-[70px] px-8 py-4 inline-flex items-center gap-3 hover:scale-[1.02] transition"
+						onclick="document.getElementById('contacts').scrollIntoView({behavior:'smooth'})"
+						data-i18n="hero.cta"
+					>
+						Обсудить проект
+						<svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+							<path
+								d="M5 12h14M13 6l6 6-6 6"
+								stroke="white"
+								stroke-width="2"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+							/>
+						</svg>
+					</button>
+					<a
+						href="/cases"
+						class="font-jakarta font-semibold text-[16px] text-[#010205] underline decoration-solid leading-[1.8]"
+						data-i18n="hero.cases"
+					>
+						Смотреть кейсы
+					</a>
 				</div>
 
-				<!-- Partner logos strip — direct child of hero-layout so it can span full width -->
-				<div class="hero-partner-strip">
-					<p
-						class="partners-label font-jakarta font-semibold uppercase text-[#5c5d5f]"
-						data-i18n="hero.partners"
-					>
-						Наши партнёры
-					</p>
-					<div class="partners-ticker overflow-hidden">
-						<div class="marquee flex items-center gap-[18px]">
-							<div
-								class="relative shrink-0 overflow-hidden"
-								style="width: 42.124px; height: 45.799px"
-							>
-								<img
-									src="assets/partner_awara.png"
-									alt="Awara IT"
-									style="
-										position: absolute;
-										max-width: none;
-										height: 129.01%;
-										width: 114.79%;
-										left: -8.74%;
-										top: -19.14%;
-									"
-								/>
-							</div>
-							<div
-								class="relative shrink-0 overflow-hidden"
-								style="width: 87.573px; height: 39.257px"
-							>
-								<img
-									src="assets/partner_sprite.png"
-									alt="AICA"
-									style="
-										position: absolute;
-										max-width: none;
-										height: 487.18%;
-										width: 392.34%;
-										left: -45.98%;
-										top: -177.78%;
-									"
-								/>
-							</div>
-							<div
-								class="relative shrink-0 overflow-hidden"
-								style="width: 113.337px; height: 36.975px"
-							>
-								<img
-									src="assets/partner_sprite.png"
-									alt="TIMDOS"
-									style="
-										position: absolute;
-										max-width: none;
-										height: 413.04%;
-										width: 242.08%;
-										left: 0;
-										top: -257.25%;
-									"
-								/>
-							</div>
-							<div
-								class="relative shrink-0 overflow-hidden"
-								style="width: 78.852px; height: 45.408px"
-							>
-								<img
-									src="assets/partner_smartlab.png"
-									alt="SmartLab"
-									style="
-										position: absolute;
-										max-width: none;
-										height: 177.46%;
-										width: 127.93%;
-										left: -8.28%;
-										top: -22.86%;
-									"
-								/>
-							</div>
-							<div
-								class="relative shrink-0 overflow-hidden"
-								style="width: 80.142px; height: 37.624px"
-							>
-								<img
-									src="assets/partner_sprite.png"
-									alt="abm"
-									style="
-										position: absolute;
-										max-width: none;
-										height: 463.41%;
-										width: 390.84%;
-										left: -217.94%;
-										top: -167.48%;
-									"
-								/>
-							</div>
-							<div
-								class="relative shrink-0 overflow-hidden"
-								style="width: 99.134px; height: 29.84px"
-							>
-								<img
-									src="assets/partner_sprite.png"
-									alt="Division"
-									style="
-										position: absolute;
-										max-width: none;
-										height: 633.33%;
-										width: 342.47%;
-										left: -183.95%;
-										top: -420%;
-									"
-								/>
-							</div>
-							<!-- Duplicate for seamless scroll -->
-							<div
-								class="relative shrink-0 overflow-hidden"
-								style="width: 42.124px; height: 45.799px"
-							>
-								<img
-									src="assets/partner_awara.png"
-									alt="Awara IT"
-									style="
-										position: absolute;
-										max-width: none;
-										height: 129.01%;
-										width: 114.79%;
-										left: -8.74%;
-										top: -19.14%;
-									"
-								/>
-							</div>
-							<div
-								class="relative shrink-0 overflow-hidden"
-								style="width: 87.573px; height: 39.257px"
-							>
-								<img
-									src="assets/partner_sprite.png"
-									alt="AICA"
-									style="
-										position: absolute;
-										max-width: none;
-										height: 487.18%;
-										width: 392.34%;
-										left: -45.98%;
-										top: -177.78%;
-									"
-								/>
-							</div>
-							<div
-								class="relative shrink-0 overflow-hidden"
-								style="width: 113.337px; height: 36.975px"
-							>
-								<img
-									src="assets/partner_sprite.png"
-									alt="TIMDOS"
-									style="
-										position: absolute;
-										max-width: none;
-										height: 413.04%;
-										width: 242.08%;
-										left: 0;
-										top: -257.25%;
-									"
-								/>
-							</div>
-							<div
-								class="relative shrink-0 overflow-hidden"
-								style="width: 78.852px; height: 45.408px"
-							>
-								<img
-									src="assets/partner_smartlab.png"
-									alt="SmartLab"
-									style="
-										position: absolute;
-										max-width: none;
-										height: 177.46%;
-										width: 127.93%;
-										left: -8.28%;
-										top: -22.86%;
-									"
-								/>
-							</div>
-							<div
-								class="relative shrink-0 overflow-hidden"
-								style="width: 80.142px; height: 37.624px"
-							>
-								<img
-									src="assets/partner_sprite.png"
-									alt="abm"
-									style="
-										position: absolute;
-										max-width: none;
-										height: 463.41%;
-										width: 390.84%;
-										left: -217.94%;
-										top: -167.48%;
-									"
-								/>
-							</div>
-							<div
-								class="relative shrink-0 overflow-hidden"
-								style="width: 99.134px; height: 29.84px"
-							>
-								<img
-									src="assets/partner_sprite.png"
-									alt="Division"
-									style="
-										position: absolute;
-										max-width: none;
-										height: 633.33%;
-										width: 342.47%;
-										left: -183.95%;
-										top: -420%;
-									"
-								/>
-							</div>
+			</div>
+
+			<!-- Partner logos strip — direct child of hero-layout so it can span full width -->
+			<div class="hero-partner-strip">
+				<p class="partners-label font-jakarta font-semibold uppercase text-[#5c5d5f]" data-i18n="hero.partners">Наши партнёры</p>
+				<div class="partners-ticker overflow-hidden">
+					<div class="marquee flex items-center gap-[18px]">
+						<div class="relative shrink-0 overflow-hidden" style="width:42.124px;height:45.799px">
+							<img src="assets/partner_awara.png" alt="Awara IT" style="position:absolute;max-width:none;height:129.01%;width:114.79%;left:-8.74%;top:-19.14%">
+						</div>
+						<div class="relative shrink-0 overflow-hidden" style="width:87.573px;height:39.257px">
+							<img src="assets/partner_sprite.png" alt="AICA" style="position:absolute;max-width:none;height:487.18%;width:392.34%;left:-45.98%;top:-177.78%">
+						</div>
+						<div class="relative shrink-0 overflow-hidden" style="width:113.337px;height:36.975px">
+							<img src="assets/partner_sprite.png" alt="TIMDOS" style="position:absolute;max-width:none;height:413.04%;width:242.08%;left:0;top:-257.25%">
+						</div>
+						<div class="relative shrink-0 overflow-hidden" style="width:78.852px;height:45.408px">
+							<img src="assets/partner_smartlab.png" alt="SmartLab" style="position:absolute;max-width:none;height:177.46%;width:127.93%;left:-8.28%;top:-22.86%">
+						</div>
+						<div class="relative shrink-0 overflow-hidden" style="width:80.142px;height:37.624px">
+							<img src="assets/partner_sprite.png" alt="abm" style="position:absolute;max-width:none;height:463.41%;width:390.84%;left:-217.94%;top:-167.48%">
+						</div>
+						<div class="relative shrink-0 overflow-hidden" style="width:99.134px;height:29.84px">
+							<img src="assets/partner_sprite.png" alt="Division" style="position:absolute;max-width:none;height:633.33%;width:342.47%;left:-183.95%;top:-420%">
+						</div>
+						<!-- Duplicate for seamless scroll -->
+						<div class="relative shrink-0 overflow-hidden" style="width:42.124px;height:45.799px">
+							<img src="assets/partner_awara.png" alt="Awara IT" style="position:absolute;max-width:none;height:129.01%;width:114.79%;left:-8.74%;top:-19.14%">
+						</div>
+						<div class="relative shrink-0 overflow-hidden" style="width:87.573px;height:39.257px">
+							<img src="assets/partner_sprite.png" alt="AICA" style="position:absolute;max-width:none;height:487.18%;width:392.34%;left:-45.98%;top:-177.78%">
+						</div>
+						<div class="relative shrink-0 overflow-hidden" style="width:113.337px;height:36.975px">
+							<img src="assets/partner_sprite.png" alt="TIMDOS" style="position:absolute;max-width:none;height:413.04%;width:242.08%;left:0;top:-257.25%">
+						</div>
+						<div class="relative shrink-0 overflow-hidden" style="width:78.852px;height:45.408px">
+							<img src="assets/partner_smartlab.png" alt="SmartLab" style="position:absolute;max-width:none;height:177.46%;width:127.93%;left:-8.28%;top:-22.86%">
+						</div>
+						<div class="relative shrink-0 overflow-hidden" style="width:80.142px;height:37.624px">
+							<img src="assets/partner_sprite.png" alt="abm" style="position:absolute;max-width:none;height:463.41%;width:390.84%;left:-217.94%;top:-167.48%">
+						</div>
+						<div class="relative shrink-0 overflow-hidden" style="width:99.134px;height:29.84px">
+							<img src="assets/partner_sprite.png" alt="Division" style="position:absolute;max-width:none;height:633.33%;width:342.47%;left:-183.95%;top:-420%">
 						</div>
 					</div>
 				</div>
+			</div>
 
-				<div class="hero-media">
+			<div class="hero-media">
 					<div
 						class="hero-card hero-card-photo absolute left-[781px] top-[112px] w-[303px] h-[275px] rounded-tl-[1000px] rounded-tr-[20px] rounded-b-[20px] overflow-hidden shadow-xl"
 						style="animation-delay: 0.3s"
@@ -2056,20 +1946,11 @@
 					</div>
 
 					<!-- Trending badge – centred on the gap between photo (ends 1084px) and stat card (starts 1108px) -->
-					<div
-						class="hero-badge absolute left-[920px] top-[80px] w-[108px] h-[108px] rounded-full bg-[#010205] shadow-[0px_30px_50px_-6.8px_rgba(0,0,0,0.44)] z-20 float pulse-ring"
-					></div>
-					<div
-						class="hero-badge absolute left-[951px] top-[111px] w-[48px] h-[48px] z-30 float"
-					>
+					<div class="hero-badge absolute left-[920px] top-[80px] w-[108px] h-[108px] rounded-full bg-[#010205] shadow-[0px_30px_50px_-6.8px_rgba(0,0,0,0.44)] z-20 float pulse-ring">
+					</div>
+					<div class="hero-badge absolute left-[951px] top-[111px] w-[48px] h-[48px] z-30 float">
 						<svg width="48" height="48" viewBox="0 0 24 24" fill="none">
-							<path
-								d="M3 17l6-6 4 4 8-8M17 7h4v4"
-								stroke="#9ac763"
-								stroke-width="2.2"
-								stroke-linecap="round"
-								stroke-linejoin="round"
-							/>
+							<path d="M3 17l6-6 4 4 8-8M17 7h4v4" stroke="#9ac763" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
 						</svg>
 					</div>
 
@@ -2078,9 +1959,7 @@
 						class="hero-card hero-card-stat absolute left-[1108px] top-[112px] w-[259px] h-[281px] rounded-[20px] backdrop-blur-[42px] bg-[#f0f0f0] overflow-hidden"
 						style="animation-delay: 0.5s"
 					>
-						<div
-							class="absolute inset-0 flex flex-col items-start left-[25px] top-[38px] p-[10px]"
-						>
+						<div class="absolute inset-0 flex flex-col items-start left-[25px] top-[38px] p-[10px]">
 							<p
 								class="font-jakarta font-bold text-[84px] leading-[1.1] tracking-[-2.52px] text-[#010205] w-full"
 								data-i18n="hero.stat.value"
@@ -2091,8 +1970,7 @@
 								class="mt-4 font-jakarta font-medium text-[14px] leading-[1.45] text-[#5c5d5f] max-w-[205px]"
 								data-i18n="hero.stat.label"
 							>
-								инженеров, продуктологов, дизайнеров с опытом в международных
-								компаниях
+								инженеров, продуктологов, дизайнеров с опытом в международных компаниях
 							</p>
 							<p
 								class="mt-3 font-jakarta font-semibold text-[13px] leading-[1.4] text-[#010205] max-w-[205px]"
@@ -2163,429 +2041,149 @@
 							></div>
 						</div>
 					</div>
-				</div>
-			</div>
-		</section>
 
-		<!-- ============ HOW WE WORK (From task to result) ============ -->
-		<section
-			id="how-we-work"
-			class="relative bg-transparent overflow-hidden"
-			style="height: 662px"
-		>
+			</div>
+		</div>
+	</section>
+
+	<!-- ============ HOW WE WORK (From task to result) ============ -->
+		<section id="how-we-work" class="relative bg-transparent overflow-hidden" style="height:662px">
 			<div class="absolute inset-0 noise"></div>
 			<div class="how-work-shell absolute inset-0 max-w-[1440px] mx-auto">
 				<!-- Header row -->
-				<div
-					class="how-work-header absolute left-[80px] top-[50px] w-[1280px] flex items-start justify-between h-[107px]"
-				>
-					<h2
-						class="font-jakarta font-semibold text-[48px] leading-[1.3] tracking-[-1.44px] text-black w-[568px] reveal-left"
-						data-i18n="how.title"
-					>
+				<div class="how-work-header absolute left-[80px] top-[50px] w-[1280px] flex items-start justify-between h-[107px]">
+					<h2 class="font-jakarta font-semibold text-[48px] leading-[1.3] tracking-[-1.44px] text-black w-[568px] reveal-left" data-i18n="how.title">
 						От задачи к результату
 					</h2>
-					<p
-						class="font-jakarta font-medium text-[16px] leading-[1.8] text-[#878c91] w-[654px] reveal-right"
-						data-i18n="how.desc"
-					>
-						Мы реализуем полный цикл технологической трансформации бизнеса: от
-						проектирования сложных программных систем и глубокой аналитики
-						данных до бесшовной интеграции оборудования и умных ИИ-ассистентов
-						для автоматизации процессов.
+					<p class="font-jakarta font-medium text-[16px] leading-[1.8] text-[#878c91] w-[654px] reveal-right" data-i18n="how.desc">
+						Мы реализуем полный цикл технологической трансформации бизнеса: от проектирования сложных программных систем и глубокой аналитики данных до бесшовной интеграции оборудования и умных ИИ-ассистентов для автоматизации процессов.
 					</p>
 				</div>
 
 				<!-- Cards row -->
-				<div
-					class="how-work-cards absolute left-[80px] top-[209px] flex gap-[24px] items-start reveal"
-				>
+				<div class="how-work-cards absolute left-[80px] top-[209px] flex gap-[24px] items-start reveal">
 					<!-- Left dark card: 438x382, bg #010205, with 40+ counter -->
-					<div
-						class="relative rounded-[30px] bg-[#010205] w-[438px] h-[382px] overflow-hidden shrink-0 flex flex-col justify-between"
-						style="padding: 40px"
-					>
+					<div class="relative rounded-[30px] bg-[#010205] w-[438px] h-[382px] overflow-hidden shrink-0 flex flex-col justify-between" style="padding:40px">
 						<!-- Rotating texture -->
-						<div
-							class="absolute inset-[-40%] pointer-events-none opacity-40 flex items-center justify-center"
-						>
-							<img
-								src="assets/how_texture.png"
-								alt=""
-								loading="lazy"
-								decoding="async"
-								style="
-									width: 128%;
-									height: 130%;
-									transform: rotate(115.48deg);
-									object-fit: cover;
-									max-width: none;
-								"
-							/>
+						<div class="absolute inset-[-40%] pointer-events-none opacity-40 flex items-center justify-center">
+							<img src="assets/how_texture.png" alt="" loading="lazy" decoding="async" style="width:128%;height:130%;transform:rotate(115.48deg);object-fit:cover;max-width:none" />
 						</div>
 						<!-- Counter -->
 						<div class="relative flex flex-col gap-2">
-							<p
-								class="font-jakarta font-bold leading-none text-white"
-								style="font-size: 96.79px; letter-spacing: -2.9px"
-							>
+							<p class="font-jakarta font-bold leading-none text-white" style="font-size:96.79px;letter-spacing:-2.9px">
 								<span>40</span><span class="text-[#99cf63]">+</span>
 							</p>
-							<p
-								class="font-jakarta font-medium leading-[1.7] text-[#878c91]"
-								style="font-size: 21.9px"
-								data-i18n="how.projects"
-							>
+							<p class="font-jakarta font-medium leading-[1.7] text-[#878c91]" style="font-size:21.9px" data-i18n="how.projects">
 								Завершённых проектов
 							</p>
 						</div>
 						<!-- Case logos -->
 						<div class="relative flex items-center">
-							<div
-								class="w-[70px] h-[70px] rounded-full shrink-0 overflow-hidden flex items-center justify-center"
-								style="
-									background: #1c1c1c;
-									border: 2px solid rgba(255, 255, 255, 0.15);
-									padding: 10px;
-								"
-							>
-								<img
-									src="assets/cases/orkenlink_cover.png"
-									alt="Örkenlink"
-									loading="lazy"
-									decoding="async"
-									style="
-										width: 100%;
-										height: 100%;
-										object-fit: contain;
-										max-width: none;
-										filter: brightness(0) invert(1);
-									"
-								/>
+							<div class="w-[70px] h-[70px] rounded-full shrink-0 overflow-hidden flex items-center justify-center" style="background:#1c1c1c;border:2px solid rgba(255,255,255,0.15);padding:10px">
+								<img src="assets/cases/orkenlink_cover.png" alt="Örkenlink" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:contain;max-width:none;filter:brightness(0) invert(1)" />
 							</div>
-							<div
-								class="w-[70px] h-[70px] rounded-full shrink-0 overflow-hidden flex items-center justify-center -ml-4"
-								style="
-									background: #1c1c1c;
-									border: 2px solid rgba(255, 255, 255, 0.15);
-									padding: 10px;
-								"
-							>
-								<img
-									src="assets/cases/caepco.png"
-									alt="CAEPCO"
-									loading="lazy"
-									decoding="async"
-									style="
-										width: 100%;
-										height: 100%;
-										object-fit: contain;
-										max-width: none;
-										filter: brightness(0) invert(1);
-									"
-								/>
+							<div class="w-[70px] h-[70px] rounded-full shrink-0 overflow-hidden flex items-center justify-center -ml-4" style="background:#1c1c1c;border:2px solid rgba(255,255,255,0.15);padding:10px">
+								<img src="assets/cases/caepco.png" alt="CAEPCO" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:contain;max-width:none;filter:brightness(0) invert(1)" />
 							</div>
-							<div
-								class="w-[70px] h-[70px] rounded-full shrink-0 overflow-hidden flex items-center justify-center -ml-4"
-								style="
-									background: #1c1c1c;
-									border: 2px solid rgba(255, 255, 255, 0.15);
-									padding: 10px;
-								"
-							>
-								<img
-									src="assets/cases/teplotekhnik.svg"
-									alt="Teplotekhnik"
-									loading="lazy"
-									decoding="async"
-									style="
-										width: 100%;
-										height: 100%;
-										object-fit: contain;
-										max-width: none;
-										filter: brightness(0) invert(1);
-									"
-								/>
+							<div class="w-[70px] h-[70px] rounded-full shrink-0 overflow-hidden flex items-center justify-center -ml-4" style="background:#1c1c1c;border:2px solid rgba(255,255,255,0.15);padding:10px">
+								<img src="assets/cases/teplotekhnik.svg" alt="Teplotekhnik" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:contain;max-width:none;filter:brightness(0) invert(1)" />
 							</div>
-							<div
-								class="w-[70px] h-[70px] rounded-full shrink-0 overflow-hidden flex items-center justify-center -ml-4"
-								style="
-									background: #1c1c1c;
-									border: 2px solid rgba(255, 255, 255, 0.15);
-									padding: 12px;
-								"
-							>
-								<img
-									src="assets/cases/ane.svg"
-									alt="ANE"
-									loading="lazy"
-									decoding="async"
-									style="
-										width: 100%;
-										height: 100%;
-										object-fit: contain;
-										max-width: none;
-										filter: brightness(3);
-									"
-								/>
+							<div class="w-[70px] h-[70px] rounded-full shrink-0 overflow-hidden flex items-center justify-center -ml-4" style="background:#1c1c1c;border:2px solid rgba(255,255,255,0.15);padding:12px">
+								<img src="assets/cases/ane.svg" alt="ANE" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:contain;max-width:none;filter:brightness(3)" />
 							</div>
-							<a
-								href="/cases"
-								class="font-jakarta font-bold text-white ml-2 flex items-center hover:text-[#9ac763] transition-colors"
-								style="font-size: 48px; line-height: 70px; margin-bottom: 12px"
-								>+</a
-							>
+							<a href="/cases" class="font-jakarta font-bold text-white ml-2 flex items-center hover:text-[#9ac763] transition-colors" style="font-size:48px;line-height:70px;margin-bottom:12px">+</a>
 						</div>
 					</div>
 
 					<!-- Right image card: 818x382 with "Как мы работаем?" overlay (figma: rectangle23813) -->
-					<div
-						class="relative rounded-[30px] w-[818px] h-[382px] overflow-hidden shrink-0"
-					>
-						<img
-							src="assets/how_card_photo.png"
-							alt="How we work"
-							loading="lazy"
-							decoding="async"
-							class="absolute w-full h-full object-cover"
-						/>
+					<div class="relative rounded-[30px] w-[818px] h-[382px] overflow-hidden shrink-0">
+						<img src="assets/how_card_photo.png" alt="How we work" loading="lazy" decoding="async" class="absolute w-full h-full object-cover" />
 						<div class="absolute inset-0 bg-black/20"></div>
-						<p
-							class="absolute inset-0 flex items-center justify-center font-jakarta font-bold text-[48px] text-center tracking-[12.96px] leading-[1.4]"
-							style="color: rgba(255, 255, 255, 0.49)"
-							data-i18n="how.question"
-						>
+						<p class="absolute inset-0 flex items-center justify-center font-jakarta font-bold text-[48px] text-center tracking-[12.96px] leading-[1.4]" style="color:rgba(255,255,255,0.49)" data-i18n="how.question">
 							Как мы работаем?
 						</p>
 					</div>
 				</div>
 
 				<!-- Play button (figma: left:1217 top:499, size 163px, bg #9ac763, border 12px white) -->
-				<div
-					class="how-work-play absolute left-[1217px] top-[499px] w-[163px] h-[163px] rounded-full bg-[#9ac763] border-[12px] border-[#fafafa] flex items-center justify-center cursor-pointer hover:scale-105 transition"
-				>
+				<div class="how-work-play absolute left-[1217px] top-[499px] w-[163px] h-[163px] rounded-full bg-[#9ac763] border-[12px] border-[#fafafa] flex items-center justify-center cursor-pointer hover:scale-105 transition">
 					<svg width="44" height="44" viewBox="0 0 24 24" fill="none">
-						<path d="M8 5.14v14l11-7-11-7z" fill="black" />
+						<path d="M8 5.14v14l11-7-11-7z" fill="black"/>
 					</svg>
 				</div>
 			</div>
 		</section>
 
 		<!-- ============ SERVICES ============ -->
-		<section
-			id="services"
-			class="relative bg-transparent py-24 overflow-hidden"
-		>
+		<section id="services" class="relative bg-transparent py-24 overflow-hidden">
 			<div class="absolute inset-0 noise"></div>
 			<div class="relative max-w-[1440px] mx-auto px-20">
 				<!-- Lead -->
-				<p
-					class="font-jakarta font-medium text-[22px] leading-[1.5] text-[#878c91] max-w-[700px] mb-16"
-					data-i18n-html="services.lead"
-				>
-					<span class="font-bold text-[#9ac763]"
-						>Четыре ключевых направления</span
-					>
-					— гибкий подход: выполняем комплексную цифровую трансформацию или
-					решаем конкретные задачи вашего бизнеса.
+				<p class="font-jakarta font-medium text-[22px] leading-[1.5] text-[#878c91] max-w-[700px] mb-16" data-i18n-html="services.lead">
+					<span class="font-bold text-[#9ac763]">Четыре ключевых направления</span>
+					— гибкий подход: выполняем комплексную цифровую трансформацию или решаем конкретные задачи вашего бизнеса.
 				</p>
 
 				<!-- Accordion — all closed by default -->
 				<div id="servicesAccordion">
+
 					<!-- row 01 -->
 					<div class="svc-row" data-open="false">
-						<img
-							src="assets/divider.svg"
-							alt=""
-							loading="lazy"
-							decoding="async"
-							style="width: 100%; height: 29px; display: block; max-width: none"
-						/>
-						<div
-							class="svc-header flex items-center gap-6 py-5 cursor-pointer select-none"
-							onclick="toggleSvc(this)"
-						>
-							<span class="font-inter text-[13px] text-[#aaa] w-[24px] shrink-0"
-								>01</span
-							>
-							<h3
-								class="svc-title font-jakarta font-bold text-[28px] tracking-[-0.5px] text-black w-[260px] shrink-0"
-								data-i18n="s1.title"
-							>
-								Разработка ПО
-							</h3>
-							<p
-								class="svc-desc font-jakarta text-[#878c91] flex-1 truncate"
-								style="font-size: 28px"
-								data-i18n="s1.desc"
-							>
-								Веб и мобильные приложения на заказ, ERP-системы,
-								API-интеграции. С нуля или в существующую инфраструктуру.
-							</p>
-							<div
-								class="svc-toggle shrink-0 w-[32px] h-[32px] rounded-full border border-[#9ac763] flex items-center justify-center ml-4"
-							>
-								<span
-									class="svc-minus font-inter text-[#9ac763] text-[20px] leading-none"
-									style="display: none; margin-top: -2px"
-									>−</span
-								>
-								<span
-									class="svc-plus font-inter text-[#9ac763] text-[20px] leading-none"
-									style="margin-top: -2px"
-									>+</span
-								>
+						<img src="assets/divider.svg" alt="" loading="lazy" decoding="async" style="width:100%;height:29px;display:block;max-width:none">
+						<div class="svc-header flex items-center gap-6 py-5 cursor-pointer select-none" onclick="toggleSvc(this)">
+							<span class="font-inter text-[13px] text-[#aaa] w-[24px] shrink-0">01</span>
+							<h3 class="svc-title font-jakarta font-bold text-[28px] tracking-[-0.5px] text-black w-[260px] shrink-0" data-i18n="s1.title">Разработка ПО</h3>
+							<p class="svc-desc font-jakarta text-[#878c91] flex-1 truncate" style="font-size:28px" data-i18n="s1.desc">Веб и мобильные приложения на заказ, ERP-системы, API-интеграции. С нуля или в существующую инфраструктуру.</p>
+							<div class="svc-toggle shrink-0 w-[32px] h-[32px] rounded-full border border-[#9ac763] flex items-center justify-center ml-4">
+								<span class="svc-minus font-inter text-[#9ac763] text-[20px] leading-none" style="display:none;margin-top:-2px">−</span>
+								<span class="svc-plus font-inter text-[#9ac763] text-[20px] leading-none" style="margin-top:-2px">+</span>
 							</div>
 						</div>
 					</div>
 
 					<!-- row 02 -->
 					<div class="svc-row" data-open="false">
-						<img
-							src="assets/divider.svg"
-							alt=""
-							loading="lazy"
-							decoding="async"
-							style="width: 100%; height: 29px; display: block; max-width: none"
-						/>
-						<div
-							class="svc-header flex items-center gap-6 py-5 cursor-pointer select-none"
-							onclick="toggleSvc(this)"
-						>
-							<span class="font-inter text-[13px] text-[#aaa] w-[24px] shrink-0"
-								>02</span
-							>
-							<h3
-								class="svc-title font-jakarta font-bold text-[28px] tracking-[-0.5px] text-black w-[260px] shrink-0"
-								data-i18n="s2.title"
-							>
-								ИИ-ассистенты
-							</h3>
-							<p
-								class="svc-desc font-jakarta text-[#878c91] flex-1 truncate"
-								style="font-size: 28px"
-								data-i18n="s2.desc"
-							>
-								Внедряем LLM в реальные рабочие процессы: чат-боты,
-								автоматизация документов, RAG-системы на внутренних данных.
-							</p>
-							<div
-								class="svc-toggle shrink-0 w-[32px] h-[32px] rounded-full border border-[#9ac763] flex items-center justify-center ml-4"
-							>
-								<span
-									class="svc-minus font-inter text-[#9ac763] text-[20px] leading-none"
-									style="display: none; margin-top: -2px"
-									>−</span
-								>
-								<span
-									class="svc-plus font-inter text-[#9ac763] text-[20px] leading-none"
-									style="margin-top: -2px"
-									>+</span
-								>
+						<img src="assets/divider.svg" alt="" loading="lazy" decoding="async" style="width:100%;height:29px;display:block;max-width:none">
+						<div class="svc-header flex items-center gap-6 py-5 cursor-pointer select-none" onclick="toggleSvc(this)">
+							<span class="font-inter text-[13px] text-[#aaa] w-[24px] shrink-0">02</span>
+							<h3 class="svc-title font-jakarta font-bold text-[28px] tracking-[-0.5px] text-black w-[260px] shrink-0" data-i18n="s2.title">ИИ-ассистенты</h3>
+							<p class="svc-desc font-jakarta text-[#878c91] flex-1 truncate" style="font-size:28px" data-i18n="s2.desc">Внедряем LLM в реальные рабочие процессы: чат-боты, автоматизация документов, RAG-системы на внутренних данных.</p>
+							<div class="svc-toggle shrink-0 w-[32px] h-[32px] rounded-full border border-[#9ac763] flex items-center justify-center ml-4">
+								<span class="svc-minus font-inter text-[#9ac763] text-[20px] leading-none" style="display:none;margin-top:-2px">−</span>
+								<span class="svc-plus font-inter text-[#9ac763] text-[20px] leading-none" style="margin-top:-2px">+</span>
 							</div>
 						</div>
 					</div>
 
 					<!-- row 03 -->
 					<div class="svc-row" data-open="false">
-						<img
-							src="assets/divider.svg"
-							alt=""
-							loading="lazy"
-							decoding="async"
-							style="width: 100%; height: 29px; display: block; max-width: none"
-						/>
-						<div
-							class="svc-header flex items-center gap-6 py-5 cursor-pointer select-none"
-							onclick="toggleSvc(this)"
-						>
-							<span class="font-inter text-[13px] text-[#aaa] w-[24px] shrink-0"
-								>03</span
-							>
-							<h3
-								class="svc-title font-jakarta font-bold text-[28px] tracking-[-0.5px] text-black w-[260px] shrink-0"
-								data-i18n="s3.title"
-							>
-								Аналитика &amp; Данные
-							</h3>
-							<p
-								class="svc-desc font-jakarta text-[#878c91] flex-1 truncate"
-								style="font-size: 28px"
-								data-i18n="s3.desc"
-							>
-								BI-дашборды и обработка данных → в бизнес-решения.
-							</p>
-							<div
-								class="svc-toggle shrink-0 w-[32px] h-[32px] rounded-full border border-[#9ac763] flex items-center justify-center ml-4"
-							>
-								<span
-									class="svc-minus font-inter text-[#9ac763] text-[20px] leading-none"
-									style="display: none; margin-top: -2px"
-									>−</span
-								>
-								<span
-									class="svc-plus font-inter text-[#9ac763] text-[20px] leading-none"
-									style="margin-top: -2px"
-									>+</span
-								>
+						<img src="assets/divider.svg" alt="" loading="lazy" decoding="async" style="width:100%;height:29px;display:block;max-width:none">
+						<div class="svc-header flex items-center gap-6 py-5 cursor-pointer select-none" onclick="toggleSvc(this)">
+							<span class="font-inter text-[13px] text-[#aaa] w-[24px] shrink-0">03</span>
+							<h3 class="svc-title font-jakarta font-bold text-[28px] tracking-[-0.5px] text-black w-[260px] shrink-0" data-i18n="s3.title">Аналитика &amp; Данные</h3>
+							<p class="svc-desc font-jakarta text-[#878c91] flex-1 truncate" style="font-size:28px" data-i18n="s3.desc">BI-дашборды и обработка данных → в бизнес-решения.</p>
+							<div class="svc-toggle shrink-0 w-[32px] h-[32px] rounded-full border border-[#9ac763] flex items-center justify-center ml-4">
+								<span class="svc-minus font-inter text-[#9ac763] text-[20px] leading-none" style="display:none;margin-top:-2px">−</span>
+								<span class="svc-plus font-inter text-[#9ac763] text-[20px] leading-none" style="margin-top:-2px">+</span>
 							</div>
 						</div>
 					</div>
 
 					<!-- row 04 -->
 					<div class="svc-row" data-open="false">
-						<img
-							src="assets/divider.svg"
-							alt=""
-							loading="lazy"
-							decoding="async"
-							style="width: 100%; height: 29px; display: block; max-width: none"
-						/>
-						<div
-							class="svc-header flex items-center gap-6 py-5 cursor-pointer select-none"
-							onclick="toggleSvc(this)"
-						>
-							<span class="font-inter text-[13px] text-[#aaa] w-[24px] shrink-0"
-								>04</span
-							>
-							<h3
-								class="svc-title font-jakarta font-bold text-[28px] tracking-[-0.5px] text-black w-[260px] shrink-0"
-								data-i18n="s4.title"
-							>
-								Железо &amp; ПО
-							</h3>
-							<p
-								class="svc-desc font-jakarta text-[#878c91] flex-1 truncate"
-								style="font-size: 28px"
-								data-i18n="s4.desc"
-							>
-								Аппаратно-программная интеграция, IoT-платформы, мониторинг
-								производства, умные склады.
-							</p>
-							<div
-								class="svc-toggle shrink-0 w-[32px] h-[32px] rounded-full border border-[#9ac763] flex items-center justify-center ml-4"
-							>
-								<span
-									class="svc-minus font-inter text-[#9ac763] text-[20px] leading-none"
-									style="display: none; margin-top: -2px"
-									>−</span
-								>
-								<span
-									class="svc-plus font-inter text-[#9ac763] text-[20px] leading-none"
-									style="margin-top: -2px"
-									>+</span
-								>
+						<img src="assets/divider.svg" alt="" loading="lazy" decoding="async" style="width:100%;height:29px;display:block;max-width:none">
+						<div class="svc-header flex items-center gap-6 py-5 cursor-pointer select-none" onclick="toggleSvc(this)">
+							<span class="font-inter text-[13px] text-[#aaa] w-[24px] shrink-0">04</span>
+							<h3 class="svc-title font-jakarta font-bold text-[28px] tracking-[-0.5px] text-black w-[260px] shrink-0" data-i18n="s4.title">Железо &amp; ПО</h3>
+							<p class="svc-desc font-jakarta text-[#878c91] flex-1 truncate" style="font-size:28px" data-i18n="s4.desc">Аппаратно-программная интеграция, IoT-платформы, мониторинг производства, умные склады.</p>
+							<div class="svc-toggle shrink-0 w-[32px] h-[32px] rounded-full border border-[#9ac763] flex items-center justify-center ml-4">
+								<span class="svc-minus font-inter text-[#9ac763] text-[20px] leading-none" style="display:none;margin-top:-2px">−</span>
+								<span class="svc-plus font-inter text-[#9ac763] text-[20px] leading-none" style="margin-top:-2px">+</span>
 							</div>
 						</div>
 					</div>
 
-					<img
-						src="assets/divider.svg"
-						alt=""
-						loading="lazy"
-						decoding="async"
-						style="width: 100%; height: 29px; display: block; max-width: none"
-					/>
+					<img src="assets/divider.svg" alt="" loading="lazy" decoding="async" style="width:100%;height:29px;display:block;max-width:none">
 				</div>
 			</div>
 		</section>
@@ -2602,43 +2200,15 @@
 				style="background: radial-gradient(circle, #3b82f6 0%, transparent 60%)"
 			></div>
 			<!-- decorative SVGs -->
-			<img
-				src="vector97.svg"
-				alt=""
-				loading="lazy"
-				decoding="async"
-				class="absolute pointer-events-none"
-				style="
-					left: 110px;
-					bottom: 100px;
-					width: 122px;
-					height: 216px;
-					opacity: 0.9;
-				"
-			/>
-			<img
-				src="burst.svg"
-				alt=""
-				loading="lazy"
-				decoding="async"
-				class="absolute pointer-events-none"
-				style="
-					left: 80px;
-					bottom: 60px;
-					width: 66px;
-					height: 59px;
-					opacity: 0.9;
-				"
-			/>
+			<img src="vector97.svg" alt="" loading="lazy" decoding="async" class="absolute pointer-events-none" style="left:110px;bottom:100px;width:122px;height:216px;opacity:0.9" />
+			<img src="burst.svg" alt="" loading="lazy" decoding="async" class="absolute pointer-events-none" style="left:80px;bottom:60px;width:66px;height:59px;opacity:0.9" />
 
 			<div class="relative max-w-[1160px] mx-auto px-8">
 				<h2
 					class="font-jakarta font-semibold text-[31px] leading-[1.5] text-white max-w-[1100px] mb-20"
 					data-i18n="process.heading"
 				>
-					Прозрачный процесс на каждом шаге: путь к результату по принципу SLC
-					(Simple · Lovable · Complete) с быстрым запуском, итерациями и
-					измеримыми результатами.
+					Прозрачный процесс на каждом шаге: путь к результату по принципу SLC (Simple · Lovable · Complete) с быстрым запуском, итерациями и измеримыми результатами.
 				</h2>
 
 				<div
@@ -2666,8 +2236,7 @@
 								class="step-desc font-inter text-[16px] leading-[1.75] text-white/70"
 								data-i18n="p1.desc"
 							>
-								Глубокое погружение в вашу IT-архитектуру. Подписываем NDA до
-								начала работ.
+								Глубокое погружение в вашу IT-архитектуру. Подписываем NDA до начала работ.
 							</p>
 						</div>
 						<div class="step-collapsed">
@@ -2706,8 +2275,7 @@
 								class="step-desc font-inter text-[16px] leading-[1.75] text-white/70"
 								data-i18n="p2.desc"
 							>
-								Быстро запускаем рабочую версию продукта. Итерации каждые 2
-								недели с демо и обратной связью.
+								Быстро запускаем рабочую версию продукта. Итерации каждые 2 недели с демо и обратной связью.
 							</p>
 						</div>
 						<div class="step-collapsed">
@@ -2746,8 +2314,7 @@
 								class="step-desc font-inter text-[16px] leading-[1.75] text-white/70"
 								data-i18n="p3.desc"
 							>
-								Оптимизируем производительность, добавляем новые модули и
-								масштабируем решение под рост бизнеса.
+								Оптимизируем производительность, добавляем новые модули и масштабируем решение под рост бизнеса.
 							</p>
 						</div>
 						<div class="step-collapsed">
@@ -2769,94 +2336,41 @@
 		</section>
 
 		<!-- ============ TESTIMONIALS ============ -->
-		<section
-			id="reviews"
-			class="relative bg-transparent overflow-hidden"
-			style="min-height: 543px"
-		>
+		<section id="reviews" class="relative bg-transparent overflow-hidden" style="min-height:543px">
 			<div class="absolute inset-0 noise"></div>
 			<div class="relative max-w-[1440px] mx-auto px-[80px] py-[115px]">
 				<div class="flex flex-col gap-[74px] items-start w-[1280px]">
 					<!-- Quote -->
 					<div class="review-quote-shell reveal">
-						<span
-							class="review-quote-mark review-quote-mark-start"
-							aria-hidden="true"
-							>“</span
-						>
-						<p
-							class="review-quote-text font-jakarta font-semibold text-[36px] leading-[1.6] text-[#010205] tracking-[-1.08px] w-full"
-							id="reviewQuote"
-						>
-							Мне понравилось, что вы работаете быстро, и понравилась ваша
-							скорость реакции на наши предложения.
+						<span class="review-quote-mark review-quote-mark-start" aria-hidden="true">“</span>
+						<p class="review-quote-text font-jakarta font-semibold text-[36px] leading-[1.6] text-[#010205] tracking-[-1.08px] w-full" id="reviewQuote">
+							Мне понравилось, что вы работаете быстро, и понравилась ваша скорость реакции на наши предложения.
 						</p>
-						<span
-							class="review-quote-mark review-quote-mark-end"
-							aria-hidden="true"
-							>”</span
-						>
+						<span class="review-quote-mark review-quote-mark-end" aria-hidden="true">”</span>
 					</div>
 					<!-- Bottom row -->
 					<div class="flex items-center justify-between w-full reveal">
 						<!-- Person -->
 						<div class="flex items-center gap-[24px]">
-							<div
-								class="w-[70px] h-[70px] rounded-full bg-gradient-to-br from-[#d8d8da] to-[#b8bcc3] shrink-0 flex items-center justify-center font-jakarta font-bold text-[22px] tracking-[-0.04em] text-[#010205]"
-								id="reviewAvatar"
-								aria-hidden="true"
-							>
-								А
-							</div>
+							<div class="w-[70px] h-[70px] rounded-full bg-gradient-to-br from-[#d8d8da] to-[#b8bcc3] shrink-0 flex items-center justify-center font-jakarta font-bold text-[22px] tracking-[-0.04em] text-[#010205]" id="reviewAvatar" aria-hidden="true">А</div>
 							<div class="flex flex-col gap-[19px] leading-[1.8]">
-								<p
-									class="font-jakarta font-bold text-[20px] text-[#010205]"
-									id="reviewName"
-								>
-									Адильжан
-								</p>
-								<p
-									class="font-jakarta font-medium text-[16px] text-[#878c91]"
-									id="reviewRole"
-								>
-									ТОО ТеплоТехник
-								</p>
+								<p class="font-jakarta font-bold text-[20px] text-[#010205]" id="reviewName">Адильжан</p>
+								<p class="font-jakarta font-medium text-[16px] text-[#878c91]" id="reviewRole">ТОО ТеплоТехник</p>
 							</div>
 						</div>
 						<!-- Navigation -->
 						<div class="flex items-center gap-[38px]">
-							<button
-								class="border border-[#010205] rounded-full px-8 py-4 flex items-center justify-center hover:bg-[#010205] hover:text-white transition"
-								id="prevReview"
-							>
+							<button class="border border-[#010205] rounded-full px-8 py-4 flex items-center justify-center hover:bg-[#010205] hover:text-white transition" id="prevReview">
 								<svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-									<path
-										d="M19 12H5M11 6l-6 6 6 6"
-										stroke="currentColor"
-										stroke-width="2"
-										stroke-linecap="round"
-										stroke-linejoin="round"
-									/>
+									<path d="M19 12H5M11 6l-6 6 6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 								</svg>
 							</button>
 							<p class="font-jakarta font-semibold text-[16px] text-[#010205]">
-								<span class="underline decoration-solid" id="reviewCurrent"
-									>01</span
-								><span class="text-[rgba(1,2,5,0.4)]">/</span
-								><span class="text-[rgba(1,2,5,0.4)]" id="reviewTotal">03</span>
+								<span class="underline decoration-solid" id="reviewCurrent">01</span><span class="text-[rgba(1,2,5,0.4)]">/</span><span class="text-[rgba(1,2,5,0.4)]" id="reviewTotal">03</span>
 							</p>
-							<button
-								class="bg-[#010205] rounded-full px-8 py-4 flex items-center justify-center hover:bg-[#333] transition"
-								id="nextReview"
-							>
+							<button class="bg-[#010205] rounded-full px-8 py-4 flex items-center justify-center hover:bg-[#333] transition" id="nextReview">
 								<svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-									<path
-										d="M5 12h14M13 6l6 6-6 6"
-										stroke="white"
-										stroke-width="2"
-										stroke-linecap="round"
-										stroke-linejoin="round"
-									/>
+									<path d="M5 12h14M13 6l6 6-6 6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 								</svg>
 							</button>
 						</div>
@@ -2887,17 +2401,13 @@
 						<button
 							class="font-manrope font-bold border border-[#010205] rounded-full px-4 py-4 w-[176px] text-[16px] tracking-tight hover:bg-[#010205] hover:text-white transition"
 							type="button"
-							onclick="
-								document
-									.getElementById('contacts')
-									.scrollIntoView({ behavior: 'smooth' })
-							"
+							onclick="document.getElementById('contacts').scrollIntoView({behavior:'smooth'})"
 							data-i18n="faq.ask"
 						>
 							Задать вопрос
 						</button>
 						<a
-							href="https://t.me/xsayat"
+							href="https://t.me/silkroadtech"
 							target="_blank"
 							rel="noreferrer"
 							class="font-jakarta font-semibold text-[16px] underline"
@@ -2995,8 +2505,7 @@
 							class="font-jakarta font-medium text-[16px] leading-[1.8] text-[#878c91] mt-4"
 							data-i18n="faq.a2"
 						>
-							Стоимость зависит от объёма и сложности. Базовые проекты — от $5
-							000.
+							Стоимость зависит от объёма и сложности. Базовые проекты — от $5 000.
 						</p>
 					</details>
 					<details class="border-b border-black px-6 py-6">
@@ -3177,7 +2686,7 @@
 					<form
 						id="contactForm"
 						class="bg-[#0f1116] rounded-xl p-6 space-y-6"
-						action="https://formspree.io/f/xqewkzvb"
+					action="https://formspree.io/f/xqewkzvb"
 						method="POST"
 					>
 						<input
@@ -3293,11 +2802,7 @@
 				class="footer-layout relative max-w-[1440px] mx-auto px-20 flex gap-14"
 			>
 				<div class="max-w-[534px]">
-					<a
-						href="/"
-						aria-label="Silk Road Tech home"
-						class="inline-block mb-8"
-					>
+					<a href="/" aria-label="Silk Road Tech home" class="inline-block mb-8">
 						<img
 							src="assets/logo.svg"
 							alt="Silk Road Tech"
@@ -3306,14 +2811,8 @@
 							decoding="async"
 						/>
 					</a>
-					<p
-						class="font-roboto text-[14px] leading-6 text-[#9b9b9c] mb-8"
-						data-i18n="footer.desc"
-					>
-						Мы предлагаем комплексный IT-аутсорсинг, охватывающий все аспекты
-						цифрового развития вашего бизнеса. От проектирования архитектуры и
-						разработки ПО до облачных решений и кибербезопасности — наша команда
-						готова к проектам любой сложности.
+					<p class="font-roboto text-[14px] leading-6 text-[#9b9b9c] mb-8" data-i18n="footer.desc">
+						Мы предлагаем комплексный IT-аутсорсинг, охватывающий все аспекты цифрового развития вашего бизнеса. От проектирования архитектуры и разработки ПО до облачных решений и кибербезопасности — наша команда готова к проектам любой сложности.
 					</p>
 					<div class="flex items-center gap-8">
 						<div class="flex gap-3">
@@ -3331,7 +2830,7 @@
 								</svg>
 							</a>
 							<a
-								href="https://t.me/xsayat"
+								href="https://t.me/silkroadtech"
 								target="_blank"
 								rel="noreferrer"
 								aria-label="Telegram"
@@ -3359,7 +2858,7 @@
 						</div>
 						<button
 							class="bg-[#010205] text-white font-jakarta font-bold text-[16px] rounded-full px-8 py-4 inline-flex items-center gap-3 hover:scale-[1.02] transition"
-							onclick="window.location.href = '/#contacts'"
+							onclick="window.location.href='/#contacts'"
 							data-i18n="footer.discuss"
 						>
 							Обсудить проект
@@ -3375,18 +2874,8 @@
 						</button>
 					</div>
 					<div class="flex items-center gap-3 mt-8">
-						<span
-							class="font-roboto text-[12px] text-[#9b9b9c]"
-							data-i18n="footer.resident"
-							>Резидент</span
-						>
-						<img
-							src="assets/astanahub.png.webp"
-							alt="Astana Hub"
-							loading="lazy"
-							decoding="async"
-							class="h-16 w-auto astana-hub-img"
-						/>
+						<span class="font-roboto text-[12px] text-[#9b9b9c]" data-i18n="footer.resident">Резидент</span>
+						<img src="assets/astanahub.png.webp" alt="Astana Hub" loading="lazy" decoding="async" class="h-16 w-auto astana-hub-img"/>
 					</div>
 				</div>
 
@@ -3404,9 +2893,7 @@
 							<li><a href="/cases" data-i18n="nav.cases">Кейсы</a></li>
 							<li><a href="/about" data-i18n="nav.about">О нас</a></li>
 							<li><a href="#contacts" data-i18n="nav.contacts">Контакты</a></li>
-							<li class="font-bold">
-								<a href="#faq" data-i18n="nav.faq">FAQ</a>
-							</li>
+							<li class="font-bold"><a href="#faq" data-i18n="nav.faq">FAQ</a></li>
 						</ul>
 					</div>
 					<div>
@@ -3417,23 +2904,9 @@
 							Документы
 						</h4>
 						<ul class="font-roboto text-[14px] text-[#9b9b9c] space-y-6">
-							<li>
-								<a href="/privacy" data-i18n="footer.privacy"
-									>Политика конфиденциальности</a
-								>
-							</li>
-							<li>
-								<a href="/copyright" data-i18n="footer.copyright"
-									>Авторские права</a
-								>
-							</li>
-							<li>
-								<a
-									href="mailto:sayat@silkroadtech.kz"
-									data-i18n="footer.email.label"
-									>Email</a
-								>
-							</li>
+							<li><a href="/privacy" data-i18n="footer.privacy">Политика конфиденциальности</a></li>
+							<li><a href="/copyright" data-i18n="footer.copyright">Авторские права</a></li>
+							<li><a href="mailto:sayat@silkroadtech.kz" data-i18n="footer.email.label">Email</a></li>
 						</ul>
 					</div>
 					<div>
@@ -3480,9 +2953,7 @@
 			<div
 				class="footer-meta relative max-w-[1440px] mx-auto px-20 mt-12 pt-8 border-t border-black/10 flex justify-between text-[12px] text-[#9b9b9c]"
 			>
-				<span data-i18n="footer.copy"
-					>© 2026 Silk Road Tech. Все права защищены.</span
-				>
+				<span data-i18n="footer.copy">© 2026 Silk Road Tech. Все права защищены.</span>
 				<span data-i18n="footer.made">Made with care in Astana</span>
 			</div>
 		</footer>
@@ -3514,10 +2985,7 @@
 					if (!img.hasAttribute("decoding")) {
 						img.setAttribute("decoding", "async");
 					}
-					if (
-						!img.hasAttribute("loading") &&
-						!img.closest("header, .hero-layout")
-					) {
+					if (!img.hasAttribute("loading") && !img.closest("header, .hero-layout")) {
 						img.setAttribute("loading", "lazy");
 					}
 				});
@@ -3607,21 +3075,21 @@
 
 				// ── Services accordion ──
 				function toggleSvc(header) {
-					const row = header.closest(".svc-row");
-					const isOpen = row.dataset.open === "true";
+					const row = header.closest('.svc-row');
+					const isOpen = row.dataset.open === 'true';
 					// collapse all
-					document.querySelectorAll(".svc-row").forEach((r) => {
-						r.dataset.open = "false";
-						r.querySelector(".svc-desc").classList.add("truncate");
-						r.querySelector(".svc-minus").style.display = "none";
-						r.querySelector(".svc-plus").style.display = "";
+					document.querySelectorAll('.svc-row').forEach(r => {
+						r.dataset.open = 'false';
+						r.querySelector('.svc-desc').classList.add('truncate');
+						r.querySelector('.svc-minus').style.display = 'none';
+						r.querySelector('.svc-plus').style.display = '';
 					});
 					// open clicked if it was closed
 					if (!isOpen) {
-						row.dataset.open = "true";
-						row.querySelector(".svc-desc").classList.remove("truncate");
-						row.querySelector(".svc-minus").style.display = "";
-						row.querySelector(".svc-plus").style.display = "none";
+						row.dataset.open = 'true';
+						row.querySelector('.svc-desc').classList.remove('truncate');
+						row.querySelector('.svc-minus').style.display = '';
+						row.querySelector('.svc-plus').style.display = 'none';
 					}
 				}
 				window.toggleSvc = toggleSvc;
@@ -3631,105 +3099,96 @@
 					ru: [
 						{
 							quote:
-								"Мне понравилось, что вы работаете быстро, и понравилась ваша скорость реакции на наши предложения.",
-							name: "Адильжан",
-							role: "ТОО ТеплоТехник",
+								'Мне понравилось, что вы работаете быстро, и понравилась ваша скорость реакции на наши предложения.',
+							name: 'Адильжан',
+							role: 'ТОО ТеплоТехник',
 						},
 						{
 							quote:
-								"Спасибо за своевременную работу и за то, что пошли на уступки, мы с вами заключаем по счету уже 6-7 договоров и нам нравится работать с вами в долгосрочной перспективе",
-							name: "Айнагуль Хамитова",
-							role: "CEO @daryndybala.kz",
+								'Спасибо за своевременную работу и за то, что пошли на уступки, мы с вами заключаем по счету уже 6-7 договоров и нам нравится работать с вами в долгосрочной перспективе',
+							name: 'Айнагуль Хамитова',
+							role: 'CEO @daryndybala.kz',
 						},
 						{
-							quote: "Отличная работа, оперативно, четко",
-							name: "Нурлан Жакупов",
-							role: "",
+							quote: 'Отличная работа, оперативно, четко',
+							name: 'Нурлан Жакупов',
+							role: '',
 						},
 					],
 					en: [
 						{
 							quote:
-								"I liked that you work fast, and I really appreciated how quickly you responded to our suggestions.",
-							name: "Adilzhan",
-							role: "TeploTekhnik LLP",
+								'I liked that you work fast, and I really appreciated how quickly you responded to our suggestions.',
+							name: 'Adilzhan',
+							role: 'TeploTekhnik LLP',
 						},
 						{
 							quote:
-								"Thank you for the timely work and for being flexible with us. We have already signed our 6th or 7th invoice with you, and we value working with you in the long term.",
-							name: "Ainagul Khanym",
-							role: "CEO @daryndybala.kz",
+								'Thank you for the timely work and for being flexible with us. We have already signed our 6th or 7th invoice with you, and we value working with you in the long term.',
+							name: 'Ainagul Khanym',
+							role: 'CEO @daryndybala.kz',
 						},
 						{
-							quote: "Excellent work: fast, clear, and efficient.",
-							name: "Nurlan Zhakupov",
-							role: "",
+							quote: 'Excellent work: fast, clear, and efficient.',
+							name: 'Nurlan Zhakupov',
+							role: '',
 						},
 					],
 				};
-				const reviewQuote = document.getElementById("reviewQuote");
-				const reviewAvatar = document.getElementById("reviewAvatar");
-				const reviewName = document.getElementById("reviewName");
-				const reviewRole = document.getElementById("reviewRole");
-				const reviewCurrent = document.getElementById("reviewCurrent");
-				const reviewTotal = document.getElementById("reviewTotal");
-				const prevReview = document.getElementById("prevReview");
-				const nextReview = document.getElementById("nextReview");
+				const reviewQuote = document.getElementById('reviewQuote');
+				const reviewAvatar = document.getElementById('reviewAvatar');
+				const reviewName = document.getElementById('reviewName');
+				const reviewRole = document.getElementById('reviewRole');
+				const reviewCurrent = document.getElementById('reviewCurrent');
+				const reviewTotal = document.getElementById('reviewTotal');
+				const prevReview = document.getElementById('prevReview');
+				const nextReview = document.getElementById('nextReview');
 				let activeReviewIndex = 0;
 
 				const getReviewLang = () => {
-					const saved = localStorage.getItem("srt_lang");
-					return saved === "en" ? "en" : "ru";
+					const saved = localStorage.getItem('srt_lang');
+					return saved === 'en' ? 'en' : 'ru';
 				};
 
 				const getInitials = (name) => {
-					if (!name) return "";
-					const parts = name.trim().split(/\s+/).filter(Boolean);
+					if (!name) return '';
+					const parts = name
+						.trim()
+						.split(/\s+/)
+						.filter(Boolean);
 					return parts
 						.slice(0, 2)
 						.map((part) => part.charAt(0).toUpperCase())
-						.join("");
+						.join('');
 				};
 
 				const renderReview = () => {
-					if (
-						!reviewQuote ||
-						!reviewAvatar ||
-						!reviewName ||
-						!reviewRole ||
-						!reviewCurrent ||
-						!reviewTotal
-					)
-						return;
+					if (!reviewQuote || !reviewAvatar || !reviewName || !reviewRole || !reviewCurrent || !reviewTotal) return;
 					const items = reviews[getReviewLang()] || reviews.ru;
 					const item = items[activeReviewIndex] || items[0];
 					reviewQuote.textContent = item.quote;
 					reviewAvatar.textContent = getInitials(item.name);
 					reviewName.textContent = item.name;
 					reviewRole.textContent = item.role;
-					reviewRole.style.display = item.role ? "" : "none";
-					reviewCurrent.textContent = String(activeReviewIndex + 1).padStart(
-						2,
-						"0",
-					);
-					reviewTotal.textContent = String(items.length).padStart(2, "0");
+					reviewRole.style.display = item.role ? '' : 'none';
+					reviewCurrent.textContent = String(activeReviewIndex + 1).padStart(2, '0');
+					reviewTotal.textContent = String(items.length).padStart(2, '0');
 				};
 
 				if (prevReview && nextReview) {
-					prevReview.addEventListener("click", () => {
+					prevReview.addEventListener('click', () => {
 						const items = reviews[getReviewLang()] || reviews.ru;
-						activeReviewIndex =
-							(activeReviewIndex - 1 + items.length) % items.length;
+						activeReviewIndex = (activeReviewIndex - 1 + items.length) % items.length;
 						renderReview();
 					});
-					nextReview.addEventListener("click", () => {
+					nextReview.addEventListener('click', () => {
 						const items = reviews[getReviewLang()] || reviews.ru;
 						activeReviewIndex = (activeReviewIndex + 1) % items.length;
 						renderReview();
 					});
 				}
 
-				document.addEventListener("srt:language-changed", renderReview);
+				document.addEventListener('srt:language-changed', renderReview);
 				renderReview();
 
 				// ── Contact form: char counter ──
@@ -3854,10 +3313,10 @@
 					{ passive: true },
 				);
 
-				// ── Parallax on hero cards ──
-				const heroSection = document.querySelector(
-					"section.relative.overflow-hidden.bg-white",
-				);
+			// ── Parallax on hero cards ──
+			const heroSection = document.querySelector(
+				"section.hero-section",
+			);
 				if (heroSection) {
 					window.addEventListener(
 						"scroll",
@@ -3874,6 +3333,80 @@
 				}
 			});
 		</script>
-		<script src="assets/i18n.js"></script>
-	</body>
+	<script src="assets/i18n.js"></script>
+	<script>
+	(function () {
+		var DESKTOP_W = 1440;
+		var HERO_H    = 687;
+		var HOW_H     = 662;
+
+		function applyTabletScale() {
+			var vw = window.innerWidth;
+			var heroLayout = document.querySelector('.hero-layout');
+			var howSection = document.getElementById('how-we-work');
+			var howShell   = document.querySelector('.how-work-shell');
+
+			if (!heroLayout) return;
+
+		if (vw >= 769 && vw <= 1359) {
+			var s = vw / DESKTOP_W;
+
+				/* ── Hero ── */
+				heroLayout.style.setProperty('width',  DESKTOP_W + 'px', 'important');
+				heroLayout.style.setProperty('height', HERO_H + 'px',    'important');
+				heroLayout.style.setProperty('display','block',           'important');
+				heroLayout.style.setProperty('padding','0',               'important');
+				heroLayout.style.setProperty('margin', '0',               'important');
+				heroLayout.style.setProperty('zoom', s.toFixed(4), 'important');
+				/* kill grid */
+				heroLayout.style.setProperty('grid-template-columns','unset','important');
+				heroLayout.style.setProperty('grid-template-rows',   'unset','important');
+				heroLayout.style.setProperty('align-items',          'unset','important');
+				heroLayout.style.setProperty('column-gap',           'unset','important');
+				heroLayout.style.setProperty('row-gap',              'unset','important');
+				heroLayout.style.setProperty('min-height',           'unset','important');
+
+				/* ── How-we-work shell ── */
+				if (howSection && howShell) {
+					howSection.style.setProperty('height',   Math.round(HOW_H * s) + 'px', 'important');
+					howSection.style.setProperty('overflow', 'hidden', 'important');
+					howSection.style.setProperty('padding',  '0',      'important');
+
+					howShell.style.setProperty('position',         'absolute',      'important');
+					howShell.style.setProperty('top',              '0',             'important');
+					howShell.style.setProperty('left',             '0',             'important');
+					howShell.style.setProperty('right',            'auto',          'important');
+					howShell.style.setProperty('bottom',           'auto',          'important');
+					howShell.style.setProperty('width',            DESKTOP_W + 'px','important');
+					howShell.style.setProperty('height',           HOW_H + 'px',    'important');
+					howShell.style.setProperty('transform',        'scale(' + s + ')','important');
+					howShell.style.setProperty('transform-origin', 'top left',      'important');
+				}
+
+			} else {
+				/* Reset for full desktop (≥1360px) or mobile (<769px) */
+				['width','height','display','padding','margin','zoom',
+				 'grid-template-columns','grid-template-rows','align-items',
+				 'column-gap','row-gap','min-height'].forEach(function(p){
+					heroLayout.style.removeProperty(p);
+				});
+				if (howSection && howShell) {
+					['height','overflow','padding'].forEach(function(p){ howSection.style.removeProperty(p); });
+					['position','top','left','right','bottom','width','height',
+					 'transform','transform-origin','max-width'].forEach(function(p){ howShell.style.removeProperty(p); });
+				}
+			}
+		}
+
+		/* Run immediately, then on every resize and after full load */
+		if (document.readyState === 'loading') {
+			document.addEventListener('DOMContentLoaded', applyTabletScale);
+		} else {
+			applyTabletScale();
+		}
+		window.addEventListener('load', applyTabletScale, { once: true });
+		window.addEventListener('resize', applyTabletScale, { passive: true });
+	})();
+	</script>
+</body>
 </html>
