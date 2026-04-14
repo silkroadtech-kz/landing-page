@@ -109,11 +109,42 @@
 				opacity: 0.06;
 				pointer-events: none;
 			}
-			.marquee {
-				display: flex;
-				gap: 40px;
-				animation: scroll 30s linear infinite;
+		.marquee {
+			display: flex;
+			gap: 40px;
+			animation: scroll 30s linear infinite;
+		}
+		/* Partner strip — direct child of hero-layout */
+		.hero-partner-strip {
+			display: flex;
+			flex-direction: column;
+			gap: 0.75rem;
+			/* Desktop: absolute, under the copy column only */
+			position: absolute;
+			left: 71px;
+			top: 520px;
+			width: 680px;
+		}
+		.partners-label {
+			display: block;
+			font-size: 11px;
+			letter-spacing: 0.18em;
+			text-align: left;
+		}
+		.partners-ticker {
+			overflow: hidden;
+			height: 50px;
+		}
+		/* Responsive: in flow, full width */
+		@media (max-width: 1200px) {
+			.hero-partner-strip {
+				position: static !important;
+				left: auto !important;
+				right: auto !important;
+				top: auto !important;
+				width: 100% !important;
 			}
+		}
 			@keyframes scroll {
 				0% {
 					transform: translateX(0);
@@ -246,6 +277,45 @@
 			.reveal-scale.active {
 				opacity: 1;
 				transform: scale(1);
+			}
+
+			.review-quote-shell {
+				display: grid;
+				grid-template-columns: 72px minmax(0, 1fr) 92px;
+				align-items: stretch;
+				width: 100%;
+				column-gap: 0;
+			}
+			.review-quote-mark {
+				font-family: Georgia, "Times New Roman", serif;
+				font-size: 140px;
+				font-style: italic;
+				line-height: 0.72;
+				letter-spacing: -0.08em;
+				pointer-events: none;
+				user-select: none;
+				display: block;
+				width: 1em;
+			}
+			.review-quote-mark-start {
+				grid-column: 1;
+				align-self: start;
+				justify-self: start;
+				transform: translateY(-14px);
+				color: rgba(154, 199, 99, 0.34);
+				text-shadow: 0 14px 36px rgba(154, 199, 99, 0.12);
+			}
+			.review-quote-mark-end {
+				grid-column: 3;
+				align-self: end;
+				justify-self: end;
+				transform: translateY(86px);
+				color: rgba(1, 2, 5, 0.12);
+			}
+			.review-quote-text {
+				grid-column: 2;
+				align-self: center;
+				margin: 0;
 			}
 
 			/* Stagger delays */
@@ -391,8 +461,575 @@
 			body.menu-open {
 				overflow: hidden;
 			}
+			body.preload-pending {
+				overflow: hidden;
+			}
+			body > *:not(.site-preloader) {
+				transition:
+					opacity 0.45s ease,
+					filter 0.45s ease;
+			}
+			body.preload-pending > *:not(.site-preloader) {
+				opacity: 0;
+				filter: blur(10px);
+			}
+			.site-preloader {
+				position: fixed;
+				inset: 0;
+				z-index: 9999;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				padding: 2rem;
+				background:
+					radial-gradient(circle at top, rgba(154, 199, 99, 0.18), transparent 42%),
+					rgba(239, 239, 239, 0.98);
+				backdrop-filter: blur(16px);
+				transition:
+					opacity 0.55s ease,
+					visibility 0.55s ease;
+			}
+			.site-preloader.is-hidden {
+				opacity: 0;
+				visibility: hidden;
+				pointer-events: none;
+			}
+			.site-preloader__inner {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				gap: 1.25rem;
+				text-align: center;
+			}
+			.site-preloader__mark {
+				width: 82px;
+				height: 82px;
+				border-radius: 999px;
+				background: linear-gradient(135deg, rgba(1, 2, 5, 0.98), rgba(32, 36, 42, 0.94));
+				box-shadow:
+					0 24px 50px rgba(1, 2, 5, 0.18),
+					inset 0 1px 0 rgba(255, 255, 255, 0.08);
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				position: relative;
+				overflow: hidden;
+			}
+			.site-preloader__mark::after {
+				content: "";
+				position: absolute;
+				inset: 10px;
+				border-radius: inherit;
+				border: 1px solid rgba(154, 199, 99, 0.24);
+			}
+			.site-preloader__text {
+				font-family: "Manrope", sans-serif;
+				font-size: 0.95rem;
+				font-weight: 800;
+				letter-spacing: 0.24em;
+				text-transform: uppercase;
+				color: #9ac763;
+			}
+			.site-preloader__label {
+				font-family: "Plus Jakarta Sans", sans-serif;
+				font-size: 0.95rem;
+				line-height: 1.7;
+				color: rgba(1, 2, 5, 0.64);
+				max-width: 24rem;
+			}
+			.site-preloader__bars {
+				display: flex;
+				align-items: flex-end;
+				gap: 0.45rem;
+				height: 42px;
+			}
+			.site-preloader__bars span {
+				width: 8px;
+				border-radius: 999px;
+				background: linear-gradient(180deg, #c6e69e 0%, #9ac763 100%);
+				animation: preloadPulse 1s ease-in-out infinite;
+				transform-origin: bottom;
+			}
+			.site-preloader__bars span:nth-child(1) {
+				height: 16px;
+				animation-delay: 0s;
+			}
+			.site-preloader__bars span:nth-child(2) {
+				height: 28px;
+				animation-delay: 0.14s;
+			}
+			.site-preloader__bars span:nth-child(3) {
+				height: 38px;
+				animation-delay: 0.28s;
+			}
+			@keyframes preloadPulse {
+				0%,
+				100% {
+					transform: scaleY(0.68);
+					opacity: 0.72;
+				}
+				50% {
+					transform: scaleY(1);
+					opacity: 1;
+				}
+			}
 
-			@media (max-width: 1200px) {
+			@media (max-width: 1360px) {
+				.hero-layout {
+					padding-left: 2rem;
+					padding-right: 2rem;
+				}
+				.hero-copy {
+					left: 2rem !important;
+				}
+				.hero-copy h1 {
+					font-size: 4rem !important;
+					width: 620px !important;
+				}
+				.hero-copy p {
+					width: 520px !important;
+				}
+				.hero-media {
+					transform: scale(0.94);
+					transform-origin: top right;
+				}
+				#how-we-work .how-work-header,
+				#how-we-work .how-work-cards,
+				#reviews .w-\[1280px\],
+				#services .max-w-\[1440px\] {
+					width: 100% !important;
+				}
+			}
+
+			@media (min-width: 1024px) and (max-width: 1180px) {
+				header nav {
+					padding-left: 1.5rem !important;
+					padding-right: 1.5rem !important;
+					gap: 1rem !important;
+				}
+				header nav > .flex.items-center.gap-\[74px\] {
+					gap: 1.5rem !important;
+					min-width: 0 !important;
+					flex: 1 1 auto !important;
+				}
+				header nav ul.hidden.lg\:flex {
+					gap: 1.5rem !important;
+					font-size: 1rem !important;
+					flex-wrap: nowrap !important;
+					min-width: 0 !important;
+				}
+				header nav ul.hidden.lg\:flex li,
+				header nav ul.hidden.lg\:flex a {
+					white-space: nowrap !important;
+				}
+				header nav ul.hidden.lg\:flex li.flex.items-center.gap-2 {
+					gap: 0.35rem !important;
+				}
+				header nav ul.hidden.lg\:flex svg {
+					width: 14px !important;
+					height: 14px !important;
+					flex-shrink: 0 !important;
+				}
+				header nav > .flex.items-center.gap-2 {
+					flex-shrink: 0 !important;
+				}
+				header .w-\[174px\] {
+					width: auto !important;
+					min-width: 0 !important;
+					padding: 0.85rem 1.15rem !important;
+					font-size: 0.95rem !important;
+					white-space: nowrap !important;
+				}
+				#langToggle {
+					width: 46px !important;
+					height: 46px !important;
+					font-size: 14px !important;
+				}
+			}
+
+			@media (min-width: 1024px) and (max-width: 1320px) and (max-aspect-ratio: 5/4) {
+				.hero-layout {
+					height: auto !important;
+					min-height: 0 !important;
+					padding: 2.25rem 1.75rem 1.5rem !important;
+					display: grid !important;
+					grid-template-columns: minmax(0, 1.08fr) minmax(340px, 0.92fr);
+					align-items: start !important;
+					column-gap: 1.5rem !important;
+					row-gap: 1rem !important;
+				}
+				.hero-copy {
+					position: relative !important;
+					left: auto !important;
+					top: auto !important;
+					padding-top: 1rem !important;
+					gap: 1.5rem !important;
+					min-width: 0 !important;
+				}
+				.hero-copy h1,
+				html[lang="en"] .hero-title {
+					font-size: clamp(3rem, 4.8vw, 4.4rem) !important;
+					line-height: 1.02 !important;
+					letter-spacing: -0.04em !important;
+					width: 100% !important;
+					max-width: 8.2em !important;
+				}
+				.hero-copy p {
+					width: 100% !important;
+					max-width: 32rem !important;
+					font-size: 1rem !important;
+				}
+				.hero-btns {
+					gap: 1.5rem !important;
+					flex-wrap: wrap !important;
+				}
+				.hero-media {
+					position: relative !important;
+					left: auto !important;
+					top: auto !important;
+					width: 100% !important;
+					height: auto !important;
+					display: grid !important;
+					grid-template-columns: minmax(0, 1fr) minmax(148px, 0.72fr);
+					grid-template-rows: auto auto;
+					gap: 1rem !important;
+					align-self: start !important;
+					transform: none !important;
+				}
+				.hero-media > div {
+					position: relative !important;
+					left: auto !important;
+					top: auto !important;
+					width: 100% !important;
+				}
+				.hero-card-photo {
+					grid-column: 1;
+					grid-row: 1;
+					height: 240px !important;
+				}
+				.hero-card-stat {
+					grid-column: 2;
+					grid-row: 1;
+					height: 240px !important;
+				}
+				.hero-card-stat .font-jakarta.font-bold.text-\[84px\] {
+					font-size: 3.6rem !important;
+				}
+				.hero-card-growth {
+					grid-column: 1 / span 2;
+					grid-row: 2;
+					height: 190px !important;
+				}
+				.hero-card-growth .absolute.left-\[33px\] {
+					left: 1.25rem !important;
+					max-width: 55% !important;
+					gap: 1.1rem !important;
+				}
+			.hero-card-growth h3 {
+				width: auto !important;
+				font-size: 2rem !important;
+				line-height: 1.15 !important;
+			}
+			.hero-card-growth .absolute.left-\[339px\] {
+				left: auto !important;
+				right: 1rem !important;
+				bottom: 1rem !important;
+			}
+			#heroBars > div {
+				width: 56px !important;
+			}
+			#heroBars .h-\[95px\] {
+				height: 74px !important;
+			}
+			#heroBars .h-\[136px\] {
+				height: 106px !important;
+			}
+			#heroBars .h-\[166px\] {
+				height: 128px !important;
+			}
+			/* Fix grid auto-placement: hero-copy col1, hero-media col2, partner strip below both */
+			.hero-copy {
+				grid-column: 1 !important;
+				grid-row: 1 !important;
+			}
+			.hero-media {
+				grid-column: 2 !important;
+				grid-row: 1 !important;
+			}
+			.hero-partner-strip {
+				grid-column: 1 / -1 !important;
+				grid-row: 2 !important;
+				position: static !important;
+				left: auto !important;
+				top: auto !important;
+				right: auto !important;
+				width: 100% !important;
+			}
+		.hero-badge {
+			display: none !important;
+		}
+	}
+
+		@media (max-width: 1024px) {
+				header nav,
+				.px-20 {
+					padding-left: 1.5rem !important;
+					padding-right: 1.5rem !important;
+				}
+				header nav .gap-\[74px\] {
+					gap: 1.25rem !important;
+				}
+				header .w-\[174px\] {
+					width: auto !important;
+					padding-left: 1rem !important;
+					padding-right: 1rem !important;
+					font-size: 0.92rem !important;
+				}
+				.hero-layout {
+					height: auto !important;
+					min-height: 0 !important;
+					display: grid !important;
+					gap: 1.5rem !important;
+					padding-top: 2.5rem !important;
+					padding-bottom: 2rem !important;
+				}
+			.hero-copy,
+			.hero-media {
+				position: relative !important;
+				left: auto !important;
+				top: auto !important;
+				bottom: auto !important;
+				right: auto !important;
+				width: 100% !important;
+			}
+			.hero-copy {
+				gap: 1.5rem !important;
+				padding: 0 !important;
+			}
+			.hero-copy h1 {
+				font-size: 3.4rem !important;
+					width: 100% !important;
+					max-width: 580px !important;
+				}
+				.hero-copy p {
+					width: 100% !important;
+					max-width: 540px !important;
+				}
+				.hero-media {
+					display: grid !important;
+					grid-template-columns: minmax(0, 1fr) minmax(0, 0.9fr);
+					gap: 1rem !important;
+					align-items: stretch;
+					transform: none !important;
+				}
+			.hero-media > div {
+				position: relative !important;
+				left: auto !important;
+				top: auto !important;
+				width: 100% !important;
+				height: auto !important;
+				min-height: 220px !important;
+			}
+			.hero-card-photo {
+				max-height: 320px !important;
+			}
+			.hero-media .hero-card-growth {
+				grid-column: span 2;
+			}
+		.hero-badge {
+			display: none !important;
+		}
+		#how-we-work {
+					height: auto !important;
+					padding: 4rem 0 5rem !important;
+				}
+				.how-work-shell {
+					position: relative !important;
+					padding: 0 1.5rem !important;
+				}
+				.how-work-header {
+					position: relative !important;
+					left: auto !important;
+					top: auto !important;
+					width: 100% !important;
+					height: auto !important;
+					flex-direction: column !important;
+					align-items: flex-start !important;
+					gap: 1.5rem !important;
+					margin-bottom: 2rem !important;
+				}
+				.how-work-header h2,
+				.how-work-header p {
+					width: 100% !important;
+					max-width: none !important;
+				}
+				.how-work-header h2 {
+					font-size: 2.75rem !important;
+				}
+				.how-work-cards {
+					position: relative !important;
+					left: auto !important;
+					top: auto !important;
+					display: grid !important;
+					grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.3fr);
+					width: 100% !important;
+					gap: 1.25rem !important;
+				}
+				.how-work-cards .relative.rounded-\[30px\].bg-\[\#010205\],
+				.how-work-cards .relative.rounded-\[30px\].w-\[818px\] {
+					width: 100% !important;
+				}
+				.how-work-play {
+					left: auto !important;
+					right: 1.5rem !important;
+					top: auto !important;
+					bottom: -1rem !important;
+					width: 124px !important;
+					height: 124px !important;
+				}
+				.svc-header {
+					flex-wrap: wrap !important;
+					align-items: flex-start !important;
+					gap: 0.75rem !important;
+				}
+				.svc-title {
+					width: auto !important;
+					font-size: 1.6rem !important;
+					flex-shrink: 1 !important;
+				}
+				.svc-desc {
+					flex-basis: 100% !important;
+					width: 100% !important;
+					overflow: visible !important;
+					white-space: normal !important;
+					text-overflow: unset !important;
+					font-size: 1.25rem !important;
+				}
+				#process .px-8,
+				#contacts,
+				.footer-layout,
+				.footer-meta {
+					padding-left: 1.5rem !important;
+					padding-right: 1.5rem !important;
+				}
+				.process-cards {
+					flex-direction: column !important;
+					align-items: stretch !important;
+				}
+				.process-step {
+					width: 100% !important;
+					height: auto !important;
+					min-height: 220px !important;
+				}
+				.process-step .step-expanded,
+				.process-step .step-collapsed {
+					position: relative !important;
+					inset: auto !important;
+				}
+				.process-step .step-collapsed,
+				.process-step .step-rotated {
+					display: none !important;
+				}
+				.process-step .step-expanded {
+					opacity: 1 !important;
+					transform: none !important;
+					pointer-events: auto !important;
+				}
+				#process h2 {
+					font-size: 1.7rem !important;
+					line-height: 1.45 !important;
+					margin-bottom: 2.5rem !important;
+				}
+				#reviews .flex.items-center.justify-between {
+					flex-wrap: wrap !important;
+					gap: 2rem !important;
+					align-items: flex-end !important;
+				}
+				.contact-shell h2 {
+					font-size: 2rem !important;
+				}
+				.faq-layout,
+				.footer-layout,
+				.contact-shell,
+				.services-row {
+					flex-direction: column !important;
+				}
+				.footer-layout > .flex-1 {
+					gap: 2rem !important;
+				}
+				/* Reduce contact-shell vertical whitespace on tablet */
+				.contact-shell {
+					padding-top: 2.5rem !important;
+					padding-bottom: 2.5rem !important;
+				}
+				/* Reviews: reduce excessive vertical padding and side gutters */
+				#reviews .px-\[80px\] {
+					padding-left: 1.5rem !important;
+					padding-right: 1.5rem !important;
+					padding-top: 4rem !important;
+					padding-bottom: 4rem !important;
+				}
+			}
+
+			@media (max-width: 900px) {
+				.hero-copy h1,
+				html[lang="en"] .hero-title {
+					font-size: 3rem !important;
+					line-height: 1.05 !important;
+				}
+				.hero-media {
+					grid-template-columns: 1fr !important;
+				}
+				.hero-media .hero-card-growth {
+					grid-column: auto;
+				}
+				.how-work-cards {
+					grid-template-columns: 1fr !important;
+				}
+				.how-work-play {
+					display: none !important;
+				}
+				.contact-grid {
+					grid-template-columns: 1fr 1fr !important;
+				}
+				.footer-layout > .flex-1 {
+					flex-wrap: wrap !important;
+				}
+				.footer-layout > .flex-1 > div {
+					min-width: calc(50% - 1rem);
+				}
+				/* How We Work: scale down inline-styled counter & label */
+				[style*="96.79px"] {
+					font-size: clamp(2rem, 8vw, 3.5rem) !important;
+					letter-spacing: -1px !important;
+				}
+				[style*="21.9px"] {
+					font-size: 1rem !important;
+				}
+				/* How We Work: right image-card heading */
+				[data-i18n="how.question"] {
+					font-size: 1.75rem !important;
+					letter-spacing: 0.1em !important;
+					line-height: 1.35 !important;
+				}
+				/* How We Work: dark card inner padding (inline style override) */
+				.how-work-cards .relative.rounded-\[30px\].bg-\[\#010205\] {
+					padding: 1.5rem !important;
+					height: auto !important;
+					min-height: 220px !important;
+				}
+				/* How We Work: right image card — clamp tall fixed height */
+				.how-work-cards .relative.rounded-\[30px\].w-\[818px\] {
+					height: 220px !important;
+				}
+				/* Services: reduce excessive vertical padding at tablet */
+				#services {
+					padding-top: 4rem !important;
+					padding-bottom: 4rem !important;
+				}
+			}
+
+			@media (min-width: 1025px) and (max-width: 1200px) {
 				header nav,
 				.px-20 {
 					padding-left: 2rem !important;
@@ -409,20 +1046,19 @@
 					display: grid;
 					gap: 1.5rem;
 				}
-				.hero-copy,
-				.hero-media,
-				.hero-logos {
-					position: relative !important;
-					left: auto !important;
-					top: auto !important;
-					bottom: auto !important;
-					right: auto !important;
-					width: 100% !important;
-				}
-				.hero-copy {
-					gap: 1.5rem !important;
-					padding: 0 !important;
-				}
+			.hero-copy,
+			.hero-media {
+				position: relative !important;
+				left: auto !important;
+				top: auto !important;
+				bottom: auto !important;
+				right: auto !important;
+				width: 100% !important;
+			}
+			.hero-copy {
+				gap: 1.5rem !important;
+				padding: 0 !important;
+			}
 				.hero-copy h1 {
 					width: auto !important;
 					max-width: none !important;
@@ -438,21 +1074,21 @@
 					gap: 1rem;
 				}
 				.hero-media > div {
-					position: relative !important;
-					left: auto !important;
-					top: auto !important;
-					width: 100% !important;
-					height: auto !important;
-					min-height: 200px;
-				}
-				.hero-badge {
-					display: none;
-				}
-				.hero-logos {
-					display: none !important;
-				}
-				.process-cards {
-					flex-direction: column;
+				position: relative !important;
+				left: auto !important;
+				top: auto !important;
+				width: 100% !important;
+				height: auto !important;
+				min-height: 200px;
+			}
+			.hero-card-photo {
+				max-height: 320px !important;
+			}
+		.hero-badge {
+			display: none !important;
+		}
+		.process-cards {
+				flex-direction: column;
 					align-items: stretch !important;
 				}
 				.process-step {
@@ -482,13 +1118,16 @@
 				}
 			}
 
-			@media (max-width: 768px) {
-				header nav {
-					padding-top: 0.75rem !important;
-					padding-bottom: 0.75rem !important;
-					padding-left: 1.25rem !important;
-					padding-right: 1.25rem !important;
-				}
+		@media (max-width: 768px) {
+			.partners-label {
+				text-align: center !important;
+			}
+			header nav {
+				padding-top: 0.75rem !important;
+				padding-bottom: 0.75rem !important;
+				padding-left: 1.25rem !important;
+				padding-right: 1.25rem !important;
+			}
 				/* Hide desktop CTA button on mobile, show only hamburger */
 				header .w-\[174px\] {
 					display: none !important;
@@ -670,6 +1309,18 @@
 					font-size: 1.25rem !important;
 					line-height: 1.6 !important;
 				}
+				#reviews .review-quote-shell {
+					grid-template-columns: 2.25rem minmax(0, 1fr) 2.5rem !important;
+				}
+				#reviews .review-quote-mark {
+					font-size: 4.75rem !important;
+				}
+				#reviews .review-quote-mark-start {
+					transform: translate(-0.15rem, -0.1rem) !important;
+				}
+				#reviews .review-quote-mark-end {
+					transform: translate(0.15rem, 1.65rem) !important;
+				}
 				#reviews .flex.items-center.justify-between {
 					flex-direction: column !important;
 					align-items: flex-start !important;
@@ -760,14 +1411,162 @@
 					padding-left: 1.25rem !important;
 					padding-right: 1.25rem !important;
 				}
+				/* Reviews: shrink the large vertical gap between quote and nav row */
+				#reviews .flex.flex-col.gap-\[74px\] {
+					gap: 2.5rem !important;
+				}
+				/* Hero growth card: tighten internal gap so it fits 160px height */
+				.hero-card-growth .absolute.left-\[33px\] {
+					gap: 1rem !important;
+				}
+				/* Services: reduce over-large bottom margin on lead paragraph */
+				#services p.font-medium.text-\[22px\] {
+					margin-bottom: 2rem !important;
+				}
+				/* Services: compact vertical padding on mobile */
+				#services {
+					padding-top: 2.5rem !important;
+					padding-bottom: 2.5rem !important;
+				}
 			}
 
+			/* Small tablet (769–900px): scale desktop hero down proportionally */
+			@media (min-width: 769px) and (max-width: 900px) {
+				/* Nav: hide CTA to prevent overflow */
+				header .w-\[174px\] {
+					display: none !important;
+				}
+				header nav {
+					gap: 0.5rem !important;
+				}
+
+				/* Scale the 1440px desktop layout to fit — zoom affects layout unlike transform */
+				.hero-layout {
+					zoom: 0.59 !important;
+					width: 1440px !important;
+					height: 687px !important;
+					display: block !important;
+					padding: 0 !important;
+				}
+
+				/* Hero-copy: restore absolute desktop position
+				   Use .hero-layout .hero-copy (0,2,0) to beat the 1024px rule .hero-copy (0,1,0) */
+				.hero-layout .hero-copy {
+					position: absolute !important;
+					left: 71px !important;
+					top: 80px !important;
+					width: auto !important;
+					max-width: none !important;
+					padding: 0 !important;
+					gap: 3rem !important;
+				}
+				.hero-layout .hero-copy h1,
+				html[lang="en"] .hero-layout .hero-copy .hero-title {
+					font-size: 62px !important;
+					letter-spacing: -1.86px !important;
+					width: 700px !important;
+					max-width: none !important;
+					line-height: 1.1 !important;
+				}
+				.hero-layout .hero-copy p {
+					font-size: 16px !important;
+					width: 557px !important;
+					max-width: none !important;
+				}
+				.hero-layout .hero-btns {
+					flex-direction: row !important;
+					align-items: center !important;
+					gap: 3.5rem !important;
+				}
+				.hero-layout .hero-btns button,
+				.hero-layout .hero-btns a {
+					width: auto !important;
+					min-height: auto !important;
+				}
+
+				/* Hero-media: restore grid-free block so cards use absolute positions */
+				.hero-layout .hero-media {
+					display: block !important;
+					grid-template-columns: unset !important;
+					gap: 0 !important;
+				}
+
+				/* Cards: use .hero-layout .hero-card (0,2,0) to beat
+				   .hero-media > div (0,1,1) from the 1024px block */
+				.hero-layout .hero-card {
+					position: absolute !important;
+					width: auto !important;
+					height: auto !important;
+					min-height: unset !important;
+				}
+				.hero-layout .hero-card-photo {
+					left: 781px !important;
+					top: 112px !important;
+					width: 303px !important;
+					height: 275px !important;
+					border-top-left-radius: 1000px !important;
+					border-top-right-radius: 20px !important;
+					border-bottom-left-radius: 20px !important;
+					border-bottom-right-radius: 20px !important;
+				}
+				.hero-layout .hero-card-stat {
+					left: 1108px !important;
+					top: 112px !important;
+					width: 259px !important;
+					height: 281px !important;
+				}
+				.hero-layout .hero-card-growth {
+					left: 781px !important;
+					top: 411px !important;
+					width: 588px !important;
+					height: 216px !important;
+					grid-column: unset !important;
+				}
+				.hero-layout .hero-card-growth .absolute.left-\[33px\] {
+					max-width: none !important;
+					gap: 2rem !important;
+				}
+				.hero-layout .hero-card-growth h3 {
+					font-size: 27px !important;
+					width: 328px !important;
+				}
+				.hero-layout .hero-card-growth .absolute.left-\[339px\] {
+					left: 339px !important;
+					right: auto !important;
+					bottom: 20px !important;
+				}
+			#heroBars > div { width: 69px !important; }
+			#heroBars .h-\[95px\]  { height: 95px !important; }
+			#heroBars .h-\[136px\] { height: 136px !important; }
+			#heroBars .h-\[166px\] { height: 166px !important; }
+			/* Keep partner strip inside zoomed desktop layout, not in block flow */
+			.hero-layout .hero-partner-strip {
+				position: absolute !important;
+				left: 71px !important;
+				top: 520px !important;
+				width: 680px !important;
+				right: auto !important;
+			}
+		}
+
 			@media (max-width: 480px) {
+				.site-preloader__mark {
+					width: 70px;
+					height: 70px;
+				}
+				.site-preloader__text {
+					font-size: 0.82rem;
+					letter-spacing: 0.2em;
+				}
+				.site-preloader__label {
+					font-size: 0.88rem;
+				}
 				.hero-copy h1 {
 					font-size: 1.75rem !important;
 				}
 				#process h2 {
-					font-size: 1.1rem !important;
+					font-size: 1.2rem !important;
+					line-height: 1.6 !important;
 				}
 				.faq-layout summary span {
 					font-size: 0.95rem !important;
@@ -778,10 +1577,27 @@
 				.svc-title {
 					font-size: 1.1rem !important;
 				}
+				/* Hero growth card: further reduce heading on very small screens */
+				.hero-card-growth h3 {
+					font-size: 0.95rem !important;
+				}
 			}
 		</style>
 	</head>
-	<body class="bg-white text-[#010205]">
+	<body class="bg-white text-[#010205] preload-pending">
+		<div class="site-preloader" id="sitePreloader" aria-hidden="true">
+			<div class="site-preloader__inner">
+				<div class="site-preloader__mark">
+					<span class="site-preloader__text">SRT</span>
+				</div>
+				<div class="site-preloader__bars" aria-hidden="true">
+					<span></span>
+					<span></span>
+					<span></span>
+				</div>
+				<p class="site-preloader__label">Подготавливаем интерфейс и загружаем ключевые элементы страницы</p>
+			</div>
+		</div>
 		<!-- ============ NAVBAR ============ -->
 		<header
 			class="sticky top-0 z-50 bg-[rgba(239,239,239,0.47)] backdrop-blur-[20px] backdrop-saturate-150 border-b border-white/20"
@@ -795,6 +1611,8 @@
 							src="assets/logo.svg"
 							alt="Silk Road Tech"
 							class="h-6 w-auto logo-img"
+							decoding="async"
+							fetchpriority="high"
 						/>
 					</a>
 					<ul
@@ -874,34 +1692,81 @@
 					>
 						Быстро. Качественно. Недорого.
 					</p>
-					<div class="hero-btns flex items-center gap-14">
-						<button
-							class="bg-[#010205] text-white font-jakarta font-bold text-[16px] tracking-tight rounded-[70px] px-8 py-4 inline-flex items-center gap-3 hover:scale-[1.02] transition"
-							onclick="document.getElementById('contacts').scrollIntoView({behavior:'smooth'})"
-							data-i18n="hero.cta"
-						>
-							Обсудить проект
-							<svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-								<path
-									d="M5 12h14M13 6l6 6-6 6"
-									stroke="white"
-									stroke-width="2"
-									stroke-linecap="round"
-									stroke-linejoin="round"
-								/>
-							</svg>
-						</button>
-						<a
-							href="/cases"
-							class="font-jakarta font-semibold text-[16px] text-[#010205] underline decoration-solid leading-[1.8]"
-							data-i18n="hero.cases"
-						>
-							Смотреть кейсы
-						</a>
-					</div>
+				<div class="hero-btns flex items-center gap-14">
+					<button
+						class="bg-[#010205] text-white font-jakarta font-bold text-[16px] tracking-tight rounded-[70px] px-8 py-4 inline-flex items-center gap-3 hover:scale-[1.02] transition"
+						onclick="document.getElementById('contacts').scrollIntoView({behavior:'smooth'})"
+						data-i18n="hero.cta"
+					>
+						Обсудить проект
+						<svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+							<path
+								d="M5 12h14M13 6l6 6-6 6"
+								stroke="white"
+								stroke-width="2"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+							/>
+						</svg>
+					</button>
+					<a
+						href="/cases"
+						class="font-jakarta font-semibold text-[16px] text-[#010205] underline decoration-solid leading-[1.8]"
+						data-i18n="hero.cases"
+					>
+						Смотреть кейсы
+					</a>
 				</div>
 
-				<div class="hero-media">
+			</div>
+
+			<!-- Partner logos strip — direct child of hero-layout so it can span full width -->
+			<div class="hero-partner-strip">
+				<p class="partners-label font-jakarta font-semibold uppercase text-[#5c5d5f]" data-i18n="hero.partners">Наши партнёры</p>
+				<div class="partners-ticker overflow-hidden">
+					<div class="marquee flex items-center gap-[18px]">
+						<div class="relative shrink-0 overflow-hidden" style="width:42.124px;height:45.799px">
+							<img src="assets/partner_awara.png" alt="Awara IT" style="position:absolute;max-width:none;height:129.01%;width:114.79%;left:-8.74%;top:-19.14%">
+						</div>
+						<div class="relative shrink-0 overflow-hidden" style="width:87.573px;height:39.257px">
+							<img src="assets/partner_sprite.png" alt="AICA" style="position:absolute;max-width:none;height:487.18%;width:392.34%;left:-45.98%;top:-177.78%">
+						</div>
+						<div class="relative shrink-0 overflow-hidden" style="width:113.337px;height:36.975px">
+							<img src="assets/partner_sprite.png" alt="TIMDOS" style="position:absolute;max-width:none;height:413.04%;width:242.08%;left:0;top:-257.25%">
+						</div>
+						<div class="relative shrink-0 overflow-hidden" style="width:78.852px;height:45.408px">
+							<img src="assets/partner_smartlab.png" alt="SmartLab" style="position:absolute;max-width:none;height:177.46%;width:127.93%;left:-8.28%;top:-22.86%">
+						</div>
+						<div class="relative shrink-0 overflow-hidden" style="width:80.142px;height:37.624px">
+							<img src="assets/partner_sprite.png" alt="abm" style="position:absolute;max-width:none;height:463.41%;width:390.84%;left:-217.94%;top:-167.48%">
+						</div>
+						<div class="relative shrink-0 overflow-hidden" style="width:99.134px;height:29.84px">
+							<img src="assets/partner_sprite.png" alt="Division" style="position:absolute;max-width:none;height:633.33%;width:342.47%;left:-183.95%;top:-420%">
+						</div>
+						<!-- Duplicate for seamless scroll -->
+						<div class="relative shrink-0 overflow-hidden" style="width:42.124px;height:45.799px">
+							<img src="assets/partner_awara.png" alt="Awara IT" style="position:absolute;max-width:none;height:129.01%;width:114.79%;left:-8.74%;top:-19.14%">
+						</div>
+						<div class="relative shrink-0 overflow-hidden" style="width:87.573px;height:39.257px">
+							<img src="assets/partner_sprite.png" alt="AICA" style="position:absolute;max-width:none;height:487.18%;width:392.34%;left:-45.98%;top:-177.78%">
+						</div>
+						<div class="relative shrink-0 overflow-hidden" style="width:113.337px;height:36.975px">
+							<img src="assets/partner_sprite.png" alt="TIMDOS" style="position:absolute;max-width:none;height:413.04%;width:242.08%;left:0;top:-257.25%">
+						</div>
+						<div class="relative shrink-0 overflow-hidden" style="width:78.852px;height:45.408px">
+							<img src="assets/partner_smartlab.png" alt="SmartLab" style="position:absolute;max-width:none;height:177.46%;width:127.93%;left:-8.28%;top:-22.86%">
+						</div>
+						<div class="relative shrink-0 overflow-hidden" style="width:80.142px;height:37.624px">
+							<img src="assets/partner_sprite.png" alt="abm" style="position:absolute;max-width:none;height:463.41%;width:390.84%;left:-217.94%;top:-167.48%">
+						</div>
+						<div class="relative shrink-0 overflow-hidden" style="width:99.134px;height:29.84px">
+							<img src="assets/partner_sprite.png" alt="Division" style="position:absolute;max-width:none;height:633.33%;width:342.47%;left:-183.95%;top:-420%">
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="hero-media">
 					<div
 						class="hero-card hero-card-photo absolute left-[781px] top-[112px] w-[303px] h-[275px] rounded-tl-[1000px] rounded-tr-[20px] rounded-b-[20px] overflow-hidden shadow-xl"
 						style="animation-delay: 0.3s"
@@ -910,6 +1775,8 @@
 							src="assets/hero_image.png"
 							class="w-full h-full object-cover"
 							alt="Silk Road Tech team at work"
+							decoding="async"
+							fetchpriority="high"
 						/>
 						<div class="absolute inset-0 bg-black/20 backdrop-blur-[2px]"></div>
 					</div>
@@ -968,6 +1835,8 @@
 									transform: rotate(115.48deg);
 								"
 								alt="Decorative growth background"
+								decoding="async"
+								fetchpriority="high"
 							/>
 						</div>
 
@@ -1009,62 +1878,11 @@
 						</div>
 					</div>
 
-					<!-- PARTNER LOGOS: figma left:71 top:581, h:45.8px marquee strip -->
-					<div class="absolute left-[71px] top-[581px] flex items-center gap-5 w-[592px]">
-						<p class="shrink-0 font-jakarta text-[11px] font-semibold uppercase tracking-[0.18em] text-[#5c5d5f]" data-i18n="hero.partners">Наши партнёры</p>
-						<div class="hero-logos flex-1 h-[46px] overflow-hidden">
-						<div class="marquee flex items-center gap-[18px]">
-							<!-- Awara IT -->
-							<div class="relative shrink-0 overflow-hidden" style="width:42.124px;height:45.799px">
-								<img src="assets/partner_awara.png" alt="Awara IT" style="position:absolute;max-width:none;height:129.01%;width:114.79%;left:-8.74%;top:-19.14%">
-							</div>
-							<!-- AICA -->
-							<div class="relative shrink-0 overflow-hidden" style="width:87.573px;height:39.257px">
-								<img src="assets/partner_sprite.png" alt="AICA" style="position:absolute;max-width:none;height:487.18%;width:392.34%;left:-45.98%;top:-177.78%">
-							</div>
-							<!-- TIMDOS -->
-							<div class="relative shrink-0 overflow-hidden" style="width:113.337px;height:36.975px">
-								<img src="assets/partner_sprite.png" alt="TIMDOS" style="position:absolute;max-width:none;height:413.04%;width:242.08%;left:0;top:-257.25%">
-							</div>
-							<!-- SmartLab -->
-							<div class="relative shrink-0 overflow-hidden" style="width:78.852px;height:45.408px">
-								<img src="assets/partner_smartlab.png" alt="SmartLab" style="position:absolute;max-width:none;height:177.46%;width:127.93%;left:-8.28%;top:-22.86%">
-							</div>
-							<!-- abm -->
-							<div class="relative shrink-0 overflow-hidden" style="width:80.142px;height:37.624px">
-								<img src="assets/partner_sprite.png" alt="abm" style="position:absolute;max-width:none;height:463.41%;width:390.84%;left:-217.94%;top:-167.48%">
-							</div>
-							<!-- Division -->
-							<div class="relative shrink-0 overflow-hidden" style="width:99.134px;height:29.84px">
-								<img src="assets/partner_sprite.png" alt="Division" style="position:absolute;max-width:none;height:633.33%;width:342.47%;left:-183.95%;top:-420%">
-							</div>
-							<!-- Duplicate set for seamless infinite scroll -->
-							<div class="relative shrink-0 overflow-hidden" style="width:42.124px;height:45.799px">
-								<img src="assets/partner_awara.png" alt="Awara IT" style="position:absolute;max-width:none;height:129.01%;width:114.79%;left:-8.74%;top:-19.14%">
-							</div>
-							<div class="relative shrink-0 overflow-hidden" style="width:87.573px;height:39.257px">
-								<img src="assets/partner_sprite.png" alt="AICA" style="position:absolute;max-width:none;height:487.18%;width:392.34%;left:-45.98%;top:-177.78%">
-							</div>
-							<div class="relative shrink-0 overflow-hidden" style="width:113.337px;height:36.975px">
-								<img src="assets/partner_sprite.png" alt="TIMDOS" style="position:absolute;max-width:none;height:413.04%;width:242.08%;left:0;top:-257.25%">
-							</div>
-							<div class="relative shrink-0 overflow-hidden" style="width:78.852px;height:45.408px">
-								<img src="assets/partner_smartlab.png" alt="SmartLab" style="position:absolute;max-width:none;height:177.46%;width:127.93%;left:-8.28%;top:-22.86%">
-							</div>
-							<div class="relative shrink-0 overflow-hidden" style="width:80.142px;height:37.624px">
-								<img src="assets/partner_sprite.png" alt="abm" style="position:absolute;max-width:none;height:463.41%;width:390.84%;left:-217.94%;top:-167.48%">
-							</div>
-							<div class="relative shrink-0 overflow-hidden" style="width:99.134px;height:29.84px">
-								<img src="assets/partner_sprite.png" alt="Division" style="position:absolute;max-width:none;height:633.33%;width:342.47%;left:-183.95%;top:-420%">
-							</div>
-						</div>
-						</div>
-					</div>
-				</div>
 			</div>
-		</section>
+		</div>
+	</section>
 
-		<!-- ============ HOW WE WORK (From task to result) ============ -->
+	<!-- ============ HOW WE WORK (From task to result) ============ -->
 		<section id="how-we-work" class="relative bg-transparent overflow-hidden" style="height:662px">
 			<div class="absolute inset-0 noise"></div>
 			<div class="how-work-shell absolute inset-0 max-w-[1440px] mx-auto">
@@ -1084,7 +1902,7 @@
 					<div class="relative rounded-[30px] bg-[#010205] w-[438px] h-[382px] overflow-hidden shrink-0 flex flex-col justify-between" style="padding:40px">
 						<!-- Rotating texture -->
 						<div class="absolute inset-[-40%] pointer-events-none opacity-40 flex items-center justify-center">
-							<img src="assets/how_texture.png" alt="" style="width:128%;height:130%;transform:rotate(115.48deg);object-fit:cover;max-width:none" />
+							<img src="assets/how_texture.png" alt="" loading="lazy" decoding="async" style="width:128%;height:130%;transform:rotate(115.48deg);object-fit:cover;max-width:none" />
 						</div>
 						<!-- Counter -->
 						<div class="relative flex flex-col gap-2">
@@ -1098,16 +1916,16 @@
 						<!-- Case logos -->
 						<div class="relative flex items-center">
 							<div class="w-[70px] h-[70px] rounded-full shrink-0 overflow-hidden flex items-center justify-center" style="background:#1c1c1c;border:2px solid rgba(255,255,255,0.15);padding:10px">
-								<img src="assets/cases/orkenlink_cover.png" alt="Örkenlink" style="width:100%;height:100%;object-fit:contain;max-width:none;filter:brightness(0) invert(1)" />
+								<img src="assets/cases/orkenlink_cover.png" alt="Örkenlink" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:contain;max-width:none;filter:brightness(0) invert(1)" />
 							</div>
 							<div class="w-[70px] h-[70px] rounded-full shrink-0 overflow-hidden flex items-center justify-center -ml-4" style="background:#1c1c1c;border:2px solid rgba(255,255,255,0.15);padding:10px">
-								<img src="assets/cases/caepco.png" alt="CAEPCO" style="width:100%;height:100%;object-fit:contain;max-width:none;filter:brightness(0) invert(1)" />
+								<img src="assets/cases/caepco.png" alt="CAEPCO" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:contain;max-width:none;filter:brightness(0) invert(1)" />
 							</div>
 							<div class="w-[70px] h-[70px] rounded-full shrink-0 overflow-hidden flex items-center justify-center -ml-4" style="background:#1c1c1c;border:2px solid rgba(255,255,255,0.15);padding:10px">
-								<img src="assets/cases/teplotekhnik.svg" alt="Teplotekhnik" style="width:100%;height:100%;object-fit:contain;max-width:none;filter:brightness(0) invert(1)" />
+								<img src="assets/cases/teplotekhnik.svg" alt="Teplotekhnik" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:contain;max-width:none;filter:brightness(0) invert(1)" />
 							</div>
 							<div class="w-[70px] h-[70px] rounded-full shrink-0 overflow-hidden flex items-center justify-center -ml-4" style="background:#1c1c1c;border:2px solid rgba(255,255,255,0.15);padding:12px">
-								<img src="assets/cases/ane.svg" alt="ANE" style="width:100%;height:100%;object-fit:contain;max-width:none;filter:brightness(3)" />
+								<img src="assets/cases/ane.svg" alt="ANE" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:contain;max-width:none;filter:brightness(3)" />
 							</div>
 							<a href="/cases" class="font-jakarta font-bold text-white ml-2 flex items-center hover:text-[#9ac763] transition-colors" style="font-size:48px;line-height:70px;margin-bottom:12px">+</a>
 						</div>
@@ -1115,7 +1933,7 @@
 
 					<!-- Right image card: 818x382 with "Как мы работаем?" overlay (figma: rectangle23813) -->
 					<div class="relative rounded-[30px] w-[818px] h-[382px] overflow-hidden shrink-0">
-						<img src="assets/how_card_photo.png" alt="How we work" class="absolute w-full h-full object-cover" />
+						<img src="assets/how_card_photo.png" alt="How we work" loading="lazy" decoding="async" class="absolute w-full h-full object-cover" />
 						<div class="absolute inset-0 bg-black/20"></div>
 						<p class="absolute inset-0 flex items-center justify-center font-jakarta font-bold text-[48px] text-center tracking-[12.96px] leading-[1.4]" style="color:rgba(255,255,255,0.49)" data-i18n="how.question">
 							Как мы работаем?
@@ -1147,7 +1965,7 @@
 
 					<!-- row 01 -->
 					<div class="svc-row" data-open="false">
-						<img src="assets/divider.svg" alt="" style="width:100%;height:29px;display:block;max-width:none">
+						<img src="assets/divider.svg" alt="" loading="lazy" decoding="async" style="width:100%;height:29px;display:block;max-width:none">
 						<div class="svc-header flex items-center gap-6 py-5 cursor-pointer select-none" onclick="toggleSvc(this)">
 							<span class="font-inter text-[13px] text-[#aaa] w-[24px] shrink-0">01</span>
 							<h3 class="svc-title font-jakarta font-bold text-[28px] tracking-[-0.5px] text-black w-[260px] shrink-0" data-i18n="s1.title">Разработка ПО</h3>
@@ -1161,7 +1979,7 @@
 
 					<!-- row 02 -->
 					<div class="svc-row" data-open="false">
-						<img src="assets/divider.svg" alt="" style="width:100%;height:29px;display:block;max-width:none">
+						<img src="assets/divider.svg" alt="" loading="lazy" decoding="async" style="width:100%;height:29px;display:block;max-width:none">
 						<div class="svc-header flex items-center gap-6 py-5 cursor-pointer select-none" onclick="toggleSvc(this)">
 							<span class="font-inter text-[13px] text-[#aaa] w-[24px] shrink-0">02</span>
 							<h3 class="svc-title font-jakarta font-bold text-[28px] tracking-[-0.5px] text-black w-[260px] shrink-0" data-i18n="s2.title">ИИ-ассистенты</h3>
@@ -1175,7 +1993,7 @@
 
 					<!-- row 03 -->
 					<div class="svc-row" data-open="false">
-						<img src="assets/divider.svg" alt="" style="width:100%;height:29px;display:block;max-width:none">
+						<img src="assets/divider.svg" alt="" loading="lazy" decoding="async" style="width:100%;height:29px;display:block;max-width:none">
 						<div class="svc-header flex items-center gap-6 py-5 cursor-pointer select-none" onclick="toggleSvc(this)">
 							<span class="font-inter text-[13px] text-[#aaa] w-[24px] shrink-0">03</span>
 							<h3 class="svc-title font-jakarta font-bold text-[28px] tracking-[-0.5px] text-black w-[260px] shrink-0" data-i18n="s3.title">Аналитика &amp; Данные</h3>
@@ -1189,7 +2007,7 @@
 
 					<!-- row 04 -->
 					<div class="svc-row" data-open="false">
-						<img src="assets/divider.svg" alt="" style="width:100%;height:29px;display:block;max-width:none">
+						<img src="assets/divider.svg" alt="" loading="lazy" decoding="async" style="width:100%;height:29px;display:block;max-width:none">
 						<div class="svc-header flex items-center gap-6 py-5 cursor-pointer select-none" onclick="toggleSvc(this)">
 							<span class="font-inter text-[13px] text-[#aaa] w-[24px] shrink-0">04</span>
 							<h3 class="svc-title font-jakarta font-bold text-[28px] tracking-[-0.5px] text-black w-[260px] shrink-0" data-i18n="s4.title">Железо &amp; ПО</h3>
@@ -1201,7 +2019,7 @@
 						</div>
 					</div>
 
-					<img src="assets/divider.svg" alt="" style="width:100%;height:29px;display:block;max-width:none">
+					<img src="assets/divider.svg" alt="" loading="lazy" decoding="async" style="width:100%;height:29px;display:block;max-width:none">
 				</div>
 			</div>
 		</section>
@@ -1218,8 +2036,8 @@
 				style="background: radial-gradient(circle, #3b82f6 0%, transparent 60%)"
 			></div>
 			<!-- decorative SVGs -->
-			<img src="vector97.svg" alt="" class="absolute pointer-events-none" style="left:110px;bottom:100px;width:122px;height:216px;opacity:0.9" />
-			<img src="burst.svg" alt="" class="absolute pointer-events-none" style="left:80px;bottom:60px;width:66px;height:59px;opacity:0.9" />
+			<img src="vector97.svg" alt="" loading="lazy" decoding="async" class="absolute pointer-events-none" style="left:110px;bottom:100px;width:122px;height:216px;opacity:0.9" />
+			<img src="burst.svg" alt="" loading="lazy" decoding="async" class="absolute pointer-events-none" style="left:80px;bottom:60px;width:66px;height:59px;opacity:0.9" />
 
 			<div class="relative max-w-[1160px] mx-auto px-8">
 				<h2
@@ -1359,9 +2177,13 @@
 			<div class="relative max-w-[1440px] mx-auto px-[80px] py-[115px]">
 				<div class="flex flex-col gap-[74px] items-start w-[1280px]">
 					<!-- Quote -->
-					<p class="font-jakarta font-semibold text-[36px] leading-[1.6] text-[#010205] tracking-[-1.08px] w-full reveal" id="reviewQuote">
-						Мне понравилось, что вы работаете быстро, и понравилась ваша скорость реакции на наши предложения.
-					</p>
+					<div class="review-quote-shell reveal">
+						<span class="review-quote-mark review-quote-mark-start" aria-hidden="true">“</span>
+						<p class="review-quote-text font-jakarta font-semibold text-[36px] leading-[1.6] text-[#010205] tracking-[-1.08px] w-full" id="reviewQuote">
+							Мне понравилось, что вы работаете быстро, и понравилась ваша скорость реакции на наши предложения.
+						</p>
+						<span class="review-quote-mark review-quote-mark-end" aria-hidden="true">”</span>
+					</div>
 					<!-- Bottom row -->
 					<div class="flex items-center justify-between w-full reveal">
 						<!-- Person -->
@@ -1821,6 +2643,8 @@
 							src="assets/logo.svg"
 							alt="Silk Road Tech"
 							class="h-8 w-auto logo-img"
+							loading="lazy"
+							decoding="async"
 						/>
 					</a>
 					<p class="font-roboto text-[14px] leading-6 text-[#9b9b9c] mb-8" data-i18n="footer.desc">
@@ -1887,7 +2711,7 @@
 					</div>
 					<div class="flex items-center gap-3 mt-8">
 						<span class="font-roboto text-[12px] text-[#9b9b9c]" data-i18n="footer.resident">Резидент</span>
-						<img src="assets/astanahub.png.webp" alt="Astana Hub" class="h-16 w-auto astana-hub-img"/>
+						<img src="assets/astanahub.png.webp" alt="Astana Hub" loading="lazy" decoding="async" class="h-16 w-auto astana-hub-img"/>
 					</div>
 				</div>
 
@@ -1972,6 +2796,36 @@
 
 		<script>
 			document.addEventListener("DOMContentLoaded", () => {
+				const pagePreloader = document.getElementById("sitePreloader");
+				let pageUnlocked = false;
+
+				const revealPage = () => {
+					if (pageUnlocked) return;
+					pageUnlocked = true;
+					document.body.classList.remove("preload-pending");
+					if (pagePreloader) {
+						pagePreloader.classList.add("is-hidden");
+						window.setTimeout(() => {
+							pagePreloader.remove();
+						}, 650);
+					}
+				};
+
+				window.addEventListener("load", revealPage, { once: true });
+				if (document.readyState === "complete") {
+					revealPage();
+				}
+				window.setTimeout(revealPage, 3200);
+
+				document.querySelectorAll("img").forEach((img) => {
+					if (!img.hasAttribute("decoding")) {
+						img.setAttribute("decoding", "async");
+					}
+					if (!img.hasAttribute("loading") && !img.closest("header, .hero-layout")) {
+						img.setAttribute("loading", "lazy");
+					}
+				});
+
 				// ── Hero cards entrance ──
 				setTimeout(() => {
 					document
@@ -2087,8 +2941,8 @@
 						},
 						{
 							quote:
-								'Спасибо за своевременную работу и за то, что пошли на уступки, мы с вами заключаем по счету уже 6-7 и нам нравится работать с вами в долгосрочной перспективе',
-							name: 'Айнагуль Ханым',
+								'Спасибо за своевременную работу и за то, что пошли на уступки, мы с вами заключаем по счету уже 6-7 договоров и нам нравится работать с вами в долгосрочной перспективе',
+							name: 'Айнагуль Хамитова',
 							role: 'CEO @daryndybala.kz',
 						},
 						{
@@ -2146,8 +3000,7 @@
 
 				const renderReview = () => {
 					if (!reviewQuote || !reviewAvatar || !reviewName || !reviewRole || !reviewCurrent || !reviewTotal) return;
-					const lang = getReviewLang();
-					const items = reviews[lang] || reviews.ru;
+					const items = reviews[getReviewLang()] || reviews.ru;
 					const item = items[activeReviewIndex] || items[0];
 					reviewQuote.textContent = item.quote;
 					reviewAvatar.textContent = getInitials(item.name);

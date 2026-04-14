@@ -1,0 +1,279 @@
+- generic [active] [ref=e1]:
+  - generic:
+    - generic:
+      - generic:
+        - generic: SRT
+      - paragraph: Подготавливаем интерфейс и загружаем ключевые элементы страницы
+  - banner [ref=e2]:
+    - navigation [ref=e3]:
+      - link "Silk Road Tech home" [ref=e5] [cursor=pointer]:
+        - /url: /
+        - img "Silk Road Tech" [ref=e6]
+      - button [ref=e8] [cursor=pointer]
+    - generic [ref=e12]:
+      - button "×" [ref=e13] [cursor=pointer]
+      - list [ref=e14]:
+        - listitem [ref=e15]:
+          - link "Услуги" [ref=e16] [cursor=pointer]:
+            - /url: "#services"
+        - listitem [ref=e17]:
+          - link "Процесс" [ref=e18] [cursor=pointer]:
+            - /url: "#process"
+        - listitem [ref=e19]:
+          - link "Кейсы" [ref=e20] [cursor=pointer]:
+            - /url: /cases
+        - listitem [ref=e21]:
+          - link "О нас" [ref=e22] [cursor=pointer]:
+            - /url: /about
+        - listitem [ref=e23]:
+          - link "Контакты" [ref=e24] [cursor=pointer]:
+            - /url: "#contacts"
+        - listitem [ref=e25]:
+          - link "FAQ" [ref=e26] [cursor=pointer]:
+            - /url: "#faq"
+  - generic [ref=e28]:
+    - generic [ref=e29]:
+      - heading "Делаем продукты под ваши бизнес процессы" [level=1] [ref=e30]
+      - paragraph [ref=e31]: Быстро. Качественно. Недорого.
+      - generic [ref=e32]:
+        - button "Обсудить проект" [ref=e33] [cursor=pointer]
+        - link "Смотреть кейсы" [ref=e34] [cursor=pointer]:
+          - /url: /cases
+    - generic:
+      - img "Silk Road Tech team at work" [ref=e36]
+      - generic [ref=e39]:
+        - paragraph [ref=e40]: 15+
+        - paragraph [ref=e41]: инженеров, продуктологов, дизайнеров с опытом в международных компаниях
+        - paragraph [ref=e42]: "Средний опыт: 6+ лет"
+      - generic [ref=e43]:
+        - generic:
+          - img "Decorative growth background"
+        - generic [ref=e44]:
+          - generic [ref=e47]: Результаты говорят сами за себя
+          - heading "Ваш бизнес растёт — технологии не отстают" [level=3] [ref=e48]:
+            - text: Ваш бизнес растёт —
+            - text: технологии не отстают
+  - generic [ref=e50]:
+    - paragraph [ref=e51]: Наши партнёры
+    - generic [ref=e53]:
+      - img "Awara IT" [ref=e55]
+      - img "AICA" [ref=e57]
+      - img "TIMDOS" [ref=e59]
+      - img "SmartLab" [ref=e61]
+      - img "abm" [ref=e63]
+      - img "Division" [ref=e65]
+      - img "Awara IT" [ref=e67]
+      - img "AICA" [ref=e69]
+      - img "TIMDOS" [ref=e71]
+      - img "SmartLab" [ref=e73]
+      - img "abm" [ref=e75]
+      - img "Division" [ref=e77]
+  - generic [ref=e79]:
+    - generic [ref=e80]:
+      - heading "От задачи к результату" [level=2] [ref=e81]
+      - paragraph [ref=e82]: "Мы реализуем полный цикл технологической трансформации бизнеса: от проектирования сложных программных систем и глубокой аналитики данных до бесшовной интеграции оборудования и умных ИИ-ассистентов для автоматизации процессов."
+    - generic [ref=e83]:
+      - generic [ref=e84]:
+        - generic [ref=e85]:
+          - paragraph [ref=e86]: 40+
+          - paragraph [ref=e87]: Завершённых проектов
+        - generic [ref=e88]:
+          - img "Örkenlink" [ref=e90]
+          - img "CAEPCO" [ref=e92]
+          - img "Teplotekhnik" [ref=e94]
+          - img "ANE" [ref=e96]
+          - link "+" [ref=e97] [cursor=pointer]:
+            - /url: /cases
+      - generic [ref=e98]:
+        - img "How we work" [ref=e99]
+        - paragraph [ref=e101]: Как мы работаем?
+  - generic [ref=e103]:
+    - paragraph [ref=e104]: "Четыре ключевых направления — гибкий подход: выполняем комплексную цифровую трансформацию или решаем конкретные задачи вашего бизнеса."
+    - generic [ref=e105]:
+      - generic [ref=e107] [cursor=pointer]:
+        - generic [ref=e108]: "01"
+        - heading "Разработка ПО" [level=3] [ref=e109]
+        - paragraph [ref=e110]: Веб и мобильные приложения на заказ, ERP-системы, API-интеграции. С нуля или в существующую инфраструктуру.
+        - generic [ref=e112]: +
+      - generic [ref=e114] [cursor=pointer]:
+        - generic [ref=e115]: "02"
+        - heading "ИИ-ассистенты" [level=3] [ref=e116]
+        - paragraph [ref=e117]: "Внедряем LLM в реальные рабочие процессы: чат-боты, автоматизация документов, RAG-системы на внутренних данных."
+        - generic [ref=e119]: +
+      - generic [ref=e121] [cursor=pointer]:
+        - generic [ref=e122]: "03"
+        - heading "Аналитика & Данные" [level=3] [ref=e123]
+        - paragraph [ref=e124]: BI-дашборды и обработка данных → в бизнес-решения.
+        - generic [ref=e126]: +
+      - generic [ref=e128] [cursor=pointer]:
+        - generic [ref=e129]: "04"
+        - heading "Железо & ПО" [level=3] [ref=e130]
+        - paragraph [ref=e131]: Аппаратно-программная интеграция, IoT-платформы, мониторинг производства, умные склады.
+        - generic [ref=e133]: +
+  - generic [ref=e137]:
+    - 'heading "Прозрачный процесс на каждом шаге: путь к результату по принципу SLC (Simple · Lovable · Complete) с быстрым запуском, итерациями и измеримыми результатами." [level=2] [ref=e138]'
+    - generic [ref=e139]:
+      - generic [ref=e141] [cursor=pointer]:
+        - paragraph [ref=e142]:
+          - generic [ref=e143]: "01"
+          - text: step
+        - heading "Технический аудит" [level=4] [ref=e144]
+        - paragraph [ref=e145]: Глубокое погружение в вашу IT-архитектуру. Подписываем NDA до начала работ.
+      - generic [ref=e147] [cursor=pointer]:
+        - paragraph [ref=e148]:
+          - generic [ref=e149]: "02"
+          - text: step
+        - heading "MVP / Рабочее ядро" [level=4] [ref=e150]
+        - paragraph [ref=e151]: Быстро запускаем рабочую версию продукта. Итерации каждые 2 недели с демо и обратной связью.
+      - generic [ref=e153] [cursor=pointer]:
+        - paragraph [ref=e154]:
+          - generic [ref=e155]: "03"
+          - text: step
+        - heading "Масштабирование" [level=4] [ref=e156]
+        - paragraph [ref=e157]: Оптимизируем производительность, добавляем новые модули и масштабируем решение под рост бизнеса.
+  - generic [ref=e160]:
+    - generic [ref=e161]:
+      - generic: “
+      - paragraph [ref=e162]: Мне понравилось, что вы работаете быстро, и понравилась ваша скорость реакции на наши предложения.
+      - generic: ”
+    - generic [ref=e163]:
+      - generic [ref=e164]:
+        - generic [ref=e165]: А
+        - generic [ref=e166]:
+          - paragraph [ref=e167]: Адильжан
+          - paragraph [ref=e168]: ТОО ТеплоТехник
+      - generic [ref=e169]:
+        - button [ref=e170] [cursor=pointer]:
+          - img [ref=e171]
+        - paragraph [ref=e173]: 01/03
+        - button [ref=e174] [cursor=pointer]:
+          - img [ref=e175]
+  - generic [ref=e178]:
+    - generic [ref=e179]:
+      - heading "Частые вопросы" [level=2] [ref=e180]
+      - paragraph [ref=e181]: Ответы на вопросы, которые чаще всего задают перед первым звонком
+      - generic [ref=e182]:
+        - button "Задать вопрос" [ref=e183] [cursor=pointer]
+        - link "Написать в Telegram" [ref=e184] [cursor=pointer]:
+          - /url: https://t.me/silkroadtech
+    - generic [ref=e185]:
+      - group [ref=e186]:
+        - generic "Как быстро вы начнёте работу?" [ref=e187] [cursor=pointer]:
+          - generic [ref=e188]: Как быстро вы начнёте работу?
+          - img [ref=e189]
+        - paragraph [ref=e190]: После подписания договора — в течение 1 недели. Первое рабочее демо покажем через 2 недели после старта.
+      - group [ref=e191]:
+        - generic "Сколько стоит разработка?" [ref=e192] [cursor=pointer]:
+          - generic [ref=e193]: Сколько стоит разработка?
+          - img [ref=e194]
+      - group [ref=e196]:
+        - generic "Вы работаете удалённо или только в Астане?" [ref=e197] [cursor=pointer]:
+          - generic [ref=e198]: Вы работаете удалённо или только в Астане?
+          - img [ref=e199]
+      - group [ref=e201]:
+        - generic "Вы оказываете поддержку после запуска?" [ref=e202] [cursor=pointer]:
+          - generic [ref=e203]: Вы оказываете поддержку после запуска?
+          - img [ref=e204]
+      - group [ref=e206]:
+        - generic "Вы берёте небольшие проекты?" [ref=e207] [cursor=pointer]:
+          - generic [ref=e208]: Вы берёте небольшие проекты?
+          - img [ref=e209]
+  - generic [ref=e215]:
+    - heading "Свяжитесь с нами и получите решение для вашего бизнеса" [level=2] [ref=e216]
+    - paragraph [ref=e217]: Ответим в течение 1 рабочего дня. Первая консультация — бесплатно.
+    - generic [ref=e218]:
+      - generic [ref=e219]:
+        - generic [ref=e220]:
+          - generic [ref=e221]: Имя
+          - textbox "Имя" [ref=e222]:
+            - /placeholder: Ваше имя
+        - generic [ref=e223]:
+          - generic [ref=e224]: Фамилия
+          - textbox "Фамилия" [ref=e225]:
+            - /placeholder: Ваша фамилия
+      - generic [ref=e226]:
+        - generic [ref=e227]: Телефон или Telegram
+        - textbox "Телефон или Telegram" [ref=e228]:
+          - /placeholder: +7 700 888 88 88 or @xsayat
+      - generic [ref=e229]:
+        - generic [ref=e230]:
+          - generic [ref=e231]: Сообщение
+          - generic [ref=e232]: 0/500
+        - textbox "Сообщение" [ref=e233]:
+          - /placeholder: Напишите комментарий
+      - button "Отправить заявку" [ref=e234] [cursor=pointer]:
+        - generic [ref=e235]: Отправить заявку
+        - img [ref=e236]
+  - contentinfo [ref=e238]:
+    - generic [ref=e239]:
+      - generic [ref=e240]:
+        - link "Silk Road Tech home" [ref=e241] [cursor=pointer]:
+          - /url: /
+          - img "Silk Road Tech" [ref=e242]
+        - paragraph [ref=e243]: Мы предлагаем комплексный IT-аутсорсинг, охватывающий все аспекты вашей цифровой разработки. От проектирования архитектуры и разработки ПО до облачных решений и кибербезопасности — наша команда обладает экспертизой для реализации проектов любой сложности.
+        - generic [ref=e244]:
+          - generic [ref=e245]:
+            - link "WhatsApp" [ref=e246] [cursor=pointer]:
+              - /url: https://wa.me/77026479903
+              - img [ref=e247]
+            - link "Telegram" [ref=e249] [cursor=pointer]:
+              - /url: https://t.me/silkroadtech
+              - img [ref=e250]
+            - link "Instagram" [ref=e252] [cursor=pointer]:
+              - /url: https://instagram.com/silkroadtech
+              - img [ref=e253]
+          - button "Обсудить проект" [ref=e255] [cursor=pointer]
+        - generic [ref=e256]:
+          - generic [ref=e257]: Резидент
+          - img "Astana Hub"
+      - generic [ref=e258]:
+        - generic [ref=e259]:
+          - heading "Навигация" [level=4] [ref=e260]
+          - list [ref=e261]:
+            - listitem [ref=e262]:
+              - link "Услуги" [ref=e263] [cursor=pointer]:
+                - /url: "#services"
+            - listitem [ref=e264]:
+              - link "Процесс" [ref=e265] [cursor=pointer]:
+                - /url: "#process"
+            - listitem [ref=e266]:
+              - link "Кейсы" [ref=e267] [cursor=pointer]:
+                - /url: /cases
+            - listitem [ref=e268]:
+              - link "О нас" [ref=e269] [cursor=pointer]:
+                - /url: /about
+            - listitem [ref=e270]:
+              - link "Контакты" [ref=e271] [cursor=pointer]:
+                - /url: "#contacts"
+            - listitem [ref=e272]:
+              - link "FAQ" [ref=e273] [cursor=pointer]:
+                - /url: "#faq"
+        - generic [ref=e274]:
+          - heading "Документы" [level=4] [ref=e275]
+          - list [ref=e276]:
+            - listitem [ref=e277]:
+              - link "Политика конфиденциальности" [ref=e278] [cursor=pointer]:
+                - /url: /privacy
+            - listitem [ref=e279]:
+              - link "Авторские права" [ref=e280] [cursor=pointer]:
+                - /url: /copyright
+            - listitem [ref=e281]:
+              - link "Email" [ref=e282] [cursor=pointer]:
+                - /url: mailto:sayat@silkroadtech.kz
+        - generic [ref=e283]:
+          - heading "Контакты" [level=4] [ref=e284]
+          - list [ref=e285]:
+            - listitem [ref=e286]:
+              - img [ref=e287]
+              - link "+7 702 647 99 03" [ref=e289] [cursor=pointer]:
+                - /url: https://wa.me/77026479903
+            - listitem [ref=e290]:
+              - img [ref=e291]
+              - link "sayat@silkroadtech.kz" [ref=e293] [cursor=pointer]:
+                - /url: mailto:sayat@silkroadtech.kz
+            - listitem [ref=e294]:
+              - img [ref=e295]
+              - text: Astana, Mangilik El Ave 36
+    - generic [ref=e297]:
+      - generic [ref=e298]: © 2026 Silk Road Tech. Все права защищены.
+      - generic [ref=e299]: Made with care in Astana
