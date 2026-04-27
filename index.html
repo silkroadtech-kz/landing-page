@@ -3717,25 +3717,34 @@
 		<script>
 			document.addEventListener("DOMContentLoaded", () => {
 				const pagePreloader = document.getElementById("sitePreloader");
+				const pagePreloaderBar = document.getElementById("sitePreloaderBar");
 				let pageUnlocked = false;
+
+				if (pagePreloaderBar) {
+					window.setTimeout(() => pagePreloaderBar.classList.add("is-running"), 50);
+				}
 
 				const revealPage = () => {
 					if (pageUnlocked) return;
 					pageUnlocked = true;
-					document.body.classList.remove("preload-pending");
-					if (pagePreloader) {
-						pagePreloader.classList.add("is-hidden");
-						window.setTimeout(() => {
-							pagePreloader.remove();
-						}, 650);
+					if (pagePreloaderBar) {
+						pagePreloaderBar.classList.remove("is-running");
+						pagePreloaderBar.classList.add("is-complete");
 					}
+					window.setTimeout(() => {
+						document.body.classList.remove("preload-pending");
+						if (pagePreloader) {
+							pagePreloader.classList.add("is-hidden");
+							window.setTimeout(() => pagePreloader.remove(), 600);
+						}
+					}, 300);
 				};
 
 				window.addEventListener("load", revealPage, { once: true });
 				if (document.readyState === "complete") {
 					revealPage();
 				}
-				window.setTimeout(revealPage, 3200);
+				window.setTimeout(revealPage, 2500);
 
 				document.querySelectorAll("img").forEach((img) => {
 					if (!img.hasAttribute("decoding")) {
