@@ -614,6 +614,7 @@
 	document.addEventListener("DOMContentLoaded", function () {
 		var lang = localStorage.getItem(LANG_KEY) || "ru";
 		applyLang(lang);
+		document.documentElement.style.visibility = "";
 
 		var btn = document.getElementById("langToggle");
 		if (btn) {
