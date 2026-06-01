@@ -117,6 +117,19 @@
 				overflow: hidden;
 			}
 
+			#adv-viewport {
+				overflow-x: auto;
+				overflow-y: hidden;
+				-webkit-overflow-scrolling: touch;
+				scrollbar-width: none;
+			}
+			#adv-viewport::-webkit-scrollbar {
+				display: none;
+			}
+			#adv-track {
+				width: max-content;
+			}
+
 			@media (max-width: 1200px) {
 				.px-20 {
 					padding-left: 2rem !important;
@@ -300,32 +313,6 @@
 				}
 				.board-shell h2 {
 					font-size: 2rem !important;
-				}
-				/* Advisory board: native horizontal scroll on mobile */
-				#adv-viewport {
-					overflow-x: auto !important;
-					overflow-y: visible !important;
-					-webkit-overflow-scrolling: touch !important;
-					scrollbar-width: none !important;
-				}
-				#adv-viewport::-webkit-scrollbar {
-					display: none !important;
-				}
-				#adv-track {
-					transform: none !important;
-					transition: none !important;
-					width: max-content !important;
-					padding: 0.5rem 1.25rem 1rem !important;
-					gap: 1rem !important;
-				}
-				#adv-track > div {
-					width: 240px !important;
-					flex-shrink: 0 !important;
-				}
-				/* Hide arrow buttons */
-				#adv-prev,
-				#adv-next {
-					display: none !important;
 				}
 				/* Footer */
 				.footer-shell.footer-layout {
@@ -1323,52 +1310,19 @@
 		<section class="bg-white relative overflow-hidden">
 			<div class="absolute inset-0 noise"></div>
 			<div class="board-shell relative max-w-[1440px] mx-auto px-[40px] py-20">
-				<div class="flex items-center justify-between mb-14">
+				<div class="mb-14">
 					<h2
 						class="font-inter font-bold text-[48px] leading-[1.2] tracking-[-0.96px] text-[#212121]"
 						data-i18n="about.board.title"
 					>
 						Advisory Board
 					</h2>
-					<!-- carousel controls -->
-					<div class="flex gap-3">
-						<button
-							id="adv-prev"
-							class="w-12 h-12 rounded-full border-2 border-[#212121] flex items-center justify-center hover:bg-[#212121] hover:text-white transition-colors group"
-							aria-label="Prev"
-						>
-							<svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-								<path
-									d="M15 18l-6-6 6-6"
-									stroke="currentColor"
-									stroke-width="2.2"
-									stroke-linecap="round"
-									stroke-linejoin="round"
-								/>
-							</svg>
-						</button>
-						<button
-							id="adv-next"
-							class="w-12 h-12 rounded-full border-2 border-[#212121] flex items-center justify-center hover:bg-[#212121] hover:text-white transition-colors group"
-							aria-label="Next"
-						>
-							<svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-								<path
-									d="M9 18l6-6-6-6"
-									stroke="currentColor"
-									stroke-width="2.2"
-									stroke-linecap="round"
-									stroke-linejoin="round"
-								/>
-							</svg>
-						</button>
-					</div>
 				</div>
 
 				<!-- carousel track wrapper -->
-				<div class="overflow-hidden" id="adv-viewport">
+				<div id="adv-viewport">
 					<div
-						class="flex gap-7 transition-transform duration-500 ease-[cubic-bezier(0.4,0,0.2,1)]"
+						class="flex gap-7"
 						id="adv-track"
 					>
 						<!-- 1: Nurbek Ismagulov -->
@@ -1793,40 +1747,6 @@
 			</div>
 			<!-- /board-shell -->
 		</section>
-
-		<script>
-			(function () {
-				if (window.innerWidth <= 768) return; // native scroll on mobile
-
-				const track = document.getElementById("adv-track");
-				const viewport = document.getElementById("adv-viewport");
-				const prevBtn = document.getElementById("adv-prev");
-				const nextBtn = document.getElementById("adv-next");
-				const CARD_W = 302;
-				const GAP = 28;
-				const STEP = CARD_W + GAP;
-				let offset = 0;
-
-				function getMaxOffset() {
-					return track.scrollWidth - viewport.clientWidth;
-				}
-
-				function updateButtons() {
-					prevBtn.style.opacity = offset <= 0 ? "0.3" : "1";
-					nextBtn.style.opacity = offset >= getMaxOffset() ? "0.3" : "1";
-				}
-
-				function slide(dir) {
-					offset = Math.max(0, Math.min(getMaxOffset(), offset + dir * STEP));
-					track.style.transform = "translateX(-" + offset + "px)";
-					updateButtons();
-				}
-
-				prevBtn.addEventListener("click", () => slide(-1));
-				nextBtn.addEventListener("click", () => slide(1));
-				updateButtons();
-			})();
-		</script>
 
 		<!-- ============ FOOTER ============ -->
 		<footer class="bg-[#fafafa] relative overflow-hidden py-16">
