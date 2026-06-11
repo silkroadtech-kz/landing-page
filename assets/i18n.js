@@ -586,8 +586,8 @@
 			en: 'Learn to build <span class="text-gradient-green">AI&nbsp;products</span> in 8 weeks',
 		},
 		"academy.hero.desc": {
-			ru: "Практический курс для предпринимателей, маркетологов и менеджеров без опыта в разработке. Три реальных проекта в портфолио — с первого занятия.",
-			en: "Hands-on program for entrepreneurs, marketers, and managers with no coding background. Three real portfolio projects — from day one.",
+			ru: "Практический курс для предпринимателей, маркетологов и менеджеров без опыта в разработке. Три реальных проекта в портфолио за 8 недель.",
+			en: "Hands-on program for entrepreneurs, marketers, and managers with no coding background. Three real portfolio projects over 8 weeks.",
 		},
 		"academy.stat.weeks": { ru: "8 недель", en: "8 weeks" },
 		"academy.stat.sessions": { ru: "16 живых занятий", en: "16 live sessions" },
