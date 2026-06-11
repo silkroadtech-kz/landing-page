@@ -2,7 +2,13 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<script>(function(){var l=localStorage.getItem('srt_lang');if(l&&l!=='ru')document.documentElement.style.visibility='hidden';})();</script>
+		<script>
+			(function () {
+				var l = localStorage.getItem("srt_lang");
+				if (l && l !== "ru")
+					document.documentElement.style.visibility = "hidden";
+			})();
+		</script>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>About Us — Silk Road Technologies</title>
 		<meta
@@ -117,16 +123,19 @@
 				overflow: hidden;
 			}
 
-			#adv-viewport {
+			#adv-viewport,
+			#team-viewport {
 				overflow-x: auto;
 				overflow-y: hidden;
 				-webkit-overflow-scrolling: touch;
 				scrollbar-width: none;
 			}
-			#adv-viewport::-webkit-scrollbar {
+			#adv-viewport::-webkit-scrollbar,
+			#team-viewport::-webkit-scrollbar {
 				display: none;
 			}
-			#adv-track {
+			#adv-track,
+			#team-row {
 				width: max-content;
 			}
 
@@ -152,7 +161,7 @@
 					width: 100% !important;
 					height: 380px !important;
 				}
-				#team-row {
+				#team-viewport {
 					overflow-x: auto;
 					padding-bottom: 1rem;
 				}
@@ -235,7 +244,7 @@
 					flex-direction: column !important;
 					gap: 0.75rem !important;
 					min-height: auto !important;
-					overflow: visible !important;
+					width: 100% !important;
 				}
 				.team-card {
 					width: 100% !important;
@@ -354,81 +363,81 @@
 				.team-heading p {
 					font-size: 0.95rem !important;
 				}
-			.board-shell h2 {
-				font-size: 1.75rem !important;
+				.board-shell h2 {
+					font-size: 1.75rem !important;
+				}
 			}
-		}
 
-		/* ── Tablet nav (769px–1359px): same rules as index.html ── */
-		@media (min-width: 1024px) and (max-width: 1180px) {
-			header nav {
-				padding-left: 1.5rem !important;
-				padding-right: 1.5rem !important;
-				gap: 1rem !important;
+			/* ── Tablet nav (769px–1359px): same rules as index.html ── */
+			@media (min-width: 1024px) and (max-width: 1180px) {
+				header nav {
+					padding-left: 1.5rem !important;
+					padding-right: 1.5rem !important;
+					gap: 1rem !important;
+				}
+				header nav > .flex.items-center.gap-\[74px\] {
+					gap: 1.5rem !important;
+					min-width: 0 !important;
+					flex: 1 1 auto !important;
+				}
+				header nav ul.hidden.lg\:flex {
+					gap: 1.5rem !important;
+					font-size: 1rem !important;
+					flex-wrap: nowrap !important;
+					min-width: 0 !important;
+				}
+				header nav ul.hidden.lg\:flex li,
+				header nav ul.hidden.lg\:flex a {
+					white-space: nowrap !important;
+				}
+				header nav ul.hidden.lg\:flex li.flex.items-center.gap-2 {
+					gap: 0.35rem !important;
+				}
+				header nav ul.hidden.lg\:flex svg {
+					width: 14px !important;
+					height: 14px !important;
+					flex-shrink: 0 !important;
+				}
+				header nav > .flex.items-center.gap-2 {
+					flex-shrink: 0 !important;
+				}
+				header .w-\[174px\] {
+					width: auto !important;
+					min-width: 0 !important;
+					padding: 0.85rem 1.15rem !important;
+					font-size: 0.95rem !important;
+					white-space: nowrap !important;
+				}
+				#langToggle {
+					width: 46px !important;
+					height: 46px !important;
+					font-size: 14px !important;
+				}
 			}
-			header nav > .flex.items-center.gap-\[74px\] {
-				gap: 1.5rem !important;
-				min-width: 0 !important;
-				flex: 1 1 auto !important;
+			@media (min-width: 769px) and (max-width: 1023px) {
+				header nav {
+					padding-left: 1.5rem !important;
+					padding-right: 1.5rem !important;
+					gap: 0.5rem !important;
+				}
+				header nav > .flex.items-center.gap-\[74px\] {
+					gap: 1rem !important;
+					flex: 1 1 auto !important;
+					min-width: 0 !important;
+				}
+				header nav ul.hidden.lg\:flex {
+					gap: 1rem !important;
+					font-size: 0.95rem !important;
+				}
+				header .w-\[174px\] {
+					width: auto !important;
+					padding: 0.75rem 1rem !important;
+					font-size: 0.9rem !important;
+					white-space: nowrap !important;
+				}
 			}
-			header nav ul.hidden.lg\:flex {
-				gap: 1.5rem !important;
-				font-size: 1rem !important;
-				flex-wrap: nowrap !important;
-				min-width: 0 !important;
-			}
-			header nav ul.hidden.lg\:flex li,
-			header nav ul.hidden.lg\:flex a {
-				white-space: nowrap !important;
-			}
-			header nav ul.hidden.lg\:flex li.flex.items-center.gap-2 {
-				gap: 0.35rem !important;
-			}
-			header nav ul.hidden.lg\:flex svg {
-				width: 14px !important;
-				height: 14px !important;
-				flex-shrink: 0 !important;
-			}
-			header nav > .flex.items-center.gap-2 {
-				flex-shrink: 0 !important;
-			}
-			header .w-\[174px\] {
-				width: auto !important;
-				min-width: 0 !important;
-				padding: 0.85rem 1.15rem !important;
-				font-size: 0.95rem !important;
-				white-space: nowrap !important;
-			}
-			#langToggle {
-				width: 46px !important;
-				height: 46px !important;
-				font-size: 14px !important;
-			}
-		}
-		@media (min-width: 769px) and (max-width: 1023px) {
-			header nav {
-				padding-left: 1.5rem !important;
-				padding-right: 1.5rem !important;
-				gap: 0.5rem !important;
-			}
-			header nav > .flex.items-center.gap-\[74px\] {
-				gap: 1rem !important;
-				flex: 1 1 auto !important;
-				min-width: 0 !important;
-			}
-			header nav ul.hidden.lg\:flex {
-				gap: 1rem !important;
-				font-size: 0.95rem !important;
-			}
-			header .w-\[174px\] {
-				width: auto !important;
-				padding: 0.75rem 1rem !important;
-				font-size: 0.9rem !important;
-				white-space: nowrap !important;
-			}
-		}
-	</style>
-	<script defer src="/_vercel/insights/script.js"></script>
+		</style>
+		<script defer src="/_vercel/insights/script.js"></script>
 	</head>
 	<body class="bg-[#fafafa] text-[#010205]">
 		<!-- ============ NAVBAR ============ -->
@@ -479,6 +488,14 @@
 								class="hover:text-[#9ac763]"
 								data-i18n="nav.about"
 								>О нас</a
+							>
+						</li>
+						<li>
+							<a
+								href="/academy"
+								class="hover:text-[#9ac763]"
+								data-i18n="nav.academy"
+								>Академия</a
 							>
 						</li>
 						<li>
@@ -542,6 +559,7 @@
 					</li>
 					<li><a href="/cases" data-i18n="nav.cases">Кейсы</a></li>
 					<li><a href="/about" data-i18n="nav.about">О нас</a></li>
+					<li><a href="/academy" data-i18n="nav.academy">Академия</a></li>
 					<li>
 						<a href="/#contacts" class="mobile-link" data-i18n="nav.contacts"
 							>Контакты</a
@@ -670,498 +688,100 @@
 					</p>
 				</div>
 
-				<!-- team cards accordion -->
-				<div
-					id="team-row"
-					class="flex gap-5 items-start"
-					style="min-height: 400px"
-				>
-					<!-- ====== CARD 0 : CEO ====== -->
+				<!-- team cards accordion — rendered by TEAM script below -->
+				<div id="team-viewport">
 					<div
-						class="team-card active"
-						data-index="0"
-						style="
-							width: 580px;
-							height: 400px;
-							flex-shrink: 0;
-							border-radius: 16px;
-							overflow: hidden;
-							position: relative;
-							box-shadow: -4px 4px 32px 0 rgba(0, 0, 0, 0.08);
-							background: #9ac763;
-							transition:
-								width 0.55s cubic-bezier(0.4, 0, 0.2, 1),
-								height 0.55s cubic-bezier(0.4, 0, 0.2, 1),
-								background 0.4s;
-						"
-					>
-						<!-- dark bg -->
-						<div
-							class="card-dark absolute inset-x-0 top-0 bg-[#212121] overflow-hidden"
-							style="
-								height: 344px;
-								border-radius: 0 0 32px 32px;
-								transition: height 0.55s cubic-bezier(0.4, 0, 0.2, 1);
-							"
-						>
-							<!-- photo -->
-							<div
-								class="card-photo absolute"
-								style="
-									left: 280px;
-									top: 0;
-									width: calc(100% - 280px);
-									height: 100%;
-									transition:
-										left 0.55s cubic-bezier(0.4, 0, 0.2, 1),
-										width 0.55s cubic-bezier(0.4, 0, 0.2, 1);
-								"
-							>
-								<img
-									src="assets/team_1.png"
-									class="w-full h-full object-cover object-right object-top"
-									style="border-radius: 0; transition: mix-blend-mode 0.3s"
-									alt="Sayat O."
-								/>
-							</div>
-						</div>
-
-						<!-- watermark -->
-						<div
-							class="card-watermark absolute right-0 top-0 h-full w-[58px] flex items-center justify-center overflow-hidden pointer-events-none"
-						>
-							<p
-								class="font-inter font-bold text-[48px] uppercase text-white opacity-5 tracking-[-4.8px] -rotate-90 whitespace-nowrap select-none"
-							>
-								CEO
-							</p>
-						</div>
-
-						<!-- info (visible when active) -->
-						<div
-							class="card-info absolute left-10 top-10 z-10"
-							style="
-								transition:
-									opacity 0.35s,
-									transform 0.35s;
-							"
-						>
-							<p
-								class="font-inter font-bold text-[32px] leading-[1.2] tracking-[-1.28px] text-[#9ac763]"
-							>
-								Sayat O.
-							</p>
-							<p
-								class="font-inter text-[16px] tracking-[-0.48px] text-white mt-3"
-								data-i18n="team.sayat.role"
-							>
-								Chief Executive Officer
-							</p>
-							<p
-								class="font-inter text-[16px] leading-[1.4] tracking-[-0.48px] text-white/40 mt-3 w-[219px]"
-								data-i18n="team.sayat.bio"
-							>
-								5+ years in product management and data analytics. Building
-								product metrics and strategies.
-							</p>
-						</div>
-
-						<!-- toggle button -->
-						<button
-							class="card-toggle absolute z-20 flex items-center justify-center bg-[#212121] border-[5px] border-[#9ac763] rounded-full hover:scale-110 active:scale-95"
-							style="
-								left: 52px;
-								bottom: 22px;
-								width: 64px;
-								height: 64px;
-								transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-							"
-							onclick="teamAccordion(0)"
-						>
-							<svg
-								class="card-arrow"
-								width="28"
-								height="28"
-								viewBox="0 0 24 24"
-								fill="none"
-								style="transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)"
-							>
-								<path
-									d="M7 17L17 7M9 7h8v8"
-									stroke="white"
-									stroke-width="2.2"
-									stroke-linecap="round"
-									stroke-linejoin="round"
-								/>
-							</svg>
-						</button>
-					</div>
-
-					<!-- ====== CARD 1 : Prod. Engineer ====== -->
-					<div
-						class="team-card"
-						data-index="1"
-						style="
-							width: 240px;
-							height: 400px;
-							flex-shrink: 0;
-							border-radius: 16px;
-							overflow: hidden;
-							position: relative;
-							box-shadow: -4px 4px 32px 0 rgba(0, 0, 0, 0.08);
-							background: #212121;
-							transition:
-								width 0.55s cubic-bezier(0.4, 0, 0.2, 1),
-								height 0.55s cubic-bezier(0.4, 0, 0.2, 1),
-								background 0.4s;
-						"
-					>
-						<div
-							class="card-dark absolute inset-x-0 top-0 bg-[#212121] overflow-hidden"
-							style="
-								height: 400px;
-								border-radius: 0 0 32px 32px;
-								transition: height 0.55s cubic-bezier(0.4, 0, 0.2, 1);
-							"
-						>
-							<!-- photo -->
-							<div
-								class="card-photo absolute"
-								style="
-									left: 0;
-									top: 0;
-									width: 240px;
-									height: 100%;
-									transition:
-										left 0.55s cubic-bezier(0.4, 0, 0.2, 1),
-										width 0.55s cubic-bezier(0.4, 0, 0.2, 1);
-								"
-							>
-								<img
-									src="assets/team_2.png"
-									class="w-full h-full object-cover object-bottom mix-blend-lighten"
-									style="border-radius: 0; transition: mix-blend-mode 0.3s"
-									alt="Alnur S."
-								/>
-							</div>
-						</div>
-
-						<!-- watermark -->
-						<div
-							class="card-watermark absolute right-0 top-0 h-full w-[58px] flex items-center justify-center overflow-hidden pointer-events-none"
-						>
-							<p
-								class="font-inter font-bold text-[48px] uppercase text-white opacity-5 tracking-[-4.8px] -rotate-90 whitespace-nowrap"
-							>
-								Prod. Engineer
-							</p>
-						</div>
-
-						<!-- info (visible when active) -->
-						<div
-							class="card-info absolute left-10 top-10 z-10 opacity-0 pointer-events-none"
-							style="
-								transition:
-									opacity 0.35s,
-									transform 0.35s;
-								transform: translateY(8px);
-							"
-						>
-							<p
-								class="font-inter font-bold text-[32px] leading-[1.2] tracking-[-1.28px] text-[#9ac763]"
-							>
-								Alnur S.
-							</p>
-							<p
-								class="font-inter text-[16px] tracking-[-0.48px] text-white mt-3"
-								data-i18n="team.alnur.role"
-							>
-								Prod. Engineer
-							</p>
-							<p
-								class="font-inter text-[16px] leading-[1.4] tracking-[-0.48px] text-white/40 mt-3 w-[219px]"
-								data-i18n="team.alnur.bio"
-							>
-								Product development and technology integration. Focus on quality
-								and results.
-							</p>
-						</div>
-
-						<!-- toggle button -->
-						<button
-							class="card-toggle absolute z-20 flex items-center justify-center bg-[#212121] border-[5px] border-[#9ac763] rounded-full hover:scale-110 active:scale-95"
-							style="
-								left: 52px;
-								bottom: 22px;
-								width: 64px;
-								height: 64px;
-								transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-							"
-							onclick="teamAccordion(1)"
-						>
-							<svg
-								class="card-arrow"
-								width="28"
-								height="28"
-								viewBox="0 0 24 24"
-								fill="none"
-								style="transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)"
-							>
-								<path
-									d="M7 17L17 7M9 7h8v8"
-									stroke="white"
-									stroke-width="2.2"
-									stroke-linecap="round"
-									stroke-linejoin="round"
-								/>
-							</svg>
-						</button>
-					</div>
-
-					<!-- ====== CARD 2 : Tech Lead ====== -->
-					<div
-						class="team-card"
-						data-index="2"
-						style="
-							width: 240px;
-							height: 400px;
-							flex-shrink: 0;
-							border-radius: 16px;
-							overflow: hidden;
-							position: relative;
-							box-shadow: -4px 4px 32px 0 rgba(0, 0, 0, 0.08);
-							background: #212121;
-							transition:
-								width 0.55s cubic-bezier(0.4, 0, 0.2, 1),
-								height 0.55s cubic-bezier(0.4, 0, 0.2, 1),
-								background 0.4s;
-						"
-					>
-						<div
-							class="card-dark absolute inset-x-0 top-0 bg-[#212121] overflow-hidden"
-							style="
-								height: 400px;
-								border-radius: 0 0 32px 32px;
-								transition: height 0.55s cubic-bezier(0.4, 0, 0.2, 1);
-							"
-						>
-							<!-- photo -->
-							<div
-								class="card-photo absolute"
-								style="
-									left: 0;
-									top: 0;
-									width: 240px;
-									height: 100%;
-									transition:
-										left 0.55s cubic-bezier(0.4, 0, 0.2, 1),
-										width 0.55s cubic-bezier(0.4, 0, 0.2, 1);
-								"
-							>
-								<img
-									src="assets/team_3.png"
-									class="w-full h-full object-cover object-top mix-blend-lighten"
-									style="border-radius: 0; transition: mix-blend-mode 0.3s"
-									alt="Bakhtiyar K."
-								/>
-							</div>
-						</div>
-
-						<!-- watermark -->
-						<div
-							class="card-watermark absolute right-0 top-0 h-[256px] w-[58px] flex items-center justify-center overflow-hidden pointer-events-none"
-						>
-							<p
-								class="font-inter font-bold text-[48px] uppercase text-white opacity-5 tracking-[-4.8px] -rotate-90 whitespace-nowrap"
-							>
-								Tech Lead
-							</p>
-						</div>
-
-						<!-- info (visible when active) -->
-						<div
-							class="card-info absolute left-10 top-10 z-10 opacity-0 pointer-events-none"
-							style="
-								transition:
-									opacity 0.35s,
-									transform 0.35s;
-								transform: translateY(8px);
-							"
-						>
-							<p
-								class="font-inter font-bold text-[32px] leading-[1.2] tracking-[-1.28px] text-[#9ac763]"
-							>
-								Bakhtiyar K.
-							</p>
-							<p
-								class="font-inter text-[16px] tracking-[-0.48px] text-white mt-3"
-								data-i18n="team.bakhtiyar.role"
-							>
-								Tech Lead
-							</p>
-							<p
-								class="font-inter text-[16px] leading-[1.4] tracking-[-0.48px] text-white/40 mt-3 w-[219px]"
-								data-i18n="team.bakhtiyar.bio"
-							>
-								6+ years in full-stack development, microservices architecture,
-								and DevOps practices.
-							</p>
-						</div>
-
-						<!-- toggle button -->
-						<button
-							class="card-toggle absolute z-20 flex items-center justify-center bg-[#212121] border-[5px] border-[#9ac763] rounded-full hover:scale-110 active:scale-95"
-							style="
-								left: 52px;
-								bottom: 22px;
-								width: 64px;
-								height: 64px;
-								transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-							"
-							onclick="teamAccordion(2)"
-						>
-							<svg
-								class="card-arrow"
-								width="28"
-								height="28"
-								viewBox="0 0 24 24"
-								fill="none"
-								style="transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)"
-							>
-								<path
-									d="M7 17L17 7M9 7h8v8"
-									stroke="white"
-									stroke-width="2.2"
-									stroke-linecap="round"
-									stroke-linejoin="round"
-								/>
-							</svg>
-						</button>
-					</div>
-
-					<!-- ====== CARD 3 : Prod. Engineer ====== -->
-					<div
-						class="team-card"
-						data-index="3"
-						style="
-							width: 240px;
-							height: 400px;
-							flex-shrink: 0;
-							border-radius: 16px;
-							overflow: hidden;
-							position: relative;
-							box-shadow: -4px 4px 32px 0 rgba(0, 0, 0, 0.08);
-							background: #212121;
-							transition:
-								width 0.55s cubic-bezier(0.4, 0, 0.2, 1),
-								height 0.55s cubic-bezier(0.4, 0, 0.2, 1),
-								background 0.4s;
-						"
-					>
-						<div
-							class="card-dark absolute inset-x-0 top-0 bg-[#212121] overflow-hidden"
-							style="
-								height: 400px;
-								border-radius: 0 0 32px 32px;
-								transition: height 0.55s cubic-bezier(0.4, 0, 0.2, 1);
-							"
-						>
-							<!-- photo -->
-							<div
-								class="card-photo absolute"
-								style="
-									left: 0;
-									top: 0;
-									width: 240px;
-									height: 100%;
-									transition:
-										left 0.55s cubic-bezier(0.4, 0, 0.2, 1),
-										width 0.55s cubic-bezier(0.4, 0, 0.2, 1);
-								"
-							>
-								<img
-									src="assets/team_4.png"
-									class="w-full h-full object-cover object-top mix-blend-lighten"
-									style="border-radius: 0; transition: mix-blend-mode 0.3s"
-									alt="Bekarys Sh."
-								/>
-							</div>
-						</div>
-
-						<!-- watermark -->
-						<div
-							class="card-watermark absolute right-0 top-0 h-full w-[58px] flex items-center justify-center overflow-hidden pointer-events-none"
-						>
-							<p
-								class="font-inter font-bold text-[48px] uppercase text-white opacity-5 tracking-[-4.8px] -rotate-90 whitespace-nowrap"
-							>
-								Prod. Engineer
-							</p>
-						</div>
-
-						<!-- info (visible when active) -->
-						<div
-							class="card-info absolute left-10 top-10 z-10 opacity-0 pointer-events-none"
-							style="
-								transition:
-									opacity 0.35s,
-									transform 0.35s;
-								transform: translateY(8px);
-							"
-						>
-							<p
-								class="font-inter font-bold text-[32px] leading-[1.2] tracking-[-1.28px] text-[#9ac763]"
-							>
-								Bekarys Sh.
-							</p>
-							<p
-								class="font-inter text-[16px] tracking-[-0.48px] text-white mt-3"
-								data-i18n="team.bekarys.role"
-							>
-								Prod. Engineer
-							</p>
-							<p
-								class="font-inter text-[16px] leading-[1.4] tracking-[-0.48px] text-white/40 mt-3 w-[219px]"
-								data-i18n="team.bekarys.bio"
-							>
-								4+ years in product engineering. Technical delivery of product
-								solutions.
-							</p>
-						</div>
-
-						<!-- toggle button -->
-						<button
-							class="card-toggle absolute z-20 flex items-center justify-center bg-[#212121] border-[5px] border-[#9ac763] rounded-full hover:scale-110 active:scale-95"
-							style="
-								left: 52px;
-								bottom: 22px;
-								width: 64px;
-								height: 64px;
-								transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-							"
-							onclick="teamAccordion(3)"
-						>
-							<svg
-								class="card-arrow"
-								width="28"
-								height="28"
-								viewBox="0 0 24 24"
-								fill="none"
-								style="transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)"
-							>
-								<path
-									d="M7 17L17 7M9 7h8v8"
-									stroke="white"
-									stroke-width="2.2"
-									stroke-linecap="round"
-									stroke-linejoin="round"
-								/>
-							</svg>
-						</button>
-					</div>
+						id="team-row"
+						class="flex gap-5 items-start"
+						style="min-height: 400px"
+					></div>
 				</div>
 			</div>
 		</section>
+
+		<script>
+			var TEAM = [
+				{
+					name: "Sayat O.",
+					photo: "assets/team_1.png",
+					photoClass: "object-right object-top",
+					watermark: "CEO",
+					roleKey: "team.sayat.role",
+					bioKey: "team.sayat.bio",
+				},
+				{
+					name: "Alnur S.",
+					photo: "assets/team_2.png",
+					photoClass: "object-bottom mix-blend-lighten",
+					watermark: "Prod. Engineer",
+					roleKey: "team.alnur.role",
+					bioKey: "team.alnur.bio",
+				},
+				{
+					name: "Bakhtiyar K.",
+					photo: "assets/team_3.png",
+					photoClass: "object-top mix-blend-lighten",
+					watermark: "Tech Lead",
+					roleKey: "team.bakhtiyar.role",
+					bioKey: "team.bakhtiyar.bio",
+				},
+				{
+					name: "Bekarys Sh.",
+					photo: "assets/team_4.png",
+					photoClass: "object-top mix-blend-lighten",
+					watermark: "Prod. Engineer",
+					roleKey: "team.bekarys.role",
+					bioKey: "team.bekarys.bio",
+				},
+			];
+
+			(function renderTeam() {
+				var row = document.getElementById("team-row");
+				if (!row) return;
+				var arrowSVG =
+					'<svg class="card-arrow" width="28" height="28" viewBox="0 0 24 24" fill="none" style="transition:transform 0.5s cubic-bezier(0.4,0,0.2,1)"><path d="M7 17L17 7M9 7h8v8" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+				row.innerHTML = TEAM.map(function (m, i) {
+					return (
+						'<div class="team-card" data-index="' +
+						i +
+						'" style="width:240px;height:400px;flex-shrink:0;border-radius:16px;overflow:hidden;position:relative;box-shadow:-4px 4px 32px 0 rgba(0,0,0,0.08);background:#212121;transition:width 0.55s cubic-bezier(0.4,0,0.2,1),height 0.55s cubic-bezier(0.4,0,0.2,1),background 0.4s;">' +
+						'<div class="card-dark absolute inset-x-0 top-0 bg-[#212121] overflow-hidden" style="height:400px;border-radius:0 0 32px 32px;transition:height 0.55s cubic-bezier(0.4,0,0.2,1);">' +
+						'<div class="card-photo absolute" style="left:0;top:0;width:240px;height:100%;transition:left 0.55s cubic-bezier(0.4,0,0.2,1),width 0.55s cubic-bezier(0.4,0,0.2,1);">' +
+						'<img src="' +
+						m.photo +
+						'" class="w-full h-full object-cover ' +
+						m.photoClass +
+						'" style="border-radius:0;transition:mix-blend-mode 0.3s" alt="' +
+						m.name +
+						'" loading="lazy" decoding="async"/>' +
+						"</div>" +
+						"</div>" +
+						'<div class="card-watermark absolute right-0 top-0 h-full w-[58px] flex items-center justify-center overflow-hidden pointer-events-none">' +
+						'<p class="font-inter font-bold text-[48px] uppercase text-white opacity-5 tracking-[-4.8px] -rotate-90 whitespace-nowrap select-none">' +
+						m.watermark +
+						"</p>" +
+						"</div>" +
+						'<div class="card-info absolute left-10 top-10 z-10 opacity-0 pointer-events-none" style="transition:opacity 0.35s,transform 0.35s;transform:translateY(8px);">' +
+						'<p class="font-inter font-bold text-[32px] leading-[1.2] tracking-[-1.28px] text-[#9ac763]">' +
+						m.name +
+						"</p>" +
+						'<p class="font-inter text-[16px] tracking-[-0.48px] text-white mt-3" data-i18n="' +
+						m.roleKey +
+						'"></p>' +
+						'<p class="font-inter text-[16px] leading-[1.4] tracking-[-0.48px] text-white/40 mt-3 w-[219px]" data-i18n="' +
+						m.bioKey +
+						'"></p>' +
+						"</div>" +
+						'<button class="card-toggle absolute z-20 flex items-center justify-center bg-[#212121] border-[5px] border-[#9ac763] rounded-full hover:scale-110 active:scale-95" style="left:52px;bottom:22px;width:64px;height:64px;transition:all 0.5s cubic-bezier(0.4,0,0.2,1);" onclick="teamAccordion(' +
+						i +
+						')">' +
+						arrowSVG +
+						"</button>" +
+						"</div>"
+					);
+				}).join("");
+			})();
+		</script>
 
 		<script>
 			(function () {
@@ -1213,6 +833,21 @@
 					},
 					{
 						// 3 – Bekarys
+						collW: 240,
+						collH: 400,
+						darkH: 400,
+						expW: 580,
+						expH: 400,
+						darkExpH: 344,
+						photo: {
+							coll: { l: 0, t: 0, w: 240, h: 400 },
+							exp: { l: 240, t: 0, w: 350, h: 344 },
+						},
+						bgActive: "#9ac763",
+						bgInactive: "#212121",
+					},
+					{
+						// 4 – Rassul
 						collW: 240,
 						collH: 400,
 						darkH: 400,
@@ -1321,10 +956,7 @@
 
 				<!-- carousel track wrapper -->
 				<div id="adv-viewport">
-					<div
-						class="flex gap-7"
-						id="adv-track"
-					>
+					<div class="flex gap-7" id="adv-track">
 						<!-- 1: Nurbek Ismagulov -->
 						<div class="w-[302px] shrink-0">
 							<div
@@ -1868,6 +1500,7 @@
 							</li>
 							<li><a href="/about" data-i18n="nav.about">О нас</a></li>
 							<li><a href="/cases" data-i18n="nav.cases">Кейсы</a></li>
+							<li><a href="/academy" data-i18n="nav.academy">Академия</a></li>
 						</ul>
 					</div>
 					<div>

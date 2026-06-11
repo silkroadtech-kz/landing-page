@@ -387,8 +387,13 @@
 		},
 		"team.bekarys.role": { ru: "Prod. Engineer", en: "Prod. Engineer" },
 		"team.bekarys.bio": {
-			ru: "4+ года в продуктовой инженерии. Техническая реализация продуктовых решений.",
-			en: "4+ years in product engineering. Technical delivery of product solutions.",
+			ru: "Продакт-инженер. Техническая реализация продуктовых решений.",
+			en: "Product engineer. Technical delivery of product solutions.",
+		},
+		"team.rassul.role": { ru: "Prod. Engineer", en: "Prod. Engineer" },
+		"team.rassul.bio": {
+			ru: "Что то",
+			en: "Что то",
 		},
 
 		/* ── Cases page ── */
@@ -571,6 +576,135 @@
 		"copyright.updated": {
 			ru: "Последнее обновление: 10 апреля 2026 г.",
 			en: "Last updated: April 10, 2026",
+		},
+
+		/* ── Academy ── */
+		"nav.academy": { ru: "Академия", en: "Academy" },
+		"academy.hero.badge": { ru: "SRT Academy", en: "SRT Academy" },
+		"academy.hero.title": {
+			ru: 'Научись создавать <span class="text-gradient-green">AI&#8209;продукты</span> за 8 недель',
+			en: 'Learn to build <span class="text-gradient-green">AI&nbsp;products</span> in 8 weeks',
+		},
+		"academy.hero.desc": {
+			ru: "Практический курс для предпринимателей, маркетологов и менеджеров без опыта в разработке. Три реальных проекта в портфолио — с первого занятия.",
+			en: "Hands-on program for entrepreneurs, marketers, and managers with no coding background. Three real portfolio projects — from day one.",
+		},
+		"academy.stat.weeks": { ru: "8 недель", en: "8 weeks" },
+		"academy.stat.sessions": { ru: "16 живых занятий", en: "16 live sessions" },
+		"academy.stat.projects": { ru: "3 проекта", en: "3 projects" },
+		"academy.stat.cohort": { ru: "до 12 студентов", en: "up to 12 students" },
+		"academy.build.eyebrow": { ru: "Программа", en: "Curriculum" },
+		"academy.build.title": {
+			ru: "Что ты создашь за курс",
+			en: "What you'll build",
+		},
+		"academy.build.1.title": {
+			ru: "Сайт / Лендинг",
+			en: "Website / Landing page",
+		},
+		"academy.build.1.desc": {
+			ru: "Опубликованный сайт или лендинг-страница для бизнеса. Реальный хостинг, реальный домен.",
+			en: "A published website or landing page for a business. Real hosting, real domain.",
+		},
+		"academy.build.2.title": { ru: "Telegram-бот", en: "Telegram bot" },
+		"academy.build.2.desc": {
+			ru: "Бот или автоматизация бизнес-процессов. Подходит для реальных задач: запись, рассылки, FAQ.",
+			en: "A bot or business process automation — bookings, newsletters, FAQ.",
+		},
+		"academy.build.3.title": { ru: "Mini MVP", en: "Mini MVP" },
+		"academy.build.3.desc": {
+			ru: "Мини-приложение с базой данных и интеграцией оплаты. Полноценный продукт, готовый к запуску.",
+			en: "A mini app with a database and payment integration. A complete product ready to launch.",
+		},
+		"academy.pricing.eyebrow": { ru: "Тарифы", en: "Pricing" },
+		"academy.pricing.title": {
+			ru: "Выбери свой формат",
+			en: "Choose your format",
+		},
+		"academy.pricing.compare": { ru: "Сравнить тарифы", en: "Compare plans" },
+		"academy.pricing.badge.recommended": {
+			ru: "Рекомендуем",
+			en: "Recommended",
+		},
+		"academy.pricing.pilot.tag": { ru: "Ранний доступ", en: "Early Access" },
+		"academy.pricing.pilot.name": { ru: "Pilot", en: "Pilot" },
+		"academy.pricing.pilot.f1": {
+			ru: "Групповая поддержка ментора",
+			en: "Group mentor support",
+		},
+		"academy.pricing.pilot.f2": {
+			ru: "3 проекта в портфолио",
+			en: "3 portfolio projects",
+		},
+		"academy.pricing.pilot.f3": {
+			ru: "Хостинг включён",
+			en: "Hosting included",
+		},
+		"academy.pricing.pilot.f4": {
+			ru: "16 живых занятий",
+			en: "16 live sessions",
+		},
+		"academy.pricing.standard.tag": { ru: "Основной", en: "Core" },
+		"academy.pricing.standard.name": { ru: "Standard", en: "Standard" },
+		"academy.pricing.standard.f1": {
+			ru: "Всё из Pilot",
+			en: "Everything from Pilot",
+		},
+		"academy.pricing.standard.f2": {
+			ru: "Ревью ментора по проектам",
+			en: "Project mentor reviews",
+		},
+		"academy.pricing.standard.f3": {
+			ru: "Разбор кода на занятиях",
+			en: "Code review sessions",
+		},
+		"academy.pricing.standard.f4": {
+			ru: "Доступ к закрытому чату",
+			en: "Private community access",
+		},
+		"academy.pricing.pro.tag": { ru: "Для бизнеса", en: "Business" },
+		"academy.pricing.pro.name": { ru: "Pro", en: "Pro" },
+		"academy.pricing.pro.f1": {
+			ru: "Всё из Standard",
+			en: "Everything from Standard",
+		},
+		"academy.pricing.pro.f2": {
+			ru: "Личные сессии 1:1",
+			en: "1-on-1 sessions",
+		},
+		"academy.pricing.pro.f3": {
+			ru: "Помощь с монетизацией",
+			en: "Monetization guidance",
+		},
+		"academy.pricing.pro.f4": {
+			ru: "Стажировка для лучших",
+			en: "Internship for top graduates",
+		},
+		"academy.for.eyebrow": { ru: "Для кого", en: "Who it's for" },
+		"academy.for.title": { ru: "Подойдёт, если ты…", en: "Made for you if…" },
+		"academy.for.1": {
+			ru: "Предприниматель, который хочет автоматизировать бизнес",
+			en: "An entrepreneur who wants to automate their business",
+		},
+		"academy.for.2": {
+			ru: "Маркетолог или менеджер без опыта в разработке",
+			en: "A marketer or manager with no coding background",
+		},
+		"academy.for.3": {
+			ru: "Студент или фрилансер, ищущий новую специальность",
+			en: "A student or freelancer looking for a new skill set",
+		},
+		"academy.for.4": {
+			ru: "Любой, у кого есть идея продукта и желание её реализовать",
+			en: "Anyone with a product idea and the drive to build it",
+		},
+		"academy.cta.btn": { ru: "Записаться", en: "Enroll now" },
+		"academy.cta.btn.full": { ru: "Открыть платформу", en: "Open platform" },
+		"academy.cta.ask": { ru: "Задать вопрос", en: "Ask a question" },
+		"academy.cta.title": { ru: "Готов начать?", en: "Ready to start?" },
+		"academy.cta.desc": {
+			ru: "Присоединись к следующей группе и выйди с портфолио реальных AI-продуктов уже через 8 недель.",
+			en: "Join the next cohort and graduate with a real AI product portfolio in just 8 weeks.",
 		},
 	};
 

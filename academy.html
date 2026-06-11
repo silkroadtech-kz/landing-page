@@ -1,0 +1,530 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<script>(function(){var l=localStorage.getItem('srt_lang');if(l&&l!=='ru')document.documentElement.style.visibility='hidden';})();</script>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>SRT Academy — AI Product Lab</title>
+		<meta
+			name="description"
+			content="SRT Academy: an 8-week hands-on AI Product Lab for entrepreneurs, marketers, and managers. Build 3 real portfolio projects with no coding background required."
+		/>
+		<meta name="robots" content="index,follow" />
+		<link rel="canonical" href="https://silkroadtech.kz/academy" />
+		<meta property="og:type" content="website" />
+		<meta property="og:locale" content="en_US" />
+		<meta property="og:title" content="SRT Academy — AI Product Lab" />
+		<meta
+			property="og:description"
+			content="8-week AI Product Lab: build 3 real projects, no coding background required."
+		/>
+		<meta property="og:url" content="https://silkroadtech.kz/academy" />
+		<meta property="og:image" content="https://silkroadtech.kz/og-cover.svg" />
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content="SRT Academy — AI Product Lab" />
+		<meta
+			name="twitter:description"
+			content="8-week AI Product Lab: build 3 real projects, no coding background required."
+		/>
+		<meta name="twitter:image" content="https://silkroadtech.kz/og-cover.svg" />
+		<meta property="og:site_name" content="Silk Road Tech" />
+		<link
+			rel="icon"
+			href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23010205'/%3E%3Ctext x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial,sans-serif' font-size='28' font-weight='700' fill='%239ac763'%3ESRT%3C/text%3E%3C/svg%3E"
+		/>
+		<script src="https://cdn.tailwindcss.com"></script>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Manrope:wght@500;700;800&family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,700&family=Roboto:wght@400;500;600;700&display=swap"
+			rel="stylesheet"
+		/>
+		<style>
+			:root {
+				--green: #9ac763;
+				--green-2: #99cf63;
+				--dark: #010205;
+				--muted: #878c91;
+			}
+			html,
+			body {
+				font-family: "Plus Jakarta Sans", system-ui, sans-serif;
+				color: #010205;
+				background: #fafafa;
+			}
+			.font-jakarta { font-family: "Plus Jakarta Sans", sans-serif; }
+			.font-manrope { font-family: "Manrope", sans-serif; }
+			.font-inter   { font-family: "Inter", sans-serif; }
+			.font-roboto  { font-family: "Roboto", sans-serif; }
+
+			.mobile-menu {
+				transform: translateX(100%);
+				transition: transform 0.3s ease;
+				width: 100vw;
+				height: 100vh;
+				height: 100dvh;
+				top: 0;
+				left: 0;
+				overflow-y: auto;
+			}
+			.mobile-menu.open { transform: translateX(0); }
+			body.menu-open { overflow: hidden; }
+
+			.noise {
+				background-image: url("assets/about_noise.png");
+				background-size: 600px;
+				opacity: 0.06;
+				pointer-events: none;
+			}
+
+			/* Fade-up animation */
+			.reveal {
+				opacity: 0;
+				transform: translateY(24px);
+				transition: opacity 0.55s ease, transform 0.55s ease;
+			}
+			.reveal.visible {
+				opacity: 1;
+				transform: translateY(0);
+			}
+
+			/* Stats bar */
+			.stat-chip {
+				border: 1px solid rgba(255,255,255,0.18);
+				background: rgba(255,255,255,0.07);
+				backdrop-filter: blur(8px);
+				-webkit-backdrop-filter: blur(8px);
+			}
+
+			/* Gradient text */
+			.text-gradient-green {
+				background: linear-gradient(90deg, #457708 0%, #9ac763 95%);
+				-webkit-background-clip: text;
+				-webkit-text-fill-color: transparent;
+				background-clip: text;
+			}
+
+			@media (max-width: 1200px) {
+				.px-20 { padding-left: 2rem !important; padding-right: 2rem !important; }
+				.build-grid { grid-template-columns: 1fr 1fr !important; }
+				.audience-grid { grid-template-columns: 1fr 1fr !important; }
+			}
+			@media (max-width: 768px) {
+				nav {
+					padding-left: 1.25rem !important;
+					padding-right: 1.25rem !important;
+					padding-top: 0.75rem !important;
+					padding-bottom: 0.75rem !important;
+				}
+				header .w-\[174px\] { display: none !important; }
+				#langToggle { display: flex !important; width: 40px !important; height: 40px !important; font-size: 13px !important; }
+				.academy-hero-shell { padding-left: 1.25rem !important; padding-right: 1.25rem !important; padding-top: 3rem !important; padding-bottom: 3rem !important; }
+				.academy-section { padding-left: 1.25rem !important; padding-right: 1.25rem !important; }
+				.stats-row { flex-wrap: wrap !important; gap: 0.75rem !important; }
+				.build-grid { grid-template-columns: 1fr !important; }
+				.audience-grid { grid-template-columns: 1fr !important; }
+				.footer-shell { padding-left: 1.25rem !important; padding-right: 1.25rem !important; }
+				.footer-layout { flex-direction: column !important; gap: 2rem !important; }
+				.footer-layout .max-w-\[534px\] { max-width: 100% !important; }
+				.footer-layout .flex.justify-between.gap-12.flex-1 { flex-direction: column !important; gap: 2rem !important; }
+				.footer-meta { flex-direction: column !important; gap: 0.75rem !important; align-items: flex-start !important; padding-left: 1.25rem !important; padding-right: 1.25rem !important; }
+				h1 { font-size: 2.2rem !important; line-height: 1.15 !important; }
+			}
+			@media (max-width: 480px) {
+				h1 { font-size: 1.85rem !important; }
+				.stat-chip { font-size: 0.85rem !important; padding: 0.4rem 0.9rem !important; }
+			}
+
+			/* Tablet nav */
+			@media (min-width: 1024px) and (max-width: 1180px) {
+				header nav { padding-left: 1.5rem !important; padding-right: 1.5rem !important; gap: 1rem !important; }
+				header nav > .flex.items-center.gap-\[74px\] { gap: 1.5rem !important; min-width: 0 !important; flex: 1 1 auto !important; }
+				header nav ul.hidden.lg\:flex { gap: 1.5rem !important; font-size: 1rem !important; flex-wrap: nowrap !important; min-width: 0 !important; }
+				header nav ul.hidden.lg\:flex li, header nav ul.hidden.lg\:flex a { white-space: nowrap !important; }
+				header .w-\[174px\] { width: auto !important; min-width: 0 !important; padding: 0.85rem 1.15rem !important; font-size: 0.95rem !important; white-space: nowrap !important; }
+				#langToggle { width: 46px !important; height: 46px !important; font-size: 14px !important; }
+			}
+			@media (min-width: 769px) and (max-width: 1023px) {
+				header nav { padding-left: 1.5rem !important; padding-right: 1.5rem !important; gap: 0.5rem !important; }
+				header nav > .flex.items-center.gap-\[74px\] { gap: 1rem !important; flex: 1 1 auto !important; min-width: 0 !important; }
+				header nav ul.hidden.lg\:flex { gap: 1rem !important; font-size: 0.95rem !important; }
+				header .w-\[174px\] { width: auto !important; padding: 0.75rem 1rem !important; font-size: 0.9rem !important; white-space: nowrap !important; }
+			}
+		</style>
+		<script defer src="/_vercel/insights/script.js"></script>
+	</head>
+	<body class="bg-[#fafafa] text-[#010205]">
+
+		<!-- ============ NAVBAR ============ -->
+		<header
+			class="sticky top-0 z-50 bg-[rgba(239,239,239,0.47)] backdrop-blur-[20px] backdrop-saturate-150 border-b border-white/20"
+		>
+			<nav
+				class="max-w-[1440px] mx-auto flex items-center justify-between px-20 py-5"
+			>
+				<div class="flex items-center gap-[74px]">
+					<a href="/" aria-label="Silk Road Tech home">
+						<img
+							src="assets/logo.svg"
+							alt="Silk Road Tech"
+							class="h-6 w-auto logo-img"
+						/>
+					</a>
+					<ul
+						class="hidden lg:flex items-center gap-10 text-[17.1px] font-semibold text-[#020407]"
+					>
+						<li>
+							<a href="/#services" class="hover:text-[#9ac763]" data-i18n="nav.services">Услуги</a>
+						</li>
+						<li>
+							<a href="/#process" class="hover:text-[#9ac763]" data-i18n="nav.process">Процесс</a>
+						</li>
+						<li>
+							<a href="/cases" class="hover:text-[#9ac763]" data-i18n="nav.cases">Кейсы</a>
+						</li>
+						<li>
+							<a href="/about" class="hover:text-[#9ac763]" data-i18n="nav.about">О нас</a>
+						</li>
+						<li>
+							<a href="/academy" class="text-[#9ac763]" data-i18n="nav.academy">Академия</a>
+						</li>
+						<li>
+							<a href="/#contacts" class="hover:text-[#9ac763]" data-i18n="nav.contacts">Контакты</a>
+						</li>
+						<li>
+							<a href="/#faq" class="hover:text-[#9ac763]" data-i18n="nav.faq">FAQ</a>
+						</li>
+					</ul>
+				</div>
+				<div class="flex items-center gap-2">
+					<button
+						class="font-manrope font-bold bg-[#99cf63] border border-[#99cf63] rounded-full px-4 py-3 w-[174px] text-[16px] tracking-tight hover:brightness-95 transition"
+						type="button"
+						onclick="window.location.href = '/#contacts'"
+						data-i18n="nav.cta"
+					>
+						Обсудить проект
+					</button>
+					<button
+						id="langToggle"
+						class="hidden lg:flex items-center justify-center w-[52px] h-[52px] rounded-full bg-[#010205] text-white text-[15px] font-semibold hover:bg-[#333] transition flex-shrink-0"
+					>
+						En
+					</button>
+					<button
+						class="lg:hidden w-10 h-10 flex flex-col items-center justify-center gap-1.5"
+						id="hamburger"
+					>
+						<span class="block w-6 h-0.5 bg-[#010205] transition-all"></span>
+						<span class="block w-6 h-0.5 bg-[#010205] transition-all"></span>
+						<span class="block w-6 h-0.5 bg-[#010205] transition-all"></span>
+					</button>
+				</div>
+			</nav>
+			<!-- Mobile menu overlay -->
+			<div
+				class="mobile-menu fixed inset-0 top-0 bg-white z-[100] p-8 pt-20 lg:hidden"
+				id="mobileMenu"
+			>
+				<button class="absolute top-6 right-6 text-3xl" id="closeMenu">&times;</button>
+				<ul class="flex flex-col gap-6 text-[20px] font-semibold">
+					<li><a href="/#services" class="mobile-link" data-i18n="nav.services">Услуги</a></li>
+					<li><a href="/#process" class="mobile-link" data-i18n="nav.process">Процесс</a></li>
+					<li><a href="/cases" data-i18n="nav.cases">Кейсы</a></li>
+					<li><a href="/about" data-i18n="nav.about">О нас</a></li>
+					<li><a href="/academy" class="text-[#9ac763]" data-i18n="nav.academy">Академия</a></li>
+					<li><a href="/#contacts" class="mobile-link" data-i18n="nav.contacts">Контакты</a></li>
+					<li><a href="/#faq" class="mobile-link" data-i18n="nav.faq">FAQ</a></li>
+				</ul>
+			</div>
+		</header>
+
+		<!-- ============ HERO ============ -->
+		<section class="bg-[#010205] relative overflow-hidden">
+			<div class="absolute inset-0 pointer-events-none">
+				<!-- Background gradient blobs -->
+				<div class="absolute top-[-120px] right-[-100px] w-[600px] h-[600px] rounded-full opacity-20" style="background: radial-gradient(circle, #9ac763 0%, transparent 70%);"></div>
+				<div class="absolute bottom-[-80px] left-[-60px] w-[400px] h-[400px] rounded-full opacity-10" style="background: radial-gradient(circle, #457708 0%, transparent 70%);"></div>
+			</div>
+			<div class="academy-hero-shell relative max-w-[1440px] mx-auto px-20 pt-[72px] pb-[80px]">
+
+				<!-- Badge -->
+				<div class="reveal inline-flex items-center gap-2 mb-7">
+					<span class="inline-flex items-center gap-2 bg-[#9ac763]/15 border border-[#9ac763]/30 text-[#9ac763] text-[13px] font-semibold tracking-[0.8px] uppercase rounded-full px-4 py-1.5">
+						<svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+							<path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="#9ac763"/>
+						</svg>
+						<span data-i18n="academy.hero.badge">SRT Academy</span>
+					</span>
+				</div>
+
+				<!-- Headline -->
+				<h1
+					class="reveal font-jakarta font-bold text-white text-[56px] leading-[1.1] tracking-[-1.5px] max-w-[820px] mb-6"
+					style="transition-delay: 0.1s"
+				>
+					<span data-i18n-html="academy.hero.title">Научись создавать <span class="text-gradient-green">AI&#8209;продукты</span> за 8 недель</span>
+				</h1>
+
+				<!-- Description -->
+				<p
+					class="reveal font-jakarta text-[18px] text-[#878c91] leading-relaxed max-w-[600px] mb-12"
+					style="transition-delay: 0.2s"
+					data-i18n="academy.hero.desc"
+				>
+					Практический курс для предпринимателей, маркетологов и менеджеров без опыта в разработке. Три реальных проекта в портфолио — с первого занятия.
+				</p>
+
+				<!-- Stats chips -->
+				<div class="reveal stats-row flex flex-wrap items-center gap-3" style="transition-delay: 0.3s">
+					<div class="stat-chip flex items-center gap-2 rounded-full px-5 py-2.5 text-white text-[14px] font-semibold">
+						<svg width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="#9ac763" stroke-width="2"/><path d="M12 6v6l4 2" stroke="#9ac763" stroke-width="2" stroke-linecap="round"/></svg>
+						<span data-i18n="academy.stat.weeks">8 недель</span>
+					</div>
+					<div class="stat-chip flex items-center gap-2 rounded-full px-5 py-2.5 text-white text-[14px] font-semibold">
+						<svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" stroke="#9ac763" stroke-width="2" stroke-linecap="round"/><circle cx="9" cy="7" r="4" stroke="#9ac763" stroke-width="2"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" stroke="#9ac763" stroke-width="2" stroke-linecap="round"/></svg>
+						<span data-i18n="academy.stat.cohort">до 12 студентов</span>
+					</div>
+					<div class="stat-chip flex items-center gap-2 rounded-full px-5 py-2.5 text-white text-[14px] font-semibold">
+						<svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="18" rx="2" stroke="#9ac763" stroke-width="2"/><path d="M16 2v4M8 2v4M3 10h18" stroke="#9ac763" stroke-width="2" stroke-linecap="round"/></svg>
+						<span data-i18n="academy.stat.sessions">16 живых занятий</span>
+					</div>
+					<div class="stat-chip flex items-center gap-2 rounded-full px-5 py-2.5 text-white text-[14px] font-semibold">
+						<svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" stroke="#9ac763" stroke-width="2" stroke-linecap="round"/><polyline points="22 4 12 14.01 9 11.01" stroke="#9ac763" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+						<span data-i18n="academy.stat.projects">3 проекта</span>
+					</div>
+				</div>
+
+			</div>
+		</section>
+
+		<!-- ============ WHAT YOU'LL BUILD ============ -->
+		<section class="bg-white relative overflow-hidden py-20">
+			<div class="absolute inset-0 noise"></div>
+			<div class="academy-section relative max-w-[1440px] mx-auto px-20">
+
+				<!-- Heading -->
+				<div class="reveal mb-14">
+					<p class="font-inter text-[13px] font-bold tracking-[1.2px] uppercase text-[#9ac763] mb-3" data-i18n="academy.build.eyebrow">Программа</p>
+					<h2 class="font-jakarta font-bold text-[40px] leading-[1.15] tracking-[-1px] text-[#010205] max-w-[560px]" data-i18n="academy.build.title">Что ты создашь за курс</h2>
+				</div>
+
+				<!-- 3-column grid -->
+				<div class="build-grid grid grid-cols-3 gap-6">
+
+					<!-- Project 1 -->
+					<div class="reveal bg-[#f5f5f5] rounded-[24px] p-8 flex flex-col gap-5" style="transition-delay: 0.1s">
+						<div class="w-12 h-12 rounded-[14px] bg-[#010205] flex items-center justify-center flex-shrink-0">
+							<svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+								<rect x="3" y="3" width="18" height="18" rx="2" stroke="#9ac763" stroke-width="2"/>
+								<path d="M3 9h18M9 21V9" stroke="#9ac763" stroke-width="2" stroke-linecap="round"/>
+							</svg>
+						</div>
+						<div>
+							<p class="font-inter text-[11px] font-bold tracking-[1px] uppercase text-[#9ac763] mb-2">Проект 01</p>
+							<h3 class="font-jakarta font-bold text-[22px] leading-[1.25] text-[#010205] mb-3" data-i18n="academy.build.1.title">Сайт / Лендинг</h3>
+							<p class="font-jakarta text-[15px] text-[#878c91] leading-relaxed" data-i18n="academy.build.1.desc">Опубликованный сайт или лендинг-страница для бизнеса. Реальный хостинг, реальный домен.</p>
+						</div>
+					</div>
+
+					<!-- Project 2 -->
+					<div class="reveal bg-[#f5f5f5] rounded-[24px] p-8 flex flex-col gap-5" style="transition-delay: 0.2s">
+						<div class="w-12 h-12 rounded-[14px] bg-[#010205] flex items-center justify-center flex-shrink-0">
+							<svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+								<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.28h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.96a16 16 0 0 0 6.13 6.13l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" stroke="#9ac763" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+							</svg>
+						</div>
+						<div>
+							<p class="font-inter text-[11px] font-bold tracking-[1px] uppercase text-[#9ac763] mb-2">Проект 02</p>
+							<h3 class="font-jakarta font-bold text-[22px] leading-[1.25] text-[#010205] mb-3" data-i18n="academy.build.2.title">Telegram-бот</h3>
+							<p class="font-jakarta text-[15px] text-[#878c91] leading-relaxed" data-i18n="academy.build.2.desc">Бот или автоматизация бизнес-процессов. Подходит для реальных задач: запись, рассылки, FAQ.</p>
+						</div>
+					</div>
+
+					<!-- Project 3 -->
+					<div class="reveal bg-[#f5f5f5] rounded-[24px] p-8 flex flex-col gap-5" style="transition-delay: 0.3s">
+						<div class="w-12 h-12 rounded-[14px] bg-[#010205] flex items-center justify-center flex-shrink-0">
+							<svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+								<ellipse cx="12" cy="5" rx="9" ry="3" stroke="#9ac763" stroke-width="2"/>
+								<path d="M3 5v14a9 3 0 0 0 18 0V5" stroke="#9ac763" stroke-width="2"/>
+								<path d="M3 12a9 3 0 0 0 18 0" stroke="#9ac763" stroke-width="2"/>
+							</svg>
+						</div>
+						<div>
+							<p class="font-inter text-[11px] font-bold tracking-[1px] uppercase text-[#9ac763] mb-2">Проект 03</p>
+							<h3 class="font-jakarta font-bold text-[22px] leading-[1.25] text-[#010205] mb-3" data-i18n="academy.build.3.title">Mini MVP</h3>
+							<p class="font-jakarta text-[15px] text-[#878c91] leading-relaxed" data-i18n="academy.build.3.desc">Мини-приложение с базой данных и интеграцией оплаты. Полноценный продукт, готовый к запуску.</p>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</section>
+
+		<!-- ============ WHO IS THIS FOR ============ -->
+		<section class="bg-[#f0f0f0] relative overflow-hidden py-20">
+			<div class="academy-section relative max-w-[1440px] mx-auto px-20">
+				<div class="reveal mb-10">
+					<p class="font-inter text-[13px] font-bold tracking-[1.2px] uppercase text-[#9ac763] mb-3" data-i18n="academy.for.eyebrow">Для кого</p>
+					<h2 class="font-jakarta font-bold text-[40px] leading-[1.15] tracking-[-1px] text-[#010205]" data-i18n="academy.for.title">Подойдёт, если ты…</h2>
+				</div>
+				<div class="reveal grid grid-cols-2 gap-4 audience-grid" style="transition-delay: 0.1s">
+					<div class="bg-white rounded-[20px] px-7 py-5 flex items-center gap-4">
+						<span class="text-[28px]">🚀</span>
+						<p class="font-jakarta font-semibold text-[16px] text-[#010205]" data-i18n="academy.for.1">Предприниматель, который хочет автоматизировать бизнес</p>
+					</div>
+					<div class="bg-white rounded-[20px] px-7 py-5 flex items-center gap-4">
+						<span class="text-[28px]">📊</span>
+						<p class="font-jakarta font-semibold text-[16px] text-[#010205]" data-i18n="academy.for.2">Маркетолог или менеджер без опыта в разработке</p>
+					</div>
+					<div class="bg-white rounded-[20px] px-7 py-5 flex items-center gap-4">
+						<span class="text-[28px]">🎓</span>
+						<p class="font-jakarta font-semibold text-[16px] text-[#010205]" data-i18n="academy.for.3">Студент или фрилансер, ищущий новую специальность</p>
+					</div>
+					<div class="bg-white rounded-[20px] px-7 py-5 flex items-center gap-4">
+						<span class="text-[28px]">💡</span>
+						<p class="font-jakarta font-semibold text-[16px] text-[#010205]" data-i18n="academy.for.4">Любой, у кого есть идея продукта и желание её реализовать</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- ============ CTA BANNER ============ -->
+		<section class="bg-[#010205] relative overflow-hidden py-24">
+			<div class="absolute inset-0 pointer-events-none">
+				<div class="absolute top-[-100px] left-1/2 -translate-x-1/2 w-[900px] h-[500px] rounded-full opacity-[0.12]" style="background: radial-gradient(ellipse, #9ac763 0%, transparent 70%);"></div>
+			</div>
+			<div class="academy-section reveal relative max-w-[1440px] mx-auto px-20 flex flex-col items-center text-center gap-6">
+				<h2 class="font-jakarta font-bold text-[48px] leading-[1.1] tracking-[-1.5px] text-white max-w-[720px]" data-i18n="academy.cta.title">Готов начать?</h2>
+				<p class="font-jakarta text-[18px] text-[#878c91] max-w-[540px] leading-relaxed" data-i18n="academy.cta.desc">Присоединись к следующей группе и выйди с портфолио реальных AI-продуктов уже через 8 недель.</p>
+				<div class="flex flex-wrap items-center justify-center gap-4 mt-2">
+					<a
+						href="https://academy.silkroadtech.kz/"
+						target="_blank"
+						rel="noreferrer"
+						class="inline-flex items-center gap-3 bg-[#9ac763] text-[#010205] font-manrope font-bold text-[16px] rounded-full px-8 py-4 hover:brightness-95 transition"
+					>
+						<span data-i18n="academy.cta.btn.full">Открыть платформу</span>
+						<svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="#010205" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+					</a>
+					<a
+						href="https://t.me/xsayat"
+						target="_blank"
+						rel="noreferrer"
+						class="inline-flex items-center gap-3 border border-white/20 text-white font-manrope font-bold text-[16px] rounded-full px-8 py-4 hover:border-white/50 transition"
+						data-i18n="academy.cta.ask"
+					>Задать вопрос</a>
+				</div>
+			</div>
+		</section>
+
+		<!-- ============ FOOTER ============ -->
+		<footer class="bg-[#fafafa] relative overflow-hidden py-16">
+			<div class="absolute inset-0 noise opacity-[0.13]"></div>
+			<div
+				class="footer-shell footer-layout relative max-w-[1440px] mx-auto px-20 flex gap-14"
+			>
+				<div class="max-w-[534px]">
+					<a href="/" aria-label="Silk Road Tech home" class="inline-block mb-8">
+						<img src="assets/logo.svg" alt="Silk Road Tech" class="h-8 w-auto logo-img" />
+					</a>
+					<p class="font-roboto text-[14px] leading-6 text-[#9b9b9c] mb-8" data-i18n="footer.desc">
+						Мы предлагаем комплексный IT-аутсорсинг, охватывающий все аспекты вашей цифровой разработки. От проектирования архитектуры и разработки ПО до облачных решений и кибербезопасности — наша команда обладает экспертизой для реализации проектов любой сложности.
+					</p>
+					<div class="flex items-center gap-8">
+						<div class="flex gap-3">
+							<a href="https://wa.me/77026479903" target="_blank" rel="noreferrer" aria-label="WhatsApp" class="w-9 h-9 rounded-full bg-[#9ac763] flex items-center justify-center">
+								<svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M20.52 3.48A11.8 11.8 0 0 0 12.07 0C5.58 0 .3 5.28.3 11.77c0 2.07.54 4.1 1.56 5.88L0 24l6.55-1.82a11.73 11.73 0 0 0 5.52 1.4h.01c6.49 0 11.77-5.28 11.77-11.77 0-3.15-1.23-6.11-3.33-8.33ZM12.08 21.5h-.01a9.64 9.64 0 0 1-4.91-1.34l-.35-.21-3.89 1.08 1.04-3.79-.23-.39a9.68 9.68 0 0 1-1.48-5.08c0-5.35 4.35-9.7 9.71-9.7 2.59 0 5.02 1.01 6.84 2.84a9.6 9.6 0 0 1 2.84 6.86c0 5.35-4.35 9.7-9.71 9.7Zm5.32-7.26c-.29-.14-1.73-.85-2-.95-.27-.1-.47-.14-.66.15-.19.29-.76.95-.93 1.14-.17.19-.35.22-.64.08-.29-.14-1.24-.46-2.35-1.47-.87-.78-1.46-1.74-1.63-2.03-.17-.29-.02-.45.13-.6.13-.13.29-.35.43-.52.14-.17.19-.29.29-.48.1-.19.05-.36-.02-.5-.07-.14-.66-1.59-.91-2.18-.24-.58-.48-.5-.66-.5h-.56c-.19 0-.5.07-.76.36-.26.29-1 1-.98 2.44.02 1.44 1.03 2.83 1.18 3.03.14.19 2.03 3.1 5.02 4.23.71.31 1.27.49 1.71.63.72.23 1.38.2 1.9.12.58-.09 1.73-.71 1.97-1.39.24-.68.24-1.27.17-1.39-.07-.12-.27-.19-.56-.33Z"/></svg>
+							</a>
+							<a href="https://t.me/xsayat" target="_blank" rel="noreferrer" aria-label="Telegram" class="w-9 h-9 rounded-full bg-[#9ac763] flex items-center justify-center">
+								<svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M9.78 18.65c-.39 0-.32-.15-.46-.52l-1.16-3.81 8.9-5.28c.42-.24.73-.11.41.17l-7.2 6.5-.28 3.78c.4 0 .57-.18.8-.39l1.92-1.87 3.99 2.95c.73.4 1.26.19 1.44-.68l2.6-12.25c.26-1.06-.4-1.54-1.1-1.22L2.84 12.5c-1.04.41-1.03.99-.19 1.25l4.28 1.34 9.92-6.25c.47-.28.9-.12.55.18"/></svg>
+							</a>
+							<a href="https://instagram.com/silkroadtech" target="_blank" rel="noreferrer" aria-label="Instagram" class="w-9 h-9 rounded-full bg-[#9ac763] flex items-center justify-center">
+								<svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+							</a>
+						</div>
+						<button
+							class="bg-[#010205] text-white font-jakarta font-bold text-[16px] rounded-full px-8 py-4 inline-flex items-center gap-3 hover:scale-[1.02] transition"
+							type="button"
+							onclick="window.location.href = '/#contacts'"
+							data-i18n="footer.discuss"
+						>
+							Обсудить проект
+							<svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+						</button>
+					</div>
+					<div class="flex items-center gap-3 mt-8">
+						<span class="font-roboto text-[12px] text-[#9b9b9c]" data-i18n="footer.resident">Резидент</span>
+						<img src="assets/astanahub.png.webp" alt="Astana Hub" class="h-16 w-auto astana-hub-img" />
+					</div>
+				</div>
+
+				<div class="flex justify-between gap-12 flex-1">
+					<div>
+						<h4 class="font-roboto font-semibold text-[18px] text-[#192031] mb-12" data-i18n="footer.nav.title">Навигация</h4>
+						<ul class="font-roboto text-[14px] text-[#9b9b9c] space-y-6">
+							<li><a href="/#services" data-i18n="nav.services">Услуги</a></li>
+							<li><a href="/#process" data-i18n="nav.process">Процесс</a></li>
+							<li><a href="/#faq" data-i18n="nav.faq">FAQ</a></li>
+							<li><a href="/#contacts" data-i18n="nav.contacts">Контакты</a></li>
+							<li><a href="/about" data-i18n="nav.about">О нас</a></li>
+							<li><a href="/cases" data-i18n="nav.cases">Кейсы</a></li>
+							<li class="font-bold"><a href="/academy" data-i18n="nav.academy">Академия</a></li>
+						</ul>
+					</div>
+					<div>
+						<h4 class="font-roboto font-semibold text-[18px] text-[#192031] mb-12" data-i18n="footer.lic.title">Документы</h4>
+						<ul class="font-roboto text-[14px] text-[#9b9b9c] space-y-6">
+							<li><a href="/privacy" data-i18n="footer.privacy">Политика конфиденциальности</a></li>
+							<li><a href="/copyright" data-i18n="footer.copyright">Авторские права</a></li>
+							<li><a href="mailto:sayat@silkroadtech.kz" data-i18n="footer.email.label">Email</a></li>
+						</ul>
+					</div>
+					<div>
+						<h4 class="font-roboto font-semibold text-[18px] text-[#192031] mb-12" data-i18n="footer.contact.title">Контакты</h4>
+						<ul class="font-roboto text-[14px] text-[#9b9b9c] space-y-6">
+							<li class="flex items-center gap-3">
+								<svg width="18" height="18" viewBox="0 0 24 24" fill="#9b9b9c"><path d="M20 15.5c-1.25 0-2.45-.2-3.57-.57-.35-.11-.74-.03-1.02.24l-2.2 2.2a15.045 15.045 0 0 1-6.59-6.59l2.2-2.21c.28-.26.36-.65.25-1C8.7 6.45 8.5 5.25 8.5 4c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1 0 9.39 7.61 17 17 17 .55 0 1-.45 1-1v-3.5c0-.55-.45-1-1-1z"/></svg>
+								<a href="https://wa.me/77026479903" target="_blank" class="underline">+7 702 647 99 03</a>
+							</li>
+							<li class="flex items-center gap-3">
+								<svg width="18" height="18" viewBox="0 0 24 24" fill="#9b9b9c"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+								<a href="mailto:sayat@silkroadtech.kz" class="underline">sayat@silkroadtech.kz</a>
+							</li>
+							<li class="flex items-start gap-3">
+								<svg width="18" height="18" viewBox="0 0 24 24" fill="#9b9b9c"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+								Astana, Mangilik El Ave 36
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="footer-meta relative max-w-[1440px] mx-auto px-20 mt-12 pt-8 border-t border-black/10 flex justify-between text-[12px] text-[#9b9b9c]">
+				<span data-i18n="footer.copy">© 2026 Silk Road Tech. Все права защищены.</span>
+				<span data-i18n="footer.made">Made with care in Astana</span>
+			</div>
+		</footer>
+
+		<script>
+			const hamburger = document.getElementById("hamburger");
+			const mobileMenu = document.getElementById("mobileMenu");
+			const closeMenu  = document.getElementById("closeMenu");
+			if (hamburger && mobileMenu && closeMenu) {
+				const openMenu = () => { mobileMenu.classList.add("open"); document.body.classList.add("menu-open"); };
+				const hideMenu = () => { mobileMenu.classList.remove("open"); document.body.classList.remove("menu-open"); };
+				hamburger.addEventListener("click", openMenu);
+				closeMenu.addEventListener("click", hideMenu);
+				mobileMenu.querySelectorAll(".mobile-link").forEach(link => link.addEventListener("click", hideMenu));
+			}
+
+			// Scroll reveal
+			const revealEls = document.querySelectorAll(".reveal");
+			const observer  = new IntersectionObserver(
+				entries => entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add("visible"); observer.unobserve(e.target); } }),
+				{ threshold: 0.12 }
+			);
+			revealEls.forEach(el => observer.observe(el));
+		</script>
+		<script src="assets/i18n.js"></script>
+	</body>
+</html>
