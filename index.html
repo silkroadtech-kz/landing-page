@@ -450,6 +450,16 @@
 				transform: scaleY(1);
 			}
 
+			/* The off-screen mobile menu (translateX(100%)) still counts toward
+			   the page's scrollable overflow, which makes Android Chrome expand
+			   the layout viewport to 2x device width and skip the <=768px styles.
+			   Clip horizontal overflow at the root so the viewport stays
+			   device-width. */
+			html {
+				overflow-x: hidden;
+				overflow-x: clip;
+			}
+
 			/* Mobile menu */
 			.mobile-menu {
 				transform: translateX(100%);
@@ -2518,7 +2528,7 @@
 								"
 							>
 								<img
-									src="assets/cases/teplotekhnik.svg"
+									src="assets/cases/teplo.svg"
 									alt="Teplotekhnik"
 									loading="lazy"
 									decoding="async"
@@ -2564,23 +2574,30 @@
 
 					<!-- Right image card: 818x382 with "Как мы работаем?" overlay (figma: rectangle23813) -->
 					<div
-						class="relative rounded-[30px] w-[818px] h-[382px] overflow-hidden shrink-0"
+						id="howVideoCard"
+						class="relative rounded-[30px] w-[818px] h-[382px] overflow-hidden shrink-0 cursor-pointer"
 					>
-						<img
-							src="assets/how_card_photo.jpg"
-							alt="How we work"
-							loading="lazy"
-							decoding="async"
+						<video
+							id="howLoopVideo"
 							class="absolute w-full h-full object-cover"
-						/>
-						<div class="absolute inset-0 bg-black/20"></div>
-						<p
-							class="absolute inset-0 flex items-center justify-center font-jakarta font-bold text-[48px] text-center tracking-[12.96px] leading-[1.4]"
-							style="color: rgba(255, 255, 255, 0.49)"
-							data-i18n="how.question"
+							autoplay
+							muted
+							loop
+							playsinline
+							preload="metadata"
+							poster="assets/how_card_photo.jpg"
+							src="assets/video/how-we-work-loop-ru.mp4"
+						></video>
+						<div class="absolute inset-0 bg-black/20 pointer-events-none"></div>
+						<!-- mobile-only play affordance: the big .how-work-play button
+						     is display:none below 900px -->
+						<div
+							class="how-card-play-badge absolute bottom-3 right-3 w-[52px] h-[52px] rounded-full bg-[#9ac763] border-[4px] border-[#fafafa] items-center justify-center pointer-events-none"
 						>
-							Как мы работаем?
-						</p>
+							<svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+								<path d="M8 5.14v14l11-7-11-7z" fill="black" />
+							</svg>
+						</div>
 					</div>
 				</div>
 
@@ -4231,6 +4248,122 @@
 				}
 				window.addEventListener("load", applyTabletScale, { once: true });
 				window.addEventListener("resize", applyTabletScale, { passive: true });
+			})();
+		</script>
+
+		<!-- ============ HOW WE WORK: video modal ============ -->
+		<style>
+			.how-card-play-badge {
+				display: none;
+			}
+			@media (max-width: 900px) {
+				.how-card-play-badge {
+					display: flex;
+				}
+			}
+		</style>
+		<div
+			id="howVideoModal"
+			class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/85 p-6"
+		>
+			<button
+				id="howVideoClose"
+				class="absolute top-6 right-8 text-white/70 hover:text-white text-[44px] leading-none font-light"
+				aria-label="Close"
+			>
+				&times;
+			</button>
+			<div class="relative w-full max-w-[1100px]">
+				<video
+					id="howVideoPlayer"
+					class="w-full rounded-[20px] shadow-2xl"
+					controls
+					playsinline
+				></video>
+				<button
+					id="howVideoCta"
+					class="absolute z-10 left-1/2 -translate-x-1/2 opacity-0 pointer-events-none transition-opacity duration-500 rounded-full bg-[#9ac763] font-jakarta font-bold text-[#010205] hover:bg-[#aedd77]"
+					style="top: 61.5%; padding: 15px 38px; font-size: 21px"
+				>
+					<span data-i18n="nav.cta">Обсудить проект</span> →
+				</button>
+			</div>
+		</div>
+		<script>
+			(function () {
+				var LANG_KEY = "srt_lang";
+				function lang() {
+					return localStorage.getItem(LANG_KEY) === "en" ? "en" : "ru";
+				}
+
+				var loop = document.getElementById("howLoopVideo");
+				var modal = document.getElementById("howVideoModal");
+				var player = document.getElementById("howVideoPlayer");
+				var playBtn = document.querySelector(".how-work-play");
+
+				var cta = document.getElementById("howVideoCta");
+				function showCta(show) {
+					cta.classList.toggle("opacity-0", !show);
+					cta.classList.toggle("pointer-events-none", !show);
+				}
+
+				function openModal() {
+					showCta(false);
+					player.src = "assets/video/how-we-work-" + lang() + ".mp4";
+					modal.classList.remove("hidden");
+					modal.classList.add("flex");
+					player.play();
+				}
+				function closeModal() {
+					player.pause();
+					player.removeAttribute("src");
+					player.load();
+					modal.classList.add("hidden");
+					modal.classList.remove("flex");
+				}
+
+				/* reveal the real CTA when the in-video pill lands in the outro */
+				player.addEventListener("timeupdate", function () {
+					if (!player.duration) return;
+					showCta(player.currentTime >= player.duration - 3.5);
+				});
+				player.addEventListener("ended", function () {
+					showCta(true);
+				});
+				cta.addEventListener("click", function () {
+					closeModal();
+					var contacts = document.getElementById("contacts");
+					if (contacts) contacts.scrollIntoView({ behavior: "smooth" });
+				});
+
+				if (playBtn) playBtn.addEventListener("click", openModal);
+				/* the whole loop card opens the video too — on mobile the big
+				   play button is hidden, so this is the only entry point there */
+				var card = document.getElementById("howVideoCard");
+				if (card) card.addEventListener("click", openModal);
+				document
+					.getElementById("howVideoClose")
+					.addEventListener("click", closeModal);
+				modal.addEventListener("click", function (e) {
+					if (e.target === modal) closeModal();
+				});
+				document.addEventListener("keydown", function (e) {
+					if (e.key === "Escape" && !modal.classList.contains("hidden"))
+						closeModal();
+				});
+
+				/* swap the in-card loop when the site language changes */
+				document.addEventListener("srt:language-changed", function (e) {
+					if (!loop) return;
+					var src = "assets/video/how-we-work-loop-" + e.detail.lang + ".mp4";
+					if (!loop.src.endsWith(src)) {
+						loop.src = src;
+						loop.play();
+					}
+				});
+				if (loop && lang() !== "ru") {
+					loop.src = "assets/video/how-we-work-loop-en.mp4";
+				}
 			})();
 		</script>
 	</body>

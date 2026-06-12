@@ -447,39 +447,39 @@
 		},
 
 		/* ── Cases — PetroMindAI ── */
-		"cases.petromind.title": {
-			ru: "ERP-модуль интеллектуального управления человеческим капиталом",
-			en: "ERP module for intelligent human capital management",
+		"cases.teplo.title": {
+			ru: "Платформа автоподбора оборудования и генерации инженерной документации",
+			en: "Equipment selection platform with automated engineering documentation",
 		},
-		"cases.petromind.desc": {
-			ru: "ИИ-экспертная система для нефтегазового сектора, внедрённая во все подразделения компании.",
-			en: "AI expert system for the oil and gas sector, deployed across every department of the company.",
+		"cases.teplo.desc": {
+			ru: "Инженер задаёт параметры объекта — платформа мгновенно подбирает оптимальные насосы и теплообменники и автоматически формирует полный пакет проектной документации.",
+			en: "The engineer enters project parameters — the platform instantly selects the optimal pumps and heat exchangers and automatically generates a complete set of engineering documentation.",
 		},
-		"cases.petromind.b1": {
-			ru: "Автоматизированный онбординг новых сотрудников",
-			en: "Automated onboarding for new employees",
+		"cases.teplo.b1": {
+			ru: "Интеллектуальный подбор насосов и теплообменников по параметрам",
+			en: "Intelligent pump and heat exchanger selection by technical parameters",
 		},
-		"cases.petromind.b2": {
-			ru: "BI-аналитика и отчётность для C-level",
-			en: "BI analytics and reporting for C-level",
+		"cases.teplo.b2": {
+			ru: "Автогенерация готового пакета проектной документации",
+			en: "Auto-generation of a complete engineering documentation package",
 		},
 
-		/* ── Cases — SmartLab ── */
-		"cases.smartlab.title": {
-			ru: "Централизованное ядро управления документами",
-			en: "Centralized document management core",
+		/* ── Cases — AST ── */
+		"cases.ast.title": {
+			ru: "Платформа для производителя трансформаторного и электрораспределительного оборудования",
+			en: "Platform for a transformer and electrical distribution equipment manufacturer",
 		},
-		"cases.smartlab.desc": {
-			ru: "Система электронного документооборота, адаптированная под бизнес-процессы крупных предприятий.",
-			en: "Electronic document management system tailored to the business processes of large enterprises.",
+		"cases.ast.desc": {
+			ru: "Казахстанский производитель полного цикла: трансформаторные подстанции и распределительные устройства на 0,4–500 кВ, ISO 9001, 1000+ клиентов по Казахстану и СНГ.",
+			en: "Full-cycle Kazakhstani manufacturer: transformer substations and switchgear from 0.4–500 kV, ISO 9001 certified, 1000+ clients across Kazakhstan and CIS.",
 		},
-		"cases.smartlab.b1": {
-			ru: "Интеграция уровня enterprise",
-			en: "Enterprise-standard integration",
+		"cases.ast.b1": {
+			ru: "Полный цикл производства подстанций (0,4–500 кВ)",
+			en: "Full-cycle substation production (0.4–500 kV)",
 		},
-		"cases.smartlab.b2": {
-			ru: "Бизнес-процессы для крупных холдингов",
-			en: "Business processes for large holding companies",
+		"cases.ast.b2": {
+			ru: "1000+ клиентов по Казахстану и странам СНГ",
+			en: "1000+ clients across Kazakhstan and CIS countries",
 		},
 
 		/* ── Cases — ContentFlow ── */
