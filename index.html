@@ -1966,9 +1966,14 @@
 					</button>
 				</div>
 			</nav>
-			<!-- Mobile menu overlay -->
+			<!-- Mobile menu overlay. The clipping wrapper keeps the off-screen
+			     (translateX(100%)) menu from widening the layout viewport on
+			     mobile — fixed elements escape html's overflow clipping. -->
 			<div
-				class="mobile-menu fixed inset-0 top-0 bg-white z-[100] p-8 pt-20 lg:hidden"
+				class="fixed inset-0 z-[100] overflow-hidden pointer-events-none lg:hidden"
+			>
+			<div
+				class="mobile-menu absolute inset-0 top-0 bg-white p-8 pt-20 pointer-events-auto"
 				id="mobileMenu"
 			>
 				<button class="absolute top-6 right-6 text-3xl" id="closeMenu">
@@ -1997,6 +2002,7 @@
 						<a href="#faq" class="mobile-link" data-i18n="nav.faq">FAQ</a>
 					</li>
 				</ul>
+			</div>
 			</div>
 		</header>
 
@@ -4283,7 +4289,11 @@
 				<button
 					id="howVideoCta"
 					class="absolute z-10 left-1/2 -translate-x-1/2 opacity-0 pointer-events-none transition-opacity duration-500 rounded-full bg-[#9ac763] font-jakarta font-bold text-[#010205] hover:bg-[#aedd77]"
-					style="top: 61.5%; padding: 15px 38px; font-size: 21px"
+					style="
+						top: 61.5%;
+						padding: clamp(8px, 1.4vw, 15px) clamp(18px, 3.5vw, 38px);
+						font-size: clamp(13px, 1.9vw, 21px);
+					"
 				>
 					<span data-i18n="nav.cta">Обсудить проект</span> →
 				</button>
