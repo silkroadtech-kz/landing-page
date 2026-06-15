@@ -54,13 +54,11 @@
 			rel="icon"
 			href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23010205'/%3E%3Ctext x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial,sans-serif' font-size='28' font-weight='700' fill='%239ac763'%3ESRT%3C/text%3E%3C/svg%3E"
 		/>
-		<script src="https://cdn.tailwindcss.com"></script>
+		<link rel="stylesheet" href="assets/tailwind.css">
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link
-			href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Manrope:wght@500;700;800&family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,700&family=Sora:wght@600;700&family=Roboto:wght@400;500;600;700&display=swap"
-			rel="stylesheet"
-		/>
+		<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Manrope:wght@500;700;800&family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,700&family=Sora:wght@600;700&family=Roboto:wght@400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
+		<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Manrope:wght@500;700;800&family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,700&family=Sora:wght@600;700&family=Roboto:wght@400;500;600;700&display=swap" /></noscript>
 		<style>
 			:root {
 				--green: #9ac763;
@@ -1871,9 +1869,11 @@
 				<div class="flex items-center gap-[74px]">
 					<a href="/" aria-label="Silk Road Tech home">
 						<img
-							src="assets/logo.svg"
+							src="assets/logo.webp"
 							alt="Silk Road Tech"
 							class="h-6 w-auto logo-img"
+							width="208"
+							height="48"
 							decoding="async"
 							fetchpriority="high"
 						/>
@@ -2498,7 +2498,7 @@
 								"
 							>
 								<img
-									src="assets/cases/orkenlink_cover.png"
+									src="assets/cases/orkenlink_cover.webp"
 									alt="Örkenlink"
 									loading="lazy"
 									decoding="async"
@@ -2520,7 +2520,7 @@
 								"
 							>
 								<img
-									src="assets/cases/caepco.png"
+									src="assets/cases/caepco.webp"
 									alt="CAEPCO"
 									loading="lazy"
 									decoding="async"
@@ -3553,9 +3553,11 @@
 						class="inline-block mb-8"
 					>
 						<img
-							src="assets/logo.svg"
+							src="assets/logo.webp"
 							alt="Silk Road Tech"
 							class="h-8 w-auto logo-img"
+							width="208"
+							height="48"
 							loading="lazy"
 							decoding="async"
 						/>
@@ -3639,6 +3641,8 @@
 							alt="Astana Hub"
 							loading="lazy"
 							decoding="async"
+							width="116"
+							height="64"
 							class="h-16 w-auto astana-hub-img"
 						/>
 					</div>
@@ -4136,7 +4140,7 @@
 				}
 			});
 		</script>
-		<script src="assets/i18n.js"></script>
+		<script defer src="assets/i18n.js"></script>
 		<script>
 			(function () {
 				var DESKTOP_W = 1440;

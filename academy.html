@@ -32,13 +32,11 @@
 			rel="icon"
 			href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23010205'/%3E%3Ctext x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial,sans-serif' font-size='28' font-weight='700' fill='%239ac763'%3ESRT%3C/text%3E%3C/svg%3E"
 		/>
-		<script src="https://cdn.tailwindcss.com"></script>
+		<link rel="stylesheet" href="assets/tailwind.css">
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link
-			href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Manrope:wght@500;700;800&family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,700&family=Roboto:wght@400;500;600;700&display=swap"
-			rel="stylesheet"
-		/>
+		<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Manrope:wght@500;700;800&family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,700&family=Roboto:wght@400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
+		<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Manrope:wght@500;700;800&family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,700&family=Roboto:wght@400;500;600;700&display=swap" /></noscript>
 		<style>
 			:root {
 				--green: #9ac763;
@@ -165,7 +163,7 @@
 				<div class="flex items-center gap-[74px]">
 					<a href="/" aria-label="Silk Road Tech home">
 						<img
-							src="assets/logo.svg"
+							src="assets/logo.webp"
 							alt="Silk Road Tech"
 							class="h-6 w-auto logo-img"
 						/>
@@ -426,7 +424,7 @@
 			>
 				<div class="max-w-[534px]">
 					<a href="/" aria-label="Silk Road Tech home" class="inline-block mb-8">
-						<img src="assets/logo.svg" alt="Silk Road Tech" class="h-8 w-auto logo-img" />
+						<img src="assets/logo.webp" alt="Silk Road Tech" class="h-8 w-auto logo-img" />
 					</a>
 					<p class="font-roboto text-[14px] leading-6 text-[#9b9b9c] mb-8" data-i18n="footer.desc">
 						Мы предлагаем комплексный IT-аутсорсинг, охватывающий все аспекты вашей цифровой разработки. От проектирования архитектуры и разработки ПО до облачных решений и кибербезопасности — наша команда обладает экспертизой для реализации проектов любой сложности.
@@ -455,7 +453,7 @@
 					</div>
 					<div class="flex items-center gap-3 mt-8">
 						<span class="font-roboto text-[12px] text-[#9b9b9c]" data-i18n="footer.resident">Резидент</span>
-						<img src="assets/astanahub.png.webp" alt="Astana Hub" class="h-16 w-auto astana-hub-img" />
+						<img src="assets/astanahub.png.webp" alt="Astana Hub" class="h-16 w-auto astana-hub-img" width="116" height="64" loading="lazy" decoding="async" />
 					</div>
 				</div>
 
@@ -525,6 +523,6 @@
 			);
 			revealEls.forEach(el => observer.observe(el));
 		</script>
-		<script src="assets/i18n.js"></script>
+		<script defer src="assets/i18n.js"></script>
 	</body>
 </html>
