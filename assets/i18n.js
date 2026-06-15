@@ -39,7 +39,7 @@
 		/* ── Hero ── */
 		"hero.title": {
 			ru: '<span class="text-[#9ac763]">Делаем продукты</span> под ваши бизнес процессы',
-			en: "We build products around your business processes",
+			en: '<span class="text-[#9ac763]">We build products</span> around your business processes',
 		},
 		"hero.desc": {
 			ru: "Быстро. Качественно. Недорого.",
