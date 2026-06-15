@@ -3,3 +3,6 @@ video/node_modules/
 video/out/
 node_modules/
 package-lock.json
+.DS_Store
+.playwright-mcp/
+.superdesign/
