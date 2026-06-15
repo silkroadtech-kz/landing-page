@@ -460,11 +460,8 @@
 			.mobile-menu {
 				transform: translateX(100%);
 				transition: transform 0.3s ease;
-				width: 100vw;
-				height: 100vh;
-				height: 100dvh;
-				top: 0;
-				left: 0;
+				width: 100%;
+				height: 100%;
 				overflow-y: auto;
 			}
 			.mobile-menu.open {
@@ -1964,45 +1961,46 @@
 					</button>
 				</div>
 			</nav>
-			<!-- Mobile menu overlay. The clipping wrapper keeps the off-screen
-			     (translateX(100%)) menu from widening the layout viewport on
-			     mobile — fixed elements escape html's overflow clipping. -->
-			<div
-				class="fixed inset-0 z-[100] overflow-hidden pointer-events-none lg:hidden"
-			>
-			<div
-				class="mobile-menu absolute inset-0 top-0 bg-white p-8 pt-20 pointer-events-auto"
-				id="mobileMenu"
-			>
-				<button class="absolute top-6 right-6 text-3xl" id="closeMenu">
-					&times;
-				</button>
-				<ul class="flex flex-col gap-6 text-[20px] font-semibold">
-					<li>
-						<a href="#services" class="mobile-link" data-i18n="nav.services"
-							>Услуги</a
-						>
-					</li>
-					<li>
-						<a href="#process" class="mobile-link" data-i18n="nav.process"
-							>Процесс</a
-						>
-					</li>
-					<li><a href="/cases" data-i18n="nav.cases">Кейсы</a></li>
-					<li><a href="/about" data-i18n="nav.about">О нас</a></li>
-					<li><a href="/academy" data-i18n="nav.academy">Академия</a></li>
-					<li>
-						<a href="#contacts" class="mobile-link" data-i18n="nav.contacts"
-							>Контакты</a
-						>
-					</li>
-					<li>
-						<a href="#faq" class="mobile-link" data-i18n="nav.faq">FAQ</a>
-					</li>
-				</ul>
-			</div>
-			</div>
 		</header>
+
+		<!-- Mobile menu overlay. Placed outside <header> so the header's
+		     backdrop-filter doesn't create a new containing block for this
+		     fixed element (iOS Safari / Chrome enforce that behaviour). -->
+		<div
+			class="fixed inset-0 z-[100] overflow-hidden pointer-events-none lg:hidden"
+		>
+		<div
+			class="mobile-menu absolute inset-0 top-0 bg-white p-8 pt-20 pointer-events-auto"
+			id="mobileMenu"
+		>
+			<button class="absolute top-6 right-6 text-3xl" id="closeMenu">
+				&times;
+			</button>
+			<ul class="flex flex-col gap-6 text-[20px] font-semibold">
+				<li>
+					<a href="#services" class="mobile-link" data-i18n="nav.services"
+						>Услуги</a
+					>
+				</li>
+				<li>
+					<a href="#process" class="mobile-link" data-i18n="nav.process"
+						>Процесс</a
+					>
+				</li>
+				<li><a href="/cases" data-i18n="nav.cases">Кейсы</a></li>
+				<li><a href="/about" data-i18n="nav.about">О нас</a></li>
+				<li><a href="/academy" data-i18n="nav.academy">Академия</a></li>
+				<li>
+					<a href="#contacts" class="mobile-link" data-i18n="nav.contacts"
+						>Контакты</a
+					>
+				</li>
+				<li>
+					<a href="#faq" class="mobile-link" data-i18n="nav.faq">FAQ</a>
+				</li>
+			</ul>
+		</div>
+		</div>
 
 		<!-- ============ HOOK / HERO ============ -->
 		<section

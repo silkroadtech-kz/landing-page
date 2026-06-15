@@ -34,6 +34,10 @@ html.dark header ul li a {
   color: #d4d4d4 !important;
 }
 
+html.dark #hamburger span {
+  background-color: #f0f0f0 !important;
+}
+
 html.dark header ul li a:hover {
   color: #9ac763 !important;
 }
