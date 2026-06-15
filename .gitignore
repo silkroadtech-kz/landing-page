@@ -1,3 +1,5 @@
 .DS_Store
 video/node_modules/
 video/out/
+node_modules/
+package-lock.json

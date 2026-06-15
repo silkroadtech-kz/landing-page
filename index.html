@@ -76,10 +76,9 @@
 				font-family: "Plus Jakarta Sans", system-ui, sans-serif;
 				color: #010205;
 				background-color: #efefef;
-				background-image: url("assets/bg_noise.png");
+				background-image: url("assets/bg_noise.webp");
 				background-repeat: repeat;
-				background-size: 1440px auto;
-				background-attachment: fixed;
+				background-size: 400px auto;
 			}
 			.font-jakarta {
 				font-family: "Plus Jakarta Sans", sans-serif;
@@ -109,7 +108,7 @@
 				color: transparent;
 			}
 			.noise {
-				background-image: url("assets/noise_image.png");
+				background-image: url("assets/noise_image.webp");
 				background-size: 600px;
 				opacity: 0.06;
 				pointer-events: none;
@@ -2076,7 +2075,7 @@
 								style="width: 42.124px; height: 45.799px"
 							>
 								<img
-									src="assets/partner_awara.png"
+									src="assets/partner_awara.webp"
 									alt="Awara IT"
 									style="
 										position: absolute;
@@ -2093,7 +2092,7 @@
 								style="width: 87.573px; height: 39.257px"
 							>
 								<img
-									src="assets/partner_sprite.png"
+									src="assets/partner_sprite.webp"
 									alt="AICA"
 									style="
 										position: absolute;
@@ -2110,7 +2109,7 @@
 								style="width: 113.337px; height: 36.975px"
 							>
 								<img
-									src="assets/partner_sprite.png"
+									src="assets/partner_sprite.webp"
 									alt="TIMDOS"
 									style="
 										position: absolute;
@@ -2127,7 +2126,7 @@
 								style="width: 78.852px; height: 45.408px"
 							>
 								<img
-									src="assets/partner_smartlab.png"
+									src="assets/partner_smartlab.webp"
 									alt="SmartLab"
 									style="
 										position: absolute;
@@ -2144,7 +2143,7 @@
 								style="width: 80.142px; height: 37.624px"
 							>
 								<img
-									src="assets/partner_sprite.png"
+									src="assets/partner_sprite.webp"
 									alt="abm"
 									style="
 										position: absolute;
@@ -2161,7 +2160,7 @@
 								style="width: 99.134px; height: 29.84px"
 							>
 								<img
-									src="assets/partner_sprite.png"
+									src="assets/partner_sprite.webp"
 									alt="Division"
 									style="
 										position: absolute;
@@ -2179,7 +2178,7 @@
 								style="width: 42.124px; height: 45.799px"
 							>
 								<img
-									src="assets/partner_awara.png"
+									src="assets/partner_awara.webp"
 									alt="Awara IT"
 									style="
 										position: absolute;
@@ -2196,7 +2195,7 @@
 								style="width: 87.573px; height: 39.257px"
 							>
 								<img
-									src="assets/partner_sprite.png"
+									src="assets/partner_sprite.webp"
 									alt="AICA"
 									style="
 										position: absolute;
@@ -2213,7 +2212,7 @@
 								style="width: 113.337px; height: 36.975px"
 							>
 								<img
-									src="assets/partner_sprite.png"
+									src="assets/partner_sprite.webp"
 									alt="TIMDOS"
 									style="
 										position: absolute;
@@ -2230,7 +2229,7 @@
 								style="width: 78.852px; height: 45.408px"
 							>
 								<img
-									src="assets/partner_smartlab.png"
+									src="assets/partner_smartlab.webp"
 									alt="SmartLab"
 									style="
 										position: absolute;
@@ -2247,7 +2246,7 @@
 								style="width: 80.142px; height: 37.624px"
 							>
 								<img
-									src="assets/partner_sprite.png"
+									src="assets/partner_sprite.webp"
 									alt="abm"
 									style="
 										position: absolute;
@@ -2264,7 +2263,7 @@
 								style="width: 99.134px; height: 29.84px"
 							>
 								<img
-									src="assets/partner_sprite.png"
+									src="assets/partner_sprite.webp"
 									alt="Division"
 									style="
 										position: absolute;
@@ -2285,13 +2284,16 @@
 						class="hero-card hero-card-photo absolute left-[781px] top-[112px] w-[303px] h-[275px] rounded-tl-[1000px] rounded-tr-[20px] rounded-b-[20px] overflow-hidden shadow-xl"
 						style="animation-delay: 0.3s"
 					>
-						<img
-							src="assets/hero_image.jpg"
-							class="w-full h-full object-cover"
-							alt="Silk Road Tech team at work"
-							decoding="async"
-							fetchpriority="high"
-						/>
+						<picture>
+							<source srcset="assets/hero_image.webp" type="image/webp">
+							<img
+								src="assets/hero_image.jpg"
+								class="w-full h-full object-cover"
+								alt="Silk Road Tech team at work"
+								decoding="async"
+								fetchpriority="high"
+							/>
+						</picture>
 						<div class="absolute inset-0 bg-black/20 backdrop-blur-[2px]"></div>
 					</div>
 
@@ -2350,20 +2352,23 @@
 					>
 						<!-- background orbs/blobs from figma image 60 (rotated 115deg, opacity 60%) -->
 						<div class="absolute inset-0 pointer-events-none">
-							<img
-								src="assets/dark_card.png"
-								class="absolute opacity-60"
-								style="
-									left: -21%;
-									top: -30%;
-									width: 128%;
-									height: 130%;
-									transform: rotate(115.48deg);
-								"
-								alt="Decorative growth background"
-								decoding="async"
-								fetchpriority="high"
-							/>
+							<picture>
+								<source srcset="assets/dark_card.webp" type="image/webp">
+								<img
+									src="assets/dark_card.png"
+									class="absolute opacity-60"
+									style="
+										left: -21%;
+										top: -30%;
+										width: 128%;
+										height: 130%;
+										transform: rotate(115.48deg);
+									"
+									alt="Decorative growth background"
+									decoding="async"
+									fetchpriority="high"
+								/>
+							</picture>
 						</div>
 
 						<!-- text block (figma left offset 33 from card → absolute left 814 - card 781 = 33) -->
@@ -2449,19 +2454,22 @@
 						<div
 							class="absolute inset-[-40%] pointer-events-none opacity-40 flex items-center justify-center"
 						>
-							<img
-								src="assets/how_texture.png"
-								alt=""
-								loading="lazy"
-								decoding="async"
-								style="
-									width: 128%;
-									height: 130%;
-									transform: rotate(115.48deg);
-									object-fit: cover;
-									max-width: none;
-								"
-							/>
+							<picture>
+								<source srcset="assets/how_texture.webp" type="image/webp">
+								<img
+									src="assets/how_texture.png"
+									alt=""
+									loading="lazy"
+									decoding="async"
+									style="
+										width: 128%;
+										height: 130%;
+										transform: rotate(115.48deg);
+										object-fit: cover;
+										max-width: none;
+									"
+								/>
+							</picture>
 						</div>
 						<!-- Counter -->
 						<div class="relative flex flex-col gap-2">
@@ -2586,12 +2594,11 @@
 						<video
 							id="howLoopVideo"
 							class="absolute w-full h-full object-cover"
-							autoplay
 							muted
 							loop
 							playsinline
 							preload="metadata"
-							poster="assets/how_card_photo.jpg"
+							poster="assets/how_card_photo.webp"
 							src="assets/video/how-we-work-loop-ru.mp4"
 						></video>
 						<div class="absolute inset-0 bg-black/20 pointer-events-none"></div>
@@ -4362,13 +4369,32 @@
 						closeModal();
 				});
 
+				/* play the loop only while its card is on screen */
+				var loopInView = false;
+				if (loop && card) {
+					var loopObserver = new IntersectionObserver(
+						function (entries) {
+							entries.forEach(function (e) {
+								loopInView = e.isIntersecting;
+								if (loopInView) {
+									loop.play().catch(function () {});
+								} else {
+									loop.pause();
+								}
+							});
+						},
+						{ threshold: 0.25 },
+					);
+					loopObserver.observe(card);
+				}
+
 				/* swap the in-card loop when the site language changes */
 				document.addEventListener("srt:language-changed", function (e) {
 					if (!loop) return;
 					var src = "assets/video/how-we-work-loop-" + e.detail.lang + ".mp4";
 					if (!loop.src.endsWith(src)) {
 						loop.src = src;
-						loop.play();
+						if (loopInView) loop.play().catch(function () {});
 					}
 				});
 				if (loop && lang() !== "ru") {
