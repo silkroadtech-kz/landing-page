@@ -4,9 +4,9 @@
 const LABELS = {
 	first_name: "Имя",
 	last_name: "Фамилия",
-	company: "Компания / имя",
-	about: "Чем занимаетесь",
-	contact: "Телефон / Telegram",
+	company: "Имя / компания",
+	about: "Сайт / задача",
+	contact: "Контакт",
 	message: "Сообщение",
 };
 

@@ -182,12 +182,12 @@
 		"lpg.faq.a3": { ru: "Обычно 7 дней после согласования макета. Срочные проекты обсуждаемы.", en: "Usually 7 days after the mockup is approved. Rush projects are negotiable." },
 		"lpg.req.eyebrow": { ru: "Бесплатный аудит", en: "Free audit" },
 		"lpg.req.title": { ru: "Получите бесплатный аудит сайта", en: "Get a free audit of your site" },
-		"lpg.req.sub": { ru: "Опишите, чем занимаетесь — пришлём аудит и план, как получать больше заявок.", en: "Tell us what you do — we'll send an audit and a plan to get more leads." },
+		"lpg.req.sub": { ru: "Оставьте ссылку на сайт или коротко опишите задачу — пришлём аудит и план, как получать больше заявок.", en: "Leave a site link or briefly describe the task — we'll send an audit and a plan to get more leads." },
 		"lpg.req.b2": { ru: "› Первая консультация — бесплатно", en: "› First consultation is free" },
 		"lpg.req.submit": { ru: "Получить аудит", en: "Get the audit" },
-		"lpg.req.ph.company": { ru: "Компания или имя", en: "Company or name" },
-		"lpg.req.ph.about": { ru: "Чем занимаетесь", en: "What you do" },
-		"lpg.req.ph.contact": { ru: "Телефон или Telegram", en: "Phone or Telegram" },
+		"lpg.req.ph.company": { ru: "Ваше имя или компания", en: "Your name or company" },
+		"lpg.req.ph.about": { ru: "Ссылка на сайт или задача", en: "Site link or task" },
+		"lpg.req.ph.contact": { ru: "Как с вами связаться", en: "Best contact" },
 
 		/* ── Process ── */
 		"process.heading": {
@@ -309,6 +309,10 @@
 		"contact.subtitle": {
 			ru: 'Ответим в течение 1 рабочего дня. <span class="font-bold text-[#9ac763]">Первая консультация — бесплатно.</span>',
 			en: 'We\'ll respond within 1 business day. <span class="font-bold text-[#9ac763]">First consultation — free.</span>',
+		},
+		"contact.direct": {
+			ru: "Или напишите напрямую:",
+			en: "Or message us directly:",
 		},
 		"contact.fname": {
 			ru: "Имя",

@@ -505,17 +505,17 @@
 						Получите бесплатный аудит сайта
 					</h2>
 					<p class="font-jakarta font-medium text-[16px] leading-[1.8] text-[#878c91] mb-8" data-i18n="lpg.req.sub">
-						Опишите, чем занимаетесь — пришлём аудит и план, как получать больше
-						заявок.
+						Оставьте ссылку на сайт или коротко опишите задачу — пришлём аудит
+						и план, как получать больше заявок.
 					</p>
 					<ul class="font-jakarta text-[15px] text-white/80 space-y-3 mb-8">
 						<li data-i18n="lpg.req.b2">› Первая консультация — бесплатно</li>
 					</ul>
 					<form id="lpForm" class="bg-[#0f1116] rounded-xl p-6 space-y-6" action="/api/contact" method="POST">
 						<input type="hidden" name="_subject" value="New audit request from /landing" />
-						<input type="text" name="company" required placeholder="Компания или имя" data-i18n-placeholder="lpg.req.ph.company" class="w-full bg-[#141922] border border-[#3d3d3d] rounded-xl px-4 py-3 text-white text-[14px] placeholder:text-[#5a5a5a] focus:outline-none focus:border-[#9ac763]" />
-						<input type="text" name="about" required placeholder="Чем занимаетесь" data-i18n-placeholder="lpg.req.ph.about" class="w-full bg-[#141922] border border-[#3d3d3d] rounded-xl px-4 py-3 text-white text-[14px] placeholder:text-[#5a5a5a] focus:outline-none focus:border-[#9ac763]" />
-						<input type="text" name="contact" required placeholder="Телефон или Telegram" data-i18n-placeholder="lpg.req.ph.contact" class="w-full bg-[#141922] border border-[#3d3d3d] rounded-xl px-4 py-3 text-white text-[14px] placeholder:text-[#5a5a5a] focus:outline-none focus:border-[#9ac763]" />
+						<input type="text" name="company" required placeholder="Ваше имя или компания" data-i18n-placeholder="lpg.req.ph.company" class="w-full bg-[#141922] border border-[#3d3d3d] rounded-xl px-4 py-3 text-white text-[14px] placeholder:text-[#5a5a5a] focus:outline-none focus:border-[#9ac763]" />
+						<input type="text" name="about" required placeholder="Ссылка на сайт или задача" data-i18n-placeholder="lpg.req.ph.about" class="w-full bg-[#141922] border border-[#3d3d3d] rounded-xl px-4 py-3 text-white text-[14px] placeholder:text-[#5a5a5a] focus:outline-none focus:border-[#9ac763]" />
+						<input type="text" name="contact" required placeholder="Как с вами связаться" data-i18n-placeholder="lpg.req.ph.contact" class="w-full bg-[#141922] border border-[#3d3d3d] rounded-xl px-4 py-3 text-white text-[14px] placeholder:text-[#5a5a5a] focus:outline-none focus:border-[#9ac763]" />
 						<button type="submit" class="w-full bg-[#9ac763] rounded-xl px-8 py-5 font-inter font-bold text-[16px] tracking-[1.28px] uppercase text-black hover:brightness-110 transition" data-i18n="lpg.req.submit">
 							Получить аудит
 						</button>
