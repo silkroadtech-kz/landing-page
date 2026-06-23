@@ -35,6 +35,7 @@
 			ru: "FAQ",
 			en: "FAQ",
 		},
+		"nav.landing": { ru: "Лендинги", en: "Landing pages" },
 
 		/* ── Hero ── */
 		"hero.title": {
@@ -133,6 +134,29 @@
 			ru: "Аппаратно-программная интеграция, IoT-платформы, мониторинг производства, умные склады.",
 			en: "Hardware-software integration, IoT platforms, production monitoring, smart warehouses.",
 		},
+
+		/* ── Landing pages ── */
+		"lp.title": { ru: "Разработка лендингов и сайтов под ключ", en: "Turnkey landing page & website development" },
+		"lp.lead": {
+			ru: "Проектируем и запускаем продающие лендинги и корпоративные сайты под ваши бизнес-задачи: от идеи и прототипа до публикации на реальном домене. Адаптивная вёрстка, высокая скорость загрузки и SEO-оптимизация под Google и Яндекс.",
+			en: "We design and launch high-converting landing pages and corporate websites tailored to your business — from idea and prototype to a live domain. Responsive, fast-loading, and SEO-optimized for Google and Yandex.",
+		},
+		"lp.c1.title": { ru: "Лендинг под ключ", en: "Landing page, turnkey" },
+		"lp.c1.desc": {
+			ru: "Создание лендинг-страницы с проработанной структурой, текстами и дизайном, заточенной под конверсию и заявки.",
+			en: "A landing page with a thought-out structure, copy, and design built to convert visitors into leads.",
+		},
+		"lp.c2.title": { ru: "Корпоративные сайты", en: "Corporate websites" },
+		"lp.c2.desc": {
+			ru: "Многостраничные сайты и каталоги: понятная навигация, аналитика и интеграции с CRM.",
+			en: "Multi-page sites and catalogs: clear navigation, analytics, and CRM integrations.",
+		},
+		"lp.c3.title": { ru: "SEO и скорость", en: "SEO & speed" },
+		"lp.c3.desc": {
+			ru: "Техническая SEO-оптимизация, Core Web Vitals и быстрая загрузка, чтобы сайт находили в поиске.",
+			en: "Technical SEO, Core Web Vitals, and fast loading so your site gets found in search.",
+		},
+		"lp.cta": { ru: "Заказать лендинг", en: "Order a landing page" },
 
 		/* ── Process ── */
 		"process.heading": {
@@ -234,6 +258,16 @@
 		"faq.a5": {
 			ru: "Да, рассматриваем точечные задачи и MVP.",
 			en: "Yes, we consider focused tasks and MVPs.",
+		},
+		"faq.q6": { ru: "Сколько стоит разработка лендинга?", en: "How much does a landing page cost?" },
+		"faq.a6": {
+			ru: "Стоимость зависит от структуры, дизайна и интеграций. Опишите задачу — подготовим смету в течение 1 рабочего дня. Первая консультация бесплатно.",
+			en: "It depends on structure, design, and integrations. Describe your task — we'll prepare a quote within 1 business day. First consultation is free.",
+		},
+		"faq.q7": { ru: "За какой срок вы сделаете лендинг?", en: "How fast can you build a landing page?" },
+		"faq.a7": {
+			ru: "Лендинг под ключ обычно запускаем за 1–2 недели после согласования структуры и контента.",
+			en: "A turnkey landing page typically launches in 1–2 weeks after the structure and content are agreed.",
 		},
 
 		/* ── Contact form ── */
