@@ -509,11 +509,9 @@
 						заявок.
 					</p>
 					<ul class="font-jakarta text-[15px] text-white/80 space-y-3 mb-8">
-						<li data-i18n="lpg.req.b1">› Ответ в течение рабочего дня</li>
 						<li data-i18n="lpg.req.b2">› Первая консультация — бесплатно</li>
-						<li data-i18n="lpg.req.b3">› Резидент Astana Hub · 40+ проектов</li>
 					</ul>
-					<form class="bg-[#0f1116] rounded-xl p-6 space-y-6" action="https://formspree.io/f/xqewkzvb" method="POST">
+					<form id="lpForm" class="bg-[#0f1116] rounded-xl p-6 space-y-6" action="/api/contact" method="POST">
 						<input type="hidden" name="_subject" value="New audit request from /landing" />
 						<input type="text" name="company" required placeholder="Компания или имя" data-i18n-placeholder="lpg.req.ph.company" class="w-full bg-[#141922] border border-[#3d3d3d] rounded-xl px-4 py-3 text-white text-[14px] placeholder:text-[#5a5a5a] focus:outline-none focus:border-[#9ac763]" />
 						<input type="text" name="about" required placeholder="Чем занимаетесь" data-i18n-placeholder="lpg.req.ph.about" class="w-full bg-[#141922] border border-[#3d3d3d] rounded-xl px-4 py-3 text-white text-[14px] placeholder:text-[#5a5a5a] focus:outline-none focus:border-[#9ac763]" />
@@ -521,6 +519,7 @@
 						<button type="submit" class="w-full bg-[#9ac763] rounded-xl px-8 py-5 font-inter font-bold text-[16px] tracking-[1.28px] uppercase text-black hover:brightness-110 transition" data-i18n="lpg.req.submit">
 							Получить аудит
 						</button>
+						<p id="lpFormStatus" class="hidden text-[14px] text-white/80"></p>
 					</form>
 				</div>
 			</div>
@@ -718,7 +717,7 @@
 										d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"
 									/>
 								</svg>
-								Astana, Mangilik El Ave 36
+								<a href="https://2gis.kz/astana/firm/70030076206344445" target="_blank" rel="noreferrer" class="underline">Astana, Mangilik El Ave 36</a>
 							</li>
 						</ul>
 					</div>
@@ -772,6 +771,46 @@
 					});
 				});
 			});
+		</script>
+		<script>
+			(function () {
+				const form = document.getElementById("lpForm");
+				const status = document.getElementById("lpFormStatus");
+				if (!form) return;
+				const btn = form.querySelector("button[type=submit]");
+				const defaultLabel = btn ? btn.textContent : "";
+				form.addEventListener("submit", async (e) => {
+					e.preventDefault();
+					if (btn) {
+						btn.disabled = true;
+						btn.textContent = "Отправка...";
+					}
+					if (status) status.classList.add("hidden");
+					try {
+						const response = await fetch(form.action, {
+							method: "POST",
+							headers: { Accept: "application/json" },
+							body: new URLSearchParams(new FormData(form)),
+						});
+						if (!response.ok) throw new Error("submit_failed");
+						form.reset();
+						if (btn) btn.textContent = "Отправлено ✓";
+						if (status) {
+							status.textContent = "Спасибо! Свяжемся с вами в течение 1 рабочего дня.";
+							status.classList.remove("hidden");
+						}
+					} catch (err) {
+						if (btn) btn.textContent = defaultLabel;
+						if (status) {
+							status.textContent =
+								"Не удалось отправить. Попробуйте ещё раз или напишите на sayat@silkroadtech.kz.";
+							status.classList.remove("hidden");
+						}
+					} finally {
+						if (btn) btn.disabled = false;
+					}
+				});
+			})();
 		</script>
 		<script defer src="assets/i18n.js"></script>
 		<script>

@@ -1751,7 +1751,7 @@
 					<form
 						id="contactForm"
 						class="bg-[#0f1116] rounded-xl p-6 space-y-6"
-						action="https://formspree.io/f/xqewkzvb"
+						action="/api/contact"
 						method="POST"
 					>
 						<input
@@ -2051,7 +2051,7 @@
 										d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"
 									/>
 								</svg>
-								Astana, Mangilik El Ave 36
+								<a href="https://2gis.kz/astana/firm/70030076206344445" target="_blank" rel="noreferrer" class="underline">Astana, Mangilik El Ave 36</a>
 							</li>
 						</ul>
 					</div>
@@ -2354,7 +2354,7 @@
 								headers: {
 									Accept: "application/json",
 								},
-								body: new FormData(form),
+								body: new URLSearchParams(new FormData(form)),
 							});
 
 							if (!response.ok) throw new Error("submit_failed");
@@ -2374,7 +2374,7 @@
 							submitBtn.style.background = "#9ac763";
 							if (formStatus) {
 								formStatus.textContent =
-									"The form is currently configured on a temporary Formspree endpoint. Replace the action with your Formspree code before publishing.";
+									"Couldn't send the request. Please try again or write to sayat@silkroadtech.kz.";
 								formStatus.classList.remove("hidden");
 							}
 						} finally {
