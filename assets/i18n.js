@@ -98,6 +98,10 @@
 		},
 
 		/* ── Services ── */
+		"services.title": {
+			ru: "Что мы предлагаем",
+			en: "What we offer",
+		},
 		"services.lead": {
 			ru: '<span class="font-bold text-[#9ac763]">Четыре ключевых направления</span> — гибкий подход: выполняем комплексную цифровую трансформацию или решаем конкретные задачи вашего бизнеса.',
 			en: '<span class="font-bold text-[#9ac763]">Four key service areas</span> — flexible approach: we deliver full-scale digital transformation or solve specific challenges for your business.',
@@ -138,23 +142,23 @@
 		/* ── Landing pages ── */
 		"lp.title": { ru: "Разработка лендингов и сайтов под ключ", en: "Turnkey landing page & website development" },
 		"lp.lead": {
-			ru: "Проектируем и запускаем продающие лендинги и корпоративные сайты под ваши бизнес-задачи: от идеи и прототипа до публикации на реальном домене. Адаптивная вёрстка, высокая скорость загрузки и SEO-оптимизация под Google и Яндекс.",
-			en: "We design and launch high-converting landing pages and corporate websites tailored to your business — from idea and prototype to a live domain. Responsive, fast-loading, and SEO-optimized for Google and Yandex.",
+			ru: "Продающие лендинги и сайты под ключ — за 7 дней, от 250 000 ₸. Системный процесс, сильный дизайн и продвижение после запуска.",
+			en: "Turnkey landing pages and websites — in 7 days, from 250,000 ₸. A systematic process, strong design, and post-launch promotion.",
 		},
-		"lp.c1.title": { ru: "Лендинг под ключ", en: "Landing page, turnkey" },
+		"lp.c1.title": { ru: "Системный подход", en: "Systematic approach" },
 		"lp.c1.desc": {
-			ru: "Создание лендинг-страницы с проработанной структурой, текстами и дизайном, заточенной под конверсию и заявки.",
-			en: "A landing page with a thought-out structure, copy, and design built to convert visitors into leads.",
+			ru: "Аудит, техническое задание, продуманная архитектура и еженедельные демонстрации прогресса — с ответственностью за конечный результат.",
+			en: "Audit, technical specification, well-planned architecture, and weekly progress demos — with accountability for the final result.",
 		},
-		"lp.c2.title": { ru: "Корпоративные сайты", en: "Corporate websites" },
+		"lp.c2.title": { ru: "Выразительный дизайн", en: "Distinctive design" },
 		"lp.c2.desc": {
-			ru: "Многостраничные сайты и каталоги: понятная навигация, аналитика и интеграции с CRM.",
-			en: "Multi-page sites and catalogs: clear navigation, analytics, and CRM integrations.",
+			ru: "Эстетичный и продающий дизайн, выстроенный под вашу аудиторию и задачи бизнеса.",
+			en: "Refined, conversion-focused design built around your audience and business goals.",
 		},
-		"lp.c3.title": { ru: "SEO и скорость", en: "SEO & speed" },
+		"lp.c3.title": { ru: "SEO и GEO", en: "SEO & GEO" },
 		"lp.c3.desc": {
-			ru: "Техническая SEO-оптимизация, Core Web Vitals и быстрая загрузка, чтобы сайт находили в поиске.",
-			en: "Technical SEO, Core Web Vitals, and fast loading so your site gets found in search.",
+			ru: "Техническая SEO-оптимизация под Google и Яндекс и адаптация под AI-поиск: скорость, Core Web Vitals и структурированные данные. Поддержка и контекстная реклама по подписке.",
+			en: "Technical SEO for Google and Yandex plus optimization for AI search: speed, Core Web Vitals, and structured data. Ongoing support and paid ads on subscription.",
 		},
 		"lp.cta": { ru: "Заказать лендинг", en: "Order a landing page" },
 
@@ -261,13 +265,13 @@
 		},
 		"faq.q6": { ru: "Сколько стоит разработка лендинга?", en: "How much does a landing page cost?" },
 		"faq.a6": {
-			ru: "Стоимость зависит от структуры, дизайна и интеграций. Опишите задачу — подготовим смету в течение 1 рабочего дня. Первая консультация бесплатно.",
-			en: "It depends on structure, design, and integrations. Describe your task — we'll prepare a quote within 1 business day. First consultation is free.",
+			ru: "Лендинг под ключ — от 250 000 ₸. Точная смета зависит от структуры и интеграций. Первая консультация бесплатно.",
+			en: "A turnkey landing page starts from 250,000 ₸. The exact quote depends on structure and integrations. First consultation is free.",
 		},
 		"faq.q7": { ru: "За какой срок вы сделаете лендинг?", en: "How fast can you build a landing page?" },
 		"faq.a7": {
-			ru: "Лендинг под ключ обычно запускаем за 1–2 недели после согласования структуры и контента.",
-			en: "A turnkey landing page typically launches in 1–2 weeks after the structure and content are agreed.",
+			ru: "Запускаем лендинг под ключ за 7 дней после согласования структуры и контента.",
+			en: "We launch a turnkey landing page in 7 days after the structure and content are agreed.",
 		},
 
 		/* ── Contact form ── */

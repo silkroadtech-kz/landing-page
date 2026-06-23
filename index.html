@@ -6,6 +6,7 @@
 		<meta charset="UTF-8" />
 		<script>(function(){var l=localStorage.getItem('srt_lang');if(l&&l!=='ru')document.documentElement.style.visibility='hidden';})();</script>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="yandex-verification" content="307d13b0435724c6" />
 		<title>
 			Разработка лендингов, сайтов и ПО — Silk Road Tech, Астана
 		</title>
@@ -112,6 +113,38 @@
 				background-size: 100px;
 				opacity: 0.06;
 				pointer-events: none;
+			}
+			/* Services — editorial list */
+			.svc-item {
+				display: grid;
+				grid-template-columns: 40px 1fr;
+				column-gap: 24px;
+				padding: 28px 0;
+			}
+			.svc-num {
+				font-family: "Inter", sans-serif;
+				font-size: 13px;
+				color: #aaa;
+				padding-top: 10px;
+			}
+			.svc-title {
+				font-family: "Plus Jakarta Sans", sans-serif;
+				font-weight: 700;
+				font-size: 28px;
+				letter-spacing: -0.5px;
+				color: #010205;
+				transition: color 0.2s ease;
+			}
+			.svc-row:hover .svc-title {
+				color: #9ac763;
+			}
+			.svc-desc {
+				font-family: "Plus Jakarta Sans", sans-serif;
+				font-size: 18px;
+				line-height: 1.6;
+				color: #878c91;
+				max-width: 640px;
+				margin-top: 8px;
 			}
 			.marquee {
 				display: flex;
@@ -875,23 +908,11 @@
 					width: 124px !important;
 					height: 124px !important;
 				}
-				.svc-header {
-					flex-wrap: wrap !important;
-					align-items: flex-start !important;
-					gap: 0.75rem !important;
-				}
 				.svc-title {
-					width: auto !important;
 					font-size: 1.6rem !important;
-					flex-shrink: 1 !important;
 				}
 				.svc-desc {
-					flex-basis: 100% !important;
-					width: 100% !important;
-					overflow: visible !important;
-					white-space: normal !important;
-					text-overflow: unset !important;
-					font-size: 1.25rem !important;
+					font-size: 1.05rem !important;
 				}
 				#process .px-8,
 				#contacts,
@@ -1261,23 +1282,11 @@
 					display: none !important;
 				}
 				/* Services */
-				.svc-header {
-					flex-wrap: wrap !important;
-					gap: 0.5rem !important;
-					align-items: flex-start !important;
-				}
 				.svc-title {
 					font-size: 1.25rem !important;
-					width: auto !important;
-					flex-shrink: 1 !important;
 				}
 				.svc-desc {
-					font-size: 0.9rem !important;
-					flex-basis: 100% !important;
-					width: 100% !important;
-					overflow: visible !important;
-					white-space: normal !important;
-					text-overflow: unset !important;
+					font-size: 0.95rem !important;
 				}
 				#services .px-20 {
 					padding-left: 1.25rem !important;
@@ -1865,8 +1874,8 @@
 					{ "@type": "Question", "name": "Вы работаете удалённо или только в Астане?", "acceptedAnswer": { "@type": "Answer", "text": "Работаем удалённо по всему миру и очно в Астане." } },
 					{ "@type": "Question", "name": "Вы оказываете поддержку после запуска?", "acceptedAnswer": { "@type": "Answer", "text": "Да, предлагаем SLA-поддержку и дальнейшее развитие продукта." } },
 					{ "@type": "Question", "name": "Вы берёте небольшие проекты?", "acceptedAnswer": { "@type": "Answer", "text": "Да, рассматриваем точечные задачи и MVP." } },
-					{ "@type": "Question", "name": "Сколько стоит разработка лендинга?", "acceptedAnswer": { "@type": "Answer", "text": "Стоимость зависит от структуры, дизайна и интеграций. Опишите задачу — подготовим смету в течение 1 рабочего дня. Первая консультация бесплатно." } },
-					{ "@type": "Question", "name": "За какой срок вы сделаете лендинг?", "acceptedAnswer": { "@type": "Answer", "text": "Лендинг под ключ обычно запускаем за 1–2 недели после согласования структуры и контента." } }
+					{ "@type": "Question", "name": "Сколько стоит разработка лендинга?", "acceptedAnswer": { "@type": "Answer", "text": "Лендинг под ключ — от 250 000 ₸. Точная смета зависит от структуры и интеграций. Первая консультация бесплатно." } },
+					{ "@type": "Question", "name": "За какой срок вы сделаете лендинг?", "acceptedAnswer": { "@type": "Answer", "text": "Запускаем лендинг под ключ за 7 дней после согласования структуры и контента." } }
 				]
 			}
 		]
@@ -2669,9 +2678,16 @@
 		>
 			<div class="absolute inset-0 noise"></div>
 			<div class="relative max-w-[1440px] mx-auto px-20">
+				<!-- Heading -->
+				<h2
+					class="font-jakarta font-semibold text-[48px] leading-[1.3] tracking-[-1.44px] text-black mb-6"
+					data-i18n="services.title"
+				>
+					Что мы предлагаем
+				</h2>
 				<!-- Lead -->
 				<p
-					class="font-jakarta font-medium text-[22px] leading-[1.5] text-[#878c91] max-w-[700px] mb-16"
+					class="font-jakarta font-medium text-[22px] leading-[1.5] text-[#878c91] max-w-[700px] mb-14"
 					data-i18n-html="services.lead"
 				>
 					<span class="font-bold text-[#9ac763]"
@@ -2684,7 +2700,7 @@
 				<!-- Accordion — all closed by default -->
 				<div id="servicesAccordion">
 					<!-- row 01 -->
-					<div class="svc-row" data-open="false">
+					<div class="svc-row">
 						<img
 							src="assets/divider.svg"
 							alt=""
@@ -2692,46 +2708,28 @@
 							decoding="async"
 							style="width: 100%; height: 29px; display: block; max-width: none"
 						/>
-						<div
-							class="svc-header flex items-center gap-6 py-5 cursor-pointer select-none"
-							onclick="toggleSvc(this)"
-						>
-							<span class="font-inter text-[13px] text-[#aaa] w-[24px] shrink-0"
-								>01</span
-							>
-							<h3
-								class="svc-title font-jakarta font-bold text-[28px] tracking-[-0.5px] text-black w-[260px] shrink-0"
-								data-i18n="s1.title"
-							>
-								Разработка ПО
-							</h3>
-							<p
-								class="svc-desc font-jakarta text-[#878c91] flex-1 truncate"
-								style="font-size: 28px"
-								data-i18n="s1.desc"
-							>
-								Веб и мобильные приложения на заказ, ERP-системы,
-								API-интеграции. С нуля или в существующую инфраструктуру.
-							</p>
-							<div
-								class="svc-toggle shrink-0 w-[32px] h-[32px] rounded-full border border-[#9ac763] flex items-center justify-center ml-4"
-							>
-								<span
-									class="svc-minus font-inter text-[#9ac763] text-[20px] leading-none"
-									style="display: none; margin-top: -2px"
-									>−</span
+						<div class="svc-item">
+							<span class="svc-num">01</span>
+							<div>
+								<h3
+									class="svc-title"
+									data-i18n="s1.title"
 								>
-								<span
-									class="svc-plus font-inter text-[#9ac763] text-[20px] leading-none"
-									style="margin-top: -2px"
-									>+</span
+									Разработка ПО
+								</h3>
+								<p
+									class="svc-desc"
+									data-i18n="s1.desc"
 								>
+									Веб и мобильные приложения на заказ, ERP-системы,
+									API-интеграции. С нуля или в существующую инфраструктуру.
+								</p>
 							</div>
 						</div>
 					</div>
 
 					<!-- row 02 -->
-					<div class="svc-row" data-open="false">
+					<div class="svc-row">
 						<img
 							src="assets/divider.svg"
 							alt=""
@@ -2739,46 +2737,28 @@
 							decoding="async"
 							style="width: 100%; height: 29px; display: block; max-width: none"
 						/>
-						<div
-							class="svc-header flex items-center gap-6 py-5 cursor-pointer select-none"
-							onclick="toggleSvc(this)"
-						>
-							<span class="font-inter text-[13px] text-[#aaa] w-[24px] shrink-0"
-								>02</span
-							>
-							<h3
-								class="svc-title font-jakarta font-bold text-[28px] tracking-[-0.5px] text-black w-[260px] shrink-0"
-								data-i18n="s2.title"
-							>
-								ИИ-ассистенты
-							</h3>
-							<p
-								class="svc-desc font-jakarta text-[#878c91] flex-1 truncate"
-								style="font-size: 28px"
-								data-i18n="s2.desc"
-							>
-								Внедряем LLM в реальные рабочие процессы: чат-боты,
-								автоматизация документов, RAG-системы на внутренних данных.
-							</p>
-							<div
-								class="svc-toggle shrink-0 w-[32px] h-[32px] rounded-full border border-[#9ac763] flex items-center justify-center ml-4"
-							>
-								<span
-									class="svc-minus font-inter text-[#9ac763] text-[20px] leading-none"
-									style="display: none; margin-top: -2px"
-									>−</span
+						<div class="svc-item">
+							<span class="svc-num">02</span>
+							<div>
+								<h3
+									class="svc-title"
+									data-i18n="s2.title"
 								>
-								<span
-									class="svc-plus font-inter text-[#9ac763] text-[20px] leading-none"
-									style="margin-top: -2px"
-									>+</span
+									ИИ-ассистенты
+								</h3>
+								<p
+									class="svc-desc"
+									data-i18n="s2.desc"
 								>
+									Внедряем LLM в реальные рабочие процессы: чат-боты,
+									автоматизация документов, RAG-системы на внутренних данных.
+								</p>
 							</div>
 						</div>
 					</div>
 
 					<!-- row 03 -->
-					<div class="svc-row" data-open="false">
+					<div class="svc-row">
 						<img
 							src="assets/divider.svg"
 							alt=""
@@ -2786,45 +2766,27 @@
 							decoding="async"
 							style="width: 100%; height: 29px; display: block; max-width: none"
 						/>
-						<div
-							class="svc-header flex items-center gap-6 py-5 cursor-pointer select-none"
-							onclick="toggleSvc(this)"
-						>
-							<span class="font-inter text-[13px] text-[#aaa] w-[24px] shrink-0"
-								>03</span
-							>
-							<h3
-								class="svc-title font-jakarta font-bold text-[28px] tracking-[-0.5px] text-black w-[260px] shrink-0"
-								data-i18n="s3.title"
-							>
-								Аналитика &amp; Данные
-							</h3>
-							<p
-								class="svc-desc font-jakarta text-[#878c91] flex-1 truncate"
-								style="font-size: 28px"
-								data-i18n="s3.desc"
-							>
-								BI-дашборды и обработка данных → в бизнес-решения.
-							</p>
-							<div
-								class="svc-toggle shrink-0 w-[32px] h-[32px] rounded-full border border-[#9ac763] flex items-center justify-center ml-4"
-							>
-								<span
-									class="svc-minus font-inter text-[#9ac763] text-[20px] leading-none"
-									style="display: none; margin-top: -2px"
-									>−</span
+						<div class="svc-item">
+							<span class="svc-num">03</span>
+							<div>
+								<h3
+									class="svc-title"
+									data-i18n="s3.title"
 								>
-								<span
-									class="svc-plus font-inter text-[#9ac763] text-[20px] leading-none"
-									style="margin-top: -2px"
-									>+</span
+									Аналитика &amp; Данные
+								</h3>
+								<p
+									class="svc-desc"
+									data-i18n="s3.desc"
 								>
+									BI-дашборды и обработка данных → в бизнес-решения.
+								</p>
 							</div>
 						</div>
 					</div>
 
 					<!-- row 04 -->
-					<div class="svc-row" data-open="false">
+					<div class="svc-row">
 						<img
 							src="assets/divider.svg"
 							alt=""
@@ -2832,40 +2794,22 @@
 							decoding="async"
 							style="width: 100%; height: 29px; display: block; max-width: none"
 						/>
-						<div
-							class="svc-header flex items-center gap-6 py-5 cursor-pointer select-none"
-							onclick="toggleSvc(this)"
-						>
-							<span class="font-inter text-[13px] text-[#aaa] w-[24px] shrink-0"
-								>04</span
-							>
-							<h3
-								class="svc-title font-jakarta font-bold text-[28px] tracking-[-0.5px] text-black w-[260px] shrink-0"
-								data-i18n="s4.title"
-							>
-								Железо &amp; ПО
-							</h3>
-							<p
-								class="svc-desc font-jakarta text-[#878c91] flex-1 truncate"
-								style="font-size: 28px"
-								data-i18n="s4.desc"
-							>
-								Аппаратно-программная интеграция, IoT-платформы, мониторинг
-								производства, умные склады.
-							</p>
-							<div
-								class="svc-toggle shrink-0 w-[32px] h-[32px] rounded-full border border-[#9ac763] flex items-center justify-center ml-4"
-							>
-								<span
-									class="svc-minus font-inter text-[#9ac763] text-[20px] leading-none"
-									style="display: none; margin-top: -2px"
-									>−</span
+						<div class="svc-item">
+							<span class="svc-num">04</span>
+							<div>
+								<h3
+									class="svc-title"
+									data-i18n="s4.title"
 								>
-								<span
-									class="svc-plus font-inter text-[#9ac763] text-[20px] leading-none"
-									style="margin-top: -2px"
-									>+</span
+									Железо &amp; ПО
+								</h3>
+								<p
+									class="svc-desc"
+									data-i18n="s4.desc"
 								>
+									Аппаратно-программная интеграция, IoT-платформы, мониторинг
+									производства, умные склады.
+								</p>
 							</div>
 						</div>
 					</div>
@@ -2895,37 +2839,37 @@
 					class="font-jakarta font-medium text-[20px] leading-[1.6] text-[#878c91] max-w-[760px] mb-14"
 					data-i18n="lp.lead"
 				>
-					Проектируем и запускаем продающие лендинги и корпоративные сайты под
-					ваши бизнес-задачи: от идеи и прототипа до публикации на реальном
-					домене. Адаптивная вёрстка, высокая скорость загрузки и
-					SEO-оптимизация под Google и Яндекс.
+					Продающие лендинги и сайты под ключ — за 7 дней, от 250 000 ₸.
+					Системный процесс, сильный дизайн и продвижение после запуска.
 				</p>
 				<div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-14">
 					<div class="bg-white rounded-[20px] p-8">
 						<h3 class="font-jakarta font-bold text-[24px] text-black mb-4" data-i18n="lp.c1.title">
-							Лендинг под ключ
+							Системный подход
 						</h3>
 						<p class="font-jakarta text-[16px] leading-[1.7] text-[#878c91]" data-i18n="lp.c1.desc">
-							Создание лендинг-страницы с проработанной структурой, текстами и
-							дизайном, заточенной под конверсию и заявки.
+							Аудит, техническое задание, продуманная архитектура и
+							еженедельные демонстрации прогресса — с ответственностью за
+							конечный результат.
 						</p>
 					</div>
 					<div class="bg-white rounded-[20px] p-8">
 						<h3 class="font-jakarta font-bold text-[24px] text-black mb-4" data-i18n="lp.c2.title">
-							Корпоративные сайты
+							Выразительный дизайн
 						</h3>
 						<p class="font-jakarta text-[16px] leading-[1.7] text-[#878c91]" data-i18n="lp.c2.desc">
-							Многостраничные сайты и каталоги: понятная навигация, аналитика и
-							интеграции с CRM.
+							Эстетичный и продающий дизайн, выстроенный под вашу аудиторию
+							и задачи бизнеса.
 						</p>
 					</div>
 					<div class="bg-white rounded-[20px] p-8">
 						<h3 class="font-jakarta font-bold text-[24px] text-black mb-4" data-i18n="lp.c3.title">
-							SEO и скорость
+							SEO и GEO
 						</h3>
 						<p class="font-jakarta text-[16px] leading-[1.7] text-[#878c91]" data-i18n="lp.c3.desc">
-							Техническая SEO-оптимизация, Core Web Vitals и быстрая загрузка,
-							чтобы сайт находили в поиске.
+							Техническая SEO-оптимизация под Google и Яндекс и адаптация
+							под AI-поиск: скорость, Core Web Vitals и структурированные
+							данные. Поддержка и контекстная реклама по подписке.
 						</p>
 					</div>
 				</div>
@@ -3525,9 +3469,8 @@
 							class="font-jakarta font-medium text-[16px] leading-[1.8] text-[#878c91] mt-4"
 							data-i18n="faq.a6"
 						>
-							Стоимость зависит от структуры, дизайна и интеграций. Опишите
-							задачу — подготовим смету в течение 1 рабочего дня. Первая
-							консультация бесплатно.
+							Лендинг под ключ — от 250 000 ₸. Точная смета зависит от
+							структуры и интеграций. Первая консультация бесплатно.
 						</p>
 					</details>
 					<details class="border-b border-black px-6 py-6">
@@ -3572,8 +3515,8 @@
 							class="font-jakarta font-medium text-[16px] leading-[1.8] text-[#878c91] mt-4"
 							data-i18n="faq.a7"
 						>
-							Лендинг под ключ обычно запускаем за 1–2 недели после
-							согласования структуры и контента.
+							Запускаем лендинг под ключ за 7 дней после согласования
+							структуры и контента.
 						</p>
 					</details>
 				</div>
@@ -4063,25 +4006,6 @@
 				});
 
 				// ── Services accordion ──
-				function toggleSvc(header) {
-					const row = header.closest(".svc-row");
-					const isOpen = row.dataset.open === "true";
-					// collapse all
-					document.querySelectorAll(".svc-row").forEach((r) => {
-						r.dataset.open = "false";
-						r.querySelector(".svc-desc").classList.add("truncate");
-						r.querySelector(".svc-minus").style.display = "none";
-						r.querySelector(".svc-plus").style.display = "";
-					});
-					// open clicked if it was closed
-					if (!isOpen) {
-						row.dataset.open = "true";
-						row.querySelector(".svc-desc").classList.remove("truncate");
-						row.querySelector(".svc-minus").style.display = "";
-						row.querySelector(".svc-plus").style.display = "none";
-					}
-				}
-				window.toggleSvc = toggleSvc;
 
 				// ── Reviews slider ──
 				const reviews = {
