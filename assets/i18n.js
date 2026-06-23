@@ -139,29 +139,6 @@
 			en: "Hardware-software integration, IoT platforms, production monitoring, smart warehouses.",
 		},
 
-		/* ── Landing pages ── */
-		"lp.title": { ru: "Разработка лендингов и сайтов под ключ", en: "Turnkey landing page & website development" },
-		"lp.lead": {
-			ru: "Продающие лендинги и сайты под ключ — за 7 дней, от 250 000 ₸. Системный процесс, сильный дизайн и продвижение после запуска.",
-			en: "Turnkey landing pages and websites — in 7 days, from 250,000 ₸. A systematic process, strong design, and post-launch promotion.",
-		},
-		"lp.c1.title": { ru: "Системный подход", en: "Systematic approach" },
-		"lp.c1.desc": {
-			ru: "Аудит, техническое задание, продуманная архитектура и еженедельные демонстрации прогресса — с ответственностью за конечный результат.",
-			en: "Audit, technical specification, well-planned architecture, and weekly progress demos — with accountability for the final result.",
-		},
-		"lp.c2.title": { ru: "Выразительный дизайн", en: "Distinctive design" },
-		"lp.c2.desc": {
-			ru: "Эстетичный и продающий дизайн, выстроенный под вашу аудиторию и задачи бизнеса.",
-			en: "Refined, conversion-focused design built around your audience and business goals.",
-		},
-		"lp.c3.title": { ru: "SEO и GEO", en: "SEO & GEO" },
-		"lp.c3.desc": {
-			ru: "Техническая SEO-оптимизация под Google и Яндекс и адаптация под AI-поиск: скорость, Core Web Vitals и структурированные данные. Поддержка и контекстная реклама по подписке.",
-			en: "Technical SEO for Google and Yandex plus optimization for AI search: speed, Core Web Vitals, and structured data. Ongoing support and paid ads on subscription.",
-		},
-		"lp.cta": { ru: "Заказать лендинг", en: "Order a landing page" },
-
 		/* ── Landing page (/landing) ── */
 		"lpg.eyebrow": { ru: "Лендинги · сайты · под ключ", en: "Landing pages · websites · turnkey" },
 		"lpg.h1": { ru: "Сайт, который находят первым", en: "A site found first in search" },
