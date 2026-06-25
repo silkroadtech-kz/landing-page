@@ -1,0 +1,21 @@
+{
+  "name": "Silk Road Tech",
+  "short_name": "SRT",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#010205",
+  "theme_color": "#010205",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ]
+}
