@@ -290,16 +290,6 @@
 			ru: "Да, рассматриваем точечные задачи и MVP.",
 			en: "Yes, we consider focused tasks and MVPs.",
 		},
-		"faq.q6": { ru: "Сколько стоит разработка лендинга?", en: "How much does a landing page cost?" },
-		"faq.a6": {
-			ru: "Лендинг под ключ — от 250 000 ₸. Точная смета зависит от структуры и интеграций. Первая консультация бесплатно.",
-			en: "A turnkey landing page starts from 250,000 ₸. The exact quote depends on structure and integrations. First consultation is free.",
-		},
-		"faq.q7": { ru: "За какой срок вы сделаете лендинг?", en: "How fast can you build a landing page?" },
-		"faq.a7": {
-			ru: "Запускаем лендинг под ключ за 7 дней после согласования структуры и контента.",
-			en: "We launch a turnkey landing page in 7 days after the structure and content are agreed.",
-		},
 
 		/* ── Contact form ── */
 		"contact.title": {
