@@ -71,9 +71,6 @@
 				color: #010205;
 				transition: color 0.2s ease;
 			}
-			.svc-row:hover .svc-title {
-				color: #9ac763;
-			}
 			.svc-desc {
 				font-family: "Plus Jakarta Sans", sans-serif;
 				font-size: 18px;
@@ -138,10 +135,7 @@
 			.process-step {
 				position: relative;
 				overflow: hidden;
-				transition:
-					width 0.55s cubic-bezier(0.22, 1, 0.36, 1),
-					background-color 0.35s ease;
-				will-change: width;
+				transition: background-color 180ms ease;
 				contain: layout paint;
 				backface-visibility: hidden;
 				transform: translateZ(0);
@@ -165,21 +159,21 @@
 				transform: translate3d(0, 18px, 0);
 				transition:
 					opacity 0.26s ease,
-					transform 0.48s cubic-bezier(0.22, 1, 0.36, 1);
+					transform 240ms cubic-bezier(0.23, 1, 0.32, 1);
 			}
 			.process-step .step-collapsed {
 				opacity: 1;
 				transform: translate3d(0, 0, 0);
 				transition:
 					opacity 0.28s ease,
-					transform 0.42s cubic-bezier(0.22, 1, 0.36, 1);
+					transform 200ms cubic-bezier(0.23, 1, 0.32, 1);
 			}
 			.process-step .step-num-open,
 			.process-step .step-num-compact {
 				display: inline-block;
 				transition:
 					opacity 0.28s ease,
-					transform 0.42s cubic-bezier(0.22, 1, 0.36, 1);
+					transform 200ms cubic-bezier(0.23, 1, 0.32, 1);
 			}
 			.process-step .step-rotated {
 				inset: auto;
@@ -188,7 +182,7 @@
 				opacity: 1;
 				transition:
 					opacity 0.22s ease,
-					transform 0.42s cubic-bezier(0.22, 1, 0.36, 1);
+					transform 200ms cubic-bezier(0.23, 1, 0.32, 1);
 			}
 			.process-step.is-open .step-expanded {
 				opacity: 1;
@@ -209,10 +203,10 @@
 			/* Scroll reveal animations */
 			.reveal {
 				opacity: 0;
-				transform: translateY(40px);
+				transform: translateY(12px);
 				transition:
-					opacity 0.7s ease,
-					transform 0.7s ease;
+					opacity 240ms cubic-bezier(0.23, 1, 0.32, 1),
+					transform 240ms cubic-bezier(0.23, 1, 0.32, 1);
 			}
 			.reveal.active {
 				opacity: 1;
@@ -220,10 +214,10 @@
 			}
 			.reveal-left {
 				opacity: 0;
-				transform: translateX(-60px);
+				transform: translateX(-12px);
 				transition:
-					opacity 0.7s ease,
-					transform 0.7s ease;
+					opacity 240ms cubic-bezier(0.23, 1, 0.32, 1),
+					transform 240ms cubic-bezier(0.23, 1, 0.32, 1);
 			}
 			.reveal-left.active {
 				opacity: 1;
@@ -231,10 +225,10 @@
 			}
 			.reveal-right {
 				opacity: 0;
-				transform: translateX(60px);
+				transform: translateX(12px);
 				transition:
-					opacity 0.7s ease,
-					transform 0.7s ease;
+					opacity 240ms cubic-bezier(0.23, 1, 0.32, 1),
+					transform 240ms cubic-bezier(0.23, 1, 0.32, 1);
 			}
 			.reveal-right.active {
 				opacity: 1;
@@ -242,10 +236,10 @@
 			}
 			.reveal-scale {
 				opacity: 0;
-				transform: scale(0.85);
+				transform: scale(0.95);
 				transition:
-					opacity 0.6s ease,
-					transform 0.6s ease;
+					opacity 220ms cubic-bezier(0.23, 1, 0.32, 1),
+					transform 220ms cubic-bezier(0.23, 1, 0.32, 1);
 			}
 			.reveal-scale.active {
 				opacity: 1;
@@ -293,28 +287,25 @@
 
 			/* Stagger delays */
 			.delay-1 {
-				transition-delay: 0.1s;
+				transition-delay: 50ms;
 			}
 			.delay-2 {
-				transition-delay: 0.2s;
+				transition-delay: 100ms;
 			}
 			.delay-3 {
-				transition-delay: 0.3s;
+				transition-delay: 150ms;
 			}
 			.delay-4 {
-				transition-delay: 0.4s;
+				transition-delay: 200ms;
 			}
 			.delay-5 {
-				transition-delay: 0.5s;
+				transition-delay: 250ms;
 			}
 
 
 			/* Navbar shrink */
 			header {
 				transition: box-shadow 0.3s ease;
-			}
-			header nav {
-				transition: padding 0.3s ease;
 			}
 			header.scrolled {
 				box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
@@ -327,25 +318,25 @@
 			/* Hero entrance */
 			.hero-title {
 				opacity: 0;
-				transform: translateY(30px);
-				animation: heroIn 0.8s ease 0.2s forwards;
+				transform: translateY(12px);
+				animation: heroIn 240ms cubic-bezier(0.23, 1, 0.32, 1) 40ms forwards;
 			}
 			.hero-desc {
 				opacity: 0;
-				transform: translateY(20px);
-				animation: heroIn 0.7s ease 0.5s forwards;
+				transform: translateY(12px);
+				animation: heroIn 240ms cubic-bezier(0.23, 1, 0.32, 1) 90ms forwards;
 			}
 			.hero-btns {
 				opacity: 0;
-				transform: translateY(20px);
-				animation: heroIn 0.7s ease 0.7s forwards;
+				transform: translateY(12px);
+				animation: heroIn 240ms cubic-bezier(0.23, 1, 0.32, 1) 140ms forwards;
 			}
 			.hero-card {
 				opacity: 0;
-				transform: translateY(30px) scale(0.95);
+				transform: translateY(12px) scale(0.95);
 			}
 			.hero-card.loaded {
-				animation: heroCardIn 0.8s ease forwards;
+				animation: heroCardIn 280ms cubic-bezier(0.23, 1, 0.32, 1) forwards;
 			}
 			@keyframes heroIn {
 				to {
@@ -376,38 +367,56 @@
 
 			/* Pulse on trending icon */
 			.pulse-ring {
-				animation: pulseRing 2s ease-out infinite;
-			}
-			@keyframes pulseRing {
-				0% {
-					box-shadow: 0 0 0 0 rgba(154, 199, 99, 0.5);
-				}
-				70% {
-					box-shadow: 0 0 0 20px rgba(154, 199, 99, 0);
-				}
-				100% {
-					box-shadow: 0 0 0 0 rgba(154, 199, 99, 0);
-				}
+				box-shadow: 0 0 0 4px rgba(154, 199, 99, 0.2);
 			}
 
 			/* Service item hover */
 			.service-item {
-				transition: all 0.3s ease;
+				transition: background-color 180ms ease;
 			}
-			.service-item:hover {
-				padding-left: 12px;
-				background: linear-gradient(
-					90deg,
-					rgba(154, 199, 99, 0.05),
-					transparent
-				);
+			@media (hover: hover) and (pointer: fine) {
+				.svc-row:hover .svc-title {
+					color: #9ac763;
+				}
+				.service-item:hover {
+					background: linear-gradient(
+						90deg,
+						rgba(154, 199, 99, 0.05),
+						transparent
+					);
+				}
+			}
+
+			@media (prefers-reduced-motion: reduce) {
+				html {
+					scroll-behavior: auto;
+				}
+				.marquee,
+				.float {
+					animation: none;
+				}
+				.hero-title,
+				.hero-desc,
+				.hero-btns,
+				.hero-card {
+					animation: none;
+					opacity: 1;
+					transform: none;
+				}
+				.reveal,
+				.reveal-left,
+				.reveal-right,
+				.reveal-scale {
+					transform: none;
+					transition: opacity 160ms ease;
+				}
 			}
 
 			/* Smooth bar grow */
 			.bar-animate {
 				transform: scaleY(0);
 				transform-origin: bottom;
-				transition: transform 0.8s ease;
+				transition: transform 280ms cubic-bezier(0.23, 1, 0.32, 1);
 			}
 			.bar-animate.active {
 				transform: scaleY(1);
@@ -441,13 +450,10 @@
 				overflow: hidden;
 			}
 			body > *:not(.site-preloader) {
-				transition:
-					opacity 0.45s ease,
-					filter 0.45s ease;
+				transition: opacity 200ms cubic-bezier(0.23, 1, 0.32, 1);
 			}
 			body.preload-pending > *:not(.site-preloader) {
 				opacity: 0;
-				filter: blur(10px);
 			}
 			.site-preloader {
 				position: fixed;
@@ -519,17 +525,19 @@
 				top: 0;
 				left: 0;
 				height: 3px;
-				width: 0%;
+				width: 100%;
+				transform: scaleX(0);
+				transform-origin: left;
 				background: linear-gradient(90deg, #9ac763, #c6e69e);
 				border-radius: 0 999px 999px 0;
-				transition: width 2.4s cubic-bezier(0.1, 0.05, 0.2, 1);
+				transition: transform 280ms cubic-bezier(0.23, 1, 0.32, 1);
 			}
 			.site-preloader__progress.is-running {
-				width: 85%;
+				transform: scaleX(0.85);
 			}
 			.site-preloader__progress.is-complete {
-				width: 100%;
-				transition: width 0.2s ease;
+				transform: scaleX(1);
+				transition-duration: 160ms;
 			}
 
 			@media (max-width: 1360px) {
