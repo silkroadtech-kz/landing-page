@@ -2,6 +2,11 @@
   "cleanUrls": true,
   "redirects": [
     {
+      "source": "/landing",
+      "destination": "/#services",
+      "permanent": true
+    },
+    {
       "source": "/:path*",
       "has": [{ "type": "host", "value": "www.silkroadtech.kz" }],
       "destination": "https://silkroadtech.kz/:path*",

@@ -59,7 +59,7 @@
 		<link rel="apple-touch-icon" href="apple-touch-icon.png" />
 		<link rel="manifest" href="site.webmanifest" />
 		<meta name="theme-color" content="#010205" />
-		<link rel="stylesheet" href="assets/site.css" />
+		<link rel="stylesheet" href="assets/site.css?v=20260819-6" />
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Manrope:wght@500;700;800&family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,700&family=Sora:wght@600;700&family=Roboto:wght@400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
@@ -168,14 +168,6 @@
 						</li>
 						<li>
 							<a
-								href="/landing"
-								class="hover:text-[#9ac763]"
-								data-i18n="nav.landing"
-								>Лендинги</a
-							>
-						</li>
-						<li>
-							<a
 								href="#process"
 								class="hover:text-[#9ac763]"
 								data-i18n="nav.process"
@@ -190,6 +182,7 @@
 								>Кейсы</a
 							>
 						</li>
+						<li><a href="#products" class="hover:text-[#9ac763]" data-i18n="nav.products">Продукты</a></li>
 						<li>
 							<a
 								href="/about"
@@ -200,10 +193,10 @@
 						</li>
 						<li>
 							<a
-								href="https://academy.silkroadtech.kz/" target="_blank" rel="noopener noreferrer"
+								href="/blog"
 								class="hover:text-[#9ac763]"
-								data-i18n="nav.academy"
-								>Академия</a
+								data-i18n="nav.blog"
+								>Блог</a
 							>
 						</li>
 						<li>
@@ -267,18 +260,14 @@
 					>
 				</li>
 				<li>
-					<a href="/landing" class="mobile-link" data-i18n="nav.landing"
-						>Лендинги</a
-					>
-				</li>
-				<li>
 					<a href="#process" class="mobile-link" data-i18n="nav.process"
 						>Процесс</a
 					>
 				</li>
 				<li><a href="/cases" data-i18n="nav.cases">Кейсы</a></li>
+				<li><a href="#products" class="mobile-link" data-i18n="nav.products">Продукты</a></li>
 				<li><a href="/about" data-i18n="nav.about">О нас</a></li>
-				<li><a href="https://academy.silkroadtech.kz/" target="_blank" rel="noopener noreferrer" data-i18n="nav.academy">Академия</a></li>
+				<li><a href="/blog" data-i18n="nav.blog">Блог</a></li>
 				<li>
 					<a href="#contacts" class="mobile-link" data-i18n="nav.contacts"
 						>Контакты</a
@@ -310,7 +299,7 @@
 						class="hero-desc font-jakarta font-medium text-[16px] leading-[1.8] text-[#878c91] w-[557px]"
 						data-i18n="hero.desc"
 					>
-						Быстро. Качественно. Недорого.
+						От идеи и архитектуры до запуска и роста продукта.
 					</p>
 					<div class="hero-btns flex items-center gap-14">
 						<button
@@ -934,121 +923,54 @@
 					решаем конкретные задачи вашего бизнеса.
 				</p>
 
-				<!-- Accordion — all closed by default -->
+				<!-- Detailed service accordion -->
 				<div id="servicesAccordion">
-					<!-- row 01 -->
-					<div class="svc-row">
-						<img
-							src="assets/divider.svg"
-							alt=""
-							loading="lazy"
-							decoding="async"
-							style="width: 100%; height: 29px; display: block; max-width: none"
-						/>
-						<div class="svc-item">
-							<span class="svc-num">01</span>
-							<div>
-								<h3
-									class="svc-title"
-									data-i18n="s1.title"
-								>
-									Разработка ПО
-								</h3>
-								<p
-									class="svc-desc"
-									data-i18n="s1.desc"
-								>
-									Веб и мобильные приложения на заказ, ERP-системы,
-									API-интеграции. С нуля или в существующую инфраструктуру.
-								</p>
-							</div>
-						</div>
+					<div class="svc-row active">
+						<img src="assets/divider.svg" alt="" loading="lazy" decoding="async" style="width:100%;height:29px;display:block;max-width:none" />
+						<div class="svc-item"><span class="svc-num">01</span><div class="svc-content">
+							<button class="svc-trigger" type="button" aria-expanded="true"><span class="svc-title" data-i18n="s1.title">Сайты и приложения</span><span class="svc-toggle">+</span></button>
+							<p class="svc-desc" data-i18n="s1.desc">Проектируем и разрабатываем цифровые продукты под бизнес-задачу — от первого экрана до стабильного запуска.</p>
+							<div class="svc-details"><div class="svc-details-inner">
+								<div class="svc-list"><p data-i18n="s1.i1">Корпоративные сайты и лендинги</p><p data-i18n="s1.i2">Веб-сервисы и личные кабинеты</p><p data-i18n="s1.i3">Мобильные приложения iOS и Android</p><p data-i18n="s1.i4">ERP, CRM и внутренние системы</p><p data-i18n="s1.i5">API-интеграции и развитие legacy</p></div>
+								<div class="svc-trust"><span data-i18n="services.trust">Почему нам доверяют</span><p data-i18n="s1.trust">Начинаем с архитектуры и прототипа, показываем демо каждые две недели, тестируем и остаёмся с продуктом после запуска.</p></div>
+							</div></div>
+						</div></div>
 					</div>
 
-					<!-- row 02 -->
 					<div class="svc-row">
-						<img
-							src="assets/divider.svg"
-							alt=""
-							loading="lazy"
-							decoding="async"
-							style="width: 100%; height: 29px; display: block; max-width: none"
-						/>
-						<div class="svc-item">
-							<span class="svc-num">02</span>
-							<div>
-								<h3
-									class="svc-title"
-									data-i18n="s2.title"
-								>
-									ИИ-ассистенты
-								</h3>
-								<p
-									class="svc-desc"
-									data-i18n="s2.desc"
-								>
-									Внедряем LLM в реальные рабочие процессы: чат-боты,
-									автоматизация документов, RAG-системы на внутренних данных.
-								</p>
-							</div>
-						</div>
+						<img src="assets/divider.svg" alt="" loading="lazy" decoding="async" style="width:100%;height:29px;display:block;max-width:none" />
+						<div class="svc-item"><span class="svc-num">02</span><div class="svc-content">
+							<button class="svc-trigger" type="button" aria-expanded="false"><span class="svc-title" data-i18n="s2.title">AI и автоматизация</span><span class="svc-toggle">+</span></button>
+							<p class="svc-desc" data-i18n="s2.desc">Встраиваем AI в процессы, где он экономит время команды, ускоряет ответы и снижает объём ручной работы.</p>
+							<div class="svc-details"><div class="svc-details-inner">
+								<div class="svc-list"><p data-i18n="s2.i1">AI-ассистенты для продаж и поддержки</p><p data-i18n="s2.i2">Поиск по внутренней базе знаний (RAG)</p><p data-i18n="s2.i3">Обработка документов и обращений</p><p data-i18n="s2.i4">Генерация контента и отчётов</p><p data-i18n="s2.i5">Интеграции с CRM, ERP и мессенджерами</p></div>
+								<div class="svc-trust"><span data-i18n="services.trust">Почему нам доверяют</span><p data-i18n="s2.trust">Сначала проверяем ценность на небольшом пилоте. Настраиваем права доступа, журнал действий и контроль человека над критичными решениями.</p></div>
+							</div></div>
+						</div></div>
 					</div>
 
-					<!-- row 03 -->
 					<div class="svc-row">
-						<img
-							src="assets/divider.svg"
-							alt=""
-							loading="lazy"
-							decoding="async"
-							style="width: 100%; height: 29px; display: block; max-width: none"
-						/>
-						<div class="svc-item">
-							<span class="svc-num">03</span>
-							<div>
-								<h3
-									class="svc-title"
-									data-i18n="s3.title"
-								>
-									Аналитика &amp; Данные
-								</h3>
-								<p
-									class="svc-desc"
-									data-i18n="s3.desc"
-								>
-									BI-дашборды и обработка данных → в бизнес-решения.
-								</p>
-							</div>
-						</div>
+						<img src="assets/divider.svg" alt="" loading="lazy" decoding="async" style="width:100%;height:29px;display:block;max-width:none" />
+						<div class="svc-item"><span class="svc-num">03</span><div class="svc-content">
+							<button class="svc-trigger" type="button" aria-expanded="false"><span class="svc-title" data-i18n="s3.title">Аналитика и дашборды</span><span class="svc-toggle">+</span></button>
+							<p class="svc-desc" data-i18n="s3.desc">Собираем разрозненные данные в понятную систему, чтобы руководители видели бизнес целиком и принимали решения быстрее.</p>
+							<div class="svc-details"><div class="svc-details-inner">
+								<div class="svc-list"><p data-i18n="s3.i1">Дашборды для руководителей</p><p data-i18n="s3.i2">Продажи, маркетинг и продуктовые метрики</p><p data-i18n="s3.i3">ETL-процессы и хранилища данных</p><p data-i18n="s3.i4">Автоматические отчёты и алерты</p><p data-i18n="s3.i5">Интеграции Power BI, Metabase и Looker</p></div>
+								<div class="svc-trust"><span data-i18n="services.trust">Почему нам доверяют</span><p data-i18n="s3.trust">Сверяем цифры с первоисточниками, фиксируем единые определения метрик и разграничиваем доступ. Дашборд показывает правду, а не просто красивый график.</p></div>
+							</div></div>
+						</div></div>
 					</div>
 
-					<!-- row 04 -->
 					<div class="svc-row">
-						<img
-							src="assets/divider.svg"
-							alt=""
-							loading="lazy"
-							decoding="async"
-							style="width: 100%; height: 29px; display: block; max-width: none"
-						/>
-						<div class="svc-item">
-							<span class="svc-num">04</span>
-							<div>
-								<h3
-									class="svc-title"
-									data-i18n="s4.title"
-								>
-									Железо &amp; ПО
-								</h3>
-								<p
-									class="svc-desc"
-									data-i18n="s4.desc"
-								>
-									Аппаратно-программная интеграция, IoT-платформы, мониторинг
-									производства, умные склады.
-								</p>
-							</div>
-						</div>
+						<img src="assets/divider.svg" alt="" loading="lazy" decoding="async" style="width:100%;height:29px;display:block;max-width:none" />
+						<div class="svc-item"><span class="svc-num">04</span><div class="svc-content">
+							<button class="svc-trigger" type="button" aria-expanded="false"><span class="svc-title" data-i18n="s4.title">SEO и GEO</span><span class="svc-toggle">+</span></button>
+							<p class="svc-desc" data-i18n="s4.desc">Помогаем продукту быть понятным поисковым системам, AI-ассистентам и людям — технически, структурно и содержательно.</p>
+							<div class="svc-details"><div class="svc-details-inner">
+								<div class="svc-list"><p data-i18n="s4.i1">Технический SEO-аудит</p><p data-i18n="s4.i2">Семантика и структура страниц</p><p data-i18n="s4.i3">Контент под поисковый спрос</p><p data-i18n="s4.i4">GEO для ответов ChatGPT и других AI-систем</p><p data-i18n="s4.i5">Аналитика позиций, трафика и конверсий</p></div>
+								<div class="svc-trust"><span data-i18n="services.trust">Почему нам доверяют</span><p data-i18n="s4.trust">Начинаем с аудита и приоритетного плана. Показываем исходные показатели, внесённые изменения и измеримый результат — без обещаний «первого места за неделю».</p></div>
+							</div></div>
+						</div></div>
 					</div>
 
 					<img
@@ -1058,6 +980,49 @@
 						decoding="async"
 						style="width: 100%; height: 29px; display: block; max-width: none"
 					/>
+				</div>
+			</div>
+		</section>
+		<script>
+			document.addEventListener("DOMContentLoaded", function () {
+				var serviceRows = Array.from(document.querySelectorAll("#servicesAccordion .svc-row"));
+				serviceRows.forEach(function (row) {
+					var trigger = row.querySelector(".svc-trigger");
+					if (!trigger) return;
+					trigger.addEventListener("click", function () {
+						var willOpen = !row.classList.contains("active");
+						serviceRows.forEach(function (item) {
+							item.classList.remove("active");
+							var itemTrigger = item.querySelector(".svc-trigger");
+							if (itemTrigger) itemTrigger.setAttribute("aria-expanded", "false");
+						});
+						if (willOpen) {
+							row.classList.add("active");
+							trigger.setAttribute("aria-expanded", "true");
+						}
+					});
+				});
+			});
+		</script>
+
+		<!-- ============ OUR PRODUCTS ============ -->
+		<section id="products" class="product-section">
+			<div class="product-shell">
+				<div class="product-copy">
+					<p class="product-eyebrow" data-i18n="products.eyebrow">Собственный продукт</p>
+					<div class="product-brand">
+						<img src="assets/contentflow-mark.svg" alt="ContentFlow" width="54" height="44" loading="lazy" />
+						<h2>ContentFlow</h2>
+					</div>
+					<p class="product-title" data-i18n="products.title">Продукт, который мы создали для себя — и продолжаем развивать с любовью.</p>
+					<p class="product-description" data-i18n="products.description">ContentFlow: планируйте публикации, следите за ростом и создавайте изображения и видео — всё в одном окне. Для нас это не завершённый кейс, а живая платформа: мы ежедневно пользуемся ею, разговариваем с пользователями и улучшаем каждую деталь.</p>
+					<a class="product-link" href="https://contentflow.fyi" target="_blank" rel="noreferrer"><span data-i18n="products.link">Открыть ContentFlow</span><span aria-hidden="true">↗</span></a>
+				</div>
+				<div class="product-visual product-preview">
+					<div class="product-browser-bar" aria-hidden="true"><span></span><span></span><span></span><em>contentflow.fyi</em></div>
+					<a href="https://contentflow.fyi" target="_blank" rel="noreferrer" aria-label="Открыть лендинг ContentFlow">
+						<img src="assets/contentflow-landing.png" alt="Первый экран платформы ContentFlow" width="1920" height="855" loading="lazy" decoding="async" />
+					</a>
 				</div>
 			</div>
 		</section>
@@ -1277,22 +1242,23 @@
 							<div
 								class="w-[70px] h-[70px] rounded-full bg-gradient-to-br from-[#d8d8da] to-[#b8bcc3] shrink-0 flex items-center justify-center font-jakarta font-bold text-[22px] tracking-[-0.04em] text-[#010205]"
 								id="reviewAvatar"
-								aria-hidden="true"
+								role="img"
+								aria-label="Амирхан"
+								style="background-image: url('assets/review-amirkhan.png'); background-size: cover; background-position: center;"
 							>
-								А
 							</div>
 							<div class="flex flex-col gap-[19px] leading-[1.8]">
 								<p
 									class="font-jakarta font-bold text-[20px] text-[#010205]"
 									id="reviewName"
 								>
-									Адильжан
+									Амирхан
 								</p>
 								<p
 									class="font-jakarta font-medium text-[16px] text-[#878c91]"
 									id="reviewRole"
 								>
-									ТОО ТеплоТехник
+									Инженер ПТО · ТеплоТехник-НС
 								</p>
 							</div>
 						</div>
@@ -1618,193 +1584,34 @@
 		>
 			<div class="absolute inset-0 noise"></div>
 			<div
-				class="contact-shell relative max-w-[1280px] mx-auto bg-black rounded-2xl py-20 px-20 overflow-hidden"
+				class="contact-shell relative max-w-[1280px] mx-auto bg-[#101112] rounded-2xl py-20 px-20 overflow-hidden"
 			>
-				<!-- gradient blobs -->
-				<div
-					class="absolute right-32 top-32 w-[280px] h-[280px] rounded-full opacity-60"
-					style="background: radial-gradient(circle, #9ac763, transparent 60%)"
-				></div>
-				<div
-					class="absolute right-10 top-44 w-[280px] h-[280px] rounded-full opacity-50"
-					style="background: radial-gradient(circle, #3b82f6, transparent 60%)"
-				></div>
-
-				<div class="relative max-w-[709px]">
+				<div class="contact-layout relative grid grid-cols-[1.3fr_.7fr] gap-20 items-end">
+					<div>
+						<p class="contact-eyebrow font-jakarta font-semibold text-[13px] uppercase tracking-[0.16em] mb-7" data-i18n="contact.eyebrow">Напишите нам</p>
 					<h2
-						class="font-sora font-semibold text-[46px] leading-[60px] text-white mb-6"
+						class="contact-heading font-sora font-semibold text-[46px] leading-[1.2] mb-8 max-w-[760px]"
 						data-i18n="contact.title"
 					>
-						Свяжитесь с нами и получите решение для вашего бизнеса
+						Хорошая работа начинается с хорошего отношения к клиенту.
 					</h2>
 					<p
-						class="font-jakarta font-medium text-[16px] leading-[1.8] text-[#878c91] mb-8"
-						data-i18n-html="contact.subtitle"
+						class="contact-copy font-jakarta font-medium text-[18px] leading-[1.75] max-w-[680px]"
+						data-i18n="contact.subtitle"
 					>
-						Ответим в течение 1 рабочего дня.
-						<span class="font-bold text-[#9ac763]"
-							>Первая консультация — бесплатно.</span
-						>
+						Наша главная задача — внимательно понять вас, честно предложить решение и ответить максимально быстро. Я лично читаю каждое обращение.
 					</p>
-
-
-					<form
-						id="contactForm"
-						class="bg-[#0f1116] rounded-xl p-6 space-y-6"
-						action="/api/contact"
-						method="POST"
-					>
-						<input
-							type="hidden"
-							name="_subject"
-							value="New inquiry from Silk Road Tech landing page"
-						/>
-						<input type="hidden" name="_captcha" value="false" />
-						<div class="contact-grid grid grid-cols-2 gap-4">
-							<div>
-								<label
-									for="firstName"
-									class="block font-inter font-medium text-[14px] text-white mb-3"
-									data-i18n="contact.fname"
-									>Имя</label
-								>
-								<input
-									id="firstName"
-									name="first_name"
-									type="text"
-									required
-									placeholder="Your name"
-									data-i18n-placeholder="contact.fname.ph"
-									class="w-full bg-[#141922] border border-[#3d3d3d] rounded-xl px-4 py-3 text-white text-[14px] placeholder:text-[#5a5a5a] focus:outline-none focus:border-[#9ac763]"
-								/>
-							</div>
-							<div>
-								<label
-									for="lastName"
-									class="block font-inter font-medium text-[14px] text-white mb-3"
-									data-i18n="contact.lname"
-									>Фамилия</label
-								>
-								<input
-									id="lastName"
-									name="last_name"
-									type="text"
-									required
-									placeholder="Ваша фамилия"
-									data-i18n-placeholder="contact.lname.ph"
-									class="w-full bg-[#141922] border border-[#3d3d3d] rounded-xl px-4 py-3 text-white text-[14px] placeholder:text-[#5a5a5a] focus:outline-none focus:border-[#9ac763]"
-								/>
-							</div>
+						<div class="contact-links mt-12 pt-8 flex flex-wrap gap-x-8 gap-y-3 text-[15px]">
+							<a href="mailto:sayat@silkroadtech.kz" class="contact-link-primary transition">sayat@silkroadtech.kz</a>
+							<a href="https://t.me/xsayat" target="_blank" rel="noreferrer" class="contact-link-secondary transition">Telegram ↗</a>
+							<a href="https://wa.me/77026479903" target="_blank" rel="noreferrer" class="contact-link-secondary transition">WhatsApp ↗</a>
 						</div>
-						<div>
-							<label
-								for="contactHandle"
-								class="block font-inter font-medium text-[14px] text-white mb-3"
-								data-i18n="contact.phone"
-								>Телефон или Telegram</label
-							>
-							<input
-								id="contactHandle"
-								name="contact"
-								type="text"
-								required
-								placeholder="+7 700 888 88 88 or @xsayat"
-								class="w-full bg-[#141922] border border-[#3d3d3d] rounded-xl px-4 py-3 text-white text-[14px] placeholder:text-white/70 focus:outline-none focus:border-[#9ac763]"
-							/>
-						</div>
-						<div>
-							<div class="flex items-center justify-between mb-3">
-								<label
-									for="contactMessage"
-									class="font-inter font-medium text-[14px] text-white"
-									data-i18n="contact.msg"
-									>Сообщение</label
-								>
-								<span class="text-[12px] text-[#757575]" id="charCount"
-									>0/500</span
-								>
-							</div>
-							<textarea
-								id="contactMessage"
-								name="message"
-								rows="4"
-								maxlength="500"
-								placeholder="Напишите комментарий"
-								data-i18n-placeholder="contact.msg.ph"
-								class="w-full bg-[#141922] border border-[#3d3d3d] rounded-xl px-4 py-3 text-white text-[14px] placeholder:text-[#5a5a5a] focus:outline-none focus:border-[#9ac763]"
-							></textarea>
-						</div>
-						<button
-							id="contactSubmit"
-							type="submit"
-							class="mt-8 w-full max-w-[708px] bg-[#9ac763] rounded-xl px-8 py-5 flex items-center justify-center gap-5 hover:brightness-110 transition"
-						>
-							<span
-								class="font-inter font-bold text-[16px] tracking-[1.28px] uppercase text-black"
-								data-i18n="contact.submit"
-								>Отправить заявку</span
-							>
-							<svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-								<path
-									d="M7 17L17 7M9 7h8v8"
-									stroke="black"
-									stroke-width="2"
-									stroke-linecap="round"
-									stroke-linejoin="round"
-								/>
-							</svg>
-						</button>
-						<div class="pt-2">
-							<p
-								class="font-jakarta font-medium text-[14px] text-[#878c91] mb-4"
-								data-i18n="contact.direct"
-							>
-								Или напишите напрямую:
-							</p>
-							<div class="flex flex-wrap gap-3">
-								<a
-									href="https://wa.me/77026479903"
-									target="_blank"
-									rel="noreferrer"
-									aria-label="WhatsApp"
-									class="inline-flex items-center gap-2 rounded-xl px-5 py-3 text-white font-inter font-semibold text-[15px] hover:brightness-110 transition"
-									style="background: #25D366"
-								>
-									<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-										<path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.149-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.272c.002-5.44 4.43-9.867 9.874-9.867a9.86 9.86 0 017.002 2.898A9.86 9.86 0 0121.92 12c-.003 5.441-4.431 9.868-9.869 9.868z" />
-									</svg>
-									WhatsApp
-								</a>
-								<a
-									href="https://t.me/xsayat"
-									target="_blank"
-									rel="noreferrer"
-									aria-label="Telegram"
-									class="inline-flex items-center gap-2 rounded-xl px-5 py-3 text-white font-inter font-semibold text-[15px] hover:brightness-110 transition"
-									style="background: #229ED9"
-								>
-									<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-										<path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z" />
-									</svg>
-									Telegram
-								</a>
-								<a
-									href="https://instagram.com/xsayat"
-									target="_blank"
-									rel="noreferrer"
-									aria-label="Instagram"
-									class="inline-flex items-center gap-2 rounded-xl px-5 py-3 text-white font-inter font-semibold text-[15px] hover:brightness-110 transition"
-									style="background: linear-gradient(45deg, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5)"
-								>
-									<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-										<path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
-									</svg>
-									Instagram
-								</a>
-							</div>
-						</div>
-						<p id="formStatus" class="hidden text-sm text-white/80"></p>
-					</form>
+					</div>
+					<div class="contact-signature border-l border-white/10 pl-10 pb-1">
+						<p class="contact-quote font-jakarta text-[15px] leading-[1.7] mb-8" data-i18n="contact.promise">«Для нас клиент — не заявка в CRM. Это человек, которому мы должны помочь и которому важно быстро ответить».</p>
+						<p class="contact-name font-sora text-[24px] mb-1">Саят Оразкулов</p>
+						<p class="contact-role font-jakarta text-[14px]">Founder, Silk Road Tech</p>
+					</div>
 				</div>
 			</div>
 		</section>
@@ -1927,11 +1734,11 @@
 						</h4>
 						<ul class="font-roboto text-[14px] text-[#9b9b9c] space-y-6">
 							<li><a href="#services" data-i18n="nav.services">Услуги</a></li>
-							<li><a href="/landing" data-i18n="nav.landing">Лендинги</a></li>
 							<li><a href="#process" data-i18n="nav.process">Процесс</a></li>
 							<li><a href="/cases" data-i18n="nav.cases">Кейсы</a></li>
+							<li><a href="#products" data-i18n="nav.products">Продукты</a></li>
 							<li><a href="/about" data-i18n="nav.about">О нас</a></li>
-							<li><a href="https://academy.silkroadtech.kz/" target="_blank" rel="noopener noreferrer" data-i18n="nav.academy">Академия</a></li>
+							<li><a href="/blog" data-i18n="nav.blog">Блог</a></li>
 							<li><a href="#contacts" data-i18n="nav.contacts">Контакты</a></li>
 							<li class="font-bold">
 								<a href="#faq" data-i18n="nav.faq">FAQ</a>
@@ -1956,6 +1763,7 @@
 									>Авторские права</a
 								>
 							</li>
+							<li><a href="/contacts-certificates" data-i18n="footer.contacts_certificates">Контакты и сертификаты</a></li>
 							<li>
 								<a
 									href="mailto:sayat@silkroadtech.kz"
@@ -2151,38 +1959,44 @@
 						{
 							quote:
 								"Мне понравилось, что вы работаете быстро, и понравилась ваша скорость реакции на наши предложения.",
-							name: "Адильжан",
-							role: "ТОО ТеплоТехник",
+							name: "Амирхан",
+							role: "Инженер ПТО · ТеплоТехник-НС",
+							photo: "assets/review-amirkhan.png",
 						},
 						{
 							quote:
 								"Спасибо за своевременную работу и за то, что пошли на уступки, мы с вами заключаем по счету уже 6-7 договоров и нам нравится работать с вами в долгосрочной перспективе",
 							name: "Айнагуль Хамитова",
 							role: "CEO @daryndybala.kz",
+							photo: "assets/review-ainagul.jpeg",
 						},
 						{
 							quote: "Отличная работа, оперативно, четко",
 							name: "Нурлан Жакупов",
-							role: "",
+							role: "Экс-председатель QAZAQ AIR",
+							photo: "assets/review-nurlan.jpeg",
 						},
 					],
 					en: [
 						{
 							quote:
 								"I liked that you work fast, and I really appreciated how quickly you responded to our suggestions.",
-							name: "Adilzhan",
-							role: "TeploTekhnik LLP",
+							name: "Amirkhan",
+							role: "PTO Engineer · TeploTekhnik-NS",
+							photo: "assets/review-amirkhan.png",
 						},
 						{
 							quote:
 								"Thank you for the timely work and for being flexible with us. We have already signed our 6th or 7th invoice with you, and we value working with you in the long term.",
 							name: "Ainagul Khanym",
 							role: "CEO @daryndybala.kz",
+							photo: "assets/review-ainagul.jpeg",
 						},
 						{
 							quote: "Excellent work: fast, clear, and efficient.",
 							name: "Nurlan Zhakupov",
-							role: "",
+							role: "Ex-Chairman, QAZAQ AIR",
+							photo: "assets/review-nurlan.jpeg",
 						},
 					],
 				};
@@ -2223,7 +2037,17 @@
 					const items = reviews[getReviewLang()] || reviews.ru;
 					const item = items[activeReviewIndex] || items[0];
 					reviewQuote.textContent = item.quote;
-					reviewAvatar.textContent = getInitials(item.name);
+					if (item.photo) {
+						reviewAvatar.textContent = "";
+						reviewAvatar.style.backgroundImage = `url("${item.photo}")`;
+						reviewAvatar.style.backgroundSize = "cover";
+						reviewAvatar.style.backgroundPosition = "center";
+						reviewAvatar.setAttribute("aria-label", item.name);
+					} else {
+						reviewAvatar.style.backgroundImage = "";
+						reviewAvatar.textContent = getInitials(item.name);
+						reviewAvatar.setAttribute("aria-label", item.name);
+					}
 					reviewName.textContent = item.name;
 					reviewRole.textContent = item.role;
 					reviewRole.style.display = item.role ? "" : "none";

@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8" />
+		<script>(function(){var l=localStorage.getItem('srt_lang');if(l&&l!=='ru')document.documentElement.style.visibility='hidden';})();</script>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Блог Silk Road Tech — технологии, продукты и бизнес</title>
+		<meta name="description" content="Статьи Silk Road Tech о разработке программного обеспечения, внедрении ИИ и запуске цифровых продуктов." />
+		<meta name="robots" content="index,follow" />
+		<link rel="canonical" href="https://silkroadtech.kz/blog" />
+		<meta property="og:type" content="website" />
+		<meta property="og:site_name" content="Silk Road Tech" />
+		<meta property="og:title" content="Блог Silk Road Tech" />
+		<meta property="og:description" content="Опыт разработки, внедрения ИИ и запуска цифровых продуктов." />
+		<meta property="og:url" content="https://silkroadtech.kz/blog" />
+		<meta property="og:image" content="https://silkroadtech.kz/og-cover.png" />
+		<meta name="twitter:card" content="summary_large_image" />
+		<link rel="icon" href="favicon.svg" type="image/svg+xml" />
+		<link rel="icon" href="favicon.ico" sizes="any" />
+		<link rel="apple-touch-icon" href="apple-touch-icon.png" />
+		<link rel="manifest" href="site.webmanifest" />
+		<meta name="theme-color" content="#010205" />
+		<link rel="stylesheet" href="assets/site.css" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Manrope:wght@500;700;800&display=swap" />
+		<style>
+			.blog-shell { min-height: calc(100vh - 93px); padding: 112px 24px 140px; background: #fff; }
+			.blog-inner { max-width: 960px; margin: 0 auto; }
+			.blog-title { margin: 0; font-size: clamp(56px, 7vw, 88px); line-height: 1; letter-spacing: -.055em; font-weight: 600; }
+			.blog-list { margin-top: 96px; border-top: 1px solid #dfe1e2; }
+			.blog-post { display: grid; grid-template-columns: 150px 1fr 32px; gap: 34px; align-items: start; padding: 40px 0 44px; border-bottom: 1px solid #dfe1e2; }
+			.blog-date { color: #777c80; font-size: 14px; line-height: 1.5; }
+			.blog-post h2 { max-width: 680px; margin: 0; font-size: clamp(28px, 4vw, 42px); line-height: 1.12; letter-spacing: -.035em; font-weight: 600; }
+			.blog-post h2 a { transition: color .2s ease; }
+			.blog-post h2 a:hover { color: #659b24; }
+			.blog-arrow { font-size: 25px; line-height: 1.2; }
+			.blog-footer { background: #fff; padding: 42px 24px; }
+			.blog-footer-inner { max-width: 1298px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 24px; color: #878c91; font-size: 14px; }
+			.blog-footer-nav { display: flex; gap: 28px; }
+			@media (max-width: 1024px) { nav { padding: 18px 24px !important; } }
+			@media (max-width: 640px) { .blog-shell { padding-top: 72px; } .blog-list { margin-top: 64px; } .blog-post { grid-template-columns: 1fr 24px; gap: 18px; } .blog-date { grid-column: 1 / -1; } .blog-footer-inner { align-items: flex-start; flex-direction: column; } .blog-footer-nav { flex-wrap: wrap; gap: 16px 24px; } }
+		</style>
+	</head>
+	<body class="bg-white text-[#010205]">
+		<header class="sticky top-0 z-50 bg-[rgba(239,239,239,0.8)] backdrop-blur-[20px] border-b border-white/20">
+			<nav class="max-w-[1440px] mx-auto flex items-center justify-between px-20 py-5">
+				<div class="flex items-center gap-[74px]">
+					<a href="/" aria-label="Silk Road Tech home"><img src="assets/logo.webp" alt="Silk Road Tech" class="h-6 w-auto logo-img" width="208" height="48" /></a>
+					<ul class="hidden lg:flex items-center gap-10 text-[17.1px] font-semibold text-[#020407]">
+						<li><a href="/#services" class="hover:text-[#9ac763]" data-i18n="nav.services">Услуги</a></li>
+						<li><a href="/#process" class="hover:text-[#9ac763]" data-i18n="nav.process">Процесс</a></li>
+						<li><a href="/cases" class="hover:text-[#9ac763]" data-i18n="nav.cases">Кейсы</a></li>
+						<li><a href="/#products" class="hover:text-[#9ac763]" data-i18n="nav.products">Продукты</a></li>
+						<li><a href="/about" class="hover:text-[#9ac763]" data-i18n="nav.about">О нас</a></li>
+						<li><a href="/blog" class="text-[#659b24]" data-i18n="nav.blog" aria-current="page">Блог</a></li>
+						<li><a href="/#contacts" class="hover:text-[#9ac763]" data-i18n="nav.contacts">Контакты</a></li>
+					</ul>
+				</div>
+				<div class="flex items-center gap-2">
+					<a href="/#contacts" class="font-manrope font-bold bg-[#99cf63] rounded-full px-4 py-3 text-[16px] tracking-tight hover:brightness-95 transition" data-i18n="nav.cta">Обсудить проект</a>
+					<button id="langToggle" class="hidden lg:flex items-center justify-center w-[52px] h-[52px] rounded-full bg-[#010205] text-white text-[15px] font-semibold">En</button>
+					<button class="lg:hidden w-10 h-10 flex flex-col items-center justify-center gap-1.5" id="hamburger" aria-label="Открыть меню"><span class="block w-6 h-0.5 bg-[#010205]"></span><span class="block w-6 h-0.5 bg-[#010205]"></span><span class="block w-6 h-0.5 bg-[#010205]"></span></button>
+				</div>
+			</nav>
+		</header>
+		<div class="fixed inset-0 z-[100] overflow-hidden pointer-events-none lg:hidden">
+			<div class="mobile-menu absolute inset-0 bg-white p-8 pt-20 pointer-events-auto" id="mobileMenu">
+				<button class="absolute top-6 right-6 text-3xl" id="closeMenu" aria-label="Закрыть меню">&times;</button>
+				<ul class="flex flex-col gap-6 text-[20px] font-semibold">
+					<li><a href="/#services" data-i18n="nav.services">Услуги</a></li><li><a href="/#process" data-i18n="nav.process">Процесс</a></li><li><a href="/cases" data-i18n="nav.cases">Кейсы</a></li><li><a href="/#products" data-i18n="nav.products">Продукты</a></li><li><a href="/about" data-i18n="nav.about">О нас</a></li><li><a href="/blog" data-i18n="nav.blog">Блог</a></li><li><a href="/#contacts" data-i18n="nav.contacts">Контакты</a></li>
+				</ul>
+			</div>
+		</div>
+		<main class="blog-shell">
+			<div class="blog-inner">
+				<h1 class="blog-title">Блог</h1>
+				<div class="blog-list">
+					<article class="blog-post">
+						<time class="blog-date" datetime="2026-08-19">19 августа<br />2026</time>
+						<h2><a href="/blog/who-we-learn-from">У кого мы учимся строить продукты и компанию</a></h2>
+						<a class="blog-arrow" href="/blog/who-we-learn-from" aria-label="Читать статью">↗</a>
+					</article>
+					<article class="blog-post">
+						<time class="blog-date" datetime="2026-08-19">19 августа<br />2026</time>
+						<h2><a href="/blog/why-we-audit-first">Почему мы перестали брать большие техзадания в работу сразу</a></h2>
+						<a class="blog-arrow" href="/blog/why-we-audit-first" aria-label="Читать статью">↗</a>
+					</article>
+				</div>
+			</div>
+		</main>
+		<footer class="blog-footer"><div class="blog-footer-inner"><span data-i18n="footer.copy">© 2026 Silk Road Tech. Все права защищены.</span><div class="blog-footer-nav"><a href="/privacy" data-i18n="footer.privacy">Политика конфиденциальности</a><a href="/copyright" data-i18n="footer.copyright">Авторские права</a><a href="/contacts-certificates" data-i18n="footer.contacts_certificates">Контакты и сертификаты</a><a href="mailto:sayat@silkroadtech.kz">sayat@silkroadtech.kz</a></div></div></footer>
+		<script>
+			document.addEventListener('DOMContentLoaded', function () {
+				var hamburger = document.getElementById('hamburger'); var menu = document.getElementById('mobileMenu'); var close = document.getElementById('closeMenu');
+				function hideMenu(){ menu.classList.remove('open'); document.body.classList.remove('menu-open'); }
+				if(hamburger && menu && close){ hamburger.addEventListener('click', function(){ menu.classList.add('open'); document.body.classList.add('menu-open'); }); close.addEventListener('click', hideMenu); menu.querySelectorAll('a').forEach(function(link){ link.addEventListener('click', hideMenu); }); }
+			});
+		</script>
+		<script defer src="assets/i18n.js"></script>
+	</body>
+</html>

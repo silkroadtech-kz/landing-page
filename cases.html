@@ -89,31 +89,103 @@
 			}
 
 			/* Card styles */
+			.cases-header {
+				display: block !important;
+				max-width: 900px;
+				margin-bottom: 72px !important;
+			}
+			.cases-header h1 {
+				font-family: "Plus Jakarta Sans", sans-serif !important;
+				font-size: clamp(52px, 7vw, 84px) !important;
+				font-weight: 600 !important;
+				line-height: 1 !important;
+				letter-spacing: -0.055em !important;
+				margin-bottom: 28px;
+			}
+			.cases-header p {
+				max-width: 720px !important;
+				font-size: 19px !important;
+				line-height: 1.65 !important;
+				letter-spacing: -0.015em !important;
+				color: #6f7478 !important;
+				text-align: left !important;
+			}
+			.cases-grid {
+				display: grid !important;
+				grid-template-columns: repeat(2, minmax(0, 1fr));
+				gap: 22px !important;
+			}
+			.cases-row {
+				display: contents !important;
+			}
+			.case-contentflow { order: 5; }
+			.case-esutd { order: 6; }
+			.case-kzprovider { order: 7; }
+			.case-agts { order: 8; }
+			.case-dia {
+				order: 9;
+				grid-column: 1 / -1;
+				min-height: 250px;
+			}
 			.case-card {
 				background: #fff;
-				border-radius: 38px;
-				padding: 34px 29px;
+				border: 1px solid #e1e3e4 !important;
+				border-radius: 20px;
+				padding: 30px;
 				width: 100%;
-				max-width: 608px;
-				min-height: 278px;
+				max-width: none;
+				min-height: 290px;
 				overflow: hidden;
 				display: flex;
 				flex-direction: column;
-				gap: 15px;
+				gap: 18px;
 				transition:
-					transform 0.3s ease,
-					box-shadow 0.3s ease;
+					transform 0.25s ease,
+					border-color 0.25s ease,
+					box-shadow 0.25s ease;
 			}
 			.case-card:hover {
-				transform: translateY(-4px);
+				transform: translateY(-3px);
+				border-color: #9ac763 !important;
+				box-shadow: 0 18px 45px rgba(1, 2, 5, 0.07) !important;
 			}
-			.case-card--black {
-				border: 0.84px solid #000;
-				box-shadow: 0 4px 0 0 #000;
-			}
+			.case-card--black,
 			.case-card--green {
-				border: 0.84px solid #9ac763;
-				box-shadow: 0 4px 0 0 #9ac763;
+				box-shadow: none;
+			}
+			.case-card .w-\[80px\] {
+				width: 68px !important;
+				height: 68px !important;
+				border-radius: 14px !important;
+			}
+			.case-card .font-jost.font-bold.underline {
+				font-size: 14px !important;
+				font-weight: 600 !important;
+				color: #74797d !important;
+				text-decoration: none !important;
+			}
+			.case-card p.font-space.font-medium {
+				font-family: "Plus Jakarta Sans", sans-serif !important;
+				font-size: 19px !important;
+				line-height: 1.35 !important;
+				font-weight: 600 !important;
+				letter-spacing: -0.025em;
+			}
+			.case-card p.font-space.text-\[13px\] {
+				font-family: "Plus Jakarta Sans", sans-serif !important;
+				font-size: 14px !important;
+				line-height: 1.6 !important;
+				color: #767b7f !important;
+			}
+			.case-card hr {
+				border-color: #eceeef !important;
+				margin-top: auto;
+			}
+			.case-card .font-jost.text-\[16px\] {
+				font-family: "Plus Jakarta Sans", sans-serif !important;
+				font-size: 13px !important;
+				line-height: 1.5 !important;
+				color: #4f5457 !important;
 			}
 
 			.bullet {
@@ -179,11 +251,12 @@
 
 			/* External link icon */
 			.ext-link {
-				opacity: 0.4;
-				transition: opacity 0.2s;
+				opacity: 0.45;
+				transition: opacity 0.2s, transform 0.2s;
 			}
 			.case-card:hover .ext-link {
 				opacity: 1;
+				transform: translate(2px, -2px);
 			}
 
 			@media (max-width: 1200px) {
@@ -245,6 +318,11 @@
 					font-size: 2rem !important;
 					line-height: 1.2 !important;
 				}
+				.cases-header h1 {
+					font-size: 2.6rem !important;
+					line-height: 1.05 !important;
+					margin-bottom: 1rem !important;
+				}
 				.cases-header p {
 					font-size: 1rem !important;
 					line-height: 1.6 !important;
@@ -254,12 +332,13 @@
 				}
 				/* Cases grid: single column */
 				.cases-grid {
+					grid-template-columns: 1fr !important;
 					gap: 1rem !important;
 				}
 				.cases-row {
-					flex-direction: column !important;
-					gap: 1rem !important;
+					display: contents !important;
 				}
+				.case-dia { grid-column: auto; }
 				.case-card {
 					max-width: 100% !important;
 					padding: 1.25rem !important;
@@ -454,14 +533,6 @@
 						</li>
 						<li>
 							<a
-								href="/landing"
-								class="hover:text-[#9ac763]"
-								data-i18n="nav.landing"
-								>Лендинги</a
-							>
-						</li>
-						<li>
-							<a
 								href="/#process"
 								class="hover:text-[#9ac763]"
 								data-i18n="nav.process"
@@ -481,12 +552,13 @@
 								>О нас</a
 							>
 						</li>
+						<li><a href="/#products" class="hover:text-[#9ac763]" data-i18n="nav.products">Продукты</a></li>
 						<li>
 							<a
-								href="https://academy.silkroadtech.kz/" target="_blank" rel="noopener noreferrer"
+								href="/blog"
 								class="hover:text-[#9ac763]"
-								data-i18n="nav.academy"
-								>Академия</a
+								data-i18n="nav.blog"
+								>Блог</a
 							>
 						</li>
 						<li>
@@ -537,11 +609,6 @@
 						>
 					</li>
 					<li>
-						<a href="/landing" class="mobile-link" data-i18n="nav.landing"
-							>Лендинги</a
-						>
-					</li>
-					<li>
 						<a href="/#process" class="mobile-link" data-i18n="nav.process"
 							>Процесс</a
 						>
@@ -554,8 +621,9 @@
 					<li>
 						<a href="/about" class="mobile-link" data-i18n="nav.about">О нас</a>
 					</li>
+					<li><a href="/#products" data-i18n="nav.products">Продукты</a></li>
 					<li>
-						<a href="https://academy.silkroadtech.kz/" target="_blank" rel="noopener noreferrer" data-i18n="nav.academy">Академия</a>
+						<a href="/blog" data-i18n="nav.blog">Блог</a>
 					</li>
 					<li>
 						<a href="/#contacts" class="mobile-link" data-i18n="nav.contacts"
@@ -583,9 +651,8 @@
 						class="font-inter text-[24px] leading-[1.4] tracking-[-0.72px] text-[#212121] text-justify max-w-[938px]"
 						data-i18n="cases.hero.desc"
 					>
-						Мы помогли локальным и международным комп��ниям решить их сложнейшие
-						технологические задачи — через кастомные ERP-внедрения и
-						интеллектуальные системы управления.
+						Продукты, платформы и цифровые системы, которые мы спроектировали,
+						разработали или помогли улучшить.
 					</p>
 				</div>
 
@@ -880,7 +947,7 @@
 					<!-- Row 3 -->
 					<div class="cases-row flex gap-[34px] justify-center">
 						<!-- Card 5: ContentFlow -->
-						<div class="case-card case-card--black reveal delay-2">
+						<div class="case-card case-card--black reveal delay-2 case-contentflow">
 							<div class="flex items-start justify-between">
 								<div class="flex gap-[29px] items-start">
 									<div class="flex flex-col gap-[7px] items-start">
@@ -894,11 +961,12 @@
 											/>
 										</div>
 										<a
-											href="https://kainulla-contentflow.gitlabapp.alem.ai/"
+											href="https://contentflow.fyi"
 											target="_blank"
 											class="font-jost font-bold text-[16px] text-black underline"
 											>ContentFlow</a
 										>
+										<span class="own-product-badge" data-i18n="cases.contentflow.own" style="display:inline-flex;padding:4px 8px;border-radius:999px;background:#101112;color:#9ac763;font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase">Наш продукт</span>
 									</div>
 									<div class="flex flex-col gap-[11px] justify-center">
 										<p
@@ -918,7 +986,7 @@
 									</div>
 								</div>
 								<a
-									href="https://kainulla-contentflow.gitlabapp.alem.ai/"
+									href="https://contentflow.fyi"
 									target="_blank"
 									class="ext-link shrink-0"
 								>
@@ -953,7 +1021,7 @@
 						</div>
 
 						<!-- Card 7: KZ-Provider -->
-						<div class="case-card case-card--green reveal delay-1">
+						<div class="case-card case-card--green reveal delay-1 case-kzprovider">
 							<div class="flex items-start justify-between">
 								<div class="flex gap-[29px] items-start">
 									<div class="flex flex-col gap-[7px] items-start">
@@ -1016,6 +1084,73 @@
 									>Product catalog meeting international standards</span
 								>
 							</div>
+						</div>
+					</div>
+
+					<!-- Row 4: AGTS — moved from the former Landing pages section -->
+					<div class="cases-row flex gap-[34px] justify-center">
+						<div class="case-card case-card--black reveal case-agts">
+							<div class="flex items-start justify-between">
+								<div class="flex gap-[29px] items-start">
+									<div class="flex flex-col gap-[7px] items-start">
+										<div class="w-[80px] h-[80px] rounded-[10px] bg-black flex items-center justify-center overflow-hidden">
+											<img src="assets/case_agts.webp" alt="AGTS" class="w-full h-full object-cover" />
+										</div>
+										<a href="https://www.agts.kz/" target="_blank" rel="noreferrer" class="font-jost font-bold text-[16px] text-black underline">AGTS</a>
+									</div>
+									<div class="flex flex-col gap-[11px] justify-center">
+										<p class="font-space font-medium text-[17px] leading-normal text-black max-w-[401px]" data-i18n="cases.agts.title">Корпоративный сайт поставщика технической и газовой серы</p>
+										<p class="font-space text-[13px] leading-normal text-black max-w-[401px]" data-i18n="cases.agts.desc">Разработали многоязычный сайт-каталог для промышленного поставщика: продукция, сертификаты, информация о компании и быстрый запрос коммерческого предложения.</p>
+									</div>
+								</div>
+								<a href="https://www.agts.kz/" target="_blank" rel="noreferrer" class="ext-link shrink-0" aria-label="Открыть сайт AGTS">
+									<svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3" stroke="#9ac763" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></svg>
+								</a>
+							</div>
+							<hr class="border-t border-black/10" />
+							<div class="flex items-center gap-[7px]"><span class="bullet"></span><span class="font-jost text-[16px] leading-[25.6px] text-black" data-i18n="cases.agts.b1">Каталог продукции и сертификатов</span></div>
+							<div class="flex items-center gap-[7px]"><span class="bullet"></span><span class="font-jost text-[16px] leading-[25.6px] text-black" data-i18n="cases.agts.b2">Три языковые версии</span></div>
+						</div>
+					</div>
+
+					<!-- Row 5: ESUTD + DIA Holding -->
+					<div class="cases-row flex gap-[34px] justify-center">
+						<div class="case-card case-card--green reveal delay-1 case-esutd">
+							<div class="flex items-start justify-between">
+								<div class="flex gap-[29px] items-start">
+									<div class="flex flex-col gap-[7px] items-start">
+										<div class="w-[80px] h-[80px] rounded-[10px] bg-[#efefef] flex items-center justify-center overflow-hidden p-3"><img src="assets/cases/esutd.png" alt="ЕСУТД" class="w-full h-full object-contain" /></div>
+										<a href="https://esutd.gov.kz/home" target="_blank" rel="noreferrer" class="font-jost font-bold text-[16px] text-black underline">ЕСУТД</a>
+									</div>
+									<div class="flex flex-col gap-[11px] justify-center">
+										<p class="font-space font-medium text-[17px] leading-normal text-black max-w-[401px]" data-i18n="cases.esutd.title">Дизайн и продуктовое управление государственной транспортной платформой</p>
+										<p class="font-space text-[13px] leading-normal text-black max-w-[401px]" data-i18n="cases.esutd.desc">Спроектировали пользовательские интерфейсы и сопровождали развитие Единой системы управления транспортными документами: требования, приоритеты и взаимодействие команд.</p>
+									</div>
+								</div>
+								<a href="https://esutd.gov.kz/home" target="_blank" rel="noreferrer" class="ext-link shrink-0" aria-label="Открыть платформу ЕСУТД"><svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3" stroke="#9ac763" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></svg></a>
+							</div>
+							<hr class="border-t border-black/10" />
+							<div class="flex items-center gap-[7px]"><span class="bullet"></span><span class="font-jost text-[16px] leading-[25.6px] text-black" data-i18n="cases.esutd.b1">UX/UI-дизайн сложной платформы</span></div>
+							<div class="flex items-center gap-[7px]"><span class="bullet"></span><span class="font-jost text-[16px] leading-[25.6px] text-black" data-i18n="cases.esutd.b2">Управление требованиями и приоритетами</span></div>
+						</div>
+
+						<div class="case-card case-card--black reveal delay-2 case-dia">
+							<div class="flex items-start justify-between">
+								<div class="flex gap-[29px] items-start">
+									<div class="flex flex-col gap-[7px] items-start">
+										<div class="w-[80px] h-[80px] rounded-[10px] bg-[#05753f] flex items-center justify-center overflow-hidden"><img src="assets/cases/diaholding.png" alt="DIA Holding" class="w-full h-full object-cover" /></div>
+										<a href="https://diaholding.ae/" target="_blank" rel="noreferrer" class="font-jost font-bold text-[16px] text-black underline">DIA Holding</a>
+									</div>
+									<div class="flex flex-col gap-[11px] justify-center">
+										<p class="font-space font-medium text-[17px] leading-normal text-black max-w-[401px]" data-i18n="cases.dia.title">Технический аудит международного холдинга за 10 дней</p>
+										<p class="font-space text-[13px] leading-normal text-black max-w-[401px]" data-i18n="cases.dia.desc">Провели аудит цифровых систем и архитектуры DIA Holding, выявили технические риски и подготовили приоритизированный план улучшений.</p>
+									</div>
+								</div>
+								<a href="https://diaholding.ae/" target="_blank" rel="noreferrer" class="ext-link shrink-0" aria-label="Открыть сайт DIA Holding"><svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3" stroke="#9ac763" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></svg></a>
+							</div>
+							<hr class="border-t border-black/10" />
+							<div class="flex items-center gap-[7px]"><span class="bullet"></span><span class="font-jost text-[16px] leading-[25.6px] text-black" data-i18n="cases.dia.b1">10 дней от старта до итогового отчёта</span></div>
+							<div class="flex items-center gap-[7px]"><span class="bullet"></span><span class="font-jost text-[16px] leading-[25.6px] text-black" data-i18n="cases.dia.b2">Карта рисков и план улучшений</span></div>
 						</div>
 					</div>
 				</div>
@@ -1136,7 +1271,7 @@
 							<li><a href="/#process" data-i18n="nav.process">Процесс</a></li>
 							<li><a href="/about" data-i18n="nav.about">О нас</a></li>
 							<li><a href="/cases" data-i18n="nav.cases">Кейсы</a></li>
-							<li><a href="https://academy.silkroadtech.kz/" target="_blank" rel="noopener noreferrer" data-i18n="nav.academy">Академия</a></li>
+							<li><a href="/blog" data-i18n="nav.blog">Блог</a></li>
 							<li>
 								<a href="/#contacts" data-i18n="nav.contacts">Контакты</a>
 							</li>
@@ -1163,6 +1298,7 @@
 									>Авторские права</a
 								>
 							</li>
+							<li><a href="/contacts-certificates" data-i18n="footer.contacts_certificates">Контакты и сертификаты</a></li>
 							<li>
 								<a
 									href="mailto:sayat@silkroadtech.kz"
