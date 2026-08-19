@@ -60,6 +60,20 @@
 		<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Manrope:wght@500;700;800&family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,700&family=Jost:wght@400;600&family=Roboto:wght@400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
 		<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Manrope:wght@500;700;800&family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,700&family=Jost:wght@400;600&family=Roboto:wght@400;500;600;700&display=swap" /></noscript>
 		<style>
+			@media (min-width: 769px) {
+				/* Keep the biography in its own column, clear of the portrait. */
+				.team-card .card-info {
+					left: 32px !important;
+					width: 176px;
+				}
+				.team-card .card-info p:first-child {
+					font-size: 27px !important;
+					letter-spacing: -0.8px !important;
+				}
+				.team-card .card-info p:nth-child(3) {
+					width: 176px !important;
+				}
+			}
 			html,
 			body {
 				font-family: "Plus Jakarta Sans", system-ui, sans-serif;
@@ -499,14 +513,6 @@
 						</li>
 						<li>
 							<a
-								href="/landing"
-								class="hover:text-[#9ac763]"
-								data-i18n="nav.landing"
-								>Лендинги</a
-							>
-						</li>
-						<li>
-							<a
 								href="/#process"
 								class="hover:text-[#9ac763]"
 								data-i18n="nav.process"
@@ -529,12 +535,13 @@
 								>О нас</a
 							>
 						</li>
+						<li><a href="/#products" class="hover:text-[#9ac763]" data-i18n="nav.products">Продукты</a></li>
 						<li>
 							<a
-								href="https://academy.silkroadtech.kz/" target="_blank" rel="noopener noreferrer"
+								href="/blog"
 								class="hover:text-[#9ac763]"
-								data-i18n="nav.academy"
-								>Академия</a
+								data-i18n="nav.blog"
+								>Блог</a
 							>
 						</li>
 						<li>
@@ -587,18 +594,14 @@
 						>
 					</li>
 					<li>
-						<a href="/landing" class="mobile-link" data-i18n="nav.landing"
-							>Лендинги</a
-						>
-					</li>
-					<li>
 						<a href="/#process" class="mobile-link" data-i18n="nav.process"
 							>Процесс</a
 						>
 					</li>
 					<li><a href="/cases" data-i18n="nav.cases">Кейсы</a></li>
+					<li><a href="/#products" data-i18n="nav.products">Продукты</a></li>
 					<li><a href="/about" data-i18n="nav.about">О нас</a></li>
-					<li><a href="https://academy.silkroadtech.kz/" target="_blank" rel="noopener noreferrer" data-i18n="nav.academy">Академия</a></li>
+					<li><a href="/blog" data-i18n="nav.blog">Блог</a></li>
 					<li>
 						<a href="/#contacts" class="mobile-link" data-i18n="nav.contacts"
 							>Контакты</a
@@ -744,7 +747,7 @@
 					name: "Sayat O.",
 					photo: "assets/team_1.webp",
 					photoClass: "object-right object-top",
-					watermark: "CEO",
+					watermark: "Founder",
 					roleKey: "team.sayat.role",
 					bioKey: "team.sayat.bio",
 				},
@@ -752,7 +755,7 @@
 					name: "Alnur S.",
 					photo: "assets/team_2.webp",
 					photoClass: "object-bottom mix-blend-lighten",
-					watermark: "Prod. Engineer",
+					watermark: "Product Engineer",
 					roleKey: "team.alnur.role",
 					bioKey: "team.alnur.bio",
 				},
@@ -765,12 +768,13 @@
 					bioKey: "team.bakhtiyar.bio",
 				},
 				{
-					name: "Bekarys Sh.",
-					photo: "assets/team_4.webp",
-					photoClass: "object-top mix-blend-lighten",
-					watermark: "Prod. Engineer",
-					roleKey: "team.bekarys.role",
-					bioKey: "team.bekarys.bio",
+					name: "Rassul",
+					photo: "assets/team_rasul-studio.png",
+					photoClass: "object-center",
+					profile: "https://x.com/rxssula",
+					watermark: "Product Engineer",
+					roleKey: "team.rassul.role",
+					bioKey: "team.rassul.bio",
 				},
 			];
 
@@ -810,6 +814,9 @@
 						'<p class="font-inter text-[16px] leading-[1.4] tracking-[-0.48px] text-white/40 mt-3 w-[219px]" data-i18n="' +
 						m.bioKey +
 						'"></p>' +
+						(m.profile
+							? '<a href="' + m.profile + '" target="_blank" rel="noreferrer" class="inline-block font-inter text-[14px] text-[#9ac763] mt-4 underline">@rxssula</a>'
+							: "") +
 						"</div>" +
 						'<button class="card-toggle absolute z-20 flex items-center justify-center bg-[#212121] border-[5px] border-[#9ac763] rounded-full hover:scale-110 active:scale-95" style="left:52px;bottom:22px;width:64px;height:64px;transition:all 0.5s cubic-bezier(0.4,0,0.2,1);" onclick="teamAccordion(' +
 						i +
@@ -826,7 +833,7 @@
 			(function () {
 				const CFG = [
 					{
-						// 0 – CEO
+						// 0 – Founder
 						collW: 240,
 						collH: 400,
 						darkH: 400,
@@ -871,7 +878,7 @@
 						bgInactive: "#212121",
 					},
 					{
-						// 3 – Bekarys
+						// 3 – Rassul
 						collW: 240,
 						collH: 400,
 						darkH: 400,
@@ -1020,7 +1027,7 @@
 										<p
 											class="font-jost text-[13px] text-white mt-2 leading-[20px]"
 										>
-											Senior Software Engineer at Meta
+											Software Engineer at Google
 										</p>
 									</div>
 									<a
@@ -1043,7 +1050,7 @@
 								<p
 									class="font-jost text-[14px] leading-[29px] text-[#7a7a7a] px-4 pb-4"
 								>
-									7+ years in iOS and Full-Stack. Meta, inDrive
+									Software engineering at Google. Previously Meta and inDrive
 								</p>
 							</div>
 						</div>
@@ -1124,7 +1131,7 @@
 										<p
 											class="font-jost text-[13px] text-white mt-2 leading-[20px]"
 										>
-											Product Manager
+											Senior Product Manager, Avito
 										</p>
 									</div>
 									<a
@@ -1147,7 +1154,7 @@
 								<p
 									class="font-jost text-[14px] leading-[29px] text-[#7a7a7a] px-4 pb-4"
 								>
-									Product management and strategy
+									Product management and strategy at Avito
 								</p>
 							</div>
 						</div>
@@ -1228,7 +1235,7 @@
 										<p
 											class="font-jost text-[13px] text-white mt-2 leading-[20px]"
 										>
-											Senior iOS Engineer
+											Senior iOS Engineer, inDrive
 										</p>
 									</div>
 									<a
@@ -1251,7 +1258,7 @@
 								<p
 									class="font-jost text-[14px] leading-[29px] text-[#7a7a7a] px-4 pb-4"
 								>
-									8+ years in iOS development. inDrive, Kolesa Group
+									8+ years in iOS development. inDrive and Kolesa Group
 								</p>
 							</div>
 						</div>
@@ -1543,7 +1550,7 @@
 							</li>
 							<li><a href="/about" data-i18n="nav.about">О нас</a></li>
 							<li><a href="/cases" data-i18n="nav.cases">Кейсы</a></li>
-							<li><a href="https://academy.silkroadtech.kz/" target="_blank" rel="noopener noreferrer" data-i18n="nav.academy">Академия</a></li>
+							<li><a href="/blog" data-i18n="nav.blog">Блог</a></li>
 						</ul>
 					</div>
 					<div>
@@ -1564,6 +1571,7 @@
 									>Авторские права</a
 								>
 							</li>
+							<li><a href="/contacts-certificates" data-i18n="footer.contacts_certificates">Контакты и сертификаты</a></li>
 							<li>
 								<a
 									href="mailto:sayat@silkroadtech.kz"

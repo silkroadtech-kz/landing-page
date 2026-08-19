@@ -15,6 +15,10 @@
 			ru: "Кейсы",
 			en: "Cases",
 		},
+		"nav.products": {
+			ru: "Продукты",
+			en: "Products",
+		},
 		"nav.about": {
 			ru: "О нас",
 			en: "About",
@@ -35,16 +39,14 @@
 			ru: "FAQ",
 			en: "FAQ",
 		},
-		"nav.landing": { ru: "Лендинги", en: "Landing pages" },
-
 		/* ── Hero ── */
 		"hero.title": {
 			ru: '<span class="text-[#9ac763]">Делаем продукты</span> под ваши бизнес процессы',
 			en: '<span class="text-[#9ac763]">We build products</span> around your business processes',
 		},
 		"hero.desc": {
-			ru: "Быстро. Качественно. Недорого.",
-			en: "Fast. High-quality. Affordable.",
+			ru: "От идеи и архитектуры до запуска и роста продукта.",
+			en: "From idea and architecture to launch and product growth.",
 		},
 		"hero.cta": {
 			ru: "Обсудить проект",
@@ -66,6 +68,18 @@
 			ru: "инженеров, продуктологов, дизайнеров с опытом в международных компаниях",
 			en: "engineers, product managers, and designers with experience at international companies",
 		},
+
+		/* ── Own products ── */
+		"products.eyebrow": { ru: "Собственный продукт", en: "Our own product" },
+		"products.title": {
+			ru: "Продукт, который мы создали для себя — и продолжаем развивать с любовью.",
+			en: "A product we built for ourselves — and continue to grow with care.",
+		},
+		"products.description": {
+			ru: "ContentFlow: планируйте публикации, следите за ростом и создавайте изображения и видео — всё в одном окне. Для нас это не завершённый кейс, а живая платформа: мы ежедневно пользуемся ею, разговариваем с пользователями и улучшаем каждую деталь.",
+			en: "ContentFlow turns ideas and voice notes into a consistent content system. To us, it is not a finished case study but a living platform: we use it daily, talk to users, and improve every detail.",
+		},
+		"products.link": { ru: "Открыть ContentFlow", en: "Open ContentFlow" },
 		"hero.stat.meta": {
 			ru: "Средний опыт: 6+ лет",
 			en: "Average experience: 6+ years",
@@ -107,37 +121,62 @@
 			en: '<span class="font-bold text-[#9ac763]">Four key service areas</span> — flexible approach: we deliver full-scale digital transformation or solve specific challenges for your business.',
 		},
 		"s1.title": {
-			ru: "Разработка ПО",
-			en: "Software Development",
+			ru: "Сайты и приложения",
+			en: "Websites and applications",
 		},
 		"s1.desc": {
-			ru: "Веб и мобильные приложения на заказ, ERP-системы, API-интеграции. С нуля или в существующую инфраструктуру.",
-			en: "Custom web and mobile apps, ERP systems, API integrations. From scratch or into existing infrastructure.",
+			ru: "Проектируем и разрабатываем цифровые продукты под бизнес-задачу — от первого экрана до стабильного запуска.",
+			en: "We design and build digital products around a business goal — from the first screen to a stable launch.",
 		},
+		"s1.i1": { ru: "Корпоративные сайты и лендинги", en: "Corporate websites and landing pages" },
+		"s1.i2": { ru: "Веб-сервисы и личные кабинеты", en: "Web services and customer portals" },
+		"s1.i3": { ru: "Мобильные приложения iOS и Android", en: "iOS and Android applications" },
+		"s1.i4": { ru: "ERP, CRM и внутренние системы", en: "ERP, CRM, and internal systems" },
+		"s1.i5": { ru: "API-интеграции и развитие legacy", en: "API integrations and legacy modernization" },
+		"s1.trust": { ru: "Начинаем с архитектуры и прототипа, показываем демо каждые две недели, тестируем и остаёмся с продуктом после запуска.", en: "We start with architecture and a prototype, demo every two weeks, test thoroughly, and stay with the product after launch." },
 		"s2.title": {
-			ru: "ИИ-ассистенты",
-			en: "AI Assistants",
+			ru: "AI и автоматизация",
+			en: "AI and automation",
 		},
 		"s2.desc": {
-			ru: "Внедряем LLM в реальные рабочие процессы: чат-боты, автоматизация документов, RAG-системы на внутренних данных.",
-			en: "We integrate LLMs into real workflows: chatbots, document automation, RAG systems on internal data.",
+			ru: "Встраиваем AI в процессы, где он экономит время команды, ускоряет ответы и снижает объём ручной работы.",
+			en: "We bring AI into workflows where it saves team time, speeds up responses, and reduces manual work.",
 		},
+		"s2.i1": { ru: "AI-ассистенты для продаж и поддержки", en: "AI assistants for sales and support" },
+		"s2.i2": { ru: "Поиск по внутренней базе знаний (RAG)", en: "Internal knowledge search (RAG)" },
+		"s2.i3": { ru: "Обработка документов и обращений", en: "Document and request processing" },
+		"s2.i4": { ru: "Генерация контента и отчётов", en: "Content and report generation" },
+		"s2.i5": { ru: "Интеграции с CRM, ERP и мессенджерами", en: "CRM, ERP, and messenger integrations" },
+		"s2.trust": { ru: "Сначала проверяем ценность на небольшом пилоте. Настраиваем права доступа, журнал действий и контроль человека над критичными решениями.", en: "We validate value with a focused pilot first, then configure access controls, audit logs, and human oversight for critical decisions." },
 		"s3.title": {
-			ru: "Аналитика &amp; Данные",
-			en: "Analytics &amp; Data",
+			ru: "Аналитика и дашборды",
+			en: "Analytics and dashboards",
 		},
 		"s3.desc": {
-			ru: "BI-дашборды и обработка данных → в бизнес-решения.",
-			en: "BI dashboards and data processing → into business decisions.",
+			ru: "Собираем разрозненные данные в понятную систему, чтобы руководители видели бизнес целиком и принимали решения быстрее.",
+			en: "We turn fragmented data into a clear system so leaders can see the whole business and make decisions faster.",
 		},
+		"s3.i1": { ru: "Дашборды для руководителей", en: "Executive dashboards" },
+		"s3.i2": { ru: "Продажи, маркетинг и продуктовые метрики", en: "Sales, marketing, and product metrics" },
+		"s3.i3": { ru: "ETL-процессы и хранилища данных", en: "ETL pipelines and data warehouses" },
+		"s3.i4": { ru: "Автоматические отчёты и алерты", en: "Automated reports and alerts" },
+		"s3.i5": { ru: "Интеграции Power BI, Metabase и Looker", en: "Power BI, Metabase, and Looker integrations" },
+		"s3.trust": { ru: "Сверяем цифры с первоисточниками, фиксируем единые определения метрик и разграничиваем доступ. Дашборд показывает правду, а не просто красивый график.", en: "We reconcile numbers with source systems, define metrics consistently, and control access. The dashboard shows the truth, not just attractive charts." },
 		"s4.title": {
-			ru: "Железо &amp; ПО",
-			en: "Hardware &amp; Software",
+			ru: "SEO и GEO",
+			en: "SEO and GEO",
 		},
 		"s4.desc": {
-			ru: "Аппаратно-программная интеграция, IoT-платформы, мониторинг производства, умные склады.",
-			en: "Hardware-software integration, IoT platforms, production monitoring, smart warehouses.",
+			ru: "Помогаем продукту быть понятным поисковым системам, AI-ассистентам и людям — технически, структурно и содержательно.",
+			en: "We make products understandable to search engines, AI assistants, and people — technically, structurally, and through content.",
 		},
+		"s4.i1": { ru: "Технический SEO-аудит", en: "Technical SEO audit" },
+		"s4.i2": { ru: "Семантика и структура страниц", en: "Search semantics and page structure" },
+		"s4.i3": { ru: "Контент под поисковый спрос", en: "Content aligned with search demand" },
+		"s4.i4": { ru: "GEO для ответов ChatGPT и других AI-систем", en: "GEO for ChatGPT and other AI answer engines" },
+		"s4.i5": { ru: "Аналитика позиций, трафика и конверсий", en: "Rankings, traffic, and conversion analytics" },
+		"s4.trust": { ru: "Начинаем с аудита и приоритетного плана. Показываем исходные показатели, внесённые изменения и измеримый результат — без обещаний «первого места за неделю».", en: "We begin with an audit and prioritized roadmap, then show the baseline, every change, and measurable outcomes — without promising first place in a week." },
+		"services.trust": { ru: "Почему нам доверяют", en: "Why clients trust us" },
 
 		/* ── Landing page (/landing) ── */
 		"lpg.eyebrow": {
@@ -303,11 +342,6 @@
 			ru: "Андрей",
 			en: "Andrey",
 		},
-		"review.role": {
-			ru: "CEO",
-			en: "CEO",
-		},
-
 		/* ── FAQ ── */
 		"faq.title": {
 			ru: "Частые вопросы",
@@ -367,13 +401,21 @@
 		},
 
 		/* ── Contact form ── */
+		"contact.eyebrow": {
+			ru: "Напишите нам",
+			en: "Write to us",
+		},
 		"contact.title": {
-			ru: "Свяжитесь с нами и получите решение для вашего бизнеса",
-			en: "Contact us and get a solution for your business",
+			ru: "Хорошая работа начинается с хорошего отношения к клиенту.",
+			en: "Good work begins with treating the client well.",
 		},
 		"contact.subtitle": {
-			ru: 'Ответим в течение 1 рабочего дня. <span class="font-bold text-[#9ac763]">Первая консультация — бесплатно.</span>',
-			en: 'We\'ll respond within 1 business day. <span class="font-bold text-[#9ac763]">First consultation — free.</span>',
+			ru: "Наша главная задача — внимательно понять вас, честно предложить решение и ответить максимально быстро. Я лично читаю каждое обращение.",
+			en: "Our main job is to understand you, offer an honest solution, and respond as quickly as possible. I personally read every message.",
+		},
+		"contact.promise": {
+			ru: "«Для нас клиент — не заявка в CRM. Это человек, которому мы должны помочь и которому важно быстро ответить».",
+			en: "“To us, a client is not a lead in a CRM. It is a person we are here to help — and respond to quickly.”",
 		},
 		"contact.direct": {
 			ru: "Или напишите напрямую:",
@@ -436,6 +478,10 @@
 		"footer.copyright": {
 			ru: "Авторские права",
 			en: "Copyright",
+		},
+		"footer.contacts_certificates": {
+			ru: "Контакты и сертификаты",
+			en: "Contacts & certificates",
 		},
 		"footer.email.label": {
 			ru: "Email",
@@ -502,32 +548,27 @@
 
 		/* ── Team cards ── */
 		"team.sayat.role": {
-			ru: "Chief Executive Officer",
-			en: "Chief Executive Officer",
+			ru: "Founder, Silk Road Tech · Co-founder, ContentFlow",
+			en: "Founder, Silk Road Tech · Co-founder, ContentFlow",
 		},
 		"team.sayat.bio": {
 			ru: "5+ лет в продуктовом менеджменте и аналитике данных. Выстраивает продуктовые метрики и стратегии.",
 			en: "5+ years in product management and data analytics. Building product metrics and strategies.",
 		},
-		"team.alnur.role": { ru: "Prod. Engineer", en: "Prod. Engineer" },
+		"team.alnur.role": { ru: "Product Engineer · Co-founder, ContentFlow", en: "Product Engineer · Co-founder, ContentFlow" },
 		"team.alnur.bio": {
 			ru: "Разработка продукта и технологическая интеграция. Фокус на качестве и результате.",
 			en: "Product development and technology integration. Focus on quality and results.",
 		},
-		"team.bakhtiyar.role": { ru: "Tech Lead", en: "Tech Lead" },
+		"team.bakhtiyar.role": { ru: "Tech Lead · Co-founder, ContentFlow", en: "Tech Lead · Co-founder, ContentFlow" },
 		"team.bakhtiyar.bio": {
 			ru: "6+ лет в full-stack разработке, микросервисной архитектуре и DevOps-практиках.",
 			en: "6+ years in full-stack development, microservices architecture, and DevOps practices.",
 		},
-		"team.bekarys.role": { ru: "Prod. Engineer", en: "Prod. Engineer" },
-		"team.bekarys.bio": {
-			ru: "Продакт-инженер. Техническая реализация продуктовых решений.",
-			en: "Product engineer. Technical delivery of product solutions.",
-		},
-		"team.rassul.role": { ru: "Prod. Engineer", en: "Prod. Engineer" },
+		"team.rassul.role": { ru: "Product Engineer · Co-founder, ContentFlow", en: "Product Engineer · Co-founder, ContentFlow" },
 		"team.rassul.bio": {
-			ru: "Что то",
-			en: "Что то",
+			ru: "Продакт-инженер. Разрабатывает продуктовые функции и технические интеграции.",
+			en: "Product engineer building product features and technical integrations.",
 		},
 
 		/* ── Cases page ── */
@@ -536,8 +577,8 @@
 			en: "Case Studies",
 		},
 		"cases.hero.desc": {
-			ru: "Мы помогли локальным и международным компаниям решить их сложнейшие технологические задачи — через кастомные ERP-внедрения и интеллектуальные системы управления.",
-			en: "We have helped local and international companies solve their most complex technological challenges through custom ERP implementations and intelligent management systems.",
+			ru: "Продукты, платформы и цифровые системы, которые мы спроектировали, разработали или помогли улучшить.",
+			en: "Products, platforms, and digital systems we designed, built, or helped improve.",
 		},
 
 		/* ── Cases — Orkenlink ── */
@@ -633,6 +674,7 @@
 			ru: "Автопубликация и MCP-интеграция",
 			en: "Auto-publishing and MCP integration",
 		},
+		"cases.contentflow.own": { ru: "Наш продукт", en: "Our product" },
 
 		/* ── Cases — KZ-Provider ── */
 		"cases.kzprovider.title": {
@@ -647,6 +689,48 @@
 			ru: "Каталог продукции по международным стандартам",
 			en: "Product catalog meeting international standards",
 		},
+
+		/* ── Cases — AGTS ── */
+		"cases.agts.title": {
+			ru: "Корпоративный сайт поставщика технической и газовой серы",
+			en: "Corporate website for a technical and gas sulfur supplier",
+		},
+		"cases.agts.desc": {
+			ru: "Разработали многоязычный сайт-каталог для промышленного поставщика: продукция, сертификаты, информация о компании и быстрый запрос коммерческого предложения.",
+			en: "Built a multilingual catalog website for an industrial supplier, featuring products, certificates, company information, and a quick quote request.",
+		},
+		"cases.agts.b1": {
+			ru: "Каталог продукции и сертификатов",
+			en: "Product and certificate catalog",
+		},
+		"cases.agts.b2": {
+			ru: "Три языковые версии",
+			en: "Three language versions",
+		},
+
+		/* ── Cases — ESUTD ── */
+		"cases.esutd.title": {
+			ru: "Дизайн и продуктовое управление государственной транспортной платформой",
+			en: "Design and product management for a government transport platform",
+		},
+		"cases.esutd.desc": {
+			ru: "Спроектировали пользовательские интерфейсы и сопровождали развитие Единой системы управления транспортными документами: требования, приоритеты и взаимодействие команд.",
+			en: "Designed the user interfaces and supported the development of the Unified Transport Document Management System, covering requirements, priorities, and cross-team coordination.",
+		},
+		"cases.esutd.b1": { ru: "UX/UI-дизайн сложной платформы", en: "UX/UI design for a complex platform" },
+		"cases.esutd.b2": { ru: "Управление требованиями и приоритетами", en: "Requirements and priority management" },
+
+		/* ── Cases — DIA Holding ── */
+		"cases.dia.title": {
+			ru: "Технический аудит международного холдинга за 10 дней",
+			en: "Technical audit of an international holding in 10 days",
+		},
+		"cases.dia.desc": {
+			ru: "Провели аудит цифровых систем и архитектуры DIA Holding, выявили технические риски и подготовили приоритизированный план улучшений.",
+			en: "Audited DIA Holding's digital systems and architecture, identified technical risks, and prepared a prioritized improvement plan.",
+		},
+		"cases.dia.b1": { ru: "10 дней от старта до итогового отчёта", en: "10 days from kickoff to final report" },
+		"cases.dia.b2": { ru: "Карта рисков и план улучшений", en: "Risk map and improvement plan" },
 
 		/* ── Privacy page ── */
 		"privacy.back": {
@@ -712,8 +796,26 @@
 			en: "Last updated: April 10, 2026",
 		},
 
-		/* ── Academy ── */
-		"nav.academy": { ru: "Академия", en: "Academy" },
+		/* ── Blog ── */
+		"nav.blog": { ru: "Блог", en: "Blog" },
+		"blog.hero.eyebrow": { ru: "Блог Silk Road Tech", en: "Silk Road Tech Blog" },
+		"blog.hero.title": {
+			ru: "Технологии, продукты и бизнес без лишнего шума",
+			en: "Technology, products, and business without the noise",
+		},
+		"blog.hero.desc": {
+			ru: "Делимся опытом разработки, внедрения ИИ и запуска цифровых продуктов.",
+			en: "Lessons from building software, implementing AI, and launching digital products.",
+		},
+		"blog.empty.label": { ru: "Скоро", en: "Coming soon" },
+		"blog.empty.title": { ru: "Готовим первые материалы", en: "Our first stories are on the way" },
+		"blog.empty.desc": {
+			ru: "Здесь появятся разборы кейсов, практические гайды и новости Silk Road Tech.",
+			en: "This is where we'll publish case studies, practical guides, and Silk Road Tech news.",
+		},
+		"blog.empty.cta": { ru: "Обсудить проект", en: "Discuss a project" },
+
+		/* ── Legacy Academy ── */
 		"academy.hero.badge": { ru: "SRT Academy", en: "SRT Academy" },
 		"academy.hero.title": {
 			ru: 'Научись создавать <span class="text-gradient-green">AI&#8209;продукты</span> за 8 недель',
