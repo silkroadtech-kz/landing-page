@@ -1,6 +1,16 @@
 {
   "cleanUrls": true,
   "redirects": [
+	{
+	  "source": "/ru",
+	  "destination": "/",
+	  "permanent": true
+	},
+	{
+	  "source": "/ru/:path*",
+	  "destination": "/:path*",
+	  "permanent": true
+	},
     {
       "source": "/landing",
       "destination": "/#services",
@@ -12,5 +22,11 @@
       "destination": "https://silkroadtech.kz/:path*",
       "permanent": true
     }
-  ]
+	],
+	"headers": [
+	  {
+		"source": "/(robots.txt|sitemap.xml)",
+		"headers": [{ "key": "Cache-Control", "value": "public, max-age=0, s-maxage=3600" }]
+	  }
+	]
 }

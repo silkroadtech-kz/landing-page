@@ -66,13 +66,21 @@
 		<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Manrope:wght@500;700;800&family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,700&family=Sora:wght@600;700&family=Roboto:wght@400;500;600;700&display=swap" /></noscript>
 		
 		<script type="application/ld+json">
-		[
+		{
+			"@context": "https://schema.org",
+			"@graph": [
 			{
-				"@context": "https://schema.org",
-				"@type": "LocalBusiness",
+				"@type": ["Organization", "ProfessionalService"],
+				"@id": "https://silkroadtech.kz/#organization",
 				"name": "Silk Road Tech",
-				"url": "https://silkroadtech.kz",
-				"logo": "https://silkroadtech.kz/og-cover.png",
+				"legalName": "ТОО «СилкРоудТех»",
+				"url": "https://silkroadtech.kz/",
+				"logo": {
+					"@type": "ImageObject",
+					"url": "https://silkroadtech.kz/assets/logo.webp"
+				},
+				"image": "https://silkroadtech.kz/og-cover.png",
+				"description": "Разработка программного обеспечения, сайтов и мобильных приложений, внедрение ИИ, аналитики и автоматизации для бизнеса.",
 				"email": "sayat@silkroadtech.kz",
 				"telephone": "+77026479903",
 				"address": {
@@ -82,7 +90,7 @@
 					"addressCountry": "KZ"
 				},
 				"geo": { "@type": "GeoCoordinates", "latitude": 51.106738, "longitude": 71.432868 },
-				"areaServed": "KZ",
+				"areaServed": { "@type": "Country", "name": "Казахстан" },
 				"priceRange": "от 250 000 ₸",
 				"openingHoursSpecification": [
 					{ "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "09:00", "closes": "18:00" }
@@ -95,35 +103,46 @@
 				]
 			},
 			{
-				"@context": "https://schema.org",
 				"@type": "WebSite",
-				"url": "https://silkroadtech.kz",
-				"potentialAction": {
-					"@type": "SearchAction",
-					"target": "https://silkroadtech.kz/?q={search_term_string}",
-					"query-input": "required name=search_term_string"
-				}
+				"@id": "https://silkroadtech.kz/#website",
+				"url": "https://silkroadtech.kz/",
+				"name": "Silk Road Tech",
+				"inLanguage": "ru-KZ",
+				"publisher": { "@id": "https://silkroadtech.kz/#organization" }
 			},
 			{
-				"@context": "https://schema.org",
-				"@type": "Service",
-				"serviceType": "Разработка лендингов и сайтов",
-				"provider": { "@type": "Organization", "name": "Silk Road Tech", "url": "https://silkroadtech.kz" },
-				"areaServed": "KZ",
-				"description": "Разработка продающих лендингов и корпоративных сайтов под ключ: дизайн, адаптивная вёрстка и SEO-оптимизация под Google и Яндекс."
+				"@type": "WebPage",
+				"@id": "https://silkroadtech.kz/#webpage",
+				"url": "https://silkroadtech.kz/",
+				"name": "Разработка лендингов, сайтов и ПО — Silk Road Tech, Астана",
+				"isPartOf": { "@id": "https://silkroadtech.kz/#website" },
+				"about": { "@id": "https://silkroadtech.kz/#organization" },
+				"inLanguage": "ru-KZ"
 			},
 			{
-				"@context": "https://schema.org",
+				"@type": "ItemList",
+				"@id": "https://silkroadtech.kz/#services",
+				"name": "Услуги Silk Road Tech",
+				"itemListElement": [
+					{ "@type": "Service", "position": 1, "name": "Сайты и приложения", "description": "Корпоративные сайты, веб-сервисы, мобильные приложения, ERP, CRM и API-интеграции.", "provider": { "@id": "https://silkroadtech.kz/#organization" }, "areaServed": { "@type": "Country", "name": "Казахстан" } },
+					{ "@type": "Service", "position": 2, "name": "AI и автоматизация", "description": "AI-ассистенты, RAG-системы, обработка документов и интеграции с корпоративными системами.", "provider": { "@id": "https://silkroadtech.kz/#organization" }, "areaServed": { "@type": "Country", "name": "Казахстан" } },
+					{ "@type": "Service", "position": 3, "name": "Аналитика и данные", "description": "BI-дашборды, интеграция источников и автоматизация управленческой отчётности.", "provider": { "@id": "https://silkroadtech.kz/#organization" }, "areaServed": { "@type": "Country", "name": "Казахстан" } },
+					{ "@type": "Service", "position": 4, "name": "Железо и ПО", "description": "IoT-платформы, мониторинг производства и аппаратно-программная интеграция.", "provider": { "@id": "https://silkroadtech.kz/#organization" }, "areaServed": { "@type": "Country", "name": "Казахстан" } }
+				]
+			},
+			{
 				"@type": "FAQPage",
+				"@id": "https://silkroadtech.kz/#faq",
 				"mainEntity": [
 					{ "@type": "Question", "name": "Как быстро вы начнёте работу?", "acceptedAnswer": { "@type": "Answer", "text": "После подписания договора — в течение 1 недели. Первое рабочее демо покажем через 2 недели после старта." } },
 					{ "@type": "Question", "name": "Сколько стоит разработка?", "acceptedAnswer": { "@type": "Answer", "text": "Стоимость зависит от объёма и сложности. Базовые проекты — от $5 000." } },
 					{ "@type": "Question", "name": "Вы работаете удалённо или только в Астане?", "acceptedAnswer": { "@type": "Answer", "text": "Работаем удалённо по всему миру и очно в Астане." } },
 					{ "@type": "Question", "name": "Вы оказываете поддержку после запуска?", "acceptedAnswer": { "@type": "Answer", "text": "Да, предлагаем SLA-поддержку и дальнейшее развитие продукта." } },
-					{ "@type": "Question", "name": "Вы берёте небольшие проекты?", "acceptedAnswer": { "@type": "Answer", "text": "Да, рассматриваем точечные задачи и MVP." } },
+					{ "@type": "Question", "name": "Вы берёте небольшие проекты?", "acceptedAnswer": { "@type": "Answer", "text": "Да, рассматриваем точечные задачи и MVP." } }
 				]
 			}
-		]
+			]
+		}
 		</script>
 		<script defer src="/_vercel/insights/script.js"></script>
 	</head>
@@ -1388,8 +1407,8 @@
 							class="font-jakarta font-medium text-[16px] leading-[1.8] text-[#878c91] mt-8"
 							data-i18n="faq.a1"
 						>
-							After signing the contract — within 1 week. We show the first
-							working demo 2 weeks after kickoff.
+							После подписания договора — в течение 1 недели. Первое рабочее
+							демо покажем через 2 недели после старта.
 						</p>
 					</details>
 					<details class="border-b border-black px-6 py-6">
