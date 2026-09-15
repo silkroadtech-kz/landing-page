@@ -3,7 +3,9 @@
 #  Заменяет vercel.json при хостинге на ps.kz (shared).
 # ============================================================
 
-Options -Indexes +FollowSymLinks
+# Options здесь намеренно не задаётся: на shared-хостинге AllowOverride
+# обычно её не разрешает, и Apache отвечает 500 «Options not allowed here».
+# Листинг папок отключён на уровне сервера.
 DirectoryIndex index.html
 
 # ------------------------------------------------------------
@@ -110,9 +112,14 @@ DirectoryIndex index.html
 # ------------------------------------------------------------
 #  5. ЗАЩИТА СЛУЖЕБНЫХ ФАЙЛОВ
 # ------------------------------------------------------------
-<FilesMatch "^(package(-lock)?\.json|compress\.mjs|vercel\.json|tailwind\.input\.css|\.env.*|.*\.mjs)$">
-	Require all denied
-</FilesMatch>
+# Эти файлы в сборку не попадают (см. scripts/build-deploy.sh), правило —
+# страховка на случай ручной заливки. Обёрнуто в IfModule: без mod_authz_core
+# директива Require роняет весь .htaccess с ошибкой 500.
+<IfModule mod_authz_core.c>
+	<FilesMatch "^(package(-lock)?\.json|compress\.mjs|vercel\.json|tailwind\.input\.css|\.env.*|.*\.mjs)$">
+		Require all denied
+	</FilesMatch>
+</IfModule>
 
 # ------------------------------------------------------------
 #  6. СТРАНИЦЫ ОШИБОК
