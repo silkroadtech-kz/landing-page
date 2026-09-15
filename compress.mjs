@@ -1,7 +1,9 @@
 import sharp from 'sharp';
 import { existsSync } from 'fs';
+import { fileURLToPath } from 'url';
+import { dirname, join } from 'path';
 
-const BASE = '/Users/bekarysshaimardan/Desktop/SilkRoadLandingPage/assets';
+const BASE = join(dirname(fileURLToPath(import.meta.url)), 'assets');
 
 const jobs = [
   // index.html (already done, keeping for reference)
@@ -39,6 +41,10 @@ const jobs = [
   { input: `${BASE}/cases/orkenlink.png`,   output: `${BASE}/cases/orkenlink.webp`,   quality: 80 },
   { input: `${BASE}/cases/smartlab.png`,    output: `${BASE}/cases/smartlab.webp`,    quality: 80 },
   { input: `${BASE}/cases/nak.png`,         output: `${BASE}/cases/nak.webp`,         quality: 80 },
+
+  // missed by the original pass
+  { input: `${BASE}/contentflow-landing.png`,  output: `${BASE}/contentflow-landing.webp`,  quality: 80 },
+  { input: `${BASE}/team_rasul-studio.png`,    output: `${BASE}/team_rasul-studio.webp`,    quality: 80 },
 ];
 
 for (const { input, output, quality, resize } of jobs) {

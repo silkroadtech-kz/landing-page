@@ -7,7 +7,7 @@ async function htmlFiles(dir) {
   const entries = await readdir(dir, { withFileTypes: true });
   const files = [];
   for (const entry of entries) {
-    if (entry.name === "node_modules" || entry.name === "video") continue;
+    if (entry.name === "node_modules" || entry.name === "video" || entry.name === "dist") continue;
     const path = join(dir, entry.name);
     if (entry.isDirectory()) files.push(...await htmlFiles(path));
     else if (entry.name.endsWith(".html") && !/^(google|yandex).+\.html$/.test(entry.name)) files.push(path);
