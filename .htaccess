@@ -35,7 +35,11 @@ DirectoryIndex index.html
 	RewriteRule ^ /%1 [R=301,L,NE]
 
 	# --- cleanUrls: отдаём /about из about.html ---
-	RewriteCond %{REQUEST_FILENAME} !-d
+	# Условия !-d здесь намеренно нет: каталог blog/ (статьи) соседствует
+	# с файлом blog.html (страница списка). С !-d запрос /blog пропускался
+	# в mod_dir, тот редиректил на /blog/, а там нет index.html → 403.
+	# Файл с таким же именем имеет приоритет над каталогом, как в cleanUrls Vercel.
+	RewriteCond %{REQUEST_FILENAME} !-f
 	RewriteCond %{REQUEST_FILENAME}\.html -f
 	RewriteRule ^(.+?)/?$ $1.html [L]
 </IfModule>
