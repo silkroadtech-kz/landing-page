@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Почему мы перестали брать большие ТЗ в работу сразу — Silk Road Tech</title>
+		<meta name="description" content="Почему Silk Road Tech начинает крупные проекты с платного аудита: как проверить требования, архитектуру и риски до старта разработки." />
+		<meta name="robots" content="index,follow" />
+		<link rel="canonical" href="https://silkroadtech.kz/blog/why-we-audit-first" />
+		<meta property="og:type" content="article" />
+		<meta property="og:site_name" content="Silk Road Tech" />
+		<meta property="og:title" content="Почему мы перестали брать большие техзадания в работу сразу" />
+		<meta property="og:description" content="Как платный аудит до старта разработки помогает увидеть реальные потребности и снизить риски." />
+		<meta property="og:url" content="https://silkroadtech.kz/blog/why-we-audit-first" />
+		<meta property="og:image" content="https://silkroadtech.kz/og-cover.png" />
+		<meta property="article:published_time" content="2026-08-19" />
+		<meta name="twitter:card" content="summary_large_image" />
+		<link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+		<link rel="icon" href="../favicon.ico" sizes="any" />
+		<meta name="theme-color" content="#010205" />
+		<link rel="stylesheet" href="../assets/site.css" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Manrope:wght@500;700;800&display=swap" />
+		<script type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@type": "BlogPosting",
+			"headline": "Почему мы перестали брать большие техзадания в работу сразу",
+			"datePublished": "2026-08-19",
+			"dateModified": "2026-08-19",
+			"author": { "@type": "Organization", "name": "Silk Road Tech" },
+			"publisher": { "@type": "Organization", "name": "Silk Road Tech", "url": "https://silkroadtech.kz" },
+			"mainEntityOfPage": "https://silkroadtech.kz/blog/why-we-audit-first",
+			"description": "Почему Silk Road Tech начинает крупные проекты с платного аудита до старта разработки."
+		}
+		</script>
+		<style>
+			.article-hero { background: #fff; padding: 72px 24px 76px; border-bottom: 1px solid #e4e5e6; }
+			.article-hero-inner, .article-body, .article-footer-inner { max-width: 920px; margin: 0 auto; }
+			.article-back { display: inline-flex; gap: 8px; color: #5f6468; font-size: 15px; font-weight: 600; }
+			.article-meta { display: flex; align-items: center; gap: 12px; margin-top: 72px; color: #5f6468; font-size: 14px; }
+			.article-title { max-width: 900px; margin: 26px 0 28px; font-size: clamp(46px, 6.2vw, 82px); line-height: 1.01; letter-spacing: -.052em; font-weight: 600; }
+			.article-body { padding: 88px 24px 108px; font-size: 19px; line-height: 1.82; color: #25272a; }
+			.article-body p { margin: 0 0 30px; }
+			.article-body h2 { margin: 70px 0 24px; font-size: clamp(30px, 4vw, 43px); line-height: 1.15; letter-spacing: -.035em; color: #010205; }
+			.article-body ul { margin: 6px 0 34px; padding-left: 0; list-style: none; }
+			.article-body li { position: relative; margin: 13px 0; padding-left: 30px; }
+			.article-body li::before { content: ""; position: absolute; left: 0; top: .72em; width: 10px; height: 10px; border-radius: 50%; background: #9ac763; }
+			.article-callout { margin-top: 76px; padding: 38px 42px; border-radius: 24px; background: #010205; color: #fff; }
+			.article-callout h2 { margin: 0 0 18px; color: #fff; }
+			.article-callout p { color: rgba(255,255,255,.72); }
+			.article-callout a { color: #9ac763; font-weight: 700; text-decoration: underline; text-underline-offset: 4px; }
+			.article-author { display: flex; align-items: center; gap: 24px; margin-top: 76px; padding-top: 36px; border-top: 1px solid #dedfe0; }
+			.article-author img { width: 88px; height: 88px; border-radius: 50%; object-fit: cover; object-position: top; background: #e7e8e8; }
+			.article-author-name { margin: 0 0 4px !important; color: #010205; font-weight: 700; }
+			.article-author-role { margin: 0 !important; color: #74797d; font-size: 15px; }
+			.article-footer { padding: 36px 24px; background: #efefef; color: #73787c; font-size: 14px; }
+			.article-footer-inner { display: flex; justify-content: space-between; gap: 24px; }
+			@media (max-width: 1024px) { nav { padding: 18px 24px !important; } }
+			@media (max-width: 640px) { .article-hero { padding-top: 44px; } .article-meta { margin-top: 48px; flex-wrap: wrap; } .article-title { font-size: 44px; } .article-body { padding-top: 60px; font-size: 17px; } .article-callout { padding: 30px 26px; } .article-footer-inner { flex-direction: column; } }
+		</style>
+	</head>
+	<body class="bg-white text-[#010205]">
+		<header class="sticky top-0 z-50 bg-[rgba(239,239,239,0.8)] backdrop-blur-[20px] border-b border-white/20">
+			<nav class="max-w-[1440px] mx-auto flex items-center justify-between px-20 py-5">
+				<div class="flex items-center gap-[74px]">
+					<a href="/" aria-label="Silk Road Tech home"><img src="../assets/logo.webp" alt="Silk Road Tech" class="h-6 w-auto logo-img" width="208" height="48" /></a>
+					<ul class="hidden lg:flex items-center gap-10 text-[17.1px] font-semibold text-[#020407]">
+						<li><a href="/#services" class="hover:text-[#9ac763]">Услуги</a></li><li><a href="/#process" class="hover:text-[#9ac763]">Процесс</a></li><li><a href="/cases" class="hover:text-[#9ac763]">Кейсы</a></li><li><a href="/#products" class="hover:text-[#9ac763]">Продукты</a></li><li><a href="/about" class="hover:text-[#9ac763]">О нас</a></li><li><a href="/blog" class="text-[#659b24]" aria-current="page">Блог</a></li><li><a href="/#contacts" class="hover:text-[#9ac763]">Контакты</a></li>
+					</ul>
+				</div>
+				<a href="/#contacts" class="font-manrope font-bold bg-[#99cf63] rounded-full px-4 py-3 text-[16px] tracking-tight hover:brightness-95 transition">Обсудить проект</a>
+			</nav>
+		</header>
+		<main>
+			<section class="article-hero">
+				<div class="article-hero-inner">
+					<a href="/blog" class="article-back">← Все публикации</a>
+					<div class="article-meta"><time datetime="2026-08-19">19 августа 2026</time><span>·</span><span>7 минут</span></div>
+					<h1 class="article-title">Почему мы перестали брать большие техзадания в работу сразу</h1>
+				</div>
+			</section>
+			<article class="article-body">
+				<p>Крупная компания присылает ТЗ на сорок страниц. Половина требований спорит с другой половиной, сроки взяты с потолка, а на первой встрече выясняется, что треть функций «надо обсудить отдельно». Раньше мы в такой ситуации подписывали договор и садились за разработку. Несколько болезненных проектов спустя поняли, что так нельзя.</p>
+
+				<h2>Почему сырое ТЗ опасно</h2>
+				<p>ТЗ от крупной компании почти никогда не отражает реальность. За документом обычно стоит legacy-система, согласования между отделами и автор ТЗ, который уже уволился.</p>
+				<p>Зафиксируешь смету по такому документу вслепую, и дальше либо уходишь в минус, либо начинаешь экономить, а заказчик это чувствует. Оба сценария плохие.</p>
+
+				<h2>Аудит как отдельный первый этап</h2>
+				<p>Мы стали выносить разбор в отдельный платный этап до разработки. Что в него входит:</p>
+				<ul>
+					<li>разбор текущей архитектуры и инфраструктуры;</li>
+					<li>отделение реальных потребностей от того, что попало в ТЗ по инерции;</li>
+					<li>разговор с теми, кто будет пользоваться системой, а не только с теми, кто подписывает счета;</li>
+					<li>поиск рисков, которые в ТЗ не упомянуты.</li>
+				</ul>
+				<p>На выходе заказчик получает непротиворечивое ТЗ, архитектуру, этапы с оценкой и карту рисков. Эти артефакты самоценны: даже если человек уйдёт делать продукт с другой командой, он уносит рабочий документ, а не обрывки.</p>
+				<p>Отдельно про «платный». Первое время было неловко брать деньги за анализ, пока не заметили закономерность: к бесплатной работе относятся как к бесплатной. Деньги резко поднимают и вовлечённость заказчика, и серьёзность разговора.</p>
+
+				<h2>Как это превращается в разработку</h2>
+				<p>После аудита обсуждаем не абстрактное ТЗ, а конкретный план, который сами составили и который заказчик уже видел. Дальше идём итерациями по две недели с демо, чтобы правки всплывали рано, а не на финальной приёмке.</p>
+				<p>Структура готова заранее, поэтому задачи ведём параллельно, а по спорным развилкам советуемся с коллегами из других компаний: свежий взгляд не раз спасал от решения, которое изнутри выглядело логичным, а оказывалось тупиковым.</p>
+
+				<h2>Что мы поняли по дороге</h2>
+				<p>Аудит нельзя растягивать: он превратится в месяц переписки, и потеряется смысл быстрого первого шага.</p>
+				<p>Иногда честный вывод аудита — «вам не нужна разработка». Краткосрочно теряешь проект, в долгую получаешь доверие, и такие заказчики возвращались.</p>
+				<p>Схема работает не везде. Для большой системы с высокой ценой ошибки аудит окупается, для лендинга он избыточен.</p>
+				<p>И главное: платный аудит сам по себе фильтр. Кто не готов вложиться в разбор своей системы, почти наверняка не дойдёт и до конца большого проекта.</p>
+
+				<div class="article-callout">
+					<h2>Вопрос к сообществу</h2>
+					<p>А у вас вход в крупные проекты как устроен: берёте ТЗ как есть или сначала делаете свой разбор? И если разбор, то платный или за свой счёт? Любопытно сравнить подходы.</p>
+					<p>Если хотите обсудить пост или поделиться идеями, напишите на <a href="mailto:sayat@silkroadtech.kz?subject=Обсуждение статьи об аудите ТЗ">sayat@silkroadtech.kz</a>.</p>
+				</div>
+				<div class="article-author">
+					<img src="../assets/author-sayat.jpeg" alt="Саят О., автор статьи" width="88" height="88" loading="lazy" />
+					<div><p class="article-author-name">Саят О.</p><p class="article-author-role">Founder, Silk Road Tech · Co-founder, ContentFlow</p></div>
+				</div>
+			</article>
+		</main>
+		<footer class="article-footer"><div class="article-footer-inner"><span>© 2026 Silk Road Tech. Все права защищены.</span><a href="/blog">Вернуться в блог ↑</a></div></footer>
+	</body>
+</html>
