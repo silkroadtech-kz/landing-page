@@ -21,14 +21,16 @@ for f in *.html .htaccess robots.txt sitemap.xml site.webmanifest \
 done
 
 echo "→ Вложенные страницы"
-for d in blog docs; do
+# docs/ намеренно не копируется: там внутренние планы и спеки, вёрстка на них
+# не ссылается. PDF-сертификаты лежат отдельно в assets/docs/ и попадают ниже.
+for d in blog; do
 	[ -d "$d" ] && cp -R "$d" "$DIST/"
 done
 
 echo "→ Ассеты, на которые есть ссылки"
 # Собираем все пути вида assets/... и video/..., упомянутые в вёрстке и стилях.
 REFS=$(mktemp)
-grep -rhoE '(assets|video)/[A-Za-z0-9_./-]+\.(webp|png|jpg|jpeg|svg|mp4|mp3|css|js|ico|woff2?)' \
+grep -rhoE '(assets|video)/[A-Za-z0-9_./-]+\.(webp|png|jpg|jpeg|svg|mp4|mp3|css|js|ico|pdf|woff2?)' \
 	--include="*.html" --include="*.css" --include="*.js" . 2>/dev/null \
 	| grep -v node_modules | grep -v '^dist/' | sed 's|^\./||' | sort -u > "$REFS"
 
