@@ -34,14 +34,19 @@ DirectoryIndex index.html
 	RewriteCond %{THE_REQUEST} \s/+(.+?)\.html[\s?] [NC]
 	RewriteRule ^ /%1 [R=301,L,NE]
 
+	# --- cleanUrls: /blog/ → /blog (канонический адрес без слеша) ---
+	# Нужно для адресов, у которых есть и файл blog.html, и одноимённый
+	# каталог blog/ со статьями. Проверка через DOCUMENT_ROOT, а не
+	# REQUEST_FILENAME: для каталога тот приходит со слешем на конце,
+	# и условие «blog/.html существует» никогда не выполнялось.
+	RewriteCond %{DOCUMENT_ROOT}/$1.html -f
+	RewriteRule ^(.+)/$ /$1 [R=301,L]
+
 	# --- cleanUrls: отдаём /about из about.html ---
-	# Условия !-d здесь намеренно нет: каталог blog/ (статьи) соседствует
-	# с файлом blog.html (страница списка). С !-d запрос /blog пропускался
-	# в mod_dir, тот редиректил на /blog/, а там нет index.html → 403.
-	# Файл с таким же именем имеет приоритет над каталогом, как в cleanUrls Vercel.
-	RewriteCond %{REQUEST_FILENAME} !-f
-	RewriteCond %{REQUEST_FILENAME}\.html -f
-	RewriteRule ^(.+?)/?$ $1.html [L]
+	# Файл имеет приоритет над одноимённым каталогом, как в cleanUrls Vercel:
+	# /blog отдаёт blog.html, а не уходит в mod_dir (301 на /blog/ → 403).
+	RewriteCond %{DOCUMENT_ROOT}/$1.html -f
+	RewriteRule ^(.+)$ $1.html [L]
 </IfModule>
 
 # ------------------------------------------------------------
