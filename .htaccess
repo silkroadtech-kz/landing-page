@@ -38,6 +38,9 @@ DirectoryIndex index.html
 	RewriteRule ^landing/?$ /#services [R=301,L,NE]
 
 	# --- cleanUrls: /about.html → /about (канонический адрес) ---
+	# Файлы подтверждения прав Google Search Console и Яндекс.Вебмастера
+	# должны отдаваться по точному адресу с .html, без редиректа.
+	RewriteCond %{REQUEST_URI} !^/(google[0-9a-f]+|yandex_[0-9a-f]+)\.html$
 	RewriteCond %{THE_REQUEST} \s/+(.+?)\.html[\s?] [NC]
 	RewriteRule ^ /%1 [R=301,L,NE]
 
