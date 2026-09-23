@@ -50,50 +50,6 @@
 				opacity: 0.06;
 				pointer-events: none;
 			}
-			/* Standalone contact layout: visible even before utility styles load. */
-			#contacts {
-				display: block;
-				visibility: visible;
-			}
-			.contact-shell {
-				display: block;
-				min-height: 430px;
-				background: #101112;
-				color: #ffffff;
-			}
-			.contact-layout {
-				display: grid;
-				grid-template-columns: minmax(0, 1.3fr) minmax(260px, 0.7fr);
-			}
-			.contact-eyebrow,
-			.contact-role {
-				color: #9ac763;
-			}
-			.contact-heading,
-			.contact-name,
-			.contact-link-primary {
-				color: #ffffff;
-			}
-			.contact-copy {
-				color: rgba(255, 255, 255, 0.62);
-			}
-			.contact-quote {
-				color: rgba(255, 255, 255, 0.5);
-			}
-			.contact-links {
-				border-top: 1px solid rgba(255, 255, 255, 0.14);
-			}
-			.contact-link-secondary {
-				color: rgba(255, 255, 255, 0.58);
-			}
-			.contact-link-primary:hover,
-			.contact-link-secondary:hover {
-				color: #9ac763;
-			}
-			.contact-signature {
-				border-color: rgba(255, 255, 255, 0.14);
-			}
-
 			/* Track holds four copies of the logo set and moves by exactly half
 			   its own width, so the loop point is invisible. width: max-content
 			   keeps -50% relative to the logos, not the container; the trailing
@@ -674,7 +630,6 @@
 				.hero-badge {
 					display: none !important;
 				}
-				#contacts,
 				.footer-layout,
 				.footer-meta {
 					padding-left: 1.5rem !important;
@@ -685,31 +640,12 @@
 					gap: 2rem !important;
 					align-items: flex-end !important;
 				}
-				.contact-shell h2 {
-					font-size: 2rem !important;
-				}
 				.footer-layout,
-				.contact-shell,
 				.services-row {
 					flex-direction: column !important;
 				}
 				.footer-layout > .flex-1 {
 					gap: 2rem !important;
-				}
-				/* Reduce contact-shell vertical whitespace on tablet */
-				.contact-shell {
-					padding-top: 2.5rem !important;
-					padding-bottom: 2.5rem !important;
-				}
-				.contact-layout {
-					grid-template-columns: 1fr !important;
-					gap: 3rem !important;
-				}
-				.contact-signature {
-					border-left: 0 !important;
-					border-top: 1px solid rgba(255,255,255,.1) !important;
-					padding-left: 0 !important;
-					padding-top: 2rem !important;
 				}
 				/* Reviews: reduce excessive vertical padding and side gutters */
 				#reviews .px-\[80px\] {
@@ -731,9 +667,6 @@
 				.hero-media .hero-card-growth {
 					grid-column: auto;
 				}
-				.contact-grid {
-					grid-template-columns: 1fr 1fr !important;
-				}
 				.footer-layout > .flex-1 {
 					flex-wrap: wrap !important;
 				}
@@ -745,10 +678,6 @@
 			@media (min-width: 1025px) and (max-width: 1200px) {
 				header nav,
 				.px-20 {
-					padding-left: 2rem !important;
-					padding-right: 2rem !important;
-				}
-				#contacts {
 					padding-left: 2rem !important;
 					padding-right: 2rem !important;
 				}
@@ -801,7 +730,6 @@
 					display: none !important;
 				}
 				.footer-layout,
-				.contact-shell,
 				.services-row {
 					flex-direction: column !important;
 				}
@@ -946,29 +874,6 @@
 					flex-direction: column !important;
 					align-items: flex-start !important;
 					gap: 1.25rem !important;
-				}
-				/* Contact */
-				#contacts {
-					padding-left: 0.75rem !important;
-					padding-right: 0.75rem !important;
-					padding-top: 2rem !important;
-					padding-bottom: 2rem !important;
-				}
-				.contact-shell {
-					padding: 1.5rem 1.25rem !important;
-					border-radius: 1.25rem !important;
-				}
-				.contact-shell h2 {
-					font-size: 1.6rem !important;
-					line-height: 1.25 !important;
-				}
-				.contact-shell .max-w-\[709px\] {
-					max-width: 100% !important;
-				}
-				.contact-grid {
-					display: grid !important;
-					grid-template-columns: 1fr !important;
-					gap: 0.75rem !important;
 				}
 				/* Footer */
 				.footer-layout {
@@ -1254,9 +1159,6 @@
 				}
 				.hero-copy h1 {
 					font-size: 1.75rem !important;
-				}
-				.contact-shell h2 {
-					font-size: 1.35rem !important;
 				}
 				/* Hero growth card: further reduce heading on very small screens */
 				.hero-card-growth h3 {
@@ -2300,5 +2202,204 @@ body:has(.faq__q:focus) > :not(#faq),
 	.faq__item > p {
 		padding: 0 20px 22px;
 		font-size: 15px;
+	}
+}
+
+/* ============================================================
+   Contact — "Напишите нам"
+   Dark card: pitch and founder note on the left, the three
+   contact channels on the right as large full-width rows.
+   ============================================================ */
+.contact {
+	padding: clamp(32px, 4vw, 48px) 24px clamp(64px, 8vw, 104px);
+}
+.contact__inner {
+	display: grid;
+	grid-template-columns: minmax(0, 1fr) minmax(0, 520px);
+	grid-template-areas:
+		"intro list"
+		"founder list";
+	column-gap: clamp(48px, 7vw, 112px);
+	max-width: 1280px;
+	margin: 0 auto;
+	padding: clamp(40px, 6vw, 80px);
+	border-radius: 32px;
+	background: #101112;
+	color: #fff;
+}
+
+.contact__eyebrow {
+	font-size: 13px;
+	font-weight: 600;
+	letter-spacing: 0.16em;
+	text-transform: uppercase;
+	color: #9ac763;
+}
+.contact__heading {
+	margin-top: 20px;
+	max-width: 16ch;
+	font-size: clamp(30px, 3.4vw, 48px);
+	font-weight: 600;
+	line-height: 1.2;
+	letter-spacing: -0.03em;
+}
+.contact__lead {
+	margin-top: 20px;
+	max-width: 52ch;
+	font-size: 17px;
+	font-weight: 500;
+	line-height: 1.7;
+	color: rgba(255, 255, 255, 0.62);
+}
+
+.contact__intro {
+	grid-area: intro;
+}
+.contact__founder {
+	grid-area: founder;
+	align-self: end;
+	margin-top: 48px;
+	padding-top: 28px;
+	border-top: 1px solid rgba(255, 255, 255, 0.12);
+	max-width: 52ch;
+}
+.contact__quote {
+	font-size: 15px;
+	line-height: 1.7;
+	color: rgba(255, 255, 255, 0.5);
+}
+.contact__founder figcaption {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: baseline;
+	gap: 4px 12px;
+	margin-top: 16px;
+}
+.contact__name {
+	font-size: 16px;
+	font-weight: 600;
+	color: #fff;
+}
+.contact__role {
+	font-size: 14px;
+	color: #9ac763;
+}
+
+.contact__list {
+	grid-area: list;
+	display: flex;
+	flex-direction: column;
+	align-self: end;
+	gap: 8px;
+	list-style: none;
+}
+.contact__item {
+	display: grid;
+	grid-template-columns: minmax(0, 1fr) auto;
+	grid-template-areas:
+		"label arrow"
+		"value arrow";
+	align-items: center;
+	column-gap: 20px;
+	row-gap: 4px;
+	padding: 22px 24px;
+	border-radius: 20px;
+	background: rgba(255, 255, 255, 0.05);
+	transition:
+		background-color 0.2s ease,
+		transform 0.16s ease-out;
+}
+.contact__item:active {
+	transform: scale(0.985);
+}
+.contact__label {
+	grid-area: label;
+	font-size: 13px;
+	font-weight: 500;
+	color: rgba(255, 255, 255, 0.5);
+}
+.contact__value {
+	grid-area: value;
+	overflow-wrap: anywhere;
+	font-size: clamp(18px, 1.6vw, 22px);
+	font-weight: 600;
+	letter-spacing: -0.01em;
+	color: #fff;
+}
+
+.contact__arrow {
+	grid-area: arrow;
+	display: grid;
+	place-items: center;
+	width: 44px;
+	height: 44px;
+	border-radius: 50%;
+	background: rgba(255, 255, 255, 0.08);
+	color: #fff;
+	transition:
+		background-color 0.2s ease,
+		color 0.2s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+	.contact__item:hover {
+		background: rgba(255, 255, 255, 0.09);
+	}
+	.contact__item:hover .contact__arrow {
+		background: #9ac763;
+		color: #101112;
+	}
+}
+.contact__item:focus-visible {
+	outline: 2px solid #9ac763;
+	outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.contact__item {
+		transition: background-color 0.2s ease;
+	}
+	.contact__item:active {
+		transform: none;
+	}
+}
+
+@media (max-width: 1100px) {
+	/* Channels move up, right after the pitch. */
+	.contact__inner {
+		grid-template-columns: 1fr;
+		grid-template-areas:
+			"intro"
+			"list"
+			"founder";
+		row-gap: 40px;
+	}
+	.contact__heading {
+		max-width: 20ch;
+	}
+	.contact__founder {
+		margin-top: 0;
+	}
+}
+
+@media (max-width: 640px) {
+	.contact {
+		padding-left: 12px;
+		padding-right: 12px;
+	}
+	.contact__inner {
+		padding: 32px 20px 20px;
+		border-radius: 24px;
+	}
+	.contact__lead {
+		font-size: 16px;
+	}
+	.contact__item {
+		padding: 18px 18px 18px 20px;
+		border-radius: 16px;
+	}
+	.contact__arrow {
+		width: 40px;
+		height: 40px;
 	}
 }

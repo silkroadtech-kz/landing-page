@@ -1196,41 +1196,43 @@
 		</section>
 
 		<!-- ============ CONTACT ============ -->
-		<section
-			id="contacts"
-			class="bg-transparent py-12 px-20 relative overflow-hidden"
-		>
-			<div class="absolute inset-0 noise"></div>
-			<div
-				class="contact-shell relative max-w-[1280px] mx-auto bg-[#101112] rounded-2xl py-20 px-20 overflow-hidden"
-			>
-				<div class="contact-layout relative grid grid-cols-[1.3fr_.7fr] gap-20 items-end">
-					<div>
-						<p class="contact-eyebrow font-jakarta font-semibold text-[13px] uppercase tracking-[0.16em] mb-7" data-i18n="contact.eyebrow">Напишите нам</p>
-					<h2
-						class="contact-heading font-sora font-semibold text-[46px] leading-[1.2] mb-8 max-w-[760px]"
-						data-i18n="contact.title"
-					>
-						Хорошая работа начинается с хорошего отношения к клиенту.
-					</h2>
-					<p
-						class="contact-copy font-jakarta font-medium text-[18px] leading-[1.75] max-w-[680px]"
-						data-i18n="contact.subtitle"
-					>
-						Наша главная задача — внимательно понять вас, честно предложить решение и ответить максимально быстро. Я лично читаю каждое обращение.
-					</p>
-						<div class="contact-links mt-12 pt-8 flex flex-wrap gap-x-8 gap-y-3 text-[15px]">
-							<a href="mailto:sayat@silkroadtech.kz" class="contact-link-primary transition">sayat@silkroadtech.kz</a>
-							<a href="https://t.me/xsayat" target="_blank" rel="noreferrer" class="contact-link-secondary transition">Telegram ↗</a>
-							<a href="https://wa.me/77026479903" target="_blank" rel="noreferrer" class="contact-link-secondary transition">WhatsApp ↗</a>
-						</div>
-					</div>
-					<div class="contact-signature border-l border-white/10 pl-10 pb-1">
-						<p class="contact-quote font-jakarta text-[15px] leading-[1.7] mb-8" data-i18n="contact.promise">«Для нас клиент — не заявка в CRM. Это человек, которому мы должны помочь и которому важно быстро ответить».</p>
-						<p class="contact-name font-sora text-[24px] mb-1">Саят Оразкулов</p>
-						<p class="contact-role font-jakarta text-[14px]">Founder, Silk Road Tech</p>
-					</div>
+		<section id="contacts" class="contact" aria-labelledby="contactTitle">
+			<div class="contact__inner">
+				<div class="contact__intro">
+					<p class="contact__eyebrow" data-i18n="contact.eyebrow">Напишите нам</p>
+					<h2 id="contactTitle" class="contact__heading" data-i18n="contact.title">Хорошая работа начинается с хорошего отношения к клиенту.</h2>
+					<p class="contact__lead" data-i18n="contact.subtitle">Наша главная задача — внимательно понять вас, честно предложить решение и ответить максимально быстро. Я лично читаю каждое обращение.</p>
 				</div>
+				<ul class="contact__list">
+					<li>
+						<a class="contact__item" href="mailto:sayat@silkroadtech.kz">
+							<span class="contact__label" data-i18n="footer.email.label">Email</span>
+							<span class="contact__value">sayat@silkroadtech.kz</span>
+							<span class="contact__arrow" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4.5 11.5l7-7M5.5 4.5h6v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+						</a>
+					</li>
+					<li>
+						<a class="contact__item" href="https://t.me/xsayat" target="_blank" rel="noreferrer">
+							<span class="contact__label">Telegram</span>
+							<span class="contact__value">@xsayat</span>
+							<span class="contact__arrow" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4.5 11.5l7-7M5.5 4.5h6v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+						</a>
+					</li>
+					<li>
+						<a class="contact__item" href="https://wa.me/77026479903" target="_blank" rel="noreferrer">
+							<span class="contact__label">WhatsApp</span>
+							<span class="contact__value">+7 702 647 99 03</span>
+							<span class="contact__arrow" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4.5 11.5l7-7M5.5 4.5h6v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+						</a>
+					</li>
+				</ul>
+				<figure class="contact__founder">
+					<blockquote class="contact__quote" data-i18n="contact.promise">«Для нас клиент — не заявка в CRM. Это человек, которому мы должны помочь и которому важно быстро ответить».</blockquote>
+					<figcaption>
+						<span class="contact__name">Саят Оразкулов</span>
+						<span class="contact__role">Founder, Silk Road Tech</span>
+					</figcaption>
+				</figure>
 			</div>
 		</section>
 
