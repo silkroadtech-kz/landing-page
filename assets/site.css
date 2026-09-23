@@ -94,175 +94,6 @@
 				border-color: rgba(255, 255, 255, 0.14);
 			}
 
-			/* Own products — a distinct editorial layer between services and cases. */
-			.product-section {
-				padding: 48px 80px 112px;
-				background: #f4f3ee;
-			}
-			.product-shell {
-				display: grid;
-				grid-template-columns: minmax(0, 1.05fr) minmax(420px, 0.95fr);
-				gap: 72px;
-				align-items: stretch;
-				max-width: 1280px;
-				margin: 0 auto;
-				padding: 72px;
-				border: 1px solid #d9dcda;
-				border-radius: 28px;
-				background: #f8f9f7;
-			}
-			.product-copy {
-				display: flex;
-				flex-direction: column;
-				align-items: flex-start;
-			}
-			.product-eyebrow {
-				margin: 0 0 30px;
-				font-family: "Inter", sans-serif;
-				font-size: 13px;
-				font-weight: 700;
-				letter-spacing: 0.14em;
-				text-transform: uppercase;
-				color: #65952f;
-			}
-			.product-brand {
-				display: flex;
-				align-items: center;
-				gap: 18px;
-				margin-bottom: 34px;
-			}
-			.product-brand img {
-				width: 54px;
-				height: 44px;
-				object-fit: contain;
-			}
-			.product-brand h2 {
-				font-family: "Sora", sans-serif;
-				font-size: clamp(36px, 4vw, 56px);
-				font-weight: 600;
-				line-height: 1;
-				letter-spacing: -0.045em;
-				color: #101112;
-			}
-			.product-title {
-				max-width: 600px;
-				margin-bottom: 22px;
-				font-size: 25px;
-				font-weight: 650;
-				line-height: 1.38;
-				letter-spacing: -0.025em;
-				color: #181a1b;
-			}
-			.product-description {
-				max-width: 610px;
-				margin-bottom: 38px;
-				font-size: 16px;
-				line-height: 1.75;
-				color: #6d7270;
-			}
-			.product-link {
-				display: inline-flex;
-				align-items: center;
-				gap: 14px;
-				margin-top: auto;
-				padding-bottom: 6px;
-				border-bottom: 1px solid #101112;
-				font-size: 15px;
-				font-weight: 700;
-				color: #101112;
-				transition: color .2s ease, border-color .2s ease;
-			}
-			.product-link:hover {
-				color: #65952f;
-				border-color: #65952f;
-			}
-			.product-visual {
-				display: flex;
-				flex-direction: column;
-				min-height: 430px;
-				padding: 30px;
-				border-radius: 22px;
-				background: #101112;
-				color: #fff;
-				overflow: hidden;
-			}
-			.product-preview {
-				padding: 0;
-				border: 1px solid #25282b;
-				background: #101112;
-			}
-			.product-browser-bar {
-				display: flex;
-				align-items: center;
-				gap: 7px;
-				height: 38px;
-				padding: 0 14px;
-				background: #1a1c1e;
-			}
-			.product-browser-bar span { width: 7px; height: 7px; border-radius: 50%; background: #42464a; }
-			.product-browser-bar em { margin-left: 8px; font-size: 10px; font-style: normal; letter-spacing: .02em; color: rgba(255,255,255,.34); }
-			.product-preview > a { display: block; flex: 1; min-height: 0; overflow: hidden; }
-			.product-preview img {
-				width: 100%;
-				height: 100%;
-				object-fit: cover;
-				object-position: center;
-				transition: transform .5s ease;
-			}
-			.product-preview:hover img { transform: scale(1.015); }
-			.product-visual-top {
-				display: flex;
-				justify-content: space-between;
-				font-family: "Inter", sans-serif;
-				font-size: 12px;
-				color: rgba(255,255,255,.42);
-			}
-			.product-live { display: flex; align-items: center; gap: 7px; }
-			.product-live i { width: 7px; height: 7px; border-radius: 50%; background: #9ac763; box-shadow: 0 0 0 5px rgba(154,199,99,.1); }
-			.product-thought {
-				margin: auto 0;
-				font-family: "Sora", sans-serif;
-				font-size: clamp(32px, 3.2vw, 46px);
-				font-weight: 600;
-				line-height: 1.15;
-				letter-spacing: -0.045em;
-			}
-			.product-steps {
-				display: grid;
-				grid-template-columns: repeat(4, 1fr);
-				gap: 8px;
-				margin-bottom: 20px;
-				font-size: 11px;
-				color: rgba(255,255,255,.38);
-			}
-			.product-steps span:last-child { color: #9ac763; }
-			.product-line { height: 2px; background: rgba(255,255,255,.11); }
-			.product-line span { display: block; width: 78%; height: 100%; background: #9ac763; }
-			.own-product-badge {
-				display: inline-flex;
-				padding: 4px 8px;
-				border-radius: 999px;
-				background: #101112;
-				font-size: 10px;
-				font-weight: 700;
-				letter-spacing: .06em;
-				text-transform: uppercase;
-				color: #9ac763;
-			}
-
-			@media (max-width: 1024px) {
-				.product-section { padding: 36px 24px 80px; }
-				.product-shell { grid-template-columns: 1fr; gap: 50px; padding: 48px; }
-				.product-visual { min-height: 360px; }
-			}
-			@media (max-width: 640px) {
-				.product-section { padding: 24px 12px 64px; }
-				.product-shell { gap: 36px; padding: 30px 22px; border-radius: 22px; }
-				.product-title { font-size: 21px; }
-				.product-description { font-size: 15px; }
-				.product-visual { min-height: 300px; padding: 22px; }
-				.product-steps { grid-template-columns: repeat(2, 1fr); row-gap: 12px; }
-			}
 			/* Track holds four copies of the logo set and moves by exactly half
 			   its own width, so the loop point is invisible. width: max-content
 			   keeps -50% relative to the logos, not the container; the trailing
@@ -2129,5 +1960,150 @@ body.preload-pending > .hero {
 	}
 	.svc__title {
 		font-size: 22px;
+	}
+}
+
+/* ============================================================
+   PRODUCT — "Собственный продукт"
+   One card: name and pitch on top, a real screenshot below.
+   ============================================================ */
+.prod {
+	padding: 0 24px clamp(64px, 8vw, 104px);
+}
+.prod__inner {
+	max-width: 1280px;
+	margin: 0 auto;
+}
+
+.prod__card {
+	padding: 48px;
+	border-radius: 30px;
+	background: #fff;
+	border: 1px solid rgba(1, 2, 5, 0.06);
+}
+
+.prod__copy {
+	display: grid;
+	grid-template-columns: minmax(0, 1fr) minmax(0, 600px);
+	grid-template-areas:
+		"brand title"
+		".     desc"
+		".     btn";
+	column-gap: 48px;
+	align-items: start;
+}
+.prod__brand {
+	grid-area: brand;
+	display: flex;
+	align-items: center;
+	gap: 16px;
+}
+.prod__brand img {
+	width: 44px;
+	height: 36px;
+	object-fit: contain;
+}
+.prod__brand h2 {
+	font-size: clamp(32px, 3.4vw, 48px);
+	font-weight: 600;
+	line-height: 1.2;
+	letter-spacing: -0.03em;
+	color: #010205;
+}
+.prod__title {
+	grid-area: title;
+	font-size: 22px;
+	font-weight: 600;
+	line-height: 1.4;
+	letter-spacing: -0.02em;
+	color: #010205;
+}
+.prod__desc {
+	grid-area: desc;
+	margin-top: 12px;
+	font-size: 16px;
+	font-weight: 500;
+	line-height: 1.6;
+	color: #5c5d5f;
+}
+.prod__btn {
+	grid-area: btn;
+	justify-self: start;
+	display: inline-flex;
+	align-items: center;
+	gap: 10px;
+	height: 48px;
+	margin-top: 28px;
+	padding: 0 24px;
+	border-radius: 999px;
+	background: #010205;
+	color: #fff;
+	font-size: 15px;
+	font-weight: 600;
+	white-space: nowrap;
+	transition:
+		background-color 0.2s ease,
+		transform 0.16s ease-out;
+}
+.prod__btn:active {
+	transform: scale(0.97);
+}
+.prod__btn:focus-visible {
+	outline: 2px solid #9ac763;
+	outline-offset: 3px;
+}
+
+.prod__shot {
+	display: block;
+	margin-top: 48px;
+	border-radius: 18px;
+	border: 1px solid rgba(1, 2, 5, 0.08);
+	overflow: hidden;
+	background: #101112;
+}
+.prod__shot img {
+	display: block;
+	width: 100%;
+	height: auto;
+}
+
+@media (hover: hover) and (pointer: fine) {
+	.prod__btn:hover {
+		background: #24272d;
+	}
+}
+
+@media (max-width: 1100px) {
+	.prod__copy {
+		grid-template-columns: 1fr;
+		grid-template-areas:
+			"brand"
+			"title"
+			"desc"
+			"btn";
+	}
+	.prod__title {
+		margin-top: 24px;
+	}
+}
+
+@media (max-width: 640px) {
+	.prod {
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+	.prod__card {
+		padding: 28px 24px;
+		border-radius: 24px;
+	}
+	.prod__title {
+		font-size: 19px;
+	}
+	.prod__desc {
+		font-size: 15px;
+	}
+	.prod__shot {
+		margin-top: 32px;
+		border-radius: 12px;
 	}
 }

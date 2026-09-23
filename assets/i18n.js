@@ -70,7 +70,6 @@
 		},
 
 		/* ── Own products ── */
-		"products.eyebrow": { ru: "Собственный продукт", en: "Our own product" },
 		"products.title": {
 			ru: "Продукт, который мы создали для себя — и продолжаем развивать с любовью.",
 			en: "A product we built for ourselves — and continue to grow with care.",

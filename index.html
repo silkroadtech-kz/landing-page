@@ -59,7 +59,7 @@
 		<link rel="apple-touch-icon" href="apple-touch-icon.png" />
 		<link rel="manifest" href="site.webmanifest" />
 		<meta name="theme-color" content="#010205" />
-		<link rel="stylesheet" href="assets/site.css?v=20260924-1" />
+		<link rel="stylesheet" href="assets/site.css?v=20260924-2" />
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Manrope:wght@500;700;800&family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,700&family=Sora:wght@600;700&family=Roboto:wght@400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
@@ -989,24 +989,22 @@
 		</section>
 
 		<!-- ============ OUR PRODUCTS ============ -->
-		<section id="products" class="product-section">
-			<div class="product-shell">
-				<div class="product-copy">
-					<p class="product-eyebrow" data-i18n="products.eyebrow">Собственный продукт</p>
-					<div class="product-brand">
-						<img src="assets/contentflow-mark.svg" alt="ContentFlow" width="54" height="44" loading="lazy" />
-						<h2>ContentFlow</h2>
+		<section id="products" class="prod" aria-labelledby="productTitle">
+			<div class="prod__inner">
+				<div class="prod__card reveal">
+					<div class="prod__copy">
+						<div class="prod__brand">
+							<img src="assets/contentflow-mark.svg" alt="" width="54" height="44" loading="lazy" />
+							<h2 id="productTitle">ContentFlow</h2>
+						</div>
+						<p class="prod__title" data-i18n="products.title">Продукт, который мы создали для себя — и продолжаем развивать с любовью.</p>
+						<p class="prod__desc" data-i18n="products.description">ContentFlow: планируйте публикации, следите за ростом и создавайте изображения и видео — всё в одном окне. Для нас это не завершённый кейс, а живая платформа: мы ежедневно пользуемся ею, разговариваем с пользователями и улучшаем каждую деталь.</p>
+						<a class="prod__btn" href="https://contentflow.fyi" target="_blank" rel="noreferrer"><span data-i18n="products.link">Открыть ContentFlow</span><span aria-hidden="true">↗</span></a>
 					</div>
-					<p class="product-title" data-i18n="products.title">Продукт, который мы создали для себя — и продолжаем развивать с любовью.</p>
-					<p class="product-description" data-i18n="products.description">ContentFlow: планируйте публикации, следите за ростом и создавайте изображения и видео — всё в одном окне. Для нас это не завершённый кейс, а живая платформа: мы ежедневно пользуемся ею, разговариваем с пользователями и улучшаем каждую деталь.</p>
-					<a class="product-link" href="https://contentflow.fyi" target="_blank" rel="noreferrer"><span data-i18n="products.link">Открыть ContentFlow</span><span aria-hidden="true">↗</span></a>
-				</div>
-				<div class="product-visual product-preview">
-					<div class="product-browser-bar" aria-hidden="true"><span></span><span></span><span></span><em>contentflow.fyi</em></div>
-					<a href="https://contentflow.fyi" target="_blank" rel="noreferrer" aria-label="Открыть лендинг ContentFlow">
+					<a class="prod__shot" href="https://contentflow.fyi" target="_blank" rel="noreferrer" tabindex="-1" aria-hidden="true">
 						<picture>
 							<source srcset="assets/contentflow-landing.webp" type="image/webp" />
-							<img src="assets/contentflow-landing.png" alt="Первый экран платформы ContentFlow" width="1920" height="855" loading="lazy" decoding="async" />
+							<img src="assets/contentflow-landing.png" alt="" width="1920" height="855" loading="lazy" decoding="async" />
 						</picture>
 					</a>
 				</div>
