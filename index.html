@@ -908,112 +908,85 @@
 		</section>
 
 		<!-- ============ SERVICES ============ -->
-		<section
-			id="services"
-			class="relative bg-transparent py-24 overflow-hidden"
-		>
-			<div class="absolute inset-0 noise"></div>
-			<div class="relative max-w-[1440px] mx-auto px-20">
-				<!-- Heading -->
-				<h2
-					class="font-jakarta font-semibold text-[48px] leading-[1.3] tracking-[-1.44px] text-black mb-6"
-					data-i18n="services.title"
-				>
-					Что мы предлагаем
-				</h2>
-				<!-- Lead -->
-				<p
-					class="font-jakarta font-medium text-[22px] leading-[1.5] text-[#878c91] max-w-[700px] mb-14"
-					data-i18n-html="services.lead"
-				>
-					<span class="font-bold text-[#9ac763]"
-						>Четыре ключевых направления</span
-					>
-					— гибкий подход: выполняем комплексную цифровую трансформацию или
-					решаем конкретные задачи вашего бизнеса.
-				</p>
+		<section id="services" class="svc" aria-labelledby="servicesTitle">
+			<div class="svc__inner">
+				<div class="svc__header">
+					<h2 id="servicesTitle" class="svc__heading reveal-left" data-i18n="services.title">
+						Что мы предлагаем
+					</h2>
+					<p class="svc__lead" data-i18n-html="services.lead">
+						<span class="font-bold text-[#9ac763]"
+							>Четыре ключевых направления</span
+						>
+						— гибкий подход: выполняем комплексную цифровую трансформацию или
+						решаем конкретные задачи вашего бизнеса.
+					</p>
+				</div>
 
-				<!-- Detailed service accordion -->
-				<div id="servicesAccordion">
-					<div class="svc-row active">
-						<img src="assets/divider.svg" alt="" loading="lazy" decoding="async" style="width:100%;height:29px;display:block;max-width:none" />
-						<div class="svc-item"><span class="svc-num">01</span><div class="svc-content">
-							<button class="svc-trigger" type="button" aria-expanded="true"><span class="svc-title" data-i18n="s1.title">Сайты и приложения</span><span class="svc-toggle">+</span></button>
-							<p class="svc-desc" data-i18n="s1.desc">Проектируем и разрабатываем цифровые продукты под бизнес-задачу — от первого экрана до стабильного запуска.</p>
-							<div class="svc-details"><div class="svc-details-inner">
-								<div class="svc-list"><p data-i18n="s1.i1">Корпоративные сайты и лендинги</p><p data-i18n="s1.i2">Веб-сервисы и личные кабинеты</p><p data-i18n="s1.i3">Мобильные приложения iOS и Android</p><p data-i18n="s1.i4">ERP, CRM и внутренние системы</p><p data-i18n="s1.i5">API-интеграции и развитие legacy</p></div>
-								<div class="svc-trust"><span data-i18n="services.trust">Почему нам доверяют</span><p data-i18n="s1.trust">Начинаем с архитектуры и прототипа, показываем демо каждые две недели, тестируем и остаёмся с продуктом после запуска.</p></div>
-							</div></div>
-						</div></div>
-					</div>
-
-					<div class="svc-row">
-						<img src="assets/divider.svg" alt="" loading="lazy" decoding="async" style="width:100%;height:29px;display:block;max-width:none" />
-						<div class="svc-item"><span class="svc-num">02</span><div class="svc-content">
-							<button class="svc-trigger" type="button" aria-expanded="false"><span class="svc-title" data-i18n="s2.title">AI и автоматизация</span><span class="svc-toggle">+</span></button>
-							<p class="svc-desc" data-i18n="s2.desc">Встраиваем AI в процессы, где он экономит время команды, ускоряет ответы и снижает объём ручной работы.</p>
-							<div class="svc-details"><div class="svc-details-inner">
-								<div class="svc-list"><p data-i18n="s2.i1">AI-ассистенты для продаж и поддержки</p><p data-i18n="s2.i2">Поиск по внутренней базе знаний (RAG)</p><p data-i18n="s2.i3">Обработка документов и обращений</p><p data-i18n="s2.i4">Генерация контента и отчётов</p><p data-i18n="s2.i5">Интеграции с CRM, ERP и мессенджерами</p></div>
-								<div class="svc-trust"><span data-i18n="services.trust">Почему нам доверяют</span><p data-i18n="s2.trust">Сначала проверяем ценность на небольшом пилоте. Настраиваем права доступа, журнал действий и контроль человека над критичными решениями.</p></div>
-							</div></div>
-						</div></div>
-					</div>
-
-					<div class="svc-row">
-						<img src="assets/divider.svg" alt="" loading="lazy" decoding="async" style="width:100%;height:29px;display:block;max-width:none" />
-						<div class="svc-item"><span class="svc-num">03</span><div class="svc-content">
-							<button class="svc-trigger" type="button" aria-expanded="false"><span class="svc-title" data-i18n="s3.title">Аналитика и дашборды</span><span class="svc-toggle">+</span></button>
-							<p class="svc-desc" data-i18n="s3.desc">Собираем разрозненные данные в понятную систему, чтобы руководители видели бизнес целиком и принимали решения быстрее.</p>
-							<div class="svc-details"><div class="svc-details-inner">
-								<div class="svc-list"><p data-i18n="s3.i1">Дашборды для руководителей</p><p data-i18n="s3.i2">Продажи, маркетинг и продуктовые метрики</p><p data-i18n="s3.i3">ETL-процессы и хранилища данных</p><p data-i18n="s3.i4">Автоматические отчёты и алерты</p><p data-i18n="s3.i5">Интеграции Power BI, Metabase и Looker</p></div>
-								<div class="svc-trust"><span data-i18n="services.trust">Почему нам доверяют</span><p data-i18n="s3.trust">Сверяем цифры с первоисточниками, фиксируем единые определения метрик и разграничиваем доступ. Дашборд показывает правду, а не просто красивый график.</p></div>
-							</div></div>
-						</div></div>
-					</div>
-
-					<div class="svc-row">
-						<img src="assets/divider.svg" alt="" loading="lazy" decoding="async" style="width:100%;height:29px;display:block;max-width:none" />
-						<div class="svc-item"><span class="svc-num">04</span><div class="svc-content">
-							<button class="svc-trigger" type="button" aria-expanded="false"><span class="svc-title" data-i18n="s4.title">SEO и GEO</span><span class="svc-toggle">+</span></button>
-							<p class="svc-desc" data-i18n="s4.desc">Помогаем продукту быть понятным поисковым системам, AI-ассистентам и людям — технически, структурно и содержательно.</p>
-							<div class="svc-details"><div class="svc-details-inner">
-								<div class="svc-list"><p data-i18n="s4.i1">Технический SEO-аудит</p><p data-i18n="s4.i2">Семантика и структура страниц</p><p data-i18n="s4.i3">Контент под поисковый спрос</p><p data-i18n="s4.i4">GEO для ответов ChatGPT и других AI-систем</p><p data-i18n="s4.i5">Аналитика позиций, трафика и конверсий</p></div>
-								<div class="svc-trust"><span data-i18n="services.trust">Почему нам доверяют</span><p data-i18n="s4.trust">Начинаем с аудита и приоритетного плана. Показываем исходные показатели, внесённые изменения и измеримый результат — без обещаний «первого места за неделю».</p></div>
-							</div></div>
-						</div></div>
-					</div>
-
-					<img
-						src="assets/divider.svg"
-						alt=""
-						loading="lazy"
-						decoding="async"
-						style="width: 100%; height: 29px; display: block; max-width: none"
-					/>
+				<div class="svc__grid reveal">
+					<article class="svc__card">
+						<span class="svc__num">01</span>
+						<h3 class="svc__title" data-i18n="s1.title">Сайты и приложения</h3>
+						<p class="svc__desc" data-i18n="s1.desc">Проектируем и разрабатываем цифровые продукты под бизнес-задачу — от первого экрана до стабильного запуска.</p>
+						<ul class="svc__list">
+							<li data-i18n="s1.i1">Корпоративные сайты и лендинги</li>
+							<li data-i18n="s1.i2">Веб-сервисы и личные кабинеты</li>
+							<li data-i18n="s1.i3">Мобильные приложения iOS и Android</li>
+							<li data-i18n="s1.i4">ERP, CRM и внутренние системы</li>
+							<li data-i18n="s1.i5">API-интеграции и развитие legacy</li>
+						</ul>
+						<div class="svc__trust">
+							<p data-i18n="s1.trust">Начинаем с архитектуры и прототипа, показываем демо каждые две недели, тестируем и остаёмся с продуктом после запуска.</p>
+						</div>
+					</article>
+					<article class="svc__card">
+						<span class="svc__num">02</span>
+						<h3 class="svc__title" data-i18n="s2.title">AI и автоматизация</h3>
+						<p class="svc__desc" data-i18n="s2.desc">Встраиваем AI в процессы, где он экономит время команды, ускоряет ответы и снижает объём ручной работы.</p>
+						<ul class="svc__list">
+							<li data-i18n="s2.i1">AI-ассистенты для продаж и поддержки</li>
+							<li data-i18n="s2.i2">Поиск по внутренней базе знаний (RAG)</li>
+							<li data-i18n="s2.i3">Обработка документов и обращений</li>
+							<li data-i18n="s2.i4">Генерация контента и отчётов</li>
+							<li data-i18n="s2.i5">Интеграции с CRM, ERP и мессенджерами</li>
+						</ul>
+						<div class="svc__trust">
+							<p data-i18n="s2.trust">Сначала проверяем ценность на небольшом пилоте. Настраиваем права доступа, журнал действий и контроль человека над критичными решениями.</p>
+						</div>
+					</article>
+					<article class="svc__card">
+						<span class="svc__num">03</span>
+						<h3 class="svc__title" data-i18n="s3.title">Аналитика и дашборды</h3>
+						<p class="svc__desc" data-i18n="s3.desc">Собираем разрозненные данные в понятную систему, чтобы руководители видели бизнес целиком и принимали решения быстрее.</p>
+						<ul class="svc__list">
+							<li data-i18n="s3.i1">Дашборды для руководителей</li>
+							<li data-i18n="s3.i2">Продажи, маркетинг и продуктовые метрики</li>
+							<li data-i18n="s3.i3">ETL-процессы и хранилища данных</li>
+							<li data-i18n="s3.i4">Автоматические отчёты и алерты</li>
+							<li data-i18n="s3.i5">Интеграции Power BI, Metabase и Looker</li>
+						</ul>
+						<div class="svc__trust">
+							<p data-i18n="s3.trust">Сверяем цифры с первоисточниками, фиксируем единые определения метрик и разграничиваем доступ. Дашборд показывает правду, а не просто красивый график.</p>
+						</div>
+					</article>
+					<article class="svc__card">
+						<span class="svc__num">04</span>
+						<h3 class="svc__title" data-i18n="s4.title">SEO и GEO</h3>
+						<p class="svc__desc" data-i18n="s4.desc">Помогаем продукту быть понятным поисковым системам, AI-ассистентам и людям — технически, структурно и содержательно.</p>
+						<ul class="svc__list">
+							<li data-i18n="s4.i1">Технический SEO-аудит</li>
+							<li data-i18n="s4.i2">Семантика и структура страниц</li>
+							<li data-i18n="s4.i3">Контент под поисковый спрос</li>
+							<li data-i18n="s4.i4">GEO для ответов ChatGPT и других AI-систем</li>
+							<li data-i18n="s4.i5">Аналитика позиций, трафика и конверсий</li>
+						</ul>
+						<div class="svc__trust">
+							<p data-i18n="s4.trust">Начинаем с аудита и приоритетного плана. Показываем исходные показатели, внесённые изменения и измеримый результат — без обещаний «первого места за неделю».</p>
+						</div>
+					</article>
 				</div>
 			</div>
 		</section>
-		<script>
-			document.addEventListener("DOMContentLoaded", function () {
-				var serviceRows = Array.from(document.querySelectorAll("#servicesAccordion .svc-row"));
-				serviceRows.forEach(function (row) {
-					var trigger = row.querySelector(".svc-trigger");
-					if (!trigger) return;
-					trigger.addEventListener("click", function () {
-						var willOpen = !row.classList.contains("active");
-						serviceRows.forEach(function (item) {
-							item.classList.remove("active");
-							var itemTrigger = item.querySelector(".svc-trigger");
-							if (itemTrigger) itemTrigger.setAttribute("aria-expanded", "false");
-						});
-						if (willOpen) {
-							row.classList.add("active");
-							trigger.setAttribute("aria-expanded", "true");
-						}
-					});
-				});
-			});
-		</script>
 
 		<!-- ============ OUR PRODUCTS ============ -->
 		<section id="products" class="product-section">
