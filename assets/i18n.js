@@ -106,9 +106,25 @@
 			ru: "Завершённых проектов",
 			en: "Completed projects",
 		},
-		"how.question": {
-			ru: "Как мы работаем?",
-			en: "How do we work?",
+		"how.s1.title": { ru: "Обсуждаем задачу", en: "We discuss the task" },
+		"how.s1.desc": {
+			ru: "Разбираем цели, процессы и ограничения. Подписываем NDA до начала работ.",
+			en: "We dig into your goals, processes, and constraints. The NDA is signed before any work begins.",
+		},
+		"how.s2.title": { ru: "Оценка и план", en: "Estimate and plan" },
+		"how.s2.desc": {
+			ru: "Фиксируем объём работ, сроки и бюджет. Стартуем в течение недели после договора.",
+			en: "We agree on scope, timeline, and budget. Work starts within a week of signing.",
+		},
+		"how.s3.title": { ru: "Разработка", en: "Development" },
+		"how.s3.desc": {
+			ru: "Показываем рабочее демо каждые две недели — вы видите прогресс и влияете на результат.",
+			en: "A working demo every two weeks, so you see progress and can steer the result.",
+		},
+		"how.s4.title": { ru: "Запуск и поддержка", en: "Launch and support" },
+		"how.s4.desc": {
+			ru: "Выводим продукт в работу, сопровождаем по SLA и развиваем дальше.",
+			en: "We launch the product, support it under an SLA, and keep developing it.",
 		},
 
 		/* ── Services ── */
