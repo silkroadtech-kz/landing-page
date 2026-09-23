@@ -2403,3 +2403,198 @@ body:has(.faq__q:focus) > :not(#faq),
 		height: 40px;
 	}
 }
+
+/* ============================================================
+   CASES PAGE
+   Same header as the index hero, then a plain 3×3 grid of
+   project cards: client, what we built, what it delivered.
+   ============================================================ */
+.hero--page {
+	padding: clamp(64px, 10vh, 120px) 24px clamp(48px, 7vh, 80px);
+}
+
+.cases {
+	padding: 0 24px clamp(64px, 8vw, 104px);
+}
+.cases__grid {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	gap: 24px;
+	max-width: 1280px;
+	margin: 0 auto;
+}
+
+.case {
+	display: flex;
+	flex-direction: column;
+	padding: 32px;
+	border-radius: 30px;
+	background: #fff;
+	border: 1px solid rgba(1, 2, 5, 0.06);
+}
+/* Cards in a row arrive left to right. */
+.case.reveal:nth-child(3n + 2) {
+	transition-delay: 0.08s;
+}
+.case.reveal:nth-child(3n) {
+	transition-delay: 0.16s;
+}
+
+.case__client {
+	display: flex;
+	align-items: center;
+	gap: 14px;
+}
+.case__logo {
+	flex-shrink: 0;
+	display: grid;
+	place-items: center;
+	width: 48px;
+	height: 48px;
+	padding: 8px;
+	border-radius: 12px;
+	overflow: hidden;
+	background: var(--logo-bg, #efefef);
+}
+.case__logo img {
+	width: 100%;
+	height: 100%;
+	max-width: none;
+	object-fit: contain;
+}
+.case__logo--cover {
+	padding: 0;
+}
+.case__logo--cover img {
+	object-fit: cover;
+}
+
+.case__meta {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 6px 10px;
+	min-width: 0;
+}
+.case__name {
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+	font-size: 15px;
+	font-weight: 600;
+	letter-spacing: -0.01em;
+	color: #010205;
+	transition: color 0.2s ease;
+}
+.case__arrow {
+	color: #878c91;
+	transition:
+		color 0.2s ease,
+		transform 0.2s ease;
+}
+@media (hover: hover) and (pointer: fine) {
+	a.case__name:hover,
+	a.case__name:hover .case__arrow {
+		color: #7aa84a;
+	}
+	a.case__name:hover .case__arrow {
+		transform: translate(2px, -2px);
+	}
+}
+a.case__name:focus-visible {
+	outline: 2px solid #9ac763;
+	outline-offset: 3px;
+	border-radius: 4px;
+}
+.case__badge {
+	padding: 3px 9px;
+	border-radius: 999px;
+	background: rgba(154, 199, 99, 0.16);
+	font-size: 11px;
+	font-weight: 600;
+	letter-spacing: 0.06em;
+	text-transform: uppercase;
+	color: #5a8a2c;
+}
+
+.case__title {
+	margin-top: 28px;
+	font-size: 20px;
+	font-weight: 600;
+	line-height: 1.35;
+	letter-spacing: -0.02em;
+	color: #010205;
+	text-wrap: balance;
+}
+.case__desc {
+	margin-top: 12px;
+	font-size: 15px;
+	font-weight: 500;
+	line-height: 1.6;
+	color: #5c5d5f;
+	text-wrap: pretty;
+}
+
+/* Pinned to the bottom so the lists line up across a row. */
+.case__list {
+	margin: auto 0 0;
+	padding: 24px 0 0;
+	list-style: none;
+}
+.case__list li {
+	position: relative;
+	padding: 11px 0 11px 18px;
+	border-top: 1px solid rgba(1, 2, 5, 0.08);
+	font-size: 14px;
+	font-weight: 500;
+	line-height: 1.45;
+	color: #010205;
+}
+.case__list li::before {
+	content: "";
+	position: absolute;
+	left: 0;
+	top: 18px;
+	width: 6px;
+	height: 6px;
+	border-radius: 50%;
+	background: #9ac763;
+}
+
+@media (max-width: 1100px) {
+	.cases__grid {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+	.case.reveal:nth-child(n) {
+		transition-delay: 0s;
+	}
+	.case.reveal:nth-child(2n) {
+		transition-delay: 0.08s;
+	}
+	/* Nine cards: the last one takes the full row instead of hanging alone. */
+	.case:last-child:nth-child(odd) {
+		grid-column: 1 / -1;
+	}
+}
+
+@media (max-width: 720px) {
+	.cases {
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+	.cases__grid {
+		grid-template-columns: 1fr;
+		gap: 16px;
+	}
+	.case.reveal:nth-child(n) {
+		transition-delay: 0s;
+	}
+	.case {
+		padding: 24px;
+		border-radius: 24px;
+	}
+	.case__title {
+		margin-top: 22px;
+		font-size: 19px;
+	}
+}
