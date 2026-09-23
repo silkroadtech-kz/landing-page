@@ -113,12 +113,6 @@
 					transform: translateX(-50%);
 				}
 			}
-			details[open] .faq-icon-plus {
-				display: none;
-			}
-			details:not([open]) .faq-icon-minus {
-				display: none;
-			}
 			/* Scroll reveal animations */
 			.reveal {
 				opacity: 0;
@@ -694,7 +688,6 @@
 				.contact-shell h2 {
 					font-size: 2rem !important;
 				}
-				.faq-layout,
 				.footer-layout,
 				.contact-shell,
 				.services-row {
@@ -807,7 +800,6 @@
 				.hero-badge {
 					display: none !important;
 				}
-				.faq-layout,
 				.footer-layout,
 				.contact-shell,
 				.services-row {
@@ -954,29 +946,6 @@
 					flex-direction: column !important;
 					align-items: flex-start !important;
 					gap: 1.25rem !important;
-				}
-				/* FAQ */
-				.faq-layout {
-					display: flex !important;
-					flex-direction: column !important;
-					padding: 1.75rem 1.25rem !important;
-					gap: 2rem !important;
-					border-radius: 1.25rem !important;
-				}
-				.faq-layout h2 {
-					font-size: 2rem !important;
-					margin-bottom: 0.75rem !important;
-				}
-				.faq-layout summary span {
-					font-size: 1rem !important;
-				}
-				.faq-layout .flex-1 {
-					max-width: 100% !important;
-				}
-				.faq-layout .flex.items-center.gap-12 {
-					flex-direction: column !important;
-					align-items: flex-start !important;
-					gap: 1rem !important;
 				}
 				/* Contact */
 				#contacts {
@@ -1285,9 +1254,6 @@
 				}
 				.hero-copy h1 {
 					font-size: 1.75rem !important;
-				}
-				.faq-layout summary span {
-					font-size: 0.95rem !important;
 				}
 				.contact-shell h2 {
 					font-size: 1.35rem !important;
@@ -2083,5 +2049,256 @@ body.preload-pending > .hero {
 	}
 	.slc__title {
 		font-size: 22px;
+	}
+}
+
+/* ============================================================
+   FAQ — "Частые вопросы"
+   Open section, no container or dividers. Native <details
+   name="faq"> keeps one answer open at a time; everything
+   below is CSS.
+   ============================================================ */
+.faq {
+	padding: clamp(64px, 8vw, 104px) 24px;
+	--faq-ease: cubic-bezier(0.19, 1, 0.22, 1);
+	interpolate-size: allow-keywords;
+}
+.faq__inner {
+	display: grid;
+	grid-template-columns: minmax(0, 420px) minmax(0, 1fr);
+	gap: clamp(48px, 7vw, 112px);
+	max-width: 1280px;
+	margin: 0 auto;
+	align-items: start;
+}
+
+.faq__intro {
+	position: sticky;
+	top: 120px;
+}
+.faq__heading {
+	font-size: clamp(32px, 3.4vw, 48px);
+	font-weight: 600;
+	line-height: 1.2;
+	letter-spacing: -0.03em;
+	color: #010205;
+}
+.faq__lead {
+	margin-top: 20px;
+	font-size: 17px;
+	font-weight: 500;
+	line-height: 1.7;
+	color: #878c91;
+}
+.faq__actions {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 16px 28px;
+	margin-top: 36px;
+}
+.faq__btn {
+	display: inline-flex;
+	align-items: center;
+	height: 48px;
+	padding: 0 24px;
+	border-radius: 999px;
+	background: #010205;
+	color: #fff;
+	font-size: 15px;
+	font-weight: 600;
+	white-space: nowrap;
+	transition:
+		background-color 0.2s ease,
+		transform 0.16s ease-out;
+}
+.faq__btn:active {
+	transform: scale(0.97);
+}
+.faq__link {
+	font-size: 15px;
+	font-weight: 600;
+	color: #010205;
+	text-decoration: underline;
+	text-decoration-color: rgba(1, 2, 5, 0.25);
+	text-underline-offset: 4px;
+	transition: text-decoration-color 0.2s ease;
+}
+@media (hover: hover) and (pointer: fine) {
+	.faq__btn:hover {
+		background: #2a2b2e;
+	}
+	.faq__link:hover {
+		text-decoration-color: currentColor;
+	}
+}
+.faq__btn:focus-visible,
+.faq__link:focus-visible,
+.faq__q:focus-visible {
+	outline: 2px solid #9ac763;
+	outline-offset: 3px;
+}
+
+.faq__list {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+.faq__item {
+	border-radius: 24px;
+	background-color: rgba(255, 255, 255, 0);
+	transition: background-color 0.3s ease;
+}
+.faq__item[open] {
+	background-color: #fff;
+}
+.faq__q {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 24px;
+	padding: 24px 28px;
+	border-radius: 24px;
+	list-style: none;
+	font-size: 20px;
+	font-weight: 600;
+	line-height: 1.4;
+	letter-spacing: -0.01em;
+	color: #010205;
+	cursor: pointer;
+}
+.faq__q::-webkit-details-marker {
+	display: none;
+}
+
+/* Plus that folds into a minus. */
+.faq__icon {
+	position: relative;
+	flex-shrink: 0;
+	width: 36px;
+	height: 36px;
+	border-radius: 50%;
+	background: rgba(1, 2, 5, 0.06);
+	transition: background-color 0.3s ease;
+}
+.faq__icon::before,
+.faq__icon::after {
+	content: "";
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 12px;
+	height: 1.5px;
+	margin: -0.75px 0 0 -6px;
+	border-radius: 1px;
+	background: #010205;
+	transition:
+		transform 0.4s var(--faq-ease),
+		background-color 0.3s ease;
+}
+.faq__icon::after {
+	transform: rotate(90deg);
+}
+.faq__item[open] .faq__icon {
+	background: #010205;
+}
+.faq__item[open] .faq__icon::before,
+.faq__item[open] .faq__icon::after {
+	background: #fff;
+}
+.faq__item[open] .faq__icon::after {
+	transform: rotate(0deg);
+}
+@media (hover: hover) and (pointer: fine) {
+	.faq__item:not([open]) .faq__q:hover .faq__icon {
+		background: rgba(1, 2, 5, 0.12);
+	}
+}
+
+.faq__item > p {
+	max-width: 60ch;
+	padding: 0 88px 28px 28px;
+	font-size: 16px;
+	font-weight: 500;
+	line-height: 1.7;
+	color: #5c5d5f;
+}
+
+/* Answer height: 0 ↔ auto via interpolate-size. content-visibility
+   is held (allow-discrete) until the collapse finishes. Browsers
+   without ::details-content or interpolate-size open instantly. */
+.faq__item::details-content {
+	block-size: 0;
+	overflow: hidden;
+	opacity: 0;
+	transition:
+		block-size 0.45s var(--faq-ease),
+		opacity 0.2s ease,
+		content-visibility 0.45s allow-discrete;
+}
+.faq__item[open]::details-content {
+	block-size: auto;
+	opacity: 1;
+	transition-property: block-size, opacity, content-visibility;
+	transition-duration: 0.45s, 0.3s, 0.45s;
+	transition-delay: 0s, 0.08s, 0s;
+}
+
+/* Keep the clicked question under the cursor. A clicked <summary>
+   takes focus, so while one has it, make its item the only scroll
+   anchor candidate on the page. The browser then offsets the
+   scroll as the answer above collapses. */
+body:has(.faq__q:focus) > :not(#faq),
+.faq:has(.faq__q:focus) .faq__intro,
+.faq__item:not(:has(> .faq__q:focus)) {
+	overflow-anchor: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.faq__item::details-content,
+	.faq__item[open]::details-content,
+	.faq__icon::before,
+	.faq__icon::after {
+		transition: none;
+	}
+}
+
+@media (max-width: 960px) {
+	.faq__inner {
+		grid-template-columns: 1fr;
+		gap: 40px;
+	}
+	.faq__intro {
+		position: static;
+	}
+}
+
+@media (max-width: 640px) {
+	.faq {
+		padding-left: 16px;
+		padding-right: 16px;
+	}
+	.faq__intro {
+		padding: 0 4px;
+	}
+	.faq__lead {
+		font-size: 16px;
+	}
+	.faq__item,
+	.faq__q {
+		border-radius: 20px;
+	}
+	.faq__q {
+		gap: 16px;
+		padding: 20px;
+		font-size: 17px;
+	}
+	.faq__icon {
+		width: 32px;
+		height: 32px;
+	}
+	.faq__item > p {
+		padding: 0 20px 22px;
+		font-size: 15px;
 	}
 }

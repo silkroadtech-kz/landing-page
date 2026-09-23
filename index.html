@@ -1144,273 +1144,52 @@
 		</section>
 
 		<!-- ============ FAQ ============ -->
-		<section id="faq" class="bg-transparent p-4 py-16">
-			<div
-				class="faq-layout max-w-[1286px] mx-auto bg-white rounded-[28px] px-20 py-16 flex gap-14"
-			>
-				<div class="flex-1 max-w-[531px]">
-					<h2
-						class="font-jakarta font-semibold text-[48px] leading-[1.3] tracking-[-1.44px] text-[#010205] mb-12"
-						data-i18n="faq.title"
-					>
-						Частые вопросы
-					</h2>
-					<p
-						class="font-jakarta font-medium text-[16px] leading-[1.8] text-[#878c91] mb-12"
-						data-i18n="faq.subtitle"
-					>
-						Ответы на вопросы, которые чаще всего задают перед первым звонком
-					</p>
-					<div class="flex items-center gap-12">
-						<button
-							class="font-manrope font-bold border border-[#010205] rounded-full px-4 py-4 w-[176px] text-[16px] tracking-tight hover:bg-[#010205] hover:text-white transition"
-							type="button"
-							onclick="
-								document
-									.getElementById('contacts')
-									.scrollIntoView({ behavior: 'smooth' })
-							"
-							data-i18n="faq.ask"
-						>
-							Задать вопрос
-						</button>
-						<a
-							href="https://t.me/xsayat"
-							target="_blank"
-							rel="noreferrer"
-							class="font-jakarta font-semibold text-[16px] underline"
-							data-i18n="faq.tg"
-							>Написать в Telegram</a
-						>
+		<section id="faq" class="faq" aria-labelledby="faqTitle">
+			<div class="faq__inner">
+				<div class="faq__intro reveal-left">
+					<h2 id="faqTitle" class="faq__heading" data-i18n="faq.title">Частые вопросы</h2>
+					<p class="faq__lead" data-i18n="faq.subtitle">Ответы на вопросы, которые чаще всего задают перед первым звонком</p>
+					<div class="faq__actions">
+						<a class="faq__btn" href="#contacts" data-i18n="faq.ask">Задать вопрос</a>
+						<a class="faq__link" href="https://t.me/xsayat" target="_blank" rel="noreferrer" data-i18n="faq.tg">Написать в Telegram</a>
 					</div>
 				</div>
-				<div class="flex-1 max-w-[578px]">
-					<details open class="border-t border-b border-black px-6 py-6 group">
-						<summary
-							class="flex items-center justify-between cursor-pointer list-none"
-						>
-							<span
-								class="font-jakarta font-semibold text-[24px] leading-[1.5] tracking-tight text-[#010205]"
-								data-i18n="faq.q1"
-								>Как быстро вы начнёте работу?</span
-							>
-							<svg
-								class="faq-icon-minus"
-								width="24"
-								height="24"
-								viewBox="0 0 24 24"
-								fill="none"
-							>
-								<path
-									d="M5 12h14"
-									stroke="#010205"
-									stroke-width="2"
-									stroke-linecap="round"
-								/>
-							</svg>
-							<svg
-								class="faq-icon-plus"
-								width="24"
-								height="24"
-								viewBox="0 0 24 24"
-								fill="none"
-							>
-								<path
-									d="M12 5v14M5 12h14"
-									stroke="#010205"
-									stroke-width="2"
-									stroke-linecap="round"
-								/>
-							</svg>
+
+				<div class="faq__list reveal">
+					<details class="faq__item" name="faq" open>
+						<summary class="faq__q">
+							<span data-i18n="faq.q1">Как быстро вы начнёте работу?</span>
+							<span class="faq__icon" aria-hidden="true"></span>
 						</summary>
-						<p
-							class="font-jakarta font-medium text-[16px] leading-[1.8] text-[#878c91] mt-8"
-							data-i18n="faq.a1"
-						>
-							После подписания договора — в течение 1 недели. Первое рабочее
-							демо покажем через 2 недели после старта.
-						</p>
+						<p data-i18n="faq.a1">После подписания договора — в течение 1 недели. Первое рабочее демо покажем через 2 недели после старта.</p>
 					</details>
-					<details class="border-b border-black px-6 py-6">
-						<summary
-							class="flex items-center justify-between cursor-pointer list-none"
-						>
-							<span
-								class="font-jakarta font-semibold text-[24px] leading-[1.5] tracking-tight text-[#010205]"
-								data-i18n="faq.q2"
-								>Сколько стоит разработка?</span
-							>
-							<svg
-								class="faq-icon-minus"
-								width="24"
-								height="24"
-								viewBox="0 0 24 24"
-								fill="none"
-							>
-								<path
-									d="M5 12h14"
-									stroke="#010205"
-									stroke-width="2"
-									stroke-linecap="round"
-								/>
-							</svg>
-							<svg
-								class="faq-icon-plus"
-								width="24"
-								height="24"
-								viewBox="0 0 24 24"
-								fill="none"
-							>
-								<path
-									d="M12 5v14M5 12h14"
-									stroke="#010205"
-									stroke-width="2"
-									stroke-linecap="round"
-								/>
-							</svg>
+					<details class="faq__item" name="faq">
+						<summary class="faq__q">
+							<span data-i18n="faq.q2">Сколько стоит разработка?</span>
+							<span class="faq__icon" aria-hidden="true"></span>
 						</summary>
-						<p
-							class="font-jakarta font-medium text-[16px] leading-[1.8] text-[#878c91] mt-4"
-							data-i18n="faq.a2"
-						>
-							Стоимость зависит от объёма и сложности. Базовые проекты — от $5
-							000.
-						</p>
+						<p data-i18n="faq.a2">Стоимость зависит от объёма и сложности. Базовые проекты — от $5 000.</p>
 					</details>
-					<details class="border-b border-black px-6 py-6">
-						<summary
-							class="flex items-center justify-between cursor-pointer list-none"
-						>
-							<span
-								class="font-jakarta font-semibold text-[24px] leading-[1.5] tracking-tight text-[#010205]"
-								data-i18n="faq.q3"
-								>Вы работаете удалённо или только в Астане?</span
-							>
-							<svg
-								class="faq-icon-minus"
-								width="24"
-								height="24"
-								viewBox="0 0 24 24"
-								fill="none"
-							>
-								<path
-									d="M5 12h14"
-									stroke="#010205"
-									stroke-width="2"
-									stroke-linecap="round"
-								/>
-							</svg>
-							<svg
-								class="faq-icon-plus"
-								width="24"
-								height="24"
-								viewBox="0 0 24 24"
-								fill="none"
-							>
-								<path
-									d="M12 5v14M5 12h14"
-									stroke="#010205"
-									stroke-width="2"
-									stroke-linecap="round"
-								/>
-							</svg>
+					<details class="faq__item" name="faq">
+						<summary class="faq__q">
+							<span data-i18n="faq.q3">Вы работаете удалённо или только в Астане?</span>
+							<span class="faq__icon" aria-hidden="true"></span>
 						</summary>
-						<p
-							class="font-jakarta font-medium text-[16px] leading-[1.8] text-[#878c91] mt-4"
-							data-i18n="faq.a3"
-						>
-							Работаем удалённо по всему миру и очно в Астане.
-						</p>
+						<p data-i18n="faq.a3">Работаем удалённо по всему миру и очно в Астане.</p>
 					</details>
-					<details class="border-b border-black px-6 py-6">
-						<summary
-							class="flex items-center justify-between cursor-pointer list-none"
-						>
-							<span
-								class="font-jakarta font-semibold text-[24px] leading-[1.5] tracking-tight text-[#010205]"
-								data-i18n="faq.q4"
-								>Вы оказываете поддержку после запуска?</span
-							>
-							<svg
-								class="faq-icon-minus"
-								width="24"
-								height="24"
-								viewBox="0 0 24 24"
-								fill="none"
-							>
-								<path
-									d="M5 12h14"
-									stroke="#010205"
-									stroke-width="2"
-									stroke-linecap="round"
-								/>
-							</svg>
-							<svg
-								class="faq-icon-plus"
-								width="24"
-								height="24"
-								viewBox="0 0 24 24"
-								fill="none"
-							>
-								<path
-									d="M12 5v14M5 12h14"
-									stroke="#010205"
-									stroke-width="2"
-									stroke-linecap="round"
-								/>
-							</svg>
+					<details class="faq__item" name="faq">
+						<summary class="faq__q">
+							<span data-i18n="faq.q4">Вы оказываете поддержку после запуска?</span>
+							<span class="faq__icon" aria-hidden="true"></span>
 						</summary>
-						<p
-							class="font-jakarta font-medium text-[16px] leading-[1.8] text-[#878c91] mt-4"
-							data-i18n="faq.a4"
-						>
-							Да, предлагаем SLA-поддержку и дальнейшее развитие продукта.
-						</p>
+						<p data-i18n="faq.a4">Да, предлагаем SLA-поддержку и дальнейшее развитие продукта.</p>
 					</details>
-					<details class="border-b border-black px-6 py-6">
-						<summary
-							class="flex items-center justify-between cursor-pointer list-none"
-						>
-							<span
-								class="font-jakarta font-semibold text-[24px] leading-[1.5] tracking-tight text-[#010205]"
-								data-i18n="faq.q5"
-								>Вы берёте небольшие проекты?</span
-							>
-							<svg
-								class="faq-icon-minus"
-								width="24"
-								height="24"
-								viewBox="0 0 24 24"
-								fill="none"
-							>
-								<path
-									d="M5 12h14"
-									stroke="#010205"
-									stroke-width="2"
-									stroke-linecap="round"
-								/>
-							</svg>
-							<svg
-								class="faq-icon-plus"
-								width="24"
-								height="24"
-								viewBox="0 0 24 24"
-								fill="none"
-							>
-								<path
-									d="M12 5v14M5 12h14"
-									stroke="#010205"
-									stroke-width="2"
-									stroke-linecap="round"
-								/>
-							</svg>
+					<details class="faq__item" name="faq">
+						<summary class="faq__q">
+							<span data-i18n="faq.q5">Вы берёте небольшие проекты?</span>
+							<span class="faq__icon" aria-hidden="true"></span>
 						</summary>
-						<p
-							class="font-jakarta font-medium text-[16px] leading-[1.8] text-[#878c91] mt-4"
-							data-i18n="faq.a5"
-						>
-							Да, рассматриваем точечные задачи и MVP.
-						</p>
+						<p data-i18n="faq.a5">Да, рассматриваем точечные задачи и MVP.</p>
 					</details>
 				</div>
 			</div>
@@ -1733,6 +1512,7 @@
 					{ threshold: 0.15 },
 				);
 				revealEls.forEach((el) => revealObserver.observe(el));
+
 
 				// ── Animated counters ──
 				const counterEls = document.querySelectorAll("[data-counter]");
