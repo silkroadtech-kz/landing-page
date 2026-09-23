@@ -59,7 +59,7 @@
 		<link rel="apple-touch-icon" href="apple-touch-icon.png" />
 		<link rel="manifest" href="site.webmanifest" />
 		<meta name="theme-color" content="#010205" />
-		<link rel="stylesheet" href="assets/site.css?v=20260924-2" />
+		<link rel="stylesheet" href="assets/site.css?v=20260924-3" />
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Manrope:wght@500;700;800&family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,700&family=Sora:wght@600;700&family=Roboto:wght@400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
@@ -764,7 +764,7 @@
 		</section>
 
 		<!-- ============ HOW WE WORK (From task to result) ============ -->
-		<section id="how-we-work" class="how" aria-labelledby="howTitle">
+		<section id="process" class="how" aria-labelledby="howTitle">
 			<div class="how__inner">
 				<div class="how__header">
 					<h2 id="howTitle" class="how__title reveal-left" data-i18n="how.title">
@@ -1013,180 +1013,35 @@
 
 
 		<!-- ============ PROCESS ============ -->
-		<section id="process" class="relative bg-black overflow-hidden py-32">
-			<!-- gradients -->
-			<div
-				class="absolute -left-40 top-1/3 w-[600px] h-[600px] rounded-full opacity-50"
-				style="background: radial-gradient(circle, #9ac763 0%, transparent 60%)"
-			></div>
-			<div
-				class="absolute -left-60 top-10 w-[700px] h-[700px] rounded-full opacity-40"
-				style="background: radial-gradient(circle, #3b82f6 0%, transparent 60%)"
-			></div>
-			<!-- decorative SVGs -->
-			<img
-				src="vector97.svg"
-				alt=""
-				loading="lazy"
-				decoding="async"
-				class="absolute pointer-events-none"
-				style="
-					left: 110px;
-					bottom: 100px;
-					width: 122px;
-					height: 216px;
-					opacity: 0.9;
-				"
-			/>
-			<img
-				src="burst.svg"
-				alt=""
-				loading="lazy"
-				decoding="async"
-				class="absolute pointer-events-none"
-				style="
-					left: 80px;
-					bottom: 60px;
-					width: 66px;
-					height: 59px;
-					opacity: 0.9;
-				"
-			/>
-
-			<div class="relative max-w-[1160px] mx-auto px-8">
-				<h2
-					class="font-jakarta font-semibold text-[31px] leading-[1.5] text-white max-w-[1100px] mb-20"
-					data-i18n="process.heading"
-				>
-					Прозрачный процесс на каждом шаге: путь к результату по принципу SLC
-					(Simple · Lovable · Complete) с быстрым запуском, итерациями и
-					измеримыми результатами.
-				</h2>
-
-				<div
-					class="process-cards flex items-end justify-end gap-3"
-					id="processAccordion"
-				>
-					<!-- step 1 -->
-					<div
-						class="process-card process-step is-open bg-[#121212] rounded-lg h-[400px]"
-						data-step="0"
-						style="width: 360px"
-					>
-						<div class="step-expanded flex flex-col items-start">
-							<p class="font-inter italic font-bold text-white mb-6">
-								<span class="step-num-open text-[66px] tracking-tight">01</span
-								><span class="text-[26px]">step</span>
-							</p>
-							<h4
-								class="step-title font-inter font-bold text-[28px] text-white tracking-tight mb-4"
-								data-i18n="p1.title"
-							>
-								Технический аудит
-							</h4>
-							<p
-								class="step-desc font-inter text-[16px] leading-[1.75] text-white/70"
-								data-i18n="p1.desc"
-							>
-								Глубокое погружение в вашу IT-архитектуру. Подписываем NDA до
-								начала работ.
-							</p>
-						</div>
-						<div class="step-collapsed">
-							<p class="font-inter italic font-bold text-white mb-12">
-								<span class="step-num-compact text-[24px]">01.</span>
-							</p>
-							<div class="step-rotated rotate-90 origin-top-left">
-								<p
-									class="font-inter text-[20px] text-white/70 whitespace-nowrap"
-									data-i18n="p1.title"
-								>
-									Технический аудит
-								</p>
-							</div>
-						</div>
-					</div>
-
-					<!-- step 2 -->
-					<div
-						class="process-card process-step bg-[#121212] rounded-lg h-[400px] hover:bg-[#1a1a1a]"
-						data-step="1"
-						style="width: 120px"
-					>
-						<div class="step-expanded flex flex-col items-start">
-							<p class="font-inter italic font-bold text-white mb-6">
-								<span class="step-num-open text-[66px] tracking-tight">02</span
-								><span class="text-[26px]">step</span>
-							</p>
-							<h4
-								class="step-title font-inter font-bold text-[28px] text-white tracking-tight mb-4"
-								data-i18n="p2.title"
-							>
-								MVP / Рабочее ядро
-							</h4>
-							<p
-								class="step-desc font-inter text-[16px] leading-[1.75] text-white/70"
-								data-i18n="p2.desc"
-							>
-								Быстро запускаем рабочую версию продукта. Итерации каждые 2
-								недели с демо и обратной связью.
-							</p>
-						</div>
-						<div class="step-collapsed">
-							<p class="font-inter italic font-bold text-white mb-12">
-								<span class="step-num-compact text-[24px]">02.</span>
-							</p>
-							<div class="step-rotated rotate-90 origin-top-left">
-								<p
-									class="font-inter text-[20px] text-white/70 whitespace-nowrap"
-									data-i18n="p2.title"
-								>
-									MVP / Рабочее ядро
-								</p>
-							</div>
-						</div>
-					</div>
-
-					<!-- step 3 -->
-					<div
-						class="process-card process-step bg-[#121212] rounded-lg h-[400px] hover:bg-[#1a1a1a]"
-						data-step="2"
-						style="width: 120px"
-					>
-						<div class="step-expanded flex flex-col items-start">
-							<p class="font-inter italic font-bold text-white mb-6">
-								<span class="step-num-open text-[66px] tracking-tight">03</span
-								><span class="text-[26px]">step</span>
-							</p>
-							<h4
-								class="step-title font-inter font-bold text-[28px] text-white tracking-tight mb-4"
-								data-i18n="p3.title"
-							>
-								Масштабирование
-							</h4>
-							<p
-								class="step-desc font-inter text-[16px] leading-[1.75] text-white/70"
-								data-i18n="p3.desc"
-							>
-								Оптимизируем производительность, добавляем новые модули и
-								масштабируем решение под рост бизнеса.
-							</p>
-						</div>
-						<div class="step-collapsed">
-							<p class="font-inter italic font-bold text-white mb-12">
-								<span class="step-num-compact text-[24px]">03.</span>
-							</p>
-							<div class="step-rotated rotate-90 origin-top-left">
-								<p
-									class="font-inter text-[20px] text-white/70 whitespace-nowrap"
-									data-i18n="p3.title"
-								>
-									Масштабирование
-								</p>
-							</div>
-						</div>
-					</div>
+		<section id="slc" class="slc" aria-labelledby="slcTitle">
+			<div class="slc__inner">
+				<div class="slc__header">
+					<h2 id="slcTitle" class="slc__heading reveal-left" data-i18n="slc.title">
+						Работаем по принципу SLC
+					</h2>
+					<p class="slc__lead" data-i18n="slc.lead">Без «сырого» MVP. Первая версия продукта простая, удобная и законченная: ею можно пользоваться с первого дня.</p>
 				</div>
+
+				<ol class="slc__grid reveal">
+					<li class="slc__card">
+						<span class="slc__letter" aria-hidden="true">S</span>
+						<p class="slc__term" lang="en">Simple</p>
+						<h3 class="slc__title" data-i18n="slc.s.title">Простой</h3>
+						<p class="slc__desc" data-i18n="slc.s.desc">Запускаем самую маленькую версию, которая решает вашу задачу. Без функций, которые только откладывают релиз.</p>
+					</li>
+					<li class="slc__card">
+						<span class="slc__letter" aria-hidden="true">L</span>
+						<p class="slc__term" lang="en">Lovable</p>
+						<h3 class="slc__title" data-i18n="slc.l.title">Удобный</h3>
+						<p class="slc__desc" data-i18n="slc.l.desc">Продуктом приятно пользоваться с первого релиза: понятный интерфейс, быстрая работа, внимание к деталям.</p>
+					</li>
+					<li class="slc__card">
+						<span class="slc__letter" aria-hidden="true">C</span>
+						<p class="slc__term" lang="en">Complete</p>
+						<h3 class="slc__title" data-i18n="slc.c.title">Законченный</h3>
+						<p class="slc__desc" data-i18n="slc.c.desc">Каждая версия — готовый инструмент, а не заготовка с пометкой «появится позже». Дальше развиваем его по реальным данным.</p>
+					</li>
+				</ol>
 			</div>
 		</section>
 
@@ -1904,26 +1759,6 @@
 					{ threshold: 0.5 },
 				);
 				counterEls.forEach((el) => counterObserver.observe(el));
-
-				// ── Process accordion ──
-				const steps = document.querySelectorAll(".process-step");
-				const setActiveStep = (activeIndex) => {
-					steps.forEach((step, index) => {
-						const isOpen = index === activeIndex;
-						step.style.width = isOpen ? "360px" : "120px";
-						step.classList.toggle("is-open", isOpen);
-					});
-				};
-
-				setActiveStep(0);
-
-				steps.forEach((step) => {
-					step.addEventListener("click", () => {
-						if (step.classList.contains("is-open")) return;
-						const idx = parseInt(step.dataset.step);
-						setActiveStep(idx);
-					});
-				});
 
 				// ── Services accordion ──
 

@@ -318,34 +318,29 @@
 		},
 		"lpg.req.ph.contact": { ru: "Как с вами связаться", en: "Best contact" },
 
-		/* ── Process ── */
-		"process.heading": {
-			ru: "Прозрачный процесс на каждом шаге: путь к результату по принципу SLC (Simple · Lovable · Complete) с быстрым запуском, итерациями и измеримыми результатами.",
-			en: "Transparent process at every step: the path to results following the SLC principle (Simple · Lovable · Complete) with fast launch, iterations, and measurable outcomes.",
+		/* ── SLC principle ── */
+		"slc.title": {
+			ru: "Работаем по принципу SLC",
+			en: "We build by the SLC principle",
 		},
-		"p1.title": {
-			ru: "Технический аудит",
-			en: "Technical Audit",
+		"slc.lead": {
+			ru: "Без «сырого» MVP. Первая версия продукта простая, удобная и законченная: ею можно пользоваться с первого дня.",
+			en: "No half-baked MVP. The first version of your product is simple, lovable, and complete, so people can use it from day one.",
 		},
-		"p1.desc": {
-			ru: "Глубокое погружение в вашу IT-архитектуру. Подписываем NDA до начала работ.",
-			en: "Deep dive into your IT architecture. We sign an NDA before starting work.",
+		"slc.s.title": { ru: "Простой", en: "Only what matters" },
+		"slc.s.desc": {
+			ru: "Запускаем самую маленькую версию, которая решает вашу задачу. Без функций, которые только откладывают релиз.",
+			en: "We launch the smallest version that solves your problem, without features that only delay the release.",
 		},
-		"p2.title": {
-			ru: "MVP / Рабочее ядро",
-			en: "MVP / Working Core",
+		"slc.l.title": { ru: "Удобный", en: "Built with care" },
+		"slc.l.desc": {
+			ru: "Продуктом приятно пользоваться с первого релиза: понятный интерфейс, быстрая работа, внимание к деталям.",
+			en: "The product is pleasant to use from the first release: a clear interface, fast performance, attention to detail.",
 		},
-		"p2.desc": {
-			ru: "Быстро запускаем рабочую версию продукта. Итерации каждые 2 недели с демо и обратной связью.",
-			en: "We rapidly launch a working product version. Iterations every 2 weeks with demos and feedback.",
-		},
-		"p3.title": {
-			ru: "Масштабирование",
-			en: "Scaling",
-		},
-		"p3.desc": {
-			ru: "Оптимизируем производительность, добавляем новые модули и масштабируем решение под рост бизнеса.",
-			en: "We optimize performance, add new modules, and scale the solution for business growth.",
+		"slc.c.title": { ru: "Законченный", en: "Ready to use" },
+		"slc.c.desc": {
+			ru: "Каждая версия — готовый инструмент, а не заготовка с пометкой «появится позже». Дальше развиваем его по реальным данным.",
+			en: "Every version is a finished tool, not a placeholder marked “coming later”. From there we grow it based on real usage.",
 		},
 
 		/* ── Review ── */
