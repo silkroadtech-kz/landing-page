@@ -3230,3 +3230,349 @@ a.case__name:focus-visible {
 		gap: 16px;
 	}
 }
+
+/* ============================================================
+   BLOG
+   Index: the page hero, then a list of posts, newest first,
+   so it still scans with many posts. The whole row is the link.
+   Post: a left-aligned head with meta, title and lead; the text
+   runs straight on the page in a narrow reading column. Other
+   posts follow in the same list.
+   ============================================================ */
+.posts {
+	padding: 0 24px clamp(64px, 8vw, 104px);
+}
+.posts__list {
+	max-width: 1080px;
+	margin: 0 auto;
+	padding: 0;
+	list-style: none;
+}
+.posts__heading {
+	max-width: 1080px;
+	margin: 0 auto 24px;
+	font-size: clamp(28px, 2.6vw, 36px);
+	font-weight: 600;
+	line-height: 1.2;
+	letter-spacing: -0.03em;
+	color: #010205;
+}
+/* Under an article: same width as the text card. */
+.posts--narrow .posts__list,
+.posts--narrow .posts__heading {
+	max-width: 760px;
+}
+
+/* One row per post: date, title, arrow. Hairlines between rows;
+   the hovered row turns into a white card, like an open FAQ item. */
+.post-row {
+	border-top: 1px solid rgba(1, 2, 5, 0.1);
+	transition: border-color 0.2s ease;
+}
+.post-row:last-child {
+	border-bottom: 1px solid rgba(1, 2, 5, 0.1);
+}
+.post-row__link {
+	display: grid;
+	grid-template-columns: 180px minmax(0, 1fr) 24px;
+	gap: 32px;
+	align-items: baseline;
+	margin: 0 -28px;
+	padding: 32px 28px;
+	border-radius: 24px;
+	background-color: rgba(255, 255, 255, 0);
+	transition: background-color 0.3s ease;
+}
+.post-row__meta {
+	display: flex;
+	flex-direction: column;
+	gap: 2px;
+	font-size: 14px;
+	font-weight: 500;
+	line-height: 1.5;
+	color: #878c91;
+}
+.post-row__title {
+	max-width: 720px;
+	font-size: clamp(22px, 2.2vw, 30px);
+	font-weight: 600;
+	line-height: 1.25;
+	letter-spacing: -0.025em;
+	color: #010205;
+	text-wrap: balance;
+}
+.post-row__arrow {
+	align-self: center;
+	color: #878c91;
+	transition:
+		color 0.2s ease,
+		transform 0.2s ease;
+}
+.post-row__link:focus-visible {
+	outline: 2px solid #9ac763;
+	outline-offset: -2px;
+}
+@media (hover: hover) and (pointer: fine) {
+	.post-row:hover,
+	.post-row:hover + .post-row {
+		border-color: transparent;
+	}
+	.post-row__link:hover {
+		background-color: #fff;
+	}
+	.post-row__link:hover .post-row__arrow {
+		color: #7aa84a;
+		transform: translate(2px, -2px);
+	}
+}
+
+/* Blog heads sit on the left edge of the column below them. */
+.hero--left {
+	text-align: left;
+}
+.hero--left .hero__inner {
+	max-width: 1080px;
+	align-items: flex-start;
+}
+
+/* ── Post page ── */
+.post-hero {
+	padding-bottom: clamp(40px, 6vh, 64px);
+}
+.post-hero .hero__inner {
+	max-width: 760px;
+}
+.post-hero .hero__title {
+	max-width: none;
+	font-size: clamp(36px, 5vw, 64px);
+}
+.post-hero .hero__subtitle {
+	max-width: none;
+	font-size: clamp(18px, 1.6vw, 20px);
+}
+.post-hero__back {
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	height: 40px;
+	padding: 0 18px;
+	border-radius: 999px;
+	border: 1px solid rgba(1, 2, 5, 0.16);
+	font-size: 14px;
+	font-weight: 600;
+	color: #010205;
+	transition:
+		background-color 0.2s ease,
+		border-color 0.2s ease,
+		transform 0.16s ease-out;
+	animation: heroFadeIn 0.6s ease-out 0.1s both;
+}
+.post-hero__back:active {
+	transform: scale(0.97);
+}
+.post-hero__back:focus-visible {
+	outline: 2px solid #9ac763;
+	outline-offset: 3px;
+}
+@media (hover: hover) and (pointer: fine) {
+	.post-hero__back:hover {
+		background: rgba(1, 2, 5, 0.04);
+		border-color: rgba(1, 2, 5, 0.28);
+	}
+}
+.post-hero__meta {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 6px 10px;
+	margin: 48px 0 20px;
+	font-size: 14px;
+	font-weight: 500;
+	color: #878c91;
+	animation: heroFadeIn 0.6s ease-out 0.1s both;
+}
+
+.post {
+	padding: 0 24px clamp(64px, 8vw, 104px);
+}
+.post__body {
+	max-width: 760px;
+	margin: 0 auto;
+	padding-top: clamp(40px, 6vw, 72px);
+	border-top: 1px solid rgba(1, 2, 5, 0.1);
+	font-size: 19px;
+	font-weight: 500;
+	line-height: 1.75;
+	color: #2b2d31;
+}
+.post__body > :first-child {
+	margin-top: 0;
+}
+.post__body p {
+	margin: 0 0 24px;
+	text-wrap: pretty;
+}
+.post__body h2 {
+	margin: 56px 0 20px;
+	font-size: clamp(24px, 2.4vw, 32px);
+	font-weight: 600;
+	line-height: 1.25;
+	letter-spacing: -0.025em;
+	color: #010205;
+	text-wrap: balance;
+}
+.post__body h2 span {
+	display: block;
+	margin-bottom: 10px;
+	font-size: 14px;
+	font-weight: 600;
+	line-height: 1;
+	letter-spacing: 0.04em;
+	color: #7aa84a;
+}
+.post__body strong {
+	font-weight: 700;
+	color: #010205;
+}
+.post__body a {
+	color: #5a8a2c;
+	text-decoration: underline;
+	text-decoration-thickness: 1px;
+	text-underline-offset: 4px;
+	transition: color 0.2s ease;
+}
+@media (hover: hover) and (pointer: fine) {
+	.post__body a:hover {
+		color: #010205;
+	}
+}
+.post__body ul {
+	margin: 0 0 28px;
+	padding: 0;
+	list-style: none;
+}
+.post__body li {
+	position: relative;
+	padding: 12px 0 12px 22px;
+	border-top: 1px solid rgba(1, 2, 5, 0.08);
+}
+.post__body li:last-child {
+	border-bottom: 1px solid rgba(1, 2, 5, 0.08);
+}
+.post__body li::before {
+	content: "";
+	position: absolute;
+	left: 0;
+	top: calc(12px + 0.875em - 3px);
+	width: 6px;
+	height: 6px;
+	border-radius: 50%;
+	background: #9ac763;
+}
+
+.post__rule {
+	margin: 36px 0;
+	padding: 24px 28px;
+	border-left: 3px solid #9ac763;
+	border-radius: 0 20px 20px 0;
+	background: #fff;
+	font-size: 19px;
+	font-weight: 600;
+	line-height: 1.5;
+	letter-spacing: -0.01em;
+	color: #010205;
+}
+
+.post__callout {
+	margin-top: 56px;
+	padding: 36px 40px;
+	border-radius: 24px;
+	background: #010205;
+	color: rgba(255, 255, 255, 0.72);
+}
+.post__callout h2 {
+	margin: 0 0 16px;
+	color: #fff;
+}
+.post__callout p:last-child {
+	margin-bottom: 0;
+}
+.post__callout a {
+	color: #9ac763;
+}
+@media (hover: hover) and (pointer: fine) {
+	.post__callout a:hover {
+		color: #fff;
+	}
+}
+
+.post__author {
+	display: flex;
+	align-items: center;
+	gap: 18px;
+	margin-top: 48px;
+	padding-top: 32px;
+	border-top: 1px solid rgba(1, 2, 5, 0.08);
+}
+.post__author img {
+	flex-shrink: 0;
+	width: 64px;
+	height: 64px;
+	border-radius: 50%;
+	object-fit: cover;
+	object-position: top;
+	background: #efefef;
+}
+.post__author-name {
+	margin: 0 !important;
+	font-size: 16px;
+	font-weight: 600;
+	line-height: 1.4;
+	color: #010205;
+}
+.post__author-role {
+	margin: 2px 0 0 !important;
+	font-size: 14px;
+	line-height: 1.5;
+	color: #878c91;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.post-hero__back,
+	.post-hero__meta {
+		animation-duration: 0.4s;
+	}
+}
+
+@media (max-width: 720px) {
+	.posts,
+	.post,
+	.post-hero,
+	.hero--left {
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+	.post-row__link {
+		grid-template-columns: minmax(0, 1fr) 20px;
+		gap: 12px 16px;
+		margin: 0;
+		padding: 24px 0;
+	}
+	.post-row__meta {
+		grid-column: 1 / -1;
+		flex-direction: row;
+		gap: 10px;
+	}
+	.post__body {
+		font-size: 17px;
+	}
+	.post__body h2 {
+		margin-top: 44px;
+	}
+	.post__rule {
+		padding: 20px 22px;
+		font-size: 17px;
+	}
+	.post__callout {
+		padding: 28px 24px;
+	}
+}

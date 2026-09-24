@@ -817,6 +817,11 @@
 			ru: "Делимся опытом разработки, внедрения ИИ и запуска цифровых продуктов.",
 			en: "Lessons from building software, implementing AI, and launching digital products.",
 		},
+		"blog.back": { ru: "Все публикации", en: "All posts" },
+		"blog.more": { ru: "Читайте также", en: "Read next" },
+		"blog.date.20260819": { ru: "19 августа 2026", en: "August 19, 2026" },
+		"blog.min7": { ru: "7 минут", en: "7 min read" },
+		"blog.min8": { ru: "8 минут", en: "8 min read" },
 		"blog.empty.label": { ru: "Скоро", en: "Coming soon" },
 		"blog.empty.title": { ru: "Готовим первые материалы", en: "Our first stories are on the way" },
 		"blog.empty.desc": {
