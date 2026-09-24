@@ -87,6 +87,24 @@ html.dark .about-shell {
   background-color: #111111 !important;
 }
 
+html.dark header.sticky {
+  background-color: rgba(10, 10, 10, 0.88) !important;
+}
+html.dark .hero__title {
+  color: #f0f0f0;
+}
+html.dark .hero__subtitle {
+  color: #9a9a9a;
+}
+html.dark .hero__btn--primary {
+  background: #f0f0f0;
+  color: #111111;
+}
+html.dark .hero__btn--secondary {
+  border-color: rgba(255,255,255,0.18);
+  color: #f0f0f0;
+}
+
 /* ── About hero image overlay ── */
 html.dark .about-shell .absolute.inset-0 {
   background-color: rgba(0,0,0,0.45) !important;
