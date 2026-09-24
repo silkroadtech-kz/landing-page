@@ -2598,3 +2598,635 @@ a.case__name:focus-visible {
 		font-size: 19px;
 	}
 }
+
+/* ============================================================
+   ABOUT PAGE
+   No visible page title: the page opens on the office photo and
+   the company/mission card. Team and advisory board are
+   accordions: one member is open, clicking another opens them
+   and pushes the rest aside. Closed members get a small hover
+   cue so they read as clickable.
+
+   Motion
+   - Scroll: photo first, card 0.1s later; inside the frame the
+     photo settles from 1.06 to 1. Team cards and avatars arrive
+     left to right (--d).
+   - Accordion: the open member grows (flex-grow / width) on a
+     strong ease-out, its text fades in once there is room for it
+     and fades out immediately on close, before the space shrinks.
+     Text boxes have fixed widths, so nothing re-wraps mid-motion.
+   ============================================================ */
+.sr-only {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	white-space: nowrap;
+	border: 0;
+}
+
+.about {
+	padding: clamp(40px, 6vw, 80px) 24px clamp(64px, 8vw, 104px);
+}
+.about__inner {
+	display: grid;
+	grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+	gap: 24px;
+	max-width: 1280px;
+	margin: 0 auto;
+}
+
+.about__photo {
+	position: relative;
+	min-height: 480px;
+	border-radius: 30px;
+	overflow: hidden;
+	background: #e8e6df;
+}
+.about__photo picture,
+.about__photo img {
+	position: absolute;
+	inset: 0;
+	width: 100%;
+	height: 100%;
+}
+.about__photo img {
+	max-width: none;
+	object-fit: cover;
+	object-position: center 65%;
+	transform: scale(1.06);
+	transition: transform 1.4s var(--ease-out-strong);
+}
+.about__photo.active img {
+	transform: none;
+}
+
+.about__card {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding: 48px;
+	border-radius: 30px;
+	background: #fff;
+	border: 1px solid rgba(1, 2, 5, 0.06);
+}
+.about__card.reveal {
+	transition-delay: 0.1s;
+}
+.about__block + .about__block {
+	margin-top: 40px;
+	padding-top: 40px;
+	border-top: 1px solid rgba(1, 2, 5, 0.08);
+}
+.about__label {
+	font-size: 14px;
+	font-weight: 600;
+	letter-spacing: 0.04em;
+	text-transform: uppercase;
+	color: #7aa84a;
+}
+.about__heading {
+	margin-top: 16px;
+	font-size: clamp(20px, 1.9vw, 26px);
+	font-weight: 600;
+	line-height: 1.4;
+	letter-spacing: -0.02em;
+	color: #010205;
+	text-wrap: pretty;
+}
+.about__desc {
+	margin-top: 14px;
+	font-size: 16px;
+	font-weight: 500;
+	line-height: 1.7;
+	color: #5c5d5f;
+	text-wrap: pretty;
+}
+
+/* ── Section shell (team, board) ── */
+.people {
+	padding: clamp(64px, 8vw, 104px) 24px;
+}
+.people--board {
+	padding-top: 0;
+}
+.people__inner {
+	max-width: 1280px;
+	margin: 0 auto;
+}
+.people__header {
+	display: grid;
+	grid-template-columns: minmax(0, 1fr) minmax(0, 560px);
+	gap: 48px;
+	align-items: end;
+	margin-bottom: 52px;
+}
+.people__heading {
+	font-size: clamp(32px, 3.4vw, 48px);
+	font-weight: 600;
+	line-height: 1.2;
+	letter-spacing: -0.03em;
+	color: #010205;
+}
+.people__lead {
+	font-size: 17px;
+	font-weight: 500;
+	line-height: 1.7;
+	color: #878c91;
+}
+
+/* Name links (team and board). */
+.person__link {
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+	transition: color 0.2s ease;
+}
+.person__arrow {
+	flex-shrink: 0;
+	color: #878c91;
+	transition:
+		color 0.2s ease,
+		transform 0.2s ease;
+}
+@media (hover: hover) and (pointer: fine) {
+	.person__link:hover,
+	.person__link:hover .person__arrow {
+		color: #7aa84a;
+	}
+	.person__link:hover .person__arrow {
+		transform: translate(2px, -2px);
+	}
+}
+.person__link:focus-visible {
+	outline: 2px solid #9ac763;
+	outline-offset: 3px;
+	border-radius: 4px;
+}
+
+:root {
+	--ease-accordion: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* ============================================================
+   TEAM — accordion of four cards.
+   Sizes come from the row width (container units): a closed card
+   is one unit, the open one two. The photo is always one unit
+   wide and pinned right, so closing a card just crops it back to
+   the photo. The row is kept fairly short so the photo strip
+   isn't too narrow for the portraits; --focus-x on each photo
+   aims the crop at the face.
+   ============================================================ */
+.crew {
+	--u: calc((100cqi - 48px) / 5);
+	--photo: calc(var(--u) - 24px);
+	container-type: inline-size;
+	display: flex;
+	gap: 16px;
+	height: clamp(340px, 29vw, 400px);
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+.crew__card {
+	--d: 0s;
+	position: relative;
+	flex: 1 1 0;
+	min-width: 0;
+	border-radius: 30px;
+	background: #fff;
+	border: 1px solid rgba(1, 2, 5, 0.06);
+	overflow: hidden;
+}
+.crew__card.reveal {
+	transition:
+		opacity 0.7s ease var(--d),
+		transform 0.7s ease var(--d),
+		flex-grow 0.6s var(--ease-accordion);
+}
+.crew__card.is-open {
+	flex-grow: 2;
+}
+.crew__card:nth-child(2) { --d: 0.06s; }
+.crew__card:nth-child(3) { --d: 0.12s; }
+.crew__card:nth-child(4) { --d: 0.18s; }
+
+.crew__toggle {
+	position: absolute;
+	top: 12px;
+	right: 12px;
+	bottom: 12px;
+	width: var(--photo);
+	padding: 0;
+	border-radius: 20px;
+	overflow: hidden;
+	cursor: pointer;
+	text-align: left;
+}
+.crew__card.is-open .crew__toggle {
+	cursor: default;
+}
+.crew__photo img {
+	transition: transform 0.4s var(--ease-out-strong);
+}
+@media (hover: hover) and (pointer: fine) {
+	.crew__card:not(.is-open) .crew__toggle:hover .crew__photo img {
+		transform: scale(1.03);
+	}
+	.crew__card:not(.is-open) .crew__toggle:hover .crew__tag {
+		background: #fff;
+	}
+}
+.crew__toggle:focus-visible {
+	outline: 2px solid #9ac763;
+	outline-offset: 3px;
+}
+.crew__photo {
+	position: absolute;
+	inset: 0;
+	background: #efeee9;
+}
+.crew__photo img {
+	width: 100%;
+	height: 100%;
+	max-width: none;
+	object-fit: cover;
+	object-position: var(--focus-x, 50%) top;
+	/* Studio portraits are shot on white; multiply turns it into the tile colour. */
+	mix-blend-mode: multiply;
+}
+.crew__tag {
+	position: absolute;
+	left: 12px;
+	bottom: 12px;
+	padding: 7px 12px;
+	border-radius: 999px;
+	background: rgba(255, 255, 255, 0.92);
+	font-size: 13px;
+	font-weight: 600;
+	color: #010205;
+	transition: opacity 0.25s ease 0.2s;
+}
+.crew__card.is-open .crew__tag {
+	opacity: 0;
+	transition: opacity 0.12s ease;
+}
+
+.crew__info {
+	position: absolute;
+	top: 28px;
+	bottom: 28px;
+	left: 28px;
+	width: calc(var(--u) - 40px);
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	gap: 24px;
+	opacity: 0;
+	visibility: hidden;
+	transform: translateY(8px);
+	transition:
+		opacity 0.12s ease,
+		transform 0.12s ease,
+		visibility 0s linear 0.12s;
+}
+.crew__card.is-open .crew__info {
+	opacity: 1;
+	visibility: visible;
+	transform: none;
+	transition:
+		opacity 0.4s ease 0.22s,
+		transform 0.5s var(--ease-out-strong) 0.22s,
+		visibility 0s;
+}
+.crew__name {
+	font-size: clamp(22px, 2vw, 28px);
+	font-weight: 600;
+	line-height: 1.2;
+	letter-spacing: -0.03em;
+	color: #010205;
+}
+.crew__role {
+	margin-top: 12px;
+	font-size: 14px;
+	font-weight: 600;
+	line-height: 1.5;
+	color: #7aa84a;
+}
+.crew__bio {
+	padding-top: 16px;
+	border-top: 1px solid rgba(1, 2, 5, 0.08);
+	font-size: 14px;
+	font-weight: 500;
+	line-height: 1.6;
+	color: #5c5d5f;
+}
+
+/* ============================================================
+   ADVISORY BOARD — a row of avatars. The open one becomes a
+   white pill with the details; the avatars after it slide
+   right to make room. Row width stays constant because exactly
+   one pill is always open.
+   ============================================================ */
+.board {
+	--avatar: 96px;
+	--info: 290px;
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+.board__item {
+	--d: 0s;
+	display: flex;
+	align-items: center;
+	flex-shrink: 0;
+	padding: 6px;
+	border-radius: 999px;
+	background-color: rgba(255, 255, 255, 0);
+	box-shadow: inset 0 0 0 1px rgba(1, 2, 5, 0);
+}
+.board__item.reveal {
+	transition:
+		opacity 0.7s ease var(--d),
+		transform 0.7s ease var(--d),
+		background-color 0.35s ease,
+		box-shadow 0.35s ease;
+}
+.board__item:nth-child(2) { --d: 0.04s; }
+.board__item:nth-child(3) { --d: 0.08s; }
+.board__item:nth-child(4) { --d: 0.12s; }
+.board__item:nth-child(5) { --d: 0.16s; }
+.board__item:nth-child(6) { --d: 0.2s; }
+.board__item:nth-child(7) { --d: 0.24s; }
+.board__item:nth-child(8) { --d: 0.28s; }
+.board__item.is-open {
+	background-color: #fff;
+	box-shadow: inset 0 0 0 1px rgba(1, 2, 5, 0.06);
+}
+
+.board__avatar {
+	flex-shrink: 0;
+	width: var(--avatar);
+	height: var(--avatar);
+	padding: 0;
+	border-radius: 50%;
+	overflow: hidden;
+	background: #e8e6df;
+	cursor: pointer;
+	transition:
+		transform 0.16s ease-out,
+		box-shadow 0.15s ease;
+}
+.board__avatar:active {
+	transform: scale(0.96);
+}
+@media (hover: hover) and (pointer: fine) {
+	.board__item:not(.is-open) .board__avatar:hover {
+		box-shadow: 0 0 0 3px #9ac763;
+	}
+}
+.board__item.is-open .board__avatar {
+	cursor: default;
+}
+.board__avatar:focus-visible {
+	outline: 2px solid #9ac763;
+	outline-offset: 3px;
+}
+.board__avatar img {
+	width: 100%;
+	height: 100%;
+	max-width: none;
+	object-fit: cover;
+	object-position: center 25%;
+}
+
+.board__info {
+	width: 0;
+	overflow: hidden;
+	transition: width 0.6s var(--ease-accordion);
+}
+.board__item.is-open .board__info {
+	width: var(--info);
+}
+.board__text {
+	width: var(--info);
+	padding: 0 24px 0 18px;
+	opacity: 0;
+	visibility: hidden;
+	transition:
+		opacity 0.12s ease,
+		visibility 0s linear 0.12s;
+}
+.board__item.is-open .board__text {
+	opacity: 1;
+	visibility: visible;
+	transition:
+		opacity 0.35s ease 0.2s,
+		visibility 0s;
+}
+.board__name {
+	font-size: 17px;
+	font-weight: 600;
+	line-height: 1.3;
+	letter-spacing: -0.01em;
+	color: #010205;
+	white-space: nowrap;
+}
+.board__role {
+	margin-top: 3px;
+	font-size: 13px;
+	font-weight: 600;
+	line-height: 1.4;
+	color: #7aa84a;
+}
+.board__bio {
+	margin-top: 4px;
+	font-size: 13px;
+	font-weight: 500;
+	line-height: 1.45;
+	color: #5c5d5f;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.about__photo img {
+		transform: none;
+		transition: none;
+	}
+	.crew__card.reveal,
+	.board__item.reveal {
+		transition: opacity 0.4s ease-out;
+	}
+	.board__info,
+	.crew__info,
+	.board__text,
+	.crew__card.is-open .crew__info,
+	.board__item.is-open .board__text {
+		transition: none;
+	}
+}
+
+@media (max-width: 1320px) {
+	.board {
+		--avatar: 84px;
+		--info: 270px;
+	}
+}
+
+@media (max-width: 1100px) {
+	.people__header {
+		grid-template-columns: 1fr;
+		gap: 16px;
+		margin-bottom: 40px;
+	}
+	.about__card {
+		padding: 40px;
+	}
+}
+
+/* Board without room for the row: everyone shown, as a grid. */
+@media (max-width: 1199px) {
+	.board {
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: 12px;
+	}
+	.board__item,
+	.board__item.is-open {
+		padding: 12px;
+		border-radius: 24px;
+		background-color: #fff;
+		box-shadow: inset 0 0 0 1px rgba(1, 2, 5, 0.06);
+	}
+	.board__item:nth-child(n) {
+		--d: 0s;
+	}
+	.board__item:nth-child(2n) {
+		--d: 0.06s;
+	}
+	.board__avatar {
+		--avatar: 72px;
+		cursor: default;
+	}
+	.board__info,
+	.board__item.is-open .board__info {
+		flex: 1;
+		width: auto;
+		min-width: 0;
+	}
+	.board__text,
+	.board__item.is-open .board__text {
+		width: auto;
+		padding: 0 8px 0 16px;
+		opacity: 1;
+		visibility: visible;
+	}
+	.board__name {
+		white-space: normal;
+	}
+}
+
+/* Team without room for the accordion: stacked rows, all open. */
+@media (max-width: 899px) {
+	.crew {
+		flex-direction: column;
+		height: auto;
+		gap: 12px;
+	}
+	.crew__card,
+	.crew__card.is-open {
+		flex: none;
+		display: grid;
+		grid-template-columns: 120px minmax(0, 1fr);
+		gap: 20px;
+		padding: 12px;
+		border-radius: 24px;
+	}
+	.crew__card:nth-child(n) {
+		--d: 0s;
+	}
+	.crew__toggle {
+		position: relative;
+		inset: auto;
+		width: auto;
+		aspect-ratio: 1;
+		align-self: start;
+		border-radius: 16px;
+		cursor: default;
+	}
+	.crew__tag {
+		display: none;
+	}
+	.crew__info,
+	.crew__card.is-open .crew__info {
+		position: static;
+		width: auto;
+		gap: 12px;
+		padding: 6px 8px 6px 0;
+		opacity: 1;
+		visibility: visible;
+		transform: none;
+	}
+	.crew__name {
+		font-size: 20px;
+	}
+	.crew__role {
+		margin-top: 6px;
+		font-size: 13px;
+	}
+	.crew__bio {
+		padding-top: 12px;
+		font-size: 14px;
+	}
+}
+
+@media (max-width: 900px) {
+	.about__inner {
+		grid-template-columns: 1fr;
+	}
+	.about__photo {
+		min-height: 0;
+		aspect-ratio: 4 / 3;
+	}
+	.about__card.reveal {
+		transition-delay: 0s;
+	}
+}
+
+@media (max-width: 640px) {
+	.about,
+	.people {
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+	.about__photo {
+		border-radius: 24px;
+	}
+	.about__card {
+		padding: 28px 24px;
+		border-radius: 24px;
+	}
+	.about__block + .about__block {
+		margin-top: 28px;
+		padding-top: 28px;
+	}
+	.people__lead {
+		font-size: 16px;
+	}
+	.board {
+		grid-template-columns: 1fr;
+	}
+	.board__item:nth-child(n) {
+		--d: 0s;
+	}
+	.crew__card,
+	.crew__card.is-open {
+		grid-template-columns: 96px minmax(0, 1fr);
+		gap: 16px;
+	}
+}
