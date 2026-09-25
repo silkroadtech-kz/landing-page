@@ -16,14 +16,14 @@ mkdir -p "$DIST"
 echo "→ Корневые файлы"
 for f in *.html .htaccess robots.txt sitemap.xml site.webmanifest \
          favicon.ico favicon.svg apple-touch-icon.png \
-         og-cover.png og-cover.svg burst.svg vector97.svg; do
+         og-cover.png burst.svg vector97.svg; do
 	[ -e "$f" ] && cp "$f" "$DIST/"
 done
 
 echo "→ Вложенные страницы"
 # docs/ намеренно не копируется: там внутренние планы и спеки, вёрстка на них
 # не ссылается. PDF-сертификаты лежат отдельно в assets/docs/ и попадают ниже.
-for d in blog; do
+for d in blog og; do
 	[ -d "$d" ] && cp -R "$d" "$DIST/"
 done
 
