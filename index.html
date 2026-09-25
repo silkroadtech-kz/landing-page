@@ -59,7 +59,7 @@
 		<link rel="apple-touch-icon" href="apple-touch-icon.png" />
 		<link rel="manifest" href="site.webmanifest" />
 		<meta name="theme-color" content="#010205" />
-		<link rel="stylesheet" href="assets/site.css?v=20260819-6" />
+		<link rel="stylesheet" href="assets/site.css?v=20260924-9" />
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Manrope:wght@500;700;800&family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,700&family=Sora:wght@600;700&family=Roboto:wght@400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
@@ -156,7 +156,7 @@
 		</div>
 		<!-- ============ NAVBAR ============ -->
 		<header
-			class="sticky top-0 z-50 bg-[rgba(239,239,239,0.47)] backdrop-blur-[20px] backdrop-saturate-150 border-b border-white/20"
+			class="sticky top-0 z-50 bg-[rgba(239,239,239,0.47)] backdrop-blur-[20px]"
 		>
 			<nav
 				class="max-w-[1440px] mx-auto flex items-center justify-between px-20 py-5"
@@ -178,18 +178,27 @@
 					>
 						<li>
 							<a
+								href="#process"
+								class="hover:text-[#9ac763]"
+								data-i18n="nav.process"
+								>Процесс</a
+							>
+						</li>
+						<li>
+							<a
 								href="#services"
 								class="hover:text-[#9ac763]"
 								data-i18n="nav.services"
 								>Услуги</a
 							>
 						</li>
+						<li><a href="#products" class="hover:text-[#9ac763]" data-i18n="nav.products">Продукты</a></li>
 						<li>
 							<a
-								href="#process"
+								href="#contacts"
 								class="hover:text-[#9ac763]"
-								data-i18n="nav.process"
-								>Процесс</a
+								data-i18n="nav.contacts"
+								>Контакты</a
 							>
 						</li>
 						<li>
@@ -200,7 +209,6 @@
 								>Кейсы</a
 							>
 						</li>
-						<li><a href="#products" class="hover:text-[#9ac763]" data-i18n="nav.products">Продукты</a></li>
 						<li>
 							<a
 								href="/about"
@@ -215,14 +223,6 @@
 								class="hover:text-[#9ac763]"
 								data-i18n="nav.blog"
 								>Блог</a
-							>
-						</li>
-						<li>
-							<a
-								href="#contacts"
-								class="hover:text-[#9ac763]"
-								data-i18n="nav.contacts"
-								>Контакты</a
 							>
 						</li>
 					</ul>
@@ -273,509 +273,514 @@
 			</button>
 			<ul class="flex flex-col gap-6 text-[20px] font-semibold">
 				<li>
-					<a href="#services" class="mobile-link" data-i18n="nav.services"
-						>Услуги</a
-					>
-				</li>
-				<li>
 					<a href="#process" class="mobile-link" data-i18n="nav.process"
 						>Процесс</a
 					>
 				</li>
-				<li><a href="/cases" data-i18n="nav.cases">Кейсы</a></li>
+				<li>
+					<a href="#services" class="mobile-link" data-i18n="nav.services"
+						>Услуги</a
+					>
+				</li>
 				<li><a href="#products" class="mobile-link" data-i18n="nav.products">Продукты</a></li>
-				<li><a href="/about" data-i18n="nav.about">О нас</a></li>
-				<li><a href="/blog" data-i18n="nav.blog">Блог</a></li>
 				<li>
 					<a href="#contacts" class="mobile-link" data-i18n="nav.contacts"
 						>Контакты</a
 					>
 				</li>
+				<li><a href="/cases" data-i18n="nav.cases">Кейсы</a></li>
+				<li><a href="/about" data-i18n="nav.about">О нас</a></li>
+				<li><a href="/blog" data-i18n="nav.blog">Блог</a></li>
 			</ul>
 		</div>
 		</div>
 
-		<!-- ============ HOOK / HERO ============ -->
-		<section
-			class="relative bg-transparent hero-section"
-			style="overflow: hidden"
-		>
-			<div class="absolute inset-0 noise"></div>
-			<!-- Hero frame: matches figma 1440x687 with absolute children -->
-			<div class="hero-layout relative mx-auto w-full max-w-[1440px] h-[687px]">
-				<!-- LEFT: heading + description + buttons (figma left:71 top:80) -->
-				<div
-					class="hero-copy absolute left-[71px] top-[80px] flex flex-col gap-12"
+		<!-- ============ HERO ============ -->
+		<section class="hero" aria-labelledby="heroTitle">
+			<div class="hero__inner">
+				<h1
+					id="heroTitle"
+					class="hero__title"
+					data-i18n-html="hero.title"
 				>
-					<h1
-						class="hero-title font-jakarta font-semibold text-[72px] leading-[1.1] tracking-[-2.16px] w-[700px]"
-						data-i18n-html="hero.title"
+					Мы делаем продукты именно под ваши бизнес процессы
+				</h1>
+				<p class="hero__subtitle" data-i18n="hero.desc">
+					От идеи и архитектуры до запуска и роста продукта.
+				</p>
+				<div class="hero__actions">
+					<a
+						href="#contacts"
+						class="hero__btn hero__btn--primary"
+						data-i18n="hero.cta"
+						>Обсудить проект</a
 					>
-						Мы делаем продукты именно под ваши бизнес процессы
-					</h1>
-					<p
-						class="hero-desc font-jakarta font-medium text-[16px] leading-[1.8] text-[#878c91] w-[557px]"
-						data-i18n="hero.desc"
+					<a
+						href="/cases"
+						class="hero__btn hero__btn--secondary"
+						data-i18n="hero.cases"
+						>Смотреть кейсы</a
 					>
-						От идеи и архитектуры до запуска и роста продукта.
-					</p>
-					<div class="hero-btns flex items-center gap-14">
-						<button
-							class="bg-[#010205] text-white font-jakarta font-bold text-[16px] tracking-tight rounded-[70px] px-8 py-4 inline-flex items-center gap-3 hover:scale-[1.02] transition"
-							onclick="
-								document
-									.getElementById('contacts')
-									.scrollIntoView({ behavior: 'smooth' })
-							"
-							data-i18n="hero.cta"
-						>
-							Обсудить проект
-							<svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-								<path
-									d="M5 12h14M13 6l6 6-6 6"
-									stroke="white"
-									stroke-width="2"
-									stroke-linecap="round"
-									stroke-linejoin="round"
-								/>
-							</svg>
-						</button>
-						<a
-							href="/cases"
-							class="font-jakarta font-semibold text-[16px] text-[#010205] underline decoration-solid leading-[1.8]"
-							data-i18n="hero.cases"
-						>
-							Смотреть кейсы
-						</a>
-					</div>
-				</div>
-
-				<!-- Partner logos strip — direct child of hero-layout so it can span full width -->
-				<div class="hero-partner-strip">
-					<p
-						class="partners-label font-jakarta font-semibold uppercase text-[#5c5d5f]"
-						data-i18n="hero.partners"
-					>
-						Наши партнёры
-					</p>
-					<div class="partners-ticker overflow-hidden">
-						<div class="marquee flex items-center gap-[18px]">
-							<div
-								class="relative shrink-0 overflow-hidden"
-								style="width: 42.124px; height: 45.799px"
-							>
-								<img
-									src="assets/partner_awara.webp"
-									alt="Awara IT"
-									style="
-										position: absolute;
-										max-width: none;
-										height: 129.01%;
-										width: 114.79%;
-										left: -8.74%;
-										top: -19.14%;
-									"
-								/>
-							</div>
-							<div
-								class="relative shrink-0 overflow-hidden"
-								style="width: 87.573px; height: 39.257px"
-							>
-								<img
-									src="assets/partner_sprite.webp"
-									alt="AICA"
-									style="
-										position: absolute;
-										max-width: none;
-										height: 487.18%;
-										width: 392.34%;
-										left: -45.98%;
-										top: -177.78%;
-									"
-								/>
-							</div>
-							<div
-								class="relative shrink-0 overflow-hidden"
-								style="width: 113.337px; height: 36.975px"
-							>
-								<img
-									src="assets/partner_sprite.webp"
-									alt="TIMDOS"
-									style="
-										position: absolute;
-										max-width: none;
-										height: 413.04%;
-										width: 242.08%;
-										left: 0;
-										top: -257.25%;
-									"
-								/>
-							</div>
-							<div
-								class="relative shrink-0 overflow-hidden"
-								style="width: 78.852px; height: 45.408px"
-							>
-								<img
-									src="assets/partner_smartlab.webp"
-									alt="SmartLab"
-									style="
-										position: absolute;
-										max-width: none;
-										height: 177.46%;
-										width: 127.93%;
-										left: -8.28%;
-										top: -22.86%;
-									"
-								/>
-							</div>
-							<div
-								class="relative shrink-0 overflow-hidden"
-								style="width: 80.142px; height: 37.624px"
-							>
-								<img
-									src="assets/partner_sprite.webp"
-									alt="abm"
-									style="
-										position: absolute;
-										max-width: none;
-										height: 463.41%;
-										width: 390.84%;
-										left: -217.94%;
-										top: -167.48%;
-									"
-								/>
-							</div>
-							<div
-								class="relative shrink-0 overflow-hidden"
-								style="width: 99.134px; height: 29.84px"
-							>
-								<img
-									src="assets/partner_sprite.webp"
-									alt="Division"
-									style="
-										position: absolute;
-										max-width: none;
-										height: 633.33%;
-										width: 342.47%;
-										left: -183.95%;
-										top: -420%;
-									"
-								/>
-							</div>
-							<!-- Duplicate for seamless scroll -->
-							<div
-								class="relative shrink-0 overflow-hidden"
-								style="width: 42.124px; height: 45.799px"
-							>
-								<img
-									src="assets/partner_awara.webp"
-									alt="Awara IT"
-									style="
-										position: absolute;
-										max-width: none;
-										height: 129.01%;
-										width: 114.79%;
-										left: -8.74%;
-										top: -19.14%;
-									"
-								/>
-							</div>
-							<div
-								class="relative shrink-0 overflow-hidden"
-								style="width: 87.573px; height: 39.257px"
-							>
-								<img
-									src="assets/partner_sprite.webp"
-									alt="AICA"
-									style="
-										position: absolute;
-										max-width: none;
-										height: 487.18%;
-										width: 392.34%;
-										left: -45.98%;
-										top: -177.78%;
-									"
-								/>
-							</div>
-							<div
-								class="relative shrink-0 overflow-hidden"
-								style="width: 113.337px; height: 36.975px"
-							>
-								<img
-									src="assets/partner_sprite.webp"
-									alt="TIMDOS"
-									style="
-										position: absolute;
-										max-width: none;
-										height: 413.04%;
-										width: 242.08%;
-										left: 0;
-										top: -257.25%;
-									"
-								/>
-							</div>
-							<div
-								class="relative shrink-0 overflow-hidden"
-								style="width: 78.852px; height: 45.408px"
-							>
-								<img
-									src="assets/partner_smartlab.webp"
-									alt="SmartLab"
-									style="
-										position: absolute;
-										max-width: none;
-										height: 177.46%;
-										width: 127.93%;
-										left: -8.28%;
-										top: -22.86%;
-									"
-								/>
-							</div>
-							<div
-								class="relative shrink-0 overflow-hidden"
-								style="width: 80.142px; height: 37.624px"
-							>
-								<img
-									src="assets/partner_sprite.webp"
-									alt="abm"
-									style="
-										position: absolute;
-										max-width: none;
-										height: 463.41%;
-										width: 390.84%;
-										left: -217.94%;
-										top: -167.48%;
-									"
-								/>
-							</div>
-							<div
-								class="relative shrink-0 overflow-hidden"
-								style="width: 99.134px; height: 29.84px"
-							>
-								<img
-									src="assets/partner_sprite.webp"
-									alt="Division"
-									style="
-										position: absolute;
-										max-width: none;
-										height: 633.33%;
-										width: 342.47%;
-										left: -183.95%;
-										top: -420%;
-									"
-								/>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<div class="hero-media">
-					<div
-						class="hero-card hero-card-photo absolute left-[781px] top-[112px] w-[303px] h-[275px] rounded-tl-[1000px] rounded-tr-[20px] rounded-b-[20px] overflow-hidden shadow-xl"
-						style="animation-delay: 0.3s"
-					>
-						<picture>
-							<source srcset="assets/hero_image.webp" type="image/webp">
-							<img
-								src="assets/hero_image.jpg"
-								class="w-full h-full object-cover"
-								alt="Silk Road Tech team at work"
-								decoding="async"
-								fetchpriority="high"
-							/>
-						</picture>
-						<div class="absolute inset-0 bg-black/20 backdrop-blur-[2px]"></div>
-					</div>
-
-					<!-- Trending badge – centred on the gap between photo (ends 1084px) and stat card (starts 1108px) -->
-					<div
-						class="hero-badge absolute left-[920px] top-[80px] w-[108px] h-[108px] rounded-full bg-[#010205] shadow-[0px_30px_50px_-6.8px_rgba(0,0,0,0.44)] z-20 float pulse-ring"
-					></div>
-					<div
-						class="hero-badge absolute left-[951px] top-[111px] w-[48px] h-[48px] z-30 float"
-					>
-						<svg width="48" height="48" viewBox="0 0 24 24" fill="none">
-							<path
-								d="M3 17l6-6 4 4 8-8M17 7h4v4"
-								stroke="#9ac763"
-								stroke-width="2.2"
-								stroke-linecap="round"
-								stroke-linejoin="round"
-							/>
-						</svg>
-					</div>
-
-					<!-- Stat card: frosted glass light card (figma: left:1108 top:112, bg-[#f0f0f0] backdrop-blur) -->
-					<div
-						class="hero-card hero-card-stat absolute left-[1108px] top-[112px] w-[259px] h-[281px] rounded-[20px] backdrop-blur-[42px] bg-[#f0f0f0] overflow-hidden"
-						style="animation-delay: 0.5s"
-					>
-						<div
-							class="absolute inset-0 flex flex-col items-start left-[25px] top-[38px] p-[10px]"
-						>
-							<p
-								class="font-jakarta font-bold text-[84px] leading-[1.1] tracking-[-2.52px] text-[#010205] w-full"
-								data-i18n="hero.stat.value"
-							>
-								15+
-							</p>
-							<p
-								class="mt-4 font-jakarta font-medium text-[14px] leading-[1.45] text-[#5c5d5f] max-w-[205px]"
-								data-i18n="hero.stat.label"
-							>
-								инженеров, продуктологов, дизайнеров с опытом в международных
-								компаниях
-							</p>
-							<p
-								class="mt-3 font-jakarta font-semibold text-[13px] leading-[1.4] text-[#010205] max-w-[205px]"
-								data-i18n="hero.stat.meta"
-							>
-								Средний опыт - 6+ лет
-							</p>
-						</div>
-					</div>
-
-					<!-- RIGHT BOTTOM: dark card "Your business grows" (figma left:781 top:411  588x216) -->
-					<div
-						class="hero-card hero-card-growth absolute left-[781px] top-[411px] w-[588px] h-[216px] rounded-[20px] bg-[#010205] overflow-hidden"
-						style="animation-delay: 0.7s"
-					>
-						<!-- background orbs/blobs from figma image 60 (rotated 115deg, opacity 60%) -->
-						<div class="absolute inset-0 pointer-events-none">
-							<picture>
-								<source srcset="assets/dark_card.webp" type="image/webp">
-								<img
-									src="assets/dark_card.png"
-									class="absolute opacity-60"
-									style="
-										left: -21%;
-										top: -30%;
-										width: 128%;
-										height: 130%;
-										transform: rotate(115.48deg);
-									"
-									alt="Decorative growth background"
-									decoding="async"
-									fetchpriority="high"
-								/>
-							</picture>
-						</div>
-
-						<!-- text block (figma left offset 33 from card → absolute left 814 - card 781 = 33) -->
-						<div
-							class="absolute left-[33px] top-1/2 -translate-y-1/2 flex flex-col gap-8 z-10"
-						>
-							<div class="flex items-center gap-3">
-								<span class="block h-[1px] w-[54px] bg-white"></span>
-								<span
-									class="font-jakarta font-semibold text-[14px] text-white tracking-[-0.42px] leading-[1.26]"
-									data-i18n="hero.tagline"
-									>Результаты говорят сами за себя</span
-								>
-							</div>
-							<h3
-								class="font-jakarta font-semibold text-[27px] leading-[1.3] tracking-[-0.64px] text-white w-[328px]"
-								data-i18n-html="hero.growth.title"
-							>
-								Ваш бизнес растёт —<br />
-								<span class="text-gradient-green-2">технологии не отстают</span>
-							</h3>
-						</div>
-
-						<!-- bars (figma bottom:80 from card bottom, left offset 1120-781=339) -->
-						<div
-							class="absolute left-[339px] bottom-[20px] flex items-end gap-[10px] z-10"
-							id="heroBars"
-						>
-							<div
-								class="w-[69px] h-[95px] bg-[#bae289] bar-animate delay-1"
-							></div>
-							<div
-								class="w-[69px] h-[136px] bg-[#99cf63] bar-animate delay-2"
-							></div>
-							<div
-								class="w-[69px] h-[166px] bg-[#77b248] bar-animate delay-3"
-							></div>
-						</div>
-					</div>
 				</div>
 			</div>
 		</section>
 
-		<!-- ============ HOW WE WORK (From task to result) ============ -->
-		<section
-			id="how-we-work"
-			class="relative bg-transparent overflow-hidden"
-			style="height: 662px"
-		>
-			<div class="absolute inset-0 noise"></div>
-			<div class="how-work-shell absolute inset-0 max-w-[1440px] mx-auto">
-				<!-- Header row -->
-				<div
-					class="how-work-header absolute left-[80px] top-[50px] w-[1280px] flex items-start justify-between h-[107px]"
+		<!-- ============ PARTNERS ============ -->
+		<section class="partners-row" aria-label="Партнёры">
+			<div class="partners-strip">
+				<p
+					class="partners-label font-jakarta font-semibold uppercase text-[#5c5d5f]"
+					data-i18n="hero.partners"
 				>
-					<h2
-						class="font-jakarta font-semibold text-[48px] leading-[1.3] tracking-[-1.44px] text-black w-[568px] reveal-left"
-						data-i18n="how.title"
-					>
+					Наши партнёры
+				</p>
+				<div class="partners-ticker overflow-hidden">
+					<div class="marquee flex items-center gap-[18px]">
+						<div
+							class="relative shrink-0 overflow-hidden"
+							style="width: 42.124px; height: 45.799px"
+						>
+							<img
+								src="assets/partner_awara.webp"
+								alt="Awara IT"
+								style="
+									position: absolute;
+									max-width: none;
+									height: 129.01%;
+									width: 114.79%;
+									left: -8.74%;
+									top: -19.14%;
+								"
+							/>
+						</div>
+						<div
+							class="relative shrink-0 overflow-hidden"
+							style="width: 87.573px; height: 39.257px"
+						>
+							<img
+								src="assets/partner_sprite.webp"
+								alt="AICA"
+								style="
+									position: absolute;
+									max-width: none;
+									height: 487.18%;
+									width: 392.34%;
+									left: -45.98%;
+									top: -177.78%;
+								"
+							/>
+						</div>
+						<div
+							class="relative shrink-0 overflow-hidden"
+							style="width: 113.337px; height: 36.975px"
+						>
+							<img
+								src="assets/partner_sprite.webp"
+								alt="TIMDOS"
+								style="
+									position: absolute;
+									max-width: none;
+									height: 413.04%;
+									width: 242.08%;
+									left: 0;
+									top: -257.25%;
+								"
+							/>
+						</div>
+						<div
+							class="relative shrink-0 overflow-hidden"
+							style="width: 78.852px; height: 45.408px"
+						>
+							<img
+								src="assets/partner_smartlab.webp"
+								alt="SmartLab"
+								style="
+									position: absolute;
+									max-width: none;
+									height: 177.46%;
+									width: 127.93%;
+									left: -8.28%;
+									top: -22.86%;
+								"
+							/>
+						</div>
+						<div
+							class="relative shrink-0 overflow-hidden"
+							style="width: 80.142px; height: 37.624px"
+						>
+							<img
+								src="assets/partner_sprite.webp"
+								alt="abm"
+								style="
+									position: absolute;
+									max-width: none;
+									height: 463.41%;
+									width: 390.84%;
+									left: -217.94%;
+									top: -167.48%;
+								"
+							/>
+						</div>
+						<div
+							class="relative shrink-0 overflow-hidden"
+							style="width: 99.134px; height: 29.84px"
+						>
+							<img
+								src="assets/partner_sprite.webp"
+								alt="Division"
+								style="
+									position: absolute;
+									max-width: none;
+									height: 633.33%;
+									width: 342.47%;
+									left: -183.95%;
+									top: -420%;
+								"
+							/>
+						</div>
+						<!-- Duplicate for seamless scroll -->
+						<div
+							class="relative shrink-0 overflow-hidden"
+							style="width: 42.124px; height: 45.799px"
+						>
+							<img
+								src="assets/partner_awara.webp"
+								alt="Awara IT"
+								style="
+									position: absolute;
+									max-width: none;
+									height: 129.01%;
+									width: 114.79%;
+									left: -8.74%;
+									top: -19.14%;
+								"
+							/>
+						</div>
+						<div
+							class="relative shrink-0 overflow-hidden"
+							style="width: 87.573px; height: 39.257px"
+						>
+							<img
+								src="assets/partner_sprite.webp"
+								alt="AICA"
+								style="
+									position: absolute;
+									max-width: none;
+									height: 487.18%;
+									width: 392.34%;
+									left: -45.98%;
+									top: -177.78%;
+								"
+							/>
+						</div>
+						<div
+							class="relative shrink-0 overflow-hidden"
+							style="width: 113.337px; height: 36.975px"
+						>
+							<img
+								src="assets/partner_sprite.webp"
+								alt="TIMDOS"
+								style="
+									position: absolute;
+									max-width: none;
+									height: 413.04%;
+									width: 242.08%;
+									left: 0;
+									top: -257.25%;
+								"
+							/>
+						</div>
+						<div
+							class="relative shrink-0 overflow-hidden"
+							style="width: 78.852px; height: 45.408px"
+						>
+							<img
+								src="assets/partner_smartlab.webp"
+								alt="SmartLab"
+								style="
+									position: absolute;
+									max-width: none;
+									height: 177.46%;
+									width: 127.93%;
+									left: -8.28%;
+									top: -22.86%;
+								"
+							/>
+						</div>
+						<div
+							class="relative shrink-0 overflow-hidden"
+							style="width: 80.142px; height: 37.624px"
+						>
+							<img
+								src="assets/partner_sprite.webp"
+								alt="abm"
+								style="
+									position: absolute;
+									max-width: none;
+									height: 463.41%;
+									width: 390.84%;
+									left: -217.94%;
+									top: -167.48%;
+								"
+							/>
+						</div>
+						<div
+							class="relative shrink-0 overflow-hidden"
+							style="width: 99.134px; height: 29.84px"
+						>
+							<img
+								src="assets/partner_sprite.webp"
+								alt="Division"
+								style="
+									position: absolute;
+									max-width: none;
+									height: 633.33%;
+									width: 342.47%;
+									left: -183.95%;
+									top: -420%;
+								"
+							/>
+						</div>
+						<!-- Second pair of copies: each half of the track must be wider than the strip -->
+						<div
+							aria-hidden="true"
+							class="relative shrink-0 overflow-hidden"
+							style="width: 42.124px; height: 45.799px"
+						>
+							<img
+								src="assets/partner_awara.webp"
+								alt="Awara IT"
+								style="
+									position: absolute;
+									max-width: none;
+									height: 129.01%;
+									width: 114.79%;
+									left: -8.74%;
+									top: -19.14%;
+								"
+							/>
+						</div>
+						<div
+							aria-hidden="true"
+							class="relative shrink-0 overflow-hidden"
+							style="width: 87.573px; height: 39.257px"
+						>
+							<img
+								src="assets/partner_sprite.webp"
+								alt="AICA"
+								style="
+									position: absolute;
+									max-width: none;
+									height: 487.18%;
+									width: 392.34%;
+									left: -45.98%;
+									top: -177.78%;
+								"
+							/>
+						</div>
+						<div
+							aria-hidden="true"
+							class="relative shrink-0 overflow-hidden"
+							style="width: 113.337px; height: 36.975px"
+						>
+							<img
+								src="assets/partner_sprite.webp"
+								alt="TIMDOS"
+								style="
+									position: absolute;
+									max-width: none;
+									height: 413.04%;
+									width: 242.08%;
+									left: 0;
+									top: -257.25%;
+								"
+							/>
+						</div>
+						<div
+							aria-hidden="true"
+							class="relative shrink-0 overflow-hidden"
+							style="width: 78.852px; height: 45.408px"
+						>
+							<img
+								src="assets/partner_smartlab.webp"
+								alt="SmartLab"
+								style="
+									position: absolute;
+									max-width: none;
+									height: 177.46%;
+									width: 127.93%;
+									left: -8.28%;
+									top: -22.86%;
+								"
+							/>
+						</div>
+						<div
+							aria-hidden="true"
+							class="relative shrink-0 overflow-hidden"
+							style="width: 80.142px; height: 37.624px"
+						>
+							<img
+								src="assets/partner_sprite.webp"
+								alt="abm"
+								style="
+									position: absolute;
+									max-width: none;
+									height: 463.41%;
+									width: 390.84%;
+									left: -217.94%;
+									top: -167.48%;
+								"
+							/>
+						</div>
+						<div
+							aria-hidden="true"
+							class="relative shrink-0 overflow-hidden"
+							style="width: 99.134px; height: 29.84px"
+						>
+							<img
+								src="assets/partner_sprite.webp"
+								alt="Division"
+								style="
+									position: absolute;
+									max-width: none;
+									height: 633.33%;
+									width: 342.47%;
+									left: -183.95%;
+									top: -420%;
+								"
+							/>
+						</div>
+						
+						<div
+							aria-hidden="true"
+							class="relative shrink-0 overflow-hidden"
+							style="width: 42.124px; height: 45.799px"
+						>
+							<img
+								src="assets/partner_awara.webp"
+								alt="Awara IT"
+								style="
+									position: absolute;
+									max-width: none;
+									height: 129.01%;
+									width: 114.79%;
+									left: -8.74%;
+									top: -19.14%;
+								"
+							/>
+						</div>
+						<div
+							aria-hidden="true"
+							class="relative shrink-0 overflow-hidden"
+							style="width: 87.573px; height: 39.257px"
+						>
+							<img
+								src="assets/partner_sprite.webp"
+								alt="AICA"
+								style="
+									position: absolute;
+									max-width: none;
+									height: 487.18%;
+									width: 392.34%;
+									left: -45.98%;
+									top: -177.78%;
+								"
+							/>
+						</div>
+						<div
+							aria-hidden="true"
+							class="relative shrink-0 overflow-hidden"
+							style="width: 113.337px; height: 36.975px"
+						>
+							<img
+								src="assets/partner_sprite.webp"
+								alt="TIMDOS"
+								style="
+									position: absolute;
+									max-width: none;
+									height: 413.04%;
+									width: 242.08%;
+									left: 0;
+									top: -257.25%;
+								"
+							/>
+						</div>
+						<div
+							aria-hidden="true"
+							class="relative shrink-0 overflow-hidden"
+							style="width: 78.852px; height: 45.408px"
+						>
+							<img
+								src="assets/partner_smartlab.webp"
+								alt="SmartLab"
+								style="
+									position: absolute;
+									max-width: none;
+									height: 177.46%;
+									width: 127.93%;
+									left: -8.28%;
+									top: -22.86%;
+								"
+							/>
+						</div>
+						<div
+							aria-hidden="true"
+							class="relative shrink-0 overflow-hidden"
+							style="width: 80.142px; height: 37.624px"
+						>
+							<img
+								src="assets/partner_sprite.webp"
+								alt="abm"
+								style="
+									position: absolute;
+									max-width: none;
+									height: 463.41%;
+									width: 390.84%;
+									left: -217.94%;
+									top: -167.48%;
+								"
+							/>
+						</div>
+						<div
+							aria-hidden="true"
+							class="relative shrink-0 overflow-hidden"
+							style="width: 99.134px; height: 29.84px"
+						>
+							<img
+								src="assets/partner_sprite.webp"
+								alt="Division"
+								style="
+									position: absolute;
+									max-width: none;
+									height: 633.33%;
+									width: 342.47%;
+									left: -183.95%;
+									top: -420%;
+								"
+							/>
+						</div>
+					</div>
+			</div>
+		</section>
+
+		<!-- ============ HOW WE WORK (From task to result) ============ -->
+		<section id="process" class="how" aria-labelledby="howTitle">
+			<div class="how__inner">
+				<div class="how__header">
+					<h2 id="howTitle" class="how__title reveal-left" data-i18n="how.title">
 						От задачи к результату
 					</h2>
-					<p
-						class="font-jakarta font-medium text-[16px] leading-[1.8] text-[#878c91] w-[654px] reveal-right"
-						data-i18n="how.desc"
-					>
-						Мы реализуем полный цикл технологической трансформации бизнеса: от
-						проектирования сложных программных систем и глубокой аналитики
-						данных до бесшовной интеграции оборудования и умных ИИ-ассистентов
-						для автоматизации процессов.
-					</p>
 				</div>
 
-				<!-- Cards row -->
-				<div
-					class="how-work-cards absolute left-[80px] top-[209px] flex gap-[24px] items-start reveal"
-				>
-					<!-- Left dark card: 438x382, bg #010205, with 40+ counter -->
-					<div
-						class="relative rounded-[30px] bg-[#010205] w-[438px] h-[382px] overflow-hidden shrink-0 flex flex-col justify-between"
-						style="padding: 40px"
-					>
-						<!-- Rotating texture -->
-						<div
-							class="absolute inset-[-40%] pointer-events-none opacity-40 flex items-center justify-center"
-						>
-							<picture>
-								<source srcset="assets/how_texture.webp" type="image/webp">
-								<img
-									src="assets/how_texture.png"
-									alt=""
-									loading="lazy"
-									decoding="async"
-									style="
-										width: 128%;
-										height: 130%;
-										transform: rotate(115.48deg);
-										object-fit: cover;
-										max-width: none;
-									"
-								/>
-							</picture>
-						</div>
-						<!-- Counter -->
-						<div class="relative flex flex-col gap-2">
-							<p
-								class="font-jakarta font-bold leading-none text-white"
-								style="font-size: 96.79px; letter-spacing: -2.9px"
-							>
-								<span>40</span><span class="text-[#99cf63]">+</span>
-							</p>
-							<p
-								class="font-jakarta font-medium leading-[1.7] text-[#878c91]"
-								style="font-size: 21.9px"
-								data-i18n="how.projects"
-							>
-								Завершённых проектов
-							</p>
+				<div class="how__body reveal">
+					<div class="how__stat">
+						<picture class="how__stat-texture" aria-hidden="true">
+							<source srcset="assets/how_texture.webp" type="image/webp">
+							<img src="assets/how_texture.png" alt="" loading="lazy" decoding="async" />
+						</picture>
+						<div class="how__stat-count">
+							<p class="how__stat-value"><span>40</span><span class="text-[#99cf63]">+</span></p>
+							<p class="how__stat-label" data-i18n="how.projects">Завершённых проектов</p>
 						</div>
 						<!-- Case logos -->
 						<div class="relative flex items-center">
@@ -876,172 +881,130 @@
 						</div>
 					</div>
 
-					<!-- Right image card: 818x382 with "Как мы работаем?" overlay (figma: rectangle23813) -->
-					<div
-						id="howVideoCard"
-						class="relative rounded-[30px] w-[818px] h-[382px] overflow-hidden shrink-0 cursor-pointer"
-					>
-						<video
-							id="howLoopVideo"
-							class="absolute w-full h-full object-cover"
-							muted
-							loop
-							playsinline
-							preload="metadata"
-							poster="assets/how_card_photo.webp"
-							src="assets/video/how-we-work-loop-ru.mp4"
-						></video>
-						<div class="absolute inset-0 bg-black/20 pointer-events-none"></div>
-						<!-- mobile-only play affordance: the big .how-work-play button
-						     is display:none below 900px -->
-						<div
-							class="how-card-play-badge absolute bottom-3 right-3 w-[52px] h-[52px] rounded-full bg-[#9ac763] border-[4px] border-[#fafafa] items-center justify-center pointer-events-none"
-						>
-							<svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-								<path d="M8 5.14v14l11-7-11-7z" fill="black" />
-							</svg>
-						</div>
-					</div>
-				</div>
-
-				<!-- Play button (figma: left:1217 top:499, size 163px, bg #9ac763, border 12px white) -->
-				<div
-					class="how-work-play absolute left-[1217px] top-[499px] w-[163px] h-[163px] rounded-full bg-[#9ac763] border-[12px] border-[#fafafa] flex items-center justify-center cursor-pointer hover:scale-105 transition"
-				>
-					<svg width="44" height="44" viewBox="0 0 24 24" fill="none">
-						<path d="M8 5.14v14l11-7-11-7z" fill="black" />
-					</svg>
+					<ol class="how__steps">
+						<li class="how__step">
+							<span class="how__step-num">01</span>
+							<h3 class="how__step-title" data-i18n="how.s1.title">Обсуждаем задачу</h3>
+							<p class="how__step-desc" data-i18n="how.s1.desc">Разбираем цели, процессы и ограничения. Подписываем NDA до начала работ.</p>
+						</li>
+						<li class="how__step">
+							<span class="how__step-num">02</span>
+							<h3 class="how__step-title" data-i18n="how.s2.title">Оценка и план</h3>
+							<p class="how__step-desc" data-i18n="how.s2.desc">Фиксируем объём работ, сроки и бюджет. Стартуем в течение недели после договора.</p>
+						</li>
+						<li class="how__step">
+							<span class="how__step-num">03</span>
+							<h3 class="how__step-title" data-i18n="how.s3.title">Разработка</h3>
+							<p class="how__step-desc" data-i18n="how.s3.desc">Показываем рабочее демо каждые две недели. Вы видите прогресс и влияете на результат.</p>
+						</li>
+						<li class="how__step">
+							<span class="how__step-num">04</span>
+							<h3 class="how__step-title" data-i18n="how.s4.title">Запуск и поддержка</h3>
+							<p class="how__step-desc" data-i18n="how.s4.desc">Выводим продукт в работу, сопровождаем по SLA и развиваем дальше.</p>
+						</li>
+					</ol>
 				</div>
 			</div>
 		</section>
 
 		<!-- ============ SERVICES ============ -->
-		<section
-			id="services"
-			class="relative bg-transparent py-24 overflow-hidden"
-		>
-			<div class="absolute inset-0 noise"></div>
-			<div class="relative max-w-[1440px] mx-auto px-20">
-				<!-- Heading -->
-				<h2
-					class="font-jakarta font-semibold text-[48px] leading-[1.3] tracking-[-1.44px] text-black mb-6"
-					data-i18n="services.title"
-				>
-					Что мы предлагаем
-				</h2>
-				<!-- Lead -->
-				<p
-					class="font-jakarta font-medium text-[22px] leading-[1.5] text-[#878c91] max-w-[700px] mb-14"
-					data-i18n-html="services.lead"
-				>
-					<span class="font-bold text-[#9ac763]"
-						>Четыре ключевых направления</span
-					>
-					— гибкий подход: выполняем комплексную цифровую трансформацию или
-					решаем конкретные задачи вашего бизнеса.
-				</p>
+		<section id="services" class="svc" aria-labelledby="servicesTitle">
+			<div class="svc__inner">
+				<div class="svc__header">
+					<h2 id="servicesTitle" class="svc__heading reveal-left" data-i18n="services.title">
+						Что мы предлагаем
+					</h2>
+					<p class="svc__lead" data-i18n-html="services.lead">
+						<span class="font-bold text-[#9ac763]"
+							>Четыре ключевых направления</span
+						>
+						— гибкий подход: выполняем комплексную цифровую трансформацию или
+						решаем конкретные задачи вашего бизнеса.
+					</p>
+				</div>
 
-				<!-- Detailed service accordion -->
-				<div id="servicesAccordion">
-					<div class="svc-row active">
-						<img src="assets/divider.svg" alt="" loading="lazy" decoding="async" style="width:100%;height:29px;display:block;max-width:none" />
-						<div class="svc-item"><span class="svc-num">01</span><div class="svc-content">
-							<button class="svc-trigger" type="button" aria-expanded="true"><span class="svc-title" data-i18n="s1.title">Сайты и приложения</span><span class="svc-toggle">+</span></button>
-							<p class="svc-desc" data-i18n="s1.desc">Проектируем и разрабатываем цифровые продукты под бизнес-задачу — от первого экрана до стабильного запуска.</p>
-							<div class="svc-details"><div class="svc-details-inner">
-								<div class="svc-list"><p data-i18n="s1.i1">Корпоративные сайты и лендинги</p><p data-i18n="s1.i2">Веб-сервисы и личные кабинеты</p><p data-i18n="s1.i3">Мобильные приложения iOS и Android</p><p data-i18n="s1.i4">ERP, CRM и внутренние системы</p><p data-i18n="s1.i5">API-интеграции и развитие legacy</p></div>
-								<div class="svc-trust"><span data-i18n="services.trust">Почему нам доверяют</span><p data-i18n="s1.trust">Начинаем с архитектуры и прототипа, показываем демо каждые две недели, тестируем и остаёмся с продуктом после запуска.</p></div>
-							</div></div>
-						</div></div>
-					</div>
-
-					<div class="svc-row">
-						<img src="assets/divider.svg" alt="" loading="lazy" decoding="async" style="width:100%;height:29px;display:block;max-width:none" />
-						<div class="svc-item"><span class="svc-num">02</span><div class="svc-content">
-							<button class="svc-trigger" type="button" aria-expanded="false"><span class="svc-title" data-i18n="s2.title">AI и автоматизация</span><span class="svc-toggle">+</span></button>
-							<p class="svc-desc" data-i18n="s2.desc">Встраиваем AI в процессы, где он экономит время команды, ускоряет ответы и снижает объём ручной работы.</p>
-							<div class="svc-details"><div class="svc-details-inner">
-								<div class="svc-list"><p data-i18n="s2.i1">AI-ассистенты для продаж и поддержки</p><p data-i18n="s2.i2">Поиск по внутренней базе знаний (RAG)</p><p data-i18n="s2.i3">Обработка документов и обращений</p><p data-i18n="s2.i4">Генерация контента и отчётов</p><p data-i18n="s2.i5">Интеграции с CRM, ERP и мессенджерами</p></div>
-								<div class="svc-trust"><span data-i18n="services.trust">Почему нам доверяют</span><p data-i18n="s2.trust">Сначала проверяем ценность на небольшом пилоте. Настраиваем права доступа, журнал действий и контроль человека над критичными решениями.</p></div>
-							</div></div>
-						</div></div>
-					</div>
-
-					<div class="svc-row">
-						<img src="assets/divider.svg" alt="" loading="lazy" decoding="async" style="width:100%;height:29px;display:block;max-width:none" />
-						<div class="svc-item"><span class="svc-num">03</span><div class="svc-content">
-							<button class="svc-trigger" type="button" aria-expanded="false"><span class="svc-title" data-i18n="s3.title">Аналитика и дашборды</span><span class="svc-toggle">+</span></button>
-							<p class="svc-desc" data-i18n="s3.desc">Собираем разрозненные данные в понятную систему, чтобы руководители видели бизнес целиком и принимали решения быстрее.</p>
-							<div class="svc-details"><div class="svc-details-inner">
-								<div class="svc-list"><p data-i18n="s3.i1">Дашборды для руководителей</p><p data-i18n="s3.i2">Продажи, маркетинг и продуктовые метрики</p><p data-i18n="s3.i3">ETL-процессы и хранилища данных</p><p data-i18n="s3.i4">Автоматические отчёты и алерты</p><p data-i18n="s3.i5">Интеграции Power BI, Metabase и Looker</p></div>
-								<div class="svc-trust"><span data-i18n="services.trust">Почему нам доверяют</span><p data-i18n="s3.trust">Сверяем цифры с первоисточниками, фиксируем единые определения метрик и разграничиваем доступ. Дашборд показывает правду, а не просто красивый график.</p></div>
-							</div></div>
-						</div></div>
-					</div>
-
-					<div class="svc-row">
-						<img src="assets/divider.svg" alt="" loading="lazy" decoding="async" style="width:100%;height:29px;display:block;max-width:none" />
-						<div class="svc-item"><span class="svc-num">04</span><div class="svc-content">
-							<button class="svc-trigger" type="button" aria-expanded="false"><span class="svc-title" data-i18n="s4.title">SEO и GEO</span><span class="svc-toggle">+</span></button>
-							<p class="svc-desc" data-i18n="s4.desc">Помогаем продукту быть понятным поисковым системам, AI-ассистентам и людям — технически, структурно и содержательно.</p>
-							<div class="svc-details"><div class="svc-details-inner">
-								<div class="svc-list"><p data-i18n="s4.i1">Технический SEO-аудит</p><p data-i18n="s4.i2">Семантика и структура страниц</p><p data-i18n="s4.i3">Контент под поисковый спрос</p><p data-i18n="s4.i4">GEO для ответов ChatGPT и других AI-систем</p><p data-i18n="s4.i5">Аналитика позиций, трафика и конверсий</p></div>
-								<div class="svc-trust"><span data-i18n="services.trust">Почему нам доверяют</span><p data-i18n="s4.trust">Начинаем с аудита и приоритетного плана. Показываем исходные показатели, внесённые изменения и измеримый результат — без обещаний «первого места за неделю».</p></div>
-							</div></div>
-						</div></div>
-					</div>
-
-					<img
-						src="assets/divider.svg"
-						alt=""
-						loading="lazy"
-						decoding="async"
-						style="width: 100%; height: 29px; display: block; max-width: none"
-					/>
+				<div class="svc__grid reveal">
+					<article class="svc__card">
+						<span class="svc__num">01</span>
+						<h3 class="svc__title" data-i18n="s1.title">Сайты и приложения</h3>
+						<p class="svc__desc" data-i18n="s1.desc">Проектируем и разрабатываем цифровые продукты под бизнес-задачу — от первого экрана до стабильного запуска.</p>
+						<ul class="svc__list">
+							<li data-i18n="s1.i1">Корпоративные сайты и лендинги</li>
+							<li data-i18n="s1.i2">Веб-сервисы и личные кабинеты</li>
+							<li data-i18n="s1.i3">Мобильные приложения iOS и Android</li>
+							<li data-i18n="s1.i4">ERP, CRM и внутренние системы</li>
+							<li data-i18n="s1.i5">API-интеграции и развитие legacy</li>
+						</ul>
+						<div class="svc__trust">
+							<p data-i18n="s1.trust">Начинаем с архитектуры и прототипа, показываем демо каждые две недели, тестируем и остаёмся с продуктом после запуска.</p>
+						</div>
+					</article>
+					<article class="svc__card">
+						<span class="svc__num">02</span>
+						<h3 class="svc__title" data-i18n="s2.title">AI и автоматизация</h3>
+						<p class="svc__desc" data-i18n="s2.desc">Встраиваем AI в процессы, где он экономит время команды, ускоряет ответы и снижает объём ручной работы.</p>
+						<ul class="svc__list">
+							<li data-i18n="s2.i1">AI-ассистенты для продаж и поддержки</li>
+							<li data-i18n="s2.i2">Поиск по внутренней базе знаний (RAG)</li>
+							<li data-i18n="s2.i3">Обработка документов и обращений</li>
+							<li data-i18n="s2.i4">Генерация контента и отчётов</li>
+							<li data-i18n="s2.i5">Интеграции с CRM, ERP и мессенджерами</li>
+						</ul>
+						<div class="svc__trust">
+							<p data-i18n="s2.trust">Сначала проверяем ценность на небольшом пилоте. Настраиваем права доступа, журнал действий и контроль человека над критичными решениями.</p>
+						</div>
+					</article>
+					<article class="svc__card">
+						<span class="svc__num">03</span>
+						<h3 class="svc__title" data-i18n="s3.title">Аналитика и дашборды</h3>
+						<p class="svc__desc" data-i18n="s3.desc">Собираем разрозненные данные в понятную систему, чтобы руководители видели бизнес целиком и принимали решения быстрее.</p>
+						<ul class="svc__list">
+							<li data-i18n="s3.i1">Дашборды для руководителей</li>
+							<li data-i18n="s3.i2">Продажи, маркетинг и продуктовые метрики</li>
+							<li data-i18n="s3.i3">ETL-процессы и хранилища данных</li>
+							<li data-i18n="s3.i4">Автоматические отчёты и алерты</li>
+							<li data-i18n="s3.i5">Интеграции Power BI, Metabase и Looker</li>
+						</ul>
+						<div class="svc__trust">
+							<p data-i18n="s3.trust">Сверяем цифры с первоисточниками, фиксируем единые определения метрик и разграничиваем доступ. Дашборд показывает правду, а не просто красивый график.</p>
+						</div>
+					</article>
+					<article class="svc__card">
+						<span class="svc__num">04</span>
+						<h3 class="svc__title" data-i18n="s4.title">SEO и GEO</h3>
+						<p class="svc__desc" data-i18n="s4.desc">Помогаем продукту быть понятным поисковым системам, AI-ассистентам и людям — технически, структурно и содержательно.</p>
+						<ul class="svc__list">
+							<li data-i18n="s4.i1">Технический SEO-аудит</li>
+							<li data-i18n="s4.i2">Семантика и структура страниц</li>
+							<li data-i18n="s4.i3">Контент под поисковый спрос</li>
+							<li data-i18n="s4.i4">GEO для ответов ChatGPT и других AI-систем</li>
+							<li data-i18n="s4.i5">Аналитика позиций, трафика и конверсий</li>
+						</ul>
+						<div class="svc__trust">
+							<p data-i18n="s4.trust">Начинаем с аудита и приоритетного плана. Показываем исходные показатели, внесённые изменения и измеримый результат — без обещаний «первого места за неделю».</p>
+						</div>
+					</article>
 				</div>
 			</div>
 		</section>
-		<script>
-			document.addEventListener("DOMContentLoaded", function () {
-				var serviceRows = Array.from(document.querySelectorAll("#servicesAccordion .svc-row"));
-				serviceRows.forEach(function (row) {
-					var trigger = row.querySelector(".svc-trigger");
-					if (!trigger) return;
-					trigger.addEventListener("click", function () {
-						var willOpen = !row.classList.contains("active");
-						serviceRows.forEach(function (item) {
-							item.classList.remove("active");
-							var itemTrigger = item.querySelector(".svc-trigger");
-							if (itemTrigger) itemTrigger.setAttribute("aria-expanded", "false");
-						});
-						if (willOpen) {
-							row.classList.add("active");
-							trigger.setAttribute("aria-expanded", "true");
-						}
-					});
-				});
-			});
-		</script>
 
 		<!-- ============ OUR PRODUCTS ============ -->
-		<section id="products" class="product-section">
-			<div class="product-shell">
-				<div class="product-copy">
-					<p class="product-eyebrow" data-i18n="products.eyebrow">Собственный продукт</p>
-					<div class="product-brand">
-						<img src="assets/contentflow-mark.svg" alt="ContentFlow" width="54" height="44" loading="lazy" />
-						<h2>ContentFlow</h2>
+		<section id="products" class="prod" aria-labelledby="productTitle">
+			<div class="prod__inner">
+				<div class="prod__card reveal">
+					<div class="prod__copy">
+						<div class="prod__brand">
+							<img src="assets/contentflow-mark.svg" alt="" width="54" height="44" loading="lazy" />
+							<h2 id="productTitle">ContentFlow</h2>
+						</div>
+						<p class="prod__title" data-i18n="products.title">Продукт, который мы создали для себя — и продолжаем развивать с любовью.</p>
+						<p class="prod__desc" data-i18n="products.description">ContentFlow: планируйте публикации, следите за ростом и создавайте изображения и видео — всё в одном окне. Для нас это не завершённый кейс, а живая платформа: мы ежедневно пользуемся ею, разговариваем с пользователями и улучшаем каждую деталь.</p>
+						<a class="prod__btn" href="https://contentflow.fyi" target="_blank" rel="noreferrer"><span data-i18n="products.link">Открыть ContentFlow</span><span aria-hidden="true">↗</span></a>
 					</div>
-					<p class="product-title" data-i18n="products.title">Продукт, который мы создали для себя — и продолжаем развивать с любовью.</p>
-					<p class="product-description" data-i18n="products.description">ContentFlow: планируйте публикации, следите за ростом и создавайте изображения и видео — всё в одном окне. Для нас это не завершённый кейс, а живая платформа: мы ежедневно пользуемся ею, разговариваем с пользователями и улучшаем каждую деталь.</p>
-					<a class="product-link" href="https://contentflow.fyi" target="_blank" rel="noreferrer"><span data-i18n="products.link">Открыть ContentFlow</span><span aria-hidden="true">↗</span></a>
-				</div>
-				<div class="product-visual product-preview">
-					<div class="product-browser-bar" aria-hidden="true"><span></span><span></span><span></span><em>contentflow.fyi</em></div>
-					<a href="https://contentflow.fyi" target="_blank" rel="noreferrer" aria-label="Открыть лендинг ContentFlow">
+					<a class="prod__shot" href="https://contentflow.fyi" target="_blank" rel="noreferrer" tabindex="-1" aria-hidden="true">
 						<picture>
 							<source srcset="assets/contentflow-landing.webp" type="image/webp" />
-							<img src="assets/contentflow-landing.png" alt="Первый экран платформы ContentFlow" width="1920" height="855" loading="lazy" decoding="async" />
+							<img src="assets/contentflow-landing.png" alt="" width="1920" height="855" loading="lazy" decoding="async" />
 						</picture>
 					</a>
 				</div>
@@ -1049,181 +1012,36 @@
 		</section>
 
 
-		<!-- ============ PROCESS ============ -->
-		<section id="process" class="relative bg-black overflow-hidden py-32">
-			<!-- gradients -->
-			<div
-				class="absolute -left-40 top-1/3 w-[600px] h-[600px] rounded-full opacity-50"
-				style="background: radial-gradient(circle, #9ac763 0%, transparent 60%)"
-			></div>
-			<div
-				class="absolute -left-60 top-10 w-[700px] h-[700px] rounded-full opacity-40"
-				style="background: radial-gradient(circle, #3b82f6 0%, transparent 60%)"
-			></div>
-			<!-- decorative SVGs -->
-			<img
-				src="vector97.svg"
-				alt=""
-				loading="lazy"
-				decoding="async"
-				class="absolute pointer-events-none"
-				style="
-					left: 110px;
-					bottom: 100px;
-					width: 122px;
-					height: 216px;
-					opacity: 0.9;
-				"
-			/>
-			<img
-				src="burst.svg"
-				alt=""
-				loading="lazy"
-				decoding="async"
-				class="absolute pointer-events-none"
-				style="
-					left: 80px;
-					bottom: 60px;
-					width: 66px;
-					height: 59px;
-					opacity: 0.9;
-				"
-			/>
-
-			<div class="relative max-w-[1160px] mx-auto px-8">
-				<h2
-					class="font-jakarta font-semibold text-[31px] leading-[1.5] text-white max-w-[1100px] mb-20"
-					data-i18n="process.heading"
-				>
-					Прозрачный процесс на каждом шаге: путь к результату по принципу SLC
-					(Simple · Lovable · Complete) с быстрым запуском, итерациями и
-					измеримыми результатами.
-				</h2>
-
-				<div
-					class="process-cards flex items-end justify-end gap-3"
-					id="processAccordion"
-				>
-					<!-- step 1 -->
-					<div
-						class="process-card process-step is-open bg-[#121212] rounded-lg h-[400px]"
-						data-step="0"
-						style="width: 360px"
-					>
-						<div class="step-expanded flex flex-col items-start">
-							<p class="font-inter italic font-bold text-white mb-6">
-								<span class="step-num-open text-[66px] tracking-tight">01</span
-								><span class="text-[26px]">step</span>
-							</p>
-							<h4
-								class="step-title font-inter font-bold text-[28px] text-white tracking-tight mb-4"
-								data-i18n="p1.title"
-							>
-								Технический аудит
-							</h4>
-							<p
-								class="step-desc font-inter text-[16px] leading-[1.75] text-white/70"
-								data-i18n="p1.desc"
-							>
-								Глубокое погружение в вашу IT-архитектуру. Подписываем NDA до
-								начала работ.
-							</p>
-						</div>
-						<div class="step-collapsed">
-							<p class="font-inter italic font-bold text-white mb-12">
-								<span class="step-num-compact text-[24px]">01.</span>
-							</p>
-							<div class="step-rotated rotate-90 origin-top-left">
-								<p
-									class="font-inter text-[20px] text-white/70 whitespace-nowrap"
-									data-i18n="p1.title"
-								>
-									Технический аудит
-								</p>
-							</div>
-						</div>
-					</div>
-
-					<!-- step 2 -->
-					<div
-						class="process-card process-step bg-[#121212] rounded-lg h-[400px] hover:bg-[#1a1a1a]"
-						data-step="1"
-						style="width: 120px"
-					>
-						<div class="step-expanded flex flex-col items-start">
-							<p class="font-inter italic font-bold text-white mb-6">
-								<span class="step-num-open text-[66px] tracking-tight">02</span
-								><span class="text-[26px]">step</span>
-							</p>
-							<h4
-								class="step-title font-inter font-bold text-[28px] text-white tracking-tight mb-4"
-								data-i18n="p2.title"
-							>
-								MVP / Рабочее ядро
-							</h4>
-							<p
-								class="step-desc font-inter text-[16px] leading-[1.75] text-white/70"
-								data-i18n="p2.desc"
-							>
-								Быстро запускаем рабочую версию продукта. Итерации каждые 2
-								недели с демо и обратной связью.
-							</p>
-						</div>
-						<div class="step-collapsed">
-							<p class="font-inter italic font-bold text-white mb-12">
-								<span class="step-num-compact text-[24px]">02.</span>
-							</p>
-							<div class="step-rotated rotate-90 origin-top-left">
-								<p
-									class="font-inter text-[20px] text-white/70 whitespace-nowrap"
-									data-i18n="p2.title"
-								>
-									MVP / Рабочее ядро
-								</p>
-							</div>
-						</div>
-					</div>
-
-					<!-- step 3 -->
-					<div
-						class="process-card process-step bg-[#121212] rounded-lg h-[400px] hover:bg-[#1a1a1a]"
-						data-step="2"
-						style="width: 120px"
-					>
-						<div class="step-expanded flex flex-col items-start">
-							<p class="font-inter italic font-bold text-white mb-6">
-								<span class="step-num-open text-[66px] tracking-tight">03</span
-								><span class="text-[26px]">step</span>
-							</p>
-							<h4
-								class="step-title font-inter font-bold text-[28px] text-white tracking-tight mb-4"
-								data-i18n="p3.title"
-							>
-								Масштабирование
-							</h4>
-							<p
-								class="step-desc font-inter text-[16px] leading-[1.75] text-white/70"
-								data-i18n="p3.desc"
-							>
-								Оптимизируем производительность, добавляем новые модули и
-								масштабируем решение под рост бизнеса.
-							</p>
-						</div>
-						<div class="step-collapsed">
-							<p class="font-inter italic font-bold text-white mb-12">
-								<span class="step-num-compact text-[24px]">03.</span>
-							</p>
-							<div class="step-rotated rotate-90 origin-top-left">
-								<p
-									class="font-inter text-[20px] text-white/70 whitespace-nowrap"
-									data-i18n="p3.title"
-								>
-									Масштабирование
-								</p>
-							</div>
-						</div>
-					</div>
+		<!-- ============ SLC ============ -->
+		<section id="slc" class="slc" aria-labelledby="slcTitle">
+			<div class="slc__inner">
+				<div class="slc__header">
+					<h2 id="slcTitle" class="slc__heading reveal-left" data-i18n="slc.title">
+						Работаем по принципу SLC
+					</h2>
+					<p class="slc__lead" data-i18n="slc.lead">Без «сырого» MVP. Первая версия продукта простая, удобная и законченная: ею можно пользоваться с первого дня.</p>
 				</div>
+
+				<ol class="slc__grid reveal">
+					<li class="slc__card">
+						<span class="slc__letter" aria-hidden="true">S</span>
+						<p class="slc__term" lang="en">Simple</p>
+						<h3 class="slc__title" data-i18n="slc.s.title">Простой</h3>
+						<p class="slc__desc" data-i18n="slc.s.desc">Запускаем самую маленькую версию, которая решает вашу задачу. Без функций, которые только откладывают релиз.</p>
+					</li>
+					<li class="slc__card">
+						<span class="slc__letter" aria-hidden="true">L</span>
+						<p class="slc__term" lang="en">Lovable</p>
+						<h3 class="slc__title" data-i18n="slc.l.title">Удобный</h3>
+						<p class="slc__desc" data-i18n="slc.l.desc">Продуктом приятно пользоваться с первого релиза: понятный интерфейс, быстрая работа, внимание к деталям.</p>
+					</li>
+					<li class="slc__card">
+						<span class="slc__letter" aria-hidden="true">C</span>
+						<p class="slc__term" lang="en">Complete</p>
+						<h3 class="slc__title" data-i18n="slc.c.title">Законченный</h3>
+						<p class="slc__desc" data-i18n="slc.c.desc">Каждая версия — готовый инструмент, а не заготовка с пометкой «появится позже». Дальше развиваем его по реальным данным.</p>
+					</li>
+				</ol>
 			</div>
 		</section>
 
@@ -1326,319 +1144,100 @@
 		</section>
 
 		<!-- ============ FAQ ============ -->
-		<section id="faq" class="bg-transparent p-4 py-16">
-			<div
-				class="faq-layout max-w-[1286px] mx-auto bg-white rounded-[28px] px-20 py-16 flex gap-14"
-			>
-				<div class="flex-1 max-w-[531px]">
-					<h2
-						class="font-jakarta font-semibold text-[48px] leading-[1.3] tracking-[-1.44px] text-[#010205] mb-12"
-						data-i18n="faq.title"
-					>
-						Частые вопросы
-					</h2>
-					<p
-						class="font-jakarta font-medium text-[16px] leading-[1.8] text-[#878c91] mb-12"
-						data-i18n="faq.subtitle"
-					>
-						Ответы на вопросы, которые чаще всего задают перед первым звонком
-					</p>
-					<div class="flex items-center gap-12">
-						<button
-							class="font-manrope font-bold border border-[#010205] rounded-full px-4 py-4 w-[176px] text-[16px] tracking-tight hover:bg-[#010205] hover:text-white transition"
-							type="button"
-							onclick="
-								document
-									.getElementById('contacts')
-									.scrollIntoView({ behavior: 'smooth' })
-							"
-							data-i18n="faq.ask"
-						>
-							Задать вопрос
-						</button>
-						<a
-							href="https://t.me/xsayat"
-							target="_blank"
-							rel="noreferrer"
-							class="font-jakarta font-semibold text-[16px] underline"
-							data-i18n="faq.tg"
-							>Написать в Telegram</a
-						>
+		<section id="faq" class="faq" aria-labelledby="faqTitle">
+			<div class="faq__inner">
+				<div class="faq__intro reveal-left">
+					<h2 id="faqTitle" class="faq__heading" data-i18n="faq.title">Частые вопросы</h2>
+					<p class="faq__lead" data-i18n="faq.subtitle">Ответы на вопросы, которые чаще всего задают перед первым звонком</p>
+					<div class="faq__actions">
+						<a class="faq__btn" href="#contacts" data-i18n="faq.ask">Задать вопрос</a>
+						<a class="faq__link" href="https://t.me/xsayat" target="_blank" rel="noreferrer" data-i18n="faq.tg">Написать в Telegram</a>
 					</div>
 				</div>
-				<div class="flex-1 max-w-[578px]">
-					<details open class="border-t border-b border-black px-6 py-6 group">
-						<summary
-							class="flex items-center justify-between cursor-pointer list-none"
-						>
-							<span
-								class="font-jakarta font-semibold text-[24px] leading-[1.5] tracking-tight text-[#010205]"
-								data-i18n="faq.q1"
-								>Как быстро вы начнёте работу?</span
-							>
-							<svg
-								class="faq-icon-minus"
-								width="24"
-								height="24"
-								viewBox="0 0 24 24"
-								fill="none"
-							>
-								<path
-									d="M5 12h14"
-									stroke="#010205"
-									stroke-width="2"
-									stroke-linecap="round"
-								/>
-							</svg>
-							<svg
-								class="faq-icon-plus"
-								width="24"
-								height="24"
-								viewBox="0 0 24 24"
-								fill="none"
-							>
-								<path
-									d="M12 5v14M5 12h14"
-									stroke="#010205"
-									stroke-width="2"
-									stroke-linecap="round"
-								/>
-							</svg>
+
+				<div class="faq__list reveal">
+					<details class="faq__item" name="faq" open>
+						<summary class="faq__q">
+							<span data-i18n="faq.q1">Как быстро вы начнёте работу?</span>
+							<span class="faq__icon" aria-hidden="true"></span>
 						</summary>
-						<p
-							class="font-jakarta font-medium text-[16px] leading-[1.8] text-[#878c91] mt-8"
-							data-i18n="faq.a1"
-						>
-							После подписания договора — в течение 1 недели. Первое рабочее
-							демо покажем через 2 недели после старта.
-						</p>
+						<p data-i18n="faq.a1">После подписания договора — в течение 1 недели. Первое рабочее демо покажем через 2 недели после старта.</p>
 					</details>
-					<details class="border-b border-black px-6 py-6">
-						<summary
-							class="flex items-center justify-between cursor-pointer list-none"
-						>
-							<span
-								class="font-jakarta font-semibold text-[24px] leading-[1.5] tracking-tight text-[#010205]"
-								data-i18n="faq.q2"
-								>Сколько стоит разработка?</span
-							>
-							<svg
-								class="faq-icon-minus"
-								width="24"
-								height="24"
-								viewBox="0 0 24 24"
-								fill="none"
-							>
-								<path
-									d="M5 12h14"
-									stroke="#010205"
-									stroke-width="2"
-									stroke-linecap="round"
-								/>
-							</svg>
-							<svg
-								class="faq-icon-plus"
-								width="24"
-								height="24"
-								viewBox="0 0 24 24"
-								fill="none"
-							>
-								<path
-									d="M12 5v14M5 12h14"
-									stroke="#010205"
-									stroke-width="2"
-									stroke-linecap="round"
-								/>
-							</svg>
+					<details class="faq__item" name="faq">
+						<summary class="faq__q">
+							<span data-i18n="faq.q2">Сколько стоит разработка?</span>
+							<span class="faq__icon" aria-hidden="true"></span>
 						</summary>
-						<p
-							class="font-jakarta font-medium text-[16px] leading-[1.8] text-[#878c91] mt-4"
-							data-i18n="faq.a2"
-						>
-							Стоимость зависит от объёма и сложности. Базовые проекты — от $5
-							000.
-						</p>
+						<p data-i18n="faq.a2">Стоимость зависит от объёма и сложности. Базовые проекты — от $5 000.</p>
 					</details>
-					<details class="border-b border-black px-6 py-6">
-						<summary
-							class="flex items-center justify-between cursor-pointer list-none"
-						>
-							<span
-								class="font-jakarta font-semibold text-[24px] leading-[1.5] tracking-tight text-[#010205]"
-								data-i18n="faq.q3"
-								>Вы работаете удалённо или только в Астане?</span
-							>
-							<svg
-								class="faq-icon-minus"
-								width="24"
-								height="24"
-								viewBox="0 0 24 24"
-								fill="none"
-							>
-								<path
-									d="M5 12h14"
-									stroke="#010205"
-									stroke-width="2"
-									stroke-linecap="round"
-								/>
-							</svg>
-							<svg
-								class="faq-icon-plus"
-								width="24"
-								height="24"
-								viewBox="0 0 24 24"
-								fill="none"
-							>
-								<path
-									d="M12 5v14M5 12h14"
-									stroke="#010205"
-									stroke-width="2"
-									stroke-linecap="round"
-								/>
-							</svg>
+					<details class="faq__item" name="faq">
+						<summary class="faq__q">
+							<span data-i18n="faq.q3">Вы работаете удалённо или только в Астане?</span>
+							<span class="faq__icon" aria-hidden="true"></span>
 						</summary>
-						<p
-							class="font-jakarta font-medium text-[16px] leading-[1.8] text-[#878c91] mt-4"
-							data-i18n="faq.a3"
-						>
-							Работаем удалённо по всему миру и очно в Астане.
-						</p>
+						<p data-i18n="faq.a3">Работаем удалённо по всему миру и очно в Астане.</p>
 					</details>
-					<details class="border-b border-black px-6 py-6">
-						<summary
-							class="flex items-center justify-between cursor-pointer list-none"
-						>
-							<span
-								class="font-jakarta font-semibold text-[24px] leading-[1.5] tracking-tight text-[#010205]"
-								data-i18n="faq.q4"
-								>Вы оказываете поддержку после запуска?</span
-							>
-							<svg
-								class="faq-icon-minus"
-								width="24"
-								height="24"
-								viewBox="0 0 24 24"
-								fill="none"
-							>
-								<path
-									d="M5 12h14"
-									stroke="#010205"
-									stroke-width="2"
-									stroke-linecap="round"
-								/>
-							</svg>
-							<svg
-								class="faq-icon-plus"
-								width="24"
-								height="24"
-								viewBox="0 0 24 24"
-								fill="none"
-							>
-								<path
-									d="M12 5v14M5 12h14"
-									stroke="#010205"
-									stroke-width="2"
-									stroke-linecap="round"
-								/>
-							</svg>
+					<details class="faq__item" name="faq">
+						<summary class="faq__q">
+							<span data-i18n="faq.q4">Вы оказываете поддержку после запуска?</span>
+							<span class="faq__icon" aria-hidden="true"></span>
 						</summary>
-						<p
-							class="font-jakarta font-medium text-[16px] leading-[1.8] text-[#878c91] mt-4"
-							data-i18n="faq.a4"
-						>
-							Да, предлагаем SLA-поддержку и дальнейшее развитие продукта.
-						</p>
+						<p data-i18n="faq.a4">Да, предлагаем SLA-поддержку и дальнейшее развитие продукта.</p>
 					</details>
-					<details class="border-b border-black px-6 py-6">
-						<summary
-							class="flex items-center justify-between cursor-pointer list-none"
-						>
-							<span
-								class="font-jakarta font-semibold text-[24px] leading-[1.5] tracking-tight text-[#010205]"
-								data-i18n="faq.q5"
-								>Вы берёте небольшие проекты?</span
-							>
-							<svg
-								class="faq-icon-minus"
-								width="24"
-								height="24"
-								viewBox="0 0 24 24"
-								fill="none"
-							>
-								<path
-									d="M5 12h14"
-									stroke="#010205"
-									stroke-width="2"
-									stroke-linecap="round"
-								/>
-							</svg>
-							<svg
-								class="faq-icon-plus"
-								width="24"
-								height="24"
-								viewBox="0 0 24 24"
-								fill="none"
-							>
-								<path
-									d="M12 5v14M5 12h14"
-									stroke="#010205"
-									stroke-width="2"
-									stroke-linecap="round"
-								/>
-							</svg>
+					<details class="faq__item" name="faq">
+						<summary class="faq__q">
+							<span data-i18n="faq.q5">Вы берёте небольшие проекты?</span>
+							<span class="faq__icon" aria-hidden="true"></span>
 						</summary>
-						<p
-							class="font-jakarta font-medium text-[16px] leading-[1.8] text-[#878c91] mt-4"
-							data-i18n="faq.a5"
-						>
-							Да, рассматриваем точечные задачи и MVP.
-						</p>
+						<p data-i18n="faq.a5">Да, рассматриваем точечные задачи и MVP.</p>
 					</details>
 				</div>
 			</div>
 		</section>
 
 		<!-- ============ CONTACT ============ -->
-		<section
-			id="contacts"
-			class="bg-[#fafafa] py-12 px-20 relative overflow-hidden"
-		>
-			<div class="absolute inset-0 noise"></div>
-			<div
-				class="contact-shell relative max-w-[1280px] mx-auto bg-[#101112] rounded-2xl py-20 px-20 overflow-hidden"
-			>
-				<div class="contact-layout relative grid grid-cols-[1.3fr_.7fr] gap-20 items-end">
-					<div>
-						<p class="contact-eyebrow font-jakarta font-semibold text-[13px] uppercase tracking-[0.16em] mb-7" data-i18n="contact.eyebrow">Напишите нам</p>
-					<h2
-						class="contact-heading font-sora font-semibold text-[46px] leading-[1.2] mb-8 max-w-[760px]"
-						data-i18n="contact.title"
-					>
-						Хорошая работа начинается с хорошего отношения к клиенту.
-					</h2>
-					<p
-						class="contact-copy font-jakarta font-medium text-[18px] leading-[1.75] max-w-[680px]"
-						data-i18n="contact.subtitle"
-					>
-						Наша главная задача — внимательно понять вас, честно предложить решение и ответить максимально быстро. Я лично читаю каждое обращение.
-					</p>
-						<div class="contact-links mt-12 pt-8 flex flex-wrap gap-x-8 gap-y-3 text-[15px]">
-							<a href="mailto:sayat@silkroadtech.kz" class="contact-link-primary transition">sayat@silkroadtech.kz</a>
-							<a href="https://t.me/xsayat" target="_blank" rel="noreferrer" class="contact-link-secondary transition">Telegram ↗</a>
-							<a href="https://wa.me/77026479903" target="_blank" rel="noreferrer" class="contact-link-secondary transition">WhatsApp ↗</a>
-						</div>
-					</div>
-					<div class="contact-signature border-l border-white/10 pl-10 pb-1">
-						<p class="contact-quote font-jakarta text-[15px] leading-[1.7] mb-8" data-i18n="contact.promise">«Для нас клиент — не заявка в CRM. Это человек, которому мы должны помочь и которому важно быстро ответить».</p>
-						<p class="contact-name font-sora text-[24px] mb-1">Саят Оразкулов</p>
-						<p class="contact-role font-jakarta text-[14px]">Founder, Silk Road Tech</p>
-					</div>
+		<section id="contacts" class="contact" aria-labelledby="contactTitle">
+			<div class="contact__inner">
+				<div class="contact__intro">
+					<p class="contact__eyebrow" data-i18n="contact.eyebrow">Напишите нам</p>
+					<h2 id="contactTitle" class="contact__heading" data-i18n="contact.title">Хорошая работа начинается с хорошего отношения к клиенту.</h2>
+					<p class="contact__lead" data-i18n="contact.subtitle">Наша главная задача — внимательно понять вас, честно предложить решение и ответить максимально быстро. Я лично читаю каждое обращение.</p>
 				</div>
+				<ul class="contact__list">
+					<li>
+						<a class="contact__item" href="mailto:sayat@silkroadtech.kz">
+							<span class="contact__label" data-i18n="footer.email.label">Email</span>
+							<span class="contact__value">sayat@silkroadtech.kz</span>
+							<span class="contact__arrow" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4.5 11.5l7-7M5.5 4.5h6v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+						</a>
+					</li>
+					<li>
+						<a class="contact__item" href="https://t.me/xsayat" target="_blank" rel="noreferrer">
+							<span class="contact__label">Telegram</span>
+							<span class="contact__value">@xsayat</span>
+							<span class="contact__arrow" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4.5 11.5l7-7M5.5 4.5h6v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+						</a>
+					</li>
+					<li>
+						<a class="contact__item" href="https://wa.me/77026479903" target="_blank" rel="noreferrer">
+							<span class="contact__label">WhatsApp</span>
+							<span class="contact__value">+7 702 647 99 03</span>
+							<span class="contact__arrow" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4.5 11.5l7-7M5.5 4.5h6v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+						</a>
+					</li>
+				</ul>
+				<figure class="contact__founder">
+					<blockquote class="contact__quote" data-i18n="contact.promise">«Для нас клиент — не заявка в CRM. Это человек, которому мы должны помочь и которому важно быстро ответить».</blockquote>
+					<figcaption>
+						<span class="contact__name">Саят Оразкулов</span>
+						<span class="contact__role">Founder, Silk Road Tech</span>
+					</figcaption>
+				</figure>
 			</div>
 		</section>
 
 		<!-- ============ FOOTER ============ -->
-		<footer class="bg-[#fafafa] relative overflow-hidden py-16">
+		<footer class="bg-transparent relative overflow-hidden py-16">
 			<div class="absolute inset-0 noise"></div>
 			<div
 				class="footer-layout relative max-w-[1440px] mx-auto px-20 flex gap-14"
@@ -1883,21 +1482,11 @@
 					}
 					if (
 						!img.hasAttribute("loading") &&
-						!img.closest("header, .hero-layout")
+						!img.closest("header, .partners-row")
 					) {
 						img.setAttribute("loading", "lazy");
 					}
 				});
-
-				// ── Hero cards entrance ──
-				setTimeout(() => {
-					document
-						.querySelectorAll(".hero-card")
-						.forEach((c) => c.classList.add("loaded"));
-					document
-						.querySelectorAll("#heroBars .bar-animate")
-						.forEach((b) => b.classList.add("active"));
-				}, 400);
 
 				// ── Navbar shrink on scroll ──
 				const header = document.querySelector("header");
@@ -1926,6 +1515,7 @@
 				);
 				revealEls.forEach((el) => revealObserver.observe(el));
 
+
 				// ── Animated counters ──
 				const counterEls = document.querySelectorAll("[data-counter]");
 				const counterObserver = new IntersectionObserver(
@@ -1951,26 +1541,6 @@
 					{ threshold: 0.5 },
 				);
 				counterEls.forEach((el) => counterObserver.observe(el));
-
-				// ── Process accordion ──
-				const steps = document.querySelectorAll(".process-step");
-				const setActiveStep = (activeIndex) => {
-					steps.forEach((step, index) => {
-						const isOpen = index === activeIndex;
-						step.style.width = isOpen ? "360px" : "120px";
-						step.classList.toggle("is-open", isOpen);
-					});
-				};
-
-				setActiveStep(0);
-
-				steps.forEach((step) => {
-					step.addEventListener("click", () => {
-						if (step.classList.contains("is-open")) return;
-						const idx = parseInt(step.dataset.step);
-						setActiveStep(idx);
-					});
-				});
 
 				// ── Services accordion ──
 
@@ -2218,288 +1788,8 @@
 					{ passive: true },
 				);
 
-				// ── Parallax on hero cards ──
-				const heroSection = document.querySelector("section.hero-section");
-				if (heroSection) {
-					window.addEventListener(
-						"scroll",
-						() => {
-							const y = window.scrollY;
-							if (y > 800) return;
-							const cards = heroSection.querySelectorAll(".hero-card.loaded");
-							cards.forEach((card, i) => {
-								card.style.transform = `translateY(${y * (0.03 + i * 0.015)}px)`;
-							});
-						},
-						{ passive: true },
-					);
-				}
 			});
 		</script>
 		<script defer src="assets/i18n.js"></script>
-		<script>
-			(function () {
-				var DESKTOP_W = 1440;
-				var HERO_H = 687;
-				var HOW_H = 662;
-
-				function applyTabletScale() {
-					var vw = window.innerWidth;
-					var heroLayout = document.querySelector(".hero-layout");
-					var howSection = document.getElementById("how-we-work");
-					var howShell = document.querySelector(".how-work-shell");
-
-					if (!heroLayout) return;
-
-					if (vw >= 769 && vw <= 1359) {
-						var s = vw / DESKTOP_W;
-
-						/* ── Hero ── */
-						heroLayout.style.setProperty(
-							"width",
-							DESKTOP_W + "px",
-							"important",
-						);
-						heroLayout.style.setProperty("height", HERO_H + "px", "important");
-						heroLayout.style.setProperty("display", "block", "important");
-						heroLayout.style.setProperty("padding", "0", "important");
-						heroLayout.style.setProperty("margin", "0", "important");
-						heroLayout.style.setProperty("zoom", s.toFixed(4), "important");
-						/* kill grid */
-						heroLayout.style.setProperty(
-							"grid-template-columns",
-							"unset",
-							"important",
-						);
-						heroLayout.style.setProperty(
-							"grid-template-rows",
-							"unset",
-							"important",
-						);
-						heroLayout.style.setProperty("align-items", "unset", "important");
-						heroLayout.style.setProperty("column-gap", "unset", "important");
-						heroLayout.style.setProperty("row-gap", "unset", "important");
-						heroLayout.style.setProperty("min-height", "unset", "important");
-
-						/* ── How-we-work shell ── */
-						if (howSection && howShell) {
-							howSection.style.setProperty(
-								"height",
-								Math.round(HOW_H * s) + "px",
-								"important",
-							);
-							howSection.style.setProperty("overflow", "hidden", "important");
-							howSection.style.setProperty("padding", "0", "important");
-
-							howShell.style.setProperty("position", "absolute", "important");
-							howShell.style.setProperty("top", "0", "important");
-							howShell.style.setProperty("left", "0", "important");
-							howShell.style.setProperty("right", "auto", "important");
-							howShell.style.setProperty("bottom", "auto", "important");
-							howShell.style.setProperty(
-								"width",
-								DESKTOP_W + "px",
-								"important",
-							);
-							howShell.style.setProperty("height", HOW_H + "px", "important");
-							howShell.style.setProperty(
-								"transform",
-								"scale(" + s + ")",
-								"important",
-							);
-							howShell.style.setProperty(
-								"transform-origin",
-								"top left",
-								"important",
-							);
-						}
-					} else {
-						/* Reset for full desktop (≥1360px) or mobile (<769px) */
-						[
-							"width",
-							"height",
-							"display",
-							"padding",
-							"margin",
-							"zoom",
-							"grid-template-columns",
-							"grid-template-rows",
-							"align-items",
-							"column-gap",
-							"row-gap",
-							"min-height",
-						].forEach(function (p) {
-							heroLayout.style.removeProperty(p);
-						});
-						if (howSection && howShell) {
-							["height", "overflow", "padding"].forEach(function (p) {
-								howSection.style.removeProperty(p);
-							});
-							[
-								"position",
-								"top",
-								"left",
-								"right",
-								"bottom",
-								"width",
-								"height",
-								"transform",
-								"transform-origin",
-								"max-width",
-							].forEach(function (p) {
-								howShell.style.removeProperty(p);
-							});
-						}
-					}
-				}
-
-				/* Run immediately, then on every resize and after full load */
-				if (document.readyState === "loading") {
-					document.addEventListener("DOMContentLoaded", applyTabletScale);
-				} else {
-					applyTabletScale();
-				}
-				window.addEventListener("load", applyTabletScale, { once: true });
-				window.addEventListener("resize", applyTabletScale, { passive: true });
-			})();
-		</script>
-
-		<!-- ============ HOW WE WORK: video modal ============ -->
-		
-		<div
-			id="howVideoModal"
-			class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/85 p-6"
-		>
-			<button
-				id="howVideoClose"
-				class="absolute top-6 right-8 text-white/70 hover:text-white text-[44px] leading-none font-light"
-				aria-label="Close"
-			>
-				&times;
-			</button>
-			<div class="relative w-full max-w-[1100px]">
-				<video
-					id="howVideoPlayer"
-					class="w-full rounded-[20px] shadow-2xl"
-					controls
-					playsinline
-				></video>
-				<button
-					id="howVideoCta"
-					class="absolute z-10 left-1/2 -translate-x-1/2 opacity-0 pointer-events-none transition-opacity duration-500 rounded-full bg-[#9ac763] font-jakarta font-bold text-[#010205] hover:bg-[#aedd77]"
-					style="
-						top: 61.5%;
-						padding: clamp(8px, 1.4vw, 15px) clamp(18px, 3.5vw, 38px);
-						font-size: clamp(13px, 1.9vw, 21px);
-					"
-				>
-					<span data-i18n="nav.cta">Обсудить проект</span> →
-				</button>
-			</div>
-		</div>
-		<script>
-			(function () {
-				var LANG_KEY = "srt_lang";
-				function lang() {
-					return localStorage.getItem(LANG_KEY) === "en" ? "en" : "ru";
-				}
-
-				var loop = document.getElementById("howLoopVideo");
-				var modal = document.getElementById("howVideoModal");
-				var player = document.getElementById("howVideoPlayer");
-				var playBtn = document.querySelector(".how-work-play");
-
-				var cta = document.getElementById("howVideoCta");
-				function showCta(show) {
-					cta.classList.toggle("opacity-0", !show);
-					cta.classList.toggle("pointer-events-none", !show);
-				}
-
-				function openModal() {
-					showCta(false);
-					player.src = "assets/video/how-we-work-" + lang() + ".mp4";
-					modal.classList.remove("hidden");
-					modal.classList.add("flex");
-					player.play();
-				}
-				function closeModal() {
-					player.pause();
-					player.removeAttribute("src");
-					player.load();
-					modal.classList.add("hidden");
-					modal.classList.remove("flex");
-				}
-
-				/* reveal the real CTA when the in-video pill lands in the outro */
-				player.addEventListener("timeupdate", function () {
-					if (!player.duration) return;
-					showCta(player.currentTime >= player.duration - 3.5);
-				});
-				player.addEventListener("ended", function () {
-					showCta(true);
-				});
-				cta.addEventListener("click", function () {
-					closeModal();
-					var contacts = document.getElementById("contacts");
-					if (contacts) contacts.scrollIntoView({ behavior: "smooth" });
-				});
-
-				if (playBtn) playBtn.addEventListener("click", openModal);
-				/* the whole loop card opens the video too — on mobile the big
-				   play button is hidden, so this is the only entry point there */
-				var card = document.getElementById("howVideoCard");
-				if (card) card.addEventListener("click", openModal);
-				document
-					.getElementById("howVideoClose")
-					.addEventListener("click", closeModal);
-				modal.addEventListener("click", function (e) {
-					if (e.target === modal) closeModal();
-				});
-				document.addEventListener("keydown", function (e) {
-					if (e.key === "Escape" && !modal.classList.contains("hidden"))
-						closeModal();
-				});
-
-				/* play the loop only while its card is on screen */
-				var loopInView = false;
-				if (loop && card) {
-					var loopObserver = new IntersectionObserver(
-						function (entries) {
-							entries.forEach(function (e) {
-								loopInView = e.isIntersecting;
-								if (loopInView) {
-									loop.play().catch(function () {});
-								} else {
-									loop.pause();
-								}
-							});
-						},
-						{ threshold: 0.25 },
-					);
-					loopObserver.observe(card);
-				}
-
-				/* swap the in-card loop when the site language changes */
-				document.addEventListener("srt:language-changed", function (e) {
-					if (!loop) return;
-					var src = "assets/video/how-we-work-loop-" + e.detail.lang + ".mp4";
-					if (!loop.src.endsWith(src)) {
-						loop.src = src;
-						if (loopInView) loop.play().catch(function () {});
-					}
-				});
-				if (loop && lang() !== "ru") {
-					loop.src = "assets/video/how-we-work-loop-en.mp4";
-				}
-			})();
-		</script>
-		<script>
-			window.addEventListener('load', function() {
-				document.querySelectorAll('.noise').forEach(function(el) {
-					el.style.backgroundImage = 'url("assets/noise_image.webp")';
-				});
-				document.body.style.backgroundImage = 'url("assets/bg_noise.webp")';
-			});
-		</script>
 	</body>
 </html>
