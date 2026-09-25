@@ -3576,3 +3576,450 @@ a.case__name:focus-visible {
 		padding: 28px 24px;
 	}
 }
+
+/* ============================================================
+   REFERRAL PAGE
+   Page hero, then the index "how" block (a 10% card and four
+   steps), who to bring, the terms as a grid of cards, the refer
+   form in the dark contact card, and the FAQ.
+   ============================================================ */
+#terms,
+#refer {
+	scroll-margin-top: 88px;
+}
+
+.ref__title {
+	font-size: clamp(32px, 3.4vw, 48px);
+	font-weight: 600;
+	line-height: 1.2;
+	letter-spacing: -0.03em;
+	color: #010205;
+}
+
+/* ── Example payout in the stat card ── */
+.ref-example {
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+	margin: 0;
+	padding-top: 24px;
+	border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+.ref-example > div {
+	display: flex;
+	justify-content: space-between;
+	align-items: baseline;
+	gap: 16px;
+}
+.ref-example dt {
+	font-size: 15px;
+	font-weight: 500;
+	color: #878c91;
+}
+.ref-example dd {
+	margin: 0;
+	font-size: 18px;
+	font-weight: 600;
+	color: #fff;
+	font-variant-numeric: tabular-nums;
+	white-space: nowrap;
+}
+.ref-example .ref-example__yours {
+	color: #99cf63;
+}
+
+/* ── Who to bring ── */
+.ref-fit {
+	padding: clamp(64px, 8vw, 104px) 24px;
+}
+.ref-fit__inner {
+	max-width: 1280px;
+	margin: 0 auto;
+}
+.ref-fit__grid {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 24px;
+	margin-top: 52px;
+}
+.ref-card {
+	display: flex;
+	flex-direction: column;
+	padding: 40px;
+	border-radius: 30px;
+	background: #fff;
+	border: 1px solid rgba(1, 2, 5, 0.06);
+}
+.ref-card.reveal:nth-child(2) {
+	transition-delay: 0.08s;
+}
+.ref-card__title {
+	font-size: 22px;
+	font-weight: 600;
+	line-height: 1.35;
+	letter-spacing: -0.01em;
+	color: #010205;
+}
+.ref-card__list {
+	margin: 20px 0 0;
+	padding: 0;
+	list-style: none;
+}
+.ref-card__list li {
+	position: relative;
+	padding: 14px 0 14px 22px;
+	border-top: 1px solid rgba(1, 2, 5, 0.08);
+	font-size: 16px;
+	font-weight: 500;
+	line-height: 1.55;
+	color: #5c5d5f;
+}
+.ref-card__list li::before {
+	content: "";
+	position: absolute;
+	left: 0;
+	top: calc(14px + 0.775em - 3px);
+	width: 6px;
+	height: 6px;
+	border-radius: 50%;
+	background: #9ac763;
+}
+.ref-card__link {
+	align-self: flex-start;
+	margin-top: auto;
+	padding-top: 24px;
+	font-size: 15px;
+	font-weight: 600;
+	color: #010205;
+	text-decoration: underline;
+	text-decoration-color: rgba(1, 2, 5, 0.25);
+	text-underline-offset: 4px;
+	transition: text-decoration-color 0.2s ease;
+}
+@media (hover: hover) and (pointer: fine) {
+	.ref-card__link:hover {
+		text-decoration-color: currentColor;
+	}
+}
+.ref-card__link:focus-visible {
+	outline: 2px solid #9ac763;
+	outline-offset: 3px;
+}
+
+/* ── Terms: six cards under the title, three per row ── */
+.ref-terms {
+	padding: clamp(32px, 4vw, 48px) 24px clamp(64px, 8vw, 104px);
+}
+.ref-terms__inner {
+	max-width: 1280px;
+	margin: 0 auto;
+}
+.ref-terms__grid {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	gap: 24px;
+	margin: 52px 0 0;
+	padding: 0;
+	list-style: none;
+}
+.ref-term {
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+	padding: 32px;
+	border-radius: 30px;
+	background: #fff;
+	border: 1px solid rgba(1, 2, 5, 0.06);
+}
+.ref-term.reveal:nth-child(3n + 2) {
+	transition-delay: 0.08s;
+}
+.ref-term.reveal:nth-child(3n) {
+	transition-delay: 0.16s;
+}
+.ref-term__num {
+	margin-bottom: 12px;
+	font-size: 14px;
+	font-weight: 600;
+	letter-spacing: 0.04em;
+	color: #7aa84a;
+	font-variant-numeric: tabular-nums;
+}
+.ref-term__title {
+	font-size: 20px;
+	font-weight: 600;
+	line-height: 1.35;
+	letter-spacing: -0.01em;
+	color: #010205;
+}
+.ref-term__desc {
+	font-size: 16px;
+	font-weight: 500;
+	line-height: 1.65;
+	color: #5c5d5f;
+}
+
+/* ── Refer form: the dark contact card with fields ── */
+.ref-form {
+	padding: clamp(32px, 4vw, 48px) 24px clamp(64px, 8vw, 104px);
+}
+.ref-form__inner {
+	display: grid;
+	grid-template-columns: minmax(0, 1fr) minmax(0, 600px);
+	column-gap: clamp(48px, 7vw, 112px);
+	row-gap: 40px;
+	max-width: 1280px;
+	margin: 0 auto;
+	padding: clamp(40px, 6vw, 80px);
+	border-radius: 32px;
+	background: #101112;
+	color: #fff;
+}
+.ref-form__form {
+	display: flex;
+	flex-direction: column;
+	gap: 28px;
+}
+.ref-form__group {
+	display: flex;
+	flex-direction: column;
+	gap: 14px;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	min-width: 0;
+}
+.ref-form__legend {
+	margin-bottom: 14px;
+	padding: 0;
+	font-size: 13px;
+	font-weight: 600;
+	letter-spacing: 0.16em;
+	text-transform: uppercase;
+	color: #9ac763;
+}
+.ref-form__row {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 14px;
+}
+
+.ref-field {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+.ref-field__label {
+	font-size: 13px;
+	font-weight: 500;
+	color: rgba(255, 255, 255, 0.5);
+}
+.ref-field__input {
+	width: 100%;
+	height: 52px;
+	padding: 0 18px;
+	border: 1px solid rgba(255, 255, 255, 0.1);
+	border-radius: 14px;
+	background: rgba(255, 255, 255, 0.05);
+	color: #fff;
+	font: inherit;
+	font-size: 16px;
+	font-weight: 500;
+	transition:
+		border-color 0.2s ease,
+		background-color 0.2s ease;
+}
+.ref-field__input--area {
+	height: auto;
+	min-height: 104px;
+	padding: 14px 18px;
+	line-height: 1.55;
+	resize: vertical;
+}
+.ref-field__input::placeholder {
+	color: rgba(255, 255, 255, 0.3);
+}
+.ref-field__input:focus {
+	outline: none;
+	border-color: #9ac763;
+	background: rgba(255, 255, 255, 0.08);
+}
+.ref-form__form.is-validated .ref-field__input:invalid {
+	border-color: #ef6b6b;
+}
+
+.ref-form__check {
+	display: flex;
+	align-items: flex-start;
+	gap: 12px;
+	font-size: 15px;
+	font-weight: 500;
+	line-height: 1.5;
+	color: rgba(255, 255, 255, 0.72);
+	cursor: pointer;
+}
+.ref-form__check input {
+	flex-shrink: 0;
+	width: 18px;
+	height: 18px;
+	margin-top: 2px;
+	accent-color: #9ac763;
+}
+.ref-form__form.is-validated .ref-form__check input:invalid + span {
+	color: #ef6b6b;
+}
+
+.ref-form__actions {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 12px;
+}
+.ref-form__btn {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	height: 52px;
+	padding: 0 28px;
+	border-radius: 999px;
+	font: inherit;
+	font-size: 16px;
+	font-weight: 600;
+	letter-spacing: -0.01em;
+	white-space: nowrap;
+	cursor: pointer;
+	transition:
+		background-color 0.2s ease,
+		border-color 0.2s ease,
+		transform 0.16s ease-out;
+}
+.ref-form__btn:active {
+	transform: scale(0.97);
+}
+.ref-form__btn:focus-visible {
+	outline: 2px solid #9ac763;
+	outline-offset: 3px;
+}
+.ref-form__btn--primary {
+	border: 1px solid #9ac763;
+	background: #9ac763;
+	color: #010205;
+}
+.ref-form__btn--secondary {
+	border: 1px solid rgba(255, 255, 255, 0.2);
+	background: transparent;
+	color: #fff;
+}
+@media (hover: hover) and (pointer: fine) {
+	.ref-form__btn--primary:hover {
+		background: #aad47a;
+	}
+	.ref-form__btn--secondary:hover {
+		background: rgba(255, 255, 255, 0.06);
+		border-color: rgba(255, 255, 255, 0.36);
+	}
+}
+.ref-form__status {
+	margin-top: -8px;
+	font-size: 15px;
+	line-height: 1.6;
+	color: rgba(255, 255, 255, 0.62);
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.ref-form__btn:active {
+		transform: none;
+	}
+}
+
+@media (max-width: 1100px) {
+	.ref-terms__grid {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		margin-top: 40px;
+	}
+	.ref-term.reveal:nth-child(n) {
+		transition-delay: 0s;
+	}
+	.ref-term.reveal:nth-child(2n) {
+		transition-delay: 0.08s;
+	}
+	.ref-form__inner {
+		grid-template-columns: 1fr;
+	}
+	.ref-form__intro .contact__heading {
+		max-width: 20ch;
+	}
+}
+
+@media (max-width: 860px) {
+	.ref-fit__grid {
+		grid-template-columns: 1fr;
+		margin-top: 40px;
+	}
+	.ref-card.reveal:nth-child(2) {
+		transition-delay: 0s;
+	}
+}
+
+@media (max-width: 640px) {
+	.ref-fit,
+	.ref-terms {
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+	.ref-card {
+		padding: 28px 24px;
+		border-radius: 24px;
+	}
+	.ref-terms__grid {
+		grid-template-columns: 1fr;
+		gap: 16px;
+	}
+	.ref-term {
+		padding: 24px;
+		border-radius: 24px;
+	}
+	.ref-term.reveal:nth-child(n) {
+		transition-delay: 0s;
+	}
+	.ref-form {
+		padding-left: 12px;
+		padding-right: 12px;
+	}
+	.ref-form__inner {
+		padding: 32px 20px 24px;
+		border-radius: 24px;
+	}
+	.ref-form__row {
+		grid-template-columns: 1fr;
+	}
+	.ref-form__actions {
+		flex-direction: column;
+	}
+	.ref-form__btn {
+		width: 100%;
+	}
+}
+
+/* ============================================================
+   HEADER NAV — eight links
+   The fixed 40px gaps only fit at 1440. Below that the gaps
+   share whatever width is left after the logo, the links and
+   the buttons, so nothing wraps or squeezes the logo.
+   ============================================================ */
+@media (min-width: 1024px) and (max-width: 1439px) {
+	header nav a[aria-label="Silk Road Tech home"] {
+		flex-shrink: 0;
+	}
+	header nav ul.hidden.lg\:flex {
+		flex-wrap: nowrap;
+		gap: clamp(14px, calc((100vw - 1130px) / 7), 40px) !important;
+	}
+	header nav ul.hidden.lg\:flex a {
+		white-space: nowrap;
+	}
+}
+@media (min-width: 1024px) and (max-width: 1180px) {
+	header nav ul.hidden.lg\:flex {
+		gap: clamp(12px, calc((100vw - 920px) / 7), 24px) !important;
+	}
+}
