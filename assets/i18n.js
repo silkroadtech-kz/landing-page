@@ -830,6 +830,285 @@
 		},
 		"blog.empty.cta": { ru: "Обсудить проект", en: "Discuss a project" },
 
+		/* ── Referral ── */
+		"nav.referral": { ru: "Партнёрам", en: "Referrals" },
+		"ref.hero.title": {
+			ru: "Рекомендуйте нас — получайте 10% от договора",
+			en: "Recommend us and earn 10% of the contract",
+		},
+		"ref.hero.desc": {
+			ru: "Знаете компанию, которой нужен сайт, система или ИИ? Передайте контакт — встречи, договор и разработку мы берём на себя.",
+			en: "Know a company that needs a website, a system, or AI? Share the contact — we handle the meetings, the contract, and the build.",
+		},
+		"ref.hero.cta": {
+			ru: "Передать клиента",
+			en: "Refer a client",
+		},
+		"ref.hero.terms": {
+			ru: "Условия",
+			en: "Terms",
+		},
+		"ref.how.title": {
+			ru: "Как это работает",
+			en: "How it works",
+		},
+		"ref.stat.label": {
+			ru: "от суммы подписанного договора",
+			en: "of the signed contract value",
+		},
+		"ref.stat.deal": {
+			ru: "Договор клиента",
+			en: "Client contract",
+		},
+		"ref.stat.yours": {
+			ru: "Ваше вознаграждение",
+			en: "Your reward",
+		},
+		"ref.s1.title": {
+			ru: "Передайте контакт",
+			en: "Share the contact",
+		},
+		"ref.s1.desc": {
+			ru: "Заполните форму: кто клиент и что ему нужно. В течение рабочего дня подтвердим, что клиент закреплён за вами.",
+			en: "Fill in the form: who the client is and what they need. Within one business day we confirm the client is registered to you.",
+		},
+		"ref.s2.title": {
+			ru: "Мы ведём клиента",
+			en: "We take it from there",
+		},
+		"ref.s2.desc": {
+			ru: "Созваниваемся, разбираем задачу, готовим предложение и смету. От вас ничего не требуется.",
+			en: "We call the client, work through the task, and prepare a proposal and estimate. Nothing is needed from you.",
+		},
+		"ref.s3.title": {
+			ru: "Клиент подписывает договор",
+			en: "The client signs",
+		},
+		"ref.s3.desc": {
+			ru: "С этого момента вам положено 10% от суммы договора.",
+			en: "From that moment you are owed 10% of the contract value.",
+		},
+		"ref.s4.title": {
+			ru: "Получаете выплату",
+			en: "You get paid",
+		},
+		"ref.s4.desc": {
+			ru: "Клиент платит нам — мы переводим вашу долю на Kaspi, Halyk или счёт в любом банке Казахстана.",
+			en: "The client pays us, and we transfer your share to Kaspi, Halyk, or an account at any bank in Kazakhstan.",
+		},
+		"ref.fit.title": {
+			ru: "Кого к нам привести",
+			en: "Who to bring us",
+		},
+		"ref.fit.clients.title": {
+			ru: "Компании, которым нужно",
+			en: "Companies that need",
+		},
+		"ref.fit.clients.1": {
+			ru: "Сайт, веб-сервис или мобильное приложение",
+			en: "A website, web service, or mobile app",
+		},
+		"ref.fit.clients.2": {
+			ru: "CRM, ERP или интеграция с 1С, банками и другими системами",
+			en: "CRM, ERP, or integration with 1C, banks, and other systems",
+		},
+		"ref.fit.clients.3": {
+			ru: "ИИ-ассистент, обработка документов, автоматизация рутины",
+			en: "An AI assistant, document processing, or automation of routine work",
+		},
+		"ref.fit.clients.4": {
+			ru: "Дашборды и управленческая отчётность",
+			en: "Dashboards and management reporting",
+		},
+		"ref.fit.clients.5": {
+			ru: "Мониторинг производства и IoT",
+			en: "Production monitoring and IoT",
+		},
+		"ref.fit.cases": {
+			ru: "Посмотреть наши кейсы",
+			en: "See our case studies",
+		},
+		"ref.fit.partners.title": {
+			ru: "Кому подходит программа",
+			en: "Who the program suits",
+		},
+		"ref.fit.partners.1": {
+			ru: "Бухгалтеры и специалисты по 1С — видят, где у бизнеса ручная работа",
+			en: "Accountants and 1C specialists — they see where a business still works by hand",
+		},
+		"ref.fit.partners.2": {
+			ru: "Маркетологи, дизайнеры и агентства — когда клиенту нужна разработка",
+			en: "Marketers, designers, and agencies — when a client needs development",
+		},
+		"ref.fit.partners.3": {
+			ru: "Бизнес-консультанты и предприниматели",
+			en: "Business consultants and entrepreneurs",
+		},
+		"ref.fit.partners.4": {
+			ru: "Наши клиенты, которые знают, как мы работаем",
+			en: "Our clients, who know how we work",
+		},
+		"ref.terms.title": {
+			ru: "Условия",
+			en: "Terms",
+		},
+		"ref.terms.1.title": {
+			ru: "Вознаграждение",
+			en: "Reward",
+		},
+		"ref.terms.1.desc": {
+			ru: "10% от суммы подписанного договора. Сколько клиентов — столько выплат, без ограничений.",
+			en: "10% of the signed contract value. One payout per client, as many clients as you like.",
+		},
+		"ref.terms.2.title": {
+			ru: "Когда платим",
+			en: "When we pay",
+		},
+		"ref.terms.2.desc": {
+			ru: "По мере оплаты: клиент перевёл нам деньги — в течение 5 рабочих дней мы переводим вам 10% от этой суммы. Договор оплачивается частями — выплаты тоже приходят частями.",
+			en: "As the client pays: once a payment reaches us, we transfer you 10% of it within 5 business days. If the contract is paid in parts, your payouts come in parts too.",
+		},
+		"ref.terms.3.title": {
+			ru: "Куда платим",
+			en: "How we pay",
+		},
+		"ref.terms.3.desc": {
+			ru: "Kaspi, Halyk или счёт в любом банке Казахстана.",
+			en: "Kaspi, Halyk, or an account at any bank in Kazakhstan.",
+		},
+		"ref.terms.4.title": {
+			ru: "Закрепление",
+			en: "Registration",
+		},
+		"ref.terms.4.desc": {
+			ru: "Клиент закрепляется за тем, кто первым передал его контакт, на 90 дней. Договор подписан в этот срок — вознаграждение ваше.",
+			en: "The client is registered to whoever shared their contact first, for 90 days. If the contract is signed within that period, the reward is yours.",
+		},
+		"ref.terms.5.title": {
+			ru: "Что не засчитывается",
+			en: "What doesn't count",
+		},
+		"ref.terms.5.desc": {
+			ru: "Наши действующие клиенты и компании, с которыми мы уже ведём переговоры. Если так вышло, скажем об этом сразу.",
+			en: "Our current clients and companies we are already talking to. If that happens, we'll tell you right away.",
+		},
+		"ref.terms.6.title": {
+			ru: "С клиентом",
+			en: "With the client",
+		},
+		"ref.terms.6.desc": {
+			ru: "Предупредите клиента, что мы свяжемся с ним. Цены и сроки не обещайте — мы назовём их после разбора задачи.",
+			en: "Let the client know we will get in touch. Don't promise prices or timelines — we give those after we've looked at the task.",
+		},
+		"ref.form.eyebrow": {
+			ru: "Передать клиента",
+			en: "Refer a client",
+		},
+		"ref.form.title": {
+			ru: "Расскажите, кого рекомендуете",
+			en: "Tell us who you're recommending",
+		},
+		"ref.form.lead": {
+			ru: "Форма соберёт сообщение и откроет WhatsApp или Telegram — останется нажать «Отправить». Переписка останется у вас: по ней видно, когда вы передали клиента.",
+			en: "The form composes a message and opens WhatsApp or Telegram — all that's left is to press Send. You keep the chat, which shows when you referred the client.",
+		},
+		"ref.form.you": {
+			ru: "Вы",
+			en: "You",
+		},
+		"ref.form.name": {
+			ru: "Имя",
+			en: "Name",
+		},
+		"ref.form.contact": {
+			ru: "Телефон или Telegram",
+			en: "Phone or Telegram",
+		},
+		"ref.form.client": {
+			ru: "Клиент",
+			en: "Client",
+		},
+		"ref.form.company": {
+			ru: "Компания",
+			en: "Company",
+		},
+		"ref.form.client_contact": {
+			ru: "Контактное лицо и телефон",
+			en: "Contact person and phone",
+		},
+		"ref.form.task": {
+			ru: "Что нужно клиенту",
+			en: "What the client needs",
+		},
+		"ref.form.agree": {
+			ru: "Клиент знает, что я передаю его контакт",
+			en: "The client knows I'm sharing their contact",
+		},
+		"ref.form.wa": {
+			ru: "Отправить в WhatsApp",
+			en: "Send via WhatsApp",
+		},
+		"ref.form.tg": {
+			ru: "Отправить в Telegram",
+			en: "Send via Telegram",
+		},
+		"ref.faq.lead": {
+			ru: "Не нашли ответ — напишите Саяту, он лично ведёт партнёров.",
+			en: "Didn't find an answer? Message Sayat — he works with partners personally.",
+		},
+		"ref.faq.q1": {
+			ru: "Нужно ли самому продавать?",
+			en: "Do I have to sell?",
+		},
+		"ref.faq.a1": {
+			ru: "Нет. Достаточно познакомить нас с клиентом. Встречи, смету, договор и разработку ведём мы.",
+			en: "No. An introduction is enough. We run the meetings, the estimate, the contract, and the development.",
+		},
+		"ref.faq.q2": {
+			ru: "Как я узнаю, что клиент закреплён за мной?",
+			en: "How will I know the client is registered to me?",
+		},
+		"ref.faq.a2": {
+			ru: "Ответим в том же чате в течение рабочего дня. Дальше будем сообщать, как идут переговоры и когда клиент подпишет договор.",
+			en: "We reply in the same chat within one business day, then keep you posted on the talks and on when the client signs.",
+		},
+		"ref.faq.q3": {
+			ru: "Что если клиент подпишет договор не сразу?",
+			en: "What if the client doesn't sign right away?",
+		},
+		"ref.faq.a3": {
+			ru: "Клиент закреплён за вами 90 дней с момента, как вы передали контакт. Подписал договор в этот срок — 10% ваши.",
+			en: "The client stays registered to you for 90 days from when you shared the contact. If they sign within that period, the 10% is yours.",
+		},
+		"ref.faq.q4": {
+			ru: "Договор оплачивают частями. Когда я получу деньги?",
+			en: "The contract is paid in parts. When do I get paid?",
+		},
+		"ref.faq.a4": {
+			ru: "С каждой оплаты. Например, клиент внёс предоплату 50% по договору на 3 000 000 ₸ — вы получаете 150 000 ₸, остальные 150 000 ₸ — после второй оплаты.",
+			en: "From every payment. For example, a client pays a 50% advance on a 3,000,000 ₸ contract — you get 150,000 ₸, and the other 150,000 ₸ after the second payment.",
+		},
+		"ref.faq.q5": {
+			ru: "Сколько клиентов можно привести?",
+			en: "How many clients can I refer?",
+		},
+		"ref.faq.a5": {
+			ru: "Сколько угодно. За каждый подписанный договор — 10%.",
+			en: "As many as you like. 10% for every signed contract.",
+		},
+		"ref.form.contact.ph": {
+			ru: "+7 … или @username",
+			en: "+7 … or @username",
+		},
+		"ref.form.client_contact.ph": {
+			ru: "Айгерим, +7 …",
+			en: "Aigerim, +7 …",
+		},
+		"ref.form.task.ph": {
+			ru: "Например: CRM для отдела продаж, сейчас всё в Excel",
+			en: "For example: a CRM for the sales team, everything is in Excel now",
+		},
+
 		/* ── Legacy Academy ── */
 		"academy.hero.badge": { ru: "SRT Academy", en: "SRT Academy" },
 		"academy.hero.title": {
