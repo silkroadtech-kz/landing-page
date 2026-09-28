@@ -93,6 +93,22 @@ const pages = [
 		subtitle: "Share a contact — we handle the meetings, the contract and the build.",
 	},
 	{
+		out: "og/en/blog.png",
+		eyebrow: "Blog",
+		title: "Technology, products and business <em>without the noise</em>",
+		subtitle: "What we learned building software, integrating AI and shipping products.",
+	},
+	{
+		out: "og/en/blog/why-we-audit-first.png",
+		eyebrow: "Blog · 7 min read",
+		title: "Why we stopped starting big projects <em>from the spec</em>",
+	},
+	{
+		out: "og/en/blog/who-we-learn-from.png",
+		eyebrow: "Blog · 8 min read",
+		title: "Who we learn from about <em>products and company building</em>",
+	},
+	{
 		out: "og/privacy.png",
 		eyebrow: "Документы",
 		title: "Как мы обрабатываем <em>персональные данные</em>",

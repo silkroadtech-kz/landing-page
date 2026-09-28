@@ -1,0 +1,43 @@
+{
+  "meta": {
+    "title": "Why we stopped starting big projects from the spec — Silk Road Tech",
+    "description": "Why Silk Road Tech begins large projects with a paid audit: how we check requirements, architecture and risks before development starts.",
+    "ogTitle": "Why we stopped starting big projects from the spec",
+    "ogDescription": "A paid audit before development: requirements, architecture, estimates and a risk map.",
+    "og": "og/en/blog/why-we-audit-first.png",
+    "readingTime": "7 min read",
+    "published": "19 August 2026",
+    "crumb": "Why we stopped starting big projects from the spec"
+  },
+  "strings": {
+    "Почему мы перестали брать большие техзадания в работу сразу": "Why we stopped starting big projects from the spec",
+    "Крупная компания присылает ТЗ на сорок страниц. Половина требований спорит с другой половиной, сроки взяты с потолка, а на первой встрече выясняется, что треть функций «надо обсудить отдельно». Раньше мы в такой ситуации подписывали договор и садились за разработку. Несколько болезненных проектов спустя поняли, что так нельзя.": "A large company sends over a forty-page specification. Half the requirements contradict the other half, the deadlines came out of thin air, and at the first meeting it turns out a third of the features “need to be discussed separately”. We used to sign the contract in that situation and start building. A few painful projects later, we understood that this doesn't work.",
+    "Почему сырое ТЗ опасно": "Why a raw spec is dangerous",
+    "ТЗ от крупной компании почти никогда не отражает реальность. За документом обычно стоит legacy-система, согласования между отделами и автор ТЗ, который уже уволился.": "A spec from a large company almost never reflects reality. Behind the document there is usually a legacy system, negotiations between departments, and an author who has already left the company.",
+    "Зафиксируешь смету по такому документу вслепую, и дальше либо уходишь в минус, либо начинаешь экономить, а заказчик это чувствует. Оба сценария плохие.": "Fix a budget against that document blindly and you either lose money or start cutting corners — and the client feels it. Both outcomes are bad.",
+    "Аудит как отдельный первый этап": "The audit as a separate first stage",
+    "Мы стали выносить разбор в отдельный платный этап до разработки. Что в него входит:": "We moved that analysis into a separate paid stage before development. Here is what it covers:",
+    "разбор текущей архитектуры и инфраструктуры;": "a review of the current architecture and infrastructure;",
+    "отделение реальных потребностей от того, что попало в ТЗ по инерции;": "separating real needs from what ended up in the spec out of inertia;",
+    "разговор с теми, кто будет пользоваться системой, а не только с теми, кто подписывает счета;": "talking to the people who will use the system, not only to the ones who sign the invoices;",
+    "поиск рисков, которые в ТЗ не упомянуты.": "looking for risks the spec never mentions.",
+    "На выходе заказчик получает непротиворечивое ТЗ, архитектуру, этапы с оценкой и карту рисков. Эти артефакты самоценны: даже если человек уйдёт делать продукт с другой командой, он уносит рабочий документ, а не обрывки.": "The client walks away with a consistent specification, an architecture, estimated milestones and a risk map. Those artifacts have value on their own: even if the client goes on to build the product with another team, they leave with a working document rather than fragments.",
+    "Отдельно про «платный». Первое время было неловко брать деньги за анализ, пока не заметили закономерность: к бесплатной работе относятся как к бесплатной. Деньги резко поднимают и вовлечённость заказчика, и серьёзность разговора.": "A word on “paid”. Charging for analysis felt awkward at first, until we noticed a pattern: free work gets treated as free. Money raises both the client's involvement and the seriousness of the conversation.",
+    "Как это превращается в разработку": "How this turns into development",
+    "После аудита обсуждаем не абстрактное ТЗ, а конкретный план, который сами составили и который заказчик уже видел. Дальше идём итерациями по две недели с демо, чтобы правки всплывали рано, а не на финальной приёмке.": "After the audit we discuss a concrete plan we wrote ourselves and the client has already seen, not an abstract spec. From there we work in two-week iterations with demos, so corrections surface early rather than at final acceptance.",
+    "Структура готова заранее, поэтому задачи ведём параллельно, а по спорным развилкам советуемся с коллегами из других компаний: свежий взгляд не раз спасал от решения, которое изнутри выглядело логичным, а оказывалось тупиковым.": "The structure is settled up front, so we run tasks in parallel, and on contested decisions we consult peers at other companies: an outside view has more than once saved us from a choice that looked logical from the inside and turned out to be a dead end.",
+    "Что мы поняли по дороге": "What we learned along the way",
+    "Аудит нельзя растягивать: он превратится в месяц переписки, и потеряется смысл быстрого первого шага.": "An audit must not drag on: it turns into a month of correspondence and loses the point of being a fast first step.",
+    "Иногда честный вывод аудита — «вам не нужна разработка». Краткосрочно теряешь проект, в долгую получаешь доверие, и такие заказчики возвращались.": "Sometimes the honest conclusion is “you don't need development”. You lose the project in the short term and gain trust in the long term — and those clients have come back.",
+    "Схема работает не везде. Для большой системы с высокой ценой ошибки аудит окупается, для лендинга он избыточен.": "The approach doesn't fit everything. For a large system where mistakes are expensive an audit pays for itself; for a landing page it is overkill.",
+    "И главное: платный аудит сам по себе фильтр. Кто не готов вложиться в разбор своей системы, почти наверняка не дойдёт и до конца большого проекта.": "Most importantly: a paid audit is a filter in itself. Anyone unwilling to invest in understanding their own system is unlikely to see a large project through.",
+    "Вопрос к сообществу": "A question to the community",
+    "А у вас вход в крупные проекты как устроен: берёте ТЗ как есть или сначала делаете свой разбор? И если разбор, то платный или за свой счёт? Любопытно сравнить подходы.": "How do you enter large projects — do you take the spec as given, or run your own analysis first? And if you do, is it paid or on your own dime? We're curious to compare approaches.",
+    "Саят О.": "Sayat O.",
+    "У кого мы учимся строить продукты и компанию": "Who we learn from about products and company building",
+    "8 минут": "8 min read",
+    "7 минут": "7 min read",
+    "19 августа 2026": "19 August 2026",
+    "Если хотите обсудить пост или поделиться идеями, напишите на": "If you'd like to discuss this post or share your thinking, write to"
+  }
+}

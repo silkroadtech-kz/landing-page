@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Silk Road Tech blog</title>
+		<link>https://silkroadtech.kz/en/blog</link>
+		<description>Software development, AI integration and shipping digital products.</description>
+		<language>en</language>
+		<lastBuildDate>Wed, 19 Aug 2026 03:00:00 GMT</lastBuildDate>
+		<atom:link href="https://silkroadtech.kz/en/feed.xml" rel="self" type="application/rss+xml" />
+		<item>
+			<title>Why we stopped starting big projects from the spec</title>
+			<link>https://silkroadtech.kz/en/blog/why-we-audit-first</link>
+			<guid isPermaLink="true">https://silkroadtech.kz/en/blog/why-we-audit-first</guid>
+			<description>Why Silk Road Tech begins large projects with a paid audit: how we check requirements, architecture and risks before development starts.</description>
+			<pubDate>Wed, 19 Aug 2026 03:00:00 GMT</pubDate>
+		</item>
+		<item>
+			<title>Who we learn from about products and company building</title>
+			<link>https://silkroadtech.kz/en/blog/who-we-learn-from</link>
+			<guid isPermaLink="true">https://silkroadtech.kz/en/blog/who-we-learn-from</guid>
+			<description>Five reference points for Silk Road Tech: 37signals, Jason Cohen, Higgsfield, Elon Musk and Apple — and what exactly we take from each.</description>
+			<pubDate>Wed, 19 Aug 2026 03:00:00 GMT</pubDate>
+		</item>
+	</channel>
+</rss>

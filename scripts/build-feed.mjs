@@ -4,7 +4,7 @@
 //
 //   node scripts/build-feed.mjs
 
-import { readFileSync, writeFileSync, readdirSync } from "node:fs";
+import { readFileSync, writeFileSync, readdirSync, mkdirSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 
@@ -28,6 +28,15 @@ function nodes(html) {
 	return out;
 }
 
+// Английские заголовки и описания статей лежат рядом с переводами.
+function enMeta(slug) {
+	try {
+		return JSON.parse(readFileSync(join(root, `i18n/blog/${slug}.en.json`), "utf8")).meta;
+	} catch {
+		return null;
+	}
+}
+
 const posts = readdirSync(join(root, "blog"))
 	.filter((f) => f.endsWith(".html"))
 	.map((file) => {
@@ -36,6 +45,8 @@ const posts = readdirSync(join(root, "blog"))
 		if (!post) return null;
 		const slug = file.replace(/\.html$/, "");
 		return {
+			slug,
+			en: enMeta(slug),
 			url: `${SITE}/blog/${slug}`,
 			title: post.headline ?? "",
 			description: post.description ?? "",
@@ -80,3 +91,34 @@ ${posts
 writeFileSync(join(root, "feed.xml"), xml);
 console.log(`feed.xml собран: ${posts.length} статей`);
 for (const p of posts) console.log(`  ${p.published}  ${p.title}`);
+
+// Английская лента — только из статей, у которых есть перевод.
+const enPosts = posts.filter((p) => p.en);
+if (enPosts.length) {
+	const enXml = `<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Silk Road Tech blog</title>
+		<link>${SITE}/en/blog</link>
+		<description>Software development, AI integration and shipping digital products.</description>
+		<language>en</language>
+		<lastBuildDate>${rfc822(enPosts[0].updated)}</lastBuildDate>
+		<atom:link href="${SITE}/en/feed.xml" rel="self" type="application/rss+xml" />
+${enPosts
+	.map(
+		(p) => `		<item>
+			<title>${escape(p.en.ogTitle)}</title>
+			<link>${SITE}/en/blog/${p.slug}</link>
+			<guid isPermaLink="true">${SITE}/en/blog/${p.slug}</guid>
+			<description>${escape(p.en.description)}</description>
+			<pubDate>${rfc822(p.published)}</pubDate>
+		</item>`,
+	)
+	.join("\n")}
+	</channel>
+</rss>
+`;
+	mkdirSync(join(root, "en"), { recursive: true });
+	writeFileSync(join(root, "en/feed.xml"), enXml);
+	console.log(`en/feed.xml собран: ${enPosts.length} статей`);
+}

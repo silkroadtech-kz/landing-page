@@ -31,6 +31,7 @@ const PAGES = [
 	{
 		src: "cases.html",
 		slug: "cases",
+		crumb: "Case studies",
 		title: "Case studies: development, AI and automation — Silk Road Tech",
 		description:
 			"Platforms, ERP systems, AI automation and digital services Silk Road Tech built for business and the public sector in Kazakhstan.",
@@ -41,6 +42,7 @@ const PAGES = [
 	{
 		src: "about.html",
 		slug: "about",
+		crumb: "About",
 		title: "About us — Silk Road Tech",
 		description:
 			"The Silk Road Tech team: engineers, analysts and product people. We build software, integrate AI and automate business processes.",
@@ -49,8 +51,20 @@ const PAGES = [
 		og: "og/en/about.png",
 	},
 	{
+		src: "blog.html",
+		slug: "blog",
+		crumb: "Blog",
+		title: "Blog — Silk Road Tech",
+		description:
+			"Silk Road Tech on software development, AI integration and launching digital products.",
+		ogTitle: "Technology, products and business without the noise",
+		ogDescription: "What we learned building software, integrating AI and shipping products.",
+		og: "og/en/blog.png",
+	},
+	{
 		src: "referral.html",
 		slug: "referral",
+		crumb: "Partner program",
 		title: "Partner program — 10% of the contract — Silk Road Tech",
 		description:
 			"Refer a company that needs a website, a system or AI, and earn 10% of the signed contract. Payouts to Kaspi, Halyk or any bank account in Kazakhstan.",
@@ -58,6 +72,13 @@ const PAGES = [
 		ogDescription: "Share a contact — we handle the meetings, the contract and the build.",
 		og: "og/en/referral.png",
 	},
+];
+
+// Статьи переводятся не словарём интерфейса, а отдельными файлами: их тексты
+// в i18n.js не вынесены, да и незачем — в браузере они не переключаются.
+const ARTICLES = [
+	{ src: "blog/why-we-audit-first.html", slug: "blog/why-we-audit-first" },
+	{ src: "blog/who-we-learn-from.html", slug: "blog/who-we-learn-from" },
 ];
 
 const enUrl = (slug) => `${SITE}/en${slug ? `/${slug}` : "/"}`;
@@ -116,6 +137,27 @@ function translate(html, missing) {
 	return html;
 }
 
+// Заменяет текст внутри <main> по словарю статьи. Работаем на уровне
+// текстовых узлов, а не элементов: иначе замена целого абзаца стирала бы
+// ссылки и выделения внутри него.
+function translateNodes(html, strings, used) {
+	const start = html.indexOf("<main");
+	const end = html.indexOf("</main>");
+	if (start < 0 || end < 0) return html;
+	const body = html.slice(start, end).replace(/>([^<]+)</g, (match, text) => {
+		const key = text.replace(/\s+/g, " ").trim();
+		if (!key || !/[А-Яа-яЁё]/.test(key)) return match;
+		const value = strings[key];
+		if (value === undefined) return match;
+		used.add(key);
+		// Пробелы по краям сохраняем: они разделяют текст и соседние теги.
+		const before = text.match(/^\s*/)[0];
+		const after = text.match(/\s*$/)[0];
+		return `>${before}${value}${after}<`;
+	});
+	return html.slice(0, start) + body + html.slice(end);
+}
+
 // --- пути ---
 // Страницы лежат в en/, поэтому относительные ссылки на ассеты пришлось бы
 // поднимать на уровень выше. Делаем их абсолютными от корня — так они не
@@ -129,7 +171,10 @@ function absolutizeAssets(html) {
 
 // Внутренние ссылки ведут на английские страницы там, где они есть.
 function relinkInternal(html) {
-	const translated = new Map(PAGES.map((p) => [`/${p.slug}`, p.slug ? `/en/${p.slug}` : "/en/"]));
+	const translated = new Map([
+		...PAGES.map((p) => [`/${p.slug}`, p.slug ? `/en/${p.slug}` : "/en/"]),
+		...ARTICLES.map((a) => [`/${a.slug}`, `/en/${a.slug}`]),
+	]);
 	return html.replace(/(\shref=")(\/[^"#?]*)([^"]*)"/g, (match, head, path, rest) => {
 		const target = translated.get(path === "/" ? "/" : path.replace(/\/$/, ""));
 		return target ? `${head}${target}${rest}"` : match;
@@ -158,6 +203,73 @@ function translateFirstReview(html) {
 		html = html.replace(new RegExp(pattern, "g"), to);
 	}
 	return html;
+}
+
+// Названия в хлебных крошках короткие и повторяются на всех страницах.
+const CRUMBS = {
+	"Главная": "Home",
+	"Блог": "Blog",
+	"Кейсы": "Case studies",
+	"О нас": "About",
+	"О компании": "About",
+	"Партнёрам": "Partners",
+	"Партнёрская программа": "Partner program",
+	"Контакты": "Contacts",
+	"Контакты и сертификаты": "Contacts and certificates",
+	"Политика конфиденциальности": "Privacy policy",
+	"Авторские права": "Copyright",
+};
+
+// Разметка JSON-LD собрана для русской страницы: заголовок, описание, адрес
+// и язык нужно заменить, иначе поисковики получат английскую страницу
+// с русскими данными.
+function localizeSchema(html, page) {
+	const url = enUrl(page.slug);
+	return html.replace(
+		/(<script type="application\/ld\+json">)([\s\S]*?)(<\/script>)/g,
+		(match, open, body, close) => {
+			let data;
+			try {
+				data = JSON.parse(body);
+			} catch {
+				return match;
+			}
+			const nodes = data["@graph"] ?? [data];
+			for (const node of nodes) {
+				const type = String(node["@type"]);
+				if (node.inLanguage) node.inLanguage = "en";
+				if (type.includes("BlogPosting") || type.includes("Article")) {
+					node.headline = page.ogTitle;
+					node.description = page.description;
+					node.url = url;
+					node.inLanguage = "en";
+					if (node.mainEntityOfPage) node.mainEntityOfPage = url;
+					if (node.image) node.image = `${SITE}/${page.og}`;
+				}
+				if (type === "WebPage" || type === "CollectionPage") {
+					node.name = page.ogTitle;
+					node.description = page.ogDescription ?? page.description;
+					if (node.url) node.url = url;
+					node.inLanguage = "en";
+				}
+				// Хлебные крошки: промежуточные пункты берём из короткого словаря,
+				// последний — это сама страница, её адрес меняем на английский.
+				if (type === "BreadcrumbList" && Array.isArray(node.itemListElement)) {
+					const items = node.itemListElement;
+					items.forEach((item, index) => {
+						if (CRUMBS[item.name]) item.name = CRUMBS[item.name];
+						if (index === items.length - 1) {
+							item.name = page.crumb ?? item.name;
+							item.item = url;
+						} else if (item.item === `${SITE}/blog`) {
+							item.item = `${SITE}/en/blog`;
+						}
+					});
+				}
+			}
+			return `${open}\n${JSON.stringify(data, null, 1)}\n${close}`;
+		},
+	);
 }
 
 function head(html, ru, page) {
@@ -205,23 +317,61 @@ function head(html, ru, page) {
 	return html;
 }
 
-mkdirSync(join(root, "en"), { recursive: true });
+mkdirSync(join(root, "en/blog"), { recursive: true });
 const missing = new Set();
+// Ключи, которые действительно пригодились: один и тот же текст встречается
+// и в статье, и в карточке на странице блога, поэтому считаем по всем сборкам.
+const usedStrings = new Set();
 
-for (const page of PAGES) {
+// Словари статей нужны и самим статьям, и списку блога: на нём стоят
+// заголовки и даты тех же публикаций.
+const articleStrings = new Map(
+	ARTICLES.map((a) => [
+		a.slug,
+		JSON.parse(readFileSync(join(root, `i18n/${a.slug}.en.json`), "utf8")),
+	]),
+);
+const allArticleStrings = Object.assign(
+	{},
+	...[...articleStrings.values()].map((a) => a.strings),
+);
+
+function build(page, extraStrings) {
 	const ru = readFileSync(join(root, page.src), "utf8");
 	let html = translate(ru, missing);
 	if (page.src === "index.html") html = translateFirstReview(html);
+	if (extraStrings) html = translateNodes(html, extraStrings, usedStrings);
 	html = head(html, ru, page);
+	html = localizeSchema(html, page);
 	html = absolutizeAssets(html);
+	// Английские страницы ссылаются на английскую ленту.
+	html = html
+		.replace(`${SITE}/feed.xml`, `${SITE}/en/feed.xml`)
+		.replace('title="Блог Silk Road Tech"', 'title="Silk Road Tech blog"');
 	html = relinkInternal(html);
 	const out = page.slug ? `en/${page.slug}.html` : "en/index.html";
 	writeFileSync(join(root, out), html);
-	console.log(`✓ ${out.padEnd(20)} ← ${page.src}`);
+	console.log(`✓ ${out.padEnd(32)} ← ${page.src}`);
+}
+
+for (const page of PAGES) {
+	// Список блога показывает заголовки и даты статей — берём их из переводов статей.
+	build(page, page.slug === "blog" ? allArticleStrings : null);
+}
+
+for (const article of ARTICLES) {
+	const { meta, strings } = articleStrings.get(article.slug);
+	build({ ...article, ...meta }, strings);
+}
+
+const staleKeys = Object.keys(allArticleStrings).filter((key) => !usedStrings.has(key));
+if (staleKeys.length) {
+	console.warn(`\n! переводы, которым не нашлось места в разметке: ${staleKeys.length}`);
+	for (const key of staleKeys) console.warn(`   ${key.slice(0, 90)}`);
 }
 
 if (missing.size) {
 	console.warn(`\n! без английского перевода осталось ключей: ${missing.size}`);
 	for (const key of missing) console.warn(`   ${key}`);
 }
-console.log(`\nГотово: ${PAGES.length} страниц в en/`);
+console.log(`\nГотово: ${PAGES.length + ARTICLES.length} страниц в en/`);
