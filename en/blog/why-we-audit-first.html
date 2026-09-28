@@ -1,17 +1,17 @@
 <!doctype html>
-<html lang="ru">
+<html lang="en">
 	<head>
 		<meta charset="UTF-8" />
 		<script>(function(){var l=localStorage.getItem('srt_lang');if(l&&l!=='ru')document.documentElement.style.visibility='hidden';})();</script>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Блог Silk Road Tech — технологии, продукты и бизнес</title>
-		<meta name="description" content="Статьи Silk Road Tech о разработке программного обеспечения, внедрении ИИ и запуске цифровых продуктов." />
+		<title>Why we stopped starting big projects from the spec — Silk Road Tech</title>
+		<meta name="description" content="Why Silk Road Tech begins large projects with a paid audit: how we check requirements, architecture and risks before development starts." />
 		<meta name="robots" content="index,follow" />
-		<link rel="canonical" href="https://silkroadtech.kz/blog" />
-		<link rel="alternate" hreflang="ru" href="https://silkroadtech.kz/blog" />
-		<link rel="alternate" hreflang="en" href="https://silkroadtech.kz/en/blog" />
-		<link rel="alternate" hreflang="x-default" href="https://silkroadtech.kz/blog" />
-<link rel="alternate" type="application/rss+xml" title="Блог Silk Road Tech" href="https://silkroadtech.kz/feed.xml" />
+		<link rel="canonical" href="https://silkroadtech.kz/en/blog/why-we-audit-first" />
+		<link rel="alternate" hreflang="ru" href="https://silkroadtech.kz/blog/why-we-audit-first" />
+		<link rel="alternate" hreflang="en" href="https://silkroadtech.kz/en/blog/why-we-audit-first" />
+		<link rel="alternate" hreflang="x-default" href="https://silkroadtech.kz/blog/why-we-audit-first" />
+<link rel="alternate" type="application/rss+xml" title="Silk Road Tech blog" href="https://silkroadtech.kz/en/feed.xml" />
 <script type="application/ld+json">
 {
  "@context": "https://schema.org",
@@ -73,7 +73,7 @@
    "@id": "https://silkroadtech.kz/#website",
    "url": "https://silkroadtech.kz/",
    "name": "Silk Road Tech",
-   "inLanguage": "ru-KZ",
+   "inLanguage": "en",
    "publisher": {
     "@id": "https://silkroadtech.kz/#organization"
    }
@@ -81,29 +81,44 @@
  ]
 }
 </script>
-		<meta property="og:type" content="website" />
+		<meta property="og:type" content="article" />
 		<meta property="og:site_name" content="Silk Road Tech" />
-		<meta property="og:title" content="Блог Silk Road Tech" />
-		<meta property="og:description" content="Опыт разработки, внедрения ИИ и запуска цифровых продуктов." />
-		<meta property="og:url" content="https://silkroadtech.kz/blog" />
-		<meta property="og:image" content="https://silkroadtech.kz/og/blog.png" />
+		<meta property="og:title" content="Why we stopped starting big projects from the spec" />
+		<meta property="og:description" content="A paid audit before development: requirements, architecture, estimates and a risk map." />
+		<meta property="og:url" content="https://silkroadtech.kz/en/blog/why-we-audit-first" />
+		<meta property="og:image" content="https://silkroadtech.kz/og/en/blog/why-we-audit-first.png" />
+		<meta property="article:published_time" content="2026-08-19" />
 		<meta name="twitter:card" content="summary_large_image" />
-		<meta name="twitter:title" content="Блог Silk Road Tech" />
-		<meta name="twitter:description" content="Опыт разработки, внедрения ИИ и запуска цифровых продуктов." />
-		<meta name="twitter:image" content="https://silkroadtech.kz/og/blog.png" />
-		<script type="application/ld+json">
-		{"@context":"https://schema.org","@graph":[{"@type":"CollectionPage","@id":"https://silkroadtech.kz/blog#webpage","url":"https://silkroadtech.kz/blog","name":"Блог Silk Road Tech","inLanguage":"ru-KZ","isPartOf":{"@id":"https://silkroadtech.kz/#website"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Главная","item":"https://silkroadtech.kz/"},{"@type":"ListItem","position":2,"name":"Блог","item":"https://silkroadtech.kz/blog"}]}]}
-		</script>
-		<link rel="icon" href="favicon.svg" type="image/svg+xml" />
-		<link rel="icon" href="favicon.ico" sizes="any" />
-		<link rel="apple-touch-icon" href="apple-touch-icon.png" />
-		<link rel="manifest" href="site.webmanifest" />
+		<link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+		<link rel="icon" href="../favicon.ico" sizes="any" />
 		<meta name="theme-color" content="#010205" />
-		<link rel="stylesheet" href="assets/site.css?v=20260925-2" />
+		<link rel="stylesheet" href="../assets/site.css?v=20260925-2" />
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Manrope:wght@500;700;800&family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,700&family=Sora:wght@600;700&family=Roboto:wght@400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
 		<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Manrope:wght@500;700;800&family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,700&family=Sora:wght@600;700&family=Roboto:wght@400;500;600;700&display=swap" /></noscript>
+		<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "BlogPosting",
+ "headline": "Why we stopped starting big projects from the spec",
+ "datePublished": "2026-08-19",
+ "dateModified": "2026-08-19",
+ "author": {
+  "@type": "Organization",
+  "name": "Silk Road Tech"
+ },
+ "publisher": {
+  "@type": "Organization",
+  "name": "Silk Road Tech",
+  "url": "https://silkroadtech.kz"
+ },
+ "mainEntityOfPage": "https://silkroadtech.kz/en/blog/why-we-audit-first",
+ "description": "Why Silk Road Tech begins large projects with a paid audit: how we check requirements, architecture and risks before development starts.",
+ "url": "https://silkroadtech.kz/en/blog/why-we-audit-first",
+ "inLanguage": "en"
+}
+</script>
 	</head>
 	<body class="text-[#010205]">
 		<!-- ============ NAVBAR ============ -->
@@ -114,9 +129,9 @@
 				class="max-w-[1440px] mx-auto flex items-center justify-between px-20 py-5"
 			>
 				<div class="flex items-center gap-[74px]">
-					<a href="/" aria-label="Silk Road Tech home">
+					<a href="/en/" aria-label="Silk Road Tech home">
 						<img
-							src="assets/logo.webp"
+							src="../assets/logo.webp"
 							alt="Silk Road Tech"
 							class="h-6 w-auto logo-img"
 							width="208"
@@ -130,55 +145,16 @@
 					>
 						<li>
 							<a
-								href="/#process"
+								href="/en/#process"
 								class="hover:text-[#9ac763]"
 								data-i18n="nav.process"
-								>Процесс</a
-							>
-						</li>
+								>Process</a></li>
 						<li>
 							<a
-								href="/#services"
-								class="hover:text-[#9ac763]"
-								data-i18n="nav.services"
-								>Услуги</a
-							>
-						</li>
-						<li><a href="/#products" class="hover:text-[#9ac763]" data-i18n="nav.products">Продукты</a></li>
-						<li>
-							<a
-								href="/#contacts"
+								href="/en/#contacts"
 								class="hover:text-[#9ac763]"
 								data-i18n="nav.contacts"
-								>Контакты</a
-							>
-						</li>
-						<li>
-							<a
-								href="/cases"
-								class="hover:text-[#9ac763]"
-								data-i18n="nav.cases"
-								>Кейсы</a
-							>
-						</li>
-						<li>
-							<a
-								href="/about"
-								class="hover:text-[#9ac763]"
-								data-i18n="nav.about"
-								>О нас</a
-							>
-						</li>
-						<li>
-							<a
-								href="/blog"
-								class="text-[#9ac763]"
-								aria-current="page"
-								data-i18n="nav.blog"
-								>Блог</a
-							>
-						</li>
-						<li><a href="/referral" class="hover:text-[#9ac763]" data-i18n="nav.referral">Партнёрам</a></li>
+								>Contacts</a></li>
 					</ul>
 				</div>
 				<div class="flex items-center gap-2">
@@ -186,9 +162,7 @@
 						class="font-manrope font-bold bg-[#99cf63] border border-[#99cf63] rounded-full px-4 py-3 w-[174px] text-[16px] tracking-tight hover:brightness-95 transition"
 						onclick="location.href = '/#contacts'"
 						data-i18n="nav.cta"
-					>
-						Обсудить проект
-					</button>
+					>Discuss project</button>
 					<button
 						id="langToggle"
 						class="hidden lg:flex items-center justify-center w-[52px] h-[52px] rounded-full bg-[#010205] text-white text-[15px] font-semibold hover:bg-[#333] transition flex-shrink-0"
@@ -223,59 +197,86 @@
 			</button>
 			<ul class="flex flex-col gap-6 text-[20px] font-semibold">
 				<li>
-					<a href="/#process" class="mobile-link" data-i18n="nav.process"
-						>Процесс</a
-					>
-				</li>
+					<a href="/en/#process" class="mobile-link" data-i18n="nav.process"
+						>Process</a></li>
 				<li>
-					<a href="/#services" class="mobile-link" data-i18n="nav.services"
-						>Услуги</a
-					>
-				</li>
-				<li><a href="/#products" class="mobile-link" data-i18n="nav.products">Продукты</a></li>
-				<li>
-					<a href="/#contacts" class="mobile-link" data-i18n="nav.contacts"
-						>Контакты</a
-					>
-				</li>
-				<li><a href="/cases" data-i18n="nav.cases">Кейсы</a></li>
-				<li><a href="/about" data-i18n="nav.about">О нас</a></li>
-				<li><a href="/blog" class="text-[#9ac763]" aria-current="page" data-i18n="nav.blog">Блог</a></li>
-				<li><a href="/referral" data-i18n="nav.referral">Партнёрам</a></li>
+					<a href="/en/#contacts" class="mobile-link" data-i18n="nav.contacts"
+						>Contacts</a></li>
+				<li><a href="/en/about" data-i18n="nav.about">About</a></li>
+				<li><a href="/en/blog" class="text-[#9ac763]" aria-current="page" data-i18n="nav.blog">Blog</a></li>
+				<li><a href="/en/referral" data-i18n="nav.referral">Referrals</a></li>
 			</ul>
 		</div>
 		</div>
 
-		<!-- ============ PAGE HEAD ============ -->
-		<main id="main">
-		<section class="hero hero--page hero--left" aria-labelledby="blogTitle">
-			<div class="hero__inner">
-				<h1 id="blogTitle" class="hero__title" data-i18n="nav.blog">Блог</h1>
-			</div>
-		</section>
+		<main lang="ru">
+			<!-- ============ PAGE HEAD ============ -->
+			<section class="hero hero--page hero--left post-hero" aria-labelledby="postTitle">
+				<div class="hero__inner">
+					<a href="/en/blog" class="post-hero__back"><span aria-hidden="true">←</span> <span data-i18n="blog.back">All posts</span></a>
+					<p class="post-hero__meta"><time datetime="2026-08-19">19 August 2026</time><span aria-hidden="true">·</span><span>7 min read</span></p>
+					<h1 id="postTitle" class="hero__title">Why we stopped starting big projects from the spec</h1>
+				</div>
+			</section>
 
-		<!-- ============ POSTS ============ -->
-		<section class="posts" aria-labelledby="blogTitle">
-			<ul class="posts__list">
+			<!-- ============ ARTICLE ============ -->
+			<section class="post">
+				<article class="post__body">
+				<p>A large company sends over a forty-page specification. Half the requirements contradict the other half, the deadlines came out of thin air, and at the first meeting it turns out a third of the features “need to be discussed separately”. We used to sign the contract in that situation and start building. A few painful projects later, we understood that this doesn't work.</p>
+
+				<h2>Why a raw spec is dangerous</h2>
+				<p>A spec from a large company almost never reflects reality. Behind the document there is usually a legacy system, negotiations between departments, and an author who has already left the company.</p>
+				<p>Fix a budget against that document blindly and you either lose money or start cutting corners — and the client feels it. Both outcomes are bad.</p>
+
+				<h2>The audit as a separate first stage</h2>
+				<p>We moved that analysis into a separate paid stage before development. Here is what it covers:</p>
+				<ul>
+					<li>a review of the current architecture and infrastructure;</li>
+					<li>separating real needs from what ended up in the spec out of inertia;</li>
+					<li>talking to the people who will use the system, not only to the ones who sign the invoices;</li>
+					<li>looking for risks the spec never mentions.</li>
+				</ul>
+				<p>The client walks away with a consistent specification, an architecture, estimated milestones and a risk map. Those artifacts have value on their own: even if the client goes on to build the product with another team, they leave with a working document rather than fragments.</p>
+				<p>A word on “paid”. Charging for analysis felt awkward at first, until we noticed a pattern: free work gets treated as free. Money raises both the client's involvement and the seriousness of the conversation.</p>
+
+				<h2>How this turns into development</h2>
+				<p>After the audit we discuss a concrete plan we wrote ourselves and the client has already seen, not an abstract spec. From there we work in two-week iterations with demos, so corrections surface early rather than at final acceptance.</p>
+				<p>The structure is settled up front, so we run tasks in parallel, and on contested decisions we consult peers at other companies: an outside view has more than once saved us from a choice that looked logical from the inside and turned out to be a dead end.</p>
+
+				<h2>What we learned along the way</h2>
+				<p>An audit must not drag on: it turns into a month of correspondence and loses the point of being a fast first step.</p>
+				<p>Sometimes the honest conclusion is “you don't need development”. You lose the project in the short term and gain trust in the long term — and those clients have come back.</p>
+				<p>The approach doesn't fit everything. For a large system where mistakes are expensive an audit pays for itself; for a landing page it is overkill.</p>
+				<p>Most importantly: a paid audit is a filter in itself. Anyone unwilling to invest in understanding their own system is unlikely to see a large project through.</p>
+
+				<div class="post__callout">
+					<h2>A question to the community</h2>
+					<p>How do you enter large projects — do you take the spec as given, or run your own analysis first? And if you do, is it paid or on your own dime? We're curious to compare approaches.</p>
+					<p>If you'd like to discuss this post or share your thinking, write to <a href="mailto:sayat@silkroadtech.kz?subject=Обсуждение статьи об аудите ТЗ">sayat@silkroadtech.kz</a>.</p>
+				</div>
+				<div class="post__author">
+					<img src="../assets/author-sayat.jpeg" alt="Саят О., автор статьи" width="64" height="64" loading="lazy" />
+					<div><p class="post__author-name">Sayat O.</p><p class="post__author-role">Founder, Silk Road Tech · Co-founder, ContentFlow</p></div>
+				</div>
+				</article>
+			</section>
+
+			<!-- ============ MORE ============ -->
+			<section class="posts posts--narrow" aria-labelledby="moreTitle">
+				<h2 id="moreTitle" class="posts__heading" data-i18n="blog.more">Read next</h2>
+				<ul class="posts__list">
 				<li class="post-row">
-					<a class="post-row__link" href="/blog/who-we-learn-from">
-						<span class="post-row__meta"><time datetime="2026-08-19" data-i18n="blog.date.20260819">19 августа 2026</time><span data-i18n="blog.min8">8 минут</span></span>
-						<h2 class="post-row__title" lang="ru">У кого мы учимся строить продукты и компанию</h2>
+					<a class="post-row__link" href="/en/blog/who-we-learn-from">
+						<span class="post-row__meta"><time datetime="2026-08-19" data-i18n="blog.date.20260819">August 19, 2026</time><span data-i18n="blog.min8">8 min read</span></span>
+						<h3 class="post-row__title" lang="ru">Who we learn from about products and company building</h3>
 						<svg class="post-row__arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4.5 11.5l7-7M5.5 4.5h6v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
 					</a>
 				</li>
-				<li class="post-row">
-					<a class="post-row__link" href="/blog/why-we-audit-first">
-						<span class="post-row__meta"><time datetime="2026-08-19" data-i18n="blog.date.20260819">19 августа 2026</time><span data-i18n="blog.min7">7 минут</span></span>
-						<h2 class="post-row__title" lang="ru">Почему мы перестали брать большие техзадания в работу сразу</h2>
-						<svg class="post-row__arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4.5 11.5l7-7M5.5 4.5h6v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-					</a>
-				</li>
-			</ul>
-		</section>
+				</ul>
+			</section>
+		</main>
 
 		<!-- ============ FOOTER ============ -->
-		</main>
 		<footer class="bg-transparent relative overflow-hidden py-16">
 			<div class="absolute inset-0 noise"></div>
 			<div
@@ -283,12 +284,12 @@
 			>
 				<div class="max-w-[534px]">
 					<a
-						href="/"
+						href="/en/"
 						aria-label="Silk Road Tech home"
 						class="inline-block mb-8"
 					>
 						<img
-							src="assets/logo.webp"
+							src="../assets/logo.webp"
 							alt="Silk Road Tech"
 							class="h-8 w-auto logo-img"
 						/>
@@ -296,12 +297,7 @@
 					<p
 						class="font-roboto text-[14px] leading-6 text-[#9b9b9c] mb-8"
 						data-i18n="footer.desc"
-					>
-						Мы предлагаем комплексный IT-аутсорсинг, охватывающий все аспекты
-						вашей цифровой разработки. От проектирования архитектуры и
-						разработки ПО до облачных решений и кибербезопасности — наша команда
-						обладает экспертизой для реализации проектов любой сложности.
-					</p>
+					>We offer a comprehensive IT outsourcing package covering all aspects of your digital development. From architecture design and software development to cloud solutions and cybersecurity — our team has the expertise to handle projects of any complexity.</p>
 					<div class="flex items-center gap-8">
 						<div class="flex gap-3">
 							<a
@@ -361,18 +357,7 @@
 							class="bg-[#010205] text-white font-jakarta font-bold text-[16px] rounded-full px-8 py-4 inline-flex items-center gap-3 hover:scale-[1.02] transition"
 							onclick="location.href = '/#contacts'"
 							data-i18n="footer.discuss"
-						>
-							Обсудить проект
-							<svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-								<path
-									d="M5 12h14M13 6l6 6-6 6"
-									stroke="white"
-									stroke-width="2"
-									stroke-linecap="round"
-									stroke-linejoin="round"
-								/>
-							</svg>
-						</button>
+						>Discuss project</button>
 					</div>
 				</div>
 
@@ -381,21 +366,19 @@
 						<h3
 							class="font-roboto font-semibold text-[18px] text-[#192031] mb-12"
 							data-i18n="footer.nav.title"
-						>
-							Навигация
-						</h3>
+						>Navigation</h3>
 						<ul class="font-roboto text-[14px] text-[#9b9b9c] space-y-6">
-							<li><a href="/#services" data-i18n="nav.services">Услуги</a></li>
-							<li><a href="/#process" data-i18n="nav.process">Процесс</a></li>
-							<li><a href="/about" data-i18n="nav.about">О нас</a></li>
-							<li><a href="/cases" data-i18n="nav.cases">Кейсы</a></li>
-							<li><a href="/blog" data-i18n="nav.blog">Блог</a></li>
-							<li><a href="/referral" data-i18n="nav.referral">Партнёрам</a></li>
+							<li><a href="/en/#services" data-i18n="nav.services">Services</a></li>
+							<li><a href="/en/#process" data-i18n="nav.process">Process</a></li>
+							<li><a href="/en/about" data-i18n="nav.about">About</a></li>
+							<li><a href="/en/cases" data-i18n="nav.cases">Cases</a></li>
+							<li><a href="/en/blog" data-i18n="nav.blog">Blog</a></li>
+							<li><a href="/en/referral" data-i18n="nav.referral">Referrals</a></li>
 							<li>
-								<a href="/#contacts" data-i18n="nav.contacts">Контакты</a>
+								<a href="/en/#contacts" data-i18n="nav.contacts">Contacts</a>
 							</li>
 							<li class="font-bold">
-								<a href="/#faq" data-i18n="nav.faq">FAQ</a>
+								<a href="/en/#faq" data-i18n="nav.faq">FAQ</a>
 							</li>
 						</ul>
 					</div>
@@ -403,69 +386,16 @@
 						<h3
 							class="font-roboto font-semibold text-[18px] text-[#192031] mb-12"
 							data-i18n="footer.lic.title"
-						>
-							Документы
-						</h3>
+						>Legal</h3>
 						<ul class="font-roboto text-[14px] text-[#9b9b9c] space-y-6">
 							<li>
 								<a href="/privacy" data-i18n="footer.privacy"
-									>Политика конфиденциальности</a
-								>
-							</li>
-							<li>
-								<a href="/copyright" data-i18n="footer.copyright"
-									>Авторские права</a
-								>
-							</li>
-							<li><a href="/contacts-certificates" data-i18n="footer.contacts_certificates">Контакты и сертификаты</a></li>
+									>Privacy Policy</a></li>
 							<li>
 								<a
 									href="mailto:sayat@silkroadtech.kz"
 									data-i18n="footer.email.label"
-									>Email</a
-								>
-							</li>
-						</ul>
-					</div>
-					<div>
-						<h3
-							class="font-roboto font-semibold text-[18px] text-[#192031] mb-12"
-							data-i18n="footer.contact.title"
-						>
-							Контакты
-						</h3>
-						<ul class="font-roboto text-[14px] text-[#9b9b9c] space-y-6">
-							<li class="flex items-center gap-3">
-								<svg width="18" height="18" viewBox="0 0 24 24" fill="#9b9b9c">
-									<path
-										d="M20 15.5c-1.25 0-2.45-.2-3.57-.57-.35-.11-.74-.03-1.02.24l-2.2 2.2a15.045 15.045 0 0 1-6.59-6.59l2.2-2.21c.28-.26.36-.65.25-1C8.7 6.45 8.5 5.25 8.5 4c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1 0 9.39 7.61 17 17 17 .55 0 1-.45 1-1v-3.5c0-.55-.45-1-1-1z"
-									/>
-								</svg>
-								<a
-									href="https://wa.me/77026479903"
-									target="_blank"
-									rel="noreferrer"
-									class="underline"
-									>+7 702 647 99 03</a
-								>
-							</li>
-							<li class="flex items-center gap-3">
-								<svg width="18" height="18" viewBox="0 0 24 24" fill="#9b9b9c">
-									<path
-										d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"
-									/>
-								</svg>
-								<a href="mailto:sayat@silkroadtech.kz" class="underline"
-									>sayat@silkroadtech.kz</a
-								>
-							</li>
-							<li class="flex items-start gap-3">
-								<svg width="18" height="18" viewBox="0 0 24 24" fill="#9b9b9c">
-									<path
-										d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"
-									/>
-								</svg>
-								<a href="https://2gis.kz/astana/firm/70030076206344445" target="_blank" rel="noreferrer" class="underline">Astana, Mangilik El Ave 36</a>
+									>Email</a>
 							</li>
 						</ul>
 					</div>
@@ -475,9 +405,7 @@
 				class="footer-meta relative max-w-[1440px] mx-auto px-20 mt-12 pt-8 border-t border-black/10 flex justify-between text-[12px] text-[#9b9b9c]"
 			>
 				<span data-i18n="footer.copy"
-					>© 2026 Silk Road Tech. Все права защищены.</span
-				>
-				<span data-i18n="footer.made">Сделано с заботой в Астане</span>
+					>© 2026 Silk Road Tech. All rights reserved.</span>
 			</div>
 		</footer>
 
@@ -530,11 +458,11 @@
 				}
 			});
 		</script>
-		<script defer src="assets/i18n.js"></script>
+		<script defer src="../assets/i18n.js"></script>
 		<script>
 			window.addEventListener('load', function() {
 				document.querySelectorAll('.noise').forEach(function(el) {
-					el.style.backgroundImage = 'url("assets/bg_noise.webp")';
+					el.style.backgroundImage = 'url("../assets/bg_noise.webp")';
 				});
 			});
 		</script>
