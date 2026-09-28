@@ -66,84 +66,192 @@
 		<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Manrope:wght@500;700;800&family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,700&family=Sora:wght@600;700&family=Roboto:wght@400;500;600;700&display=swap" /></noscript>
 		
 		<script type="application/ld+json">
-		{
-			"@context": "https://schema.org",
-			"@graph": [
-			{
-				"@type": ["Organization", "ProfessionalService"],
-				"@id": "https://silkroadtech.kz/#organization",
-				"name": "Silk Road Tech",
-				"legalName": "ТОО «СилкРоудТех»",
-				"url": "https://silkroadtech.kz/",
-				"logo": {
-					"@type": "ImageObject",
-					"url": "https://silkroadtech.kz/assets/logo.webp"
-				},
-				"image": "https://silkroadtech.kz/og-cover.png",
-				"description": "Разработка программного обеспечения, сайтов и мобильных приложений, внедрение ИИ, аналитики и автоматизации для бизнеса.",
-				"email": "sayat@silkroadtech.kz",
-				"telephone": "+77026479903",
-				"address": {
-					"@type": "PostalAddress",
-					"streetAddress": "Mangilik El Ave 36, office 08",
-					"addressLocality": "Astana",
-					"addressCountry": "KZ"
-				},
-				"geo": { "@type": "GeoCoordinates", "latitude": 51.106738, "longitude": 71.432868 },
-				"areaServed": { "@type": "Country", "name": "Казахстан" },
-				"priceRange": "от 250 000 ₸",
-				"openingHoursSpecification": [
-					{ "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "09:00", "closes": "18:00" }
-				],
-				"sameAs": [
-					"https://t.me/xsayat",
-					"https://instagram.com/xsayat",
-					"https://wa.me/77026479903",
-					"https://2gis.kz/astana/firm/70030076206344445"
-				]
-			},
-			{
-				"@type": "WebSite",
-				"@id": "https://silkroadtech.kz/#website",
-				"url": "https://silkroadtech.kz/",
-				"name": "Silk Road Tech",
-				"inLanguage": "ru-KZ",
-				"publisher": { "@id": "https://silkroadtech.kz/#organization" }
-			},
-			{
-				"@type": "WebPage",
-				"@id": "https://silkroadtech.kz/#webpage",
-				"url": "https://silkroadtech.kz/",
-				"name": "Разработка лендингов, сайтов и ПО — Silk Road Tech, Астана",
-				"isPartOf": { "@id": "https://silkroadtech.kz/#website" },
-				"about": { "@id": "https://silkroadtech.kz/#organization" },
-				"inLanguage": "ru-KZ"
-			},
-			{
-				"@type": "ItemList",
-				"@id": "https://silkroadtech.kz/#services",
-				"name": "Услуги Silk Road Tech",
-				"itemListElement": [
-					{ "@type": "Service", "position": 1, "name": "Сайты и приложения", "description": "Корпоративные сайты, веб-сервисы, мобильные приложения, ERP, CRM и API-интеграции.", "provider": { "@id": "https://silkroadtech.kz/#organization" }, "areaServed": { "@type": "Country", "name": "Казахстан" } },
-					{ "@type": "Service", "position": 2, "name": "AI и автоматизация", "description": "AI-ассистенты, RAG-системы, обработка документов и интеграции с корпоративными системами.", "provider": { "@id": "https://silkroadtech.kz/#organization" }, "areaServed": { "@type": "Country", "name": "Казахстан" } },
-					{ "@type": "Service", "position": 3, "name": "Аналитика и данные", "description": "BI-дашборды, интеграция источников и автоматизация управленческой отчётности.", "provider": { "@id": "https://silkroadtech.kz/#organization" }, "areaServed": { "@type": "Country", "name": "Казахстан" } },
-					{ "@type": "Service", "position": 4, "name": "Железо и ПО", "description": "IoT-платформы, мониторинг производства и аппаратно-программная интеграция.", "provider": { "@id": "https://silkroadtech.kz/#organization" }, "areaServed": { "@type": "Country", "name": "Казахстан" } }
-				]
-			},
-			{
-				"@type": "FAQPage",
-				"@id": "https://silkroadtech.kz/#faq",
-				"mainEntity": [
-					{ "@type": "Question", "name": "Как быстро вы начнёте работу?", "acceptedAnswer": { "@type": "Answer", "text": "После подписания договора — в течение 1 недели. Первое рабочее демо покажем через 2 недели после старта." } },
-					{ "@type": "Question", "name": "Сколько стоит разработка?", "acceptedAnswer": { "@type": "Answer", "text": "Стоимость зависит от объёма и сложности. Базовые проекты — от $5 000." } },
-					{ "@type": "Question", "name": "Вы работаете удалённо или только в Астане?", "acceptedAnswer": { "@type": "Answer", "text": "Работаем удалённо по всему миру и очно в Астане." } },
-					{ "@type": "Question", "name": "Вы оказываете поддержку после запуска?", "acceptedAnswer": { "@type": "Answer", "text": "Да, предлагаем SLA-поддержку и дальнейшее развитие продукта." } },
-					{ "@type": "Question", "name": "Вы берёте небольшие проекты?", "acceptedAnswer": { "@type": "Answer", "text": "Да, рассматриваем точечные задачи и MVP." } }
-				]
-			}
-			]
-		}
-		</script>
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": [
+    "Organization",
+    "ProfessionalService"
+   ],
+   "@id": "https://silkroadtech.kz/#organization",
+   "name": "Silk Road Tech",
+   "legalName": "ТОО «СилкРоудТех»",
+   "url": "https://silkroadtech.kz/",
+   "logo": {
+    "@type": "ImageObject",
+    "url": "https://silkroadtech.kz/assets/logo.webp"
+   },
+   "image": "https://silkroadtech.kz/og-cover.png",
+   "description": "Разработка программного обеспечения, сайтов и мобильных приложений, внедрение ИИ, аналитики и автоматизации для бизнеса.",
+   "email": "sayat@silkroadtech.kz",
+   "telephone": "+77026479903",
+   "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Mangilik El Ave 36, office 08",
+    "addressLocality": "Astana",
+    "addressCountry": "KZ"
+   },
+   "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 51.106738,
+    "longitude": 71.432868
+   },
+   "areaServed": {
+    "@type": "Country",
+    "name": "Казахстан"
+   },
+   "priceRange": "от 250 000 ₸",
+   "openingHoursSpecification": [
+    {
+     "@type": "OpeningHoursSpecification",
+     "dayOfWeek": [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday"
+     ],
+     "opens": "09:00",
+     "closes": "18:00"
+    }
+   ],
+   "sameAs": [
+    "https://linkedin.com/company/silkroadtech",
+    "https://instagram.com/silkroadtech"
+   ]
+  },
+  {
+   "@type": "WebSite",
+   "@id": "https://silkroadtech.kz/#website",
+   "url": "https://silkroadtech.kz/",
+   "name": "Silk Road Tech",
+   "inLanguage": "ru-KZ",
+   "publisher": {
+    "@id": "https://silkroadtech.kz/#organization"
+   }
+  },
+  {
+   "@type": "WebPage",
+   "@id": "https://silkroadtech.kz/#webpage",
+   "url": "https://silkroadtech.kz/",
+   "name": "Разработка лендингов, сайтов и ПО — Silk Road Tech, Астана",
+   "isPartOf": {
+    "@id": "https://silkroadtech.kz/#website"
+   },
+   "about": {
+    "@id": "https://silkroadtech.kz/#organization"
+   },
+   "inLanguage": "ru-KZ"
+  },
+  {
+   "@type": "ItemList",
+   "@id": "https://silkroadtech.kz/#services",
+   "name": "Услуги Silk Road Tech",
+   "itemListElement": [
+    {
+     "@type": "Service",
+     "position": 1,
+     "name": "Сайты и приложения",
+     "description": "Корпоративные сайты, веб-сервисы, мобильные приложения, ERP, CRM и API-интеграции.",
+     "provider": {
+      "@id": "https://silkroadtech.kz/#organization"
+     },
+     "areaServed": {
+      "@type": "Country",
+      "name": "Казахстан"
+     }
+    },
+    {
+     "@type": "Service",
+     "position": 2,
+     "name": "AI и автоматизация",
+     "description": "AI-ассистенты, RAG-системы, обработка документов и интеграции с корпоративными системами.",
+     "provider": {
+      "@id": "https://silkroadtech.kz/#organization"
+     },
+     "areaServed": {
+      "@type": "Country",
+      "name": "Казахстан"
+     }
+    },
+    {
+     "@type": "Service",
+     "position": 3,
+     "name": "Аналитика и данные",
+     "description": "BI-дашборды, интеграция источников и автоматизация управленческой отчётности.",
+     "provider": {
+      "@id": "https://silkroadtech.kz/#organization"
+     },
+     "areaServed": {
+      "@type": "Country",
+      "name": "Казахстан"
+     }
+    },
+    {
+     "@type": "Service",
+     "position": 4,
+     "name": "Железо и ПО",
+     "description": "IoT-платформы, мониторинг производства и аппаратно-программная интеграция.",
+     "provider": {
+      "@id": "https://silkroadtech.kz/#organization"
+     },
+     "areaServed": {
+      "@type": "Country",
+      "name": "Казахстан"
+     }
+    }
+   ]
+  },
+  {
+   "@type": "FAQPage",
+   "@id": "https://silkroadtech.kz/#faq",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "Как быстро вы начнёте работу?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "После подписания договора — в течение 1 недели. Первое рабочее демо покажем через 2 недели после старта."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Сколько стоит разработка?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Стоимость зависит от объёма и сложности. Базовые проекты — от $5 000."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Вы работаете удалённо или только в Астане?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Работаем удалённо по всему миру и очно в Астане."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Вы оказываете поддержку после запуска?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Да, предлагаем SLA-поддержку и дальнейшее развитие продукта."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Вы берёте небольшие проекты?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Да, рассматриваем точечные задачи и MVP."
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
 	</head>
 	<body class="bg-white text-[#010205] preload-pending">
 		<div class="site-preloader" id="sitePreloader" aria-hidden="true">
@@ -298,6 +406,7 @@
 		</div>
 
 		<!-- ============ HERO ============ -->
+		<main id="main">
 		<section class="hero" aria-labelledby="heroTitle">
 			<div class="hero__inner">
 				<h1
@@ -996,7 +1105,7 @@
 				<div class="prod__card reveal">
 					<div class="prod__copy">
 						<div class="prod__brand">
-							<img src="assets/contentflow-mark.svg" alt="" width="54" height="44" loading="lazy" />
+							<img src="assets/contentflow-mark.svg" alt="ContentFlow" width="54" height="44" loading="lazy" />
 							<h2 id="productTitle">ContentFlow</h2>
 						</div>
 						<p class="prod__title" data-i18n="products.title">Продукт, который мы создали для себя — и продолжаем развивать с любовью.</p>
@@ -1239,6 +1348,7 @@
 		</section>
 
 		<!-- ============ FOOTER ============ -->
+		</main>
 		<footer class="bg-transparent relative overflow-hidden py-16">
 			<div class="absolute inset-0 noise"></div>
 			<div
@@ -1348,12 +1458,12 @@
 
 				<div class="flex justify-between gap-12 flex-1">
 					<div>
-						<h4
+						<h3
 							class="font-roboto font-semibold text-[18px] text-[#192031] mb-12"
 							data-i18n="footer.nav.title"
 						>
 							Навигация
-						</h4>
+						</h3>
 						<ul class="font-roboto text-[14px] text-[#9b9b9c] space-y-6">
 							<li><a href="#services" data-i18n="nav.services">Услуги</a></li>
 							<li><a href="#process" data-i18n="nav.process">Процесс</a></li>
@@ -1369,12 +1479,12 @@
 						</ul>
 					</div>
 					<div>
-						<h4
+						<h3
 							class="font-roboto font-semibold text-[18px] text-[#192031] mb-12"
 							data-i18n="footer.lic.title"
 						>
 							Документы
-						</h4>
+						</h3>
 						<ul class="font-roboto text-[14px] text-[#9b9b9c] space-y-6">
 							<li>
 								<a href="/privacy" data-i18n="footer.privacy"
@@ -1397,12 +1507,12 @@
 						</ul>
 					</div>
 					<div>
-						<h4
+						<h3
 							class="font-roboto font-semibold text-[18px] text-[#192031] mb-12"
 							data-i18n="footer.contact.title"
 						>
 							Контакты
-						</h4>
+						</h3>
 						<ul class="font-roboto text-[14px] text-[#9b9b9c] space-y-6">
 							<li class="flex items-center gap-3">
 								<svg width="18" height="18" viewBox="0 0 24 24" fill="#9b9b9c">
