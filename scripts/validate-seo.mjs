@@ -41,7 +41,13 @@ for (const file of files) {
 const sitemap = await readFile(new URL("../sitemap.xml", import.meta.url), "utf8");
 for (const file of files) {
   const name = relative(root.pathname, file);
-  const route = name === "index.html" ? "/" : `/${name.replace(/\.html$/, "")}`;
+  // en/index.html отвечает за адрес /en/ — у остальных адрес совпадает с путём.
+  const route =
+    name === "index.html"
+      ? "/"
+      : name === "en/index.html"
+        ? "/en/"
+        : `/${name.replace(/\.html$/, "")}`;
   if (!sitemap.includes(`<loc>https://silkroadtech.kz${route}</loc>`)) {
     errors.push(`${name}: missing from sitemap.xml`);
   }

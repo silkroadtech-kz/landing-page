@@ -1275,19 +1275,50 @@
 		);
 	}
 
+	/* Адрес этой же страницы на другом языке, если он существует.
+	   Такие страницы собираются заранее (scripts/build-en.mjs) и связаны
+	   между собой через <link rel="alternate" hreflang>. */
+	function counterpart(lang) {
+		var link = document.querySelector('link[rel="alternate"][hreflang="' + lang + '"]');
+		return link ? link.getAttribute("href") : null;
+	}
+
 	document.addEventListener("DOMContentLoaded", function () {
-		var lang = localStorage.getItem(LANG_KEY) || "ru";
-		applyLang(lang);
+		var pageLang = document.documentElement.lang === "en" ? "en" : "ru";
+		var other = pageLang === "ru" ? "en" : "ru";
+		var otherUrl = counterpart(other);
+
+		/* Страница существует на двух языках: её текст уже отрисован на нужном
+		   языке сервером, подменять его в браузере нельзя — иначе английская
+		   страница мгновенно станет русской из-за сохранённого выбора. */
+		if (otherUrl) {
+			localStorage.setItem(LANG_KEY, pageLang);
+			applyLang(pageLang);
+		} else {
+			applyLang(localStorage.getItem(LANG_KEY) || "ru");
+		}
 		document.documentElement.style.visibility = "";
 
 		var btn = document.getElementById("langToggle");
-		if (btn) {
+		if (!btn) return;
+
+		if (otherUrl) {
+			/* Переключение языка — это переход по адресу, а не подмена текста:
+			   так выбранный язык виден в ссылке и доступен поисковым системам. */
 			btn.addEventListener("click", function () {
-				var current = localStorage.getItem(LANG_KEY) || "ru";
-				var next = current === "ru" ? "en" : "ru";
-				localStorage.setItem(LANG_KEY, next);
-				applyLang(next);
+				localStorage.setItem(LANG_KEY, other);
+				window.location.href = otherUrl;
 			});
+			return;
 		}
+
+		/* Страницы без английской версии (блог, юридические документы)
+		   переключаются по-старому, в браузере. */
+		btn.addEventListener("click", function () {
+			var current = localStorage.getItem(LANG_KEY) || "ru";
+			var next = current === "ru" ? "en" : "ru";
+			localStorage.setItem(LANG_KEY, next);
+			applyLang(next);
+		});
 	});
 })();

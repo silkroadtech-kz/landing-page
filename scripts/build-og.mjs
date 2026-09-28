@@ -66,6 +66,32 @@ const pages = [
 		eyebrow: "Блог · 8 минут",
 		title: "У кого мы учимся строить <em>продукты и компанию</em>",
 	},
+	// Английские страницы (см. scripts/build-en.mjs)
+	{
+		out: "og/en/home.png",
+		eyebrow: "Development · AI · Analytics",
+		title: "<em>We build products</em> around your business processes",
+		subtitle: "From idea and architecture to launch and growth.",
+	},
+	{
+		out: "og/en/about.png",
+		eyebrow: "About us",
+		title: "A team of engineers, analysts and <em>advisors</em>",
+		subtitle: "Software development, AI integration, data analytics and process automation.",
+		photo: "assets/about_hero.webp",
+	},
+	{
+		out: "og/en/cases.png",
+		eyebrow: "Case studies",
+		title: "Products and systems we <em>shipped</em>",
+		subtitle: "Platforms, AI automation and digital services for business and government.",
+	},
+	{
+		out: "og/en/referral.png",
+		eyebrow: "Partner program",
+		title: "Refer us — earn <em>10% of the contract</em>",
+		subtitle: "Share a contact — we handle the meetings, the contract and the build.",
+	},
 	{
 		out: "og/privacy.png",
 		eyebrow: "Документы",

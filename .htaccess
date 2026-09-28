@@ -37,6 +37,11 @@ DirectoryIndex index.html
 	# --- /landing → /#services ---
 	RewriteRule ^landing/?$ /#services [R=301,L,NE]
 
+	# --- /en → /en/ (английская версия) ---
+	# DirectorySlash отключён, поэтому слеш к каталогу Apache сам не добавит,
+	# и без этого правила индексная страница en/ по адресу /en не найдётся.
+	RewriteRule ^en$ /en/ [R=301,L]
+
 	# --- cleanUrls: /about.html → /about (канонический адрес) ---
 	# Файлы подтверждения прав Google Search Console и Яндекс.Вебмастера
 	# должны отдаваться по точному адресу с .html, без редиректа.

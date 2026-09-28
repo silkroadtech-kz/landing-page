@@ -20,7 +20,12 @@ const check = process.argv.includes("--check");
 // Адрес → файл, из которого он собирается.
 const fileFor = (url) => {
 	const path = url.replace(/^https?:\/\/[^/]+/, "").replace(/\/$/, "");
-	return path === "" ? "index.html" : `${path.slice(1)}.html`;
+	if (path === "") return "index.html";
+	// Английские страницы собираются из русских: дата берётся у исходника,
+	// иначе она менялась бы только при пересборке en/.
+	if (path === "/en") return "index.html";
+	if (path.startsWith("/en/")) return `${path.slice(4)}.html`;
+	return `${path.slice(1)}.html`;
 };
 
 const gitDate = (file) => {
