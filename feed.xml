@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Блог Silk Road Tech</title>
+		<link>https://silkroadtech.kz/blog</link>
+		<description>Опыт разработки программного обеспечения, внедрения ИИ и запуска цифровых продуктов.</description>
+		<language>ru</language>
+		<lastBuildDate>Wed, 19 Aug 2026 03:00:00 GMT</lastBuildDate>
+		<atom:link href="https://silkroadtech.kz/feed.xml" rel="self" type="application/rss+xml" />
+		<item>
+			<title>Почему мы перестали брать большие техзадания в работу сразу</title>
+			<link>https://silkroadtech.kz/blog/why-we-audit-first</link>
+			<guid isPermaLink="true">https://silkroadtech.kz/blog/why-we-audit-first</guid>
+			<description>Почему Silk Road Tech начинает крупные проекты с платного аудита до старта разработки.</description>
+			<pubDate>Wed, 19 Aug 2026 03:00:00 GMT</pubDate>
+		</item>
+		<item>
+			<title>У кого мы учимся строить продукты и компанию</title>
+			<link>https://silkroadtech.kz/blog/who-we-learn-from</link>
+			<guid isPermaLink="true">https://silkroadtech.kz/blog/who-we-learn-from</guid>
+			<description>Пять ориентиров Silk Road Tech и чему именно мы у них учимся.</description>
+			<pubDate>Wed, 19 Aug 2026 03:00:00 GMT</pubDate>
+		</item>
+	</channel>
+</rss>

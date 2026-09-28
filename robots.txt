@@ -3,4 +3,5 @@ Allow: /
 Disallow: /api/
 
 Sitemap: https://silkroadtech.kz/sitemap.xml
+Sitemap: https://silkroadtech.kz/feed.xml
 Host: silkroadtech.kz
