@@ -7,8 +7,11 @@
     "doc": "docs"
   },
   "scripts": {
-	"test": "npm run validate:seo",
-	"validate:seo": "node scripts/validate-seo.mjs"
+    "test": "npm run validate:seo && npm run validate:sitemap",
+    "validate:seo": "node scripts/validate-seo.mjs",
+    "sitemap": "node scripts/update-sitemap.mjs",
+    "og": "node scripts/build-og.mjs",
+    "validate:sitemap": "node scripts/update-sitemap.mjs --check"
   },
   "repository": {
     "type": "git",
