@@ -11,7 +11,8 @@
     "validate:seo": "node scripts/validate-seo.mjs",
     "sitemap": "node scripts/update-sitemap.mjs",
     "og": "node scripts/build-og.mjs",
-    "validate:sitemap": "node scripts/update-sitemap.mjs --check"
+    "validate:sitemap": "node scripts/update-sitemap.mjs --check",
+    "feed": "node scripts/build-feed.mjs"
   },
   "repository": {
     "type": "git",

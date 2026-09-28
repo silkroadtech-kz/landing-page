@@ -14,7 +14,7 @@ rm -rf "$DIST" deploy.zip
 mkdir -p "$DIST"
 
 echo "→ Корневые файлы"
-for f in *.html .htaccess robots.txt sitemap.xml llms.txt site.webmanifest \
+for f in *.html .htaccess robots.txt sitemap.xml llms.txt feed.xml site.webmanifest \
          favicon.ico favicon.svg apple-touch-icon.png \
          og-cover.png burst.svg vector97.svg; do
 	[ -e "$f" ] && cp "$f" "$DIST/"
