@@ -97,3 +97,21 @@
 CDN. Для посетителей из Казахстана станет быстрее (сервер ближе), для зарубежных —
 медленнее на тяжёлых ассетах. Если зарубежный трафик важен, поверх хостинга
 можно бесплатно повесить Cloudflare.
+
+## SEO-инструменты (MCP)
+
+В `.mcp.json` подключены два сервера:
+
+| Сервер | Что даёт | Требует |
+|---|---|---|
+| `openseo` | Ключевые слова, SERP, бэклинки, аудит, чтение данных Search Console | вход в OpenSEO при первом запуске |
+| `geo-optimizer` | Видимость сайта для ChatGPT, Perplexity, Gemini и AI Overviews: аудит, оценка, `llms.txt`, проверка Schema.org и доступа AI-ботов | установку пакета локально |
+
+Установка `geo-optimizer` на новой машине:
+
+```bash
+pipx install "geo-optimizer-skill[mcp]"
+pipx inject geo-optimizer-skill "mcp<2"    # пакет написан под SDK v1: в mcp 2.x FastMCP переименован
+```
+
+Без второй команды сервер падает с `ModuleNotFoundError: No module named 'mcp.server.fastmcp'`.
