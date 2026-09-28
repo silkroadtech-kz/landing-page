@@ -163,8 +163,10 @@ function translateNodes(html, strings, used) {
 // поднимать на уровень выше. Делаем их абсолютными от корня — так они не
 // зависят от глубины вложенности.
 function absolutizeAssets(html) {
+	// Учитываем и «../assets/…»: статьи блога лежат на уровень глубже, и в
+	// английской версии такой путь указывал бы на /en/assets/, которого нет.
 	return html.replace(
-		/(\s(?:href|src|srcset|content)=")(?!https?:|\/|#|mailto:|tel:|data:)((?:assets|og|video)\/[^"]*|favicon\.(?:ico|svg)|apple-touch-icon\.png|site\.webmanifest|og-cover\.png)"/g,
+		/(\s(?:href|src|srcset|content)=")(?!https?:|\/|#|mailto:|tel:|data:)(?:\.\.\/)*((?:assets|og|video)\/[^"]*|favicon\.(?:ico|svg)|apple-touch-icon\.png|site\.webmanifest|og-cover\.png)"/g,
 		'$1/$2"',
 	);
 }
