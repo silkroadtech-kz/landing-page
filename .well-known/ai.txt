@@ -1,0 +1,20 @@
+# Silk Road Tech — условия для ИИ-агентов и краулеров
+# https://silkroadtech.kz
+
+User-agent: *
+Allow: /
+Disallow: /api/
+
+Contact: sayat@silkroadtech.kz
+Organization: Silk Road Tech
+Legal-entity: ТОО «СилкРоудТех»
+Location: Astana, KZ
+Languages: ru, en
+
+Summary: https://silkroadtech.kz/ai/summary.json
+Services: https://silkroadtech.kz/ai/service.json
+FAQ: https://silkroadtech.kz/ai/faq.json
+Sitemap: https://silkroadtech.kz/sitemap.xml
+Content-guide: https://silkroadtech.kz/llms.txt
+
+# Материалы сайта защищены авторским правом: https://silkroadtech.kz/copyright

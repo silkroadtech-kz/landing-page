@@ -1,0 +1,50 @@
+{
+  "provider": "Silk Road Tech",
+  "url": "https://silkroadtech.kz/",
+  "areaServed": "Казахстан",
+  "priceFrom": "от 250 000 ₸",
+  "services": [
+    {
+      "name": "Сайты и приложения",
+      "description": "Корпоративные сайты, веб-сервисы, мобильные приложения, ERP, CRM и API-интеграции.",
+      "language": "ru"
+    },
+    {
+      "name": "AI и автоматизация",
+      "description": "AI-ассистенты, RAG-системы, обработка документов и интеграции с корпоративными системами.",
+      "language": "ru"
+    },
+    {
+      "name": "Аналитика и дашборды",
+      "description": "BI-дашборды, интеграция источников и автоматизация управленческой отчётности.",
+      "language": "ru"
+    },
+    {
+      "name": "SEO и GEO",
+      "description": "Помогаем продукту быть понятным поисковым системам, AI-ассистентам и людям — технически, структурно и содержательно.",
+      "language": "ru"
+    },
+    {
+      "name": "Websites and applications",
+      "description": "Корпоративные сайты, веб-сервисы, мобильные приложения, ERP, CRM и API-интеграции.",
+      "language": "en"
+    },
+    {
+      "name": "AI and automation",
+      "description": "AI-ассистенты, RAG-системы, обработка документов и интеграции с корпоративными системами.",
+      "language": "en"
+    },
+    {
+      "name": "Analytics and dashboards",
+      "description": "BI-дашборды, интеграция источников и автоматизация управленческой отчётности.",
+      "language": "en"
+    },
+    {
+      "name": "SEO and GEO",
+      "description": "We make products understandable to search engines, AI assistants, and people — technically, structurally, and through content.",
+      "language": "en"
+    }
+  ],
+  "cases": "https://silkroadtech.kz/cases",
+  "updated": "2026-09-29"
+}

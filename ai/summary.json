@@ -1,0 +1,34 @@
+{
+  "name": "Silk Road Tech",
+  "legalName": "ТОО «СилкРоудТех»",
+  "url": "https://silkroadtech.kz/",
+  "description": "Разработка программного обеспечения, сайтов и мобильных приложений, внедрение ИИ, аналитики и автоматизации для бизнеса.",
+  "languages": [
+    "ru",
+    "en"
+  ],
+  "versions": {
+    "ru": "https://silkroadtech.kz/",
+    "en": "https://silkroadtech.kz/en/"
+  },
+  "location": {
+    "locality": "Astana",
+    "country": "KZ",
+    "address": "Mangilik El Ave 36, office 08"
+  },
+  "contact": {
+    "email": "sayat@silkroadtech.kz",
+    "telephone": "+77026479903"
+  },
+  "sameAs": [
+    "https://linkedin.com/company/silkroadtech",
+    "https://instagram.com/silkroadtech"
+  ],
+  "resources": {
+    "sitemap": "https://silkroadtech.kz/sitemap.xml",
+    "contentGuide": "https://silkroadtech.kz/llms.txt",
+    "blogFeed": "https://silkroadtech.kz/feed.xml",
+    "blogFeedEn": "https://silkroadtech.kz/en/feed.xml"
+  },
+  "updated": "2026-09-29"
+}
