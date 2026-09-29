@@ -1428,6 +1428,10 @@
 			ru: "Компания — участник Astana Hub, международного технопарка IT-стартапов. Свидетельство участника опубликовано ниже: по нему можно проверить статус компании перед заключением договора.",
 			en: "The company is a resident of Astana Hub, the international technology park for IT startups. The certificate is published below, so you can verify the company's status before signing a contract.",
 		},
+		"footer.referral": {
+			ru: "Партнёрам",
+			en: "Partners",
+		},
 	};
 
 	function applyLang(lang) {
