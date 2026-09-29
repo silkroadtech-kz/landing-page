@@ -14,10 +14,11 @@
     "validate:sitemap": "node scripts/update-sitemap.mjs --check",
     "feed": "node scripts/build-feed.mjs",
     "en": "node scripts/build-en.mjs",
-    "build": "npm run og && npm run stamp && npm run en && npm run faq && npm run cases && npm run feed && npm run sitemap",
+    "build": "npm run og && npm run stamp && npm run en && npm run faq && npm run cases && npm run ai && npm run feed && npm run sitemap",
     "stamp": "node scripts/stamp-assets.mjs",
     "faq": "node scripts/build-faq-schema.mjs",
-    "cases": "node scripts/build-cases-schema.mjs"
+    "cases": "node scripts/build-cases-schema.mjs",
+    "ai": "node scripts/build-ai-discovery.mjs"
   },
   "repository": {
     "type": "git",

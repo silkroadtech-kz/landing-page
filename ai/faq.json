@@ -1,0 +1,56 @@
+{
+  "url": "https://silkroadtech.kz/",
+  "questions": [
+    {
+      "question": "Как быстро вы начнёте работу?",
+      "answer": "После подписания договора — в течение 1 недели. Первое рабочее демо покажем через 2 недели после старта.",
+      "language": "ru"
+    },
+    {
+      "question": "Сколько стоит разработка?",
+      "answer": "Стоимость зависит от объёма и сложности. Базовые проекты — от $5 000.",
+      "language": "ru"
+    },
+    {
+      "question": "Вы работаете удалённо или только в Астане?",
+      "answer": "Работаем удалённо по всему миру и очно в Астане.",
+      "language": "ru"
+    },
+    {
+      "question": "Вы оказываете поддержку после запуска?",
+      "answer": "Да, предлагаем SLA-поддержку и дальнейшее развитие продукта.",
+      "language": "ru"
+    },
+    {
+      "question": "Вы берёте небольшие проекты?",
+      "answer": "Да, рассматриваем точечные задачи и MVP.",
+      "language": "ru"
+    },
+    {
+      "question": "How quickly will you start?",
+      "answer": "After signing the contract — within 1 week. We show the first working demo 2 weeks after kickoff.",
+      "language": "en"
+    },
+    {
+      "question": "How much does development cost?",
+      "answer": "Cost depends on scope and complexity. Basic projects start from $5,000.",
+      "language": "en"
+    },
+    {
+      "question": "Do you work remotely or only in Astana?",
+      "answer": "We work remotely worldwide and in-person in Astana.",
+      "language": "en"
+    },
+    {
+      "question": "Do you provide support after launch?",
+      "answer": "Yes, we offer SLA support and ongoing product development.",
+      "language": "en"
+    },
+    {
+      "question": "Do you take small projects?",
+      "answer": "Yes, we consider focused tasks and MVPs.",
+      "language": "en"
+    }
+  ],
+  "updated": "2026-09-29"
+}

@@ -23,7 +23,7 @@ done
 echo "→ Вложенные страницы"
 # docs/ намеренно не копируется: там внутренние планы и спеки, вёрстка на них
 # не ссылается. PDF-сертификаты лежат отдельно в assets/docs/ и попадают ниже.
-for d in blog og en; do
+for d in blog og en ai .well-known; do
 	[ -d "$d" ] && cp -R "$d" "$DIST/"
 done
 
