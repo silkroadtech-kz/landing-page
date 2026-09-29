@@ -9,12 +9,6 @@
   },
   "strings": {
     "← На главную": "← Home",
-    "Политика конфиденциальности": "Privacy policy",
-    "Silk Road Tech уважает конфиденциальность посетителей сайта и обрабатывает только те данные, которые пользователь добровольно предоставляет через контактную форму или каналы связи компании.": "Silk Road Tech respects the privacy of its visitors and processes only the data a user voluntarily provides through the contact form or the company's communication channels.",
-    "Мы можем собирать ваше имя, фамилию, номер телефона, имя пользователя Telegram, адрес электронной почты и содержание сообщения. Эти данные используются исключительно для ответа на ваш запрос, оценки проекта и дальнейшей деловой коммуникации.": "We may collect your first name, last name, phone number, Telegram username, email address and the contents of your message. This data is used solely to reply to your enquiry, estimate the project and continue business communication.",
-    "Мы не продаём и не передаём персональные данные третьим лицам, за исключением сервисов, используемых для обработки запросов и обеспечения связи, — например, Formspree или корпоративная почта.": "We do not sell or share personal data with third parties, except for the services used to process enquiries and maintain communication — for example, Formspree or corporate email.",
-    "Если вы хотите просмотреть, обновить или удалить ранее отправленные данные, напишите на": "If you would like to review, update or delete data you have sent us, write to",
-    "Продолжая использовать сайт и отправляя форму, вы соглашаетесь с настоящей политикой конфиденциальности.": "By continuing to use the site and submitting the form, you agree to this privacy policy.",
-    "Последнее обновление: 10 апреля 2026 г.": "Last updated: 10 April 2026"
+    "Политика конфиденциальности": "Privacy policy"
   }
 }

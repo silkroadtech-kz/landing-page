@@ -1236,6 +1236,198 @@
 			ru: "Присоединись к следующей группе и выйди с портфолио реальных AI-продуктов уже через 8 недель.",
 			en: "Join the next cohort and graduate with a real AI product portfolio in just 8 weeks.",
 		},
+		"privacy.lead": {
+			ru: "Мы собираем минимум данных: только то, что вы сами присылаете нам в письме или мессенджере. Счётчиков аналитики и рекламных трекеров на сайте нет, сайт размещён на сервере в Казахстане. Ниже — подробно: какие данные, зачем, кому передаём и как их удалить.",
+			en: "We collect the bare minimum: only what you send us yourself by email or messenger. The site has no analytics counters or advertising trackers, and it is hosted on a server in Kazakhstan. Below, in detail: what data, why, who we share it with and how to have it deleted.",
+		},
+		"privacy.h.what": {
+			ru: "Какие данные мы собираем",
+			en: "What data we collect",
+		},
+		"privacy.what1": {
+			ru: "Когда вы пишете нам на почту или в Telegram, мы получаем то, что вы указали сами: имя, контакт для связи, название компании и описание задачи. Ничего сверх этого сайт не запрашивает и не собирает автоматически.",
+			en: "When you write to us by email or on Telegram, we receive what you provide yourself: your name, a contact for getting back to you, your company name and a description of the task. The site neither asks for nor collects anything beyond that automatically.",
+		},
+		"privacy.what2": {
+			ru: "Форма партнёрской программы данные на наш сервер не отправляет. Она собирает из заполненных полей текст сообщения и открывает WhatsApp или Telegram — заявку отправляете вы сами, из своего аккаунта. До этого момента введённое остаётся в вашем браузере.",
+			en: "The partner programme form does not send anything to our server. It composes a message from the fields you filled in and opens WhatsApp or Telegram — you send the referral yourself, from your own account. Until then, what you typed stays in your browser.",
+		},
+		"privacy.what3": {
+			ru: "Хостинг ведёт технические журналы обращений к сайту: IP-адрес, время запроса, адрес страницы и тип браузера. Эти записи нужны для работы и безопасности сервера, мы их не анализируем и не связываем с конкретными людьми.",
+			en: "The hosting provider keeps technical access logs: IP address, request time, page address and browser type. Those records exist for server operation and security; we do not analyse them or link them to particular people.",
+		},
+		"privacy.h.why": {
+			ru: "Зачем нам эти данные",
+			en: "Why we need this data",
+		},
+		"privacy.why1": {
+			ru: "Чтобы ответить на ваш вопрос, оценить задачу, подготовить коммерческое предложение и вести дальнейшую переписку по проекту. Для партнёрской программы — чтобы закрепить клиента за вами и рассчитать вознаграждение. Ни для чего другого эти данные не используются: рассылок мы не ведём, профилей не строим.",
+			en: "To answer your question, estimate the task, prepare a proposal and continue project correspondence. For the partner programme — to register the client to you and calculate your reward. The data is used for nothing else: we run no mailing lists and build no profiles.",
+		},
+		"privacy.h.share": {
+			ru: "Кому мы передаём данные",
+			en: "Who we share data with",
+		},
+		"privacy.share1": {
+			ru: "Мы не продаём персональные данные и не передаём их третьим лицам для маркетинга. Ваше сообщение неизбежно проходит через сервисы, которыми мы пользуемся для связи: Telegram, WhatsApp и почтовый сервис нашего хостинг-провайдера. На эти сервисы распространяются их собственные политики конфиденциальности.",
+			en: "We do not sell personal data and do not pass it to third parties for marketing. Your message inevitably passes through the services we use for communication: Telegram, WhatsApp and the mail service of our hosting provider. Those services are governed by their own privacy policies.",
+		},
+		"privacy.share2": {
+			ru: "Данные могут быть раскрыты по законному требованию государственных органов Республики Казахстан — в объёме, который прямо предусмотрен законом.",
+			en: "Data may be disclosed at the lawful request of the state authorities of the Republic of Kazakhstan, to the extent expressly provided for by law.",
+		},
+		"privacy.h.keep": {
+			ru: "Сколько мы храним данные",
+			en: "How long we keep data",
+		},
+		"privacy.keep1": {
+			ru: "Переписку по незаключённым проектам храним, пока обсуждение остаётся актуальным, — обычно не дольше года. Документы и переписку по заключённым договорам храним в течение срока, установленного законодательством для бухгалтерских и налоговых документов. По вашему запросу удалим раньше, если этому не мешают требования закона.",
+			en: "Correspondence about projects that did not proceed is kept while the discussion stays relevant — usually no longer than a year. Documents and correspondence relating to signed contracts are kept for the period required by law for accounting and tax records. At your request we will delete data sooner, unless the law requires otherwise.",
+		},
+		"privacy.h.rights": {
+			ru: "Ваши права",
+			en: "Your rights",
+		},
+		"privacy.rights1": {
+			ru: "Вы вправе узнать, какие ваши данные у нас есть, потребовать их исправления или удаления, а также отозвать согласие на обработку. Для этого напишите на почту, указанную ниже, с того адреса или аккаунта, с которого вы с нами связывались, — так мы сможем убедиться, что запрос исходит от вас. Ответим в течение рабочей недели.",
+			en: "You have the right to find out what data of yours we hold, to request its correction or deletion, and to withdraw your consent to processing. To do so, write to the address below from the same address or account you used to contact us, so that we can confirm the request comes from you. We reply within one working week.",
+		},
+		"privacy.h.storage": {
+			ru: "Cookie и данные в браузере",
+			en: "Cookies and browser storage",
+		},
+		"privacy.storage1": {
+			ru: "Рекламных и аналитических cookie сайт не использует. В локальном хранилище браузера сохраняются две вещи: выбранный язык интерфейса и — если вы заполняли форму партнёрской программы — ваши имя и контакт, чтобы не вводить их повторно. Эти записи остаются на вашем устройстве, нам они не передаются. Их можно стереть, очистив данные сайта в настройках браузера.",
+			en: "The site uses no advertising or analytics cookies. Two things are saved in your browser's local storage: your chosen interface language and — if you have filled in the partner programme form — your name and contact, so you don't have to type them again. These records stay on your device and are never sent to us. You can remove them by clearing the site's data in your browser settings.",
+		},
+		"privacy.h.changes": {
+			ru: "Изменения политики",
+			en: "Changes to this policy",
+		},
+		"privacy.changes1": {
+			ru: "Мы можем обновлять эту политику — например, если изменится состав сервисов, которыми мы пользуемся. Дата последнего обновления указана в конце страницы. Существенные изменения мы отметим отдельно на этой же странице.",
+			en: "We may update this policy — for example, if the set of services we use changes. The date of the last update is shown at the end of the page. Significant changes will be noted separately on this page.",
+		},
+		"privacy.h.contact": {
+			ru: "Как с нами связаться",
+			en: "How to contact us",
+		},
+		"privacy.contact1": {
+			ru: "По любым вопросам об обработке персональных данных пишите на",
+			en: "For any question about the processing of personal data, write to",
+		},
+		"copy.lead": {
+			ru: "Тексты, изображения, вёрстка и код этого сайта принадлежат ТОО «СилкРоудТех». Процитировать фрагмент с ссылкой на источник можно свободно, скопировать страницу или использовать материалы в коммерческих целях — только с нашего письменного разрешения. Ниже — подробности и порядок обращения, если вы считаете, что нарушены ваши права.",
+			en: "The texts, images, layout and code of this site belong to SilkRoadTech LLP. You are free to quote a fragment with a link to the source; copying a page or using the materials commercially requires our written permission. Below are the details and the procedure to follow if you believe your rights have been infringed.",
+		},
+		"copy.h.what": {
+			ru: "Что защищено",
+			en: "What is protected",
+		},
+		"copy.what1": {
+			ru: "Авторским правом защищены тексты страниц и статей блога, фотографии и иллюстрации, схемы и графика, дизайн и вёрстка страниц, а также исходный код сайта. Права принадлежат ТОО «СилкРоудТех», если рядом с материалом не указан другой правообладатель.",
+			en: "Copyright covers the page and blog texts, photographs and illustrations, diagrams and graphics, the design and layout of the pages, and the site's source code. The rights belong to SilkRoadTech LLP unless another rights holder is named next to the material.",
+		},
+		"copy.h.allowed": {
+			ru: "Что можно без отдельного разрешения",
+			en: "What is allowed without separate permission",
+		},
+		"copy.allowed1": {
+			ru: "Цитировать фрагменты статей и страниц в обзорах, публикациях и учебных материалах — при условии, что указан автор и стоит активная ссылка на страницу-источник. Делиться ссылками на материалы сайта в любых каналах. Сохранять страницы для личного некоммерческого использования.",
+			en: "Quoting fragments of articles and pages in reviews, publications and educational materials — provided the author is credited and an active link to the source page is included. Sharing links to the site's materials through any channel. Saving pages for personal, non-commercial use.",
+		},
+		"copy.h.forbidden": {
+			ru: "Что требует нашего разрешения",
+			en: "What requires our permission",
+		},
+		"copy.forbidden1": {
+			ru: "Полная или частичная перепечатка материалов, их перевод, переработка и адаптация, использование текстов и изображений в коммерческих проектах и рекламе, а также использование кода и элементов дизайна сайта в других продуктах. Отдельно отметим: автоматическое копирование материалов для обучения моделей или наполнения других сайтов разрешением не считается.",
+			en: "Reprinting materials in whole or in part, translating, reworking or adapting them, using texts and images in commercial projects and advertising, and reusing the site's code or design elements in other products. To be explicit: automated copying of materials to train models or to populate other sites is not covered by any permission.",
+		},
+		"copy.h.marks": {
+			ru: "Товарные знаки и материалы клиентов",
+			en: "Trademarks and client materials",
+		},
+		"copy.marks1": {
+			ru: "Название и логотип Silk Road Tech — наши средства индивидуализации. Логотипы, названия и товарные знаки клиентов, упомянутых в разделе кейсов, принадлежат их владельцам и используются исключительно для обозначения того, с кем мы работали. Их присутствие на сайте не означает, что владельцы одобряют или рекламируют наши услуги.",
+			en: "The Silk Road Tech name and logo are our means of identification. The logos, names and trademarks of the clients mentioned in the case studies belong to their owners and are used solely to indicate who we have worked with. Their presence on the site does not imply that those owners endorse or advertise our services.",
+		},
+		"copy.h.claims": {
+			ru: "Если нарушены ваши права",
+			en: "If your rights have been infringed",
+		},
+		"copy.claims1": {
+			ru: "Напишите нам на почту, указанную ниже, и укажите: какой именно материал вызывает претензию и по какому адресу он размещён, чем подтверждаются ваши права на него, и чего вы хотите — удаления, указания авторства или иного. Мы рассмотрим обращение в течение рабочей недели и, если претензия обоснована, снимем или исправим материал.",
+			en: "Write to the address below and tell us: which material your claim concerns and at which address it is published, what evidence supports your rights to it, and what you would like us to do — remove it, credit you, or something else. We review such requests within one working week and, if the claim is justified, take the material down or correct it.",
+		},
+		"copy.h.contact": {
+			ru: "Связаться с нами",
+			en: "Contact us",
+		},
+		"copy.contact1": {
+			ru: "Вопросы об использовании материалов сайта направляйте на",
+			en: "Send questions about using the site's materials to",
+		},
+		"copy.updated": {
+			ru: "Последнее обновление: 29 сентября 2026 г.",
+			en: "Last updated: 29 September 2026",
+		},
+		"copy.h.blog": {
+			ru: "Статьи блога",
+			en: "Blog articles",
+		},
+		"copy.blog1": {
+			ru: "Статьи блога — авторские материалы нашей команды. Перепечатать статью целиком можно с нашего письменного согласия, при указании автора и активной ссылке на исходную публикацию. Пересказ своими словами со ссылкой на источник согласования не требует.",
+			en: "Blog articles are original work by our team. Republishing a whole article requires our written consent, with the author credited and an active link to the original publication. Retelling an article in your own words with a link to the source needs no approval.",
+		},
+		"copy.h.links": {
+			ru: "Ссылки на сторонние сайты",
+			en: "Links to third-party sites",
+		},
+		"copy.links1": {
+			ru: "На сайте есть ссылки на сторонние ресурсы: сайты клиентов, профили в социальных сетях, публикации, на которые мы ссылаемся в статьях. Мы не контролируем их содержимое и не отвечаем за него, а также за доступность этих ресурсов. Права на размещённые там материалы принадлежат их владельцам.",
+			en: "The site contains links to third-party resources: client websites, social media profiles and publications we reference in articles. We neither control nor are responsible for their content or availability. The rights to materials published there belong to their owners.",
+		},
+		"contacts.lead": {
+			ru: "Пишите на почту или в Telegram — отвечаем в течение рабочего дня. Работаем удалённо с клиентами из любой страны и встречаемся лично в Астане. Ниже — контакты, банковские реквизиты для договоров и свидетельство участника Astana Hub.",
+			en: "Write to us by email or on Telegram — we reply within one business day. We work remotely with clients from any country and meet in person in Astana. Below are our contacts, the bank details used for contracts and our Astana Hub certificate.",
+		},
+		"contacts.h.start": {
+			ru: "Как начать работу",
+			en: "How to get started",
+		},
+		"contacts.start1": {
+			ru: "Опишите задачу в свободной форме: что за продукт, какая проблема, есть ли сроки и бюджет. Готовое техническое задание не нужно — если оно есть, мы всё равно начинаем с разбора. На первом созвоне уточняем детали, дальше присылаем оценку этапов и сроков.",
+			en: "Describe the task in your own words: what the product is, what problem you have, whether there are deadlines and a budget. A finished specification isn't required — and if you have one, we still start by reviewing it. On the first call we clarify the details, then send an estimate of stages and timelines.",
+		},
+		"contacts.start2": {
+			ru: "Для крупных систем первым этапом идёт платный аудит: разбираем архитектуру, отделяем реальные потребности от требований, попавших в документ по инерции, и составляем план работ. Почему мы так делаем — подробно в статье блога.",
+			en: "For large systems the first stage is a paid audit: we review the architecture, separate real needs from requirements that ended up in the document out of inertia, and put together a work plan. Our blog explains in detail why we work this way.",
+		},
+		"contacts.h.hours": {
+			ru: "Часы работы",
+			en: "Working hours",
+		},
+		"contacts.hours1": {
+			ru: "Понедельник — пятница, с 9:00 до 18:00 по времени Астаны (UTC+5). Письма, пришедшие в выходные, читаем в ближайший рабочий день. Ведём проекты на русском и английском языках.",
+			en: "Monday to Friday, 9:00–18:00 Astana time (UTC+5). Messages that arrive at the weekend are read on the next business day. We run projects in Russian and English.",
+		},
+		"contacts.h.company": {
+			ru: "О компании",
+			en: "About the company",
+		},
+		"contacts.company1": {
+			ru: "ТОО «СилкРоудТех» — инженерная компания из Астаны. Мы разрабатываем сайты и программное обеспечение, внедряем ИИ и аналитику, автоматизируем бизнес-процессы. Команда — инженеры, аналитики и продуктологи; часть команды одновременно развивает собственный продукт ContentFlow, поэтому мы знаем цену не только коду, но и решениям о том, что именно стоит делать.",
+			en: "SilkRoadTech LLP is an engineering company based in Astana. We build websites and software, integrate AI and analytics, and automate business processes. The team consists of engineers, analysts and product people; part of the team also develops our own product, ContentFlow, so we understand the cost not only of code but of deciding what is worth building in the first place.",
+		},
+		"contacts.company2": {
+			ru: "Работаем с бизнесом и государственным сектором Казахстана: от платформ подбора оборудования и систем управления кадровым резервом до ИИ-ассистентов и BI-дашбордов. Примеры проектов собраны в разделе кейсов.",
+			en: "We work with business and the public sector in Kazakhstan: from equipment selection platforms and talent pool management systems to AI assistants and BI dashboards. Examples of our projects are collected in the case studies section.",
+		},
+		"contacts.company3": {
+			ru: "Компания — участник Astana Hub, международного технопарка IT-стартапов. Свидетельство участника опубликовано ниже: по нему можно проверить статус компании перед заключением договора.",
+			en: "The company is a resident of Astana Hub, the international technology park for IT startups. The certificate is published below, so you can verify the company's status before signing a contract.",
+		},
 	};
 
 	function applyLang(lang) {
