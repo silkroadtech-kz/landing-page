@@ -1,0 +1,34 @@
+{
+  "meta": {
+    "title": "Contacts, company details and certificates — Silk Road Tech",
+    "description": "Contacts and bank details of SilkRoadTech LLP, and the certificate confirming participation in Astana Hub.",
+    "ogTitle": "Contacts, company details and certificates",
+    "ogDescription": "SilkRoadTech LLP — a resident of Astana Hub.",
+    "og": "og/en/contacts-certificates.png",
+    "crumb": "Contacts and certificates"
+  },
+  "strings": {
+    "Кейсы": "Case studies",
+    "О нас": "About",
+    "Блог": "Blog",
+    "Написать нам": "Get in touch",
+    "Контакты и сертификаты": "Contacts and certificates",
+    "Контакты": "Contacts",
+    "Астана, проспект Мәңгілік Ел, 36": "36 Mangilik El Avenue, Astana",
+    "Реквизиты ТОО": "Company details",
+    "Бенефициар": "Beneficiary",
+    "Товарищество с ограниченной ответственностью «СилкРоудТех»": "SilkRoadTech Limited Liability Partnership",
+    "ИИН/БИН": "BIN",
+    "Номер счёта": "Account number",
+    "КБе": "Beneficiary code",
+    "Наименование банка": "Bank",
+    "АО «Банк ЦентрКредит»": "Bank CenterCredit JSC",
+    "БИК": "BIC",
+    "Сертификаты": "Certificates",
+    "Участник Astana Hub": "Astana Hub resident",
+    "Свидетельство № 3 035 · действует до 31.12.2026": "Certificate No. 3 035 · valid until 31.12.2026",
+    "Открыть PDF ↗": "Open PDF ↗",
+    "Политика конфиденциальности": "Privacy policy",
+    "Авторские права": "Copyright"
+  }
+}

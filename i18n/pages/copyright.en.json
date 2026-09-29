@@ -1,0 +1,19 @@
+{
+  "meta": {
+    "title": "Copyright — Silk Road Tech",
+    "description": "Who owns the rights to the materials, code and trademarks on the Silk Road Tech website, and on what terms they may be used.",
+    "ogTitle": "Copyright — Silk Road Tech",
+    "ogDescription": "Rights to the site's materials, code and trademarks of SilkRoadTech LLP.",
+    "og": "og/en/copyright.png",
+    "crumb": "Copyright"
+  },
+  "strings": {
+    "← На главную": "← Home",
+    "Авторские права": "Copyright",
+    "Все материалы на этом сайте, включая тексты, визуальные элементы, графику, макеты страниц и торговые марки Silk Road Tech, защищены применимым законодательством об авторском праве и интеллектуальной собственности.": "All materials on this site — including texts, visual elements, graphics, page layouts and the Silk Road Tech trademarks — are protected by applicable copyright and intellectual property law.",
+    "Любое копирование, публикация, адаптация или коммерческое использование материалов сайта без письменного разрешения Silk Road Tech запрещены, если явно не указано иное.": "Any copying, publication, adaptation or commercial use of the site's materials without the written permission of Silk Road Tech is prohibited, unless explicitly stated otherwise.",
+    "Если вы считаете, что материал на этом сайте нарушает ваши права, напишите на": "If you believe that material on this site infringes your rights, write to",
+    "с описанием вашей претензии.": "describing your claim.",
+    "Последнее обновление: 10 апреля 2026 г.": "Last updated: 10 April 2026"
+  }
+}

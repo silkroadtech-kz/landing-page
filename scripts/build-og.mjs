@@ -109,6 +109,24 @@ const pages = [
 		title: "Who we learn from about <em>products and company building</em>",
 	},
 	{
+		out: "og/en/privacy.png",
+		eyebrow: "Legal",
+		title: "How we handle <em>personal data</em>",
+		subtitle: "What we collect, why, and how we handle it.",
+	},
+	{
+		out: "og/en/copyright.png",
+		eyebrow: "Legal",
+		title: "Copyright and <em>terms of use</em>",
+		subtitle: "Rights to the site's materials, code and trademarks of SilkRoadTech LLP.",
+	},
+	{
+		out: "og/en/contacts-certificates.png",
+		eyebrow: "Contacts",
+		title: "Contacts, company details and <em>certificates</em>",
+		subtitle: "SilkRoadTech LLP — a resident of Astana Hub.",
+	},
+	{
 		out: "og/privacy.png",
 		eyebrow: "Документы",
 		title: "Как мы обрабатываем <em>персональные данные</em>",

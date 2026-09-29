@@ -76,6 +76,15 @@ const PAGES = [
 
 // Статьи переводятся не словарём интерфейса, а отдельными файлами: их тексты
 // в i18n.js не вынесены, да и незачем — в браузере они не переключаются.
+// Страницы, текст которых не вынесен в словарь интерфейса: перевод лежит
+// рядом, в i18n/pages/. Заменяем по всему документу — меню и подвал у них
+// тоже зашиты в разметку.
+const TRANSLATED_PAGES = [
+	{ src: "contacts-certificates.html", slug: "contacts-certificates", file: "i18n/pages/contacts-certificates.en.json" },
+	{ src: "privacy.html", slug: "privacy", file: "i18n/pages/privacy.en.json" },
+	{ src: "copyright.html", slug: "copyright", file: "i18n/pages/copyright.en.json" },
+];
+
 const ARTICLES = [
 	{ src: "blog/why-we-audit-first.html", slug: "blog/why-we-audit-first" },
 	{ src: "blog/who-we-learn-from.html", slug: "blog/who-we-learn-from" },
@@ -107,6 +116,16 @@ function loadTranslations() {
 
 const t = loadTranslations();
 const en = (key) => t[key]?.en ?? null;
+
+// Русский текст → английский. Нужен для разметки: в JSON-LD лежат те же
+// фразы, что и на странице, но без ключей data-i18n.
+const ruToEn = new Map(
+	Object.values(t)
+		.filter((pair) => pair.ru && pair.en)
+		.map((pair) => [pair.ru.replace(/<[^>]*>/g, "").trim(), pair.en.replace(/<[^>]*>/g, "").trim()]),
+);
+const translateText = (value) =>
+	typeof value === "string" ? (ruToEn.get(value.trim()) ?? value) : value;
 
 // --- перевод разметки ---
 function translate(html, missing) {
@@ -140,22 +159,33 @@ function translate(html, missing) {
 // Заменяет текст внутри <main> по словарю статьи. Работаем на уровне
 // текстовых узлов, а не элементов: иначе замена целого абзаца стирала бы
 // ссылки и выделения внутри него.
-function translateNodes(html, strings, used) {
+function translateNodes(html, strings, used, scope = "main") {
+	const replace = (chunk) =>
+		chunk.replace(/>([^<]+)</g, (match, text) => {
+			const key = text.replace(/\s+/g, " ").trim();
+			if (!key || !/[А-Яа-яЁё]/.test(key)) return match;
+			const value = strings[key];
+			if (value === undefined) return match;
+			used.add(key);
+			// Пробелы по краям сохраняем: они разделяют текст и соседние теги.
+			const before = text.match(/^\s*/)[0];
+			const after = text.match(/\s*$/)[0];
+			return `>${before}${value}${after}<`;
+		});
+
+	if (scope === "document") {
+		// Обходим весь документ, но не трогаем содержимое script и style:
+		// там лежат JSON-LD и данные, их переводить нельзя.
+		return html
+			.split(/(<(?:script|style)\b[\s\S]*?<\/(?:script|style)>)/)
+			.map((part, index) => (index % 2 ? part : replace(part)))
+			.join("");
+	}
+
 	const start = html.indexOf("<main");
 	const end = html.indexOf("</main>");
 	if (start < 0 || end < 0) return html;
-	const body = html.slice(start, end).replace(/>([^<]+)</g, (match, text) => {
-		const key = text.replace(/\s+/g, " ").trim();
-		if (!key || !/[А-Яа-яЁё]/.test(key)) return match;
-		const value = strings[key];
-		if (value === undefined) return match;
-		used.add(key);
-		// Пробелы по краям сохраняем: они разделяют текст и соседние теги.
-		const before = text.match(/^\s*/)[0];
-		const after = text.match(/\s*$/)[0];
-		return `>${before}${value}${after}<`;
-	});
-	return html.slice(0, start) + body + html.slice(end);
+	return html.slice(0, start) + replace(html.slice(start, end)) + html.slice(end);
 }
 
 // --- пути ---
@@ -176,6 +206,7 @@ function relinkInternal(html) {
 	const translated = new Map([
 		...PAGES.map((p) => [`/${p.slug}`, p.slug ? `/en/${p.slug}` : "/en/"]),
 		...ARTICLES.map((a) => [`/${a.slug}`, `/en/${a.slug}`]),
+		...TRANSLATED_PAGES.map((p) => [`/${p.slug}`, `/en/${p.slug}`]),
 	]);
 	return html.replace(/(\shref=")(\/[^"#?]*)([^"]*)"/g, (match, head, path, rest) => {
 		const target = translated.get(path === "/" ? "/" : path.replace(/\/$/, ""));
@@ -236,8 +267,24 @@ function localizeSchema(html, page) {
 			} catch {
 				return match;
 			}
+			// Вопросы и ответы, названия услуг: тот же текст, что на странице.
+			const localizeDeep = (value) => {
+				if (Array.isArray(value)) return value.map(localizeDeep);
+				if (value && typeof value === "object") {
+					for (const field of ["name", "text", "description", "headline"]) {
+						if (typeof value[field] === "string") value[field] = translateText(value[field]);
+					}
+					for (const key of Object.keys(value)) {
+						if (typeof value[key] === "object") value[key] = localizeDeep(value[key]);
+					}
+				}
+				return value;
+			};
+
 			const nodes = data["@graph"] ?? [data];
 			for (const node of nodes) {
+				const kind = String(node["@type"]);
+				if (kind.includes("FAQPage") || kind.includes("ItemList")) localizeDeep(node);
 				const type = String(node["@type"]);
 				if (node.inLanguage) node.inLanguage = "en";
 				if (type.includes("BlogPosting") || type.includes("Article")) {
@@ -342,7 +389,7 @@ function build(page, extraStrings) {
 	const ru = readFileSync(join(root, page.src), "utf8");
 	let html = translate(ru, missing);
 	if (page.src === "index.html") html = translateFirstReview(html);
-	if (extraStrings) html = translateNodes(html, extraStrings, usedStrings);
+	if (extraStrings) html = translateNodes(html, extraStrings, usedStrings, page.scope);
 	html = head(html, ru, page);
 	html = localizeSchema(html, page);
 	html = absolutizeAssets(html);
@@ -366,6 +413,11 @@ for (const article of ARTICLES) {
 	build({ ...article, ...meta }, strings);
 }
 
+for (const page of TRANSLATED_PAGES) {
+	const { meta, strings } = JSON.parse(readFileSync(join(root, page.file), "utf8"));
+	build({ ...page, ...meta, scope: "document" }, strings);
+}
+
 const staleKeys = Object.keys(allArticleStrings).filter((key) => !usedStrings.has(key));
 if (staleKeys.length) {
 	console.warn(`\n! переводы, которым не нашлось места в разметке: ${staleKeys.length}`);
@@ -376,4 +428,4 @@ if (missing.size) {
 	console.warn(`\n! без английского перевода осталось ключей: ${missing.size}`);
 	for (const key of missing) console.warn(`   ${key}`);
 }
-console.log(`\nГотово: ${PAGES.length + ARTICLES.length} страниц в en/`);
+console.log(`\nГотово: ${PAGES.length + ARTICLES.length + TRANSLATED_PAGES.length} страниц в en/`);
