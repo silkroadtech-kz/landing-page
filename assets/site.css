@@ -294,79 +294,65 @@
 				align-items: center;
 				justify-content: center;
 				padding: 2rem;
-				background:
-					radial-gradient(
-						circle at top,
-						rgba(154, 199, 99, 0.18),
-						transparent 42%
-					),
-					rgba(244, 243, 238, 0.98);
-				backdrop-filter: blur(16px);
-				transition:
-					opacity 0.55s ease,
-					visibility 0.55s ease;
+				color: #010205;
+				background: #f4f3ee;
 			}
+			/* Exit: the letters lift out of their lines, then the screen
+			   slides up like a curtain over the page. */
 			.site-preloader.is-hidden {
-				opacity: 0;
-				visibility: hidden;
+				transform: translateY(-100%);
+				transition: transform 0.75s cubic-bezier(0.76, 0, 0.24, 1) 0.12s;
 				pointer-events: none;
 			}
 			.site-preloader__inner {
 				display: flex;
-				flex-direction: column;
-				align-items: center;
-				gap: 1.25rem;
-				text-align: center;
+				width: clamp(200px, 56vw, 340px);
 			}
-			.site-preloader__mark {
-				width: 82px;
-				height: 82px;
-				border-radius: 999px;
-				background: linear-gradient(
-					135deg,
-					rgba(1, 2, 5, 0.98),
-					rgba(32, 36, 42, 0.94)
-				);
-				box-shadow:
-					0 24px 50px rgba(1, 2, 5, 0.18),
-					inset 0 1px 0 rgba(255, 255, 255, 0.08);
-				display: flex;
-				align-items: center;
-				justify-content: center;
-				position: relative;
-				overflow: hidden;
-			}
-			.site-preloader__mark::after {
-				content: "";
-				position: absolute;
-				inset: 10px;
-				border-radius: inherit;
-				border: 1px solid rgba(154, 199, 99, 0.24);
-			}
-			.site-preloader__text {
-				font-family: "Manrope", sans-serif;
-				font-size: 0.95rem;
-				font-weight: 800;
-				letter-spacing: 0.24em;
-				text-transform: uppercase;
-				color: #9ac763;
-			}
-			.site-preloader__progress {
-				position: absolute;
-				top: 0;
-				left: 0;
-				height: 3px;
-				width: 0%;
-				background: linear-gradient(90deg, #9ac763, #c6e69e);
-				border-radius: 0 999px 999px 0;
-				transition: width 2.4s cubic-bezier(0.1, 0.05, 0.2, 1);
-			}
-			.site-preloader__progress.is-running {
-				width: 85%;
-			}
-			.site-preloader__progress.is-complete {
+			.site-preloader__logo {
+				display: block;
 				width: 100%;
-				transition: width 0.2s ease;
+				height: auto;
+				overflow: visible;
+			}
+			/* Entrance: each glyph rises from behind its own baseline. */
+			.site-preloader__glyph {
+				transform-box: fill-box;
+				animation: preloaderGlyphIn 0.7s cubic-bezier(0.16, 1, 0.3, 1)
+					var(--d) both;
+			}
+			.site-preloader__glyph--big {
+				animation-duration: 0.85s;
+			}
+			.site-preloader.is-hidden .site-preloader__glyph {
+				animation: preloaderGlyphOut 0.38s cubic-bezier(0.55, 0, 0.75, 0)
+					calc(var(--d) * 0.25) both;
+			}
+			@keyframes preloaderGlyphIn {
+				from {
+					transform: translateY(110%);
+				}
+				to {
+					transform: translateY(0);
+				}
+			}
+			@keyframes preloaderGlyphOut {
+				from {
+					transform: translateY(0);
+				}
+				to {
+					transform: translateY(-110%);
+				}
+			}
+			@media (prefers-reduced-motion: reduce) {
+				.site-preloader__glyph,
+				.site-preloader.is-hidden .site-preloader__glyph {
+					animation: none;
+				}
+				.site-preloader.is-hidden {
+					transform: none;
+					opacity: 0;
+					transition: opacity 0.4s ease;
+				}
 			}
 
 			@media (max-width: 1360px) {
@@ -1149,14 +1135,6 @@
 			}
 
 			@media (max-width: 480px) {
-				.site-preloader__mark {
-					width: 70px;
-					height: 70px;
-				}
-				.site-preloader__text {
-					font-size: 0.82rem;
-					letter-spacing: 0.2em;
-				}
 				.hero-copy h1 {
 					font-size: 1.75rem !important;
 				}
