@@ -7,7 +7,8 @@
     "doc": "docs"
   },
   "scripts": {
-    "test": "npm run validate:seo && npm run validate:sitemap",
+    "test": "npm run validate:en && npm run validate:seo && npm run validate:sitemap",
+    "validate:en": "node scripts/validate-en.mjs",
     "validate:seo": "node scripts/validate-seo.mjs",
     "sitemap": "node scripts/update-sitemap.mjs",
     "og": "node scripts/build-og.mjs",
